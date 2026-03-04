@@ -6,6 +6,7 @@ import { IntervalChart } from "@/components/IntervalChart";
 import { getZoneColor } from "@/lib/zones";
 import Link from "next/link";
 import { WorkoutCompletion } from "@/components/WorkoutCompletion";
+import { AICoachPanel } from "@/components/AICoachPanel";
 
 const dayLabels: Record<string, string> = {
   MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
@@ -158,6 +159,14 @@ export default function WorkoutPage() {
           );
         })}
       </div>
+
+      {/* AI Coach */}
+      <AICoachPanel
+        session={session}
+        blockType={block.type as "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM"}
+        weekType={week.weekType as "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY"}
+        ftp={ftp}
+      />
 
       {/* Log Completion */}
       <WorkoutCompletion sessionTitle={session.title} />

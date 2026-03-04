@@ -5,6 +5,8 @@ import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
 import { FitnessChart } from "@/components/FitnessChart";
 import { AdaptationPanel } from "@/components/AdaptationPanel";
+import { WeeklyRecap } from "@/components/WeeklyRecap";
+import type { WorkoutScore } from "@/lib/adaptation";
 
 const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
   BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6" },
@@ -29,6 +31,14 @@ export default function Dashboard() {
   const block = plan.blocks[activeBlock];
   const week = block.weeks[activeWeek];
   const bt = blockTypeLabels[block.type];
+
+  // Sample workout scores for demo
+  const [weekScores] = useState<WorkoutScore[]>([
+    { compliance: 94, powerAccuracy: 96, durationAccuracy: 92, overallRating: "on_target", hrDrift: 3.2, powerFade: 2.1, fatigueSignal: "normal", coachFeedback: "94% compliance. Solid session." },
+    { compliance: 98, powerAccuracy: 99, durationAccuracy: 97, overallRating: "crushed_it", hrDrift: 1.8, powerFade: 1.2, fatigueSignal: "fresh", coachFeedback: "Nailed it." },
+    { compliance: 72, powerAccuracy: 68, durationAccuracy: 78, overallRating: "struggled", hrDrift: 8.5, powerFade: 6.3, fatigueSignal: "fatigued", coachFeedback: "Tough day." },
+    { compliance: 88, powerAccuracy: 90, durationAccuracy: 85, overallRating: "on_target", hrDrift: 4.1, powerFade: 3.0, fatigueSignal: "normal", coachFeedback: "Good work." },
+  ]);
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
@@ -60,6 +70,15 @@ export default function Dashboard() {
 
       {/* Fitness Chart (PMC) */}
       <FitnessChart />
+
+      {/* Weekly Recap (AI) */}
+      <WeeklyRecap
+        scores={weekScores}
+        adaptation={{ action: "maintain", adjustmentPct: 2, reason: "Avg compliance 88%. Right in the sweet spot.", nextSessionMods: [{ type: "power", description: "Nudge interval targets up by 1-2%", value: 2 }] }}
+        blockType={block.type}
+        weekType={week.weekType}
+        ftp={ftp}
+      />
 
       {/* Adaptive Engine */}
       <AdaptationPanel />
