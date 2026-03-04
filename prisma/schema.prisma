@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Rider {
+  id         String   @id @default(cuid())
+  name       String
+  ftp        Int      @default(200)
+  weight     Float    @default(75)
+  experience String   @default("INTERMEDIATE") // BEGINNER, INTERMEDIATE, ADVANCED
+  coachTone  String   @default("MIXED")        // DARK_HUMOR, MOTIVATIONAL, TECHNICAL, MIXED
+  createdAt  DateTime @default(now())
+  plans      Plan[]
+}
+
+model Plan {
+  id              String   @id @default(cuid())
+  riderId         String
+  rider           Rider    @relation(fields: [riderId], references: [id])
+  startDate       DateTime @default(now())
+  currentBlockNum Int      @default(1)
+  blocks          Block[]
+}
+
+model Block {
+  id          String @id @default(cuid())
+  planId      String
+  plan        Plan   @relation(fields: [planId], references: [id])
+  blockNumber Int
+  type        String // BASE, THRESHOLD, VO2MAX, RACE_SIM
+  weeks       Week[]
+}
+
+model Week {
+  id         String    @id @default(cuid())
+  blockId    String
+  block      Block     @relation(fields: [blockId], references: [id])
+  weekNumber Int
+  weekType   String    // BUILD, BUILD_PLUS, OVERREACH, RECOVERY
+  sessions   Session[]
+}
+
+model Session {
+  id          String     @id @default(cuid())
+  weekId      String
+  week        Week       @relation(fields: [weekId], references: [id])
+  dayOfWeek   String     // MON, TUE, THU, FRI, SAT
+  sessionType String     // INDOOR, OUTDOOR
+  duration    Int        // minutes
+  title       String
+  description String
+  intervals   Interval[]
+  routeId     String?
+  route       Route?     @relation(fields: [routeId], references: [id])
+}
+
+model Interval {
+  id           String  @id @default(cuid())
+  sessionId    String
+  session      Session @relation(fields: [sessionId], references: [id])
+  orderNum     Int
+  name         String
+  durationSecs Int
+  powerLow     Float   // % of FTP
+  powerHigh    Float   // % of FTP
+  cadenceLow   Int?
+  cadenceHigh  Int?
+  rpe          Int?
+  zone         String
+  purpose      String
+  coachNote    String
+}
+
+model Route {
+  id          String    @id @default(cuid())
+  name        String
+  distance    Float     // km
+  elevation   Float     // meters
+  description String
+  region      String    @default("Medellin")
+  sessions    Session[]
+}
