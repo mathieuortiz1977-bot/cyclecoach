@@ -86,7 +86,7 @@ export default function Dashboard() {
       {/* Block Selector */}
       <div>
         <h2 className="text-lg font-semibold mb-3">Training Blocks</h2>
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
           {plan.blocks.map((b, i) => {
             const bt = blockTypeLabels[b.type];
             return (

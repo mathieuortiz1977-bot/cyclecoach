@@ -7,6 +7,9 @@ import { getZoneColor } from "@/lib/zones";
 import Link from "next/link";
 import { WorkoutCompletion } from "@/components/WorkoutCompletion";
 import { AICoachPanel } from "@/components/AICoachPanel";
+import { IntervalTimer } from "@/components/IntervalTimer";
+import { ExportButtons } from "@/components/ExportButtons";
+import { RouteMap } from "@/components/RouteMap";
 
 const dayLabels: Record<string, string> = {
   MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
@@ -76,27 +79,26 @@ export default function WorkoutPage() {
         <span className="text-[var(--muted)]">W</span>
       </div>
 
+      {/* Export Buttons */}
+      <div className="flex items-center gap-4">
+        <span className="text-sm text-[var(--muted)]">Export:</span>
+        <ExportButtons session={session} ftp={ftp} />
+      </div>
+
+      {/* Interval Timer */}
+      {session.sessionType === "INDOOR" && (
+        <IntervalTimer intervals={session.intervals} ftp={ftp} />
+      )}
+
       {/* Interval Chart */}
       <IntervalChart intervals={session.intervals} ftp={ftp} />
 
-      {/* Route Info (Saturday only) */}
+      {/* Route Map + Info (Saturday only) */}
       {session.route && (
-        <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6">
-          <h2 className="text-lg font-semibold mb-2">🗺️ Route: {session.route.name}</h2>
-          <p className="text-[var(--muted)] text-sm mb-3">{session.route.description}</p>
-          <div className="flex gap-6 text-sm">
-            <div>
-              <span className="text-[var(--muted)]">Distance: </span>
-              <span className="font-mono text-white">{session.route.distance} km</span>
-            </div>
-            <div>
-              <span className="text-[var(--muted)]">Elevation: </span>
-              <span className="font-mono text-white">{session.route.elevation} m</span>
-            </div>
-            <div>
-              <span className="text-[var(--muted)]">Region: </span>
-              <span>{session.route.region}</span>
-            </div>
+        <div className="space-y-4">
+          <RouteMap route={session.route} />
+          <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-4">
+            <p className="text-sm text-[var(--muted)] italic">{session.route.description}</p>
           </div>
         </div>
       )}
