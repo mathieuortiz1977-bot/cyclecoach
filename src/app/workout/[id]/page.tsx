@@ -5,6 +5,7 @@ import { generatePlan } from "@/lib/periodization";
 import { IntervalChart } from "@/components/IntervalChart";
 import { getZoneColor } from "@/lib/zones";
 import Link from "next/link";
+import { WorkoutCompletion } from "@/components/WorkoutCompletion";
 
 const dayLabels: Record<string, string> = {
   MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
@@ -157,6 +158,9 @@ export default function WorkoutPage() {
           );
         })}
       </div>
+
+      {/* Log Completion */}
+      <WorkoutCompletion sessionTitle={session.title} />
 
       {/* Back */}
       <Link

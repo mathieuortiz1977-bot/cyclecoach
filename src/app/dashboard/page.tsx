@@ -4,6 +4,7 @@ import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
 import { FitnessChart } from "@/components/FitnessChart";
+import { AdaptationPanel } from "@/components/AdaptationPanel";
 
 const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
   BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6" },
@@ -59,6 +60,9 @@ export default function Dashboard() {
 
       {/* Fitness Chart (PMC) */}
       <FitnessChart />
+
+      {/* Adaptive Engine */}
+      <AdaptationPanel />
 
       {/* Block Selector */}
       <div>

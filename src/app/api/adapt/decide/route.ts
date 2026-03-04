@@ -1,0 +1,20 @@
+import { NextRequest, NextResponse } from "next/server";
+import { generateAdaptation, type WorkoutScore } from "@/lib/adaptation";
+
+// POST: Get adaptation decision based on recent workout scores
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { scores, currentFtp, weekType } = body as {
+      scores: WorkoutScore[];
+      currentFtp: number;
+      weekType: string;
+    };
+
+    const decision = generateAdaptation(scores, currentFtp, weekType);
+    return NextResponse.json(decision);
+  } catch (err) {
+    console.error("Adaptation error:", err);
+    return NextResponse.json({ error: "Failed to generate adaptation" }, { status: 400 });
+  }
+}
