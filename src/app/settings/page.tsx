@@ -1,20 +1,78 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { ZoneTable } from "@/components/ZoneTable";
+import { HRZoneTable } from "@/components/HRZoneTable";
 
-export default function SettingsPage() {
+export default function SettingsPageWrapper() {
+  return (
+    <Suspense fallback={<div className="text-[var(--muted)] p-8">Loading settings...</div>}>
+      <SettingsPage />
+    </Suspense>
+  );
+}
+
+function SettingsPage() {
+  const searchParams = useSearchParams();
+  const stravaStatus = searchParams?.get("strava");
+  const tpStatus = searchParams?.get("tp");
+
   const [ftp, setFtp] = useState(190);
   const [weight, setWeight] = useState(75);
   const [experience, setExperience] = useState("INTERMEDIATE");
   const [tone, setTone] = useState("MIXED");
   const [duration, setDuration] = useState(60);
 
+  // HR settings
+  const [maxHr, setMaxHr] = useState(185);
+  const [restingHr, setRestingHr] = useState(60);
+  const [lthr, setLthr] = useState(165);
+  const [hrMethod, setHrMethod] = useState<"PERCENTAGE" | "KARVONEN" | "LTHR">("PERCENTAGE");
+
+  // Strava sync
+  const [syncing, setSyncing] = useState(false);
+  const [syncResult, setSyncResult] = useState<string | null>(null);
+
+  const handleStravaSync = async () => {
+    setSyncing(true);
+    setSyncResult(null);
+    try {
+      const res = await fetch("/api/strava/sync", { method: "POST" });
+      const data = await res.json();
+      if (data.success) {
+        setSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
+      } else {
+        setSyncResult(`❌ ${data.error}`);
+      }
+    } catch {
+      setSyncResult("❌ Sync failed");
+    }
+    setSyncing(false);
+  };
+
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
         <h1 className="text-3xl font-bold mb-1">Settings</h1>
-        <p className="text-[var(--muted)]">Configure your profile and training preferences.</p>
+        <p className="text-[var(--muted)]">Configure your profile, zones, and connections.</p>
       </div>
+
+      {/* Status messages */}
+      {stravaStatus === "connected" && (
+        <div className="bg-green-900/20 border border-green-800 rounded-lg p-3 text-sm text-green-400">
+          ✅ Strava connected successfully! Click "Sync Rides" to import your activities.
+        </div>
+      )}
+      {stravaStatus === "error" && (
+        <div className="bg-red-900/20 border border-red-800 rounded-lg p-3 text-sm text-red-400">
+          ❌ Strava connection failed. Check your API credentials.
+        </div>
+      )}
+      {tpStatus === "connected" && (
+        <div className="bg-green-900/20 border border-green-800 rounded-lg p-3 text-sm text-green-400">
+          ✅ TrainingPeaks connected! FTP and LTHR updated from your profile.
+        </div>
+      )}
 
       {/* Rider Profile */}
       <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
@@ -68,13 +126,78 @@ export default function SettingsPage() {
 
       {/* Power Zones */}
       <div className="space-y-3">
-        <h2 className="text-lg font-semibold">Power Zones</h2>
+        <h2 className="text-lg font-semibold">⚡ Power Zones</h2>
         <ZoneTable ftp={ftp} />
+      </div>
+
+      {/* Heart Rate Configuration */}
+      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+        <h2 className="text-lg font-semibold">❤️ Heart Rate Settings</h2>
+
+        <div className="grid grid-cols-3 gap-4">
+          <div>
+            <label className="block text-sm text-[var(--muted)] mb-1">Max HR (bpm)</label>
+            <input
+              type="number"
+              value={maxHr}
+              onChange={(e) => setMaxHr(Math.max(100, parseInt(e.target.value) || 100))}
+              className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--accent)]"
+            />
+          </div>
+          <div>
+            <label className="block text-sm text-[var(--muted)] mb-1">Resting HR (bpm)</label>
+            <input
+              type="number"
+              value={restingHr}
+              onChange={(e) => setRestingHr(Math.max(30, parseInt(e.target.value) || 30))}
+              className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--accent)]"
+            />
+          </div>
+          <div>
+            <label className="block text-sm text-[var(--muted)] mb-1">LTHR (bpm)</label>
+            <input
+              type="number"
+              value={lthr}
+              onChange={(e) => setLthr(Math.max(100, parseInt(e.target.value) || 100))}
+              className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--accent)]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm text-[var(--muted)] mb-2">Zone Calculation Method</label>
+          <div className="flex gap-2">
+            {[
+              { value: "PERCENTAGE" as const, label: "% Max HR", desc: "Simple, widely used" },
+              { value: "KARVONEN" as const, label: "Karvonen (HRR)", desc: "Uses resting HR" },
+              { value: "LTHR" as const, label: "Joe Friel (LTHR)", desc: "Most precise, 7 zones" },
+            ].map((m) => (
+              <button
+                key={m.value}
+                onClick={() => setHrMethod(m.value)}
+                className={`flex-1 p-3 rounded-lg text-left transition-colors border ${
+                  hrMethod === m.value
+                    ? "border-[var(--accent)] bg-[var(--accent)]/10"
+                    : "border-[var(--card-border)] hover:border-[var(--muted)]"
+                }`}
+              >
+                <p className="font-semibold text-sm">{m.label}</p>
+                <p className="text-xs text-[var(--muted)]">{m.desc}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* HR Zones */}
+      <div className="space-y-3">
+        <h2 className="text-lg font-semibold">❤️ Heart Rate Zones</h2>
+        <HRZoneTable maxHr={maxHr} restingHr={restingHr} lthr={lthr} method={hrMethod} />
       </div>
 
       {/* Coach Personality */}
       <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
-        <h2 className="text-lg font-semibold">Coach Personality</h2>
+        <h2 className="text-lg font-semibold">🎭 Coach Personality</h2>
         <p className="text-sm text-[var(--muted)]">Choose the tone of your workout commentary.</p>
         <div className="grid grid-cols-2 gap-2">
           {[
@@ -101,7 +224,7 @@ export default function SettingsPage() {
 
       {/* Training Preferences */}
       <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
-        <h2 className="text-lg font-semibold">Training Preferences</h2>
+        <h2 className="text-lg font-semibold">⏱ Training Preferences</h2>
         <div>
           <label className="block text-sm text-[var(--muted)] mb-1">Default Indoor Session Duration (min)</label>
           <input
@@ -118,23 +241,83 @@ export default function SettingsPage() {
 
       {/* Connections */}
       <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
-        <h2 className="text-lg font-semibold">Connections</h2>
+        <h2 className="text-lg font-semibold">🔌 Connections</h2>
         <div className="grid grid-cols-2 gap-3">
-          <button className="flex items-center gap-3 p-4 rounded-lg border border-[var(--card-border)] hover:border-[var(--accent)] transition-colors">
-            <span className="text-2xl">🟠</span>
-            <div className="text-left">
-              <p className="font-semibold text-sm">Strava</p>
-              <p className="text-xs text-[var(--muted)]">Connect to sync rides</p>
+          {/* Strava */}
+          <div className="border border-[var(--card-border)] rounded-lg p-4 space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🟠</span>
+              <div>
+                <p className="font-semibold text-sm">Strava</p>
+                <p className="text-xs text-[var(--muted)]">
+                  {stravaStatus === "connected" ? "✅ Connected" : "Sync your rides and power data"}
+                </p>
+              </div>
             </div>
-          </button>
-          <button className="flex items-center gap-3 p-4 rounded-lg border border-[var(--card-border)] hover:border-[var(--accent)] transition-colors">
-            <span className="text-2xl">📈</span>
-            <div className="text-left">
-              <p className="font-semibold text-sm">TrainingPeaks</p>
-              <p className="text-xs text-[var(--muted)]">Sync CTL/ATL/TSB</p>
+            <div className="flex gap-2">
+              <a
+                href="/api/strava/auth"
+                className="flex-1 text-center px-3 py-2 rounded-lg text-sm bg-[#fc4c02] text-white hover:bg-[#e34402] transition-colors"
+              >
+                {stravaStatus === "connected" ? "Reconnect" : "Connect Strava"}
+              </a>
+              {stravaStatus === "connected" && (
+                <button
+                  onClick={handleStravaSync}
+                  disabled={syncing}
+                  className="flex-1 px-3 py-2 rounded-lg text-sm border border-[var(--card-border)] hover:border-[var(--accent)] transition-colors disabled:opacity-50"
+                >
+                  {syncing ? "Syncing..." : "Sync Rides"}
+                </button>
+              )}
             </div>
-          </button>
+            {syncResult && <p className="text-xs">{syncResult}</p>}
+            <p className="text-[10px] text-[var(--muted)]">
+              Requires STRAVA_CLIENT_ID and STRAVA_CLIENT_SECRET in .env
+            </p>
+          </div>
+
+          {/* TrainingPeaks */}
+          <div className="border border-[var(--card-border)] rounded-lg p-4 space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">📈</span>
+              <div>
+                <p className="font-semibold text-sm">TrainingPeaks</p>
+                <p className="text-xs text-[var(--muted)]">
+                  {tpStatus === "connected" ? "✅ Connected" : "Sync CTL/ATL/TSB metrics"}
+                </p>
+              </div>
+            </div>
+            <a
+              href="/api/trainingpeaks/auth"
+              className="block text-center px-3 py-2 rounded-lg text-sm bg-[var(--card-border)] text-white hover:bg-[var(--muted)] transition-colors"
+            >
+              {tpStatus === "connected" ? "Reconnect" : "Connect TrainingPeaks"}
+            </a>
+            <p className="text-[10px] text-[var(--muted)]">
+              Requires TP_CLIENT_ID and TP_CLIENT_SECRET in .env
+            </p>
+          </div>
         </div>
+      </div>
+
+      {/* Environment Setup Guide */}
+      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-3">
+        <h2 className="text-lg font-semibold">🔑 API Setup Guide</h2>
+        <p className="text-sm text-[var(--muted)]">Add these to your <code className="text-[var(--accent)]">.env</code> file:</p>
+        <pre className="bg-[var(--background)] rounded-lg p-4 text-xs font-mono overflow-x-auto">
+{`# Strava API — https://www.strava.com/settings/api
+STRAVA_CLIENT_ID=your_client_id
+STRAVA_CLIENT_SECRET=your_client_secret
+STRAVA_WEBHOOK_VERIFY_TOKEN=cyclecoach_verify
+
+# TrainingPeaks API — https://developers.trainingpeaks.com/
+TP_CLIENT_ID=your_client_id
+TP_CLIENT_SECRET=your_client_secret
+
+# App
+NEXT_PUBLIC_BASE_URL=http://localhost:3000`}
+        </pre>
       </div>
     </div>
   );

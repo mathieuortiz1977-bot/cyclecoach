@@ -13,8 +13,16 @@ model Rider {
   weight     Float    @default(75)
   experience String   @default("INTERMEDIATE") // BEGINNER, INTERMEDIATE, ADVANCED
   coachTone  String   @default("MIXED")        // DARK_HUMOR, MOTIVATIONAL, TECHNICAL, MIXED
+  maxHr      Int?     // max heart rate
+  restingHr  Int?     // resting heart rate
+  lthr       Int?     // lactate threshold heart rate
   createdAt  DateTime @default(now())
   plans      Plan[]
+  stravaConnection       StravaConnection?
+  stravaActivities       StravaActivity[]
+  trainingPeaksConnection TrainingPeaksConnection?
+  fitnessMetrics         FitnessMetric[]
+  heartRateProfile       HeartRateProfile?
 }
 
 model Plan {
@@ -83,4 +91,93 @@ model Route {
   description String
   region      String    @default("Medellin")
   sessions    Session[]
+}
+
+// ─── Strava Integration ──────────────────────────────────────────────
+
+model StravaConnection {
+  id            String   @id @default(cuid())
+  riderId       String   @unique
+  rider         Rider    @relation(fields: [riderId], references: [id])
+  athleteId     Int      @unique
+  accessToken   String
+  refreshToken  String
+  expiresAt     Int      // unix timestamp
+  scope         String   @default("read,activity:read_all")
+  athleteName   String?
+  athletePhoto  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model StravaActivity {
+  id              String   @id @default(cuid())
+  stravaId        BigInt   @unique
+  riderId         String
+  rider           Rider    @relation(fields: [riderId], references: [id])
+  name            String
+  type            String   // Ride, VirtualRide, etc.
+  startDate       DateTime
+  movingTime      Int      // seconds
+  elapsedTime     Int      // seconds
+  distance        Float    // meters
+  totalElevation  Float    // meters
+  averageWatts    Float?
+  maxWatts        Float?
+  weightedAvgWatts Float?  // normalized power
+  averageHeartrate Float?
+  maxHeartrate    Float?
+  averageCadence  Float?
+  kilojoules      Float?
+  sufferScore     Int?
+  calories        Float?
+  averageSpeed    Float?   // m/s
+  maxSpeed        Float?   // m/s
+  hasHeartrate    Boolean  @default(false)
+  hasPower        Boolean  @default(false)
+  mapPolyline     String?  // encoded polyline
+  tss             Float?   // calculated Training Stress Score
+  intensityFactor Float?   // calculated IF
+  createdAt       DateTime @default(now())
+}
+
+// ─── TrainingPeaks Integration ───────────────────────────────────────
+
+model TrainingPeaksConnection {
+  id            String   @id @default(cuid())
+  riderId       String   @unique
+  rider         Rider    @relation(fields: [riderId], references: [id])
+  accessToken   String
+  refreshToken  String
+  expiresAt     Int
+  athleteId     Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model FitnessMetric {
+  id        String   @id @default(cuid())
+  riderId   String
+  rider     Rider    @relation(fields: [riderId], references: [id])
+  date      DateTime
+  ctl       Float    // Chronic Training Load (fitness)
+  atl       Float    // Acute Training Load (fatigue)
+  tsb       Float    // Training Stress Balance (form)
+  tss       Float?   // daily TSS
+  source    String   @default("calculated") // calculated, trainingpeaks
+  createdAt DateTime @default(now())
+
+  @@unique([riderId, date])
+}
+
+// ─── HR Zones ────────────────────────────────────────────────────────
+
+model HeartRateProfile {
+  id           String @id @default(cuid())
+  riderId      String @unique
+  rider        Rider  @relation(fields: [riderId], references: [id])
+  maxHr        Int
+  restingHr    Int    @default(60)
+  lthr         Int?   // Lactate Threshold Heart Rate
+  method       String @default("PERCENTAGE") // PERCENTAGE, KARVONEN
 }

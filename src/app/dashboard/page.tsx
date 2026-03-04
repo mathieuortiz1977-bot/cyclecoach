@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
+import { FitnessChart } from "@/components/FitnessChart";
 
 const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
   BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6" },
@@ -55,6 +56,9 @@ export default function Dashboard() {
         </div>
         <ZoneTable ftp={ftp} />
       </div>
+
+      {/* Fitness Chart (PMC) */}
+      <FitnessChart />
 
       {/* Block Selector */}
       <div>
