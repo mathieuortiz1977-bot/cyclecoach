@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserMenu } from "./UserMenu";
 
 const nav = [
   { href: "/dashboard", label: "Dashboard", icon: "📊" },
@@ -38,9 +39,12 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="mt-auto px-2 py-4 text-xs text-[var(--muted)]">
-        <p>Powered by suffering</p>
-        <p>and structured intervals</p>
+      <div className="mt-auto space-y-3">
+        <UserMenu />
+        <div className="px-2 py-2 text-xs text-[var(--muted)]">
+          <p>Powered by suffering</p>
+          <p>and structured intervals</p>
+        </div>
       </div>
     </aside>
   );
