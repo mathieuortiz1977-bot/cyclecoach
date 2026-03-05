@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, ReferenceLine, Area, ComposedChart, Bar,
+  XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, ReferenceLine, ComposedChart, Bar, Line,
 } from "recharts";
 import { getTrainingStatus } from "@/lib/fitness";
 import type { DailyMetric } from "@/lib/fitness";

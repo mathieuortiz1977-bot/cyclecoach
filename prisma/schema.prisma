@@ -46,6 +46,8 @@ model AuthSession {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("Session")
 }
 
 model VerificationToken {
@@ -103,10 +105,10 @@ model Week {
   block      Block     @relation(fields: [blockId], references: [id])
   weekNumber Int
   weekType   String    // BUILD, BUILD_PLUS, OVERREACH, RECOVERY
-  sessions   Session[]
+  sessions   TrainingSession[]
 }
 
-model Session {
+model TrainingSession {
   id          String     @id @default(cuid())
   weekId      String
   week        Week       @relation(fields: [weekId], references: [id])
@@ -118,12 +120,14 @@ model Session {
   intervals   Interval[]
   routeId     String?
   route       Route?     @relation(fields: [routeId], references: [id])
+
+  @@map("TrainingSession")
 }
 
 model Interval {
   id           String  @id @default(cuid())
   sessionId    String
-  session      Session @relation(fields: [sessionId], references: [id])
+  session      TrainingSession @relation(fields: [sessionId], references: [id])
   orderNum     Int
   name         String
   durationSecs Int
@@ -144,7 +148,7 @@ model Route {
   elevation   Float     // meters
   description String
   region      String    @default("Medellin")
-  sessions    Session[]
+  sessions    TrainingSession[]
 }
 
 // ─── Strava Integration ──────────────────────────────────────────────

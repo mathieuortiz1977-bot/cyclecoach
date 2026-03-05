@@ -444,6 +444,14 @@ function generateWeekSessions(blockType: BlockType, weekType: WeekType, blockNum
   }
 }
 
+// ─── Duration Fix ────────────────────────────────────────────────────
+
+function fixSessionDuration(session: SessionDef): SessionDef {
+  if (session.sessionType === "OUTDOOR") return session; // Saturday durations are set by route
+  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
+  return { ...session, duration: Math.round(totalSecs / 60) };
+}
+
 // ─── Full Plan Generator ─────────────────────────────────────────────
 
 export function generatePlan(numBlocks: number = 4): PlanDef {
@@ -456,10 +464,11 @@ export function generatePlan(numBlocks: number = 4): PlanDef {
 
     for (let w = 0; w < 4; w++) {
       const weekType = WEEK_SEQUENCE[w];
+      const sessions = generateWeekSessions(blockType, weekType, b).map(fixSessionDuration);
       weeks.push({
         weekNumber: w + 1,
         weekType,
-        sessions: generateWeekSessions(blockType, weekType, b),
+        sessions,
       });
     }
 

@@ -107,7 +107,7 @@ export function scoreWorkout(completed: CompletedWorkout): WorkoutScore {
     powerAccuracy: Math.round(powerAccuracy),
     durationAccuracy: Math.round(durationAccuracy),
     overallRating,
-    hrDrift: Math.round(powerFade * 10) / 10,
+    hrDrift: Math.round(hrDrift * 10) / 10,
     powerFade: Math.round(powerFade * 10) / 10,
     fatigueSignal,
     coachFeedback,

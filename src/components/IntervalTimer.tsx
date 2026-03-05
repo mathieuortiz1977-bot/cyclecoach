@@ -19,9 +19,11 @@ export function IntervalTimer({ intervals, ftp }: Props) {
   const audioRef = useRef<AudioContext | null>(null);
 
   const current = intervals[currentIdx];
-  const next = intervals[currentIdx + 1];
+  const nextInterval = intervals[currentIdx + 1];
   const totalDuration = intervals.reduce((s, i) => s + i.durationSecs, 0);
   const remaining = current ? current.durationSecs - elapsed : 0;
+  const currentDurationRef = useRef(current?.durationSecs ?? 0);
+  currentDurationRef.current = current?.durationSecs ?? 0;
 
   // Beep sound
   const playBeep = useCallback((freq: number = 800, duration: number = 200) => {
@@ -49,13 +51,13 @@ export function IntervalTimer({ intervals, ftp }: Props) {
         setTotalElapsed((t) => t + 1);
 
         // 3-2-1 countdown beeps
-        const remaining = current.durationSecs - next;
+        const remaining = currentDurationRef.current - next;
         if (remaining === 3 || remaining === 2 || remaining === 1) {
           playBeep(600, 100);
         }
 
         // Interval complete
-        if (next >= current.durationSecs) {
+        if (next >= currentDurationRef.current) {
           playBeep(1000, 400); // Long beep for interval change
           if (currentIdx < intervals.length - 1) {
             setCurrentIdx((i) => i + 1);
@@ -143,7 +145,7 @@ export function IntervalTimer({ intervals, ftp }: Props) {
               <h2 className="text-xl font-bold mt-2">{current.name}</h2>
               <p className="text-sm text-[var(--muted)]">
                 {currentIdx + 1} of {intervals.length}
-                {next && <span> · Next: {next.name}</span>}
+                {nextInterval && <span> · Next: {nextInterval.name}</span>}
               </p>
             </div>
 

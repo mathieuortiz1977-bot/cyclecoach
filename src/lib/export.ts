@@ -30,13 +30,24 @@ function intervalToZwoXml(interval: IntervalDef, ftp: number): string {
   const note = escapeXml(interval.coachNote);
 
   // Determine Zwift interval type
-  if (interval.zone === "Z1" || interval.name.toLowerCase().includes("rest") || interval.name.toLowerCase().includes("recovery")) {
+  const isLast = false; // caller doesn't pass index, so cooldown detection is name-based
+  const nameLower = interval.name.toLowerCase();
+
+  if (nameLower === "cooldown" || nameLower === "cool down") {
     return `<Cooldown Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
             <textevent timeoffset="0" message="${note}"/>
         </Cooldown>`;
   }
 
-  if (interval.name.toLowerCase().includes("warmup") || interval.name.toLowerCase().includes("warm")) {
+  if (nameLower.includes("rest") || nameLower.includes("recovery")) {
+    // Rest intervals are steady-state at low power, NOT cooldown
+    const avgPower = (powerLow + powerHigh) / 2;
+    return `<SteadyState Duration="${dur}" Power="${avgPower}"${cadence}>
+            <textevent timeoffset="0" message="${note}"/>
+        </SteadyState>`;
+  }
+
+  if (nameLower.includes("warmup") || nameLower.includes("warm")) {
     return `<Warmup Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
             <textevent timeoffset="0" message="${note}"/>
         </Warmup>`;
