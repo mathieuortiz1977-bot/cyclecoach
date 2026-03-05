@@ -24,6 +24,8 @@ export function IntervalTimer({ intervals, ftp }: Props) {
   const remaining = current ? current.durationSecs - elapsed : 0;
   const currentDurationRef = useRef(current?.durationSecs ?? 0);
   currentDurationRef.current = current?.durationSecs ?? 0;
+  const currentIdxRef = useRef(currentIdx);
+  currentIdxRef.current = currentIdx;
 
   // Beep sound
   const playBeep = useCallback((freq: number = 800, duration: number = 200) => {
@@ -59,7 +61,7 @@ export function IntervalTimer({ intervals, ftp }: Props) {
         // Interval complete
         if (next >= currentDurationRef.current) {
           playBeep(1000, 400); // Long beep for interval change
-          if (currentIdx < intervals.length - 1) {
+          if (currentIdxRef.current < intervals.length - 1) {
             setCurrentIdx((i) => i + 1);
             return 0;
           } else {

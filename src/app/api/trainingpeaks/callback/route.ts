@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { exchangeTPCode, getTPAthlete } from "@/lib/trainingpeaks";
 import { prisma } from "@/lib/db";
+import { auth } from "@/lib/auth";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
@@ -17,11 +18,20 @@ export async function GET(request: NextRequest) {
   try {
     const tokens = await exchangeTPCode(clientId, clientSecret, code, redirectUri);
 
-    // Get or create default rider
-    let rider = await prisma.rider.findFirst();
+    // Get authenticated user's rider, or fall back to first rider
+    const session = await auth();
+    const userId = (session?.user as { id?: string })?.id;
+
+    let rider;
+    if (userId) {
+      rider = await prisma.rider.findUnique({ where: { userId } });
+    }
+    if (!rider) {
+      rider = await prisma.rider.findFirst();
+    }
     if (!rider) {
       rider = await prisma.rider.create({
-        data: { name: "Rider", ftp: 190 },
+        data: { name: "Rider", ftp: 190, userId: userId || undefined },
       });
     }
 
@@ -31,7 +41,6 @@ export async function GET(request: NextRequest) {
       const athlete = await getTPAthlete(tokens.access_token);
       athleteId = athlete.Id;
 
-      // Update rider FTP/weight from TP if available
       if (athlete.ThresholdPower) {
         await prisma.rider.update({
           where: { id: rider.id },

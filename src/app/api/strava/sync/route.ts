@@ -7,13 +7,11 @@ import {
   calculateTSS,
   calculateIF,
 } from "@/lib/strava";
+import { getCurrentRiderWithStrava } from "@/lib/get-rider";
 
 export async function POST() {
   try {
-    // Get rider and Strava connection
-    const rider = await prisma.rider.findFirst({
-      include: { stravaConnection: true },
-    });
+    const rider = await getCurrentRiderWithStrava();
 
     if (!rider?.stravaConnection) {
       return NextResponse.json({ error: "No Strava connection found" }, { status: 400 });
@@ -53,7 +51,6 @@ export async function POST() {
     let skipped = 0;
 
     for (const activity of rides) {
-      // Check if already synced
       const existing = await prisma.stravaActivity.findUnique({
         where: { stravaId: BigInt(activity.id) },
       });
@@ -63,7 +60,6 @@ export async function POST() {
         continue;
       }
 
-      // Calculate TSS and IF if power data available
       const np = activity.weighted_average_watts || activity.average_watts || 0;
       const tss = np && rider.ftp ? calculateTSS(np, rider.ftp, activity.moving_time) : null;
       const intensityFactor = np && rider.ftp ? calculateIF(np, rider.ftp) : null;

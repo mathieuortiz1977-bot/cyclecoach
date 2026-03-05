@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { estimateFTPFromRides } from "@/lib/adaptation";
+import { getCurrentRider } from "@/lib/get-rider";
 
 // GET: Estimate FTP from recent Strava rides
 export async function GET() {
   try {
-    const rider = await prisma.rider.findFirst();
+    const rider = await getCurrentRider();
     if (!rider) {
       return NextResponse.json({ error: "No rider profile" }, { status: 400 });
     }

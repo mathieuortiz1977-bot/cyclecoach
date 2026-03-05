@@ -4,10 +4,12 @@ import type { WorkoutScore } from "@/lib/adaptation";
 
 interface Props {
   sessionTitle: string;
+  plannedSession?: import("@/lib/periodization").SessionDef;
+  ftp?: number;
   onScore?: (score: WorkoutScore) => void;
 }
 
-export function WorkoutCompletion({ sessionTitle, onScore }: Props) {
+export function WorkoutCompletion({ sessionTitle, plannedSession, ftp: propFtp, onScore }: Props) {
   const [open, setOpen] = useState(false);
   const [completed, setCompleted] = useState(true);
   const [avgPower, setAvgPower] = useState<number | undefined>();
@@ -25,18 +27,20 @@ export function WorkoutCompletion({ sessionTitle, onScore }: Props) {
     try {
       // Score locally
       const { scoreWorkout } = await import("@/lib/adaptation");
+      const fallbackSession = {
+        dayOfWeek: "MON" as const,
+        sessionType: "INDOOR" as const,
+        duration: 60,
+        title: sessionTitle,
+        description: "",
+        intervals: [
+          { name: "Session", durationSecs: 3600, powerLow: 70, powerHigh: 90, zone: "Z3", purpose: "", coachNote: "" },
+        ],
+      };
+
       const result = scoreWorkout({
         sessionId: "manual",
-        plannedSession: {
-          dayOfWeek: "MON",
-          sessionType: "INDOOR",
-          duration: 60,
-          title: sessionTitle,
-          description: "",
-          intervals: [
-            { name: "Session", durationSecs: 3600, powerLow: 70, powerHigh: 90, zone: "Z3", purpose: "", coachNote: "" },
-          ],
-        },
+        plannedSession: plannedSession || fallbackSession,
         actualData: {
           avgPower,
           normalizedPower: np,
@@ -47,7 +51,7 @@ export function WorkoutCompletion({ sessionTitle, onScore }: Props) {
           completed,
           notes: notes || undefined,
         },
-        ftp: 190,
+        ftp: propFtp || 190,
         date: new Date().toISOString().split("T")[0],
       });
 

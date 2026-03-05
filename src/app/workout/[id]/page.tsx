@@ -171,7 +171,7 @@ export default function WorkoutPage() {
       />
 
       {/* Log Completion */}
-      <WorkoutCompletion sessionTitle={session.title} />
+      <WorkoutCompletion sessionTitle={session.title} plannedSession={session} ftp={ftp} />
 
       {/* Back */}
       <Link
