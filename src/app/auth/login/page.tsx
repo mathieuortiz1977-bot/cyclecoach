@@ -29,12 +29,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--background)] px-4">
-      <div className="w-full max-w-md space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--background)] px-4 py-8">
+      <div className="w-full max-w-md space-y-6 md:space-y-8">
         {/* Logo */}
         <div className="text-center">
-          <span className="text-5xl">🚴</span>
-          <h1 className="text-3xl font-bold text-[var(--accent)] mt-3">CycleCoach</h1>
+          <span className="text-4xl md:text-5xl">🚴</span>
+          <h1 className="text-2xl md:text-3xl font-bold text-[var(--accent)] mt-2">CycleCoach</h1>
           <p className="text-[var(--muted)] mt-1">Train with personality</p>
         </div>
 

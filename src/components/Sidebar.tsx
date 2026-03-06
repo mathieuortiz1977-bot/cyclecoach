@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserMenu } from "./UserMenu";
+import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { href: "/dashboard", label: "Dashboard", icon: "📊" },
@@ -39,7 +40,8 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="mt-auto space-y-3">
+      <div className="mt-auto space-y-2">
+        <ThemeToggle />
         <UserMenu />
         <div className="px-2 py-2 text-xs text-[var(--muted)]">
           <p>Powered by suffering</p>

@@ -44,9 +44,9 @@ export default function Dashboard() {
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold mb-1">Dashboard</h1>
-        <p className="text-[var(--muted)]">
-          {stats.blocks} blocks · {stats.sessions} sessions · {stats.intervals} intervals · All with coach commentary
+        <h1 className="text-2xl md:text-3xl font-bold mb-1">Dashboard</h1>
+        <p className="text-sm md:text-base text-[var(--muted)]">
+          {stats.blocks} blocks · {stats.sessions} sessions · {stats.intervals} intervals
         </p>
       </div>
 
@@ -86,21 +86,22 @@ export default function Dashboard() {
       {/* Block Selector */}
       <div>
         <h2 className="text-lg font-semibold mb-3">Training Blocks</h2>
-        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-none">
           {plan.blocks.map((b, i) => {
             const bt = blockTypeLabels[b.type];
             return (
               <button
                 key={i}
                 onClick={() => { setActiveBlock(i); setActiveWeek(0); }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-colors border ${
+                className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm whitespace-nowrap transition-colors border shrink-0 ${
                   activeBlock === i
-                    ? "border-[var(--accent)] bg-[var(--accent)]/10 text-white"
+                    ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--foreground)]"
                     : "border-[var(--card-border)] text-[var(--muted)] hover:border-[var(--muted)]"
                 }`}
               >
                 <span>{bt.emoji}</span>
-                <span>Block {b.blockNumber}: {bt.label}</span>
+                <span className="hidden sm:inline">Block {b.blockNumber}: </span>
+                <span>{bt.label}</span>
               </button>
             );
           })}
@@ -109,19 +110,19 @@ export default function Dashboard() {
 
       {/* Week Selector */}
       <div>
-        <div className="flex items-center gap-4 mb-4">
-          <h2 className="text-lg font-semibold">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+          <h2 className="text-base md:text-lg font-semibold">
             <span style={{ color: bt.color }}>{bt.emoji} {bt.label}</span> — Week {week.weekNumber}
           </h2>
-          <div className="flex gap-1">
+          <div className="flex gap-1 overflow-x-auto scrollbar-none">
             {block.weeks.map((w, i) => (
               <button
                 key={i}
                 onClick={() => setActiveWeek(i)}
-                className={`px-3 py-1 rounded text-xs transition-colors ${
+                className={`px-3 py-1.5 rounded text-xs whitespace-nowrap transition-colors shrink-0 ${
                   activeWeek === i
                     ? "bg-[var(--accent)] text-white"
-                    : "bg-[var(--card-border)] text-[var(--muted)] hover:text-white"
+                    : "bg-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)]"
                 }`}
               >
                 W{w.weekNumber}: {weekTypeLabels[w.weekType]}
@@ -132,7 +133,7 @@ export default function Dashboard() {
       </div>
 
       {/* Sessions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {week.sessions.map((session, i) => (
           <SessionCard
             key={i}

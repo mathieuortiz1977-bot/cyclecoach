@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ─── Dark Mode (default) ─────────────────────────────────────────── */
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -11,15 +12,66 @@
   --success: #22c55e;
   --warning: #eab308;
   --danger: #ef4444;
+  --sidebar-bg: #111111;
+  --input-bg: #0a0a0a;
+  color-scheme: dark;
+}
+
+/* ─── Light Mode ──────────────────────────────────────────────────── */
+.light {
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --accent: #ea580c;
+  --accent-hover: #c2410c;
+  --muted: #64748b;
+  --success: #16a34a;
+  --warning: #ca8a04;
+  --danger: #dc2626;
+  --sidebar-bg: #ffffff;
+  --input-bg: #f1f5f9;
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar styling */
+/* ─── iPhone Safe Areas ───────────────────────────────────────────── */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+
+/* ─── Mobile Typography ───────────────────────────────────────────── */
+@media (max-width: 430px) {
+  html { font-size: 15px; }
+}
+
+/* ─── Hide scrollbar for horizontal scroll containers ─────────────── */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── Touch targets (44px minimum for iOS) ────────────────────────── */
+@media (pointer: coarse) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+  input[type="range"] {
+    min-height: 32px;
+  }
+}

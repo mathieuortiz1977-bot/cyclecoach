@@ -33,12 +33,25 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   themeColor: "#0a0a0a",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body className="flex min-h-screen">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {/* Inline script to apply saved theme before paint (prevents flash) */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          try {
+            const t = localStorage.getItem('cyclecoach-theme');
+            if (t === 'light') {
+              document.documentElement.classList.replace('dark', 'light');
+              document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f8f9fa');
+            }
+          } catch {}
+        `}} />
+      </head>
+      <body className="flex min-h-screen pt-safe">
         <SessionProvider>
           <LayoutShell>{children}</LayoutShell>
           <PWAInstall />

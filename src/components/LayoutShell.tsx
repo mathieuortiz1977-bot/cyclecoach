@@ -8,8 +8,7 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
   const isAuthPage = pathname?.startsWith("/auth");
 
   if (isAuthPage) {
-    // Auth pages: no sidebar, no mobile nav, full-screen
-    return <main className="min-h-screen">{children}</main>;
+    return <main className="min-h-screen w-full">{children}</main>;
   }
 
   return (
@@ -17,7 +16,8 @@ export function LayoutShell({ children }: { children: React.ReactNode }) {
       <div className="hidden md:block">
         <Sidebar />
       </div>
-      <main className="flex-1 md:ml-64 p-4 md:p-8 pb-20 md:pb-8">
+      {/* pb-24 on mobile for bottom nav + safe area; pb-8 on desktop */}
+      <main className="flex-1 md:ml-64 p-4 md:p-8 pb-24 md:pb-8 max-w-full overflow-x-hidden">
         {children}
       </main>
       <MobileNav />

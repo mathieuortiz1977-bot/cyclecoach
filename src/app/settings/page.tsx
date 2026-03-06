@@ -3,6 +3,7 @@ import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function SettingsPageWrapper() {
   return (
@@ -318,6 +319,12 @@ TP_CLIENT_SECRET=your_client_secret
 # App
 NEXT_PUBLIC_BASE_URL=http://localhost:3000`}
         </pre>
+      </div>
+
+      {/* Appearance */}
+      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+        <h2 className="text-lg font-semibold">Appearance</h2>
+        <ThemeToggle />
       </div>
     </div>
   );
