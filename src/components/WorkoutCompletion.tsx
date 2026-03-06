@@ -240,7 +240,7 @@ export function WorkoutCompletion({ session, ftp, onComplete, onDismiss }: Props
               </div>
 
               <p className="text-xs text-[var(--muted)] italic">
-                💡 If Strava/TrainingPeaks is connected, power and duration will be auto-filled from your ride data.
+                💡 If Strava is connected, power and duration will be auto-filled from your ride data.
               </p>
 
               <div className="flex gap-3">

@@ -76,7 +76,7 @@ model Rider {
   plans      Plan[]
   stravaConnection       StravaConnection?
   stravaActivities       StravaActivity[]
-  trainingPeaksConnection TrainingPeaksConnection?
+  // trainingPeaksConnection removed — using Zwift via .zwo files instead
   fitnessMetrics         FitnessMetric[]
   heartRateProfile       HeartRateProfile?
   completedWorkouts      CompletedWorkout[]
@@ -200,19 +200,7 @@ model StravaActivity {
   createdAt       DateTime @default(now())
 }
 
-// ─── TrainingPeaks Integration ───────────────────────────────────────
-
-model TrainingPeaksConnection {
-  id            String   @id @default(cuid())
-  riderId       String   @unique
-  rider         Rider    @relation(fields: [riderId], references: [id])
-  accessToken   String
-  refreshToken  String
-  expiresAt     Int
-  athleteId     Int?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-}
+// ─── TrainingPeaks removed — Zwift integration via .zwo files ────────
 
 model FitnessMetric {
   id        String   @id @default(cuid())

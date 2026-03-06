@@ -1,4 +1,4 @@
-// Auto-complete engine — matches Strava/TrainingPeaks activities to planned sessions
+// Auto-complete engine — matches Strava activities to planned sessions
 import type { SessionDef, DayOfWeek } from "./periodization";
 import { getPlannedAvgPowerPct, DAY_ORDER } from "./constants";
 
@@ -18,7 +18,7 @@ export interface ExternalActivity {
   maxHr?: number;
   avgCadence?: number;
   elevationGain?: number;
-  tss?: number; // from TrainingPeaks or calculated
+  tss?: number; // calculated from power data
   type: string; // "Ride", "VirtualRide", etc.
 }
 

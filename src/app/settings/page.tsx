@@ -19,7 +19,7 @@ export default function SettingsPageWrapper() {
 function SettingsPage() {
   const searchParams = useSearchParams();
   const stravaStatus = searchParams?.get("strava");
-  const tpStatus = searchParams?.get("tp");
+  // TrainingPeaks removed — using Zwift via .zwo files
 
   const [ftp, setFtp] = useState(190);
   const [weight, setWeight] = useState(75);
@@ -117,11 +117,7 @@ function SettingsPage() {
           ❌ Strava connection failed. Check your API credentials.
         </div>
       )}
-      {tpStatus === "connected" && (
-        <div className="bg-green-900/20 border border-green-800 rounded-lg p-3 text-sm text-green-400">
-          ✅ TrainingPeaks connected! FTP and LTHR updated from your profile.
-        </div>
-      )}
+
 
       {/* Rider Profile */}
       <div className="glass p-6 space-y-4">
@@ -363,25 +359,23 @@ function SettingsPage() {
             </p>
           </div>
 
-          {/* TrainingPeaks */}
+          {/* Zwift */}
           <div className="border border-[var(--card-border)] rounded-lg p-4 space-y-3">
             <div className="flex items-center gap-3">
-              <span className="text-2xl">📈</span>
+              <span className="text-2xl">🏠</span>
               <div>
-                <p className="font-semibold text-sm">TrainingPeaks</p>
-                <p className="text-xs text-[var(--muted)]">
-                  {tpStatus === "connected" ? "✅ Connected" : "Sync CTL/ATL/TSB metrics"}
-                </p>
+                <p className="font-semibold text-sm">Zwift</p>
+                <p className="text-xs text-[var(--muted)]">Download workouts as .zwo files for Zwift</p>
               </div>
             </div>
             <a
-              href="/api/trainingpeaks/auth"
-              className="block text-center px-3 py-2 rounded-lg text-sm bg-[var(--card-border)] text-white hover:bg-[var(--muted)] transition-colors"
+              href="/zwift"
+              className="block text-center px-3 py-2 rounded-lg text-sm bg-[var(--accent)] text-white hover:opacity-90 transition-colors"
             >
-              {tpStatus === "connected" ? "Reconnect" : "Connect TrainingPeaks"}
+              📥 Zwift Workout Sync
             </a>
             <p className="text-[10px] text-[var(--muted)]">
-              Requires TP_CLIENT_ID and TP_CLIENT_SECRET in .env
+              Export your weekly workouts to Zwift&apos;s custom workout folder
             </p>
           </div>
         </div>
@@ -397,9 +391,8 @@ STRAVA_CLIENT_ID=your_client_id
 STRAVA_CLIENT_SECRET=your_client_secret
 STRAVA_WEBHOOK_VERIFY_TOKEN=cyclecoach_verify
 
-# TrainingPeaks API — https://developers.trainingpeaks.com/
-TP_CLIENT_ID=your_client_id
-TP_CLIENT_SECRET=your_client_secret
+# AI Coach — https://console.anthropic.com/
+ANTHROPIC_API_KEY=your_api_key
 
 # App
 NEXT_PUBLIC_BASE_URL=http://localhost:3000`}

@@ -46,7 +46,7 @@ export function FitnessChart() {
           <p className="text-xs text-[var(--muted)]">
             {source === "sample" ? "📊 Sample data — connect Strava for real metrics" :
              source === "strava" ? "🟠 Calculated from Strava activities" :
-             source === "real" ? "📈 From TrainingPeaks" : "Loading..."}
+             source === "real" ? "📈 From Strava" : "Loading..."}
           </p>
         </div>
         {latest && (

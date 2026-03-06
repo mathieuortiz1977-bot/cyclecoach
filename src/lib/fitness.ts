@@ -1,5 +1,5 @@
 // Fitness Metrics Calculator — CTL/ATL/TSB (Performance Management Chart)
-// Based on the Banister Impulse-Response model used by TrainingPeaks
+// Based on the Banister Impulse-Response model (PMC)
 
 export interface DailyMetric {
   date: string; // YYYY-MM-DD
