@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
-import { FitnessChart } from "@/components/FitnessChart";
-import { AdaptationPanel } from "@/components/AdaptationPanel";
 import { TodayHero } from "@/components/TodayHero";
-import { FTPProgress } from "@/components/FTPProgress";
-import { StreakCalendar } from "@/components/StreakCalendar";
-import { WeeklyDigest } from "@/components/WeeklyDigest";
-import { WorkoutCompletion, type CompletionData } from "@/components/WorkoutCompletion";
+import {
+  LazyFitnessChart as FitnessChart,
+  LazyAdaptationPanel as AdaptationPanel,
+  LazyFTPProgress as FTPProgress,
+  LazyStreakCalendar as StreakCalendar,
+  LazyWeeklyDigest as WeeklyDigest,
+  LazyWorkoutCompletion as WorkoutCompletion,
+} from "@/components/LazyComponents";
+import type { CompletionData } from "@/components/WorkoutCompletion";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ProgressRing } from "@/components/ProgressRing";
 import { DashboardSkeleton } from "@/components/Skeleton";

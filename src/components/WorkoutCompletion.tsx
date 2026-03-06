@@ -2,7 +2,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { SessionDef } from "@/lib/periodization";
-import confetti from "canvas-confetti";
+// Lazy-load confetti (only needed on good sessions)
+const fireConfetti = () => import("canvas-confetti").then((m) => {
+  m.default({
+    particleCount: 80,
+    spread: 60,
+    origin: { y: 0.7 },
+    colors: ["#f97316", "#eab308", "#22c55e"],
+  });
+});
 
 const rpeDescriptions: Record<number, { label: string; emoji: string; color: string }> = {
   1: { label: "Very Easy", emoji: "😴", color: "#22c55e" },
@@ -74,12 +82,7 @@ export function WorkoutCompletion({ session, ftp, onComplete, onDismiss }: Props
 
     // Confetti for good sessions
     if (rpe <= 7 && completed) {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.7 },
-        colors: ["#f97316", "#eab308", "#22c55e"],
-      });
+      fireConfetti();
     }
   };
 

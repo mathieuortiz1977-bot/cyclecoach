@@ -6,6 +6,7 @@ import { HRZoneTable } from "@/components/HRZoneTable";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TrainingDayPicker } from "@/components/TrainingDayPicker";
 import { NotificationSetup } from "@/components/NotificationSetup";
+import { FitImport } from "@/components/FitImport";
 
 export default function SettingsPageWrapper() {
   return (
@@ -410,6 +411,9 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000`}
         <h2 className="text-lg font-semibold">Appearance</h2>
         <ThemeToggle />
       </div>
+
+      {/* Import */}
+      <FitImport />
 
       {/* Notifications */}
       <NotificationSetup />
