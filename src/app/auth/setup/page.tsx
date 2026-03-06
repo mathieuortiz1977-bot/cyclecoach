@@ -2,6 +2,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ZoneTable } from "@/components/ZoneTable";
+import { TrainingDayPicker } from "@/components/TrainingDayPicker";
+
+const TOTAL_STEPS = 4;
 
 export default function SetupPage() {
   const router = useRouter();
@@ -10,34 +13,43 @@ export default function SetupPage() {
   const [weight, setWeight] = useState(75);
   const [experience, setExperience] = useState("INTERMEDIATE");
   const [tone, setTone] = useState("MIXED");
+  const [trainingDays, setTrainingDays] = useState(["MON", "TUE", "THU", "FRI", "SAT"]);
+  const [outdoorDay, setOutdoorDay] = useState("SAT");
+  const [startDate, setStartDate] = useState(() => {
+    // Default to next Monday
+    const now = new Date();
+    const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
+    const nextMonday = new Date(now);
+    nextMonday.setDate(now.getDate() + daysUntilMonday);
+    return nextMonday.toISOString().split("T")[0];
+  });
   const [saving, setSaving] = useState(false);
 
   const handleFinish = async () => {
     setSaving(true);
-    // In production, save to API
-    // For now, redirect to dashboard
+    // TODO: Save preferences to API/rider profile
     router.push("/dashboard");
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--background)] px-4">
-      <div className="w-full max-w-lg space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--background)] px-4 py-8">
+      <div className="w-full max-w-lg space-y-6">
         {/* Progress */}
         <div className="flex gap-2">
-          {[1, 2, 3].map((s) => (
+          {Array.from({ length: TOTAL_STEPS }, (_, i) => i + 1).map((s) => (
             <div
               key={s}
-              className={`flex-1 h-1 rounded-full ${s <= step ? "bg-[var(--accent)]" : "bg-[var(--card-border)]"}`}
+              className={`flex-1 h-1 rounded-full transition-colors ${s <= step ? "bg-[var(--accent)]" : "bg-[var(--card-border)]"}`}
             />
           ))}
         </div>
 
         {/* Step 1: FTP & Weight */}
         {step === 1 && (
-          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-8 space-y-6">
+          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-6 md:p-8 space-y-6">
             <div className="text-center">
               <span className="text-4xl">⚡</span>
-              <h2 className="text-2xl font-bold mt-2">Your Numbers</h2>
+              <h2 className="text-xl md:text-2xl font-bold mt-2">Your Numbers</h2>
               <p className="text-[var(--muted)] text-sm">These drive your entire training plan</p>
             </div>
 
@@ -48,7 +60,7 @@ export default function SetupPage() {
                   type="number"
                   value={ftp}
                   onChange={(e) => setFtp(Math.max(50, parseInt(e.target.value) || 50))}
-                  className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-2xl font-bold text-[var(--accent)] text-center focus:outline-none focus:border-[var(--accent)]"
+                  className="w-full bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-2xl font-bold text-[var(--accent)] text-center focus:outline-none focus:border-[var(--accent)]"
                 />
                 <p className="text-xs text-[var(--muted)] mt-1 text-center">Don&apos;t know? Start with 200W and adjust after your first week.</p>
               </div>
@@ -58,7 +70,7 @@ export default function SetupPage() {
                   type="number"
                   value={weight}
                   onChange={(e) => setWeight(parseFloat(e.target.value) || 50)}
-                  className="w-full bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-center focus:outline-none focus:border-[var(--accent)]"
+                  className="w-full bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-center focus:outline-none focus:border-[var(--accent)]"
                 />
               </div>
               <div className="text-center">
@@ -78,12 +90,63 @@ export default function SetupPage() {
           </div>
         )}
 
-        {/* Step 2: Experience */}
+        {/* Step 2: Training Schedule */}
         {step === 2 && (
-          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-8 space-y-6">
+          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-6 md:p-8 space-y-6">
+            <div className="text-center">
+              <span className="text-4xl">📅</span>
+              <h2 className="text-xl md:text-2xl font-bold mt-2">Your Schedule</h2>
+              <p className="text-[var(--muted)] text-sm">Pick which days you want to train</p>
+            </div>
+
+            <TrainingDayPicker
+              selectedDays={trainingDays}
+              onChange={setTrainingDays}
+              outdoorDay={outdoorDay}
+              onOutdoorDayChange={setOutdoorDay}
+            />
+
+            {/* Start Date */}
+            <div>
+              <label className="block text-sm text-[var(--muted)] mb-2">When do you want to start? 🚀</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
+                className="w-full bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-center focus:outline-none focus:border-[var(--accent)] text-[var(--foreground)]"
+              />
+              <p className="text-xs text-[var(--muted)] mt-1 text-center">
+                {startDate && (() => {
+                  const d = new Date(startDate + "T12:00:00");
+                  const today = new Date();
+                  today.setHours(0,0,0,0);
+                  const diff = Math.round((d.getTime() - today.getTime()) / 86400000);
+                  if (diff === 0) return "Starting today — let's go! 🔥";
+                  if (diff === 1) return "Starting tomorrow — get some sleep.";
+                  if (diff <= 7) return `Starting in ${diff} days. Use this time to prep.`;
+                  return `Starting in ${diff} days. That's ${Math.round(diff/7)} weeks to get ready.`;
+                })()}
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <button onClick={() => setStep(1)} className="flex-1 py-3 rounded-lg border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
+                ← Back
+              </button>
+              <button onClick={() => setStep(3)} className="flex-1 py-3 rounded-lg bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors">
+                Next →
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Step 3: Experience */}
+        {step === 3 && (
+          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-6 md:p-8 space-y-6">
             <div className="text-center">
               <span className="text-4xl">🚴</span>
-              <h2 className="text-2xl font-bold mt-2">Your Experience</h2>
+              <h2 className="text-xl md:text-2xl font-bold mt-2">Your Experience</h2>
               <p className="text-[var(--muted)] text-sm">This adjusts workout complexity and progression</p>
             </div>
 
@@ -114,22 +177,22 @@ export default function SetupPage() {
             </div>
 
             <div className="flex gap-3">
-              <button onClick={() => setStep(1)} className="flex-1 py-3 rounded-lg border border-[var(--card-border)] text-[var(--muted)] hover:text-white transition-colors">
+              <button onClick={() => setStep(2)} className="flex-1 py-3 rounded-lg border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                 ← Back
               </button>
-              <button onClick={() => setStep(3)} className="flex-1 py-3 rounded-lg bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors">
+              <button onClick={() => setStep(4)} className="flex-1 py-3 rounded-lg bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors">
                 Next →
               </button>
             </div>
           </div>
         )}
 
-        {/* Step 3: Coach Personality */}
-        {step === 3 && (
-          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-8 space-y-6">
+        {/* Step 4: Coach Personality */}
+        {step === 4 && (
+          <div className="bg-[var(--card)] rounded-xl border border-[var(--card-border)] p-6 md:p-8 space-y-6">
             <div className="text-center">
               <span className="text-4xl">🎭</span>
-              <h2 className="text-2xl font-bold mt-2">Your Coach</h2>
+              <h2 className="text-xl md:text-2xl font-bold mt-2">Your Coach</h2>
               <p className="text-[var(--muted)] text-sm">Pick the voice that keeps you going</p>
             </div>
 
@@ -143,7 +206,7 @@ export default function SetupPage() {
                 <button
                   key={t.value}
                   onClick={() => setTone(t.value)}
-                  className={`p-4 rounded-lg text-left transition-colors border ${
+                  className={`p-3 md:p-4 rounded-lg text-left transition-colors border ${
                     tone === t.value
                       ? "border-[var(--accent)] bg-[var(--accent)]/10"
                       : "border-[var(--card-border)] hover:border-[var(--muted)]"
@@ -152,13 +215,22 @@ export default function SetupPage() {
                   <span className="text-2xl">{t.emoji}</span>
                   <p className="font-semibold text-sm mt-2">{t.title}</p>
                   <p className="text-xs text-[var(--muted)]">{t.desc}</p>
-                  <p className="text-xs italic text-[var(--accent)] mt-2">{t.sample}</p>
+                  <p className="text-[10px] md:text-xs italic text-[var(--accent)] mt-2">{t.sample}</p>
                 </button>
               ))}
             </div>
 
+            {/* Summary */}
+            <div className="bg-[var(--background)] rounded-lg p-4 space-y-1 text-sm">
+              <p className="font-semibold text-[var(--accent)]">Your Plan Summary</p>
+              <p className="text-[var(--muted)]">⚡ FTP: <span className="text-[var(--foreground)]">{ftp}W</span> ({(ftp/weight).toFixed(1)} W/kg)</p>
+              <p className="text-[var(--muted)]">📅 Training: <span className="text-[var(--foreground)]">{trainingDays.length} days/week</span> ({trainingDays.filter(d => d !== outdoorDay).length} indoor + 1 outdoor)</p>
+              <p className="text-[var(--muted)]">🚀 Start: <span className="text-[var(--foreground)]">{new Date(startDate + "T12:00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</span></p>
+              <p className="text-[var(--muted)]">🎯 Level: <span className="text-[var(--foreground)]">{experience.charAt(0) + experience.slice(1).toLowerCase()}</span></p>
+            </div>
+
             <div className="flex gap-3">
-              <button onClick={() => setStep(2)} className="flex-1 py-3 rounded-lg border border-[var(--card-border)] text-[var(--muted)] hover:text-white transition-colors">
+              <button onClick={() => setStep(3)} className="flex-1 py-3 rounded-lg border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors">
                 ← Back
               </button>
               <button

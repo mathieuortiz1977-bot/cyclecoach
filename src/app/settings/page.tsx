@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { TrainingDayPicker } from "@/components/TrainingDayPicker";
 
 export default function SettingsPageWrapper() {
   return (
@@ -23,6 +24,17 @@ function SettingsPage() {
   const [experience, setExperience] = useState("INTERMEDIATE");
   const [tone, setTone] = useState("MIXED");
   const [duration, setDuration] = useState(60);
+
+  // Training schedule
+  const [trainingDays, setTrainingDays] = useState(["MON", "TUE", "THU", "FRI", "SAT"]);
+  const [outdoorDay, setOutdoorDay] = useState("SAT");
+  const [startDate, setStartDate] = useState(() => {
+    const now = new Date();
+    const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
+    const nextMonday = new Date(now);
+    nextMonday.setDate(now.getDate() + daysUntilMonday);
+    return nextMonday.toISOString().split("T")[0];
+  });
 
   // HR settings
   const [maxHr, setMaxHr] = useState(185);
@@ -129,6 +141,34 @@ function SettingsPage() {
       <div className="space-y-3">
         <h2 className="text-lg font-semibold">⚡ Power Zones</h2>
         <ZoneTable ftp={ftp} />
+      </div>
+
+      {/* Training Schedule */}
+      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+        <h2 className="text-lg font-semibold">📅 Training Schedule</h2>
+        <p className="text-sm text-[var(--muted)]">
+          Choose which days you train and when your program starts. Changes here will regenerate your plan.
+        </p>
+
+        <TrainingDayPicker
+          selectedDays={trainingDays}
+          onChange={setTrainingDays}
+          outdoorDay={outdoorDay}
+          onOutdoorDayChange={setOutdoorDay}
+        />
+
+        <div>
+          <label className="block text-sm text-[var(--muted)] mb-2">Program Start Date</label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="w-full sm:w-64 bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-2.5 focus:outline-none focus:border-[var(--accent)] text-[var(--foreground)]"
+          />
+          <p className="text-xs text-[var(--muted)] mt-1">
+            Your 16-week plan will start from this date.
+          </p>
+        </div>
       </div>
 
       {/* Heart Rate Configuration */}
