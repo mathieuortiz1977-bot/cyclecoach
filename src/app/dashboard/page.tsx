@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo, Suspense } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
@@ -14,17 +14,7 @@ import { WorkoutCompletion, type CompletionData } from "@/components/WorkoutComp
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { ProgressRing } from "@/components/ProgressRing";
 import { DashboardSkeleton } from "@/components/Skeleton";
-
-const blockTypeLabels: Record<string, { label: string; emoji: string; color: string; gradient: string }> = {
-  BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6", gradient: "var(--gradient-base)" },
-  THRESHOLD: { label: "Threshold / FTP", emoji: "⚡", color: "#eab308", gradient: "var(--gradient-threshold)" },
-  VO2MAX: { label: "VO2max / Punch", emoji: "🔥", color: "#f97316", gradient: "var(--gradient-vo2max)" },
-  RACE_SIM: { label: "Race Simulation", emoji: "🏁", color: "#ef4444", gradient: "var(--gradient-racesim)" },
-};
-
-const weekTypeLabels: Record<string, string> = {
-  BUILD: "Build", BUILD_PLUS: "Build+", OVERREACH: "Overreach", RECOVERY: "Recovery 🧘",
-};
+import { BLOCK_META, WEEK_LABELS } from "@/lib/constants";
 
 const stagger = {
   container: { transition: { staggerChildren: 0.06 } },
@@ -43,7 +33,7 @@ export default function Dashboard() {
 
   const block = plan.blocks[activeBlock];
   const week = block.weeks[activeWeek];
-  const bt = blockTypeLabels[block.type];
+  const bt = BLOCK_META[block.type];
 
   // Sample completion for demo
   const weekCompletionPct = 60; // 3/5 sessions done
@@ -76,7 +66,7 @@ export default function Dashboard() {
           </ProgressRing>
           <div className="text-right">
             <p className="text-sm font-semibold">Week {week.weekNumber}</p>
-            <p className="text-xs text-[var(--muted)]">{weekTypeLabels[week.weekType]}</p>
+            <p className="text-xs text-[var(--muted)]">{WEEK_LABELS[week.weekType]}</p>
           </div>
         </div>
       </motion.div>
@@ -155,7 +145,7 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold mb-3">Training Blocks</h2>
         <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-none">
           {plan.blocks.map((b, i) => {
-            const bti = blockTypeLabels[b.type];
+            const bti = BLOCK_META[b.type];
             const isActive = activeBlock === i;
             return (
               <button
@@ -198,7 +188,7 @@ export default function Dashboard() {
                 }`}
                 style={activeWeek === i ? { background: bt.gradient } : {}}
               >
-                W{w.weekNumber}: {weekTypeLabels[w.weekType]}
+                W{w.weekNumber}: {WEEK_LABELS[w.weekType]}
               </button>
             ))}
           </div>

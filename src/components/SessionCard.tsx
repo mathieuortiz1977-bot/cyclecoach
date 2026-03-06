@@ -3,10 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { SessionDef } from "@/lib/periodization";
 import { getZoneColor } from "@/lib/zones";
-
-const dayLabels: Record<string, string> = {
-  MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
-};
+import { DAY_LABELS, DAY_ORDER, getTodayKey } from "@/lib/constants";
 
 type SessionStatus = "completed" | "today" | "upcoming";
 
@@ -17,11 +14,9 @@ const statusConfig: Record<SessionStatus, { badge: string; label: string; glow: 
 };
 
 function getSessionStatus(dayOfWeek: string): SessionStatus {
-  const dayMap: Record<number, string> = { 0: "SUN", 1: "MON", 2: "TUE", 3: "WED", 4: "THU", 5: "FRI", 6: "SAT" };
-  const today = dayMap[new Date().getDay()];
-  const order = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-  const todayIdx = order.indexOf(today);
-  const sessionIdx = order.indexOf(dayOfWeek);
+  const today = getTodayKey();
+  const todayIdx = DAY_ORDER.indexOf(today);
+  const sessionIdx = DAY_ORDER.indexOf(dayOfWeek);
 
   if (sessionIdx < todayIdx) return "completed"; // sample
   if (sessionIdx === todayIdx) return "today";
@@ -54,7 +49,7 @@ export function SessionCard({ session, blockIdx, weekIdx, sessionIdx }: {
           </div>
 
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs text-[var(--muted)]">{dayLabels[session.dayOfWeek]}</span>
+            <span className="text-xs text-[var(--muted)]">{DAY_LABELS[session.dayOfWeek]}</span>
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-[var(--card-border)]">
               {session.sessionType === "OUTDOOR" ? "🌄 Outdoor" : "🏠 Indoor"}
             </span>

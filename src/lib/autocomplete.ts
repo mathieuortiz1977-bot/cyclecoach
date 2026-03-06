@@ -1,5 +1,6 @@
 // Auto-complete engine — matches Strava/TrainingPeaks activities to planned sessions
 import type { SessionDef, DayOfWeek } from "./periodization";
+import { getPlannedAvgPowerPct, DAY_ORDER } from "./constants";
 
 export interface ExternalActivity {
   source: "strava" | "trainingpeaks";
@@ -72,9 +73,8 @@ export function matchActivitiesToSessions(
         reasons.push("same day");
       } else {
         // Adjacent day (±1) gets partial credit
-        const dayOrder = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-        const planned = dayOrder.indexOf(session.dayOfWeek);
-        const actual = dayOrder.indexOf(activity.dayOfWeek);
+        const planned = DAY_ORDER.indexOf(session.dayOfWeek);
+        const actual = DAY_ORDER.indexOf(activity.dayOfWeek);
         if (Math.abs(planned - actual) === 1) {
           score += 15;
           reasons.push("adjacent day");
@@ -106,7 +106,7 @@ export function matchActivitiesToSessions(
 
       // Power zone alignment
       if (activity.avgPower && ftp > 0) {
-        const plannedAvgPct = getPlannedAvgPowerPct(session);
+        const plannedAvgPct = getPlannedAvgPowerPct(session.intervals);
         const actualPct = (activity.avgPower / ftp) * 100;
         const powerDiff = Math.abs(actualPct - plannedAvgPct);
         if (powerDiff < 10) {
@@ -155,17 +155,6 @@ export function matchActivitiesToSessions(
 
 function isCyclingActivity(type: string): boolean {
   return ["Ride", "VirtualRide", "EBikeRide"].includes(type);
-}
-
-function getPlannedAvgPowerPct(session: SessionDef): number {
-  let totalPower = 0;
-  let totalTime = 0;
-  for (const interval of session.intervals) {
-    const avg = (interval.powerLow + interval.powerHigh) / 2;
-    totalPower += avg * interval.durationSecs;
-    totalTime += interval.durationSecs;
-  }
-  return totalTime > 0 ? totalPower / totalTime : 60;
 }
 
 function calculateTSS(activity: ExternalActivity, ftp: number): number | undefined {

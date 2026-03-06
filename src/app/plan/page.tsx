@@ -3,23 +3,13 @@ import { useMemo } from "react";
 import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
 import { getZoneColor } from "@/lib/zones";
-
-const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
-  BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6" },
-  THRESHOLD: { label: "Threshold / FTP", emoji: "⚡", color: "#eab308" },
-  VO2MAX: { label: "VO2max / Punch", emoji: "🔥", color: "#f97316" },
-  RACE_SIM: { label: "Race Simulation", emoji: "🏁", color: "#ef4444" },
-};
+import { BLOCK_META, DAY_LABELS } from "@/lib/constants";
 
 const weekTypeLabels: Record<string, { label: string; color: string }> = {
   BUILD: { label: "Build", color: "#22c55e" },
   BUILD_PLUS: { label: "Build+", color: "#eab308" },
   OVERREACH: { label: "Overreach", color: "#f97316" },
   RECOVERY: { label: "Recovery", color: "#3b82f6" },
-};
-
-const dayLabels: Record<string, string> = {
-  MON: "Mon", TUE: "Tue", THU: "Thu", FRI: "Fri", SAT: "Sat",
 };
 
 export default function PlanPage() {
@@ -35,7 +25,7 @@ export default function PlanPage() {
       {/* Spiral visualization */}
       <div className="flex gap-2 mb-6">
         {plan.blocks.map((block, bi) => {
-          const bt = blockTypeLabels[block.type];
+          const bt = BLOCK_META[block.type];
           return (
             <div key={bi} className="flex-1">
               <div
@@ -53,7 +43,7 @@ export default function PlanPage() {
 
       {/* Block details */}
       {plan.blocks.map((block, bi) => {
-        const bt = blockTypeLabels[block.type];
+        const bt = BLOCK_META[block.type];
         return (
           <div key={bi} className="space-y-4">
             <h2 className="text-xl font-bold flex items-center gap-2" style={{ color: bt.color }}>
@@ -84,7 +74,7 @@ export default function PlanPage() {
                           className="bg-[var(--background)] rounded-md p-3 hover:ring-1 hover:ring-[var(--accent)] transition-all"
                         >
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-xs font-bold text-[var(--muted)]">{dayLabels[session.dayOfWeek]}</span>
+                            <span className="text-xs font-bold text-[var(--muted)]">{DAY_LABELS[session.dayOfWeek]}</span>
                             <span className="text-[10px]">{session.sessionType === "OUTDOOR" ? "🌄" : "🏠"}</span>
                           </div>
                           <p className="text-xs font-medium mb-2 line-clamp-1">{session.title}</p>

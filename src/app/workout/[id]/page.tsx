@@ -11,10 +11,7 @@ import { IntervalTimer } from "@/components/IntervalTimer";
 import { ExportButtons } from "@/components/ExportButtons";
 import { RouteMap } from "@/components/RouteMap";
 import { ShareCard } from "@/components/ShareCard";
-
-const dayLabels: Record<string, string> = {
-  MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
-};
+import { DAY_LABELS } from "@/lib/constants";
 
 export default function WorkoutPage() {
   const params = useParams();
@@ -48,7 +45,7 @@ export default function WorkoutPage() {
         <span>/</span>
         <span>Week {week.weekNumber}</span>
         <span>/</span>
-        <span className="text-white">{dayLabels[session.dayOfWeek]}</span>
+        <span className="text-white">{DAY_LABELS[session.dayOfWeek]}</span>
       </div>
 
       {/* Header */}

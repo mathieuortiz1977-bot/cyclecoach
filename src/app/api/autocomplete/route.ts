@@ -1,17 +1,7 @@
 import { NextResponse } from "next/server";
 import { matchActivitiesToSessions, type ExternalActivity } from "@/lib/autocomplete";
-import { generatePlan, type DayOfWeek } from "@/lib/periodization";
-// import { prisma } from "@/lib/db"; // uncomment when DB-backed sessions
-
-const dayMap: Record<number, DayOfWeek> = {
-  0: "SUN" as DayOfWeek,
-  1: "MON",
-  2: "TUE",
-  3: "WED" as DayOfWeek,
-  4: "THU",
-  5: "FRI",
-  6: "SAT",
-};
+import { generatePlan } from "@/lib/periodization";
+import { DAY_FROM_INDEX } from "@/lib/constants";
 
 export async function POST(req: Request) {
   try {
@@ -40,7 +30,7 @@ export async function POST(req: Request) {
     // Ensure dayOfWeek is set
     externalActivities = externalActivities.map((a) => ({
       ...a,
-      dayOfWeek: a.dayOfWeek || dayMap[new Date(a.date).getDay()],
+      dayOfWeek: a.dayOfWeek || DAY_FROM_INDEX[new Date(a.date).getDay()],
     }));
 
     // Get planned sessions for the week

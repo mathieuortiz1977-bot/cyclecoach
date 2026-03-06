@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useMemo } from "react";
+import { DAY_FROM_INDEX } from "@/lib/constants";
 
 type DayStatus = "completed" | "partial" | "missed" | "rest" | "future";
 
@@ -25,7 +26,7 @@ const statusLabels: Record<DayStatus, string> = {
 };
 
 function generateCalendarData(weeks: number, trainingDays: string[]): { date: Date; status: DayStatus }[][] {
-  const dayMap: Record<number, string> = { 0: "SUN", 1: "MON", 2: "TUE", 3: "WED", 4: "THU", 5: "FRI", 6: "SAT" };
+  
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const grid: { date: Date; status: DayStatus }[][] = [];
@@ -36,7 +37,7 @@ function generateCalendarData(weeks: number, trainingDays: string[]): { date: Da
       const date = new Date(today);
       date.setDate(today.getDate() - w * 7 - (6 - d));
 
-      const dayKey = dayMap[date.getDay()];
+      const dayKey = DAY_FROM_INDEX[date.getDay()];
       const isTrainingDay = trainingDays.includes(dayKey);
       const isFuture = date > today;
       const isToday = date.getTime() === today.getTime();

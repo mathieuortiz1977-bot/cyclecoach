@@ -3,8 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { SessionDef } from "@/lib/periodization";
 import { getZoneColor } from "@/lib/zones";
-
-const dayMap: Record<number, string> = { 1: "MON", 2: "TUE", 3: "WED", 4: "THU", 5: "FRI", 6: "SAT", 0: "SUN" };
+import { getTodayKey } from "@/lib/constants";
 
 interface Props {
   plan: { blocks: { weeks: { sessions: SessionDef[] }[] }[] };
@@ -21,7 +20,7 @@ const restDayQuips = [
 ];
 
 export function TodayHero({ plan, blockIdx, weekIdx }: Props) {
-  const today = dayMap[new Date().getDay()];
+  const today = getTodayKey();
   const week = plan.blocks[blockIdx].weeks[weekIdx];
   const sessionIdx = week.sessions.findIndex((s) => s.dayOfWeek === today);
   const session = sessionIdx >= 0 ? week.sessions[sessionIdx] : null;

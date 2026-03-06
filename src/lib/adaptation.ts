@@ -2,6 +2,7 @@
 // The brain of CycleCoach
 
 import type { SessionDef, IntervalDef } from "./periodization";
+import { getPlannedAvgPowerPct } from "./constants";
 
 // ─── Types ───────────────────────────────────────────────────────────
 
@@ -74,7 +75,7 @@ export function scoreWorkout(completed: CompletedWorkout): WorkoutScore {
   // Power accuracy (compare actual avg to planned weighted average)
   let powerAccuracy = 100;
   if (actualData.avgPower && ftp) {
-    const plannedAvgPct = getPlannedAvgPowerPct(plannedSession);
+    const plannedAvgPct = getPlannedAvgPowerPct(plannedSession.intervals);
     const actualPct = (actualData.avgPower / ftp) * 100;
     const diff = Math.abs(actualPct - plannedAvgPct);
     powerAccuracy = Math.max(0, 100 - diff * 3); // 3% penalty per % off target
@@ -112,17 +113,6 @@ export function scoreWorkout(completed: CompletedWorkout): WorkoutScore {
     fatigueSignal,
     coachFeedback,
   };
-}
-
-function getPlannedAvgPowerPct(session: SessionDef): number {
-  let totalPower = 0;
-  let totalTime = 0;
-  for (const interval of session.intervals) {
-    const avg = (interval.powerLow + interval.powerHigh) / 2;
-    totalPower += avg * interval.durationSecs;
-    totalTime += interval.durationSecs;
-  }
-  return totalTime > 0 ? totalPower / totalTime : 60;
 }
 
 function detectFatigue(
