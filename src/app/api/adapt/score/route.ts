@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { scoreWorkout, type CompletedWorkout } from "@/lib/adaptation";
+import { requireAuth } from "@/lib/api-auth";
 
-// POST: Score a completed workout against its plan
 export async function POST(request: NextRequest) {
+  const { error } = await requireAuth();
+  if (error) return error;
+
   try {
     const body: CompletedWorkout = await request.json();
     const score = scoreWorkout(body);

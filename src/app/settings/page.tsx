@@ -1,5 +1,5 @@
 "use client";
-import { useState, Suspense } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
@@ -42,6 +42,40 @@ function SettingsPage() {
   const [restingHr, setRestingHr] = useState(60);
   const [lthr, setLthr] = useState(165);
   const [hrMethod, setHrMethod] = useState<"PERCENTAGE" | "KARVONEN" | "LTHR">("PERCENTAGE");
+
+  const [loaded, setLoaded] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  // Load rider profile from DB
+  useEffect(() => {
+    fetch("/api/rider").then(r => r.json()).then(data => {
+      if (data.rider) {
+        setFtp(data.rider.ftp);
+        setWeight(data.rider.weight);
+        setExperience(data.rider.experience);
+        setTone(data.rider.coachTone);
+        if (data.rider.maxHr) setMaxHr(data.rider.maxHr);
+        if (data.rider.restingHr) setRestingHr(data.rider.restingHr);
+        if (data.rider.lthr) setLthr(data.rider.lthr);
+      }
+      setLoaded(true);
+    }).catch(() => setLoaded(true));
+  }, []);
+
+  // Save rider profile to DB (debounced)
+  const saveProfile = useCallback(async (updates: Record<string, unknown>) => {
+    setSaving(true);
+    try {
+      await fetch("/api/rider", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updates),
+      });
+    } catch (e) {
+      console.error("Save failed:", e);
+    }
+    setSaving(false);
+  }, []);
 
   // Strava sync
   const [syncing, setSyncing] = useState(false);
@@ -137,6 +171,15 @@ function SettingsPage() {
           </div>
         </div>
       </div>
+
+      {/* Save Button */}
+      <button
+        onClick={() => saveProfile({ ftp, weight, experience, coachTone: tone, maxHr, restingHr, lthr })}
+        disabled={saving}
+        className="w-full py-3 rounded-xl bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors disabled:opacity-50"
+      >
+        {saving ? "Saving..." : "💾 Save Profile"}
+      </button>
 
       {/* Power Zones */}
       <div className="space-y-3">

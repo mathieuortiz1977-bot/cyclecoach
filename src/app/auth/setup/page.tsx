@@ -27,7 +27,20 @@ export default function SetupPage() {
 
   const handleFinish = async () => {
     setSaving(true);
-    // TODO: Save preferences to API/rider profile
+    try {
+      await fetch("/api/rider", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ftp,
+          weight,
+          experience,
+          coachTone: tone,
+        }),
+      });
+    } catch (e) {
+      console.error("Failed to save rider profile:", e);
+    }
     router.push("/dashboard");
   };
 

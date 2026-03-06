@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { generateAdaptation, type WorkoutScore } from "@/lib/adaptation";
+import { requireAuth } from "@/lib/api-auth";
 
-// POST: Get adaptation decision based on recent workout scores
 export async function POST(request: NextRequest) {
+  const { error } = await requireAuth();
+  if (error) return error;
+
   try {
     const body = await request.json();
     const { scores, currentFtp, weekType } = body as {

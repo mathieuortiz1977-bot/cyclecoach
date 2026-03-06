@@ -1,3 +1,4 @@
+import { requireAuth } from "@/lib/api-auth";
 import { NextRequest, NextResponse } from "next/server";
 import { generateText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
@@ -6,6 +7,9 @@ import type { WorkoutScore, AdaptationDecision } from "@/lib/adaptation";
 import type { BlockType, WeekType } from "@/lib/periodization";
 
 export async function POST(request: NextRequest) {
+  const { error } = await requireAuth();
+  if (error) return error;
+
   try {
     const body = await request.json();
     const { scores, adaptation, blockType, weekType, ftp, personality, fitnessMetrics } = body as {

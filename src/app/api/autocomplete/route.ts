@@ -2,8 +2,12 @@ import { NextResponse } from "next/server";
 import { matchActivitiesToSessions, type ExternalActivity } from "@/lib/autocomplete";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
+import { requireAuth } from "@/lib/api-auth";
 
 export async function POST(req: Request) {
+  const { error } = await requireAuth();
+  if (error) return error;
+
   try {
     const { activities, blockIdx = 0, weekIdx = 0, ftp = 190 } = await req.json() as {
       activities?: ExternalActivity[];

@@ -38,8 +38,31 @@ export default function Dashboard() {
   // Sample completion for demo
   const weekCompletionPct = 60; // 3/5 sessions done
 
-  const handleCompleteWorkout = (data: CompletionData) => {
-    console.log("Workout logged:", data);
+  const handleCompleteWorkout = async (data: CompletionData) => {
+    const session = week.sessions[selectedSessionIdx];
+    try {
+      await fetch("/api/workouts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionTitle: session.title,
+          dayOfWeek: session.dayOfWeek,
+          sessionType: session.sessionType,
+          plannedDuration: session.duration,
+          actualDuration: data.actualDuration,
+          avgPower: data.actualPower,
+          rpe: data.rpe,
+          feelings: data.feelings,
+          notes: data.notes,
+          completed: data.completed,
+          blockIdx: activeBlock,
+          weekIdx: activeWeek,
+          sessionIdx: selectedSessionIdx,
+        }),
+      });
+    } catch (e) {
+      console.error("Failed to log workout:", e);
+    }
     setShowCompletion(false);
   };
 

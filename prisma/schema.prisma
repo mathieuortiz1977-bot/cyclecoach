@@ -79,6 +79,7 @@ model Rider {
   trainingPeaksConnection TrainingPeaksConnection?
   fitnessMetrics         FitnessMetric[]
   heartRateProfile       HeartRateProfile?
+  completedWorkouts      CompletedWorkout[]
 }
 
 model Plan {
@@ -226,6 +227,34 @@ model FitnessMetric {
   createdAt DateTime @default(now())
 
   @@unique([riderId, date])
+}
+
+// ─── Completed Workouts ──────────────────────────────────────────────
+
+model CompletedWorkout {
+  id              String   @id @default(cuid())
+  riderId         String
+  rider           Rider    @relation(fields: [riderId], references: [id])
+  sessionTitle    String
+  dayOfWeek       String
+  sessionType     String   // INDOOR, OUTDOOR
+  plannedDuration Int      // minutes
+  actualDuration  Int?     // minutes
+  avgPower        Int?
+  normalizedPower Int?
+  avgHr           Int?
+  maxHr           Int?
+  rpe             Int?     // 1-10
+  compliance      Int?     // 0-100
+  feelings        String[] // array of feeling tags
+  notes           String?
+  completed       Boolean  @default(true)
+  blockIdx        Int?
+  weekIdx         Int?
+  sessionIdx      Int?
+  stravaActivityId String? // link to StravaActivity if auto-matched
+  date            DateTime @default(now())
+  createdAt       DateTime @default(now())
 }
 
 // ─── HR Zones ────────────────────────────────────────────────────────

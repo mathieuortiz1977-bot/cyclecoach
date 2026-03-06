@@ -1,3 +1,4 @@
+import { requireAuth } from "@/lib/api-auth";
 import { NextRequest } from "next/server";
 import { streamText } from "ai";
 import { anthropic } from "@ai-sdk/anthropic";
@@ -5,6 +6,9 @@ import { anthropic } from "@ai-sdk/anthropic";
 const SYSTEM_PROMPT = `You are CycleCoach, an AI cycling training coach. Provide personalized coaching commentary. Be concise, specific, and match the requested personality tone. Never use generic motivational clichés.`;
 
 export async function POST(request: NextRequest) {
+  const { error } = await requireAuth();
+  if (error) return error;
+
   try {
     const { prompt, maxOutputTokens = 300 } = await request.json();
 
