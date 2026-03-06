@@ -381,23 +381,6 @@ function SettingsPage() {
         </div>
       </div>
 
-      {/* Environment Setup Guide */}
-      <div className="glass p-6 space-y-3">
-        <h2 className="text-lg font-semibold">🔑 API Setup Guide</h2>
-        <p className="text-sm text-[var(--muted)]">Add these to your <code className="text-[var(--accent)]">.env</code> file:</p>
-        <pre className="bg-[var(--background)] rounded-lg p-4 text-xs font-mono overflow-x-auto">
-{`# Strava API — https://www.strava.com/settings/api
-STRAVA_CLIENT_ID=your_client_id
-STRAVA_CLIENT_SECRET=your_client_secret
-STRAVA_WEBHOOK_VERIFY_TOKEN=cyclecoach_verify
-
-# AI Coach — https://console.anthropic.com/
-ANTHROPIC_API_KEY=your_api_key
-
-# App
-NEXT_PUBLIC_BASE_URL=http://localhost:3000`}
-        </pre>
-      </div>
 
       {/* Appearance */}
       <div className="glass p-6 space-y-4">
