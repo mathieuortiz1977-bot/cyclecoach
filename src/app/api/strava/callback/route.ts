@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { exchangeStravaCode } from "@/lib/strava";
 import { prisma } from "@/lib/db";
 import { auth } from "@/lib/auth";
+import { encrypt } from "@/lib/crypto";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
@@ -39,8 +40,8 @@ export async function GET(request: NextRequest) {
       where: { riderId: rider.id },
       update: {
         athleteId: tokens.athlete?.id || 0,
-        accessToken: tokens.access_token,
-        refreshToken: tokens.refresh_token,
+        accessToken: encrypt(tokens.access_token),
+        refreshToken: encrypt(tokens.refresh_token),
         expiresAt: tokens.expires_at,
         athleteName: tokens.athlete ? `${tokens.athlete.firstname} ${tokens.athlete.lastname}` : null,
         athletePhoto: tokens.athlete?.profile || null,
@@ -48,8 +49,8 @@ export async function GET(request: NextRequest) {
       create: {
         riderId: rider.id,
         athleteId: tokens.athlete?.id || 0,
-        accessToken: tokens.access_token,
-        refreshToken: tokens.refresh_token,
+        accessToken: encrypt(tokens.access_token),
+        refreshToken: encrypt(tokens.refresh_token),
         expiresAt: tokens.expires_at,
         athleteName: tokens.athlete ? `${tokens.athlete.firstname} ${tokens.athlete.lastname}` : null,
         athletePhoto: tokens.athlete?.profile || null,

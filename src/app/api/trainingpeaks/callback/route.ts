@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { exchangeTPCode, getTPAthlete } from "@/lib/trainingpeaks";
 import { prisma } from "@/lib/db";
 import { auth } from "@/lib/auth";
+import { encrypt } from "@/lib/crypto";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
@@ -60,15 +61,15 @@ export async function GET(request: NextRequest) {
     await prisma.trainingPeaksConnection.upsert({
       where: { riderId: rider.id },
       update: {
-        accessToken: tokens.access_token,
-        refreshToken: tokens.refresh_token,
+        accessToken: encrypt(tokens.access_token),
+        refreshToken: encrypt(tokens.refresh_token),
         expiresAt,
         athleteId,
       },
       create: {
         riderId: rider.id,
-        accessToken: tokens.access_token,
-        refreshToken: tokens.refresh_token,
+        accessToken: encrypt(tokens.access_token),
+        refreshToken: encrypt(tokens.refresh_token),
         expiresAt,
         athleteId,
       },

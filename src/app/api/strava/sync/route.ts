@@ -8,6 +8,7 @@ import {
   calculateIF,
 } from "@/lib/strava";
 import { getCurrentRiderWithStrava } from "@/lib/get-rider";
+import { encrypt, decrypt, isEncrypted } from "@/lib/crypto";
 
 export async function POST() {
   try {
@@ -17,27 +18,35 @@ export async function POST() {
       return NextResponse.json({ error: "No Strava connection found" }, { status: 400 });
     }
 
-    let { accessToken, refreshToken, expiresAt } = rider.stravaConnection;
+    const conn = rider.stravaConnection;
+    let plainAccess = isEncrypted(conn.accessToken) ? decrypt(conn.accessToken) : conn.accessToken;
+    let plainRefresh = isEncrypted(conn.refreshToken) ? decrypt(conn.refreshToken) : conn.refreshToken;
+    let { expiresAt } = conn;
 
     // Refresh token if expired
     if (isTokenExpired(expiresAt)) {
       const clientId = process.env.STRAVA_CLIENT_ID!;
       const clientSecret = process.env.STRAVA_CLIENT_SECRET!;
-      const tokens = await refreshStravaToken(clientId, clientSecret, refreshToken);
+      const tokens = await refreshStravaToken(clientId, clientSecret, plainRefresh);
 
-      accessToken = tokens.access_token;
-      refreshToken = tokens.refresh_token;
+      plainAccess = tokens.access_token;
+      plainRefresh = tokens.refresh_token;
       expiresAt = tokens.expires_at;
 
+      // Store encrypted
       await prisma.stravaConnection.update({
         where: { riderId: rider.id },
-        data: { accessToken, refreshToken, expiresAt },
+        data: {
+          accessToken: encrypt(plainAccess),
+          refreshToken: encrypt(plainRefresh),
+          expiresAt,
+        },
       });
     }
 
     // Fetch activities from last 30 days
     const thirtyDaysAgo = Math.floor(Date.now() / 1000) - 30 * 24 * 3600;
-    const activities = await getStravaActivities(accessToken, {
+    const activities = await getStravaActivities(plainAccess, {
       after: thirtyDaysAgo,
       perPage: 100,
     });

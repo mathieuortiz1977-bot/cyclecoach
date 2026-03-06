@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
@@ -23,11 +23,58 @@ const stagger = {
 
 export default function Dashboard() {
   const [ftp, setFtp] = useState(190);
-  const plan = useMemo(() => generatePlan(4), []);
-  const stats = planStats(plan);
+  const [loading, setLoading] = useState(true);
+  const [plan, setPlan] = useState(() => generatePlan(4));
 
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
+
+  // Load rider profile + plan from DB
+  useEffect(() => {
+    Promise.all([
+      fetch("/api/rider").then((r) => r.json()).catch(() => null),
+      fetch("/api/plan").then((r) => r.json()).catch(() => null),
+    ]).then(([riderData, planData]) => {
+      if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
+
+      if (planData?.plan && planData.source === "database") {
+        // Transform DB plan to match PlanDef shape
+        const dbPlan = {
+          blocks: planData.plan.blocks.map((b: any) => ({
+            blockNumber: b.blockNumber,
+            type: b.type,
+            weeks: b.weeks.map((w: any) => ({
+              weekNumber: w.weekNumber,
+              weekType: w.weekType,
+              sessions: w.sessions.map((s: any) => ({
+                dayOfWeek: s.dayOfWeek,
+                sessionType: s.sessionType,
+                duration: s.duration,
+                title: s.title,
+                description: s.description,
+                intervals: s.intervals.map((i: any) => ({
+                  name: i.name,
+                  durationSecs: i.durationSecs,
+                  powerLow: i.powerLow,
+                  powerHigh: i.powerHigh,
+                  cadenceLow: i.cadenceLow,
+                  cadenceHigh: i.cadenceHigh,
+                  rpe: i.rpe,
+                  zone: i.zone,
+                  purpose: i.purpose,
+                  coachNote: i.coachNote,
+                })),
+                route: s.route || undefined,
+              })),
+            })),
+          })),
+        };
+        setPlan(dbPlan);
+      }
+      setLoading(false);
+    });
+  }, []);
+  const stats = useMemo(() => planStats(plan), [plan]);
   const [showCompletion, setShowCompletion] = useState(false);
   const [selectedSessionIdx, setSelectedSessionIdx] = useState(0);
 
@@ -37,6 +84,8 @@ export default function Dashboard() {
 
   // Sample completion for demo
   const weekCompletionPct = 60; // 3/5 sessions done
+
+  if (loading) return <DashboardSkeleton />;
 
   const handleCompleteWorkout = async (data: CompletionData) => {
     const session = week.sessions[selectedSessionIdx];

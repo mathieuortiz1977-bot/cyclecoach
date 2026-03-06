@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { IntervalChart } from "@/components/IntervalChart";
 import { getZoneColor } from "@/lib/zones";
@@ -20,6 +20,13 @@ export default function WorkoutPage() {
   const [ftp, setFtp] = useState(190);
   const [showCompletion, setShowCompletion] = useState(false);
   const [showShare, setShowShare] = useState(false);
+
+  // Load FTP from DB
+  useEffect(() => {
+    fetch("/api/rider").then(r => r.json()).then(data => {
+      if (data.rider?.ftp) setFtp(data.rider.ftp);
+    }).catch(() => {});
+  }, []);
 
   const plan = useMemo(() => generatePlan(4), []);
   const block = plan.blocks[blockIdx];

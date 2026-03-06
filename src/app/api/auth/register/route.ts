@@ -1,8 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import bcrypt from "bcryptjs";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: NextRequest) {
+  // Rate limit: 5 registrations per IP per minute
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
+    || request.headers.get("x-real-ip")
+    || "unknown";
+  const { limited, retryAfter } = checkRateLimit(`register:${ip}`, 5, 60_000);
+  if (limited) {
+    return NextResponse.json(
+      { error: `Too many attempts. Try again in ${retryAfter}s.` },
+      { status: 429, headers: { "Retry-After": String(retryAfter) } }
+    );
+  }
+
   try {
     const { name, email, password } = await request.json();
 
@@ -41,11 +54,9 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ success: true, userId: user.id });
-  } catch (err: any) {
-    console.error("Registration error:", err?.message || err);
-    return NextResponse.json({
-      error: "Registration failed",
-      detail: err?.message || "Unknown error",
-    }, { status: 500 });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("Registration error:", message);
+    return NextResponse.json({ error: "Registration failed" }, { status: 500 });
   }
 }
