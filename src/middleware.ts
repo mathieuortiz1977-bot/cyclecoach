@@ -7,6 +7,7 @@ const publicPaths = [
   "/auth/login",
   "/auth/register",
   "/api/auth",         // NextAuth routes
+  "/api/health",       // Health check
   "/api/strava/webhook", // Strava webhook must be public
 ];
 
