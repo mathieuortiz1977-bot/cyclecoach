@@ -5,7 +5,11 @@ import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
 import { FitnessChart } from "@/components/FitnessChart";
 import { AdaptationPanel } from "@/components/AdaptationPanel";
-import { WeeklyRecap } from "@/components/WeeklyRecap";
+import { TodayHero } from "@/components/TodayHero";
+import { FTPProgress } from "@/components/FTPProgress";
+import { StreakCalendar } from "@/components/StreakCalendar";
+import { WeeklyDigest } from "@/components/WeeklyDigest";
+import { WorkoutCompletion, type CompletionData } from "@/components/WorkoutCompletion";
 import type { WorkoutScore } from "@/lib/adaptation";
 
 const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
@@ -24,30 +28,41 @@ export default function Dashboard() {
   const plan = useMemo(() => generatePlan(4), []);
   const stats = planStats(plan);
 
-  // Show first block, first week by default
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
+  const [showCompletion, setShowCompletion] = useState(false);
+  const [selectedSessionIdx, setSelectedSessionIdx] = useState(0);
 
   const block = plan.blocks[activeBlock];
   const week = block.weeks[activeWeek];
   const bt = blockTypeLabels[block.type];
 
-  // Sample workout scores for demo
-  const [weekScores] = useState<WorkoutScore[]>([
-    { compliance: 94, powerAccuracy: 96, durationAccuracy: 92, overallRating: "on_target", hrDrift: 3.2, powerFade: 2.1, fatigueSignal: "normal", coachFeedback: "94% compliance. Solid session." },
-    { compliance: 98, powerAccuracy: 99, durationAccuracy: 97, overallRating: "crushed_it", hrDrift: 1.8, powerFade: 1.2, fatigueSignal: "fresh", coachFeedback: "Nailed it." },
-    { compliance: 72, powerAccuracy: 68, durationAccuracy: 78, overallRating: "struggled", hrDrift: 8.5, powerFade: 6.3, fatigueSignal: "fatigued", coachFeedback: "Tough day." },
-    { compliance: 88, powerAccuracy: 90, durationAccuracy: 85, overallRating: "on_target", hrDrift: 4.1, powerFade: 3.0, fatigueSignal: "normal", coachFeedback: "Good work." },
-  ]);
+  const handleCompleteWorkout = (data: CompletionData) => {
+    console.log("Workout logged:", data);
+    setShowCompletion(false);
+    // TODO: save to DB, trigger scoring + adaptation
+  };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+    <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
       {/* Header */}
       <div>
         <h1 className="text-2xl md:text-3xl font-bold mb-1">Dashboard</h1>
         <p className="text-sm md:text-base text-[var(--muted)]">
           {stats.blocks} blocks · {stats.sessions} sessions · {stats.intervals} intervals
         </p>
+      </div>
+
+      {/* Today's Workout Hero */}
+      <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} />
+
+      {/* Weekly Digest */}
+      <WeeklyDigest />
+
+      {/* Stats Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <FTPProgress currentFtp={ftp} />
+        <StreakCalendar />
       </div>
 
       {/* FTP & Zones */}
@@ -59,7 +74,7 @@ export default function Dashboard() {
               type="number"
               value={ftp}
               onChange={(e) => setFtp(Math.max(50, parseInt(e.target.value) || 50))}
-              className="bg-[var(--background)] border border-[var(--card-border)] rounded-lg px-4 py-2 w-32 text-2xl font-bold text-center text-[var(--accent)] focus:outline-none focus:border-[var(--accent)]"
+              className="bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-2 w-32 text-2xl font-bold text-center text-[var(--accent)] focus:outline-none focus:border-[var(--accent)]"
             />
             <span className="text-[var(--muted)] text-lg">watts</span>
           </div>
@@ -71,15 +86,6 @@ export default function Dashboard() {
       {/* Fitness Chart (PMC) */}
       <FitnessChart />
 
-      {/* Weekly Recap (AI) */}
-      <WeeklyRecap
-        scores={weekScores}
-        adaptation={{ action: "maintain", adjustmentPct: 2, reason: "Avg compliance 88%. Right in the sweet spot.", nextSessionMods: [{ type: "power", description: "Nudge interval targets up by 1-2%", value: 2 }] }}
-        blockType={block.type}
-        weekType={week.weekType}
-        ftp={ftp}
-      />
-
       {/* Adaptive Engine */}
       <AdaptationPanel />
 
@@ -88,7 +94,7 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold mb-3">Training Blocks</h2>
         <div className="flex gap-2 mb-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-none">
           {plan.blocks.map((b, i) => {
-            const bt = blockTypeLabels[b.type];
+            const bti = blockTypeLabels[b.type];
             return (
               <button
                 key={i}
@@ -99,9 +105,9 @@ export default function Dashboard() {
                     : "border-[var(--card-border)] text-[var(--muted)] hover:border-[var(--muted)]"
                 }`}
               >
-                <span>{bt.emoji}</span>
+                <span>{bti.emoji}</span>
                 <span className="hidden sm:inline">Block {b.blockNumber}: </span>
-                <span>{bt.label}</span>
+                <span>{bti.label}</span>
               </button>
             );
           })}
@@ -135,15 +141,33 @@ export default function Dashboard() {
       {/* Sessions Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
         {week.sessions.map((session, i) => (
-          <SessionCard
-            key={i}
-            session={session}
-            blockIdx={activeBlock}
-            weekIdx={activeWeek}
-            sessionIdx={i}
-          />
+          <div key={i} className="relative">
+            <SessionCard
+              session={session}
+              blockIdx={activeBlock}
+              weekIdx={activeWeek}
+              sessionIdx={i}
+            />
+            <button
+              onClick={(e) => { e.preventDefault(); setSelectedSessionIdx(i); setShowCompletion(true); }}
+              className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[var(--accent)] text-white text-sm flex items-center justify-center hover:bg-[var(--accent-hover)] transition-colors shadow-lg z-10"
+              title="Log workout"
+            >
+              ✓
+            </button>
+          </div>
         ))}
       </div>
+
+      {/* Workout Completion Modal */}
+      {showCompletion && (
+        <WorkoutCompletion
+          session={week.sessions[selectedSessionIdx]}
+          ftp={ftp}
+          onComplete={handleCompleteWorkout}
+          onDismiss={() => setShowCompletion(false)}
+        />
+      )}
     </div>
   );
 }

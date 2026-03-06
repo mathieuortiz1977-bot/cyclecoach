@@ -20,6 +20,7 @@ export default function WorkoutPage() {
   const id = params?.id as string;
   const [blockIdx, weekIdx, sessionIdx] = (id || "0-0-0").split("-").map(Number);
   const [ftp, setFtp] = useState(190);
+  const [showCompletion, setShowCompletion] = useState(false);
 
   const plan = useMemo(() => generatePlan(4), []);
   const block = plan.blocks[blockIdx];
@@ -171,7 +172,20 @@ export default function WorkoutPage() {
       />
 
       {/* Log Completion */}
-      <WorkoutCompletion sessionTitle={session.title} plannedSession={session} ftp={ftp} />
+      <button
+        onClick={() => setShowCompletion(true)}
+        className="w-full py-3 rounded-lg bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors"
+      >
+        ✅ Log This Workout
+      </button>
+      {showCompletion && (
+        <WorkoutCompletion
+          session={session}
+          ftp={ftp}
+          onComplete={(data) => { console.log("Logged:", data); setShowCompletion(false); }}
+          onDismiss={() => setShowCompletion(false)}
+        />
+      )}
 
       {/* Back */}
       <Link
