@@ -5,6 +5,7 @@ import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { TrainingDayPicker } from "@/components/TrainingDayPicker";
+import { NotificationSetup } from "@/components/NotificationSetup";
 
 export default function SettingsPageWrapper() {
   return (
@@ -88,7 +89,7 @@ function SettingsPage() {
       )}
 
       {/* Rider Profile */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">Rider Profile</h2>
 
         <div className="grid grid-cols-2 gap-4">
@@ -144,7 +145,7 @@ function SettingsPage() {
       </div>
 
       {/* Training Schedule */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">📅 Training Schedule</h2>
         <p className="text-sm text-[var(--muted)]">
           Choose which days you train and when your program starts. Changes here will regenerate your plan.
@@ -172,7 +173,7 @@ function SettingsPage() {
       </div>
 
       {/* Heart Rate Configuration */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">❤️ Heart Rate Settings</h2>
 
         <div className="grid grid-cols-3 gap-4">
@@ -237,7 +238,7 @@ function SettingsPage() {
       </div>
 
       {/* Coach Personality */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">🎭 Coach Personality</h2>
         <p className="text-sm text-[var(--muted)]">Choose the tone of your workout commentary.</p>
         <div className="grid grid-cols-2 gap-2">
@@ -264,7 +265,7 @@ function SettingsPage() {
       </div>
 
       {/* Training Preferences */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">⏱ Training Preferences</h2>
         <div>
           <label className="block text-sm text-[var(--muted)] mb-1">Default Indoor Session Duration (min)</label>
@@ -281,7 +282,7 @@ function SettingsPage() {
       </div>
 
       {/* Connections */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">🔌 Connections</h2>
         <div className="grid grid-cols-2 gap-3">
           {/* Strava */}
@@ -343,7 +344,7 @@ function SettingsPage() {
       </div>
 
       {/* Environment Setup Guide */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-3">
+      <div className="glass p-6 space-y-3">
         <h2 className="text-lg font-semibold">🔑 API Setup Guide</h2>
         <p className="text-sm text-[var(--muted)]">Add these to your <code className="text-[var(--accent)]">.env</code> file:</p>
         <pre className="bg-[var(--background)] rounded-lg p-4 text-xs font-mono overflow-x-auto">
@@ -362,10 +363,13 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000`}
       </div>
 
       {/* Appearance */}
-      <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+      <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">Appearance</h2>
         <ThemeToggle />
       </div>
+
+      {/* Notifications */}
+      <NotificationSetup />
     </div>
   );
 }

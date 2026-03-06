@@ -71,7 +71,7 @@ export function AdaptationPanel() {
   };
 
   return (
-    <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+    <div className="glass p-6 space-y-4">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold">🧠 Adaptive Engine</h2>

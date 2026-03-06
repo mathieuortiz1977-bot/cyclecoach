@@ -63,7 +63,7 @@ export default function PlanPage() {
             {block.weeks.map((week, wi) => {
               const wt = weekTypeLabels[week.weekType];
               return (
-                <div key={wi} className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-4">
+                <div key={wi} className="glass p-4">
                   <div className="flex items-center gap-3 mb-3">
                     <span
                       className="text-xs font-bold px-2 py-0.5 rounded text-white"

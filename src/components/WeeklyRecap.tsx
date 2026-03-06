@@ -47,7 +47,7 @@ export function WeeklyRecap({ scores, adaptation, blockType, weekType, ftp }: Pr
   const completed = scores.filter((s) => s.overallRating !== "missed").length;
 
   return (
-    <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+    <div className="glass p-6 space-y-4">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold">📝 Weekly Recap</h2>

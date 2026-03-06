@@ -80,7 +80,7 @@ export function AICoachPanel({ session, blockType, weekType, ftp, personality = 
   };
 
   return (
-    <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6 space-y-4">
+    <div className="glass p-6 space-y-4">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold flex items-center gap-2">

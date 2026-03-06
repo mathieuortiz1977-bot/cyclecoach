@@ -4,7 +4,7 @@ import { calculateZones } from "@/lib/zones";
 export function ZoneTable({ ftp }: { ftp: number }) {
   const zones = calculateZones(ftp);
   return (
-    <div className="overflow-hidden rounded-lg border border-[var(--card-border)]">
+    <div className="glass overflow-hidden">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-[var(--card-border)]">

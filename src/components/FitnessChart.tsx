@@ -39,7 +39,7 @@ export function FitnessChart() {
   }));
 
   return (
-    <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6">
+    <div className="glass p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-lg font-semibold">Performance Management Chart</h2>
@@ -90,12 +90,14 @@ export function FitnessChart() {
           <YAxis tick={{ fill: "var(--muted)", fontSize: 10 }} />
           <Tooltip
             contentStyle={{
-              backgroundColor: "#111",
-              border: "1px solid var(--card-border)",
-              borderRadius: 8,
+              background: "rgba(17, 17, 17, 0.95)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: 12,
               fontSize: 12,
+              boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
             }}
-            labelStyle={{ color: "var(--foreground)" }}
+            labelStyle={{ color: "#ededed", fontWeight: 600 }}
           />
           <ReferenceLine y={0} stroke="var(--card-border)" />
           <Bar dataKey="tss" fill="var(--card-border)" opacity={0.3} name="Daily TSS" />

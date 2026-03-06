@@ -10,6 +10,7 @@ import { AICoachPanel } from "@/components/AICoachPanel";
 import { IntervalTimer } from "@/components/IntervalTimer";
 import { ExportButtons } from "@/components/ExportButtons";
 import { RouteMap } from "@/components/RouteMap";
+import { ShareCard } from "@/components/ShareCard";
 
 const dayLabels: Record<string, string> = {
   MON: "Monday", TUE: "Tuesday", THU: "Thursday", FRI: "Friday", SAT: "Saturday",
@@ -21,6 +22,7 @@ export default function WorkoutPage() {
   const [blockIdx, weekIdx, sessionIdx] = (id || "0-0-0").split("-").map(Number);
   const [ftp, setFtp] = useState(190);
   const [showCompletion, setShowCompletion] = useState(false);
+  const [showShare, setShowShare] = useState(false);
 
   const plan = useMemo(() => generatePlan(4), []);
   const block = plan.blocks[blockIdx];
@@ -98,7 +100,7 @@ export default function WorkoutPage() {
       {session.route && (
         <div className="space-y-4">
           <RouteMap route={session.route} />
-          <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-4">
+          <div className="glass p-4">
             <p className="text-sm text-[var(--muted)] italic">{session.route.description}</p>
           </div>
         </div>
@@ -117,7 +119,7 @@ export default function WorkoutPage() {
           return (
             <div
               key={idx}
-              className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-4"
+              className="glass p-4"
               style={{ borderLeftWidth: 4, borderLeftColor: color }}
             >
               <div className="flex items-start justify-between mb-2">
@@ -171,13 +173,21 @@ export default function WorkoutPage() {
         ftp={ftp}
       />
 
-      {/* Log Completion */}
-      <button
-        onClick={() => setShowCompletion(true)}
-        className="w-full py-3 rounded-lg bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors"
-      >
-        ✅ Log This Workout
-      </button>
+      {/* Actions */}
+      <div className="flex gap-3">
+        <button
+          onClick={() => setShowCompletion(true)}
+          className="flex-1 py-3 rounded-xl bg-[var(--accent)] text-white font-semibold hover:bg-[var(--accent-hover)] transition-colors"
+        >
+          ✅ Log Workout
+        </button>
+        <button
+          onClick={() => setShowShare(true)}
+          className="px-6 py-3 rounded-xl glass text-[var(--foreground)] font-medium hover:bg-[var(--card-border)] transition-colors"
+        >
+          📤 Share
+        </button>
+      </div>
       {showCompletion && (
         <WorkoutCompletion
           session={session}
@@ -185,6 +195,10 @@ export default function WorkoutPage() {
           onComplete={(data) => { console.log("Logged:", data); setShowCompletion(false); }}
           onDismiss={() => setShowCompletion(false)}
         />
+      )}
+
+      {showShare && (
+        <ShareCard session={session} ftp={ftp} onClose={() => setShowShare(false)} />
       )}
 
       {/* Back */}

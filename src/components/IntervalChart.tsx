@@ -8,7 +8,7 @@ export function IntervalChart({ intervals, ftp }: { intervals: IntervalDef[]; ft
   const chartHeight = 200;
 
   return (
-    <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-4">
+    <div className="glass p-4">
       <div className="flex items-end gap-[1px]" style={{ height: chartHeight }}>
         {intervals.map((interval, idx) => {
           const widthPct = (interval.durationSecs / totalSecs) * 100;

@@ -20,7 +20,7 @@ export function HRZoneTable({ maxHr, restingHr, lthr, method }: Props) {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-[var(--card-border)]">
+    <div className="glass overflow-hidden">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-[var(--card-border)]">

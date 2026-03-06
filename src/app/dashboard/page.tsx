@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, Suspense } from "react";
+import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
@@ -10,17 +11,24 @@ import { FTPProgress } from "@/components/FTPProgress";
 import { StreakCalendar } from "@/components/StreakCalendar";
 import { WeeklyDigest } from "@/components/WeeklyDigest";
 import { WorkoutCompletion, type CompletionData } from "@/components/WorkoutCompletion";
-import type { WorkoutScore } from "@/lib/adaptation";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { ProgressRing } from "@/components/ProgressRing";
+import { DashboardSkeleton } from "@/components/Skeleton";
 
-const blockTypeLabels: Record<string, { label: string; emoji: string; color: string }> = {
-  BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6" },
-  THRESHOLD: { label: "Threshold / FTP", emoji: "⚡", color: "#eab308" },
-  VO2MAX: { label: "VO2max / Punch", emoji: "🔥", color: "#f97316" },
-  RACE_SIM: { label: "Race Simulation", emoji: "🏁", color: "#ef4444" },
+const blockTypeLabels: Record<string, { label: string; emoji: string; color: string; gradient: string }> = {
+  BASE: { label: "Base / Aerobic", emoji: "🏗️", color: "#3b82f6", gradient: "var(--gradient-base)" },
+  THRESHOLD: { label: "Threshold / FTP", emoji: "⚡", color: "#eab308", gradient: "var(--gradient-threshold)" },
+  VO2MAX: { label: "VO2max / Punch", emoji: "🔥", color: "#f97316", gradient: "var(--gradient-vo2max)" },
+  RACE_SIM: { label: "Race Simulation", emoji: "🏁", color: "#ef4444", gradient: "var(--gradient-racesim)" },
 };
 
 const weekTypeLabels: Record<string, string> = {
   BUILD: "Build", BUILD_PLUS: "Build+", OVERREACH: "Overreach", RECOVERY: "Recovery 🧘",
+};
+
+const stagger = {
+  container: { transition: { staggerChildren: 0.06 } },
+  item: { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } },
 };
 
 export default function Dashboard() {
@@ -37,73 +45,128 @@ export default function Dashboard() {
   const week = block.weeks[activeWeek];
   const bt = blockTypeLabels[block.type];
 
+  // Sample completion for demo
+  const weekCompletionPct = 60; // 3/5 sessions done
+
   const handleCompleteWorkout = (data: CompletionData) => {
     console.log("Workout logged:", data);
     setShowCompletion(false);
-    // TODO: save to DB, trigger scoring + adaptation
   };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
-      {/* Header */}
-      <div>
-        <h1 className="text-2xl md:text-3xl font-bold mb-1">Dashboard</h1>
-        <p className="text-sm md:text-base text-[var(--muted)]">
-          {stats.blocks} blocks · {stats.sessions} sessions · {stats.intervals} intervals
-        </p>
-      </div>
-
-      {/* Today's Workout Hero */}
-      <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} />
-
-      {/* Weekly Digest */}
-      <WeeklyDigest />
-
-      {/* Stats Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FTPProgress currentFtp={ftp} />
-        <StreakCalendar />
-      </div>
-
-      {/* FTP & Zones */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6">
-          <h2 className="text-lg font-semibold mb-4">Your FTP</h2>
-          <div className="flex items-center gap-4 mb-4">
-            <input
-              type="number"
-              value={ftp}
-              onChange={(e) => setFtp(Math.max(50, parseInt(e.target.value) || 50))}
-              className="bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-2 w-32 text-2xl font-bold text-center text-[var(--accent)] focus:outline-none focus:border-[var(--accent)]"
-            />
-            <span className="text-[var(--muted)] text-lg">watts</span>
-          </div>
-          <p className="text-sm text-[var(--muted)]">All workout targets are calculated as % of your FTP. Update this and every interval adjusts automatically.</p>
+    <motion.div
+      className="max-w-6xl mx-auto space-y-6"
+      variants={stagger.container}
+      initial="initial"
+      animate="animate"
+    >
+      {/* Header with animated stats */}
+      <motion.div variants={stagger.item} className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold">Dashboard</h1>
+          <p className="text-sm text-[var(--muted)]">
+            <AnimatedCounter value={stats.sessions} className="font-semibold text-[var(--foreground)]" /> sessions ·{" "}
+            <AnimatedCounter value={stats.intervals} className="font-semibold text-[var(--foreground)]" /> intervals
+          </p>
         </div>
-        <ZoneTable ftp={ftp} />
+        {/* Week progress ring */}
+        <div className="flex items-center gap-3">
+          <ProgressRing progress={weekCompletionPct} size={48} strokeWidth={3}>
+            <span className="text-xs font-bold">{weekCompletionPct}%</span>
+          </ProgressRing>
+          <div className="text-right">
+            <p className="text-sm font-semibold">Week {week.weekNumber}</p>
+            <p className="text-xs text-[var(--muted)]">{weekTypeLabels[week.weekType]}</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Today's Workout Hero — full width */}
+      <motion.div variants={stagger.item}>
+        <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} />
+      </motion.div>
+
+      {/* Bento Grid — Top Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Weekly Digest — spans 2 cols on large */}
+        <motion.div variants={stagger.item} className="lg:col-span-2">
+          <WeeklyDigest />
+        </motion.div>
+
+        {/* FTP Quick Card */}
+        <motion.div variants={stagger.item}>
+          <div className="glass p-6 h-full flex flex-col justify-between">
+            <div>
+              <p className="text-xs text-[var(--muted)] uppercase tracking-wider mb-1">Functional Threshold Power</p>
+              <div className="flex items-baseline gap-2">
+                <AnimatedCounter value={ftp} className="text-4xl font-bold gradient-text" />
+                <span className="text-lg text-[var(--muted)]">W</span>
+              </div>
+            </div>
+            <div className="mt-4 flex items-center gap-4">
+              <div>
+                <AnimatedCounter value={parseFloat((ftp / 75).toFixed(2))} decimals={2} className="text-lg font-bold text-[var(--foreground)]" />
+                <p className="text-[10px] text-[var(--muted)]">W/kg</p>
+              </div>
+              <div>
+                <p className="text-lg font-bold text-green-400">+3W</p>
+                <p className="text-[10px] text-[var(--muted)]">This month</p>
+              </div>
+            </div>
+            <input
+              type="range"
+              min={100}
+              max={400}
+              value={ftp}
+              onChange={(e) => setFtp(parseInt(e.target.value))}
+              className="mt-4 w-full accent-[var(--accent)]"
+            />
+          </div>
+        </motion.div>
       </div>
 
-      {/* Fitness Chart (PMC) */}
-      <FitnessChart />
+      {/* Bento Grid — Stats Row */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <motion.div variants={stagger.item}>
+          <FTPProgress currentFtp={ftp} />
+        </motion.div>
+        <motion.div variants={stagger.item}>
+          <StreakCalendar />
+        </motion.div>
+      </div>
+
+      {/* Zones */}
+      <motion.div variants={stagger.item}>
+        <ZoneTable ftp={ftp} />
+      </motion.div>
+
+      {/* Fitness Chart */}
+      <motion.div variants={stagger.item}>
+        <FitnessChart />
+      </motion.div>
 
       {/* Adaptive Engine */}
-      <AdaptationPanel />
+      <motion.div variants={stagger.item}>
+        <AdaptationPanel />
+      </motion.div>
 
-      {/* Block Selector */}
-      <div>
+      {/* Block Selector — pill style */}
+      <motion.div variants={stagger.item}>
         <h2 className="text-lg font-semibold mb-3">Training Blocks</h2>
-        <div className="flex gap-2 mb-4 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-none">
+        <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-none">
           {plan.blocks.map((b, i) => {
             const bti = blockTypeLabels[b.type];
+            const isActive = activeBlock === i;
             return (
               <button
                 key={i}
                 onClick={() => { setActiveBlock(i); setActiveWeek(0); }}
-                className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm whitespace-nowrap transition-colors border shrink-0 ${
-                  activeBlock === i
-                    ? "border-[var(--accent)] bg-[var(--accent)]/10 text-[var(--foreground)]"
-                    : "border-[var(--card-border)] text-[var(--muted)] hover:border-[var(--muted)]"
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs md:text-sm whitespace-nowrap transition-all shrink-0 border ${
+                  isActive
+                    ? "text-white font-medium shadow-lg border-transparent"
+                    : "border-[var(--card-border)] text-[var(--muted)] hover:border-[var(--muted)] bg-transparent"
                 }`}
+                style={isActive ? { background: bti.gradient, boxShadow: `0 4px 15px ${bti.color}33` } : {}}
               >
                 <span>{bti.emoji}</span>
                 <span className="hidden sm:inline">Block {b.blockNumber}: </span>
@@ -112,31 +175,35 @@ export default function Dashboard() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Week Selector */}
-      <div>
+      <motion.div variants={stagger.item}>
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
           <h2 className="text-base md:text-lg font-semibold">
-            <span style={{ color: bt.color }}>{bt.emoji} {bt.label}</span> — Week {week.weekNumber}
+            <span style={{ backgroundImage: bt.gradient, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              {bt.emoji} {bt.label}
+            </span>
+            <span className="text-[var(--foreground)]"> — Week {week.weekNumber}</span>
           </h2>
           <div className="flex gap-1 overflow-x-auto scrollbar-none">
             {block.weeks.map((w, i) => (
               <button
                 key={i}
                 onClick={() => setActiveWeek(i)}
-                className={`px-3 py-1.5 rounded text-xs whitespace-nowrap transition-colors shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs whitespace-nowrap transition-all shrink-0 ${
                   activeWeek === i
-                    ? "bg-[var(--accent)] text-white"
+                    ? "text-white font-medium shadow-md"
                     : "bg-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)]"
                 }`}
+                style={activeWeek === i ? { background: bt.gradient } : {}}
               >
                 W{w.weekNumber}: {weekTypeLabels[w.weekType]}
               </button>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Sessions Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -150,7 +217,7 @@ export default function Dashboard() {
             />
             <button
               onClick={(e) => { e.preventDefault(); setSelectedSessionIdx(i); setShowCompletion(true); }}
-              className="absolute top-2 right-2 w-8 h-8 rounded-full bg-[var(--accent)] text-white text-sm flex items-center justify-center hover:bg-[var(--accent-hover)] transition-colors shadow-lg z-10"
+              className="absolute top-2 right-14 w-8 h-8 rounded-full bg-[var(--accent)] text-white text-sm flex items-center justify-center hover:bg-[var(--accent-hover)] transition-all shadow-lg shadow-[var(--accent)]/30 z-10 hover:scale-110"
               title="Log workout"
             >
               ✓
@@ -159,7 +226,7 @@ export default function Dashboard() {
         ))}
       </div>
 
-      {/* Workout Completion Modal */}
+      {/* Completion Modal */}
       {showCompletion && (
         <WorkoutCompletion
           session={week.sessions[selectedSessionIdx]}
@@ -168,6 +235,6 @@ export default function Dashboard() {
           onDismiss={() => setShowCompletion(false)}
         />
       )}
-    </div>
+    </motion.div>
   );
 }

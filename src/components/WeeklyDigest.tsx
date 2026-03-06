@@ -42,7 +42,7 @@ export function WeeklyDigest({ digest }: Props) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.15 }}
-      className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6"
+      className="glass p-6"
     >
       <div className="flex items-center justify-between mb-4">
         <div>

@@ -50,7 +50,7 @@ export function FTPProgress({ data, currentFtp }: Props) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="bg-[var(--card)] rounded-lg border border-[var(--card-border)] p-6"
+      className="glass p-6"
     >
       <div className="flex items-center justify-between mb-4">
         <div>
@@ -89,10 +89,12 @@ export function FTPProgress({ data, currentFtp }: Props) {
             />
             <Tooltip
               contentStyle={{
-                background: "var(--card)",
-                border: "1px solid var(--card-border)",
-                borderRadius: "8px",
+                background: "rgba(17, 17, 17, 0.95)",
+                backdropFilter: "blur(12px)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "12px",
                 fontSize: "12px",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
               }}
               formatter={(value) => [`${value}W`, "FTP"]}
             />
