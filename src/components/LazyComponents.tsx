@@ -23,8 +23,8 @@ export const LazyFTPProgress = dynamic(
   { loading: ChartSkeleton, ssr: false }
 );
 
-export const LazyStreakCalendar = dynamic(
-  () => import("./StreakCalendar").then((m) => ({ default: m.StreakCalendar })),
+export const LazyTrainingCalendar = dynamic(
+  () => import("./TrainingCalendar").then((m) => ({ default: m.TrainingCalendar })),
   { loading: CardSkeleton, ssr: false }
 );
 

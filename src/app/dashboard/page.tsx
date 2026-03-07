@@ -9,7 +9,7 @@ import {
   LazyFitnessChart as FitnessChart,
   LazyAdaptationPanel as AdaptationPanel,
   LazyFTPProgress as FTPProgress,
-  LazyStreakCalendar as StreakCalendar,
+  LazyTrainingCalendar as TrainingCalendar,
   LazyWeeklyDigest as WeeklyDigest,
   LazyWorkoutCompletion as WorkoutCompletion,
 } from "@/components/LazyComponents";
@@ -223,7 +223,7 @@ export default function Dashboard() {
           <FTPProgress currentFtp={ftp} />
         </motion.div>
         <motion.div variants={stagger.item}>
-          <StreakCalendar />
+          <TrainingCalendar />
         </motion.div>
       </div>
 
