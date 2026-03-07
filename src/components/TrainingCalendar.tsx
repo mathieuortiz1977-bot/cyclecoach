@@ -266,7 +266,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     completed: "#22c55e",
     partial: "#f97316", 
     missed: "#ef4444",
-    rest: "#6b7280",
+    rest: "#c0c0c0",
     upcoming: "#374151",
     "other-month": "#1f2937"
   };
@@ -382,7 +382,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                 style={{ 
                   backgroundColor: statusColors[status],
                   opacity: day.isCurrentMonth ? 1 : 0.3,
-                  color: status === "upcoming" || status === "other-month" ? "#9ca3af" : "white"
+                  color: status === "upcoming" || status === "other-month" || status === "rest" ? "#374151" : "white"
                 }}
                 disabled={!day.workout}
               >
