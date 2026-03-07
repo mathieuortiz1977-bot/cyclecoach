@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
+import { PolylineMap } from "./PolylineMap";
 
 interface WorkoutData {
   id: string;
@@ -536,19 +537,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               {selectedDate.isStravaRide && selectedDate.mapPolyline && (
                 <div className="bg-[var(--background)]/50 rounded-lg p-4">
                   <h4 className="text-sm font-medium text-[var(--accent)] mb-2">🗺️ Route Map</h4>
-                  <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <iframe
-                      src={`https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=auto&destination=auto&waypoints=enc:${selectedDate.mapPolyline}:&mode=bicycling`}
-                      width="100%"
-                      height="100%"
-                      className="rounded-lg"
-                      loading="lazy"
-                      title="Ride Route"
-                    />
+                  <PolylineMap polyline={selectedDate.mapPolyline} className="w-full h-48" />
+                  <div className="flex justify-between items-center mt-2 text-xs text-[var(--muted)]">
+                    <span>🟢 Start → 🔴 End</span>
+                    <a 
+                      href={`https://www.strava.com/activities/${selectedDate.id.replace('strava-', '')}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[var(--accent)] hover:underline"
+                    >
+                      📱 View on Strava
+                    </a>
                   </div>
-                  <p className="text-xs text-[var(--muted)] mt-2">
-                    📍 View on <a href={`https://www.strava.com/activities/${selectedDate.id.replace('strava-', '')}`} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">Strava</a>
-                  </p>
                 </div>
               )}
 
