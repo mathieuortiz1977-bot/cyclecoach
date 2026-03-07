@@ -15,6 +15,7 @@ export default function SetupPage() {
   const [tone, setTone] = useState("MIXED");
   const [trainingDays, setTrainingDays] = useState(["MON", "TUE", "THU", "FRI", "SAT"]);
   const [outdoorDay, setOutdoorDay] = useState("SAT");
+  const [sundayDuration, setSundayDuration] = useState(90);
   const [startDate, setStartDate] = useState(() => {
     // Default to next Monday
     const now = new Date();
@@ -37,6 +38,9 @@ export default function SetupPage() {
           experience,
           coachTone: tone,
           programStartDate: startDate + "T00:00:00.000Z", // Set program start date
+          trainingDays: trainingDays.join(','),
+          outdoorDay: outdoorDay,
+          sundayDuration: sundayDuration,
         }),
       });
     } catch (e) {
@@ -118,6 +122,8 @@ export default function SetupPage() {
               onChange={setTrainingDays}
               outdoorDay={outdoorDay}
               onOutdoorDayChange={setOutdoorDay}
+              sundayDuration={sundayDuration}
+              onSundayDurationChange={setSundayDuration}
             />
 
             {/* Start Date */}

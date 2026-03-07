@@ -75,6 +75,7 @@ model Rider {
   trainingDays String @default("MON,TUE,THU,FRI,SAT") // comma-separated training days
   outdoorDay   String @default("SAT")          // which day is the outdoor ride
   programStartDate DateTime? // when the user started their CycleCoach program
+  sundayDuration Int @default(90)              // average Sunday ride duration in minutes
   createdAt  DateTime @default(now())
   plans      Plan[]
   stravaConnection       StravaConnection?

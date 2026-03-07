@@ -31,6 +31,7 @@ function SettingsPage() {
   // Training schedule
   const [trainingDays, setTrainingDays] = useState(["MON", "TUE", "THU", "FRI", "SAT"]);
   const [outdoorDay, setOutdoorDay] = useState("SAT");
+  const [sundayDuration, setSundayDuration] = useState(90); // Default 90 minutes
   const [startDate, setStartDate] = useState(() => {
     const now = new Date();
     const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
@@ -73,6 +74,9 @@ function SettingsPage() {
         }
         if (riderData.rider.programStartDate) {
           setStartDate(new Date(riderData.rider.programStartDate).toISOString().split('T')[0]);
+        }
+        if (riderData.rider.sundayDuration) {
+          setSundayDuration(riderData.rider.sundayDuration);
         }
       }
       
@@ -136,6 +140,7 @@ function SettingsPage() {
           trainingDays: trainingDays.join(','),
           outdoorDay: outdoorDay,
           programStartDate: new Date(startDate).toISOString(),
+          sundayDuration: sundayDuration,
         }),
       });
 
@@ -252,6 +257,8 @@ function SettingsPage() {
           onChange={setTrainingDays}
           outdoorDay={outdoorDay}
           onOutdoorDayChange={setOutdoorDay}
+          sundayDuration={sundayDuration}
+          onSundayDurationChange={setSundayDuration}
         />
 
         <div>
