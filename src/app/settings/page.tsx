@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { TrainingDayPicker } from "@/components/TrainingDayPicker";
 import { NotificationSetup } from "@/components/NotificationSetup";
 import { FitImport } from "@/components/FitImport";
+import { CalendarSync } from "@/components/CalendarSync";
 
 export default function SettingsPageWrapper() {
   return (
@@ -46,30 +47,39 @@ function SettingsPage() {
 
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [plan, setPlan] = useState<any>(null);
 
-  // Load rider profile from DB
+  // Load rider profile and plan from DB
   useEffect(() => {
-    fetch("/api/rider").then(r => r.json()).then(data => {
-      if (data.rider) {
-        setFtp(data.rider.ftp);
-        setWeight(data.rider.weight);
-        setExperience(data.rider.experience);
-        setTone(data.rider.coachTone);
-        if (data.rider.maxHr) setMaxHr(data.rider.maxHr);
-        if (data.rider.restingHr) setRestingHr(data.rider.restingHr);
-        if (data.rider.lthr) setLthr(data.rider.lthr);
+    Promise.all([
+      fetch("/api/rider").then(r => r.json()),
+      fetch("/api/plan").then(r => r.json())
+    ]).then(([riderData, planData]) => {
+      if (riderData.rider) {
+        setFtp(riderData.rider.ftp);
+        setWeight(riderData.rider.weight);
+        setExperience(riderData.rider.experience);
+        setTone(riderData.rider.coachTone);
+        if (riderData.rider.maxHr) setMaxHr(riderData.rider.maxHr);
+        if (riderData.rider.restingHr) setRestingHr(riderData.rider.restingHr);
+        if (riderData.rider.lthr) setLthr(riderData.rider.lthr);
         
         // Load training schedule
-        if (data.rider.trainingDays) {
-          setTrainingDays(data.rider.trainingDays.split(','));
+        if (riderData.rider.trainingDays) {
+          setTrainingDays(riderData.rider.trainingDays.split(','));
         }
-        if (data.rider.outdoorDay) {
-          setOutdoorDay(data.rider.outdoorDay);
+        if (riderData.rider.outdoorDay) {
+          setOutdoorDay(riderData.rider.outdoorDay);
         }
-        if (data.rider.programStartDate) {
-          setStartDate(new Date(data.rider.programStartDate).toISOString().split('T')[0]);
+        if (riderData.rider.programStartDate) {
+          setStartDate(new Date(riderData.rider.programStartDate).toISOString().split('T')[0]);
         }
       }
+      
+      if (planData.plan) {
+        setPlan(planData.plan);
+      }
+      
       setLoaded(true);
     }).catch(() => setLoaded(true));
   }, []);
@@ -467,6 +477,15 @@ function SettingsPage() {
 
       {/* Notifications */}
       <NotificationSetup />
+
+      {/* Calendar Integration */}
+      {plan && (
+        <CalendarSync 
+          plan={plan}
+          programStartDate={startDate}
+          trainingDays={trainingDays}
+        />
+      )}
     </div>
   );
 }
