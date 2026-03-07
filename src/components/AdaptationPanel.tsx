@@ -1,32 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { WorkoutScore, AdaptationDecision } from "@/lib/adaptation";
-
-// Sample scores to demonstrate the adaptive engine
-const sampleScores: WorkoutScore[] = [
-  {
-    compliance: 94, powerAccuracy: 96, durationAccuracy: 92,
-    overallRating: "on_target", hrDrift: 3.2, powerFade: 2.1,
-    fatigueSignal: "normal",
-    coachFeedback: "94% compliance. Solid session. Not perfect, but perfect isn't the goal — consistent is.",
-  },
-  {
-    compliance: 98, powerAccuracy: 99, durationAccuracy: 97,
-    overallRating: "crushed_it", hrDrift: 1.8, powerFade: 1.2,
-    fatigueSignal: "fresh",
-    coachFeedback: "98% compliance. You nailed it. Every interval, every watt. This is what consistency looks like.",
-  },
-  {
-    compliance: 72, powerAccuracy: 68, durationAccuracy: 78,
-    overallRating: "struggled", hrDrift: 8.5, powerFade: 6.3,
-    fatigueSignal: "fatigued",
-    coachFeedback: "72% — below target. HR drift of 8.5% suggests cardiac fatigue. We'll dial it back.",
-  },
-];
 
 const ratingColors: Record<string, string> = {
   crushed_it: "#22c55e",
-  on_target: "#3b82f6",
+  on_target: "#3b82f6", 
   struggled: "#eab308",
   underperformed: "#f97316",
   missed: "#ef4444",
@@ -35,7 +13,7 @@ const ratingColors: Record<string, string> = {
 const ratingEmoji: Record<string, string> = {
   crushed_it: "🔥",
   on_target: "✅",
-  struggled: "😤",
+  struggled: "😤", 
   underperformed: "📉",
   missed: "❌",
 };
@@ -43,20 +21,50 @@ const ratingEmoji: Record<string, string> = {
 const fatigueColors: Record<string, string> = {
   fresh: "#22c55e",
   normal: "#3b82f6",
-  fatigued: "#eab308",
+  fatigued: "#eab308", 
   overreached: "#ef4444",
 };
 
 export function AdaptationPanel() {
-  const [scores] = useState<WorkoutScore[]>(sampleScores);
+  const [scores, setScores] = useState<WorkoutScore[]>([]);
   const [adaptation, setAdaptation] = useState<AdaptationDecision | null>(null);
   const [loading, setLoading] = useState(false);
+  const [loadingScores, setLoadingScores] = useState(true);
+
+  useEffect(() => {
+    // Load real workout scores from completed sessions
+    fetch("/api/workouts")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.workouts) {
+          // Convert completed workouts to scores for analysis
+          const recentWorkouts = data.workouts
+            .filter((w: any) => w.completed && w.rpe && w.compliance != null)
+            .slice(0, 5) // Last 5 completed workouts
+            .map((w: any) => ({
+              compliance: w.compliance || 0,
+              powerAccuracy: w.avgPower ? Math.min(100, (w.avgPower / (w.targetPower || w.avgPower)) * 100) : 0,
+              durationAccuracy: w.actualDuration ? Math.min(100, (w.actualDuration / w.plannedDuration) * 100) : 100,
+              overallRating: getRatingFromRPE(w.rpe),
+              hrDrift: w.hrDrift || 0,
+              powerFade: w.powerFade || 0,
+              fatigueSignal: getFatigueFromRPE(w.rpe),
+              coachFeedback: generateFeedback(w.compliance, w.rpe, w.feelings),
+            }));
+          setScores(recentWorkouts);
+        }
+        setLoadingScores(false);
+      })
+      .catch(() => setLoadingScores(false));
+  }, []);
 
   const getAdaptation = async () => {
+    if (scores.length === 0) return;
+    
     setLoading(true);
     try {
       const res = await fetch("/api/adapt/decide", {
-        method: "POST",
+        method: "POST", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ scores, currentFtp: 190, weekType: "BUILD" }),
       });
@@ -70,25 +78,72 @@ export function AdaptationPanel() {
     setLoading(false);
   };
 
+  if (loadingScores) {
+    return (
+      <div className="glass p-6">
+        <div className="animate-pulse">
+          <div className="h-6 bg-gray-300 rounded w-40 mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-64 mb-4"></div>
+          <div className="space-y-3">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="h-16 bg-gray-200 rounded"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (scores.length === 0) {
+    return (
+      <div className="glass p-6 text-center">
+        <div className="mb-4">
+          <span className="text-4xl mb-2 block">🧠</span>
+          <h2 className="text-lg font-semibold mb-2">Adaptive Engine</h2>
+          <p className="text-sm text-[var(--muted)] mb-4">
+            Complete workouts with RPE and compliance data to enable adaptive analysis
+          </p>
+        </div>
+        
+        <div className="bg-[var(--background)]/50 rounded-xl p-4">
+          <p className="text-xs text-[var(--muted)] mb-3">
+            The adaptive engine analyzes your workout performance to suggest plan adjustments:
+          </p>
+          <div className="text-xs text-[var(--muted)] space-y-1">
+            <div className="flex items-center justify-center gap-2">
+              <span>📈</span> Increase intensity when you're crushing workouts
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <span>📉</span> Reduce load when fatigue builds up
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <span>🧘</span> Add recovery when overreached
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="glass p-6 space-y-4">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-semibold">🧠 Adaptive Engine</h2>
-          <p className="text-xs text-[var(--muted)]">How the plan adjusts based on your performance</p>
+          <p className="text-xs text-[var(--muted)]">Analysis based on your {scores.length} recent sessions</p>
         </div>
         <button
           onClick={getAdaptation}
           disabled={loading}
-          className="px-4 py-2 rounded-lg text-sm bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] transition-colors disabled:opacity-50"
+          className="px-4 py-2 rounded-lg text-sm bg-[var(--accent)] text-white hover:opacity-90 transition-colors disabled:opacity-50"
         >
-          {loading ? "Analyzing..." : "Analyze Week"}
+          {loading ? "Analyzing..." : "Analyze Performance"}
         </button>
       </div>
 
       {/* Recent Workout Scores */}
       <div className="space-y-2">
-        <h3 className="text-sm font-semibold text-[var(--muted)]">This Week&apos;s Sessions</h3>
+        <h3 className="text-sm font-semibold text-[var(--muted)]">Recent Sessions</h3>
         {scores.map((score, i) => (
           <div key={i} className="bg-[var(--background)] rounded-lg p-3 flex items-center gap-4">
             <div className="text-2xl">{ratingEmoji[score.overallRating]}</div>
@@ -107,8 +162,8 @@ export function AdaptationPanel() {
               <p className="text-xs text-[var(--muted)] italic">{score.coachFeedback}</p>
             </div>
             <div className="text-right text-xs text-[var(--muted)]">
-              <p>⚡ {score.powerAccuracy}%</p>
-              <p>⏱ {score.durationAccuracy}%</p>
+              <p>⚡ {Math.round(score.powerAccuracy)}%</p>
+              <p>⏱ {Math.round(score.durationAccuracy)}%</p>
               <p>❤️ drift {score.hrDrift}%</p>
             </div>
           </div>
@@ -163,4 +218,29 @@ export function AdaptationPanel() {
       )}
     </div>
   );
+}
+
+// Helper functions for converting workout data to scores
+function getRatingFromRPE(rpe: number): string {
+  if (rpe <= 6) return "crushed_it";
+  if (rpe <= 7) return "on_target"; 
+  if (rpe <= 8) return "struggled";
+  return "underperformed";
+}
+
+function getFatigueFromRPE(rpe: number): string {
+  if (rpe <= 6) return "fresh";
+  if (rpe <= 7) return "normal";
+  if (rpe <= 8) return "fatigued";
+  return "overreached";
+}
+
+function generateFeedback(compliance: number, rpe: number, feelings: string[]): string {
+  if (compliance >= 95 && rpe <= 7) {
+    return `${compliance}% compliance at RPE ${rpe}. Excellent execution.`;
+  }
+  if (compliance >= 85) {
+    return `${compliance}% compliance. Solid session with RPE ${rpe}.`;
+  }
+  return `${compliance}% compliance at RPE ${rpe}. ${feelings?.includes("tired") ? "Fatigue evident." : "Room for improvement."}`;
 }

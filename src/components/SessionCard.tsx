@@ -13,25 +13,29 @@ const statusConfig: Record<SessionStatus, { badge: string; label: string; glow: 
   upcoming: { badge: "🔒", label: "Upcoming", glow: "" },
 };
 
-function getSessionStatus(dayOfWeek: string): SessionStatus {
+function getSessionStatus(dayOfWeek: string, completedWorkouts?: string[]): SessionStatus {
   const today = getTodayKey();
   const todayIdx = DAY_ORDER.indexOf(today);
   const sessionIdx = DAY_ORDER.indexOf(dayOfWeek);
 
-  if (sessionIdx < todayIdx) return "completed"; // sample
+  // Check if this specific session is completed based on real data
+  if (completedWorkouts && completedWorkouts.includes(dayOfWeek)) return "completed";
+  
   if (sessionIdx === todayIdx) return "today";
+  if (sessionIdx < todayIdx) return "upcoming"; // Past days not completed show as upcoming
   return "upcoming";
 }
 
-export function SessionCard({ session, blockIdx, weekIdx, sessionIdx }: {
+export function SessionCard({ session, blockIdx, weekIdx, sessionIdx, completedWorkouts }: {
   session: SessionDef;
   blockIdx: number;
   weekIdx: number;
   sessionIdx: number;
+  completedWorkouts?: string[];
 }) {
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   const href = `/workout/${blockIdx}-${weekIdx}-${sessionIdx}`;
-  const status = getSessionStatus(session.dayOfWeek);
+  const status = getSessionStatus(session.dayOfWeek, completedWorkouts);
   const config = statusConfig[status];
 
   return (

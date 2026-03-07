@@ -85,8 +85,35 @@ export default function Dashboard() {
   const week = block.weeks[activeWeek];
   const bt = BLOCK_META[block.type];
 
-  // Sample completion for demo
-  const weekCompletionPct = 60; // 3/5 sessions done
+  // Calculate real completion percentage
+  const [weeklyProgress, setWeeklyProgress] = useState<{ completed: number; total: number }>({ completed: 0, total: 0 });
+  
+  useEffect(() => {
+    // Load this week's completion data
+    fetch("/api/workouts")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.workouts) {
+          const thisWeek = data.workouts.filter((w: any) => {
+            const workoutDate = new Date(w.createdAt);
+            const weekStart = new Date();
+            weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of this week
+            const weekEnd = new Date(weekStart);
+            weekEnd.setDate(weekEnd.getDate() + 6); // End of this week
+            return workoutDate >= weekStart && workoutDate <= weekEnd;
+          });
+          
+          const completed = thisWeek.filter((w: any) => w.completed).length;
+          const total = week.sessions.length;
+          setWeeklyProgress({ completed, total });
+        }
+      })
+      .catch(() => {});
+  }, [activeBlock, activeWeek]);
+
+  const weekCompletionPct = weeklyProgress.total > 0 
+    ? Math.round((weeklyProgress.completed / weeklyProgress.total) * 100) 
+    : 0;
 
   if (loading) return <DashboardSkeleton />;
 
