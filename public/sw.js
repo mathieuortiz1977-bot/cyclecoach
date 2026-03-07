@@ -51,6 +51,14 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   if (!url.protocol.startsWith("http")) return;
 
+  // NEVER cache authentication routes - let them handle redirects normally
+  if (url.pathname.startsWith("/api/auth/") || 
+      url.pathname.startsWith("/auth/") ||
+      url.pathname === "/login" ||
+      url.pathname === "/register") {
+    return;
+  }
+
   // API requests: network-first (don't cache auth or mutations)
   if (url.pathname.startsWith("/api/")) {
     event.respondWith(
@@ -84,8 +92,8 @@ self.addEventListener("fetch", (event) => {
     caches.match(request).then((cached) => {
       const fetchPromise = fetch(request)
         .then((response) => {
-          // Only cache successful responses
-          if (response.ok) {
+          // Only cache successful responses (not redirects!)
+          if (response.ok && response.status < 300) {
             const clone = response.clone();
             caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
           }
