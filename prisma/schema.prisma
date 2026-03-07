@@ -84,6 +84,8 @@ model Rider {
   fitnessMetrics         FitnessMetric[]
   heartRateProfile       HeartRateProfile?
   completedWorkouts      CompletedWorkout[]
+  workoutCancellations   WorkoutCancellation[]
+  workoutModifications   WorkoutModification[]
 }
 
 model Plan {
@@ -260,4 +262,38 @@ model HeartRateProfile {
   restingHr    Int    @default(60)
   lthr         Int?   // Lactate Threshold Heart Rate
   method       String @default("PERCENTAGE") // PERCENTAGE, KARVONEN
+}
+
+// ─── Workout Cancellations ──────────────────────────────────────────
+
+model WorkoutCancellation {
+  id          String   @id @default(cuid())
+  workoutId   String   // identifier for the cancelled workout (could be planned session id)
+  riderId     String
+  rider       Rider    @relation(fields: [riderId], references: [id])
+  reason      String   // reason for cancellation
+  cancelledAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  @@unique([workoutId, riderId]) // prevent duplicate cancellations
+}
+
+// ─── Workout Modifications ──────────────────────────────────────────
+
+model WorkoutModification {
+  id                   String   @id @default(cuid())
+  workoutId            String   // identifier for the modified workout
+  riderId              String
+  rider                Rider    @relation(fields: [riderId], references: [id])
+  originalTitle        String
+  modifiedTitle        String
+  originalDuration     Int      // minutes
+  modifiedDuration     Int      // minutes
+  originalTargetPower  Int      // percentage of FTP
+  modifiedTargetPower  Int      // percentage of FTP
+  sessionType          String
+  modifiedAt           DateTime @default(now())
+  createdAt            DateTime @default(now())
+
+  @@unique([workoutId, riderId]) // prevent duplicate modifications
 }

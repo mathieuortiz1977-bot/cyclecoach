@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import { PolylineMap } from "./PolylineMap";
+import { WorkoutCancellation } from "./WorkoutCancellation";
 
 interface WorkoutData {
   id: string;
@@ -26,6 +27,10 @@ interface WorkoutData {
   performanceGrade?: string;
   isProgramSession?: boolean;
   isPlannedSession?: boolean;
+  // Cancellation data
+  isCancelled?: boolean;
+  cancelReason?: string;
+  cancelledAt?: string;
   // Strava ride data
   isStravaRide?: boolean;
   name?: string;
@@ -60,6 +65,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [loading, setLoading] = useState(true);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
   const [plan, setPlan] = useState(() => generatePlan(4));
+  
+  // Cancellation state
+  const [showCancellation, setShowCancellation] = useState(false);
+  const [workoutToCancel, setWorkoutToCancel] = useState<WorkoutData | null>(null);
 
   useEffect(() => {
     loadWorkoutData();
@@ -363,6 +372,64 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     }
   };
 
+  // Cancellation handlers
+  const handleCancelWorkout = (workout: WorkoutData) => {
+    setWorkoutToCancel(workout);
+    setShowCancellation(true);
+    setSelectedDate(null); // Close the detail modal
+  };
+
+  const handleWorkoutCancelled = async (workoutId: string, reason: string) => {
+    try {
+      // Update the workout as cancelled
+      const response = await fetch("/api/workouts/cancel", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ workoutId, reason }),
+      });
+
+      if (response.ok) {
+        // Reload data to reflect the cancellation
+        await loadWorkoutData();
+      }
+    } catch (error) {
+      console.error("Failed to cancel workout:", error);
+    }
+  };
+
+  const handleWorkoutReschedule = async (newSchedule: WorkoutData[]) => {
+    try {
+      // Apply the new schedule
+      const response = await fetch("/api/workouts/reschedule", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ schedule: newSchedule }),
+      });
+
+      if (response.ok) {
+        // Reload data to reflect the changes
+        await loadWorkoutData();
+      }
+    } catch (error) {
+      console.error("Failed to apply reschedule:", error);
+    }
+  };
+
+  // Get workouts for the current week (for cancellation context)
+  const getCurrentWeekWorkouts = (selectedWorkout: WorkoutData): WorkoutData[] => {
+    const selectedDate = new Date(selectedWorkout.date);
+    const startOfWeek = new Date(selectedDate);
+    startOfWeek.setDate(selectedDate.getDate() - selectedDate.getDay());
+    
+    const endOfWeek = new Date(startOfWeek);
+    endOfWeek.setDate(startOfWeek.getDate() + 6);
+    
+    return [...workouts, ...plannedSessions].filter(w => {
+      const workoutDate = new Date(w.date);
+      return workoutDate >= startOfWeek && workoutDate <= endOfWeek;
+    });
+  };
+
   if (loading) {
     return (
       <motion.div
@@ -632,10 +699,51 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                   <p className="text-xs bg-[var(--background)] rounded-lg p-2">{selectedDate.notes}</p>
                 </div>
               )}
+
+              {/* Cancel button for planned sessions */}
+              {selectedDate.isPlannedSession && !selectedDate.completed && !selectedDate.isCancelled && (
+                <div className="pt-3 border-t border-[var(--card-border)]">
+                  <button
+                    onClick={() => handleCancelWorkout(selectedDate)}
+                    className="w-full py-2 text-sm bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 hover:border-red-500/30 rounded-lg transition-colors"
+                  >
+                    ❌ Cancel Workout
+                  </button>
+                  <p className="text-[9px] text-[var(--muted)] text-center mt-1">
+                    Max 2 cancellations per week
+                  </p>
+                </div>
+              )}
+
+              {selectedDate.isCancelled && (
+                <div className="pt-3 border-t border-[var(--card-border)]">
+                  <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-2 text-center">
+                    <p className="text-xs text-red-400 font-medium">❌ Cancelled</p>
+                    {selectedDate.cancelReason && (
+                      <p className="text-[9px] text-[var(--muted)] mt-1">{selectedDate.cancelReason}</p>
+                    )}
+                  </div>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Workout Cancellation Modal */}
+      {workoutToCancel && (
+        <WorkoutCancellation
+          workout={workoutToCancel}
+          weekWorkouts={getCurrentWeekWorkouts(workoutToCancel)}
+          onCancel={handleWorkoutCancelled}
+          onReschedule={handleWorkoutReschedule}
+          onClose={() => {
+            setShowCancellation(false);
+            setWorkoutToCancel(null);
+          }}
+          isOpen={showCancellation}
+        />
+      )}
     </>
   );
 }
