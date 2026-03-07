@@ -5,6 +5,7 @@ import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import { PolylineMap } from "./PolylineMap";
 import { WorkoutCancellation } from "./WorkoutCancellation";
+import { VacationPlanner } from "./VacationPlanner";
 
 interface WorkoutData {
   id: string;
@@ -45,6 +46,30 @@ interface WorkoutData {
   kilojoules?: number;
 }
 
+interface Vacation {
+  id: string;
+  startDate: string;
+  endDate: string;
+  type: "complete_break" | "light_activity" | "cross_training";
+  description?: string;
+  location?: string;
+  isActive: boolean;
+  isApplied: boolean;
+  expectedFitnessLoss?: string;
+  recoveryTime?: string;
+}
+
+interface TrainingProgram {
+  currentBlock: number;
+  currentWeek: number;
+  totalBlocks: number;
+  totalWeeks: number;
+  programStartDate: string;
+  programEndDate: string;
+  currentFocus: string;
+  upcomingGoals: string[];
+}
+
 interface Props {
   trainingDays?: string[];
 }
@@ -69,6 +94,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   // Cancellation state
   const [showCancellation, setShowCancellation] = useState(false);
   const [workoutToCancel, setWorkoutToCancel] = useState<WorkoutData | null>(null);
+  
+  // Vacation state
+  const [vacations, setVacations] = useState<Vacation[]>([]);
+  const [showVacationPlanner, setShowVacationPlanner] = useState(false);
+  const [trainingProgram, setTrainingProgram] = useState<TrainingProgram | null>(null);
 
   useEffect(() => {
     loadWorkoutData();
@@ -76,18 +106,20 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async () => {
     try {
-      const [workoutRes, riderRes, stravaRes, planRes] = await Promise.all([
+      const [workoutRes, riderRes, stravaRes, planRes, vacationRes] = await Promise.all([
         fetch("/api/workouts"),
         fetch("/api/rider"),
         fetch("/api/strava/activities"),
-        fetch("/api/plan")
+        fetch("/api/plan"),
+        fetch("/api/vacations")
       ]);
       
-      const [workoutData, riderData, stravaData, planData] = await Promise.all([
+      const [workoutData, riderData, stravaData, planData, vacationData] = await Promise.all([
         workoutRes.json(),
         riderRes.json(), 
         stravaRes.json(),
-        planRes.json()
+        planRes.json(),
+        vacationRes.json()
       ]);
 
       // Set program start date
@@ -163,6 +195,28 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, trainingDays);
         setPlannedSessions(plannedWorkouts);
         setPlan(planData.plan);
+      }
+
+      // Load vacation data
+      if (vacationData.success) {
+        setVacations(vacationData.vacations || []);
+      }
+
+      // Set training program data for vacation planner
+      if (planData.plan && startDate) {
+        const programEndDate = new Date(startDate);
+        programEndDate.setDate(programEndDate.getDate() + (planData.plan.totalWeeks * 7));
+        
+        setTrainingProgram({
+          currentBlock: getCurrentBlock(planData.plan, startDate),
+          currentWeek: getCurrentWeek(planData.plan, startDate),
+          totalBlocks: planData.plan.blocks.length,
+          totalWeeks: planData.plan.totalWeeks,
+          programStartDate: startDate.toISOString(),
+          programEndDate: programEndDate.toISOString(),
+          currentFocus: getCurrentFocus(planData.plan, startDate),
+          upcomingGoals: getUpcomingGoals(planData.plan, startDate)
+        });
       }
     } catch (error) {
       console.error("Failed to load workout data:", error);
@@ -415,6 +469,45 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     }
   };
 
+  // Vacation handlers
+  const handleVacationScheduled = async (vacation: Omit<Vacation, 'id' | 'isActive' | 'isApplied'>) => {
+    try {
+      const response = await fetch("/api/vacations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          startDate: vacation.startDate,
+          endDate: vacation.endDate,
+          type: vacation.type,
+          description: vacation.description,
+          location: vacation.location
+        }),
+      });
+
+      if (response.ok) {
+        // Reload data to include new vacation
+        await loadWorkoutData();
+        setShowVacationPlanner(false);
+      } else {
+        const errorData = await response.json();
+        console.error("Failed to schedule vacation:", errorData.error);
+        alert(`Failed to schedule vacation: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error("Vacation scheduling error:", error);
+      alert("Failed to schedule vacation. Please try again.");
+    }
+  };
+
+  const isDateInVacation = (date: string): Vacation | null => {
+    const dateObj = new Date(date);
+    return vacations.find(vacation => {
+      const startDate = new Date(vacation.startDate);
+      const endDate = new Date(vacation.endDate);
+      return dateObj >= startDate && dateObj <= endDate;
+    }) || null;
+  };
+
   // Get workouts for the current week (for cancellation context)
   const getCurrentWeekWorkouts = (selectedWorkout: WorkoutData): WorkoutData[] => {
     const selectedDate = new Date(selectedWorkout.date);
@@ -479,12 +572,20 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
         {/* Month navigation */}
         <div className="flex items-center justify-between mb-4">
-          <button
-            onClick={previousMonth}
-            className="p-2 rounded-lg hover:bg-[var(--card-border)] transition-colors"
-          >
-            ←
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={previousMonth}
+              className="p-2 rounded-lg hover:bg-[var(--card-border)] transition-colors"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => setShowVacationPlanner(true)}
+              className="px-3 py-1.5 text-xs bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
+            >
+              🏖️ Plan Vacation
+            </button>
+          </div>
           <h3 className="text-lg font-semibold">
             {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
           </h3>
@@ -538,6 +639,13 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                 {/* Show both Strava and program indicators */}
                 {day.hasStravaRide && day.hasProgramSession && (
                   <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-400 rounded-full" />
+                )}
+
+                {/* Vacation indicator */}
+                {isDateInVacation(day.date.toISOString()) && (
+                  <div className="absolute inset-0 bg-yellow-500/20 rounded-lg border-2 border-yellow-500/40 flex items-center justify-center">
+                    <span className="text-xs">🏖️</span>
+                  </div>
                 )}
               </motion.button>
             );
@@ -744,6 +852,17 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           isOpen={showCancellation}
         />
       )}
+
+      {/* Vacation Planner Modal */}
+      {trainingProgram && (
+        <VacationPlanner
+          isOpen={showVacationPlanner}
+          onClose={() => setShowVacationPlanner(false)}
+          onVacationScheduled={handleVacationScheduled}
+          existingVacations={vacations}
+          trainingProgram={trainingProgram}
+        />
+      )}
     </>
   );
 }
@@ -768,4 +887,54 @@ function calculateCompletion(programWorkouts: WorkoutData[]): number {
   if (programWorkouts.length === 0) return 0;
   const completed = programWorkouts.filter(w => w.completed).length;
   return Math.round((completed / programWorkouts.length) * 100);
+}
+
+// Helper functions for training program status
+function getCurrentBlock(plan: any, startDate: Date): number {
+  const daysSinceStart = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  const weeksSinceStart = Math.floor(daysSinceStart / 7);
+  
+  let currentBlock = 1;
+  let weeksAccumulated = 0;
+  
+  for (let i = 0; i < plan.blocks.length; i++) {
+    if (weeksAccumulated + plan.blocks[i].weeks.length > weeksSinceStart) {
+      currentBlock = i + 1;
+      break;
+    }
+    weeksAccumulated += plan.blocks[i].weeks.length;
+  }
+  
+  return currentBlock;
+}
+
+function getCurrentWeek(plan: any, startDate: Date): number {
+  const daysSinceStart = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  return Math.floor(daysSinceStart / 7) + 1;
+}
+
+function getCurrentFocus(plan: any, startDate: Date): string {
+  const currentBlock = getCurrentBlock(plan, startDate);
+  if (currentBlock <= plan.blocks.length) {
+    return plan.blocks[currentBlock - 1]?.focus || "Base Building";
+  }
+  return "Maintenance";
+}
+
+function getUpcomingGoals(plan: any, startDate: Date): string[] {
+  // Simple implementation - in real world would be more sophisticated
+  const currentBlock = getCurrentBlock(plan, startDate);
+  const goals = [];
+  
+  if (currentBlock === 1) {
+    goals.push("Build aerobic base", "Establish training routine");
+  } else if (currentBlock === 2) {
+    goals.push("Increase training intensity", "Develop lactate threshold");
+  } else if (currentBlock === 3) {
+    goals.push("Peak fitness", "Race preparation");
+  } else {
+    goals.push("Maintain fitness", "Active recovery");
+  }
+  
+  return goals;
 }

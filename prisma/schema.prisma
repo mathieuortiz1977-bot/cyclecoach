@@ -86,6 +86,7 @@ model Rider {
   completedWorkouts      CompletedWorkout[]
   workoutCancellations   WorkoutCancellation[]
   workoutModifications   WorkoutModification[]
+  vacations              Vacation[]
 }
 
 model Plan {
@@ -296,4 +297,35 @@ model WorkoutModification {
   createdAt            DateTime @default(now())
 
   @@unique([workoutId, riderId]) // prevent duplicate modifications
+}
+
+// ─── Vacations & Extended Breaks ─────────────────────────────────────
+
+model Vacation {
+  id          String   @id @default(cuid())
+  riderId     String
+  rider       Rider    @relation(fields: [riderId], references: [id])
+  startDate   DateTime
+  endDate     DateTime
+  type        String   // complete_break, light_activity, cross_training
+  description String?
+  location    String?
+  reason      String   @default("Planned vacation")
+  
+  // AI Analysis Results
+  expectedFitnessLoss    String?  // e.g., "5-15%"
+  detrainingLevel        String?  // Low, Moderate, High
+  recoveryTime           String?  // e.g., "2-3 weeks"
+  programExtensionWeeks  Int?     // weeks to extend program
+  preVacationPlan        String?  // JSON string of pre-vacation adjustments
+  postVacationPlan       String?  // JSON string of post-vacation return protocol
+  
+  // Status tracking
+  isActive    Boolean  @default(false) // currently on vacation
+  isApplied   Boolean  @default(false) // program adjustments have been applied
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([riderId, startDate, endDate]) // prevent duplicate vacations for same dates
 }
