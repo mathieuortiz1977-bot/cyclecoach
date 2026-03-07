@@ -1,22 +1,17 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { exportToZWO, downloadFile } from "@/lib/export";
 import { BLOCK_META, WEEK_LABELS } from "@/lib/constants";
+import { useRider } from "@/hooks/useRider";
 
 export default function ZwiftSync() {
-  const [ftp, setFtp] = useState(190);
+  const { rider } = useRider();
+  const ftp = rider?.ftp || 190;
   const plan = useMemo(() => generatePlan(4), []);
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
   const [downloaded, setDownloaded] = useState<Set<string>>(new Set());
-
-  useEffect(() => {
-    fetch("/api/rider")
-      .then((r) => r.json())
-      .then((data) => { if (data.rider?.ftp) setFtp(data.rider.ftp); })
-      .catch(() => {});
-  }, []);
 
   const block = plan.blocks[activeBlock];
   const week = block.weeks[activeWeek];

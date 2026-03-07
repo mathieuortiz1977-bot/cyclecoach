@@ -8,6 +8,8 @@ import { TrainingDayPicker } from "@/components/TrainingDayPicker";
 import { NotificationSetup } from "@/components/NotificationSetup";
 import { FitImport } from "@/components/FitImport";
 import { CalendarSync } from "@/components/CalendarSync";
+import { useRider } from "@/hooks/useRider";
+import { usePlan } from "@/hooks/usePlan";
 
 export default function SettingsPageWrapper() {
   return (
@@ -48,45 +50,39 @@ function SettingsPage() {
 
   const [loaded, setLoaded] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [plan, setPlan] = useState<any>(null);
+  
+  // Use custom hooks to fetch data instead of duplicating API calls
+  const { rider, loading: riderLoading } = useRider();
+  const { plan, loading: planLoading } = usePlan();
 
-  // Load rider profile and plan from DB
+  // Initialize state from rider data
   useEffect(() => {
-    Promise.all([
-      fetch("/api/rider").then(r => r.json()),
-      fetch("/api/plan").then(r => r.json())
-    ]).then(([riderData, planData]) => {
-      if (riderData.rider) {
-        setFtp(riderData.rider.ftp);
-        setWeight(riderData.rider.weight);
-        setExperience(riderData.rider.experience);
-        setTone(riderData.rider.coachTone);
-        if (riderData.rider.maxHr) setMaxHr(riderData.rider.maxHr);
-        if (riderData.rider.restingHr) setRestingHr(riderData.rider.restingHr);
-        if (riderData.rider.lthr) setLthr(riderData.rider.lthr);
-        
-        // Load training schedule
-        if (riderData.rider.trainingDays) {
-          setTrainingDays(riderData.rider.trainingDays.split(','));
-        }
-        if (riderData.rider.outdoorDay) {
-          setOutdoorDay(riderData.rider.outdoorDay);
-        }
-        if (riderData.rider.programStartDate) {
-          setStartDate(new Date(riderData.rider.programStartDate).toISOString().split('T')[0]);
-        }
-        if (riderData.rider.sundayDuration) {
-          setSundayDuration(riderData.rider.sundayDuration);
-        }
-      }
+    if (rider && !riderLoading) {
+      setFtp(rider.ftp);
+      setWeight(rider.weight);
+      setExperience(rider.experience);
+      setTone(rider.coachTone);
+      if (rider.maxHr) setMaxHr(rider.maxHr);
+      if (rider.restingHr) setRestingHr(rider.restingHr);
+      if (rider.lthr) setLthr(rider.lthr);
       
-      if (planData.plan) {
-        setPlan(planData.plan);
+      // Load training schedule
+      if (rider.trainingDays) {
+        setTrainingDays(rider.trainingDays.split(','));
+      }
+      if (rider.outdoorDay) {
+        setOutdoorDay(rider.outdoorDay);
+      }
+      if (rider.programStartDate) {
+        setStartDate(new Date(rider.programStartDate).toISOString().split('T')[0]);
+      }
+      if ((rider as any).sundayDuration) {
+        setSundayDuration((rider as any).sundayDuration);
       }
       
       setLoaded(true);
-    }).catch(() => setLoaded(true));
-  }, []);
+    }
+  }, [rider, riderLoading]);
 
   // Save rider profile to DB (debounced)
   const saveProfile = useCallback(async (updates: Record<string, unknown>) => {
