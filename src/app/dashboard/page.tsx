@@ -28,6 +28,7 @@ export default function Dashboard() {
   const [ftp, setFtp] = useState(190);
   const [loading, setLoading] = useState(true);
   const [plan, setPlan] = useState(() => generatePlan(4));
+  const [programStartDate, setProgramStartDate] = useState<string | undefined>();
 
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
@@ -39,6 +40,7 @@ export default function Dashboard() {
       fetch("/api/plan").then((r) => r.json()).catch(() => null),
     ]).then(([riderData, planData]) => {
       if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
+      if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
       if (planData?.plan && planData.source === "database") {
         // Transform DB plan to match PlanDef shape
@@ -178,7 +180,7 @@ export default function Dashboard() {
 
       {/* Today's Workout Hero — full width */}
       <motion.div variants={stagger.item}>
-        <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} />
+        <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} programStartDate={programStartDate} />
       </motion.div>
 
       {/* Bento Grid — Top Row */}

@@ -16,6 +16,7 @@ interface Props {
   plan: { blocks: { weeks: { sessions: SessionDef[] }[] }[] };
   blockIdx: number;
   weekIdx: number;
+  programStartDate?: string;
 }
 
 const restDayQuips = [
@@ -26,9 +27,50 @@ const restDayQuips = [
   "Your muscles are rebuilding themselves. Don't interrupt them. 💤",
 ];
 
-export function TodayHero({ plan, blockIdx, weekIdx }: Props) {
+export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) {
   const [selectedInterval, setSelectedInterval] = useState<IntervalDetailModal | null>(null);
   const today = getTodayKey();
+  const todayDate = new Date();
+  todayDate.setHours(0, 0, 0, 0);
+  
+  // Check if program has started
+  const programStart = programStartDate ? new Date(programStartDate) : null;
+  if (programStart) {
+    programStart.setHours(0, 0, 0, 0);
+  }
+  
+  const programHasStarted = !programStart || todayDate >= programStart;
+  
+  // If program hasn't started, show program start message
+  if (!programHasStarted && programStart) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="relative overflow-hidden rounded-xl border-2 border-[var(--accent)]/30 bg-gradient-to-br from-[var(--card)] via-[var(--card)] to-[var(--accent)]/5 p-6 md:p-8"
+      >
+        <div className="relative z-10 text-center">
+          <div className="text-4xl mb-4">🗓️</div>
+          <h2 className="text-xl md:text-2xl font-bold mb-2">Program Starts Soon!</h2>
+          <p className="text-lg font-semibold text-[var(--accent)] mb-4">
+            {programStart.toLocaleDateString('en-US', { 
+              weekday: 'long',
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}
+          </p>
+          <p className="text-sm text-[var(--muted)] mb-6">
+            Your personalized 16-week training plan will begin on this date. Get ready to start your cycling journey!
+          </p>
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card-border)] rounded-lg text-sm">
+            <span>📋 Review your plan and prepare</span>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+  
   const week = plan.blocks[blockIdx].weeks[weekIdx];
   const sessionIdx = week.sessions.findIndex((s) => s.dayOfWeek === today);
   const session = sessionIdx >= 0 ? week.sessions[sessionIdx] : null;

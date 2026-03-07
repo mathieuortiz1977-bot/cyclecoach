@@ -25,6 +25,7 @@ interface WorkoutData {
   };
   performanceGrade?: string;
   isProgramSession?: boolean;
+  isPlannedSession?: boolean;
   // Strava ride data
   isStravaRide?: boolean;
   name?: string;
@@ -54,10 +55,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [workouts, setWorkouts] = useState<WorkoutData[]>([]);
   const [stravaActivities, setStravaActivities] = useState<WorkoutData[]>([]);
+  const [plannedSessions, setPlannedSessions] = useState<WorkoutData[]>([]);
   const [selectedDate, setSelectedDate] = useState<WorkoutData | null>(null);
   const [loading, setLoading] = useState(true);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
-  const [plan] = useState(() => generatePlan(4));
+  const [plan, setPlan] = useState(() => generatePlan(4));
 
   useEffect(() => {
     loadWorkoutData();
@@ -65,16 +67,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async () => {
     try {
-      const [workoutRes, riderRes, stravaRes] = await Promise.all([
+      const [workoutRes, riderRes, stravaRes, planRes] = await Promise.all([
         fetch("/api/workouts"),
         fetch("/api/rider"),
-        fetch("/api/strava/activities")
+        fetch("/api/strava/activities"),
+        fetch("/api/plan")
       ]);
       
-      const [workoutData, riderData, stravaData] = await Promise.all([
+      const [workoutData, riderData, stravaData, planData] = await Promise.all([
         workoutRes.json(),
         riderRes.json(), 
-        stravaRes.json()
+        stravaRes.json(),
+        planRes.json()
       ]);
 
       // Set program start date
@@ -140,10 +144,62 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           }));
         setStravaActivities(stravaWorkouts);
       }
+
+      // Generate planned sessions from training plan
+      if (planData.plan && startDate) {
+        const trainingDays = riderData.rider?.trainingDays ? 
+          riderData.rider.trainingDays.split(',') : 
+          ["MON", "TUE", "THU", "FRI", "SAT"];
+        
+        const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, trainingDays);
+        setPlannedSessions(plannedWorkouts);
+        setPlan(planData.plan);
+      }
     } catch (error) {
       console.error("Failed to load workout data:", error);
     }
     setLoading(false);
+  };
+
+  const generatePlannedSessions = (plan: any, startDate: Date, trainingDays: string[]): WorkoutData[] => {
+    const sessions: WorkoutData[] = [];
+    let currentDate = new Date(startDate);
+
+    plan.blocks.forEach((block: any) => {
+      block.weeks.forEach((week: any) => {
+        week.sessions.forEach((session: any) => {
+          if (trainingDays.includes(session.dayOfWeek)) {
+            // Calculate the date for this session
+            const targetDayIndex = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].indexOf(session.dayOfWeek);
+            const currentDayIndex = currentDate.getDay();
+            const daysToAdd = (targetDayIndex - currentDayIndex + 7) % 7;
+            
+            const sessionDate = new Date(currentDate);
+            sessionDate.setDate(sessionDate.getDate() + daysToAdd);
+
+            sessions.push({
+              id: `planned-${block.blockNumber}-${week.weekNumber}-${session.dayOfWeek}`,
+              date: sessionDate.toISOString(),
+              completed: false,
+              sessionTitle: session.title,
+              duration: session.duration,
+              plannedSession: {
+                title: session.title,
+                duration: session.duration,
+                targetPower: session.intervals.length > 0 ? 
+                  Math.round((session.intervals[0].powerLow + session.intervals[0].powerHigh) / 2) : 
+                  65,
+                sessionType: session.sessionType
+              },
+              isPlannedSession: true
+            });
+          }
+        });
+        currentDate.setDate(currentDate.getDate() + 7);
+      });
+    });
+
+    return sessions;
   };
 
   const findPlannedSession = (date: string, dayOfWeek: string) => {
@@ -203,17 +259,24 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         new Date(a.date).toDateString() === current.toDateString()
       );
       
+      // Find planned session for this day
+      const plannedSession = plannedSessions.find(p =>
+        new Date(p.date).toDateString() === current.toDateString()
+      );
+      
       const isCurrentMonth = current.getMonth() === month;
       const isToday = current.toDateString() === new Date().toDateString();
       const dayKey = DAY_FROM_INDEX[current.getDay()];
       const isTrainingDay = trainingDays.includes(dayKey);
 
-      // Determine what to show - program session or Strava ride
+      // Determine what to show - priority: completed workout > Strava ride > planned session
       let displayData = null;
       if (dayWorkout) {
         displayData = dayWorkout;
       } else if (stravaRide) {
         displayData = stravaRide;
+      } else if (plannedSession) {
+        displayData = plannedSession;
       }
 
       days.push({
@@ -223,7 +286,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         isToday,
         isTrainingDay,
         hasStravaRide: !!stravaRide,
-        hasProgramSession: !!dayWorkout
+        hasProgramSession: !!dayWorkout,
+        hasPlannedSession: !!plannedSession
       });
 
       current.setDate(current.getDate() + 1);
@@ -245,12 +309,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     
     if (!day.isTrainingDay) return "rest";
     
+    // Completed program session takes priority
     if (day.hasProgramSession) return "completed";
+    
+    // Strava ride without program session
     if (day.hasStravaRide && !programHasStarted) return "completed"; // Show Strava rides as completed if no program yet
     if (day.hasStravaRide && programHasStarted) return "partial"; // Show as partial if it's a ride but not planned session
     
-    // Only show "missed" if program has started and it's a past training day
-    if (programHasStarted && dayDate < today && day.isTrainingDay) return "missed";
+    // Planned session (upcoming workout)
+    if (day.hasPlannedSession && dayDate >= today) return "planned";
+    
+    // Only show "missed" if program has started and it's a past training day without any activity
+    if (programHasStarted && dayDate < today && day.isTrainingDay && !day.hasStravaRide) return "missed";
     
     return "upcoming";
   };
@@ -259,6 +329,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     completed: "#22c55e",
     partial: "#f97316", 
     missed: "#ef4444",
+    planned: "#3b82f6",
     rest: "#c0c0c0",
     upcoming: "#374151",
     "other-month": "#1f2937"
@@ -266,10 +337,16 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const days = getDaysInMonth();
   const allWorkouts = [...workouts, ...stravaActivities];
+  const allPlannedAndCompleted = [...workouts, ...stravaActivities, ...plannedSessions];
   const stats = {
     streak: calculateStreak(allWorkouts),
     completion: calculateCompletion(workouts),
-    thisMonth: allWorkouts.filter(w => new Date(w.date).getMonth() === currentMonth.getMonth()).length
+    thisMonth: allWorkouts.filter(w => new Date(w.date).getMonth() === currentMonth.getMonth()).length,
+    upcomingThisMonth: plannedSessions.filter(p => {
+      const sessionDate = new Date(p.date);
+      const today = new Date();
+      return sessionDate.getMonth() === currentMonth.getMonth() && sessionDate >= today;
+    }).length
   };
 
   const previousMonth = () => {
@@ -401,15 +478,16 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         </div>
 
         {/* Legend */}
-        <div className="flex justify-center gap-4 mt-4 pt-4 border-t border-[var(--card-border)]">
-          {(["rest", "missed", "partial", "completed"] as const).map((status) => (
+        <div className="flex justify-center gap-3 mt-4 pt-4 border-t border-[var(--card-border)] flex-wrap">
+          {(["rest", "planned", "completed", "partial", "missed"] as const).map((status) => (
             <div key={status} className="flex items-center gap-2 text-xs">
               <div 
                 className="w-3 h-3 rounded" 
                 style={{ backgroundColor: statusColors[status] }}
               />
               <span className="text-[var(--muted)] capitalize">
-                {status === "partial" ? "Strava Only" : status}
+                {status === "partial" ? "Strava Only" : 
+                 status === "planned" ? "Scheduled" : status}
               </span>
             </div>
           ))}
