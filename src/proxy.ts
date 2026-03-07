@@ -9,6 +9,8 @@ const publicPaths = [
   "/api/auth",         // NextAuth routes
   "/api/health",       // Health check
   "/api/strava/webhook", // Strava webhook must be public
+  "/manifest.json",    // PWA manifest
+  "/sw.js",           // Service worker
 ];
 
 function isPublic(pathname: string): boolean {
@@ -23,11 +25,20 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Allow static assets and Next.js internals
+  // Allow static assets, PWA files, and Next.js internals
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
-    pathname.includes(".")
+    pathname.startsWith("/icons/") ||
+    pathname.endsWith(".ico") ||
+    pathname.endsWith(".png") ||
+    pathname.endsWith(".jpg") ||
+    pathname.endsWith(".jpeg") ||
+    pathname.endsWith(".svg") ||
+    pathname.endsWith(".webp") ||
+    pathname.endsWith(".css") ||
+    pathname.endsWith(".js") ||
+    pathname.endsWith(".map")
   ) {
     return NextResponse.next();
   }
@@ -55,7 +66,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths except static files
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    // Match all paths except static files, PWA files, and assets
+    "/((?!_next/static|_next/image|favicon.ico|manifest.json|sw.js|.*\\.(?:png|jpg|jpeg|svg|webp|ico|css|js|map)).*)",
   ],
 };
