@@ -437,116 +437,106 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="glass max-w-lg w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto"
+              className="glass max-w-sm w-full p-4 space-y-3 max-h-[85vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold">
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex-1 pr-2">
+                  <h3 className="text-base font-semibold leading-tight">
                     {selectedDate.isStravaRide ? selectedDate.name : selectedDate.sessionTitle || "Workout"}
                   </h3>
-                  <p className="text-sm text-[var(--muted)]">
+                  <p className="text-xs text-[var(--muted)]">
                     {new Date(selectedDate.date).toLocaleDateString()}
                   </p>
                   {selectedDate.isStravaRide && (
-                    <span className="inline-block text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full mt-1">
-                      📱 Strava Ride
+                    <span className="inline-block text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full mt-1">
+                      📱 Strava
                     </span>
                   )}
                 </div>
                 <button
                   onClick={() => setSelectedDate(null)}
-                  className="text-[var(--muted)] hover:text-[var(--foreground)]"
+                  className="text-[var(--muted)] hover:text-[var(--foreground)] text-lg"
                 >
                   ✕
                 </button>
               </div>
 
               {selectedDate.plannedSession && (
-                <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3">
-                  <p className="text-sm font-medium text-blue-400 mb-1">📋 Planned Session</p>
-                  <p className="text-xs text-[var(--muted)]">{selectedDate.plannedSession.title}</p>
-                  <p className="text-xs text-[var(--muted)]">
-                    Target: {selectedDate.plannedSession.duration} min @ {selectedDate.plannedSession.targetPower}% FTP
+                <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2">
+                  <p className="text-xs font-medium text-blue-400 mb-1">📋 Planned</p>
+                  <p className="text-[10px] text-[var(--muted)] leading-tight">
+                    {selectedDate.plannedSession.title} • {selectedDate.plannedSession.duration}min @ {selectedDate.plannedSession.targetPower}% FTP
                   </p>
                 </div>
               )}
 
               {selectedDate.performanceGrade && (
-                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-center">
-                  <p className="text-lg font-bold text-green-400">{selectedDate.performanceGrade}</p>
-                  <p className="text-xs text-[var(--muted)]">Performance Grade</p>
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-2 text-center">
+                  <p className="text-sm font-bold text-green-400">{selectedDate.performanceGrade}</p>
                 </div>
               )}
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2">
                 {selectedDate.duration && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-blue-400 text-lg mb-1">⏱️</div>
-                    <div className="font-semibold">{Math.round(selectedDate.duration)} min</div>
-                    <div className="text-xs text-[var(--muted)]">Duration</div>
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-blue-400 text-sm mb-0.5">⏱️</div>
+                    <div className="text-sm font-semibold">{Math.round(selectedDate.duration)} min</div>
                   </div>
                 )}
                 
                 {(selectedDate.avgPower || selectedDate.normalizedPower) && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-[var(--accent)] text-lg mb-1">⚡</div>
-                    <div className="font-semibold">
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-[var(--accent)] text-sm mb-0.5">⚡</div>
+                    <div className="text-sm font-semibold">
                       {Math.round(selectedDate.normalizedPower || selectedDate.avgPower || 0)}W
-                    </div>
-                    <div className="text-xs text-[var(--muted)]">
-                      {selectedDate.normalizedPower ? "Normalized Power" : "Avg Power"}
                     </div>
                   </div>
                 )}
 
                 {selectedDate.distance && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-green-400 text-lg mb-1">🚴</div>
-                    <div className="font-semibold">{selectedDate.distance.toFixed(1)} km</div>
-                    <div className="text-xs text-[var(--muted)]">Distance</div>
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-green-400 text-sm mb-0.5">🚴</div>
+                    <div className="text-sm font-semibold">{selectedDate.distance.toFixed(1)} km</div>
                   </div>
                 )}
 
                 {selectedDate.elevation && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-purple-400 text-lg mb-1">⛰️</div>
-                    <div className="font-semibold">{Math.round(selectedDate.elevation)}m</div>
-                    <div className="text-xs text-[var(--muted)]">Elevation</div>
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-purple-400 text-sm mb-0.5">⛰️</div>
+                    <div className="text-sm font-semibold">{Math.round(selectedDate.elevation)}m</div>
                   </div>
                 )}
 
                 {selectedDate.tss && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-red-400 text-lg mb-1">🔥</div>
-                    <div className="font-semibold">{selectedDate.tss}</div>
-                    <div className="text-xs text-[var(--muted)]">TSS</div>
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-red-400 text-sm mb-0.5">🔥</div>
+                    <div className="text-sm font-semibold">{selectedDate.tss}</div>
                   </div>
                 )}
 
                 {selectedDate.avgHr && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
-                    <div className="text-pink-400 text-lg mb-1">❤️</div>
-                    <div className="font-semibold">{Math.round(selectedDate.avgHr)} bpm</div>
-                    <div className="text-xs text-[var(--muted)]">Avg HR</div>
+                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                    <div className="text-pink-400 text-sm mb-0.5">❤️</div>
+                    <div className="text-sm font-semibold">{Math.round(selectedDate.avgHr)} bpm</div>
                   </div>
                 )}
               </div>
 
               {/* Map for Strava rides */}
               {selectedDate.isStravaRide && selectedDate.mapPolyline && (
-                <div className="bg-[var(--background)]/50 rounded-lg p-4">
-                  <h4 className="text-sm font-medium text-[var(--accent)] mb-2">🗺️ Route Map</h4>
-                  <PolylineMap polyline={selectedDate.mapPolyline} className="w-full h-48" />
-                  <div className="flex justify-between items-center mt-2 text-xs text-[var(--muted)]">
-                    <span>🟢 Start → 🔴 End</span>
+                <div className="bg-[var(--background)]/50 rounded-lg p-2">
+                  <h4 className="text-xs font-medium text-[var(--accent)] mb-1">🗺️ Route</h4>
+                  <PolylineMap polyline={selectedDate.mapPolyline} className="w-full h-32" />
+                  <div className="flex justify-between items-center mt-1 text-[10px] text-[var(--muted)]">
+                    <span>🟢→🔴</span>
                     <a 
                       href={`https://www.strava.com/activities/${selectedDate.id.replace('strava-', '')}`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-[var(--accent)] hover:underline"
                     >
-                      📱 View on Strava
+                      Strava
                     </a>
                   </div>
                 </div>
@@ -554,10 +544,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
               {selectedDate.feelings && selectedDate.feelings.length > 0 && (
                 <div>
-                  <p className="text-xs text-[var(--muted)] mb-1">Feelings</p>
+                  <p className="text-[10px] text-[var(--muted)] mb-1">Feelings</p>
                   <div className="flex gap-1 flex-wrap">
                     {selectedDate.feelings.map((feeling, i) => (
-                      <span key={i} className="text-xs bg-[var(--card-border)] rounded-full px-2 py-0.5">
+                      <span key={i} className="text-[10px] bg-[var(--card-border)] rounded-full px-1.5 py-0.5">
                         {feeling}
                       </span>
                     ))}
@@ -567,8 +557,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
               {selectedDate.notes && (
                 <div>
-                  <p className="text-xs text-[var(--muted)] mb-1">Notes</p>
-                  <p className="text-sm bg-[var(--background)] rounded-lg p-3">{selectedDate.notes}</p>
+                  <p className="text-[10px] text-[var(--muted)] mb-1">Notes</p>
+                  <p className="text-xs bg-[var(--background)] rounded-lg p-2">{selectedDate.notes}</p>
                 </div>
               )}
             </motion.div>
