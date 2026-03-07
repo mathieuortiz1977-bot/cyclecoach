@@ -72,6 +72,8 @@ model Rider {
   maxHr      Int?     // max heart rate
   restingHr  Int?     // resting heart rate
   lthr       Int?     // lactate threshold heart rate
+  trainingDays String @default("MON,TUE,THU,FRI,SAT") // comma-separated training days
+  outdoorDay   String @default("SAT")          // which day is the outdoor ride
   programStartDate DateTime? // when the user started their CycleCoach program
   createdAt  DateTime @default(now())
   plans      Plan[]

@@ -58,6 +58,17 @@ function SettingsPage() {
         if (data.rider.maxHr) setMaxHr(data.rider.maxHr);
         if (data.rider.restingHr) setRestingHr(data.rider.restingHr);
         if (data.rider.lthr) setLthr(data.rider.lthr);
+        
+        // Load training schedule
+        if (data.rider.trainingDays) {
+          setTrainingDays(data.rider.trainingDays.split(','));
+        }
+        if (data.rider.outdoorDay) {
+          setOutdoorDay(data.rider.outdoorDay);
+        }
+        if (data.rider.programStartDate) {
+          setStartDate(new Date(data.rider.programStartDate).toISOString().split('T')[0]);
+        }
       }
       setLoaded(true);
     }).catch(() => setLoaded(true));
@@ -97,6 +108,41 @@ function SettingsPage() {
       setSyncResult("❌ Sync failed");
     }
     setSyncing(false);
+  };
+
+  // Training schedule update
+  const [scheduleUpdating, setScheduleUpdating] = useState(false);
+  const [scheduleResult, setScheduleResult] = useState<string | null>(null);
+
+  const handleScheduleUpdate = async () => {
+    setScheduleUpdating(true);
+    setScheduleResult(null);
+    try {
+      // Save training schedule to rider profile
+      await fetch("/api/rider", {
+        method: "PUT", 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          trainingDays: trainingDays.join(','),
+          outdoorDay: outdoorDay,
+          programStartDate: new Date(startDate).toISOString(),
+        }),
+      });
+
+      // Regenerate the training plan based on new schedule
+      const planRes = await fetch("/api/plan", { method: "POST" });
+      const planData = await planRes.json();
+      
+      if (planData.plan) {
+        setScheduleResult("✅ Training schedule updated and plan regenerated!");
+      } else {
+        setScheduleResult("❌ Failed to regenerate plan");
+      }
+    } catch (err) {
+      console.error("Schedule update failed:", err);
+      setScheduleResult("❌ Update failed");
+    }
+    setScheduleUpdating(false);
   };
 
   return (
@@ -208,6 +254,34 @@ function SettingsPage() {
           />
           <p className="text-xs text-[var(--muted)] mt-1">
             Your 16-week plan will start from this date.
+          </p>
+        </div>
+
+        {/* Update Button */}
+        <div className="pt-4 border-t border-[var(--card-border)]">
+          <button
+            onClick={handleScheduleUpdate}
+            disabled={scheduleUpdating}
+            className="bg-[var(--accent)] hover:bg-[var(--accent)]/80 disabled:bg-[var(--accent)]/50 text-white px-6 py-2.5 rounded-lg font-medium transition-colors flex items-center gap-2"
+          >
+            {scheduleUpdating ? (
+              <>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                Updating Schedule...
+              </>
+            ) : (
+              <>
+                🔄 Update Training Schedule
+              </>
+            )}
+          </button>
+          {scheduleResult && (
+            <p className={`text-sm mt-2 ${scheduleResult.includes('✅') ? 'text-green-400' : 'text-red-400'}`}>
+              {scheduleResult}
+            </p>
+          )}
+          <p className="text-xs text-[var(--muted)] mt-2">
+            This will save your schedule and regenerate your entire 16-week program.
           </p>
         </div>
       </div>
