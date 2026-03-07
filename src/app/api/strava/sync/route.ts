@@ -44,15 +44,34 @@ export async function POST() {
       });
     }
 
-    // Fetch activities from last 30 days
-    const thirtyDaysAgo = Math.floor(Date.now() / 1000) - 30 * 24 * 3600;
-    const activities = await getStravaActivities(plainAccess, {
-      after: thirtyDaysAgo,
-      perPage: 100,
-    });
+    // Fetch activities from January 1st, 2026
+    const jan1st2026 = Math.floor(new Date('2026-01-01T00:00:00Z').getTime() / 1000);
+    
+    // Fetch all activities since Jan 1st, handling pagination
+    let allActivities = [];
+    let page = 1;
+    const perPage = 200; // Max per request
+    
+    while (true) {
+      const activities = await getStravaActivities(plainAccess, {
+        after: jan1st2026,
+        perPage,
+        page
+      });
+      
+      if (activities.length === 0) break;
+      allActivities.push(...activities);
+      
+      // If we got less than perPage, we're done
+      if (activities.length < perPage) break;
+      page++;
+      
+      // Safety limit to prevent infinite loops
+      if (page > 50) break; // Max ~10,000 activities
+    }
 
     // Filter to cycling activities
-    const rides = activities.filter((a) =>
+    const rides = allActivities.filter((a) =>
       ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type)
     );
 
@@ -110,6 +129,9 @@ export async function POST() {
       synced,
       skipped,
       total: rides.length,
+      totalActivities: allActivities.length,
+      dateRange: "Since January 1st, 2026",
+      message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities.`
     });
   } catch (err) {
     console.error("Strava sync error:", err);
