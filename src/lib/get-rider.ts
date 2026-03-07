@@ -29,6 +29,12 @@ export async function getCurrentRiderWithStrava() {
 
   return prisma.rider.findUnique({
     where: { userId },
-    include: { stravaConnection: true },
+    include: { 
+      stravaConnection: true,
+      stravaActivities: {
+        orderBy: { startDate: 'desc' },
+        take: 100 // Limit to recent 100 activities
+      }
+    },
   });
 }

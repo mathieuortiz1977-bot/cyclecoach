@@ -10,6 +10,7 @@ interface WorkoutData {
   completed: boolean;
   sessionTitle?: string;
   avgPower?: number;
+  normalizedPower?: number;
   duration?: number;
   rpe?: number;
   feelings?: string[];
@@ -22,6 +23,19 @@ interface WorkoutData {
     sessionType: string;
   };
   performanceGrade?: string;
+  isProgramSession?: boolean;
+  // Strava ride data
+  isStravaRide?: boolean;
+  name?: string;
+  type?: string;
+  distance?: number;
+  elevation?: number;
+  avgHr?: number;
+  maxHr?: number;
+  tss?: number;
+  mapPolyline?: string;
+  averageSpeed?: number;
+  kilojoules?: number;
 }
 
 interface Props {
@@ -38,8 +52,10 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "SAT"] }: Props) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [workouts, setWorkouts] = useState<WorkoutData[]>([]);
+  const [stravaActivities, setStravaActivities] = useState<WorkoutData[]>([]);
   const [selectedDate, setSelectedDate] = useState<WorkoutData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
   const [plan] = useState(() => generatePlan(4));
 
   useEffect(() => {
@@ -48,27 +64,31 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async () => {
     try {
-      const [workoutRes, riderRes] = await Promise.all([
+      const [workoutRes, riderRes, stravaRes] = await Promise.all([
         fetch("/api/workouts"),
-        fetch("/api/rider")
+        fetch("/api/rider"),
+        fetch("/api/strava/activities")
       ]);
       
-      const [workoutData, riderData] = await Promise.all([
+      const [workoutData, riderData, stravaData] = await Promise.all([
         workoutRes.json(),
-        riderRes.json()
+        riderRes.json(), 
+        stravaRes.json()
       ]);
 
+      // Set program start date
+      const startDate = riderData.rider?.programStartDate ? new Date(riderData.rider.programStartDate) : null;
+      setProgramStartDate(startDate);
+
+      // Load program sessions
       if (workoutData.workouts) {
-        // Only consider workouts after the program start date
-        const programStartDate = riderData.rider?.programStartDate ? new Date(riderData.rider.programStartDate) : null;
-        
         const enrichedWorkouts = workoutData.workouts
           .filter((w: any) => {
             // For program completion tracking, only count program sessions
             if (!w.isProgramSession) return false;
             
             // Only count workouts after program start date
-            if (programStartDate && new Date(w.createdAt) < programStartDate) return false;
+            if (startDate && new Date(w.createdAt) < startDate) return false;
             
             return true;
           })
@@ -89,6 +109,36 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           }));
         setWorkouts(enrichedWorkouts);
       }
+
+      // Load Strava activities
+      if (stravaData.activities) {
+        const stravaWorkouts = stravaData.activities
+          .filter((a: any) => {
+            // Only include cycling activities
+            return ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type);
+          })
+          .map((a: any) => ({
+            id: `strava-${a.id}`,
+            date: a.date,
+            completed: true,
+            name: a.name,
+            type: a.type,
+            avgPower: a.avgPower,
+            normalizedPower: a.normalizedPower,
+            duration: Math.round(a.duration / 60), // Convert to minutes
+            distance: a.distance,
+            elevation: a.elevation,
+            avgHr: a.avgHr,
+            maxHr: a.maxHr,
+            tss: a.tss,
+            mapPolyline: a.mapPolyline,
+            averageSpeed: a.averageSpeed,
+            kilojoules: a.kilojoules,
+            isStravaRide: true,
+            performanceGrade: gradeStravaRide(a, riderData.rider?.ftp || 190)
+          }));
+        setStravaActivities(stravaWorkouts);
+      }
     } catch (error) {
       console.error("Failed to load workout data:", error);
     }
@@ -97,7 +147,6 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const findPlannedSession = (date: string, dayOfWeek: string) => {
     // Find matching planned session from the training plan
-    // This is a simplified version - in reality you'd match to the exact week/block
     const dayKey = dayOfWeek?.toUpperCase();
     if (!dayKey || !trainingDays.includes(dayKey)) return null;
 
@@ -126,6 +175,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return "D Struggled";
   };
 
+  const gradeStravaRide = (activity: any, ftp: number): string => {
+    if (!activity.avgPower || !ftp) return "";
+    
+    const intensityFactor = activity.avgPower / ftp;
+    const duration = activity.duration / 60; // minutes
+    
+    if (intensityFactor >= 0.85 && duration >= 60) return "A High Quality";
+    if (intensityFactor >= 0.75 && duration >= 45) return "B Good Effort";
+    if (intensityFactor >= 0.65 && duration >= 30) return "C Steady Ride";
+    return "D Easy Ride";
+  };
+
   const getDaysInMonth = () => {
     const year = currentMonth.getFullYear();
     const month = currentMonth.getMonth();
@@ -138,8 +199,14 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     const current = new Date(startDate);
 
     for (let i = 0; i < 42; i++) {
+      // Find program session for this day
       const dayWorkout = workouts.find(w => 
         new Date(w.date).toDateString() === current.toDateString()
+      );
+      
+      // Find Strava ride for this day
+      const stravaRide = stravaActivities.find(a =>
+        new Date(a.date).toDateString() === current.toDateString()
       );
       
       const isCurrentMonth = current.getMonth() === month;
@@ -147,12 +214,22 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       const dayKey = DAY_FROM_INDEX[current.getDay()];
       const isTrainingDay = trainingDays.includes(dayKey);
 
+      // Determine what to show - program session or Strava ride
+      let displayData = null;
+      if (dayWorkout) {
+        displayData = dayWorkout;
+      } else if (stravaRide) {
+        displayData = stravaRide;
+      }
+
       days.push({
         date: new Date(current),
-        workout: dayWorkout,
+        workout: displayData,
         isCurrentMonth,
         isToday,
-        isTrainingDay
+        isTrainingDay,
+        hasStravaRide: !!stravaRide,
+        hasProgramSession: !!dayWorkout
       });
 
       current.setDate(current.getDate() + 1);
@@ -163,16 +240,30 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const getDateStatus = (day: any) => {
     if (!day.isCurrentMonth) return "other-month";
+    
+    const dayDate = day.date;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    dayDate.setHours(0, 0, 0, 0);
+    
+    // If program hasn't started, don't show "missed"
+    const programHasStarted = programStartDate && dayDate >= programStartDate;
+    
     if (!day.isTrainingDay) return "rest";
-    if (day.workout?.completed) return "completed";
-    if (day.workout && !day.workout.completed) return "partial";
-    if (day.date < new Date()) return "missed";
+    
+    if (day.hasProgramSession) return "completed";
+    if (day.hasStravaRide && !programHasStarted) return "completed"; // Show Strava rides as completed if no program yet
+    if (day.hasStravaRide && programHasStarted) return "partial"; // Show as partial if it's a ride but not planned session
+    
+    // Only show "missed" if program has started and it's a past training day
+    if (programHasStarted && dayDate < today && day.isTrainingDay) return "missed";
+    
     return "upcoming";
   };
 
   const statusColors = {
     completed: "#22c55e",
-    partial: "#f97316",
+    partial: "#f97316", 
     missed: "#ef4444",
     rest: "#6b7280",
     upcoming: "#374151",
@@ -180,10 +271,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   };
 
   const days = getDaysInMonth();
+  const allWorkouts = [...workouts, ...stravaActivities];
   const stats = {
-    streak: calculateStreak(workouts),
-    completion: workouts.length > 0 ? Math.round((workouts.filter(w => w.completed).length / workouts.length) * 100) : 0,
-    thisMonth: workouts.filter(w => new Date(w.date).getMonth() === currentMonth.getMonth()).length
+    streak: calculateStreak(allWorkouts),
+    completion: calculateCompletion(workouts),
+    thisMonth: allWorkouts.filter(w => new Date(w.date).getMonth() === currentMonth.getMonth()).length
   };
 
   const previousMonth = () => {
@@ -192,6 +284,12 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const nextMonth = () => {
     setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
+  };
+
+  const handleDateClick = (day: any) => {
+    if (day.workout) {
+      setSelectedDate(day.workout);
+    }
   };
 
   if (loading) {
@@ -224,7 +322,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold gradient-text">Training Calendar</h2>
-            <p className="text-sm text-[var(--muted)]">Click dates to see workout details</p>
+            <p className="text-sm text-[var(--muted)]">Click dates to see ride details</p>
           </div>
           <div className="flex gap-4 text-right">
             <div>
@@ -278,7 +376,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => day.workout && setSelectedDate(day.workout)}
+                onClick={() => handleDateClick(day)}
                 className="relative h-10 w-full rounded-lg transition-all duration-200 text-sm font-medium"
                 style={{ 
                   backgroundColor: statusColors[status],
@@ -298,6 +396,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                     {day.workout.performanceGrade[0]}
                   </div>
                 )}
+
+                {/* Show both Strava and program indicators */}
+                {day.hasStravaRide && day.hasProgramSession && (
+                  <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-400 rounded-full" />
+                )}
               </motion.button>
             );
           })}
@@ -311,13 +414,15 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                 className="w-3 h-3 rounded" 
                 style={{ backgroundColor: statusColors[status] }}
               />
-              <span className="text-[var(--muted)] capitalize">{status}</span>
+              <span className="text-[var(--muted)] capitalize">
+                {status === "partial" ? "Strava Only" : status}
+              </span>
             </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Workout Detail Modal */}
+      {/* Ride Detail Modal */}
       <AnimatePresence>
         {selectedDate && (
           <motion.div
@@ -331,15 +436,22 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="glass max-w-md w-full p-6 space-y-4"
+              className="glass max-w-lg w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-lg font-semibold">{selectedDate.sessionTitle || "Workout"}</h3>
+                  <h3 className="text-lg font-semibold">
+                    {selectedDate.isStravaRide ? selectedDate.name : selectedDate.sessionTitle || "Workout"}
+                  </h3>
                   <p className="text-sm text-[var(--muted)]">
                     {new Date(selectedDate.date).toLocaleDateString()}
                   </p>
+                  {selectedDate.isStravaRide && (
+                    <span className="inline-block text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full mt-1">
+                      📱 Strava Ride
+                    </span>
+                  )}
                 </div>
                 <button
                   onClick={() => setSelectedDate(null)}
@@ -359,62 +471,105 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                 </div>
               )}
 
-              {selectedDate.completed && (
-                <>
-                  {selectedDate.performanceGrade && (
-                    <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-center">
-                      <p className="text-lg font-bold text-green-400">{selectedDate.performanceGrade}</p>
-                      <p className="text-xs text-[var(--muted)]">Performance Grade</p>
-                    </div>
-                  )}
+              {selectedDate.performanceGrade && (
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-center">
+                  <p className="text-lg font-bold text-green-400">{selectedDate.performanceGrade}</p>
+                  <p className="text-xs text-[var(--muted)]">Performance Grade</p>
+                </div>
+              )}
 
-                  <div className="grid grid-cols-2 gap-4">
-                    {selectedDate.duration && (
-                      <div>
-                        <p className="text-xs text-[var(--muted)]">Duration</p>
-                        <p className="font-semibold">{Math.round(selectedDate.duration)} min</p>
-                      </div>
-                    )}
-                    {selectedDate.avgPower && (
-                      <div>
-                        <p className="text-xs text-[var(--muted)]">Avg Power</p>
-                        <p className="font-semibold">{Math.round(selectedDate.avgPower)}W</p>
-                      </div>
-                    )}
-                    {selectedDate.rpe && (
-                      <div>
-                        <p className="text-xs text-[var(--muted)]">RPE</p>
-                        <p className="font-semibold">{selectedDate.rpe}/10</p>
-                      </div>
-                    )}
-                    {selectedDate.compliance && (
-                      <div>
-                        <p className="text-xs text-[var(--muted)]">Compliance</p>
-                        <p className="font-semibold">{Math.round(selectedDate.compliance)}%</p>
-                      </div>
-                    )}
+              <div className="grid grid-cols-2 gap-4">
+                {selectedDate.duration && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-blue-400 text-lg mb-1">⏱️</div>
+                    <div className="font-semibold">{Math.round(selectedDate.duration)} min</div>
+                    <div className="text-xs text-[var(--muted)]">Duration</div>
                   </div>
-
-                  {selectedDate.feelings && selectedDate.feelings.length > 0 && (
-                    <div>
-                      <p className="text-xs text-[var(--muted)] mb-1">Feelings</p>
-                      <div className="flex gap-1 flex-wrap">
-                        {selectedDate.feelings.map((feeling, i) => (
-                          <span key={i} className="text-xs bg-[var(--card-border)] rounded-full px-2 py-0.5">
-                            {feeling}
-                          </span>
-                        ))}
-                      </div>
+                )}
+                
+                {(selectedDate.avgPower || selectedDate.normalizedPower) && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-[var(--accent)] text-lg mb-1">⚡</div>
+                    <div className="font-semibold">
+                      {Math.round(selectedDate.normalizedPower || selectedDate.avgPower || 0)}W
                     </div>
-                  )}
-
-                  {selectedDate.notes && (
-                    <div>
-                      <p className="text-xs text-[var(--muted)] mb-1">Notes</p>
-                      <p className="text-sm bg-[var(--background)] rounded-lg p-3">{selectedDate.notes}</p>
+                    <div className="text-xs text-[var(--muted)]">
+                      {selectedDate.normalizedPower ? "Normalized Power" : "Avg Power"}
                     </div>
-                  )}
-                </>
+                  </div>
+                )}
+
+                {selectedDate.distance && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-green-400 text-lg mb-1">🚴</div>
+                    <div className="font-semibold">{selectedDate.distance.toFixed(1)} km</div>
+                    <div className="text-xs text-[var(--muted)]">Distance</div>
+                  </div>
+                )}
+
+                {selectedDate.elevation && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-purple-400 text-lg mb-1">⛰️</div>
+                    <div className="font-semibold">{Math.round(selectedDate.elevation)}m</div>
+                    <div className="text-xs text-[var(--muted)]">Elevation</div>
+                  </div>
+                )}
+
+                {selectedDate.tss && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-red-400 text-lg mb-1">🔥</div>
+                    <div className="font-semibold">{selectedDate.tss}</div>
+                    <div className="text-xs text-[var(--muted)]">TSS</div>
+                  </div>
+                )}
+
+                {selectedDate.avgHr && (
+                  <div className="bg-[var(--background)]/50 rounded-lg p-3 text-center">
+                    <div className="text-pink-400 text-lg mb-1">❤️</div>
+                    <div className="font-semibold">{Math.round(selectedDate.avgHr)} bpm</div>
+                    <div className="text-xs text-[var(--muted)]">Avg HR</div>
+                  </div>
+                )}
+              </div>
+
+              {/* Map for Strava rides */}
+              {selectedDate.isStravaRide && selectedDate.mapPolyline && (
+                <div className="bg-[var(--background)]/50 rounded-lg p-4">
+                  <h4 className="text-sm font-medium text-[var(--accent)] mb-2">🗺️ Route Map</h4>
+                  <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <iframe
+                      src={`https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin=auto&destination=auto&waypoints=enc:${selectedDate.mapPolyline}:&mode=bicycling`}
+                      width="100%"
+                      height="100%"
+                      className="rounded-lg"
+                      loading="lazy"
+                      title="Ride Route"
+                    />
+                  </div>
+                  <p className="text-xs text-[var(--muted)] mt-2">
+                    📍 View on <a href={`https://www.strava.com/activities/${selectedDate.id.replace('strava-', '')}`} target="_blank" rel="noopener noreferrer" className="text-[var(--accent)] hover:underline">Strava</a>
+                  </p>
+                </div>
+              )}
+
+              {selectedDate.feelings && selectedDate.feelings.length > 0 && (
+                <div>
+                  <p className="text-xs text-[var(--muted)] mb-1">Feelings</p>
+                  <div className="flex gap-1 flex-wrap">
+                    {selectedDate.feelings.map((feeling, i) => (
+                      <span key={i} className="text-xs bg-[var(--card-border)] rounded-full px-2 py-0.5">
+                        {feeling}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {selectedDate.notes && (
+                <div>
+                  <p className="text-xs text-[var(--muted)] mb-1">Notes</p>
+                  <p className="text-sm bg-[var(--background)] rounded-lg p-3">{selectedDate.notes}</p>
+                </div>
               )}
             </motion.div>
           </motion.div>
@@ -438,4 +593,10 @@ function calculateStreak(workouts: WorkoutData[]): number {
     }
   }
   return streak;
+}
+
+function calculateCompletion(programWorkouts: WorkoutData[]): number {
+  if (programWorkouts.length === 0) return 0;
+  const completed = programWorkouts.filter(w => w.completed).length;
+  return Math.round((completed / programWorkouts.length) * 100);
 }
