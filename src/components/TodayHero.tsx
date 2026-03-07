@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { SessionDef, IntervalDef } from "@/lib/periodization";
 import { getZoneColor } from "@/lib/zones";
-import { getTodayKey } from "@/lib/constants";
+import { getTodayKey, DAY_FROM_INDEX } from "@/lib/constants";
 
 interface IntervalDetailModal {
   interval: IntervalDef;
@@ -41,8 +41,94 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
   
   const programHasStarted = !programStart || todayDate >= programStart;
   
-  // If program hasn't started, show program start message
+  // Get week data for all logic
+  const week = plan.blocks[blockIdx].weeks[weekIdx];
+  
+  // If program hasn't started, show upcoming workout preview
   if (!programHasStarted && programStart) {
+    // Find the first workout when program starts
+    const programStartDay = DAY_FROM_INDEX[programStart.getDay()];
+    const firstWorkoutIdx = week.sessions.findIndex((s) => s.dayOfWeek === programStartDay);
+    const firstWorkout = firstWorkoutIdx >= 0 ? week.sessions[firstWorkoutIdx] : null;
+    
+    if (firstWorkout) {
+      return (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative overflow-hidden rounded-xl border-2 border-[var(--accent)]/30 bg-gradient-to-br from-[var(--card)] via-[var(--card)] to-[var(--accent)]/5 p-6 md:p-8"
+        >
+          {/* Upcoming workout indicator */}
+          <div className="absolute top-4 right-4 bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-full px-3 py-1">
+            <span className="text-xs font-medium text-[var(--accent)]">UPCOMING</span>
+          </div>
+          
+          <div className="space-y-4">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="text-2xl">🗓️</div>
+                <div>
+                  <h2 className="text-xl md:text-2xl font-bold">Your First Workout</h2>
+                  <p className="text-sm text-[var(--muted)]">
+                    Program starts {programStart.toLocaleDateString('en-US', { 
+                      weekday: 'long',
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[var(--card-border)]/50 rounded-lg p-4">
+              <h3 className="font-semibold mb-2">{firstWorkout.title}</h3>
+              <p className="text-sm text-[var(--muted)] mb-3">{firstWorkout.description}</p>
+              
+              <div className="flex gap-4 text-sm">
+                <div className="flex items-center gap-1">
+                  <span>⏱️</span>
+                  <span>{firstWorkout.duration} min</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span>💪</span>
+                  <span>{firstWorkout.sessionType}</span>
+                </div>
+                {firstWorkout.intervals.length > 0 && (
+                  <div className="flex items-center gap-1">
+                    <span>⚡</span>
+                    <span>{Math.round((firstWorkout.intervals[0].powerLow + firstWorkout.intervals[0].powerHigh) / 2)}% FTP</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Interval preview */}
+              {firstWorkout.intervals && firstWorkout.intervals.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-[var(--card-border)]">
+                  <p className="text-xs text-[var(--muted)] mb-2">Key intervals:</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    {firstWorkout.intervals.slice(0, 4).map((interval, idx) => (
+                      <div key={idx} className="bg-[var(--background)]/50 rounded p-2 text-center">
+                        <div className="text-xs text-[var(--muted)]">{Math.round(interval.durationSecs / 60)}'</div>
+                        <div className="text-sm font-medium">{interval.powerLow}-{interval.powerHigh}%</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="text-center">
+              <p className="text-xs text-[var(--muted)] mb-2">Get ready to start your journey!</p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--card-border)] rounded-lg text-sm">
+                <span>📋 Review and prepare</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      );
+    }
+    
+    // Fallback if no workout found
     return (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -60,18 +146,11 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
               day: 'numeric' 
             })}
           </p>
-          <p className="text-sm text-[var(--muted)] mb-6">
-            Your personalized 16-week training plan will begin on this date. Get ready to start your cycling journey!
-          </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--card-border)] rounded-lg text-sm">
-            <span>📋 Review your plan and prepare</span>
-          </div>
         </div>
       </motion.div>
     );
   }
   
-  const week = plan.blocks[blockIdx].weeks[weekIdx];
   const sessionIdx = week.sessions.findIndex((s) => s.dayOfWeek === today);
   const session = sessionIdx >= 0 ? week.sessions[sessionIdx] : null;
 
