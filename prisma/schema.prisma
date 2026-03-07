@@ -88,6 +88,8 @@ model Rider {
   workoutModifications   WorkoutModification[]
   vacations              Vacation[]
   raceEvents             RaceEvent[]
+  segmentStats           SegmentStat[]
+  segmentAttempts        SegmentAttempt[]
 }
 
 model Plan {
@@ -358,4 +360,62 @@ model RaceEvent {
   updatedAt  DateTime @updatedAt
 
   @@unique([riderId, date]) // prevent duplicate events on same date for same rider
+}
+
+// ─── Strava Segment Performance Tracking ────────────────────────
+
+model SegmentStat {
+  id          String   @id @default(cuid())
+  riderId     String
+  rider       Rider    @relation(fields: [riderId], references: [id])
+  stravaSegmentId String // Strava segment ID
+  name        String
+  distance    Int      // meters
+  elevation   Int      // meters
+  avgGrade    Float    // percentage
+  
+  // Performance tracking
+  attempts    Int      @default(0)
+  bestTime    Int      // seconds
+  bestDate    DateTime
+  recentAvgTime Int?   // average of last 5 attempts
+  
+  // Trend analysis
+  improvement Int?     // seconds improvement/decline
+  improvementPercent Float? // percentage change
+  trend       String   @default("stable") // improving, stable, declining
+  
+  // Form analysis
+  lastAttemptDate DateTime?
+  consecutiveImproves Int @default(0)
+  
+  // Attempt history (stored as JSON for flexibility)
+  attemptsData String? // JSON array of attempt records
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@unique([riderId, stravaSegmentId])
+}
+
+model SegmentAttempt {
+  id          String   @id @default(cuid())
+  riderId     String
+  rider       Rider    @relation(fields: [riderId], references: [id])
+  segmentId   String   // Reference to SegmentStat
+  
+  stravaActivityId String
+  attemptDate DateTime
+  
+  elapsedTime Int      // seconds
+  movingTime  Int      // seconds
+  avgPower    Int?     // watts
+  maxPower    Int?     // watts
+  avgHr       Int?     // bpm
+  maxHr       Int?     // bpm
+  avgCadence  Float?   // rpm
+  
+  isPR        Boolean  @default(false)
+  
+  createdAt   DateTime @default(now())
 }
