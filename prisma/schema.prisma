@@ -87,6 +87,7 @@ model Rider {
   workoutCancellations   WorkoutCancellation[]
   workoutModifications   WorkoutModification[]
   vacations              Vacation[]
+  raceEvents             RaceEvent[]
 }
 
 model Plan {
@@ -328,4 +329,33 @@ model Vacation {
   updatedAt   DateTime @updatedAt
 
   @@unique([riderId, startDate, endDate]) // prevent duplicate vacations for same dates
+}
+
+// ─── Race Events & Peak Performance Planning ─────────────────────────
+
+model RaceEvent {
+  id          String   @id @default(cuid())
+  riderId     String
+  rider       Rider    @relation(fields: [riderId], references: [id])
+  name        String   // Event name
+  date        DateTime // Event date
+  type        String   // road_race, time_trial, criterium, gran_fondo, etc.
+  priority    String   // A, B, or C priority
+  location    String?  // Event location
+  distance    String?  // Event distance/duration
+  description String?  // Additional notes
+  
+  // AI Periodization Results
+  peakDate          DateTime? // Calculated optimal peak form date
+  taperWeeks        Int?      // Recommended taper duration
+  periodizationPlan String?   // JSON string of full periodization plan
+  
+  // Status tracking
+  isActive   Boolean  @default(false) // currently in event preparation
+  isComplete Boolean  @default(false) // event has been completed
+  
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([riderId, date]) // prevent duplicate events on same date for same rider
 }

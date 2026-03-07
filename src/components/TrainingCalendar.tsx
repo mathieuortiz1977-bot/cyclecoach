@@ -6,6 +6,7 @@ import { DAY_FROM_INDEX } from "@/lib/constants";
 import { PolylineMap } from "./PolylineMap";
 import { WorkoutCancellation } from "./WorkoutCancellation";
 import { VacationPlanner } from "./VacationPlanner";
+import { RaceEventPlanner } from "./RaceEventPlanner";
 
 interface WorkoutData {
   id: string;
@@ -59,6 +60,21 @@ interface Vacation {
   recoveryTime?: string;
 }
 
+interface RaceEvent {
+  id: string;
+  name: string;
+  date: string;
+  type: string;
+  priority: "A" | "B" | "C";
+  location?: string;
+  distance?: string;
+  description?: string;
+  peakDate?: string;
+  taperWeeks?: number;
+  isActive: boolean;
+  isComplete: boolean;
+}
+
 interface TrainingProgram {
   currentBlock: number;
   currentWeek: number;
@@ -99,6 +115,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [vacations, setVacations] = useState<Vacation[]>([]);
   const [showVacationPlanner, setShowVacationPlanner] = useState(false);
   const [trainingProgram, setTrainingProgram] = useState<TrainingProgram | null>(null);
+  
+  // Race events state
+  const [raceEvents, setRaceEvents] = useState<RaceEvent[]>([]);
+  const [showEventPlanner, setShowEventPlanner] = useState(false);
 
   useEffect(() => {
     loadWorkoutData();
@@ -106,20 +126,22 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async () => {
     try {
-      const [workoutRes, riderRes, stravaRes, planRes, vacationRes] = await Promise.all([
+      const [workoutRes, riderRes, stravaRes, planRes, vacationRes, eventsRes] = await Promise.all([
         fetch("/api/workouts"),
         fetch("/api/rider"),
         fetch("/api/strava/activities"),
         fetch("/api/plan"),
-        fetch("/api/vacations")
+        fetch("/api/vacations"),
+        fetch("/api/events")
       ]);
       
-      const [workoutData, riderData, stravaData, planData, vacationData] = await Promise.all([
+      const [workoutData, riderData, stravaData, planData, vacationData, eventsData] = await Promise.all([
         workoutRes.json(),
         riderRes.json(), 
         stravaRes.json(),
         planRes.json(),
-        vacationRes.json()
+        vacationRes.json(),
+        eventsRes.json()
       ]);
 
       // Set program start date
@@ -200,6 +222,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Load vacation data
       if (vacationData.success) {
         setVacations(vacationData.vacations || []);
+      }
+
+      // Load race events data
+      if (eventsData.success) {
+        setRaceEvents(eventsData.events || []);
       }
 
       // Set training program data for vacation planner
@@ -508,6 +535,48 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     }) || null;
   };
 
+  const isDateRaceEvent = (date: string): RaceEvent | null => {
+    const dateObj = new Date(date);
+    return raceEvents.find(event => {
+      const eventDate = new Date(event.date);
+      return dateObj.toDateString() === eventDate.toDateString();
+    }) || null;
+  };
+
+  // Race event handlers
+  const handleEventScheduled = async (event: Omit<RaceEvent, 'id' | 'isActive' | 'isComplete'>) => {
+    try {
+      const response = await fetch("/api/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: event.name,
+          date: event.date,
+          type: event.type,
+          priority: event.priority,
+          location: event.location,
+          distance: event.distance,
+          description: event.description,
+          peakDate: event.peakDate,
+          taperWeeks: event.taperWeeks
+        }),
+      });
+
+      if (response.ok) {
+        // Reload data to include new event
+        await loadWorkoutData();
+        setShowEventPlanner(false);
+      } else {
+        const errorData = await response.json();
+        console.error("Failed to schedule event:", errorData.error);
+        alert(`Failed to schedule event: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error("Event scheduling error:", error);
+      alert("Failed to schedule event. Please try again.");
+    }
+  };
+
   // Get workouts for the current week (for cancellation context)
   const getCurrentWeekWorkouts = (selectedWorkout: WorkoutData): WorkoutData[] => {
     const selectedDate = new Date(selectedWorkout.date);
@@ -579,12 +648,20 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             >
               ←
             </button>
-            <button
-              onClick={() => setShowVacationPlanner(true)}
-              className="px-3 py-1.5 text-xs bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
-            >
-              🏖️ Plan Vacation
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowVacationPlanner(true)}
+                className="px-3 py-1.5 text-xs bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
+              >
+                🏖️ Plan Vacation
+              </button>
+              <button
+                onClick={() => setShowEventPlanner(true)}
+                className="px-3 py-1.5 text-xs bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-lg border border-yellow-500/20 hover:border-yellow-500/30 transition-colors"
+              >
+                🏆 Race Events
+              </button>
+            </div>
           </div>
           <h3 className="text-lg font-semibold">
             {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
@@ -647,6 +724,25 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                     <span className="text-xs">🏖️</span>
                   </div>
                 )}
+
+                {/* Race event indicator */}
+                {(() => {
+                  const raceEvent = isDateRaceEvent(day.date.toISOString());
+                  if (raceEvent) {
+                    const priorityColors = {
+                      A: "bg-yellow-400/30 border-yellow-400/50 text-yellow-400",
+                      B: "bg-gray-400/30 border-gray-400/50 text-gray-300", 
+                      C: "bg-orange-400/30 border-orange-400/50 text-orange-400"
+                    };
+                    const priorityIcons = { A: "🥇", B: "🥈", C: "🥉" };
+                    
+                    return (
+                      <div className={`absolute inset-0 rounded-lg border-2 flex items-center justify-center ${priorityColors[raceEvent.priority]}`}>
+                        <span className="text-xs">{priorityIcons[raceEvent.priority]}</span>
+                      </div>
+                    );
+                  }
+                })()}
               </motion.button>
             );
           })}
@@ -860,6 +956,17 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           onClose={() => setShowVacationPlanner(false)}
           onVacationScheduled={handleVacationScheduled}
           existingVacations={vacations}
+          trainingProgram={trainingProgram}
+        />
+      )}
+
+      {/* Race Event Planner Modal */}
+      {trainingProgram && (
+        <RaceEventPlanner
+          isOpen={showEventPlanner}
+          onClose={() => setShowEventPlanner(false)}
+          onEventScheduled={handleEventScheduled}
+          existingEvents={raceEvents}
           trainingProgram={trainingProgram}
         />
       )}
