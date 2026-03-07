@@ -49,6 +49,7 @@ export async function POST(request: NextRequest) {
         weekIdx: body.weekIdx,
         sessionIdx: body.sessionIdx,
         stravaActivityId: body.stravaActivityId,
+        isProgramSession: true, // Workouts logged via completion flow are always program sessions
         date: body.date ? new Date(body.date) : new Date(),
       },
     });

@@ -29,7 +29,7 @@ export async function PUT(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { ftp, weight, experience, coachTone, maxHr, restingHr, lthr, name } = body;
+    const { ftp, weight, experience, coachTone, maxHr, restingHr, lthr, name, programStartDate } = body;
 
     const rider = await prisma.rider.upsert({
       where: { userId },
@@ -42,6 +42,7 @@ export async function PUT(request: NextRequest) {
         ...(restingHr !== undefined && { restingHr }),
         ...(lthr !== undefined && { lthr }),
         ...(name !== undefined && { name }),
+        ...(programStartDate !== undefined && { programStartDate: new Date(programStartDate) }),
       },
       create: {
         userId,
@@ -53,6 +54,7 @@ export async function PUT(request: NextRequest) {
         maxHr,
         restingHr,
         lthr,
+        programStartDate: programStartDate ? new Date(programStartDate) : null,
       },
     });
 

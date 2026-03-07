@@ -36,6 +36,7 @@ export default function SetupPage() {
           weight,
           experience,
           coachTone: tone,
+          programStartDate: startDate + "T00:00:00.000Z", // Set program start date
         }),
       });
     } catch (e) {

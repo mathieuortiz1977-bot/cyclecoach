@@ -72,6 +72,7 @@ model Rider {
   maxHr      Int?     // max heart rate
   restingHr  Int?     // resting heart rate
   lthr       Int?     // lactate threshold heart rate
+  programStartDate DateTime? // when the user started their CycleCoach program
   createdAt  DateTime @default(now())
   plans      Plan[]
   stravaConnection       StravaConnection?
@@ -241,6 +242,7 @@ model CompletedWorkout {
   weekIdx         Int?
   sessionIdx      Int?
   stravaActivityId String? // link to StravaActivity if auto-matched
+  isProgramSession Boolean  @default(false) // true if this was a scheduled CycleCoach session
   date            DateTime @default(now())
   createdAt       DateTime @default(now())
 }

@@ -95,6 +95,9 @@ export default function Dashboard() {
       .then((data) => {
         if (data.workouts) {
           const thisWeek = data.workouts.filter((w: any) => {
+            // Only count program sessions for completion tracking
+            if (!w.isProgramSession) return false;
+            
             const workoutDate = new Date(w.createdAt);
             const weekStart = new Date();
             weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of this week
@@ -103,7 +106,7 @@ export default function Dashboard() {
             return workoutDate >= weekStart && workoutDate <= weekEnd;
           });
           
-          const completed = thisWeek.filter((w: any) => w.completed).length;
+          const completed = thisWeek.filter((w: any) => w.completed && w.isProgramSession).length;
           const total = week.sessions.length;
           setWeeklyProgress({ completed, total });
         }

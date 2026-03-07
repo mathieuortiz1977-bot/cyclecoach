@@ -59,20 +59,34 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       ]);
 
       if (workoutData.workouts) {
-        const enrichedWorkouts = workoutData.workouts.map((w: any) => ({
-          id: w.id,
-          date: w.completedAt || w.createdAt,
-          completed: w.completed,
-          sessionTitle: w.sessionTitle,
-          avgPower: w.avgPower,
-          duration: w.actualDuration,
-          rpe: w.rpe,
-          feelings: w.feelings,
-          notes: w.notes,
-          compliance: w.compliance,
-          plannedSession: findPlannedSession(w.completedAt, w.dayOfWeek),
-          performanceGrade: gradePerformance(w, riderData.rider?.ftp || 190)
-        }));
+        // Only consider workouts after the program start date
+        const programStartDate = riderData.rider?.programStartDate ? new Date(riderData.rider.programStartDate) : null;
+        
+        const enrichedWorkouts = workoutData.workouts
+          .filter((w: any) => {
+            // For program completion tracking, only count program sessions
+            if (!w.isProgramSession) return false;
+            
+            // Only count workouts after program start date
+            if (programStartDate && new Date(w.createdAt) < programStartDate) return false;
+            
+            return true;
+          })
+          .map((w: any) => ({
+            id: w.id,
+            date: w.completedAt || w.createdAt,
+            completed: w.completed,
+            sessionTitle: w.sessionTitle,
+            avgPower: w.avgPower,
+            duration: w.actualDuration,
+            rpe: w.rpe,
+            feelings: w.feelings,
+            notes: w.notes,
+            compliance: w.compliance,
+            plannedSession: findPlannedSession(w.completedAt, w.dayOfWeek),
+            performanceGrade: gradePerformance(w, riderData.rider?.ftp || 190),
+            isProgramSession: w.isProgramSession
+          }));
         setWorkouts(enrichedWorkouts);
       }
     } catch (error) {
