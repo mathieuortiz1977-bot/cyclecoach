@@ -5,7 +5,7 @@ import { getZoneForPower } from "./zones";
 
 export type BlockType = "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM";
 export type WeekType = "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY";
-export type DayOfWeek = "MON" | "TUE" | "THU" | "FRI" | "SAT";
+export type DayOfWeek = "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT" | "SUN";
 
 export interface IntervalDef {
   name: string;
@@ -417,44 +417,141 @@ function saturdayRide(weekType: WeekType, blockNum: number): SessionDef {
   };
 }
 
-// ─── Block Generators ────────────────────────────────────────────────
+// ─── Dynamic Week Generator ──────────────────────────────────────────
 
-function generateBaseWeek(weekType: WeekType, blockNum: number): SessionDef[] {
-  return [baseMonday(weekType), baseTuesday(weekType), baseThursday(weekType), baseFriday(weekType), saturdayRide(weekType, blockNum)];
-}
+function generateWeekSessions(
+  blockType: BlockType, 
+  weekType: WeekType, 
+  blockNum: number,
+  trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
+  outdoorDay: DayOfWeek = "SAT"
+): SessionDef[] {
+  // Generate full week sessions (7 days)
+  const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+  const sessions: SessionDef[] = [];
 
-function generateThresholdWeek(weekType: WeekType, blockNum: number): SessionDef[] {
-  return [thresholdMonday(weekType), thresholdTuesday(weekType), thresholdThursday(weekType), thresholdFriday(weekType), saturdayRide(weekType, blockNum)];
-}
-
-function generateVo2Week(weekType: WeekType, blockNum: number): SessionDef[] {
-  return [vo2Monday(weekType), vo2Tuesday(weekType), vo2Thursday(weekType), vo2Friday(weekType), saturdayRide(weekType, blockNum)];
-}
-
-function generateRaceSimWeek(weekType: WeekType, blockNum: number): SessionDef[] {
-  return [raceSimMonday(weekType), raceSimTuesday(weekType), raceSimThursday(weekType), raceSimFriday(weekType), saturdayRide(weekType, blockNum)];
-}
-
-function generateWeekSessions(blockType: BlockType, weekType: WeekType, blockNum: number): SessionDef[] {
-  switch (blockType) {
-    case "BASE": return generateBaseWeek(weekType, blockNum);
-    case "THRESHOLD": return generateThresholdWeek(weekType, blockNum);
-    case "VO2MAX": return generateVo2Week(weekType, blockNum);
-    case "RACE_SIM": return generateRaceSimWeek(weekType, blockNum);
+  for (const day of allDays) {
+    if (!trainingDays.includes(day)) {
+      // Rest day
+      sessions.push(generateRestDay(day));
+    } else if (day === outdoorDay) {
+      // Outdoor day (usually longer ride)
+      sessions.push(generateOutdoorSession(weekType, blockNum, day));
+    } else {
+      // Indoor training day
+      sessions.push(generateIndoorSession(blockType, weekType, day));
+    }
   }
+
+  return sessions;
+}
+
+// ─── Custom Session Generators ──────────────────────────────────────
+
+function generateRestDay(day: DayOfWeek): SessionDef {
+  return {
+    dayOfWeek: day,
+    sessionType: "INDOOR",
+    duration: 0,
+    title: "Rest Day",
+    description: "Complete rest and recovery. Stay hydrated and get quality sleep.",
+    intervals: [],
+  };
+}
+
+function generateOutdoorSession(weekType: WeekType, blockNum: number, day: DayOfWeek): SessionDef {
+  // Use existing Saturday ride logic but for any day
+  const weekNum = blockNum * 4 + (weekType === "BUILD" ? 1 : weekType === "BUILD_PLUS" ? 2 : weekType === "OVERREACH" ? 3 : 4);
+  const route = getRouteForWeek(weekType, weekNum);
+  const baseDuration = weekType === "RECOVERY" ? 120 : 180;
+  const intensity = weekType === "RECOVERY" ? 60 : 65;
+  
+  const duration = route ? Math.round(route.distance * 3) : baseDuration; // ~3 min per km estimate
+  
+  return {
+    dayOfWeek: day,
+    sessionType: "OUTDOOR",
+    duration,
+    title: route ? route.name : "Endurance Ride",
+    description: route ? route.description : "Long outdoor ride focusing on aerobic base building. Maintain a comfortable conversation pace.",
+    intervals: [{
+      name: route ? route.name : "Endurance Ride",
+      durationSecs: duration * 60,
+      powerLow: intensity,
+      powerHigh: intensity,
+      zone: "Z2",
+      purpose: "Aerobic base building",
+      coachNote: getCoachNote("saturday")
+    }],
+    route,
+  };
+}
+
+function generateIndoorSession(blockType: BlockType, weekType: WeekType, day: DayOfWeek): SessionDef {
+  // Map day to existing session generators based on typical training structure
+  const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
+  
+  switch (blockType) {
+    case "BASE":
+      if (dayIndex === 0) return baseMonday(weekType);
+      if (dayIndex === 1) return baseTuesday(weekType);
+      if (dayIndex === 3) return baseThursday(weekType);
+      if (dayIndex === 4) return baseFriday(weekType);
+      break;
+    case "THRESHOLD":
+      if (dayIndex === 0) return thresholdMonday(weekType);
+      if (dayIndex === 1) return thresholdTuesday(weekType);
+      if (dayIndex === 3) return thresholdThursday(weekType);
+      if (dayIndex === 4) return thresholdFriday(weekType);
+      break;
+    case "VO2MAX":
+      if (dayIndex === 0) return vo2Monday(weekType);
+      if (dayIndex === 1) return vo2Tuesday(weekType);
+      if (dayIndex === 3) return vo2Thursday(weekType);
+      if (dayIndex === 4) return vo2Friday(weekType);
+      break;
+    case "RACE_SIM":
+      if (dayIndex === 0) return raceSimMonday(weekType);
+      if (dayIndex === 1) return raceSimTuesday(weekType);
+      if (dayIndex === 3) return raceSimThursday(weekType);
+      if (dayIndex === 4) return raceSimFriday(weekType);
+      break;
+  }
+  
+  // Fallback: easy endurance session
+  return {
+    dayOfWeek: day,
+    sessionType: "INDOOR",
+    duration: 60,
+    title: "Easy Endurance",
+    description: "Easy aerobic ride to maintain fitness.",
+    intervals: [{
+      name: "Easy Endurance",
+      durationSecs: 3600,
+      powerLow: 60,
+      powerHigh: 65,
+      zone: "Z2",
+      purpose: "Active recovery",
+      coachNote: getCoachNote("recovery")
+    }],
+  };
 }
 
 // ─── Duration Fix ────────────────────────────────────────────────────
 
 function fixSessionDuration(session: SessionDef): SessionDef {
-  if (session.sessionType === "OUTDOOR") return session; // Saturday durations are set by route
+  if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   return { ...session, duration: Math.round(totalSecs / 60) };
 }
 
 // ─── Full Plan Generator ─────────────────────────────────────────────
 
-export function generatePlan(numBlocks: number = 4): PlanDef {
+export function generatePlan(
+  numBlocks: number = 4,
+  trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
+  outdoorDay: DayOfWeek = "SAT"
+): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
 
@@ -464,7 +561,7 @@ export function generatePlan(numBlocks: number = 4): PlanDef {
 
     for (let w = 0; w < 4; w++) {
       const weekType = WEEK_SEQUENCE[w];
-      const sessions = generateWeekSessions(blockType, weekType, b).map(fixSessionDuration);
+      const sessions = generateWeekSessions(blockType, weekType, b, trainingDays, outdoorDay).map(fixSessionDuration);
       weeks.push({
         weekNumber: w + 1,
         weekType,

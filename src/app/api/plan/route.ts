@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { requireAuth } from "@/lib/api-auth";
 import { getCurrentRider } from "@/lib/get-rider";
-import { generatePlan } from "@/lib/periodization";
+import { generatePlan, type DayOfWeek } from "@/lib/periodization";
 
 // GET: Fetch or generate plan for the current rider
 export async function GET() {
@@ -55,6 +55,16 @@ export async function POST(request: NextRequest) {
     const body = await request.json().catch(() => ({}));
     const numBlocks = body.blocks || 4;
 
+    // Get rider's training schedule  
+    const trainingDays: DayOfWeek[] = rider.trainingDays ? 
+      rider.trainingDays.split(',').filter(day => 
+        ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
+      ) as DayOfWeek[] : 
+      ["MON", "TUE", "THU", "FRI", "SAT"];
+    const outdoorDay: DayOfWeek = (rider.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay)) ? 
+      rider.outdoorDay as DayOfWeek : 
+      "SAT";
+
     // Delete existing plan for this rider
     const existingPlans = await prisma.plan.findMany({ where: { riderId: rider.id }, select: { id: true } });
     for (const p of existingPlans) {
@@ -75,8 +85,8 @@ export async function POST(request: NextRequest) {
       await prisma.plan.delete({ where: { id: p.id } });
     }
 
-    // Generate plan
-    const planData = generatePlan(numBlocks);
+    // Generate plan with custom training schedule
+    const planData = generatePlan(numBlocks, trainingDays, outdoorDay);
 
     // Persist to DB
     const plan = await prisma.plan.create({
