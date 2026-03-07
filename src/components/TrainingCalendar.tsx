@@ -147,20 +147,13 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   };
 
   const findPlannedSession = (date: string, dayOfWeek: string) => {
-    // Find matching planned session from the training plan
+    // Find matching planned session from the actual training plan
     const dayKey = dayOfWeek?.toUpperCase();
     if (!dayKey || !trainingDays.includes(dayKey)) return null;
 
-    // For demo, return a sample planned session based on day
-    const sessionsByDay = {
-      MON: { title: "VO2max Intervals", duration: 60, targetPower: 120, sessionType: "INDOOR" },
-      TUE: { title: "Threshold Build", duration: 75, targetPower: 105, sessionType: "INDOOR" },
-      THU: { title: "Sweet Spot", duration: 90, targetPower: 88, sessionType: "INDOOR" },
-      FRI: { title: "Race Simulation", duration: 60, targetPower: 95, sessionType: "INDOOR" },
-      SAT: { title: "Long Endurance", duration: 180, targetPower: 65, sessionType: "OUTDOOR" }
-    };
-
-    return sessionsByDay[dayKey as keyof typeof sessionsByDay] || null;
+    // TODO: Integrate with actual plan data from /api/plan
+    // For now, return null to avoid showing incorrect demo data
+    return null;
   };
 
   const gradePerformance = (workout: any, ftp: number): string => {
