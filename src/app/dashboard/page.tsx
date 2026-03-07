@@ -29,16 +29,20 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [plan, setPlan] = useState(() => generatePlan(4));
   const [programStartDate, setProgramStartDate] = useState<string | undefined>();
+  const [workoutData, setWorkoutData] = useState<any[]>([]);
+  const [stravaData, setStravaData] = useState<any[]>([]);
 
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
 
-  // Load rider profile + plan from DB
+  // Load rider profile + plan + workout data from DB
   useEffect(() => {
     Promise.all([
       fetch("/api/rider").then((r) => r.json()).catch(() => null),
       fetch("/api/plan").then((r) => r.json()).catch(() => null),
-    ]).then(([riderData, planData]) => {
+      fetch("/api/workouts").then((r) => r.json()).catch(() => null),
+      fetch("/api/strava/activities").then((r) => r.json()).catch(() => null),
+    ]).then(([riderData, planData, workoutResponse, stravaResponse]) => {
       if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
       if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
@@ -76,6 +80,17 @@ export default function Dashboard() {
         };
         setPlan(dbPlan);
       }
+
+      // Load workout data for WeeklyDigest
+      if (workoutResponse?.workouts) {
+        setWorkoutData(workoutResponse.workouts);
+      }
+
+      // Load Strava data for WeeklyDigest
+      if (stravaResponse?.activities) {
+        setStravaData(stravaResponse.activities);
+      }
+
       setLoading(false);
     });
   }, []);
@@ -187,7 +202,11 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Weekly Digest — spans 2 cols on large */}
         <motion.div variants={stagger.item} className="lg:col-span-2">
-          <WeeklyDigest />
+          <WeeklyDigest 
+            programStartDate={programStartDate}
+            workoutData={workoutData}
+            stravaData={stravaData}
+          />
         </motion.div>
 
         {/* FTP Quick Card */}
