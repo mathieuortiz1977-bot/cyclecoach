@@ -328,6 +328,26 @@ function SettingsPage() {
         </div>
       </div>
 
+      {/* Training Preferences - moved here to be after Training Schedule */}
+      <div className="glass p-6 space-y-4">
+        <h2 className="text-lg font-semibold">⏱ Training Preferences</h2>
+        <div>
+          <label className="block text-sm text-[var(--muted)] mb-2">Default Indoor Session Duration (min)</label>
+          <input
+            type="range"
+            min={50}
+            max={90}
+            value={duration}
+            onChange={(e) => setDuration(parseInt(e.target.value))}
+            className="w-full accent-[var(--accent)]"
+          />
+          <p className="text-sm font-mono text-[var(--accent)]">{duration} minutes</p>
+          <p className="text-xs text-[var(--muted)] mt-2">
+            Indoor sessions default to this duration. Adjust based on your typical training session length.
+          </p>
+        </div>
+      </div>
+
       {/* Heart Rate Configuration */}
       <div className="glass p-6 space-y-4">
         <h2 className="text-lg font-semibold">❤️ Heart Rate Settings</h2>
@@ -417,23 +437,6 @@ function SettingsPage() {
               <p className="text-xs text-[var(--muted)]">{t.desc}</p>
             </button>
           ))}
-        </div>
-      </div>
-
-      {/* Training Preferences */}
-      <div className="glass p-6 space-y-4">
-        <h2 className="text-lg font-semibold">⏱ Training Preferences</h2>
-        <div>
-          <label className="block text-sm text-[var(--muted)] mb-1">Default Indoor Session Duration (min)</label>
-          <input
-            type="range"
-            min={50}
-            max={90}
-            value={duration}
-            onChange={(e) => setDuration(parseInt(e.target.value))}
-            className="w-full accent-[var(--accent)]"
-          />
-          <p className="text-sm font-mono text-[var(--accent)]">{duration} minutes</p>
         </div>
       </div>
 
