@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import * as tz from "@/lib/timezone";
+import { api } from "@/lib/api";
 import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -87,11 +88,7 @@ function SettingsPage() {
   const saveProfile = useCallback(async (updates: Record<string, unknown>) => {
     setSaving(true);
     try {
-      await fetch("/api/rider", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updates),
-      });
+      await api.rider.update(updates as any);
     } catch (e) {
       console.error("Save failed:", e);
     }
@@ -108,12 +105,11 @@ function SettingsPage() {
     setSyncing(true);
     setSyncResult(null);
     try {
-      const res = await fetch("/api/strava/sync", { method: "POST" });
-      const data = await res.json();
-      if (data.success) {
-        setSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
+      const response = await api.strava.sync();
+      if (response.success) {
+        setSyncResult(`✅ Synced ${response.data?.synced || 0} new rides (${response.data?.skipped || 0} already synced)`);
       } else {
-        setSyncResult(`❌ ${data.error}`);
+        setSyncResult(`❌ ${response.error}`);
       }
     } catch {
       setSyncResult("❌ Sync failed");
@@ -125,15 +121,14 @@ function SettingsPage() {
     setExtractingSegments(true);
     setExtractResult(null);
     try {
-      const res = await fetch("/api/strava/extract-segments", { method: "POST" });
-      const data = await res.json();
-      if (data.success) {
+      const response = await api.strava.extractSegments();
+      if (response.success) {
         setExtractResult(
-          `✅ Extracted ${data.extracted} activities with ${data.segments} new segments. ` +
+          `✅ Extracted ${response.data?.extracted || 0} activities with ${response.data?.segments || 0} new segments. ` +
           `Check the /segments page to see your PR opportunities!`
         );
       } else {
-        setExtractResult(`❌ ${data.error}`);
+        setExtractResult(`❌ ${response.error}`);
       }
     } catch {
       setExtractResult("❌ Extraction failed");
@@ -150,34 +145,27 @@ function SettingsPage() {
     setScheduleResult(null);
     try {
       // Save training schedule to rider profile
-      const riderRes = await fetch("/api/rider", {
-        method: "PUT", 
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          trainingDays: trainingDays.join(','),
-          outdoorDay: outdoorDay,
-          programStartDate: tz.parseISO(startDate).toISOString(),
-          sundayDuration: sundayDuration,
-        }),
+      const riderResponse = await api.rider.update({
+        trainingDays: trainingDays.join(','),
+        outdoorDay: outdoorDay,
+        programStartDate: tz.parseISO(startDate).toISOString(),
+        sundayDuration: sundayDuration,
       });
       
-      if (!riderRes.ok) {
-        throw new Error("Failed to save schedule");
+      if (!riderResponse.success) {
+        throw new Error(riderResponse.error || "Failed to save schedule");
       }
 
       // Regenerate the training plan based on new schedule
-      const planRes = await fetch("/api/plan", { method: "POST" });
-      const planData = await planRes.json();
+      const planResponse = await api.plan.regenerate();
       
-      if (planData.plan) {
+      if (planResponse.success) {
         setScheduleResult(
           "✅ Training schedule updated! Your 16-week plan has been regenerated. " +
           "View it in the dashboard or calendar. The changes will appear when you navigate there."
         );
-      } else if (planData.error) {
-        setScheduleResult(`❌ Error: ${planData.error}`);
       } else {
-        setScheduleResult("❌ Failed to regenerate plan");
+        setScheduleResult(`❌ Error: ${planResponse.error}`);
       }
     } catch (err) {
       console.error("Schedule update failed:", err);

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { api } from "@/lib/api";
 
 interface RaceEvent {
   id: string;
@@ -107,32 +108,26 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
     setIsAnalyzing(true);
     
     try {
-      const response = await fetch("/api/ai/event-periodization", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          event: {
-            name: eventName,
-            date: eventDate,
-            type: eventType,
-            priority: eventPriority,
-            location,
-            distance,
-            description,
-            weeksUntilEvent
-          },
-          trainingProgram,
-          existingEvents
-        }),
+      const response = await api.ai.eventPeriodization({
+        event: {
+          name: eventName,
+          date: eventDate,
+          type: eventType,
+          priority: eventPriority,
+          location,
+          distance,
+          description,
+          weeksUntilEvent
+        },
+        trainingProgram,
+        existingEvents
       });
 
-      const data = await response.json();
-      
-      if (data.success) {
-        setPeriodizationAnalysis(data.analysis);
+      if (response.success) {
+        setPeriodizationAnalysis(response.data?.analysis || response.data);
         setStep("analysis");
       } else {
-        throw new Error(data.error || "Analysis failed");
+        throw new Error(response.error || "Analysis failed");
       }
     } catch (error) {
       console.error("Periodization analysis failed:", error);
@@ -206,14 +201,10 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
 
     // Save the event to database
     try {
-      const response = await fetch("/api/events", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(event),
-      });
+      const response = await api.events.create(event as any);
 
-      if (!response.ok) {
-        throw new Error("Failed to save event");
+      if (!response.success) {
+        throw new Error(response.error || "Failed to save event");
       }
 
       // Check if we should regenerate the plan
@@ -236,14 +227,9 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
   const handleApplyPlanChanges = async () => {
     setIsRegeneratingPlan(true);
     try {
-      const response = await fetch("/api/plan", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const data = await response.json();
+      const response = await api.plan.regenerate();
       
-      if (data.plan) {
+      if (response.success) {
         onEventScheduled({
           id: `event-${Date.now()}`,
           name: eventName,

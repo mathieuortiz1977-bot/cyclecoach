@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import * as tz from "@/lib/timezone";
+import { api } from "@/lib/api";
 import { PolylineMap } from "./PolylineMap";
 import { WorkoutCancellation } from "./WorkoutCancellation";
 import { VacationPlanner } from "./VacationPlanner";
@@ -140,23 +141,21 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async () => {
     try {
-      const [workoutRes, riderRes, stravaRes, planRes, vacationRes, eventsRes] = await Promise.all([
-        fetch("/api/workouts"),
-        fetch("/api/rider"),
-        fetch("/api/strava/activities"),
-        fetch("/api/plan"),
-        fetch("/api/vacations"),
-        fetch("/api/events")
+      const [workoutResponse, riderResponse, stravaResponse, planResponse, vacationResponse, eventsResponse] = await Promise.all([
+        api.workouts.list(),
+        api.rider.get(),
+        api.strava.getActivities(),
+        api.plan.get(),
+        api.vacations.list(),
+        api.events.list()
       ]);
       
-      const [workoutData, riderData, stravaData, planData, vacationData, eventsData] = await Promise.all([
-        workoutRes.json(),
-        riderRes.json(), 
-        stravaRes.json(),
-        planRes.json(),
-        vacationRes.json(),
-        eventsRes.json()
-      ]);
+      const workoutData = workoutResponse.data || {};
+      const riderData = riderResponse.data || {};
+      const stravaData = stravaResponse.data || {};
+      const planData = planResponse.data || {};
+      const vacationData = vacationResponse.data || {};
+      const eventsData = eventsResponse.data || {};
 
       // Set program start date
       const startDate = riderData.rider?.programStartDate ? new Date(riderData.rider.programStartDate) : null;
@@ -494,13 +493,9 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const handleWorkoutCancelled = async (workoutId: string, reason: string) => {
     try {
       // Update the workout as cancelled
-      const response = await fetch("/api/workouts/cancel", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ workoutId, reason }),
-      });
+      const response = await api.workouts.cancel(workoutId, reason);
 
-      if (response.ok) {
+      if (response.success) {
         // Reload data to reflect the cancellation
         await loadWorkoutData();
       }
@@ -511,17 +506,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const handleWorkoutReschedule = async (newSchedule: WorkoutData[]) => {
     try {
-      // Apply the new schedule
-      const response = await fetch("/api/workouts/reschedule", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ schedule: newSchedule }),
-      });
-
-      if (response.ok) {
-        // Reload data to reflect the changes
-        await loadWorkoutData();
+      // Apply the new schedule - reschedule each workout to its new date
+      for (const workout of newSchedule) {
+        const originalWorkout = workouts.find(w => w.id === workout.id);
+        if (originalWorkout && workout.date !== originalWorkout.date) {
+          const response = await api.workouts.reschedule(workout.id, tz.formatAsISO(new Date(workout.date)));
+          if (!response.success) {
+            console.error(`Failed to reschedule workout ${workout.id}`);
+          }
+        }
       }
+      // Reload data to reflect the changes
+      await loadWorkoutData();
     } catch (error) {
       console.error("Failed to apply reschedule:", error);
     }
@@ -530,26 +526,21 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   // Vacation handlers
   const handleVacationScheduled = async (vacation: Omit<Vacation, 'id' | 'isActive' | 'isApplied'>) => {
     try {
-      const response = await fetch("/api/vacations", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          startDate: vacation.startDate,
-          endDate: vacation.endDate,
-          type: vacation.type,
-          description: vacation.description,
-          location: vacation.location
-        }),
+      const response = await api.vacations.create({
+        startDate: vacation.startDate,
+        endDate: vacation.endDate,
+        type: vacation.type as any,
+        description: vacation.description,
+        location: vacation.location
       });
 
-      if (response.ok) {
+      if (response.success) {
         // Reload data to include new vacation
         await loadWorkoutData();
         setShowVacationPlanner(false);
       } else {
-        const errorData = await response.json();
-        console.error("Failed to schedule vacation:", errorData.error);
-        alert(`Failed to schedule vacation: ${errorData.error}`);
+        console.error("Failed to schedule vacation:", response.error);
+        alert(`Failed to schedule vacation: ${response.error}`);
       }
     } catch (error) {
       console.error("Vacation scheduling error:", error);
@@ -577,30 +568,25 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   // Race event handlers
   const handleEventScheduled = async (event: Omit<RaceEvent, 'id' | 'isActive' | 'isComplete'>) => {
     try {
-      const response = await fetch("/api/events", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: event.name,
-          date: event.date,
-          type: event.type,
-          priority: event.priority,
-          location: event.location,
-          distance: event.distance,
-          description: event.description,
-          peakDate: event.peakDate,
-          taperWeeks: event.taperWeeks
-        }),
+      const response = await api.events.create({
+        name: event.name,
+        date: event.date,
+        type: event.type,
+        priority: event.priority,
+        location: event.location,
+        distance: event.distance,
+        description: event.description,
+        peakDate: event.peakDate,
+        taperWeeks: event.taperWeeks
       });
 
-      if (response.ok) {
+      if (response.success) {
         // Reload data to include new event
         await loadWorkoutData();
         setShowEventPlanner(false);
       } else {
-        const errorData = await response.json();
-        console.error("Failed to schedule event:", errorData.error);
-        alert(`Failed to schedule event: ${errorData.error}`);
+        console.error("Failed to schedule event:", response.error);
+        alert(`Failed to schedule event: ${response.error}`);
       }
     } catch (error) {
       console.error("Event scheduling error:", error);

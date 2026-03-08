@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { api } from "@/lib/api";
 
 interface Vacation {
   id: string;
@@ -76,30 +77,24 @@ export function VacationPlanner({ isOpen, onClose, onVacationScheduled, existing
     setIsAnalyzing(true);
     
     try {
-      const response = await fetch("/api/ai/vacation-analysis", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          vacation: {
-            startDate,
-            endDate,
-            type: vacationType,
-            duration: vacationDays,
-            description,
-            location
-          },
-          trainingProgram,
-          existingVacations
-        }),
+      const response = await api.ai.vacationAnalysis({
+        vacation: {
+          startDate,
+          endDate,
+          type: vacationType,
+          duration: vacationDays,
+          description,
+          location
+        },
+        trainingProgram,
+        riderFtp: 250 // This should come from rider context
       });
 
-      const data = await response.json();
-      
-      if (data.success) {
-        setProgramAnalysis(data.analysis);
+      if (response.success) {
+        setProgramAnalysis(response.data?.analysis || response.data);
         setStep("analysis");
       } else {
-        throw new Error(data.error || "Analysis failed");
+        throw new Error(response.error || "Analysis failed");
       }
     } catch (error) {
       console.error("Vacation analysis failed:", error);
