@@ -69,12 +69,13 @@ export async function POST() {
       afterTimestamp = Math.floor(syncDate.getTime() / 1000);
       console.log("[SYNC] Fetching activities since:", syncDate.toISOString());
     } else {
-      // First sync: get last 30 days only (can manually extend later)
-      console.log("[SYNC] No previous activities found - initial sync, getting last 30 days");
-      const thirtyDaysAgo = new Date();
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-      afterTimestamp = Math.floor(thirtyDaysAgo.getTime() / 1000);
-      console.log("[SYNC] Fetching activities since:", thirtyDaysAgo.toISOString());
+      // First sync: get last 7 days only (safe from rate limit)
+      // User can fetch full history using year buttons in Settings
+      console.log("[SYNC] No previous activities found - initial sync, getting last 7 days");
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      afterTimestamp = Math.floor(sevenDaysAgo.getTime() / 1000);
+      console.log("[SYNC] Fetching activities since:", sevenDaysAgo.toISOString());
     }
     
     let allActivities = [];
