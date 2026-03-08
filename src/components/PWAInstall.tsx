@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { registerServiceWorker, enableAutoUpdateOnFocus, cleanupSW } from "@/lib/sw";
 
 export function PWAInstall() {
   const [showBanner, setShowBanner] = useState(false);
@@ -7,13 +8,11 @@ export function PWAInstall() {
   const [isStandalone, setIsStandalone] = useState(false);
 
   useEffect(() => {
-    // Register service worker
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/sw.js")
-        .then((reg) => console.log("[PWA] SW registered:", reg.scope))
-        .catch((err) => console.error("[PWA] SW registration failed:", err));
-    }
+    // Register service worker with update management
+    registerServiceWorker();
+
+    // Check for updates when page comes into focus
+    enableAutoUpdateOnFocus();
 
     // Check if already installed
     const standalone =
@@ -30,9 +29,14 @@ export function PWAInstall() {
       const dismissed = localStorage.getItem("pwa-install-dismissed");
       if (!dismissed || Date.now() - parseInt(dismissed) > 7 * 24 * 3600 * 1000) {
         const timer = setTimeout(() => setShowBanner(true), 30000);
-        return () => clearTimeout(timer);
+        return () => {
+          clearTimeout(timer);
+          cleanupSW();
+        };
       }
     }
+
+    return () => cleanupSW();
   }, []);
 
   const dismiss = () => {
