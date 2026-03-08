@@ -1,6 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import * as tz from "@/lib/timezone";
@@ -122,11 +122,15 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [raceEvents, setRaceEvents] = useState<RaceEvent[]>([]);
   const [showEventPlanner, setShowEventPlanner] = useState(false);
 
+  // TODO: Wrap loadWorkoutData in useCallback and move before these useEffects
+  // For now, using currentMonth as primary dependency trigger
+  // loadWorkoutData is recreated on each render, so it gets called when currentMonth changes
   useEffect(() => {
     loadWorkoutData();
   }, [currentMonth]);
 
   // Refetch plan when component mounts or becomes visible
+  // TODO: Add loadWorkoutData to dependencies after moving to useCallback
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden) {

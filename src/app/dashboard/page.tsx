@@ -195,7 +195,7 @@ export default function Dashboard() {
         }
       })
       .catch(() => {});
-  }, [activeBlock, activeWeek]);
+  }, [activeBlock, activeWeek, plan]);
 
   const weekCompletionPct = weeklyProgress.total > 0 
     ? Math.round((weeklyProgress.completed / weeklyProgress.total) * 100) 
