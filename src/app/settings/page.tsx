@@ -102,6 +102,8 @@ function SettingsPage() {
   // Strava sync
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState<string | null>(null);
+  const [extractingSegments, setExtractingSegments] = useState(false);
+  const [extractResult, setExtractResult] = useState<string | null>(null);
 
   const handleStravaSync = async () => {
     setSyncing(true);
@@ -118,6 +120,26 @@ function SettingsPage() {
       setSyncResult("❌ Sync failed");
     }
     setSyncing(false);
+  };
+
+  const handleExtractSegments = async () => {
+    setExtractingSegments(true);
+    setExtractResult(null);
+    try {
+      const res = await fetch("/api/strava/extract-segments", { method: "POST" });
+      const data = await res.json();
+      if (data.success) {
+        setExtractResult(
+          `✅ Extracted ${data.extracted} activities with ${data.segments} new segments. ` +
+          `Check the /segments page to see your PR opportunities!`
+        );
+      } else {
+        setExtractResult(`❌ ${data.error}`);
+      }
+    } catch {
+      setExtractResult("❌ Extraction failed");
+    }
+    setExtractingSegments(false);
   };
 
   // Training schedule update
@@ -481,7 +503,24 @@ function SettingsPage() {
                 </button>
               )}
             </div>
-            {syncResult && <p className="text-xs">{syncResult}</p>}
+            {stravaStatus === "connected" && (
+              <button
+                onClick={handleExtractSegments}
+                disabled={extractingSegments}
+                className="w-full px-3 py-2 rounded-lg text-sm border border-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors disabled:opacity-50 text-[var(--accent)]"
+              >
+                {extractingSegments ? (
+                  <>
+                    <div className="w-3 h-3 border-2 border-[var(--accent)]/30 border-t-[var(--accent)] rounded-full animate-spin inline-block mr-2" />
+                    Extracting...
+                  </>
+                ) : (
+                  "🎯 Extract Segments & PRs"
+                )}
+              </button>
+            )}
+            {syncResult && <p className="text-xs text-green-400">{syncResult}</p>}
+            {extractResult && <p className="text-xs text-blue-400">{extractResult}</p>}
             <p className="text-[10px] text-[var(--muted)]">
               Requires STRAVA_CLIENT_ID and STRAVA_CLIENT_SECRET in .env
             </p>

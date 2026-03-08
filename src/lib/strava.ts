@@ -52,6 +52,7 @@ export interface StravaDetailedActivity extends StravaActivity {
   laps?: StravaLap[];
   splits_metric?: StravaSplit[];
   best_efforts?: StravaBestEffort[];
+  segment_efforts?: StravaSegmentEffort[];
 }
 
 export interface StravaLap {
@@ -79,6 +80,30 @@ export interface StravaBestEffort {
   elapsed_time: number;
   moving_time: number;
   distance: number;
+}
+
+export interface StravaSegmentEffort {
+  id: number;
+  name: string;
+  segment: {
+    id: number;
+    name: string;
+    distance: number;
+    average_grade: number;
+    maximum_grade: number;
+    elevation_high: number;
+    elevation_low: number;
+  };
+  elapsed_time: number;
+  moving_time: number;
+  distance: number;
+  average_watts?: number;
+  max_watts?: number;
+  average_heartrate?: number;
+  max_heartrate?: number;
+  average_cadence?: number;
+  pr_rank?: number; // Rank among local leaderboard (1 = PR)
+  achievements?: any[];
 }
 
 // ─── OAuth ───────────────────────────────────────────────────────────
