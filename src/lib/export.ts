@@ -4,7 +4,12 @@ import type { SessionDef, IntervalDef } from "./periodization";
 // ─── Zwift .zwo Format ───────────────────────────────────────────────
 
 export function exportToZWO(session: SessionDef, ftp: number): string {
-  const intervals = session.intervals.map((i) => intervalToZwoXml(i, ftp)).join("\n        ");
+  const intervals = session.intervals.map((i, idx) => 
+    intervalToZwoXml(i, ftp, {
+      isFirst: idx === 0,
+      sessionPurpose: session.purpose,
+    })
+  ).join("\n        ");
   
   // Include purpose in description if available
   const fullDescription = session.purpose
@@ -27,20 +32,56 @@ export function exportToZWO(session: SessionDef, ftp: number): string {
 </workout_file>`;
 }
 
-function intervalToZwoXml(interval: IntervalDef, ftp: number): string {
+// Greeting messages for first interval
+const GREETINGS = [
+  "🚀 Let's go!",
+  "💪 Time to suffer... I mean train!",
+  "⚡ Ready to get stronger?",
+  "🎯 Mission: become unstoppable",
+  "🔥 Let's light up your fitness",
+  "🏆 Championship mentality starts now",
+  "🚴 Time to earn those watts",
+  "💯 Leave it all out there",
+  "🌟 Your future self will thank you",
+  "⚙️ Time to tune the engine",
+];
+
+interface IntervalXmlOptions {
+  isFirst?: boolean;
+  sessionPurpose?: string;
+}
+
+function generateSessionGreeting(sessionPurpose?: string): string {
+  const greeting = GREETINGS[Math.floor(Math.random() * GREETINGS.length)];
+  
+  if (sessionPurpose) {
+    return `${greeting} Today we're ${sessionPurpose.toLowerCase()}. Let's go! 🔥`;
+  }
+  
+  return greeting;
+}
+
+function intervalToZwoXml(interval: IntervalDef, ftp: number, opts: IntervalXmlOptions = {}): string {
   const powerLow = interval.powerLow / 100;
   const powerHigh = interval.powerHigh / 100;
   const dur = interval.durationSecs;
   const cadence = interval.cadenceLow ? ` Cadence="${interval.cadenceLow}"` : "";
-  const note = escapeXml(interval.coachNote);
+  
+  // Build message: greeting (if first) + interval purpose + coaching note
+  let message: string;
+  if (opts.isFirst) {
+    const greeting = generateSessionGreeting(opts.sessionPurpose);
+    message = escapeXml(`${greeting}\n\n📌 ${interval.purpose}\n${interval.coachNote}`);
+  } else {
+    message = escapeXml(`📌 ${interval.purpose}\n${interval.coachNote}`);
+  }
 
   // Determine Zwift interval type
-  const isLast = false; // caller doesn't pass index, so cooldown detection is name-based
   const nameLower = interval.name.toLowerCase();
 
   if (nameLower === "cooldown" || nameLower === "cool down") {
     return `<Cooldown Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${note}"/>
+            <textevent timeoffset="0" message="${message}"/>
         </Cooldown>`;
   }
 
@@ -48,26 +89,26 @@ function intervalToZwoXml(interval: IntervalDef, ftp: number): string {
     // Rest intervals are steady-state at low power, NOT cooldown
     const avgPower = (powerLow + powerHigh) / 2;
     return `<SteadyState Duration="${dur}" Power="${avgPower}"${cadence}>
-            <textevent timeoffset="0" message="${note}"/>
+            <textevent timeoffset="0" message="${message}"/>
         </SteadyState>`;
   }
 
   if (nameLower.includes("warmup") || nameLower.includes("warm")) {
     return `<Warmup Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${note}"/>
+            <textevent timeoffset="0" message="${message}"/>
         </Warmup>`;
   }
 
   if (Math.abs(powerLow - powerHigh) < 0.05) {
     // Steady state
     return `<SteadyState Duration="${dur}" Power="${(powerLow + powerHigh) / 2}"${cadence}>
-            <textevent timeoffset="0" message="${note}"/>
+            <textevent timeoffset="0" message="${message}"/>
         </SteadyState>`;
   }
 
   // Ramp
   return `<Ramp Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${note}"/>
+            <textevent timeoffset="0" message="${message}"/>
         </Ramp>`;
 }
 
