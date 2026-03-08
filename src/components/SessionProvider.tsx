@@ -1,17 +1,12 @@
 "use client";
-import { SessionProvider as NextAuthSessionProvider } from "next-auth/react";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import { UpdateBanner } from "@/components/UpdateBanner";
-import { ToastContainer } from "@/components/Toast";
+import { AppProviders } from "@/components/AppProviders";
 
+/**
+ * SessionProvider - Root provider for the entire app
+ * 
+ * This now delegates to AppProviders which handles all context setup
+ * Kept for backward compatibility with layout.tsx
+ */
 export function SessionProvider({ children }: { children: React.ReactNode }) {
-  return (
-    <NextAuthSessionProvider>
-      <ErrorBoundary level="page">
-        <UpdateBanner />
-        <ToastContainer />
-        {children}
-      </ErrorBoundary>
-    </NextAuthSessionProvider>
-  );
+  return <AppProviders>{children}</AppProviders>;
 }
