@@ -5,12 +5,17 @@ import type { SessionDef, IntervalDef } from "./periodization";
 
 export function exportToZWO(session: SessionDef, ftp: number): string {
   const intervals = session.intervals.map((i) => intervalToZwoXml(i, ftp)).join("\n        ");
+  
+  // Include purpose in description if available
+  const fullDescription = session.purpose
+    ? `📌 Purpose: ${session.purpose}\n\n${session.description}`
+    : session.description;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <workout_file>
     <author>CycleCoach</author>
     <name>${escapeXml(session.title)}</name>
-    <description>${escapeXml(session.description)}</description>
+    <description>${escapeXml(fullDescription)}</description>
     <sportType>bike</sportType>
     <durationType>time</durationType>
     <tags>

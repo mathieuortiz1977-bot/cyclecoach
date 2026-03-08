@@ -157,14 +157,25 @@ export default function ZwiftSync() {
                   className="border border-[var(--card-border)] rounded-xl p-4 flex items-center justify-between gap-4 hover:border-[var(--accent)]/50 transition-colors"
                 >
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex items-center gap-2 mb-2">
                       <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-[var(--accent)]/20 text-[var(--accent)]">
                         {session.dayOfWeek}
                       </span>
                       <h3 className="font-semibold text-sm truncate">{session.title}</h3>
                     </div>
-                    <p className="text-xs text-[var(--muted)] line-clamp-1">{session.description}</p>
-                    <div className="flex gap-3 mt-1.5 text-xs text-[var(--muted)]">
+                    
+                    {session.purpose && (
+                      <div className="flex items-start gap-2 mb-2 p-2 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/20">
+                        <span className="text-sm flex-shrink-0">📌</span>
+                        <p className="text-xs font-medium text-[var(--accent)] leading-snug">
+                          <span className="text-[var(--accent)] font-semibold">Purpose:</span> {session.purpose}
+                        </p>
+                      </div>
+                    )}
+                    
+                    <p className="text-xs text-[var(--muted)] line-clamp-2 mb-2">{session.description}</p>
+                    
+                    <div className="flex gap-3 text-xs text-[var(--muted)] flex-wrap">
                       <span>⏱ {session.duration} min</span>
                       <span>⚡ {session.intervals.length} intervals</span>
                       {session.intervals.some((i) => i.powerHigh > 100) && (

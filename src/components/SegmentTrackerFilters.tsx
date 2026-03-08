@@ -38,13 +38,15 @@ export function SegmentTrackerFilters({ segments, onFilterChange }: SegmentTrack
     if (filters.status !== 'all') {
       result = result.filter(s => {
         if (filters.status === 'opportunity') {
-          return s.formScore < 85 && s.distanceFromPr > 0;
+          return s.formScore < 85 && (s.distanceFromPr || 0) > 0;
         }
         if (filters.status === 'improving') {
-          return (s.trend || 0) > 0;
+          const trend = typeof s.trend === 'number' ? s.trend : 0;
+          return trend > 0;
         }
         if (filters.status === 'declining') {
-          return (s.trend || 0) < 0;
+          const trend = typeof s.trend === 'number' ? s.trend : 0;
+          return trend < 0;
         }
         return true;
       });
@@ -67,7 +69,7 @@ export function SegmentTrackerFilters({ segments, onFilterChange }: SegmentTrack
     result = result.sort((a, b) => {
       switch (filters.sortBy) {
         case 'name':
-          return (a.name || '').localeCompare(b.name || '');
+          return (a.name || a.segmentName || '').localeCompare(b.name || b.segmentName || '');
         case 'attempts':
           return (b.attempts || 0) - (a.attempts || 0);
         case 'distance':
@@ -103,9 +105,15 @@ export function SegmentTrackerFilters({ segments, onFilterChange }: SegmentTrack
   // Count segments in each category
   const counts = {
     all: segments.length,
-    opportunity: segments.filter(s => s.formScore < 85 && s.distanceFromPr > 0).length,
-    improving: segments.filter(s => (s.trend || 0) > 0).length,
-    declining: segments.filter(s => (s.trend || 0) < 0).length,
+    opportunity: segments.filter(s => s.formScore < 85 && (s.distanceFromPr || 0) > 0).length,
+    improving: segments.filter(s => {
+      const trend = typeof s.trend === 'number' ? s.trend : 0;
+      return trend > 0;
+    }).length,
+    declining: segments.filter(s => {
+      const trend = typeof s.trend === 'number' ? s.trend : 0;
+      return trend < 0;
+    }).length,
     outdoor: segments.filter(s => {
       const isIndoor = s.activityType?.toLowerCase().includes('virtual') ||
                       s.activityType?.toLowerCase() === 'indoorcycling' ||

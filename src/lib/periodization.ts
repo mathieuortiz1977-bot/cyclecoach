@@ -26,6 +26,7 @@ export interface SessionDef {
   duration: number; // minutes
   title: string;
   description: string;
+  purpose?: string; // The main purpose of this session (e.g., "Gradually raise heart rate and muscle temperature")
   intervals: IntervalDef[];
   route?: RouteData;
 }
@@ -91,6 +92,53 @@ function restInterval(secs: number): IntervalDef {
   };
 }
 
+// ─── Session Purpose Helper ─────────────────────────────────────────
+
+function getPurposeFromTitle(title: string, blockType?: BlockType): string {
+  const lower = title.toLowerCase();
+  
+  // Warmup/cooldown
+  if (lower.includes("warmup") || lower.includes("warm up")) return "Gradually raise heart rate and muscle temperature";
+  if (lower.includes("cooldown") || lower.includes("cool down")) return "Flush metabolic waste and begin recovery process";
+  
+  // Endurance
+  if (lower.includes("endurance")) return "Build aerobic base and improve fat oxidation capacity";
+  if (lower.includes("tempo")) return "Build muscular endurance and lactate clearance";
+  if (lower.includes("sweet spot")) return "Build sustained power at high aerobic intensity with minimal recovery demand";
+  
+  // Threshold
+  if (lower.includes("threshold")) return "Improve lactate threshold and train near race-pace intensity";
+  if (lower.includes("threshold repeats")) return "Develop repeatable threshold efforts with managed recovery";
+  
+  // VO2Max
+  if (lower.includes("vo2") || lower.includes("v02") || lower.includes("vo²max")) return "Improve maximum oxygen uptake and aerobic power";
+  if (lower.includes("vo2 repeats")) return "Build VO₂ max capacity through intense interval work";
+  
+  // Sprint
+  if (lower.includes("sprint")) return "Develop explosive power and neuromuscular coordination";
+  
+  // Cadence
+  if (lower.includes("cadence")) return "Improve pedaling efficiency and neuromuscular efficiency";
+  
+  // Recovery
+  if (lower.includes("recovery")) return "Active recovery to flush metabolic byproducts and aid adaptation";
+  if (lower.includes("cruise")) return "Steady-state work to reinforce pacing and build steadiness";
+  
+  // Race sim
+  if (lower.includes("race") || lower.includes("simulation")) return "Apply training efforts to racing scenarios and build race-specific fitness";
+  
+  // Outdoor
+  if (lower.includes("outdoor") || lower.includes("road")) return "Apply indoor work to real-world conditions and reinforce training adaptations";
+  
+  // Default based on block type
+  if (blockType === "BASE") return "Build aerobic foundation and develop cycling economy";
+  if (blockType === "THRESHOLD") return "Develop lactate threshold and sustainable pace";
+  if (blockType === "VO2MAX") return "Improve maximum aerobic power and oxygen utilization";
+  if (blockType === "RACE_SIM") return "Practice race pacing and tactical execution";
+  
+  return "Apply structured training stimulus to develop fitness";
+}
+
 // ─── BASE Block Sessions ─────────────────────────────────────────────
 
 function baseMonday(weekType: WeekType): SessionDef {
@@ -100,6 +148,7 @@ function baseMonday(weekType: WeekType): SessionDef {
     dayOfWeek: "MON", sessionType: "INDOOR", duration: dur,
     title: "Endurance + Tempo Bursts",
     description: "Build aerobic base with controlled tempo surges. The bread and butter of base training.",
+    purpose: "Build aerobic base and teach the body to handle pace changes",
     intervals: [
       warmup(),
       interval("Z2 Endurance", 600, 56, 70, "Aerobic base building — fat oxidation and capillary development", "endurance", { rpe: 3 }),
@@ -120,6 +169,7 @@ function baseTuesday(weekType: WeekType): SessionDef {
     dayOfWeek: "TUE", sessionType: "INDOOR", duration: 60,
     title: `Sweet Spot ${reps}x${repDur / 60}min`,
     description: `Sweet spot intervals: maximum training stimulus for minimum recovery cost. ${reps} blocks of focused work.`,
+    purpose: "Build sustained power at high aerobic intensity with minimal recovery demand",
     intervals: [
       warmup(),
       ...Array.from({ length: reps }, (_, i) => [
@@ -138,6 +188,7 @@ function baseThursday(weekType: WeekType): SessionDef {
     dayOfWeek: "THU", sessionType: "INDOOR", duration: 60,
     title: `Tempo Repeats ${reps}x${dur / 60}min`,
     description: "Sustained tempo work to build muscular endurance and lactate clearance.",
+    purpose: "Build muscular endurance and improve lactate clearance capacity",
     intervals: [
       warmup(),
       ...Array.from({ length: reps }, (_, i) => [
@@ -155,6 +206,7 @@ function baseFriday(weekType: WeekType): SessionDef {
     dayOfWeek: "FRI", sessionType: "INDOOR", duration: dur,
     title: "Cadence & Technique",
     description: "Lighter day before Saturday. Focus on pedaling efficiency and neuromuscular activation.",
+    purpose: "Improve pedaling efficiency and prepare for Saturday's long ride",
     intervals: [
       warmup(),
       interval("High Cadence Drill", 300, 56, 70, "Improve pedaling efficiency at high RPM", "cadence", { cadenceLow: 105, cadenceHigh: 120, rpe: 3 }),
@@ -176,6 +228,7 @@ function thresholdMonday(weekType: WeekType): SessionDef {
     dayOfWeek: "MON", sessionType: "INDOOR", duration: 60,
     title: `Over-Unders ${sets} sets`,
     description: "Alternating above and below FTP. Teaches your body to clear lactate while still working hard.",
+    purpose: "Improve lactate clearance and train the body to recover while maintaining effort",
     intervals: [
       warmup(),
       ...Array.from({ length: sets }, (_, i) => [
@@ -196,6 +249,7 @@ function thresholdTuesday(weekType: WeekType): SessionDef {
     dayOfWeek: "TUE", sessionType: "INDOOR", duration: 60,
     title: `FTP Blocks ${reps}x${dur / 60}min`,
     description: `Sustained threshold work. This is where your FTP ceiling gets pushed higher.`,
+    purpose: "Raise your FTP ceiling with sustained work at your current threshold",
     intervals: [
       warmup(),
       ...Array.from({ length: reps }, (_, i) => [
