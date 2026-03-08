@@ -1,5 +1,5 @@
 "use client";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
 import { getZoneColor } from "@/lib/zones";
@@ -13,7 +13,74 @@ const weekTypeLabels: Record<string, { label: string; color: string }> = {
 };
 
 export default function PlanPage() {
-  const plan = useMemo(() => generatePlan(4), []);
+  const [plan, setPlan] = useState(() => generatePlan(4));
+  const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPlanData = async () => {
+      try {
+        const [riderRes, planRes] = await Promise.all([
+          fetch("/api/rider"),
+          fetch("/api/plan"),
+        ]);
+
+        const riderData = await riderRes.json();
+        const planData = await planRes.json();
+
+        if (riderData.rider?.programStartDate) {
+          setProgramStartDate(new Date(riderData.rider.programStartDate));
+        }
+
+        if (planData.plan) {
+          // Transform DB plan to match shape
+          const dbPlan = {
+            blocks: planData.plan.blocks.map((b: any) => ({
+              blockNumber: b.blockNumber,
+              type: b.type,
+              weeks: b.weeks.map((w: any) => ({
+                weekNumber: w.weekNumber,
+                weekType: w.weekType,
+                sessions: w.sessions.map((s: any) => ({
+                  dayOfWeek: s.dayOfWeek,
+                  sessionType: s.sessionType,
+                  duration: s.duration,
+                  title: s.title,
+                  description: s.description,
+                  intervals: s.intervals.map((i: any) => ({
+                    name: i.name,
+                    durationSecs: i.durationSecs,
+                    powerLow: i.powerLow,
+                    powerHigh: i.powerHigh,
+                    zone: i.zone,
+                  })),
+                })),
+              })),
+            })),
+            totalWeeks: planData.plan.blocks.reduce((sum: number, b: any) => sum + b.weeks.length, 0),
+          };
+          setPlan(dbPlan);
+        }
+      } catch (error) {
+        console.error("Failed to load plan:", error);
+      }
+      setLoading(false);
+    };
+
+    loadPlanData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="max-w-6xl mx-auto space-y-8 py-8">
+        <div className="text-center">
+          <div className="inline-block p-3 rounded-lg bg-[var(--card-border)] animate-pulse">
+            <p className="text-[var(--muted)]">Loading your training plan...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
@@ -22,10 +89,29 @@ export default function PlanPage() {
         <p className="text-[var(--muted)]">16 weeks of structured progression. Base → Threshold → VO2max → Race Sim. Always building shape.</p>
       </div>
 
-      {/* Spiral visualization */}
+      {/* Program dates */}
+      {programStartDate && (
+        <div className="bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-lg p-4 mb-6">
+          <p className="text-sm">
+            <strong>Program starts:</strong> {programStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+          </p>
+          <p className="text-xs text-[var(--muted)] mt-1">
+            16 weeks of training • Ends {new Date(programStartDate.getTime() + 16 * 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+          </p>
+        </div>
+      )}
+
+      {/* Spiral visualization with dates */}
       <div className="flex gap-2 mb-6">
         {plan.blocks.map((block, bi) => {
           const bt = BLOCK_META[block.type];
+          if (!programStartDate) return null;
+          
+          const blockStartDate = new Date(programStartDate);
+          blockStartDate.setDate(blockStartDate.getDate() + bi * 28); // 4 weeks per block
+          const blockEndDate = new Date(blockStartDate);
+          blockEndDate.setDate(blockEndDate.getDate() + 27);
+          
           return (
             <div key={bi} className="flex-1">
               <div
@@ -35,6 +121,9 @@ export default function PlanPage() {
                 <span className="text-lg">{bt.emoji}</span>
                 <p className="text-xs font-semibold mt-1">{bt.label}</p>
                 <p className="text-[10px] text-[var(--muted)]">Weeks {bi * 4 + 1}–{bi * 4 + 4}</p>
+                <p className="text-[9px] text-[var(--muted)] mt-1">
+                  {blockStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - {blockEndDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                </p>
               </div>
             </div>
           );
@@ -52,6 +141,17 @@ export default function PlanPage() {
 
             {block.weeks.map((week, wi) => {
               const wt = weekTypeLabels[week.weekType];
+              let weekDateRange = "";
+              
+              if (programStartDate) {
+                const weekStartDate = new Date(programStartDate);
+                weekStartDate.setDate(weekStartDate.getDate() + (bi * 4 + week.weekNumber - 1) * 7);
+                const weekEndDate = new Date(weekStartDate);
+                weekEndDate.setDate(weekEndDate.getDate() + 6);
+                
+                weekDateRange = `${weekStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${weekEndDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+              }
+              
               return (
                 <div key={wi} className="glass p-4">
                   <div className="flex items-center gap-3 mb-3">
@@ -61,7 +161,12 @@ export default function PlanPage() {
                     >
                       {wt.label}
                     </span>
-                    <h3 className="font-semibold">Week {bi * 4 + week.weekNumber}</h3>
+                    <div>
+                      <h3 className="font-semibold">Week {bi * 4 + week.weekNumber}</h3>
+                      {weekDateRange && (
+                        <p className="text-xs text-[var(--muted)]">{weekDateRange}</p>
+                      )}
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-5 gap-2">
