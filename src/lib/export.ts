@@ -32,8 +32,9 @@ export function exportToZWO(session: SessionDef, ftp: number): string {
 </workout_file>`;
 }
 
-// Greeting messages for first interval
+// Greeting messages for first interval (100 possibilities!)
 const GREETINGS = [
+  // Classic Motivational (1-10)
   "🚀 Let's go!",
   "💪 Time to suffer... I mean train!",
   "⚡ Ready to get stronger?",
@@ -44,7 +45,108 @@ const GREETINGS = [
   "💯 Leave it all out there",
   "🌟 Your future self will thank you",
   "⚙️ Time to tune the engine",
+  
+  // Funny/Sarcastic (11-30)
+  "😂 Remember: I'm getting paid in hot cocoa to watch you suffer",
+  "☕ While I sip my latte, you're about to suffer",
+  "🍰 I'm having dessert. You? Lactate.",
+  "🛋️ I'm getting comfy. Hope you are too... at FTP!",
+  "📱 I'll be here cheering while you suffer",
+  "😎 I'm so comfortable right now",
+  "🎬 This is my favorite part of the day",
+  "🍕 Just ordered pizza. You getting VO2?",
+  "🧘 Namaste. Now go suffer.",
+  "😤 I'm relaxing. You better be working.",
+  "☀️ Beautiful day for your suffering",
+  "🎵 The suffering playlist is ready",
+  "⏱️ 60 minutes of you questioning your life choices",
+  "🎭 Your suffering is my theater",
+  "📊 Let's make those watts hurt",
+  "🌋 Let's find your pain threshold",
+  "⚔️ Battle time",
+  "🎪 The show is about to begin",
+  "🍷 I'm sipping wine. Make it count.",
+  "😈 Let the games begin",
+  
+  // Dark/Honest (31-50)
+  "🖤 I'm warm and cozy. Time for you to earn it.",
+  "😑 Yeah, I'm sitting down. You won't be.",
+  "🎯 Suffering is just your body adapting",
+  "💀 This is where fitness is built",
+  "🔪 Time to hurt. Productively.",
+  "⚰️ Your comfort zone called. I hung up.",
+  "🌑 Welcome to the dark side of training",
+  "😶 I can already hear your breathing get heavy",
+  "🧛 Let me watch you suffer. For science.",
+  "🎪 Enjoy your private suffering show",
+  "🥶 This is going to be cold and hard",
+  "🔗 Chains don't break. Neither do legs that suffer.",
+  "💔 No pain, no athletic gain",
+  "🚨 Critical threshold approaching",
+  "🌪️ A storm is coming",
+  "📍 Welcome to your new normal",
+  "🎰 Luck has nothing to do with this",
+  "🏜️ Welcome to the desert",
+  "🎨 We're about to paint a masterpiece... in lactate",
+  "🧪 Let's run an experiment on your limits",
+  
+  // Coach Relaxing Vibes (51-70)
+  "☕ I'm having my 3rd coffee. You're on your 1st interval.",
+  "🛏️ Just getting my bed fluffed. You getting yours made? (Of suffering)",
+  "📺 Great day for streaming... your power meter",
+  "🧦 Getting cozy socks on. You getting cozy at threshold.",
+  "🎬 Popcorn ready. Let's watch you suffer.",
+  "🛁 I'm gonna take a bath after this. You'll earn yours.",
+  "📚 Reading a book. You're writing yours. (Of pain)",
+  "🎧 Podcast time for me. Suffering symphony for you.",
+  "🍪 Cookie break for me. Cookie break = 0 for you.",
+  "💆 Spa day energy. Sprinting energy for you.",
+  "🎮 Gaming time soon. But first, you suffer.",
+  "🌴 Island vibes for me. Island of pain for you.",
+  "😴 Nap incoming. First, your nap isn't coming.",
+  "🎵 Chill music. Hard intervals for you.",
+  "🕯️ Aromatherapy candles. Your nose is doing HR training.",
+  "👔 Work day over for me. Work day just started for you.",
+  "🍷 Wine o'clock? More like your whine o'clock.",
+  "📞 Friend called. I'll call them back. You? No time.",
+  "🎁 Gift to myself: watching you suffer",
+  "⏰ Clock says relax. Your legs say RUN.",
+  
+  // Psychological Game (71-85)
+  "🧠 Mind over matter. Let's test yours.",
+  "💭 Think you can? Prove it.",
+  "🎯 No shortcuts. Only shortcuts to quitting.",
+  "🚪 Door to improvement is right there",
+  "🏅 Medal or couch? Your choice today.",
+  "🤔 Ever wonder what your ceiling is?",
+  "🎲 Let's roll the dice on your potential",
+  "🧗 Mountain time",
+  "🌊 Wave of hurt incoming",
+  "🎪 Center ring: YOU",
+  "🔓 Let's unlock something today",
+  "💎 Diamonds form under pressure",
+  "🌱 Plant the seeds. Suffer the harvest.",
+  "🎭 Showtime",
+  "🗺️ New territory today",
+  
+  // Brutally Honest (86-100)
+  "😑 Still sitting. You won't be.",
+  "🎯 Pain is just weakness leaving your body... loudly",
+  "🔥 The oven is preheated",
+  "⚡ 60 minutes of questioning everything",
+  "🧊 Hot cocoa time for me. Cold reality for you.",
+  "🎬 Best part of my day starts now",
+  "🛀 Bubble bath calling. Bubble trouble calling you.",
+  "😴 Almost nap time. Not for you though.",
+  "🌙 Moon's coming up. So is your HR.",
+  "🎊 Party mood! (Just kidding, suffer mood)",
+  "🧘 Zen activated. Zen eliminated for you.",
+  "☕ Espresso me. Despair you.",
+  "🎪 The circus is open",
+  "🌟 Star power activated... it's you suffering",
+  "🔮 I see a lot of suffering in your future",
 ];
+
 
 interface IntervalXmlOptions {
   isFirst?: boolean;
