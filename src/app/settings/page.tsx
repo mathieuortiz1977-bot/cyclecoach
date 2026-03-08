@@ -175,7 +175,7 @@ function SettingsPage() {
       {/* Status messages */}
       {stravaStatus === "connected" && (
         <div className="bg-green-900/20 border border-green-800 rounded-lg p-3 text-sm text-green-400">
-          ✅ Strava connected successfully! Click "Sync Rides" to import all your activities since January 1st, 2026.
+          ✅ Strava connected successfully! Click "Sync Rides" to import all your activities since January 1st, 2020 (6 years of data).
         </div>
       )}
       {stravaStatus === "error" && (
@@ -460,7 +460,7 @@ function SettingsPage() {
               <div>
                 <p className="font-semibold text-sm">Strava</p>
                 <p className="text-xs text-[var(--muted)]">
-                  {stravaStatus === "connected" ? "✅ Connected" : "Sync all 2026 rides and power data"}
+                  {stravaStatus === "connected" ? "✅ Connected" : "Sync rides since 2020 and power data"}
                 </p>
               </div>
             </div>

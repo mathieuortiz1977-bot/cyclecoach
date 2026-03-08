@@ -44,17 +44,17 @@ export async function POST() {
       });
     }
 
-    // Fetch activities from January 1st, 2026
-    const jan1st2026 = Math.floor(new Date('2026-01-01T00:00:00Z').getTime() / 1000);
+    // Fetch activities from January 1st, 2020 (6 years of data)
+    const jan1st2020 = Math.floor(new Date('2020-01-01T00:00:00Z').getTime() / 1000);
     
-    // Fetch all activities since Jan 1st, handling pagination
+    // Fetch all activities since Jan 1st 2020, handling pagination
     let allActivities = [];
     let page = 1;
     const perPage = 200; // Max per request
     
     while (true) {
       const activities = await getStravaActivities(plainAccess, {
-        after: jan1st2026,
+        after: jan1st2020,
         perPage,
         page
       });
@@ -130,8 +130,8 @@ export async function POST() {
       skipped,
       total: rides.length,
       totalActivities: allActivities.length,
-      dateRange: "Since January 1st, 2026",
-      message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities.`
+      dateRange: "Since January 1st, 2020",
+      message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities (6 years of data).`
     });
   } catch (err) {
     console.error("Strava sync error:", err);
