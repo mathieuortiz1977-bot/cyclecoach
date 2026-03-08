@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { api } from "@/lib/api";
 
 interface Rider {
   id: string;
@@ -26,29 +27,28 @@ export function useRider(): UseRiderReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchRider = async () => {
+  const fetchRider = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch("/api/rider");
-      const data = await response.json();
+      const response = await api.rider.get();
       
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to fetch rider");
+      if (!response.success) {
+        throw new Error(response.error || "Failed to fetch rider");
       }
       
-      setRider(data.rider);
+      setRider(response.data?.rider || null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
       setRider(null);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchRider();
-  }, []);
+  }, [fetchRider]);
 
   return { rider, loading, error, refetch: fetchRider };
 }

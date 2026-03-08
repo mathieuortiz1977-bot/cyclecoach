@@ -1,10 +1,5 @@
-import { useState, useEffect } from "react";
-
-interface PlanInterval {
-  duration: number;
-  targetPower: number;
-  description: string;
-}
+import { useState, useEffect, useCallback } from "react";
+import { api } from "@/lib/api";
 
 interface PlanSession {
   dayOfWeek: string;
@@ -12,8 +7,8 @@ interface PlanSession {
   duration: number;
   title: string;
   description: string;
-  intervals: PlanInterval[];
-  targetPower: number;
+  intervals?: any[];
+  route?: any;
 }
 
 interface PlanWeek {
@@ -30,7 +25,7 @@ interface PlanBlock {
 
 interface Plan {
   blocks: PlanBlock[];
-  totalWeeks: number;
+  totalWeeks?: number;
 }
 
 interface UsePlanReturn {
@@ -38,6 +33,7 @@ interface UsePlanReturn {
   loading: boolean;
   error: string | null;
   refetch: () => void;
+  regenerate: (blocks?: number) => Promise<boolean>;
 }
 
 export function usePlan(): UsePlanReturn {
@@ -45,31 +41,52 @@ export function usePlan(): UsePlanReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchPlan = async () => {
+  const fetchPlan = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch("/api/plan");
-      const data = await response.json();
+      const response = await api.plan.get();
       
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to fetch plan");
+      if (!response.success) {
+        throw new Error(response.error || "Failed to fetch plan");
       }
       
-      setPlan(data.plan);
+      // Handle nested plan response
+      const planData = response.data?.plan || response.data;
+      setPlan(planData || null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
       setPlan(null);
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  const regenerate = useCallback(async (blocks?: number): Promise<boolean> => {
+    try {
+      const response = await api.plan.regenerate(blocks);
+      
+      if (!response.success) {
+        setError(response.error || "Failed to regenerate plan");
+        return false;
+      }
+      
+      // Update plan with new data
+      const planData = response.data?.plan || response.data;
+      setPlan(planData || null);
+      return true;
+    } catch (err) {
+      const errorMsg = err instanceof Error ? err.message : "Unknown error";
+      setError(errorMsg);
+      return false;
+    }
+  }, []);
 
   useEffect(() => {
     fetchPlan();
-  }, []);
+  }, [fetchPlan]);
 
-  return { plan, loading, error, refetch: fetchPlan };
+  return { plan, loading, error, refetch: fetchPlan, regenerate };
 }
 
 export default usePlan;
