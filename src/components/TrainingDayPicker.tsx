@@ -49,11 +49,11 @@ interface Props {
   onChange: (days: string[]) => void;
   outdoorDay: string;
   onOutdoorDayChange: (day: string) => void;
-  sundayDuration: number;
-  onSundayDurationChange: (duration: number) => void;
+  sundayDuration?: number;
+  onSundayDurationChange?: (duration: number) => void;
 }
 
-export function TrainingDayPicker({ selectedDays, onChange, outdoorDay, onOutdoorDayChange, sundayDuration, onSundayDurationChange }: Props) {
+export function TrainingDayPicker({ selectedDays, onChange, outdoorDay, onOutdoorDayChange }: Props) {
   const toggle = (day: string) => {
     if (selectedDays.includes(day)) {
       // Don't allow less than 3 days
@@ -136,38 +136,7 @@ export function TrainingDayPicker({ selectedDays, onChange, outdoorDay, onOutdoo
         </p>
       </div>
 
-      {/* Sunday Duration Slider - only show when Sunday is selected */}
-      {selectedDays.includes("SUN") && (
-        <div>
-          <label className="block text-sm text-[var(--muted)] mb-2">
-            🕐 Average Sunday Ride Duration
-          </label>
-          <div className="space-y-2">
-            <div className="flex items-center gap-4">
-              <input
-                type="range"
-                min="60"
-                max="180"
-                step="15"
-                value={sundayDuration}
-                onChange={(e) => onSundayDurationChange(parseInt(e.target.value))}
-                className="flex-1 h-2 bg-[var(--card-border)] rounded-lg appearance-none cursor-pointer slider"
-              />
-              <span className="text-sm font-medium text-[var(--accent)] min-w-[4rem]">
-                {Math.floor(sundayDuration / 60)}h {sundayDuration % 60}m
-              </span>
-            </div>
-            <div className="flex justify-between text-xs text-[var(--muted)]">
-              <span>1h</span>
-              <span className="text-[var(--foreground)]">Perfect for long Sunday rides</span>
-              <span>3h</span>
-            </div>
-          </div>
-          <p className="text-xs text-[var(--muted)] mt-1.5">
-            Set your typical Sunday ride duration for better training plan customization.
-          </p>
-        </div>
-      )}
+
 
       {/* Summary */}
       <div className="bg-[var(--background)] rounded-lg p-3 text-xs text-[var(--muted)] space-y-1">

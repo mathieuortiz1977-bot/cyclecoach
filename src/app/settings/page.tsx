@@ -257,6 +257,35 @@ function SettingsPage() {
           onSundayDurationChange={setSundayDuration}
         />
 
+        {/* Sunday Duration Slider - Training Preference */}
+        {trainingDays.includes("SUN") && (
+          <div className="bg-[var(--background)] rounded-lg p-4 space-y-3">
+            <h3 className="text-sm font-semibold">🚴 Sunday Ride Duration</h3>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center">
+                <label className="text-sm text-[var(--muted)]">Duration</label>
+                <span className="font-semibold text-[var(--accent)]">{sundayDuration} min</span>
+              </div>
+              <input
+                type="range"
+                min="60"
+                max="180"
+                step="15"
+                value={sundayDuration}
+                onChange={(e) => setSundayDuration(parseInt(e.target.value))}
+                className="w-full"
+              />
+              <div className="flex justify-between text-xs text-[var(--muted)]">
+                <span>60 min</span>
+                <span>180 min</span>
+              </div>
+            </div>
+            <p className="text-xs text-[var(--muted)]">
+              Adjust your Sunday ride duration. This will affect your weekly training load.
+            </p>
+          </div>
+        )}
+
         <div>
           <label className="block text-sm text-[var(--muted)] mb-2">Program Start Date</label>
           <input
