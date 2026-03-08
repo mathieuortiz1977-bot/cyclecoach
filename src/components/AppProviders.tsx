@@ -9,6 +9,7 @@ import {
   PlanProvider,
   TrainingDataProvider,
   UIProvider,
+  WorkoutProvider,
 } from '@/contexts';
 
 /**
@@ -21,7 +22,8 @@ import {
  * 4. RiderProvider (rider data)
  * 5. PlanProvider (plan data)
  * 6. TrainingDataProvider (workouts + activities)
- * 7. Updates & notifications (UpdateBanner, ToastContainer)
+ * 7. WorkoutProvider (unified workout operations)
+ * 8. Updates & notifications (UpdateBanner, ToastContainer)
  * 
  * Usage in layout.tsx:
  * ```tsx
@@ -41,9 +43,11 @@ export function AppProviders({ children }: AppProvidersProps) {
           <RiderProvider>
             <PlanProvider>
               <TrainingDataProvider>
-                <UpdateBanner />
-                <ToastContainer />
-                {children}
+                <WorkoutProvider>
+                  <UpdateBanner />
+                  <ToastContainer />
+                  {children}
+                </WorkoutProvider>
               </TrainingDataProvider>
             </PlanProvider>
           </RiderProvider>

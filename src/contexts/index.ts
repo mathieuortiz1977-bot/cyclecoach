@@ -3,7 +3,7 @@
  * 
  * Usage:
  * ```tsx
- * import { RiderProvider, usePlanContext } from '@/contexts';
+ * import { RiderProvider, usePlanContext, useWorkoutContext } from '@/contexts';
  * ```
  */
 
@@ -29,3 +29,9 @@ export {
   useGlobalError,
 } from './UIContext';
 export type { ModalState } from './UIContext';
+
+export {
+  WorkoutProvider,
+  useWorkoutContext,
+} from './WorkoutContext';
+export type { } from './WorkoutContext';
