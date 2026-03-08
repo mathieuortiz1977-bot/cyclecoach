@@ -70,22 +70,32 @@ export async function POST() {
     let page = 1;
     const perPage = 200; // Max per request
     
-    while (true) {
-      const activities = await getStravaActivities(plainAccess, {
-        after: afterTimestamp,
-        perPage,
-        page
-      });
-      
-      if (activities.length === 0) break;
-      allActivities.push(...activities);
-      
-      // If we got less than perPage, we're done
-      if (activities.length < perPage) break;
-      page++;
-      
-      // Safety limit to prevent infinite loops
-      if (page > 50) break; // Max ~10,000 activities
+    try {
+      while (true) {
+        const activities = await getStravaActivities(plainAccess, {
+          after: afterTimestamp,
+          perPage,
+          page
+        });
+        
+        if (!Array.isArray(activities)) {
+          console.error("Strava API returned non-array:", activities);
+          throw new Error("Strava API returned invalid data");
+        }
+        
+        if (activities.length === 0) break;
+        allActivities.push(...activities);
+        
+        // If we got less than perPage, we're done
+        if (activities.length < perPage) break;
+        page++;
+        
+        // Safety limit to prevent infinite loops
+        if (page > 50) break; // Max ~10,000 activities
+      }
+    } catch (stravErr) {
+      console.error("Error fetching from Strava API:", stravErr);
+      throw new Error(`Strava API error: ${stravErr instanceof Error ? stravErr.message : "Unknown"}`);
     }
 
     // Filter to cycling activities
@@ -158,6 +168,12 @@ export async function POST() {
     });
   } catch (err) {
     console.error("Strava sync error:", err);
-    return NextResponse.json({ error: "Sync failed" }, { status: 500 });
+    const errorMessage = err instanceof Error ? err.message : "Unknown error";
+    const errorStack = err instanceof Error ? err.stack : "";
+    console.error("Error details:", errorMessage, errorStack);
+    return NextResponse.json({ 
+      error: "Sync failed",
+      details: errorMessage 
+    }, { status: 500 });
   }
 }
