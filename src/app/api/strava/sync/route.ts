@@ -44,58 +44,30 @@ export async function POST() {
       });
     }
 
-    // Determine sync start time
-    // Find the most recent activity we already have
-    const latestActivity = await prisma.stravaActivity.findFirst({
-      where: { riderId: rider.id },
-      orderBy: { startDate: "desc" },
-      select: { startDate: true },
-    });
-
-    let afterTimestamp: number;
+    // Fetch all activities from Jan 1st, 2020 (6 years of data)
+    // Duplicates are skipped via findUnique check below
+    const jan1st2020 = Math.floor(new Date('2020-01-01T00:00:00Z').getTime() / 1000);
     
-    if (latestActivity?.startDate) {
-      // Existing activities: go back 1 hour from latest to catch modifications
-      const syncStartDate = new Date(latestActivity.startDate);
-      syncStartDate.setHours(syncStartDate.getHours() - 1);
-      afterTimestamp = Math.floor(syncStartDate.getTime() / 1000);
-    } else {
-      // First sync or after deletion: fetch from Jan 1st, 2020
-      const jan1st2020 = new Date('2020-01-01T00:00:00Z');
-      afterTimestamp = Math.floor(jan1st2020.getTime() / 1000);
-    }
-    
-    // Fetch all NEW activities since last sync, handling pagination
     let allActivities = [];
     let page = 1;
     const perPage = 200; // Max per request
     
-    try {
-      while (true) {
-        const activities = await getStravaActivities(plainAccess, {
-          after: afterTimestamp,
-          perPage,
-          page
-        });
-        
-        if (!Array.isArray(activities)) {
-          console.error("Strava API returned non-array:", activities);
-          throw new Error("Strava API returned invalid data");
-        }
-        
-        if (activities.length === 0) break;
-        allActivities.push(...activities);
-        
-        // If we got less than perPage, we're done
-        if (activities.length < perPage) break;
-        page++;
-        
-        // Safety limit to prevent infinite loops
-        if (page > 50) break; // Max ~10,000 activities
-      }
-    } catch (stravErr) {
-      console.error("Error fetching from Strava API:", stravErr);
-      throw new Error(`Strava API error: ${stravErr instanceof Error ? stravErr.message : "Unknown"}`);
+    while (true) {
+      const activities = await getStravaActivities(plainAccess, {
+        after: jan1st2020,
+        perPage,
+        page
+      });
+      
+      if (activities.length === 0) break;
+      allActivities.push(...activities);
+      
+      // If we got less than perPage, we're done
+      if (activities.length < perPage) break;
+      page++;
+      
+      // Safety limit to prevent infinite loops
+      if (page > 50) break; // Max ~10,000 activities
     }
 
     // Filter to cycling activities
@@ -164,16 +136,11 @@ export async function POST() {
       skipped,
       total: rides.length,
       totalActivities: allActivities.length,
-      message: `Synced ${synced} new rides, skipped ${skipped} existing. Only fetched rides newer than your last sync.`
+      dateRange: "Since January 1st, 2020",
+      message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities (6 years of data).`
     });
   } catch (err) {
     console.error("Strava sync error:", err);
-    const errorMessage = err instanceof Error ? err.message : "Unknown error";
-    const errorStack = err instanceof Error ? err.stack : "";
-    console.error("Error details:", errorMessage, errorStack);
-    return NextResponse.json({ 
-      error: "Sync failed",
-      details: errorMessage 
-    }, { status: 500 });
+    return NextResponse.json({ error: "Sync failed" }, { status: 500 });
   }
 }
