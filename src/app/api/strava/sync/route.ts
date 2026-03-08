@@ -52,14 +52,18 @@ export async function POST() {
       select: { startDate: true },
     });
 
-    // Use the latest activity's start date, or 6 years ago if no activities exist
-    const syncStartDate = latestActivity?.startDate 
-      ? new Date(latestActivity.startDate)
-      : new Date();
+    let afterTimestamp: number;
     
-    // Go back 1 hour from latest to catch any recently modified activities
-    syncStartDate.setHours(syncStartDate.getHours() - 1);
-    const afterTimestamp = Math.floor(syncStartDate.getTime() / 1000);
+    if (latestActivity?.startDate) {
+      // Existing activities: go back 1 hour from latest to catch modifications
+      const syncStartDate = new Date(latestActivity.startDate);
+      syncStartDate.setHours(syncStartDate.getHours() - 1);
+      afterTimestamp = Math.floor(syncStartDate.getTime() / 1000);
+    } else {
+      // First sync or after deletion: fetch from Jan 1st, 2020
+      const jan1st2020 = new Date('2020-01-01T00:00:00Z');
+      afterTimestamp = Math.floor(jan1st2020.getTime() / 1000);
+    }
     
     // Fetch all NEW activities since last sync, handling pagination
     let allActivities = [];
