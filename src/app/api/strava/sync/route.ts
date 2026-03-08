@@ -12,11 +12,15 @@ import { encrypt, decrypt, isEncrypted } from "@/lib/crypto";
 
 export async function POST() {
   try {
+    console.log("[SYNC] Starting Strava sync...");
     const rider = await getCurrentRiderWithStrava();
+    console.log("[SYNC] Rider loaded:", rider?.id);
 
     if (!rider?.stravaConnection) {
+      console.log("[SYNC] No Strava connection found");
       return NextResponse.json({ error: "No Strava connection found" }, { status: 400 });
     }
+    console.log("[SYNC] Strava connection found");
 
     const conn = rider.stravaConnection;
     let plainAccess = isEncrypted(conn.accessToken) ? decrypt(conn.accessToken) : conn.accessToken;
@@ -24,7 +28,9 @@ export async function POST() {
     let { expiresAt } = conn;
 
     // Refresh token if expired
+    console.log("[SYNC] Token expired?", isTokenExpired(expiresAt));
     if (isTokenExpired(expiresAt)) {
+      console.log("[SYNC] Refreshing token...");
       const clientId = process.env.STRAVA_CLIENT_ID!;
       const clientSecret = process.env.STRAVA_CLIENT_SECRET!;
       const tokens = await refreshStravaToken(clientId, clientSecret, plainRefresh);
@@ -42,23 +48,27 @@ export async function POST() {
           expiresAt,
         },
       });
+      console.log("[SYNC] Token refreshed");
     }
 
     // Fetch all activities from Jan 1st, 2020 (6 years of data)
     // Duplicates are skipped via findUnique check below
     const jan1st2020 = Math.floor(new Date('2020-01-01T00:00:00Z').getTime() / 1000);
+    console.log("[SYNC] Fetching from Strava since:", new Date(jan1st2020 * 1000).toISOString());
     
     let allActivities = [];
     let page = 1;
     const perPage = 200; // Max per request
     
     while (true) {
+      console.log(`[SYNC] Fetching page ${page}...`);
       const activities = await getStravaActivities(plainAccess, {
         after: jan1st2020,
         perPage,
         page
       });
       
+      console.log(`[SYNC] Got ${activities.length} activities on page ${page}`);
       if (activities.length === 0) break;
       allActivities.push(...activities);
       
@@ -69,66 +79,77 @@ export async function POST() {
       // Safety limit to prevent infinite loops
       if (page > 50) break; // Max ~10,000 activities
     }
+    
+    console.log(`[SYNC] Total activities fetched: ${allActivities.length}`);
 
     // Filter to cycling activities
     const rides = allActivities.filter((a) =>
       ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type)
     );
 
+    console.log(`[SYNC] Cycling rides found: ${rides.length}`);
+
     let synced = 0;
     let skipped = 0;
 
     for (const activity of rides) {
-      const existing = await prisma.stravaActivity.findUnique({
-        where: { stravaId: BigInt(activity.id) },
-      });
+      try {
+        const existing = await prisma.stravaActivity.findUnique({
+          where: { stravaId: BigInt(activity.id) },
+        });
 
-      if (existing) {
-        skipped++;
-        continue;
+        if (existing) {
+          skipped++;
+          continue;
+        }
+
+        const np = activity.weighted_average_watts || activity.average_watts || 0;
+        const tss = np && rider.ftp ? calculateTSS(np, rider.ftp, activity.moving_time) : null;
+        const intensityFactor = np && rider.ftp ? calculateIF(np, rider.ftp) : null;
+
+        // Use start_date_local instead of start_date to get the correct local time
+        // start_date is UTC, start_date_local is already in athlete's timezone
+        const localStartDate = activity.start_date_local 
+          ? new Date(activity.start_date_local)
+          : new Date(activity.start_date);
+
+        await prisma.stravaActivity.create({
+          data: {
+            stravaId: BigInt(activity.id),
+            riderId: rider.id,
+            name: activity.name,
+            type: activity.type,
+            startDate: localStartDate,
+            movingTime: activity.moving_time,
+            elapsedTime: activity.elapsed_time,
+            distance: activity.distance,
+            totalElevation: activity.total_elevation_gain,
+            averageWatts: activity.average_watts || null,
+            maxWatts: activity.max_watts || null,
+            weightedAvgWatts: activity.weighted_average_watts || null,
+            averageHeartrate: activity.average_heartrate || null,
+            maxHeartrate: activity.max_heartrate || null,
+            averageCadence: activity.average_cadence || null,
+            kilojoules: activity.kilojoules || null,
+            sufferScore: activity.suffer_score || null,
+            calories: activity.calories || null,
+            averageSpeed: activity.average_speed || null,
+            maxSpeed: activity.max_speed || null,
+            hasHeartrate: activity.has_heartrate,
+            hasPower: activity.device_watts,
+            mapPolyline: activity.map?.summary_polyline || null,
+            tss: tss ? Math.round(tss) : null,
+            intensityFactor: intensityFactor ? Math.round(intensityFactor * 100) / 100 : null,
+          },
+        });
+        synced++;
+      } catch (actErr) {
+        console.error(`[SYNC] Error syncing activity ${activity.id}:`, actErr);
+        throw actErr;
       }
-
-      const np = activity.weighted_average_watts || activity.average_watts || 0;
-      const tss = np && rider.ftp ? calculateTSS(np, rider.ftp, activity.moving_time) : null;
-      const intensityFactor = np && rider.ftp ? calculateIF(np, rider.ftp) : null;
-
-      // Use start_date_local instead of start_date to get the correct local time
-      // start_date is UTC, start_date_local is already in athlete's timezone
-      const localStartDate = activity.start_date_local 
-        ? new Date(activity.start_date_local)
-        : new Date(activity.start_date);
-
-      await prisma.stravaActivity.create({
-        data: {
-          stravaId: BigInt(activity.id),
-          riderId: rider.id,
-          name: activity.name,
-          type: activity.type,
-          startDate: localStartDate,
-          movingTime: activity.moving_time,
-          elapsedTime: activity.elapsed_time,
-          distance: activity.distance,
-          totalElevation: activity.total_elevation_gain,
-          averageWatts: activity.average_watts || null,
-          maxWatts: activity.max_watts || null,
-          weightedAvgWatts: activity.weighted_average_watts || null,
-          averageHeartrate: activity.average_heartrate || null,
-          maxHeartrate: activity.max_heartrate || null,
-          averageCadence: activity.average_cadence || null,
-          kilojoules: activity.kilojoules || null,
-          sufferScore: activity.suffer_score || null,
-          calories: activity.calories || null,
-          averageSpeed: activity.average_speed || null,
-          maxSpeed: activity.max_speed || null,
-          hasHeartrate: activity.has_heartrate,
-          hasPower: activity.device_watts,
-          mapPolyline: activity.map?.summary_polyline || null,
-          tss: tss ? Math.round(tss) : null,
-          intensityFactor: intensityFactor ? Math.round(intensityFactor * 100) / 100 : null,
-        },
-      });
-      synced++;
     }
+    
+    console.log(`[SYNC] Complete: synced=${synced}, skipped=${skipped}`);
 
     return NextResponse.json({
       success: true,
@@ -140,7 +161,13 @@ export async function POST() {
       message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities (6 years of data).`
     });
   } catch (err) {
-    console.error("Strava sync error:", err);
-    return NextResponse.json({ error: "Sync failed" }, { status: 500 });
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    const errorStack = err instanceof Error ? err.stack : "";
+    console.error("[SYNC] ERROR:", errorMsg);
+    console.error("[SYNC] STACK:", errorStack);
+    return NextResponse.json({ 
+      error: "Sync failed",
+      message: errorMsg 
+    }, { status: 500 });
   }
 }
