@@ -100,6 +100,9 @@ function SettingsPage() {
   const [syncResult, setSyncResult] = useState<string | null>(null);
   const [extractingSegments, setExtractingSegments] = useState(false);
   const [extractResult, setExtractResult] = useState<string | null>(null);
+  const [deletingRides, setDeletingRides] = useState(false);
+  const [deleteResult, setDeleteResult] = useState<string | null>(null);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const handleStravaSync = async () => {
     setSyncing(true);
@@ -134,6 +137,28 @@ function SettingsPage() {
       setExtractResult("❌ Extraction failed");
     }
     setExtractingSegments(false);
+  };
+
+  const handleDeleteAllRides = async () => {
+    setDeletingRides(true);
+    setDeleteResult(null);
+    try {
+      const response = await fetch("/api/strava/delete-all", {
+        method: "POST",
+      });
+      const data = await response.json();
+      
+      if (data.success) {
+        setDeleteResult(`✅ Deleted ${data.deleted || 0} rides from database. You can now sync fresh data with the correct dates.`);
+        setShowDeleteConfirm(false);
+      } else {
+        setDeleteResult(`❌ ${data.error || "Failed to delete rides"}`);
+      }
+    } catch (error) {
+      setDeleteResult("❌ Delete failed");
+      console.error("Delete rides error:", error);
+    }
+    setDeletingRides(false);
   };
 
   // Training schedule update
@@ -491,23 +516,34 @@ function SettingsPage() {
               )}
             </div>
             {stravaStatus === "connected" && (
-              <button
-                onClick={handleExtractSegments}
-                disabled={extractingSegments}
-                className="w-full px-3 py-2 rounded-lg text-sm border border-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors disabled:opacity-50 text-[var(--accent)]"
-              >
-                {extractingSegments ? (
-                  <>
-                    <div className="w-3 h-3 border-2 border-[var(--accent)]/30 border-t-[var(--accent)] rounded-full animate-spin inline-block mr-2" />
-                    Extracting...
-                  </>
-                ) : (
-                  "🎯 Extract Segments & PRs"
-                )}
-              </button>
+              <>
+                <button
+                  onClick={handleExtractSegments}
+                  disabled={extractingSegments}
+                  className="w-full px-3 py-2 rounded-lg text-sm border border-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors disabled:opacity-50 text-[var(--accent)]"
+                >
+                  {extractingSegments ? (
+                    <>
+                      <div className="w-3 h-3 border-2 border-[var(--accent)]/30 border-t-[var(--accent)] rounded-full animate-spin inline-block mr-2" />
+                      Extracting...
+                    </>
+                  ) : (
+                    "🎯 Extract Segments & PRs"
+                  )}
+                </button>
+                
+                <button
+                  onClick={() => setShowDeleteConfirm(true)}
+                  disabled={deletingRides}
+                  className="w-full px-3 py-2 rounded-lg text-sm border border-red-500/50 hover:border-red-500 hover:bg-red-500/10 transition-colors disabled:opacity-50 text-red-400"
+                >
+                  {deletingRides ? "Deleting..." : "🗑️ Clear All Rides"}
+                </button>
+              </>
             )}
             {syncResult && <p className="text-xs text-green-400">{syncResult}</p>}
             {extractResult && <p className="text-xs text-blue-400">{extractResult}</p>}
+            {deleteResult && <p className={`text-xs ${deleteResult.startsWith('✅') ? 'text-green-400' : 'text-red-400'}`}>{deleteResult}</p>}
           </div>
 
           {/* Zwift */}
@@ -552,6 +588,43 @@ function SettingsPage() {
           programStartDate={startDate}
           trainingDays={trainingDays}
         />
+      )}
+
+      {/* Delete All Rides Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-[var(--card)] rounded-lg p-6 max-w-md w-full mx-4 space-y-4 border border-[var(--card-border)]">
+            <div>
+              <h3 className="text-lg font-semibold text-red-400 mb-2">Delete All Strava Rides?</h3>
+              <p className="text-sm text-[var(--muted)]">
+                This will permanently delete all {deletingRides ? '...' : 'your Strava'} rides from the database. You can re-sync them with the correct dates afterward.
+              </p>
+            </div>
+            
+            <div className="bg-red-900/20 border border-red-800/50 rounded-lg p-3">
+              <p className="text-xs text-red-400">
+                ⚠️ This action cannot be undone. All segment data will also be cleared.
+              </p>
+            </div>
+
+            <div className="flex gap-3 pt-4">
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                disabled={deletingRides}
+                className="flex-1 px-4 py-2 rounded-lg text-sm border border-[var(--card-border)] hover:border-[var(--accent)] transition-colors disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDeleteAllRides}
+                disabled={deletingRides}
+                className="flex-1 px-4 py-2 rounded-lg text-sm bg-red-500/20 border border-red-500 text-red-400 hover:bg-red-500/30 transition-colors disabled:opacity-50"
+              >
+                {deletingRides ? "Deleting..." : "Delete All"}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
