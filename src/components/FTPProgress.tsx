@@ -21,15 +21,29 @@ export function FTPProgress({ data, currentFtp }: Props) {
   useEffect(() => {
     // Try to load FTP progression data from API
     fetch("/api/rider/ftp-history")
-      .then((res) => res.json())
+      .then((res) => {
+        // Handle 404 and other errors gracefully
+        if (!res.ok) {
+          throw new Error(`API returned ${res.status}`);
+        }
+        return res.json();
+      })
       .then((response) => {
-        if (response.history) {
+        if (response.history && Array.isArray(response.history) && response.history.length > 0) {
           setFtpHistory(response.history);
+        } else {
+          // No history available, use current FTP
+          setFtpHistory([{
+            date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+            ftp: currentFtp,
+            source: "current"
+          }]);
         }
         setLoading(false);
       })
-      .catch(() => {
-        // If API doesn't exist yet, just use current FTP as single data point
+      .catch((error) => {
+        // If API doesn't exist or errors, just use current FTP as single data point
+        console.warn("Could not load FTP history:", error);
         setFtpHistory([{
           date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }),
           ftp: currentFtp,
