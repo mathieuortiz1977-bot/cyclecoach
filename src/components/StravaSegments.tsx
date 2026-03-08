@@ -191,17 +191,34 @@ export function StravaSegments() {
                   </div>
                 </div>
 
-                {/* Best Time */}
-                <div className="bg-[var(--background)] rounded-lg p-3 mb-3">
-                  <div className="text-xs text-[var(--muted)] mb-1">Best Time (PR)</div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-xl font-bold">
-                      {Math.floor(segPerf.segment.bestTime / 60)}:{String(segPerf.segment.bestTime % 60).padStart(2, "0")}
-                    </span>
-                    <span className="text-xs text-[var(--muted)]">
-                      {new Date(segPerf.segment.bestDate).toLocaleDateString()}
-                    </span>
+                {/* Best Time & Distance from PR */}
+                <div className="bg-[var(--background)] rounded-lg p-3 mb-3 space-y-2">
+                  <div>
+                    <div className="text-xs text-[var(--muted)] mb-1">Best Time (PR)</div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xl font-bold">
+                        {Math.floor(segPerf.segment.bestTime / 60)}:{String(segPerf.segment.bestTime % 60).padStart(2, "0")}
+                      </span>
+                      <span className="text-xs text-[var(--muted)]">
+                        {new Date(segPerf.segment.bestDate).toLocaleDateString()}
+                      </span>
+                    </div>
                   </div>
+                  
+                  {/* Distance from PR */}
+                  {segPerf.segment.recentAvgTime && segPerf.segment.recentAvgTime > segPerf.segment.bestTime && (
+                    <div>
+                      <div className="text-xs text-[var(--muted)] mb-1">Distance from PR</div>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-lg font-semibold text-orange-400">
+                          +{Math.floor((segPerf.segment.recentAvgTime || 0) - segPerf.segment.bestTime)}s
+                        </span>
+                        <span className="text-xs text-orange-400">
+                          ({(((segPerf.segment.recentAvgTime || 0) - segPerf.segment.bestTime) / segPerf.segment.bestTime * 100).toFixed(1)}% slower)
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Performance Trend */}
