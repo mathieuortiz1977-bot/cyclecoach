@@ -51,10 +51,31 @@ export async function POST() {
       console.log("[SYNC] Token refreshed");
     }
 
-    // Fetch all activities from Jan 1st, 2020 (6 years of data)
-    // Duplicates are skipped via findUnique check below
-    const jan1st2020 = Math.floor(new Date('2020-01-01T00:00:00Z').getTime() / 1000);
-    console.log("[SYNC] Fetching from Strava since:", new Date(jan1st2020 * 1000).toISOString());
+    // Smart sync: only fetch new/modified activities
+    // Find the most recent activity we have
+    const latestActivity = await prisma.stravaActivity.findFirst({
+      where: { riderId: rider.id },
+      orderBy: { startDate: "desc" },
+      select: { startDate: true },
+    });
+
+    let afterTimestamp: number;
+    
+    if (latestActivity?.startDate) {
+      // Incremental sync: go back 2 hours from latest to catch edits
+      console.log("[SYNC] Latest activity found, doing incremental sync");
+      const syncDate = new Date(latestActivity.startDate);
+      syncDate.setHours(syncDate.getHours() - 2);
+      afterTimestamp = Math.floor(syncDate.getTime() / 1000);
+      console.log("[SYNC] Fetching activities since:", syncDate.toISOString());
+    } else {
+      // First sync: get last 30 days only (can manually extend later)
+      console.log("[SYNC] No previous activities found - initial sync, getting last 30 days");
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      afterTimestamp = Math.floor(thirtyDaysAgo.getTime() / 1000);
+      console.log("[SYNC] Fetching activities since:", thirtyDaysAgo.toISOString());
+    }
     
     let allActivities = [];
     let page = 1;
@@ -63,7 +84,7 @@ export async function POST() {
     while (true) {
       console.log(`[SYNC] Fetching page ${page}...`);
       const activities = await getStravaActivities(plainAccess, {
-        after: jan1st2020,
+        after: afterTimestamp,
         perPage,
         page
       });
