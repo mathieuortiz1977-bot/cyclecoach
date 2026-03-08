@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
 import * as tz from "@/lib/timezone";

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SegmentAttempt {
@@ -55,11 +55,7 @@ export function StravaSegments() {
   const [lastSyncDate, setLastSyncDate] = useState<Date | null>(null);
 
   // Load segment data
-  useEffect(() => {
-    loadSegments();
-  }, []);
-
-  const loadSegments = async () => {
+  const loadSegments = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch("/api/strava/segments");
@@ -74,7 +70,19 @@ export function StravaSegments() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    loadSegments();
+  }, [loadSegments]);
+
+  // Auto-reset progress after sync completes
+  useEffect(() => {
+    if (syncProgress === 100) {
+      const timer = setTimeout(() => setSyncProgress(0), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [syncProgress]);
 
   // Sync 5 years of Strava rides
   const handleFullSync = async () => {
@@ -90,7 +98,6 @@ export function StravaSegments() {
         setLastSyncDate(new Date());
         setSyncProgress(100);
         await loadSegments();
-        setTimeout(() => setSyncProgress(0), 2000);
       }
     } catch (error) {
       console.error("Sync failed:", error);

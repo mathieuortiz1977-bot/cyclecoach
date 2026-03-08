@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
@@ -36,7 +36,7 @@ export default function Dashboard() {
   const [activeWeek, setActiveWeek] = useState(0);
 
   // Load rider profile + plan + workout data from DB
-  const loadDashboardData = async () => {
+  const loadDashboardData = useCallback(async () => {
     const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
       fetch("/api/rider").then((r) => r.json()).catch(() => null),
       fetch("/api/plan").then((r) => r.json()).catch(() => null),
@@ -45,7 +45,7 @@ export default function Dashboard() {
     ]);
     
     return { riderData, planData, workoutResponse, stravaResponse };
-  };
+  }, []);
 
   useEffect(() => {
     loadDashboardData().then(({ riderData, planData, workoutResponse, stravaResponse }) => {
@@ -99,7 +99,7 @@ export default function Dashboard() {
 
       setLoading(false);
     });
-  }, []);
+  }, [loadDashboardData]);
 
   // Refetch data when tab becomes visible
   useEffect(() => {
@@ -158,7 +158,7 @@ export default function Dashboard() {
     
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, []);
+  }, [loadDashboardData]);
 
   const stats = useMemo(() => planStats(plan), [plan]);
   const [showCompletion, setShowCompletion] = useState(false);
