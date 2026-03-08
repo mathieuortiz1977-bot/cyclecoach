@@ -164,6 +164,7 @@ export interface StravaActivity {
 export interface SegmentStat {
   id: string;
   segmentId: string;
+  name?: string;
   segmentName: string;
   distance: number;
   avgGrade?: number;
@@ -172,9 +173,11 @@ export interface SegmentStat {
   bestTime: number;
   lastAttemptTime?: number;
   improvementPct: number;
-  trend: "improving" | "declining" | "stable";
+  distanceFromPr?: number;
+  trend?: number | "improving" | "declining" | "stable";
   formScore: number;
   isPR: boolean;
+  activityType?: string;
 }
 
 // ============================================================================
