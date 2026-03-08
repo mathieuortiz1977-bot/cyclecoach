@@ -508,9 +508,6 @@ function SettingsPage() {
             )}
             {syncResult && <p className="text-xs text-green-400">{syncResult}</p>}
             {extractResult && <p className="text-xs text-blue-400">{extractResult}</p>}
-            <p className="text-[10px] text-[var(--muted)]">
-              Requires STRAVA_CLIENT_ID and STRAVA_CLIENT_SECRET in .env
-            </p>
           </div>
 
           {/* Zwift */}
