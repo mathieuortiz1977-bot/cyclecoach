@@ -253,6 +253,18 @@ function generateFallbackPeriodizationAnalysis(event: RaceEvent, program: Traini
     timeConstraintAssessment = "Extended timeline - full periodization possible";
   }
   
+  // Determine if plan regeneration is needed
+  const shouldRegeneratePlan = event.priority === "A" || weeksUntilEvent < 8 || conflicts.length > 0;
+  
+  // Generate summary of planned changes
+  const planChangesSummary = generatePlanChangesSummary(
+    event.priority,
+    weeksUntilEvent,
+    program.currentFocus,
+    conflicts,
+    taperWeeks
+  );
+
   return {
     periodization: {
       taperWeeks,
@@ -287,7 +299,9 @@ function generateFallbackPeriodizationAnalysis(event: RaceEvent, program: Traini
       timeConstraints: timeConstraintAssessment,
       overlapConcerns: conflicts.length > 0 ? "Event conflicts detected" : "No conflicts",
       recommendedAdjustments: getRecommendedAdjustments(weeksUntilEvent, event.priority, conflicts.length)
-    }
+    },
+    shouldRegeneratePlan,
+    planChangesSummary
   };
 }
 
@@ -364,4 +378,46 @@ function getRecommendedAdjustments(weeksUntilEvent: number, priority: string, co
   }
   
   return adjustments;
+}
+
+function generatePlanChangesSummary(
+  priority: string,
+  weeksUntilEvent: number,
+  currentFocus: string,
+  conflicts: string[],
+  taperWeeks: number
+): string {
+  const changes: string[] = [];
+  
+  if (priority === "A") {
+    changes.push("• Shift focus to full periodization for this championship event");
+    changes.push("• Restructure blocks to align taper peak with event date");
+    changes.push(`• Implement ${taperWeeks}-week taper strategy`);
+    changes.push("• Add race-specific intensity work in final 4-6 weeks");
+  } else if (priority === "B") {
+    changes.push("• Add mini-peak preparation phase");
+    changes.push(`• Plan ${taperWeeks}-week freshen-up period`);
+    changes.push("• Maintain base fitness while building targeted strength");
+  } else {
+    changes.push("• Keep event as training stimulus");
+    changes.push(`• Plan light ${taperWeeks}-week freshen-up`);
+    changes.push("• Continue building toward other goals");
+  }
+  
+  if (weeksUntilEvent < 8) {
+    changes.push("• Accelerate current phase - compressed timeline requires focus");
+    changes.push("• Prioritize key workouts; optional training becomes secondary");
+  }
+  
+  if (weeksUntilEvent > 16) {
+    changes.push("• Extend base phase to build aerobic foundation");
+    changes.push("• Gradual progression through multiple build phases");
+  }
+  
+  if (conflicts.length > 0) {
+    changes.push(`• Resolve conflicts with ${conflicts.length} other scheduled event(s)`);
+    changes.push("• Sequential micro-peaks may be needed");
+  }
+  
+  return changes.join("\n");
 }

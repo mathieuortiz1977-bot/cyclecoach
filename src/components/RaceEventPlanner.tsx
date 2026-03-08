@@ -75,7 +75,7 @@ const PRIORITY_LEVELS = [
 ];
 
 export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEvents, trainingProgram }: Props) {
-  const [step, setStep] = useState<"events" | "details" | "priority" | "analysis">("events");
+  const [step, setStep] = useState<"events" | "details" | "priority" | "analysis" | "apply-plan">("events");
   const [eventName, setEventName] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventType, setEventType] = useState("road_race");
@@ -85,6 +85,9 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
   const [description, setDescription] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [periodizationAnalysis, setPeriodizationAnalysis] = useState<any>(null);
+  const [isRegeneratingPlan, setIsRegeneratingPlan] = useState(false);
+  const [shouldApplyPlanChanges, setShouldApplyPlanChanges] = useState(false);
+  const [planChangesSummary, setPlanChangesSummary] = useState<string>("");
 
   // Count events by priority
   const priorityCounts = {
@@ -187,7 +190,7 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
     };
   };
 
-  const handleScheduleEvent = () => {
+  const handleScheduleEvent = async () => {
     const event: RaceEvent = {
       id: `event-${Date.now()}`,
       name: eventName,
@@ -201,9 +204,71 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
       taperWeeks: periodizationAnalysis?.periodization?.taperWeeks || (eventPriority === "A" ? 3 : eventPriority === "B" ? 2 : 1)
     };
 
-    onEventScheduled(event);
-    onClose();
-    resetForm();
+    // Save the event to database
+    try {
+      const response = await fetch("/api/events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(event),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to save event");
+      }
+
+      // Check if we should regenerate the plan
+      if (periodizationAnalysis?.shouldRegeneratePlan) {
+        setShouldApplyPlanChanges(true);
+        setPlanChangesSummary(periodizationAnalysis.planChangesSummary || "");
+        setStep("apply-plan");
+      } else {
+        // No plan changes needed, just close
+        onEventScheduled(event);
+        onClose();
+        resetForm();
+      }
+    } catch (error) {
+      console.error("Failed to save event:", error);
+      alert("Failed to save event. Please try again.");
+    }
+  };
+
+  const handleApplyPlanChanges = async () => {
+    setIsRegeneratingPlan(true);
+    try {
+      const response = await fetch("/api/plan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await response.json();
+      
+      if (data.plan) {
+        onEventScheduled({
+          id: `event-${Date.now()}`,
+          name: eventName,
+          date: eventDate,
+          type: eventType,
+          priority: eventPriority,
+          location,
+          distance,
+          description,
+          peakDate: periodizationAnalysis?.peakTiming?.optimalPeakDate,
+          taperWeeks: periodizationAnalysis?.periodization?.taperWeeks || (eventPriority === "A" ? 3 : eventPriority === "B" ? 2 : 1)
+        });
+        onClose();
+        resetForm();
+        alert("✅ Race event added and training plan regenerated!");
+      } else {
+        throw new Error("Failed to regenerate plan");
+      }
+    } catch (error) {
+      console.error("Failed to regenerate plan:", error);
+      alert("Plan regeneration failed, but event was saved.");
+      onClose();
+      resetForm();
+    }
+    setIsRegeneratingPlan(false);
   };
 
   const resetForm = () => {
@@ -643,6 +708,72 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
                   className="flex-1 py-2.5 bg-[var(--accent)] hover:bg-[var(--accent)]/80 text-white text-sm font-medium rounded-lg transition-colors"
                 >
                   🏁 Schedule Event
+                </button>
+              </div>
+            </div>
+          )}
+
+          {step === "apply-plan" && shouldApplyPlanChanges && (
+            <div className="p-6 space-y-6">
+              <div className="text-center">
+                <h2 className="text-xl font-bold mb-2">⚡ Training Program Update</h2>
+                <p className="text-sm text-[var(--muted)]">Your race event requires training plan adjustments</p>
+              </div>
+
+              <div className="bg-blue-500/20 border border-blue-500/40 rounded-lg p-4 space-y-3">
+                <h3 className="font-semibold text-sm flex items-center gap-2">
+                  <span>💡</span> Recommended Changes
+                </h3>
+                <p className="text-sm text-[var(--muted)] whitespace-pre-wrap">
+                  {planChangesSummary || periodizationAnalysis?.planChangesSummary || "Your training program will be regenerated to optimize for this race event."}
+                </p>
+              </div>
+
+              <div className="bg-[var(--background)] rounded-lg p-4 space-y-3">
+                <h3 className="font-semibold text-sm">📋 What will happen:</h3>
+                <ul className="space-y-2 text-sm text-[var(--muted)]">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[var(--accent)]">✓</span>
+                    <span>Training blocks will be adjusted for optimal periodization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[var(--accent)]">✓</span>
+                    <span>Taper and peak phases will align with race date</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[var(--accent)]">✓</span>
+                    <span>Weekly workouts will be regenerated automatically</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[var(--accent)]">✓</span>
+                    <span>Completed workouts will not be affected</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => {
+                    setShouldApplyPlanChanges(false);
+                    setStep("analysis");
+                  }}
+                  className="flex-1 py-2.5 text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] transition-colors border border-[var(--card-border)] rounded-lg"
+                >
+                  Skip for Now
+                </button>
+                <button
+                  onClick={handleApplyPlanChanges}
+                  disabled={isRegeneratingPlan}
+                  className="flex-1 py-2.5 bg-[var(--accent)] hover:bg-[var(--accent)]/80 disabled:bg-[var(--accent)]/50 text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                >
+                  {isRegeneratingPlan ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Regenerating...
+                    </>
+                  ) : (
+                    <>⚡ Update Training Plan</>
+                  )}
                 </button>
               </div>
             </div>
