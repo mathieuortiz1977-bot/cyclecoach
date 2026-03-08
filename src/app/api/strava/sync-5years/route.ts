@@ -111,9 +111,14 @@ export async function POST(request: NextRequest) {
               }
 
               const segData = segmentMap.get(key);
+              // Use start_date_local to get correct timezone (UTC-5 for Bogota)
+              const effortDate = effort.start_date_local 
+                ? new Date(effort.start_date_local)
+                : new Date(effort.start_date);
+              
               segData.attempts.push({
                 activityId: activity.id,
-                date: new Date(effort.start_date),
+                date: effortDate,
                 elapsedTime: effort.elapsed_time,
                 movingTime: effort.moving_time,
                 avgPower: effort.average_watts,

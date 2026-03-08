@@ -92,13 +92,19 @@ export async function POST() {
       const tss = np && rider.ftp ? calculateTSS(np, rider.ftp, activity.moving_time) : null;
       const intensityFactor = np && rider.ftp ? calculateIF(np, rider.ftp) : null;
 
+      // Use start_date_local instead of start_date to get the correct local time
+      // start_date is UTC, start_date_local is already in athlete's timezone
+      const localStartDate = activity.start_date_local 
+        ? new Date(activity.start_date_local)
+        : new Date(activity.start_date);
+
       await prisma.stravaActivity.create({
         data: {
           stravaId: BigInt(activity.id),
           riderId: rider.id,
           name: activity.name,
           type: activity.type,
-          startDate: new Date(activity.start_date),
+          startDate: localStartDate,
           movingTime: activity.moving_time,
           elapsedTime: activity.elapsed_time,
           distance: activity.distance,
