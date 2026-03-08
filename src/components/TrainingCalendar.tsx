@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
+import * as tz from "@/lib/timezone";
 import { PolylineMap } from "./PolylineMap";
 import { WorkoutCancellation } from "./WorkoutCancellation";
 import { VacationPlanner } from "./VacationPlanner";
@@ -98,7 +99,7 @@ const monthNames = [
 const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "SAT"] }: Props) {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [currentMonth, setCurrentMonth] = useState(tz.today());
   const [workouts, setWorkouts] = useState<WorkoutData[]>([]);
   const [stravaActivities, setStravaActivities] = useState<WorkoutData[]>([]);
   const [plannedSessions, setPlannedSessions] = useState<WorkoutData[]>([]);
@@ -353,35 +354,42 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   };
 
   const getDaysInMonth = () => {
-    const year = currentMonth.getFullYear();
-    const month = currentMonth.getMonth();
-    const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
-    const startDate = new Date(firstDay);
-    startDate.setDate(startDate.getDate() - firstDay.getDay());
+    const year = tz.getYear(currentMonth);
+    const month = tz.getMonth(currentMonth);
+    
+    // Get first day of month in UTC-5
+    const firstDayDate = new Date();
+    firstDayDate.setUTCFullYear(year, month, 1);
+    firstDayDate.setUTCHours(5, 0, 0, 0);
+    
+    // Get the Monday of the week containing the first day
+    const startDate = tz.getWeekStart(firstDayDate);
 
     const days = [];
-    const current = new Date(startDate);
+    let current = new Date(startDate);
 
     for (let i = 0; i < 42; i++) {
+      const currentISO = tz.formatAsISO(current);
+      
       // Find program session for this day
       const dayWorkout = workouts.find(w => 
-        new Date(w.date).toDateString() === current.toDateString()
+        tz.formatAsISO(new Date(w.date)) === currentISO
       );
       
       // Find Strava ride for this day
       const stravaRide = stravaActivities.find(a =>
-        new Date(a.date).toDateString() === current.toDateString()
+        tz.formatAsISO(new Date(a.date)) === currentISO
       );
       
       // Find planned session for this day
       const plannedSession = plannedSessions.find(p =>
-        new Date(p.date).toDateString() === current.toDateString()
+        tz.formatAsISO(new Date(p.date)) === currentISO
       );
       
-      const isCurrentMonth = current.getMonth() === month;
-      const isToday = current.toDateString() === new Date().toDateString();
-      const dayKey = DAY_FROM_INDEX[current.getDay()];
+      const currentMonth_utc = tz.getMonth(current);
+      const isCurrentMonth = currentMonth_utc === month;
+      const isToday = tz.isSameDay(current, tz.today());
+      const dayKey = DAY_FROM_INDEX[tz.getDayOfWeek(current)];
       const isTrainingDay = trainingDays.includes(dayKey);
 
       // Determine what to show - priority: completed workout > Strava ride > planned session
@@ -405,7 +413,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         hasPlannedSession: !!plannedSession
       });
 
-      current.setDate(current.getDate() + 1);
+      current = tz.addDays(current, 1);
     }
 
     return days;
@@ -415,9 +423,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     if (!day.isCurrentMonth) return "other-month";
     
     const dayDate = day.date;
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    dayDate.setHours(0, 0, 0, 0);
+    const todayDate = tz.today();
     
     // If program hasn't started, don't show "missed"
     const programHasStarted = programStartDate && dayDate >= programStartDate;
@@ -432,10 +438,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     if (day.hasStravaRide && programHasStarted) return "partial"; // Show as partial if it's a ride but not planned session
     
     // Planned session (upcoming workout)
-    if (day.hasPlannedSession && dayDate >= today) return "planned";
+    if (day.hasPlannedSession && !tz.isPast(dayDate)) return "planned";
     
     // Only show "missed" if program has started and it's a past training day without any activity
-    if (programHasStarted && dayDate < today && day.isTrainingDay && !day.hasStravaRide) return "missed";
+    if (programHasStarted && tz.isPast(dayDate) && day.isTrainingDay && !day.hasStravaRide) return "missed";
     
     return "upcoming";
   };
@@ -605,11 +611,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   // Get workouts for the current week (for cancellation context)
   const getCurrentWeekWorkouts = (selectedWorkout: WorkoutData): WorkoutData[] => {
     const selectedDate = new Date(selectedWorkout.date);
-    const startOfWeek = new Date(selectedDate);
-    startOfWeek.setDate(selectedDate.getDate() - selectedDate.getDay());
-    
-    const endOfWeek = new Date(startOfWeek);
-    endOfWeek.setDate(startOfWeek.getDate() + 6);
+    const startOfWeek = tz.getWeekStart(selectedDate);
+    const endOfWeek = tz.getWeekEnd(selectedDate);
     
     return [...workouts, ...plannedSessions].filter(w => {
       const workoutDate = new Date(w.date);
@@ -1039,7 +1042,7 @@ function calculateCompletion(programWorkouts: WorkoutData[]): number {
 
 // Helper functions for training program status
 function getCurrentBlock(plan: any, startDate: Date): number {
-  const daysSinceStart = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  const daysSinceStart = tz.daysBetween(startDate, tz.today());
   const weeksSinceStart = Math.floor(daysSinceStart / 7);
   
   let currentBlock = 1;
@@ -1057,7 +1060,7 @@ function getCurrentBlock(plan: any, startDate: Date): number {
 }
 
 function getCurrentWeek(plan: any, startDate: Date): number {
-  const daysSinceStart = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+  const daysSinceStart = tz.daysBetween(startDate, tz.today());
   return Math.floor(daysSinceStart / 7) + 1;
 }
 

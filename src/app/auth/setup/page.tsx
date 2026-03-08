@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import * as tz from "@/lib/timezone";
 import { ZoneTable } from "@/components/ZoneTable";
 import { TrainingDayPicker } from "@/components/TrainingDayPicker";
 
@@ -17,12 +18,10 @@ export default function SetupPage() {
   const [outdoorDay, setOutdoorDay] = useState("SAT");
   const [sundayDuration, setSundayDuration] = useState(90);
   const [startDate, setStartDate] = useState(() => {
-    // Default to next Monday
-    const now = new Date();
-    const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
-    const nextMonday = new Date(now);
-    nextMonday.setDate(now.getDate() + daysUntilMonday);
-    return nextMonday.toISOString().split("T")[0];
+    // Default to next Monday in UTC-5
+    const daysUntilMonday = (8 - tz.getDayOfWeek(tz.today())) % 7 || 7;
+    const nextMonday = tz.addDays(tz.today(), daysUntilMonday);
+    return tz.formatAsISO(nextMonday);
   });
   const [saving, setSaving] = useState(false);
 
@@ -37,7 +36,7 @@ export default function SetupPage() {
           weight,
           experience,
           coachTone: tone,
-          programStartDate: startDate + "T00:00:00.000Z", // Set program start date
+          programStartDate: tz.parseISO(startDate).toISOString(), // Set program start date
           trainingDays: trainingDays.join(','),
           outdoorDay: outdoorDay,
           sundayDuration: sundayDuration,
@@ -133,15 +132,13 @@ export default function SetupPage() {
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                min={new Date().toISOString().split("T")[0]}
+                min={tz.formatAsISO(tz.today())}
                 className="w-full bg-[var(--input-bg)] border border-[var(--card-border)] rounded-lg px-4 py-3 text-center focus:outline-none focus:border-[var(--accent)] text-[var(--foreground)]"
               />
               <p className="text-xs text-[var(--muted)] mt-1 text-center">
                 {startDate && (() => {
-                  const d = new Date(startDate + "T12:00:00");
-                  const today = new Date();
-                  today.setHours(0,0,0,0);
-                  const diff = Math.round((d.getTime() - today.getTime()) / 86400000);
+                  const startDateObj = tz.parseISO(startDate);
+                  const diff = tz.daysBetween(tz.today(), startDateObj);
                   if (diff === 0) return "Starting today — let's go! 🔥";
                   if (diff === 1) return "Starting tomorrow — get some sleep.";
                   if (diff <= 7) return `Starting in ${diff} days. Use this time to prep.`;

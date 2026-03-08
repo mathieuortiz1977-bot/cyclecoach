@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import * as tz from "@/lib/timezone";
 import { ZoneTable } from "@/components/ZoneTable";
 import { HRZoneTable } from "@/components/HRZoneTable";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -35,11 +36,9 @@ function SettingsPage() {
   const [outdoorDay, setOutdoorDay] = useState("SAT");
   const [sundayDuration, setSundayDuration] = useState(90); // Default 90 minutes
   const [startDate, setStartDate] = useState(() => {
-    const now = new Date();
-    const daysUntilMonday = (8 - now.getDay()) % 7 || 7;
-    const nextMonday = new Date(now);
-    nextMonday.setDate(now.getDate() + daysUntilMonday);
-    return nextMonday.toISOString().split("T")[0];
+    const daysUntilMonday = (8 - tz.getDayOfWeek(tz.today())) % 7 || 7;
+    const nextMonday = tz.addDays(tz.today(), daysUntilMonday);
+    return tz.formatAsISO(nextMonday);
   });
 
   // HR settings
@@ -74,7 +73,7 @@ function SettingsPage() {
         setOutdoorDay(rider.outdoorDay);
       }
       if (rider.programStartDate) {
-        setStartDate(new Date(rider.programStartDate).toISOString().split('T')[0]);
+        setStartDate(tz.formatAsISO(new Date(rider.programStartDate)));
       }
       if ((rider as any).sundayDuration) {
         setSundayDuration((rider as any).sundayDuration);
@@ -157,7 +156,7 @@ function SettingsPage() {
         body: JSON.stringify({
           trainingDays: trainingDays.join(','),
           outdoorDay: outdoorDay,
-          programStartDate: new Date(startDate).toISOString(),
+          programStartDate: tz.parseISO(startDate).toISOString(),
           sundayDuration: sundayDuration,
         }),
       });

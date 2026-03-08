@@ -2,6 +2,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
+import * as tz from "@/lib/timezone";
 import { getZoneColor } from "@/lib/zones";
 import { BLOCK_META, DAY_LABELS } from "@/lib/constants";
 
@@ -93,10 +94,10 @@ export default function PlanPage() {
       {programStartDate && (
         <div className="bg-[var(--accent)]/10 border border-[var(--accent)]/20 rounded-lg p-4 mb-6">
           <p className="text-sm">
-            <strong>Program starts:</strong> {programStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            <strong>Program starts:</strong> {tz.formatForDisplay(programStartDate)}
           </p>
           <p className="text-xs text-[var(--muted)] mt-1">
-            16 weeks of training • Ends {new Date(programStartDate.getTime() + 16 * 7 * 24 * 60 * 60 * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+            16 weeks of training • Ends {tz.formatForDisplay(tz.addWeeks(programStartDate, 16))}
           </p>
         </div>
       )}
@@ -107,10 +108,8 @@ export default function PlanPage() {
           const bt = BLOCK_META[block.type];
           if (!programStartDate) return null;
           
-          const blockStartDate = new Date(programStartDate);
-          blockStartDate.setDate(blockStartDate.getDate() + bi * 28); // 4 weeks per block
-          const blockEndDate = new Date(blockStartDate);
-          blockEndDate.setDate(blockEndDate.getDate() + 27);
+          const blockStartDate = tz.addWeeks(programStartDate, bi * 4); // 4 weeks per block
+          const blockEndDate = tz.addDays(blockStartDate, 27);
           
           return (
             <div key={bi} className="flex-1">
@@ -122,7 +121,7 @@ export default function PlanPage() {
                 <p className="text-xs font-semibold mt-1">{bt.label}</p>
                 <p className="text-[10px] text-[var(--muted)]">Weeks {bi * 4 + 1}–{bi * 4 + 4}</p>
                 <p className="text-[9px] text-[var(--muted)] mt-1">
-                  {blockStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - {blockEndDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                  {tz.formatAsISO(blockStartDate).split('-').slice(1).join('-')} - {tz.formatAsISO(blockEndDate).split('-').slice(1).join('-')}
                 </p>
               </div>
             </div>
@@ -144,12 +143,10 @@ export default function PlanPage() {
               let weekDateRange = "";
               
               if (programStartDate) {
-                const weekStartDate = new Date(programStartDate);
-                weekStartDate.setDate(weekStartDate.getDate() + (bi * 4 + week.weekNumber - 1) * 7);
-                const weekEndDate = new Date(weekStartDate);
-                weekEndDate.setDate(weekEndDate.getDate() + 6);
+                const weekStartDate = tz.addDays(programStartDate, (bi * 4 + week.weekNumber - 1) * 7);
+                const weekEndDate = tz.addDays(weekStartDate, 6);
                 
-                weekDateRange = `${weekStartDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - ${weekEndDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+                weekDateRange = `${tz.formatAsISO(weekStartDate).split('-').slice(1).join('-')} - ${tz.formatAsISO(weekEndDate).split('-').slice(1).join('-')}`;
               }
               
               return (
