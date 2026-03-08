@@ -129,7 +129,7 @@ function SettingsPage() {
     setScheduleResult(null);
     try {
       // Save training schedule to rider profile
-      await fetch("/api/rider", {
+      const riderRes = await fetch("/api/rider", {
         method: "PUT", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -139,19 +139,28 @@ function SettingsPage() {
           sundayDuration: sundayDuration,
         }),
       });
+      
+      if (!riderRes.ok) {
+        throw new Error("Failed to save schedule");
+      }
 
       // Regenerate the training plan based on new schedule
       const planRes = await fetch("/api/plan", { method: "POST" });
       const planData = await planRes.json();
       
       if (planData.plan) {
-        setScheduleResult("✅ Training schedule updated and plan regenerated!");
+        setScheduleResult(
+          "✅ Training schedule updated! Your 16-week plan has been regenerated. " +
+          "View it in the dashboard or calendar. The changes will appear when you navigate there."
+        );
+      } else if (planData.error) {
+        setScheduleResult(`❌ Error: ${planData.error}`);
       } else {
         setScheduleResult("❌ Failed to regenerate plan");
       }
     } catch (err) {
       console.error("Schedule update failed:", err);
-      setScheduleResult("❌ Update failed");
+      setScheduleResult(`❌ Update failed: ${err instanceof Error ? err.message : "Unknown error"}`);
     }
     setScheduleUpdating(false);
   };

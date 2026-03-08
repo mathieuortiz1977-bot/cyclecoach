@@ -124,6 +124,19 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     loadWorkoutData();
   }, [currentMonth]);
 
+  // Refetch plan when component mounts or becomes visible
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // Page became visible - refetch to catch any updates
+        loadWorkoutData();
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
+
   const loadWorkoutData = async () => {
     try {
       const [workoutRes, riderRes, stravaRes, planRes, vacationRes, eventsRes] = await Promise.all([
@@ -209,6 +222,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       }
 
       // Generate planned sessions from training plan
+      let actualPlan = planData.plan;
       if (planData.plan && startDate) {
         const trainingDays = riderData.rider?.trainingDays ? 
           riderData.rider.trainingDays.split(',') : 
@@ -217,6 +231,17 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, trainingDays);
         setPlannedSessions(plannedWorkouts);
         setPlan(planData.plan);
+        actualPlan = planData.plan;
+      } else if (!planData.plan && startDate) {
+        // No plan exists yet - generate one client-side temporarily for display
+        const trainingDays = riderData.rider?.trainingDays ? 
+          riderData.rider.trainingDays.split(',') : 
+          ["MON", "TUE", "THU", "FRI", "SAT"];
+        const generatedPlan = generatePlan(4, trainingDays as any, riderData.rider?.outdoorDay || "SAT");
+        const plannedWorkouts = generatePlannedSessions(generatedPlan, startDate, trainingDays);
+        setPlannedSessions(plannedWorkouts);
+        setPlan(generatedPlan);
+        actualPlan = generatedPlan;
       }
 
       // Load vacation data
@@ -229,20 +254,20 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         setRaceEvents(eventsData.events || []);
       }
 
-      // Set training program data for vacation planner
-      if (planData.plan && startDate) {
+      // Set training program data for vacation/race event planners (always set if startDate exists)
+      if (startDate && actualPlan) {
         const programEndDate = new Date(startDate);
-        programEndDate.setDate(programEndDate.getDate() + (planData.plan.totalWeeks * 7));
+        programEndDate.setDate(programEndDate.getDate() + (actualPlan.totalWeeks ? actualPlan.totalWeeks * 7 : 16 * 7));
         
         setTrainingProgram({
-          currentBlock: getCurrentBlock(planData.plan, startDate),
-          currentWeek: getCurrentWeek(planData.plan, startDate),
-          totalBlocks: planData.plan.blocks.length,
-          totalWeeks: planData.plan.totalWeeks,
+          currentBlock: actualPlan.blocks?.length ? getCurrentBlock(actualPlan, startDate) : 1,
+          currentWeek: getCurrentWeek(actualPlan, startDate),
+          totalBlocks: actualPlan.blocks?.length || 4,
+          totalWeeks: actualPlan.totalWeeks || 16,
           programStartDate: startDate.toISOString(),
           programEndDate: programEndDate.toISOString(),
-          currentFocus: getCurrentFocus(planData.plan, startDate),
-          upcomingGoals: getUpcomingGoals(planData.plan, startDate)
+          currentFocus: getCurrentFocus(actualPlan, startDate),
+          upcomingGoals: getUpcomingGoals(actualPlan, startDate)
         });
       }
     } catch (error) {

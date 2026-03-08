@@ -36,13 +36,19 @@ export default function Dashboard() {
   const [activeWeek, setActiveWeek] = useState(0);
 
   // Load rider profile + plan + workout data from DB
-  useEffect(() => {
-    Promise.all([
+  const loadDashboardData = async () => {
+    const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
       fetch("/api/rider").then((r) => r.json()).catch(() => null),
       fetch("/api/plan").then((r) => r.json()).catch(() => null),
       fetch("/api/workouts").then((r) => r.json()).catch(() => null),
       fetch("/api/strava/activities").then((r) => r.json()).catch(() => null),
-    ]).then(([riderData, planData, workoutResponse, stravaResponse]) => {
+    ]);
+    
+    return { riderData, planData, workoutResponse, stravaResponse };
+  };
+
+  useEffect(() => {
+    loadDashboardData().then(({ riderData, planData, workoutResponse, stravaResponse }) => {
       if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
       if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
@@ -94,6 +100,66 @@ export default function Dashboard() {
       setLoading(false);
     });
   }, []);
+
+  // Refetch data when tab becomes visible
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // Page came back into focus - refetch plan and data
+        loadDashboardData().then(({ riderData, planData, workoutResponse, stravaResponse }) => {
+          if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
+          if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
+
+          if (planData?.plan) {
+            const dbPlan = {
+              blocks: planData.plan.blocks.map((b: any) => ({
+                blockNumber: b.blockNumber,
+                type: b.type,
+                weeks: b.weeks.map((w: any) => ({
+                  weekNumber: w.weekNumber,
+                  weekType: w.weekType,
+                  sessions: w.sessions.map((s: any) => ({
+                    dayOfWeek: s.dayOfWeek,
+                    sessionType: s.sessionType,
+                    duration: s.duration,
+                    title: s.title,
+                    description: s.description,
+                    intervals: s.intervals.map((i: any) => ({
+                      name: i.name,
+                      durationSecs: i.durationSecs,
+                      powerLow: i.powerLow,
+                      powerHigh: i.powerHigh,
+                      cadenceLow: i.cadenceLow,
+                      cadenceHigh: i.cadenceHigh,
+                      rpe: i.rpe,
+                      zone: i.zone,
+                      purpose: i.purpose,
+                      coachNote: i.coachNote,
+                    })),
+                    route: s.route || undefined,
+                  })),
+                })),
+              })),
+              totalWeeks: planData.plan.blocks.reduce((sum: number, b: any) => sum + b.weeks.length, 0),
+            };
+            setPlan(dbPlan);
+          }
+
+          if (workoutResponse?.workouts) {
+            setWorkoutData(workoutResponse.workouts);
+          }
+
+          if (stravaResponse?.activities) {
+            setStravaData(stravaResponse.activities);
+          }
+        });
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, []);
+
   const stats = useMemo(() => planStats(plan), [plan]);
   const [showCompletion, setShowCompletion] = useState(false);
   const [selectedSessionIdx, setSelectedSessionIdx] = useState(0);
