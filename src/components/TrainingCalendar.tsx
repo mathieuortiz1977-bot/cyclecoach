@@ -664,6 +664,22 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           </div>
         </div>
 
+        {/* Planning buttons - Mobile prominent placement */}
+        <div className="grid grid-cols-2 gap-2 mb-4 sm:hidden">
+          <button
+            onClick={() => setShowVacationPlanner(true)}
+            className="w-full px-3 py-2.5 text-sm font-medium bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
+          >
+            🏖️ Vacation
+          </button>
+          <button
+            onClick={() => setShowEventPlanner(true)}
+            className="w-full px-3 py-2.5 text-sm font-medium bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 rounded-lg border border-yellow-500/20 hover:border-yellow-500/30 transition-colors"
+          >
+            🏆 Races
+          </button>
+        </div>
+
         {/* Month navigation */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
@@ -673,7 +689,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             >
               ←
             </button>
-            <div className="flex gap-2">
+            <div className="hidden gap-2 sm:flex">
               <button
                 onClick={() => setShowVacationPlanner(true)}
                 className="px-3 py-1.5 text-xs bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
@@ -688,7 +704,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               </button>
             </div>
           </div>
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold text-center flex-1">
             {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
           </h3>
           <button
