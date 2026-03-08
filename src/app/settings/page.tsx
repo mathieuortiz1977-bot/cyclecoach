@@ -103,6 +103,9 @@ function SettingsPage() {
   const [deletingRides, setDeletingRides] = useState(false);
   const [deleteResult, setDeleteResult] = useState<string | null>(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [syncingYear, setSyncingYear] = useState<number | null>(null);
+  const [yearSyncResult, setYearSyncResult] = useState<string | null>(null);
+  const [dataYearRange, setDataYearRange] = useState<{ min?: number; max?: number } | null>(null);
 
   const handleStravaSync = async () => {
     setSyncing(true);
@@ -160,6 +163,48 @@ function SettingsPage() {
     }
     setDeletingRides(false);
   };
+
+  const handleSyncYear = async (year: number) => {
+    setSyncingYear(year);
+    setYearSyncResult(null);
+    try {
+      const response = await fetch("/api/strava/sync-year", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ year }),
+      });
+      const data = await response.json();
+      
+      if (data.success) {
+        setYearSyncResult(`✅ Synced ${data.synced} new rides from ${year} (${data.skipped} already synced)`);
+        // Refresh the year range
+        loadYearRange();
+      } else {
+        setYearSyncResult(`❌ ${data.error || "Failed to sync"}`);
+      }
+    } catch (error) {
+      setYearSyncResult("❌ Sync failed");
+      console.error("Sync year error:", error);
+    }
+    setSyncingYear(null);
+  };
+
+  const loadYearRange = async () => {
+    try {
+      const response = await fetch("/api/strava/year-range");
+      const data = await response.json();
+      if (data.success) {
+        setDataYearRange(data);
+      }
+    } catch (error) {
+      console.error("Failed to load year range:", error);
+    }
+  };
+
+  // Load year range on mount
+  useEffect(() => {
+    loadYearRange();
+  }, []);
 
   // Training schedule update
   const [scheduleUpdating, setScheduleUpdating] = useState(false);
@@ -539,6 +584,39 @@ function SettingsPage() {
                 >
                   {deletingRides ? "Deleting..." : "🗑️ Clear All Rides"}
                 </button>
+
+                {/* Historical Data Sync */}
+                <div className="pt-3 border-t border-[var(--card-border)]">
+                  <p className="text-xs font-semibold text-[var(--muted)] mb-2">📅 Historical Data</p>
+                  {dataYearRange && dataYearRange.min && (
+                    <p className="text-xs text-[var(--accent)] mb-2">
+                      You have data from {dataYearRange.min} to {dataYearRange.max}
+                    </p>
+                  )}
+                  <div className="grid grid-cols-4 gap-1">
+                    {[2026, 2025, 2024, 2023, 2022, 2021, 2020].map(year => (
+                      <button
+                        key={year}
+                        onClick={() => handleSyncYear(year)}
+                        disabled={syncingYear === year || !!(dataYearRange?.max && year <= dataYearRange.max)}
+                        className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
+                          dataYearRange?.max && year <= dataYearRange.max
+                            ? 'bg-green-500/20 text-green-400 cursor-default'
+                            : syncingYear === year
+                            ? 'bg-[var(--accent)]/30 text-[var(--accent)]'
+                            : 'border border-[var(--card-border)] hover:border-[var(--accent)] text-[var(--muted)]'
+                        }`}
+                      >
+                        {syncingYear === year ? '...' : year}
+                      </button>
+                    ))}
+                  </div>
+                  {yearSyncResult && (
+                    <p className={`text-xs mt-2 ${yearSyncResult.startsWith('✅') ? 'text-green-400' : 'text-red-400'}`}>
+                      {yearSyncResult}
+                    </p>
+                  )}
+                </div>
               </>
             )}
             {syncResult && <p className="text-xs text-green-400">{syncResult}</p>}
