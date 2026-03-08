@@ -2,27 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { api } from "@/lib/api";
-
-interface Vacation {
-  id: string;
-  startDate: string;
-  endDate: string;
-  type: "complete_break" | "light_activity" | "cross_training";
-  description?: string;
-  reason?: string;
-  location?: string;
-}
-
-interface TrainingProgram {
-  currentBlock: number;
-  currentWeek: number;
-  totalBlocks: number;
-  totalWeeks: number;
-  programStartDate: string;
-  programEndDate: string;
-  currentFocus: string;
-  upcomingGoals: string[];
-}
+import type { Vacation, VacationAnalysis, TrainingProgram } from "@/types";
 
 interface Props {
   isOpen: boolean;
@@ -64,7 +44,7 @@ export function VacationPlanner({ isOpen, onClose, onVacationScheduled, existing
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [programAnalysis, setProgramAnalysis] = useState<any>(null);
+  const [programAnalysis, setProgramAnalysis] = useState<VacationAnalysis | null>(null);
 
   // Calculate vacation duration
   const vacationDays = startDate && endDate ? 

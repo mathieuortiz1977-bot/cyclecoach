@@ -2,29 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { api } from "@/lib/api";
-
-interface RaceEvent {
-  id: string;
-  name: string;
-  date: string;
-  type: string;
-  priority: "A" | "B" | "C";
-  location?: string;
-  distance?: string;
-  description?: string;
-  peakDate?: string;
-  taperWeeks?: number;
-}
-
-interface TrainingProgram {
-  currentBlock: number;
-  currentWeek: number;
-  totalBlocks: number;
-  totalWeeks: number;
-  programStartDate: string;
-  programEndDate: string;
-  currentFocus: string;
-}
+import type { RaceEvent, PeriodizationAnalysis, ProgramAdjustment, TrainingProgram } from "@/types";
 
 interface Props {
   isOpen: boolean;
@@ -85,7 +63,7 @@ export function RaceEventPlanner({ isOpen, onClose, onEventScheduled, existingEv
   const [distance, setDistance] = useState("");
   const [description, setDescription] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [periodizationAnalysis, setPeriodizationAnalysis] = useState<any>(null);
+  const [periodizationAnalysis, setPeriodizationAnalysis] = useState<PeriodizationAnalysis | null>(null);
   const [isRegeneratingPlan, setIsRegeneratingPlan] = useState(false);
   const [shouldApplyPlanChanges, setShouldApplyPlanChanges] = useState(false);
   const [planChangesSummary, setPlanChangesSummary] = useState<string>("");

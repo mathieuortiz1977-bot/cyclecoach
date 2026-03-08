@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo, useEffect, useCallback } from "react";
+import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval, CompletedWorkout, StravaActivity } from "@/types";
 import { motion } from "framer-motion";
 import { generatePlan, planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
@@ -55,19 +56,19 @@ export default function Dashboard() {
       if (planData?.plan && planData.source === "database") {
         // Transform DB plan to match PlanDef shape
         const dbPlan = {
-          blocks: planData.plan.blocks.map((b: any) => ({
+          blocks: planData.plan.blocks.map((b: TrainingBlock) => ({
             blockNumber: b.blockNumber,
             type: b.type,
-            weeks: b.weeks.map((w: any) => ({
+            weeks: b.weeks.map((w: TrainingWeek) => ({
               weekNumber: w.weekNumber,
               weekType: w.weekType,
-              sessions: w.sessions.map((s: any) => ({
+              sessions: w.sessions.map((s: TrainingSession) => ({
                 dayOfWeek: s.dayOfWeek,
                 sessionType: s.sessionType,
                 duration: s.duration,
                 title: s.title,
                 description: s.description,
-                intervals: s.intervals.map((i: any) => ({
+                intervals: s.intervals.map((i: TrainingInterval) => ({
                   name: i.name,
                   durationSecs: i.durationSecs,
                   powerLow: i.powerLow,
@@ -112,19 +113,19 @@ export default function Dashboard() {
 
           if (planData?.plan) {
             const dbPlan = {
-              blocks: planData.plan.blocks.map((b: any) => ({
+              blocks: planData.plan.blocks.map((b: TrainingBlock) => ({
                 blockNumber: b.blockNumber,
                 type: b.type,
-                weeks: b.weeks.map((w: any) => ({
+                weeks: b.weeks.map((w: TrainingWeek) => ({
                   weekNumber: w.weekNumber,
                   weekType: w.weekType,
-                  sessions: w.sessions.map((s: any) => ({
+                  sessions: w.sessions.map((s: TrainingSession) => ({
                     dayOfWeek: s.dayOfWeek,
                     sessionType: s.sessionType,
                     duration: s.duration,
                     title: s.title,
                     description: s.description,
-                    intervals: s.intervals.map((i: any) => ({
+                    intervals: s.intervals.map((i: TrainingInterval) => ({
                       name: i.name,
                       durationSecs: i.durationSecs,
                       powerLow: i.powerLow,
@@ -177,7 +178,7 @@ export default function Dashboard() {
       .then((res) => res.json())
       .then((data) => {
         if (data.workouts) {
-          const thisWeek = data.workouts.filter((w: any) => {
+          const thisWeek = data.workouts.filter((w: CompletedWorkout) => {
             // Only count program sessions for completion tracking
             if (!w.isProgramSession) return false;
             
@@ -189,7 +190,7 @@ export default function Dashboard() {
             return workoutDate >= weekStart && workoutDate <= weekEnd;
           });
           
-          const completed = thisWeek.filter((w: any) => w.completed && w.isProgramSession).length;
+          const completed = thisWeek.filter((w: CompletedWorkout) => w.completed && w.isProgramSession).length;
           const total = week.sessions.length;
           setWeeklyProgress({ completed, total });
         }

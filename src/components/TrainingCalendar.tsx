@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
+import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval, CompletedWorkout, StravaActivity, CalendarDay } from "@/types";
 import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import * as tz from "@/lib/timezone";
@@ -168,7 +169,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Load program sessions
       if (workoutData.workouts) {
         const enrichedWorkouts = workoutData.workouts
-          .filter((w: any) => {
+          .filter((w: CompletedWorkout) => {
             // For program completion tracking, only count program sessions
             if (!w.isProgramSession) return false;
             
@@ -177,7 +178,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             
             return true;
           })
-          .map((w: any) => ({
+          .map((w: CompletedWorkout) => ({
             id: w.id,
             date: w.completedAt || w.createdAt,
             completed: w.completed,
@@ -198,11 +199,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Load Strava activities
       if (stravaData.activities) {
         const stravaWorkouts = stravaData.activities
-          .filter((a: any) => {
+          .filter((a: StravaActivity) => {
             // Only include cycling activities
             return ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type);
           })
-          .map((a: any) => ({
+          .map((a: StravaActivity) => ({
             id: `strava-${a.id}`,
             date: a.date,
             completed: true,
@@ -280,13 +281,13 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     setLoading(false);
   };
 
-  const generatePlannedSessions = (plan: any, startDate: Date, trainingDays: string[]): WorkoutData[] => {
+  const generatePlannedSessions = (plan: TrainingBlock[] | any, startDate: Date, trainingDays: string[]): WorkoutData[] => {
     const sessions: WorkoutData[] = [];
     let currentDate = new Date(startDate);
 
-    plan.blocks.forEach((block: any) => {
-      block.weeks.forEach((week: any) => {
-        week.sessions.forEach((session: any) => {
+    (Array.isArray(plan) ? plan : plan.blocks).forEach((block: TrainingBlock) => {
+      block.weeks.forEach((week: TrainingWeek) => {
+        week.sessions.forEach((session: TrainingSession) => {
           if (trainingDays.includes(session.dayOfWeek)) {
             // Calculate the date for this session
             const targetDayIndex = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].indexOf(session.dayOfWeek);
@@ -321,9 +322,11 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return sessions;
   };
 
-  const findPlannedSession = (date: string, dayOfWeek: string) => {
+  const findPlannedSession = (date: string | undefined, dayOfWeek: string | undefined) => {
     // Find matching planned session from the actual training plan
-    const dayKey = dayOfWeek?.toUpperCase();
+    if (!date || !dayOfWeek) return null;
+    
+    const dayKey = dayOfWeek.toUpperCase();
     if (!dayKey || !trainingDays.includes(dayKey)) return null;
 
     // TODO: Integrate with actual plan data from /api/plan
@@ -331,7 +334,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return null;
   };
 
-  const gradePerformance = (workout: any, ftp: number): string => {
+  const gradePerformance = (workout: CompletedWorkout, ftp: number): string => {
     if (!workout.completed || !workout.rpe || !workout.compliance) return "";
     
     const rpe = workout.rpe;
@@ -344,7 +347,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return "D Struggled";
   };
 
-  const gradeStravaRide = (activity: any, ftp: number): string => {
+  const gradeStravaRide = (activity: StravaActivity, ftp: number): string => {
     if (!activity.avgPower || !ftp) return "";
     
     const intensityFactor = activity.avgPower / ftp;
@@ -422,7 +425,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return days;
   };
 
-  const getDateStatus = (day: any) => {
+  const getDateStatus = (day: CalendarDay) => {
     if (!day.isCurrentMonth) return "other-month";
     
     const dayDate = day.date;
@@ -528,7 +531,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   };
 
   // Vacation handlers
-  const handleVacationScheduled = async (vacation: Omit<Vacation, 'id' | 'isActive' | 'isApplied'>) => {
+  const handleVacationScheduled = async (vacation: any) => {
     try {
       const response = await api.vacations.create({
         startDate: vacation.startDate,
@@ -570,7 +573,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   };
 
   // Race event handlers
-  const handleEventScheduled = async (event: Omit<RaceEvent, 'id' | 'isActive' | 'isComplete'>) => {
+  const handleEventScheduled = async (event: any) => {
     try {
       const response = await api.events.create({
         name: event.name,

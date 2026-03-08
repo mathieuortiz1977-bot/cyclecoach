@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState, useEffect, useCallback } from "react";
+import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval } from "@/types";
 import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
 import * as tz from "@/lib/timezone";
@@ -36,19 +37,19 @@ export default function PlanPage() {
         if (planData.plan) {
           // Transform DB plan to match shape
           const dbPlan = {
-            blocks: planData.plan.blocks.map((b: any) => ({
+            blocks: planData.plan.blocks.map((b: TrainingBlock) => ({
               blockNumber: b.blockNumber,
               type: b.type,
-              weeks: b.weeks.map((w: any) => ({
+              weeks: b.weeks.map((w: TrainingWeek) => ({
                 weekNumber: w.weekNumber,
                 weekType: w.weekType,
-                sessions: w.sessions.map((s: any) => ({
+                sessions: w.sessions.map((s: TrainingSession) => ({
                   dayOfWeek: s.dayOfWeek,
                   sessionType: s.sessionType,
                   duration: s.duration,
                   title: s.title,
                   description: s.description,
-                  intervals: s.intervals.map((i: any) => ({
+                  intervals: s.intervals.map((i: TrainingInterval) => ({
                     name: i.name,
                     durationSecs: i.durationSecs,
                     powerLow: i.powerLow,
@@ -58,7 +59,7 @@ export default function PlanPage() {
                 })),
               })),
             })),
-            totalWeeks: planData.plan.blocks.reduce((sum: number, b: any) => sum + b.weeks.length, 0),
+            totalWeeks: planData.plan.blocks.reduce((sum: number, b: TrainingBlock) => sum + b.weeks.length, 0),
           };
           setPlan(dbPlan);
         }
