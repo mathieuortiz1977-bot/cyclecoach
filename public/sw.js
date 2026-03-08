@@ -3,16 +3,16 @@ const CACHE_NAME = "cyclecoach-v1";
 const STATIC_CACHE = "cyclecoach-static-v1";
 const RUNTIME_CACHE = "cyclecoach-runtime-v1";
 
-// Core app shell to pre-cache
+// Core app shell to pre-cache (only public assets, NOT protected routes)
 const APP_SHELL = [
-  "/dashboard",
-  "/plan",
-  "/settings",
   "/manifest.json",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
   "/favicon.svg",
 ];
+
+// Protected routes that should NOT be cached by service worker
+const PROTECTED_ROUTES = ["/dashboard", "/plan", "/settings", "/segments", "/profile"];
 
 // Install: cache app shell
 self.addEventListener("install", (event) => {
@@ -51,12 +51,14 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
   if (!url.protocol.startsWith("http")) return;
 
-  // NEVER cache authentication routes - let them handle redirects normally
+  // NEVER cache authentication routes or protected pages - let them handle redirects normally
   if (url.pathname.startsWith("/api/auth/") || 
       url.pathname.startsWith("/auth/") ||
       url.pathname === "/login" ||
-      url.pathname === "/register") {
-    return;
+      url.pathname === "/register" ||
+      PROTECTED_ROUTES.some(route => url.pathname.startsWith(route))) {
+    // Skip service worker, go directly to network
+    return event.respondWith(fetch(request));
   }
 
   // API requests: network-first (don't cache auth or mutations)
