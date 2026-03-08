@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
         stravaConnection: true,
         stravaActivities: {
           orderBy: { startDate: "desc" },
-          take: 100, // Extract from last 100 activities
+          // No limit - extract segments from ALL activities
         },
       },
     });

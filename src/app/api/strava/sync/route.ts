@@ -44,17 +44,31 @@ export async function POST() {
       });
     }
 
-    // Fetch activities from January 1st, 2020 (6 years of data)
-    const jan1st2020 = Math.floor(new Date('2020-01-01T00:00:00Z').getTime() / 1000);
+    // Determine sync start time
+    // Find the most recent activity we already have
+    const latestActivity = await prisma.stravaActivity.findFirst({
+      where: { riderId: rider.id },
+      orderBy: { startDate: "desc" },
+      select: { startDate: true },
+    });
+
+    // Use the latest activity's start date, or 6 years ago if no activities exist
+    const syncStartDate = latestActivity?.startDate 
+      ? new Date(latestActivity.startDate)
+      : new Date();
     
-    // Fetch all activities since Jan 1st 2020, handling pagination
+    // Go back 1 hour from latest to catch any recently modified activities
+    syncStartDate.setHours(syncStartDate.getHours() - 1);
+    const afterTimestamp = Math.floor(syncStartDate.getTime() / 1000);
+    
+    // Fetch all NEW activities since last sync, handling pagination
     let allActivities = [];
     let page = 1;
     const perPage = 200; // Max per request
     
     while (true) {
       const activities = await getStravaActivities(plainAccess, {
-        after: jan1st2020,
+        after: afterTimestamp,
         perPage,
         page
       });
@@ -136,8 +150,7 @@ export async function POST() {
       skipped,
       total: rides.length,
       totalActivities: allActivities.length,
-      dateRange: "Since January 1st, 2020",
-      message: `Synced ${synced} new rides, skipped ${skipped} existing. Found ${allActivities.length} total activities (6 years of data).`
+      message: `Synced ${synced} new rides, skipped ${skipped} existing. Only fetched rides newer than your last sync.`
     });
   } catch (err) {
     console.error("Strava sync error:", err);
