@@ -230,45 +230,46 @@ const PSYCHOLOGY_MESSAGES: Record<string, Record<WorkoutStructure, string>> = {
 };
 
 /**
- * Thematic workout titles that replace generic "Threshold Workout #3"
- * Makes each session feel purposeful and unique
+ * Technical thematic workout titles
+ * Clear what the workout IS + technical description of structure
+ * Prevents repetition while staying logical and descriptive
  */
 const THEMATIC_TITLES: Record<string, Record<WorkoutStructure, string>> = {
   "Foundation Building": {
-    steady: "The Grind",
-    pyramid: "Gentle Climb",
-    ladder: "Rhythm Finding",
-    micro: "Steady Accumulation",
-    descend: "Paced Progression",
-    twitchy: "Light Tactical Work",
-    mixed: "Adaptability Session",
+    steady: "Base Steady-State",
+    pyramid: "Base Pyramid",
+    ladder: "Base Ladder",
+    micro: "Base Micro-Intervals",
+    descend: "Base Descending",
+    twitchy: "Base Tactical",
+    mixed: "Base Mixed",
   },
   "Attack & Respond": {
-    steady: "Sustained Power",
-    pyramid: "Attack Pyramid",
-    ladder: "Tactical Repeats",
-    micro: "Tactical Micro-Repeats",
-    descend: "Finish Strong",
-    twitchy: "Short Burst Practice",
-    mixed: "Race-Like Variability",
+    steady: "Threshold Steady-State",
+    pyramid: "Threshold Pyramid",
+    ladder: "Threshold Ladder",
+    micro: "Threshold Micro-Intervals",
+    descend: "Threshold Descending",
+    twitchy: "Threshold Twitchy",
+    mixed: "Threshold Mixed",
   },
   "Race Preparation": {
-    steady: "VO2 Max Builder",
-    pyramid: "Climbing Attacks",
-    ladder: "Varied VO2 Work",
-    micro: "Punchy Repeats",
-    descend: "Power Descends",
-    twitchy: "Short Anaerobic Work",
-    mixed: "Race Simulation",
+    steady: "VO2 Max Steady",
+    pyramid: "VO2 Max Pyramid",
+    ladder: "VO2 Max Ladder",
+    micro: "VO2 Max Repeats",
+    descend: "VO2 Max Descending",
+    twitchy: "VO2 Max Short",
+    mixed: "VO2 Max Mixed",
   },
   "Championship Mode": {
-    steady: "Peak Performance",
-    pyramid: "Final Assault",
-    ladder: "Competition Sim",
-    micro: "Championship Effort",
-    descend: "Controlled Power",
-    twitchy: "Sprint Prep",
-    mixed: "Full Race Sim",
+    steady: "Anaerobic Steady",
+    pyramid: "Anaerobic Pyramid",
+    ladder: "Anaerobic Ladder",
+    micro: "Anaerobic Repeats",
+    descend: "Anaerobic Descending",
+    twitchy: "Anaerobic Twitchy",
+    mixed: "Anaerobic Mixed",
   },
 };
 
@@ -394,16 +395,18 @@ function applyVarietyToSession(
   const structure = selectWorkoutStructure(zoneCategory, previousStructure);
   const cadenceProfile = getCadenceProfile(weekInBlock);
   const psychMessage = getPsychologicalMessage(blockTheme, structure);
+  const technicalTitle = getThematicTitle(blockTheme, structure);
   
   // PHASE 3: Logging for testing & verification
   if (typeof window === "undefined") { // Only log server-side
-    console.log(`[PlanVariety] ${session.dayOfWeek} | Zone: ${zoneCategory} | Structure: ${structure} | Cadence: ${cadenceProfile} | Original Title: ${session.title}`);
+    console.log(`[PlanVariety] ${session.dayOfWeek} | Zone: ${zoneCategory} | Structure: ${structure} | Cadence: ${cadenceProfile} | Title: ${technicalTitle}`);
   }
   
-  // KEEP ORIGINAL TITLE & DESCRIPTION - user feedback: thematic names were worse!
-  // Store psychological message separately for future use (coaching context, etc.)
+  // USE TECHNICAL THEMATIC TITLES: Clear + different each week (no repetition)
   return {
     ...session,
+    title: technicalTitle,
+    description: psychMessage,
     structure,
     cadenceProfile,
     themeCategory: blockTheme,
