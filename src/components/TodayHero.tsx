@@ -17,6 +17,8 @@ interface Props {
   blockIdx: number;
   weekIdx: number;
   programStartDate?: string;
+  stravaActivities?: any[]; // Strava rides (for auto-completion detection)
+  completedWorkouts?: any[]; // Completed program sessions
 }
 
 const restDayQuips = [
@@ -27,7 +29,14 @@ const restDayQuips = [
   "Your muscles are rebuilding themselves. Don't interrupt them. 💤",
 ];
 
-export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) {
+export function TodayHero({ 
+  plan, 
+  blockIdx, 
+  weekIdx, 
+  programStartDate,
+  stravaActivities = [],
+  completedWorkouts = []
+}: Props) {
   const [selectedInterval, setSelectedInterval] = useState<IntervalDetailModal | null>(null);
   const today = getTodayKey();
   const todayDate = new Date();
@@ -43,6 +52,49 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
   
   // Get week data for all logic
   const week = plan.blocks[blockIdx].weeks[weekIdx];
+
+  // Helper: Check if a session is completed (via Strava ride or program session)
+  const isSessionCompleted = (dayOfWeek: string, dateToCheck: Date): boolean => {
+    // Check for completed program session on this day
+    const hasProgramSession = completedWorkouts.some(w => {
+      const workoutDate = new Date(w.date);
+      workoutDate.setHours(0, 0, 0, 0);
+      return workoutDate.getTime() === dateToCheck.getTime() && w.completed;
+    });
+    if (hasProgramSession) return true;
+
+    // Check for Strava ride matching this day
+    const dateISO = dateToCheck.toISOString().split('T')[0]; // YYYY-MM-DD
+    const hasStravaRide = stravaActivities.some(a => a.date === dateISO);
+    return hasStravaRide;
+  };
+
+  // Helper: Find next upcoming unfinished session
+  const getNextUnsafeSession = (): { session: SessionDef; date: Date; daysFromNow: number } | null => {
+    let checkDate = new Date(todayDate);
+    
+    // Check up to 14 days ahead
+    for (let i = 0; i < 14; i++) {
+      const dayIndex = checkDate.getDay();
+      const dayKey = DAY_FROM_INDEX[dayIndex];
+      
+      // Find session for this day in the current week
+      const sessionForDay = week.sessions.find(s => s.dayOfWeek === dayKey);
+      
+      if (sessionForDay && !isSessionCompleted(dayKey, checkDate)) {
+        return {
+          session: sessionForDay,
+          date: new Date(checkDate),
+          daysFromNow: i
+        };
+      }
+      
+      // Move to next day
+      checkDate.setDate(checkDate.getDate() + 1);
+    }
+    
+    return null;
+  };
   
   // If program hasn't started, show upcoming workout preview
   if (!programHasStarted && programStart) {
@@ -151,8 +203,30 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
     );
   }
   
-  const sessionIdx = week.sessions.findIndex((s) => s.dayOfWeek === today);
-  const session = sessionIdx >= 0 ? week.sessions[sessionIdx] : null;
+  // Determine which session to show
+  const todaySessionIdx = week.sessions.findIndex((s) => s.dayOfWeek === today);
+  const todaySession = todaySessionIdx >= 0 ? week.sessions[todaySessionIdx] : null;
+  
+  // Check if today's session is already completed
+  let session = null;
+  let isShowingUpcoming = false;
+  let daysUntilSession = 0;
+  
+  if (todaySession && isSessionCompleted(today, todayDate)) {
+    // Today's session is done! Find next unfinished one
+    console.log("[TodayHero] Today's session is completed, finding next upcoming...");
+    const nextSession = getNextUnsafeSession();
+    if (nextSession) {
+      session = nextSession.session;
+      isShowingUpcoming = true;
+      daysUntilSession = nextSession.daysFromNow;
+      console.log("[TodayHero] Next upcoming session:", session.title, "in", daysUntilSession, "days");
+    }
+  } else if (todaySession) {
+    // Today's session is not completed, show it
+    session = todaySession;
+    console.log("[TodayHero] Showing today's session:", session.title);
+  }
 
   if (!session) {
     const quip = restDayQuips[new Date().getDate() % restDayQuips.length];
@@ -194,6 +268,9 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
   const peakZone = mainSetIntervals.length > 0
     ? mainSetIntervals.reduce((a, b) => (a.powerHigh > b.powerHigh ? a : b)).zone
     : "Z2";
+  
+  // Find the index of this session in the week
+  const sessionIdx = week.sessions.findIndex(s => s.dayOfWeek === session.dayOfWeek);
   const href = `/workout/${blockIdx}-${weekIdx}-${sessionIdx}`;
 
   const handleIntervalClick = (interval: IntervalDef, index: number, e: React.MouseEvent) => {
@@ -222,7 +299,16 @@ export function TodayHero({ plan, blockIdx, weekIdx, programStartDate }: Props) 
         <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
           {/* Left: Info */}
           <div className="flex-1">
-            <p className="text-xs text-[var(--accent)] uppercase tracking-wider font-medium mb-1">Today&apos;s Workout</p>
+            <div className="flex items-center gap-2 mb-1">
+              <p className="text-xs text-[var(--accent)] uppercase tracking-wider font-medium">
+                {isShowingUpcoming ? "Upcoming Workout" : "Today's Workout"}
+              </p>
+              {isShowingUpcoming && (
+                <span className="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">
+                  In {daysUntilSession} day{daysUntilSession !== 1 ? "s" : ""}
+                </span>
+              )}
+            </div>
             <h2 className="text-xl md:text-2xl font-bold mb-2">{session.title}</h2>
             <p className="text-sm text-[var(--muted)] mb-4 line-clamp-2">{session.description}</p>
 

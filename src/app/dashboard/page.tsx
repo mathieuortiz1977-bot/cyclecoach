@@ -262,7 +262,14 @@ export default function Dashboard() {
 
       {/* Today's Workout Hero — full width */}
       <motion.div variants={stagger.item}>
-        <TodayHero plan={plan} blockIdx={activeBlock} weekIdx={activeWeek} programStartDate={programStartDate} />
+        <TodayHero 
+          plan={plan} 
+          blockIdx={activeBlock} 
+          weekIdx={activeWeek} 
+          programStartDate={programStartDate}
+          stravaActivities={stravaData || []}
+          completedWorkouts={workoutData}
+        />
       </motion.div>
 
       {/* Bento Grid — Top Row */}
