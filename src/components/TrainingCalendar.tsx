@@ -209,7 +209,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           .map((a: any) => {
             // Convert startDate to Bogota local date (YYYY-MM-DD)
             const startDate = new Date(a.startDate);
-            const localDateString = tz.formatForCalendar(startDate);
+            const localDateString = tz.formatAsISO(startDate); // Use ISO format (YYYY-MM-DD)
             
             return {
               id: `strava-${a.id}`,
@@ -392,10 +392,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       );
       
       // Find Strava ride for this day
-      // Strava rides have date as "YYYY-MM-DD" string (local), so compare directly
-      const currentDateString = tz.formatForCalendar(current); // Returns "YYYY-MM-DD"
+      // Strava rides have date as "YYYY-MM-DD" string (ISO format), so compare directly
+      const currentDateISO = tz.formatAsISO(current); // Returns "YYYY-MM-DD"
       const stravaRide = stravaActivities.find(a =>
-        a.date === currentDateString // Direct string comparison for YYYY-MM-DD format
+        a.date === currentDateISO // Direct string comparison for YYYY-MM-DD format
       );
       
       // Find planned session for this day
