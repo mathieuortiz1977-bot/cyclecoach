@@ -1,10 +1,17 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getCurrentRiderWithStrava } from "@/lib/get-rider";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     console.log("[GET /api/strava/activities] START");
+    
+    // Check for query param: ?years=5 to load 5 years instead of default 2
+    const searchParams = request.nextUrl.searchParams;
+    const yearsParam = searchParams.get("years");
+    const years = yearsParam ? parseInt(yearsParam, 10) : 2;
+    
+    console.log(`[GET /api/strava/activities] Loading activities for last ${years} years`);
     
     const rider = await getCurrentRiderWithStrava();
 
@@ -20,16 +27,17 @@ export async function GET() {
     });
 
     // Get Strava activities for this rider - paginated to prevent timeouts
-    // Calendar shows rides from last 2 years (most relevant for current training)
-    const twoYearsAgo = new Date();
-    twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+    // Default: last 2 years (most relevant for current training)
+    // Can be overridden with ?years=5 etc
+    const cutoffDate = new Date();
+    cutoffDate.setFullYear(cutoffDate.getFullYear() - years);
     
-    console.log(`[GET /api/strava/activities] Fetching activities since ${twoYearsAgo.toISOString()}`);
+    console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()}`);
 
     const activities = await prisma.stravaActivity.findMany({
       where: { 
         riderId: rider.id,
-        startDate: { gte: twoYearsAgo } // Only last 2 years
+        startDate: { gte: cutoffDate } // Only last N years (default 2)
       },
       select: {
         id: true,

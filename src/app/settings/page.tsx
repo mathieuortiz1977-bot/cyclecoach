@@ -221,10 +221,11 @@ function SettingsPage() {
     }
   }, []);
 
-  const loadImportedRides = useCallback(async () => {
+  const loadImportedRides = useCallback(async (yearsParam?: number) => {
     try {
-      console.log("[Settings] Loading imported rides...");
-      const response = await fetch("/api/strava/activities");
+      const yearsStr = yearsParam ? `?years=${yearsParam}` : "";
+      console.log("[Settings] Loading imported rides...", yearsStr || "(default 2 years)");
+      const response = await fetch(`/api/strava/activities${yearsStr}`);
       if (!response.ok) {
         console.error("[Settings] Activities API error:", response.status, response.statusText);
         setImportedRides([]);
@@ -705,9 +706,19 @@ function SettingsPage() {
 
                   {/* Imported Rides List */}
                   <div className="pt-3 border-t border-[var(--card-border)]">
-                    <p className="text-xs font-semibold text-[var(--muted)] mb-2">
-                      🚴 Imported Rides ({importedRides.length})
-                    </p>
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-xs font-semibold text-[var(--muted)]">
+                        🚴 Imported Rides ({importedRides.length})
+                      </p>
+                      {importedRides.length > 0 && (
+                        <button
+                          onClick={() => loadImportedRides(10)} // Load 10 years worth
+                          className="text-xs px-2 py-1 rounded border border-[var(--accent)]/50 text-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors"
+                        >
+                          Load All
+                        </button>
+                      )}
+                    </div>
                     <div className="max-h-48 overflow-y-auto bg-[var(--bg-secondary)] rounded-lg border border-[var(--card-border)] p-2 space-y-1">
                       {importedRides.length === 0 ? (
                         <p className="text-xs text-[var(--muted)] py-3 text-center">No rides imported yet</p>
