@@ -75,10 +75,8 @@ export function SessionCard({
   const [selectedInterval, setSelectedInterval] = useState<IntervalDetailModal | null>(null);
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   const href = `/workout/${blockIdx}-${weekIdx}-${sessionIdx}`;
-  const status = getSessionStatus(session.dayOfWeek, completedWorkouts, stravaActivities);
-  const config = statusConfig[status];
   
-  // Find the actual completion data if exists
+  // Calculate session date for this day
   const now = new Date();
   const currentWeekStart = new Date(now);
   currentWeekStart.setDate(now.getDate() - now.getDay());
@@ -87,6 +85,7 @@ export function SessionCard({
   sessionDate.setDate(currentWeekStart.getDate() + dayOffset);
   const sessionDateISO = sessionDate.toISOString().split('T')[0];
   
+  // Find the actual completion data if exists
   const completedWorkout = completedWorkouts?.find(w => {
     const workoutDate = new Date(w.date);
     const workoutDateISO = workoutDate.toISOString().split('T')[0];
@@ -94,6 +93,19 @@ export function SessionCard({
   });
   
   const stravaRide = stravaActivities?.find(a => a.date === sessionDateISO);
+  
+  const status = getSessionStatus(session.dayOfWeek, completedWorkouts, stravaActivities);
+  const config = statusConfig[status];
+  
+  // Debug logging
+  console.log("[SessionCard]", session.dayOfWeek, {
+    status,
+    completedWorkoutsCount: completedWorkouts?.length,
+    stravaCount: stravaActivities?.length,
+    sessionDate: sessionDateISO,
+    hasCompleted: completedWorkout ? "yes" : "no",
+    hasStrava: stravaRide ? "yes" : "no"
+  });
 
   const handleIntervalClick = (interval: IntervalDef, index: number, e: React.MouseEvent) => {
     e.preventDefault();
