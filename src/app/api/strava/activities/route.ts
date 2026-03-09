@@ -70,7 +70,23 @@ export async function GET(request: NextRequest) {
           name: activities[0].name,
           date: activities[0].startDate
         });
+      } else {
+        console.log("[GET /api/strava/activities] WARNING: No activities found!");
+        console.log("[GET /api/strava/activities] Rider ID:", rider.id);
+        console.log("[GET /api/strava/activities] Cutoff date:", cutoffDate.toISOString());
+        
+        // Debug: count ALL activities for this rider (no date filter)
+        const totalCount = await prisma.stravaActivity.count({
+          where: { riderId: rider.id }
+        });
+        console.log("[GET /api/strava/activities] Total activities in DB for this rider:", totalCount);
       }
+
+      console.log("[GET /api/strava/activities] RETURNING:", {
+        success: true,
+        activities: activities.length,
+        total: activities.length
+      });
 
       return NextResponse.json({
         success: true,
