@@ -1849,15 +1849,271 @@ const SESSION_TEMPLATES: Record<string, WorkoutTemplate[]> = {
       ],
     },
   ],
+
+  // ─── MORE BASE SPECIALIZATION ───────────────────────────────────
+  BASE_EXTENDED: [
+    {
+      id: "base-motorpacing-simulation",
+      title: "Base Workout",
+      description: "Motorpacing simulation",
+      purpose: "Aerobic adaptation with steady high cadence - motorpacing method",
+      zone: "Z2",
+      duration: 85,
+      intervals: () => [
+        warmup(),
+        interval("Motorpace Sim", 4200, 65, 75, "Steady high cadence pace line", "endurance", {cadenceLow: 95, cadenceHigh: 105}),
+        cooldown(),
+      ],
+    },
+    {
+      id: "base-long-endurance",
+      title: "Base Workout",
+      description: "Long endurance ride",
+      purpose: "Extended aerobic capacity - Seiler long easy day",
+      zone: "Z1-Z2",
+      duration: 150,
+      intervals: () => [
+        interval("Easy Warmup", 300, 50, 60, "Gentle start", "recovery"),
+        interval("Long Endurance", 8700, 56, 68, "Extended aerobic effort", "endurance"),
+        interval("Cool Spin", 300, 50, 60, "Easy finish", "recovery"),
+      ],
+    },
+  ],
+  
+  // ─── TEMPO/SWEETSPOT SPECIALIZATION ──────────────────────────────
+  TEMPO: [
+    {
+      id: "tempo-steady",
+      title: "Tempo Workout",
+      description: "Steady tempo efforts",
+      purpose: "Tempo power development - Coggan Z3 training",
+      zone: "Z3",
+      duration: 70,
+      intervals: () => [
+        warmup(),
+        interval("Tempo 1", 1200, 76, 84, "First tempo block", "tempo"),
+        restInterval(300),
+        interval("Tempo 2", 1200, 76, 84, "Second tempo block", "tempo"),
+        restInterval(300),
+        interval("Tempo 3", 900, 76, 84, "Final tempo block", "tempo"),
+        cooldown(),
+      ],
+    },
+    {
+      id: "tempo-3x10",
+      title: "Tempo Workout",
+      description: "3x10 tempo intervals",
+      purpose: "Tempo power with shorter blocks",
+      zone: "Z3",
+      duration: 70,
+      intervals: () => [
+        warmup(),
+        ...Array(3).fill(0).flatMap((_, i) => [
+          interval(`Tempo ${i+1}`, 600, 76, 84, "10-min tempo effort", "tempo"),
+          ...(i < 2 ? [restInterval(240)] : []),
+        ]),
+        cooldown(),
+      ],
+    },
+    {
+      id: "tempo-pyramid-3-4-5",
+      title: "Tempo Workout",
+      description: "Tempo pyramid 3-4-5",
+      purpose: "Progressive tempo building",
+      zone: "Z3",
+      duration: 65,
+      intervals: () => [
+        warmup(),
+        interval("Tempo 1", 180, 76, 84, "3-min start", "tempo"),
+        restInterval(180),
+        interval("Tempo 2", 240, 76, 84, "4-min build", "tempo"),
+        restInterval(240),
+        interval("Tempo 3", 300, 76, 84, "5-min peak", "tempo"),
+        restInterval(240),
+        interval("Tempo 4", 240, 76, 84, "4-min descend", "tempo"),
+        restInterval(180),
+        interval("Tempo 5", 180, 76, 84, "3-min finish", "tempo"),
+        cooldown(),
+      ],
+    },
+  ],
+  
+  // ─── ROAD RACE SPECIALIZATION ───────────────────────────────────
+  ROAD_RACE: [
+    {
+      id: "road-tempo-surges",
+      title: "Road Race Workout",
+      description: "Tempo with attacking surges",
+      purpose: "Road race specific - constant attacks in breakaway",
+      zone: "Z3-Z4",
+      duration: 90,
+      intervals: () => [
+        warmup(),
+        interval("Tempo Base", 1200, 76, 84, "Tempo pace line", "tempo"),
+        ...Array(6).fill(0).flatMap((_, i) => [
+          interval(`Attack ${i+1}`, 30, 110, 130, "Short attack", "vo2max"),
+          interval("Recovery", 60, 76, 84, "Back to tempo", "tempo"),
+        ]),
+        interval("Final Tempo", 900, 76, 84, "Tempo finish", "tempo"),
+        cooldown(),
+      ],
+    },
+    {
+      id: "road-climb-descent",
+      title: "Road Race Workout",
+      description: "Climb + descent simulation",
+      purpose: "Road race climbing specificity",
+      zone: "Z4-Z5",
+      duration: 80,
+      intervals: () => [
+        warmup(),
+        ...Array(3).fill(0).flatMap((_, i) => [
+          interval(`Climb ${i+1}`, 300, 104, 115, "Climbing effort", "vo2max", {cadenceLow: 70, cadenceHigh: 80}),
+          interval(`Descent Recovery ${i+1}`, 180, 60, 70, "Recovery spin", "recovery", {cadenceLow: 90, cadenceHigh: 100}),
+        ]),
+        cooldown(),
+      ],
+    },
+    {
+      id: "road-long-threshold",
+      title: "Road Race Workout",
+      description: "Extended threshold for road racing",
+      purpose: "Road race threshold - sustained effort on climbs",
+      zone: "Z4",
+      duration: 75,
+      intervals: () => [
+        warmup(),
+        interval("Threshold", 1800, 88, 94, "30-min sustained threshold", "threshold"),
+        cooldown(),
+      ],
+    },
+  ],
+  
+  // ─── MOUNTAIN BIKE SPECIALIZATION ───────────────────────────────
+  MTB: [
+    {
+      id: "mtb-pedaling-power",
+      title: "MTB Workout",
+      description: "Variable cadence climbing",
+      purpose: "MTB specific - variable cadence power",
+      zone: "Z4-Z5",
+      duration: 75,
+      intervals: () => [
+        warmup(),
+        ...Array(5).fill(0).flatMap((_, i) => [
+          interval(`High Cadence Climb ${i+1}`, 120, 105, 115, "High cadence climbing", "vo2max", {cadenceLow: 85, cadenceHigh: 95}),
+          interval(`Low Cadence Grind ${i+1}`, 120, 100, 110, "Low cadence power", "vo2max", {cadenceLow: 60, cadenceHigh: 70}),
+          restInterval(180),
+        ]),
+        cooldown(),
+      ],
+    },
+    {
+      id: "mtb-short-sharp",
+      title: "MTB Workout",
+      description: "Short sharp climbs",
+      purpose: "MTB technical climbing - repeated efforts",
+      zone: "Z5-Z6",
+      duration: 70,
+      intervals: () => [
+        warmup(),
+        ...Array(8).fill(0).flatMap((_, i) => [
+          interval(`Climb ${i+1}`, 60, 110, 125, "Short sharp climb", "vo2max", {cadenceLow: 70, cadenceHigh: 80}),
+          interval(`Recovery ${i+1}`, 120, 60, 70, "Recovery spin", "recovery"),
+        ]),
+        cooldown(),
+      ],
+    },
+  ],
+  
+  // ─── GRAVEL/CYCLOCROSS SPECIALIZATION ──────────────────────────
+  GRAVEL: [
+    {
+      id: "gravel-mixed-terrain",
+      title: "Gravel Workout",
+      description: "Mixed terrain power",
+      purpose: "Gravel specific - varied power on technical terrain",
+      zone: "Z3-Z5",
+      duration: 90,
+      intervals: () => [
+        warmup(),
+        interval("Tempo Base", 900, 76, 84, "Gravel pace - steady", "tempo"),
+        ...Array(5).fill(0).flatMap((_, i) => [
+          interval(`Technical Effort ${i+1}`, 180, 100, 115, "Technical terrain push", "vo2max"),
+          interval("Recovery", 120, 60, 70, "Recovery spin", "recovery"),
+        ]),
+        interval("Tempo Finish", 600, 76, 84, "Return to tempo", "tempo"),
+        cooldown(),
+      ],
+    },
+    {
+      id: "gravel-long-varied",
+      title: "Gravel Workout",
+      description: "Long varied terrain ride",
+      purpose: "Gravel endurance with varied effort",
+      zone: "Z2-Z3",
+      duration: 120,
+      intervals: () => [
+        interval("Base Start", 1200, 60, 70, "Easy aerobic base", "endurance"),
+        interval("Tempo Section", 900, 76, 84, "Tempo effort", "tempo"),
+        interval("Base", 1200, 60, 70, "Back to easy", "endurance"),
+        interval("Tempo Section", 900, 76, 84, "Second tempo", "tempo"),
+        interval("Base Finish", 900, 60, 70, "Easy finish", "endurance"),
+      ],
+    },
+  ],
+  
+  // ─── TRACK CYCLING SPECIALIZATION ───────────────────────────────
+  TRACK: [
+    {
+      id: "track-pursuit-simulation",
+      title: "Track Workout",
+      description: "Pursuit race simulation",
+      purpose: "Track pursuit - sustained high power",
+      zone: "Z4-Z5",
+      duration: 30,
+      intervals: () => [
+        warmup(),
+        interval("Pursuit Effort", 1200, 110, 125, "4-min pursuit pace", "vo2max"),
+        cooldown(),
+      ],
+    },
+    {
+      id: "track-scratch-simulation",
+      title: "Track Workout",
+      description: "Scratch race simulation",
+      purpose: "Track scratch - varied pace with surges",
+      zone: "Z3-Z6",
+      duration: 75,
+      intervals: () => [
+        warmup(),
+        interval("Base Pace", 600, 76, 84, "Scratch race pace", "tempo"),
+        ...Array(8).fill(0).flatMap((_, i) => [
+          interval(`Attack ${i+1}`, 20, 150, 200, "Sprint attack", "sprint"),
+          interval(`Recovery ${i+1}`, 60, 76, 84, "Return to pace", "tempo"),
+        ]),
+        cooldown(),
+      ],
+    },
+  ],
 };
 
 // ─── SESSION SELECTION ───────────────────────────────────────────────
 
 function selectWorkoutTemplate(
   zone: string, 
-  previousTemplateId?: string
+  previousTemplateId?: string,
+  specialization?: string
 ): WorkoutTemplate {
-  const templates = SESSION_TEMPLATES[zone] || SESSION_TEMPLATES.BASE;
+  // Map zone to template category
+  let templateZone = zone;
+  
+  // If a sport specialization is specified, use it
+  if (specialization && SESSION_TEMPLATES[specialization]) {
+    templateZone = specialization;
+  }
+  
+  const templates = SESSION_TEMPLATES[templateZone] || SESSION_TEMPLATES.BASE;
   
   // Filter out previous template to avoid repetition
   const availableTemplates = previousTemplateId 
