@@ -1197,6 +1197,35 @@ interface WorkoutTemplate {
 }
 
 const SESSION_TEMPLATES: Record<string, WorkoutTemplate[]> = {
+  // ─── FTP TEST (Baseline Testing) ──────────────────────────────────
+  FTP_TEST: [
+    {
+      id: "ftp-test-standard",
+      title: "FTP Test",
+      description: "Establish baseline functional threshold power",
+      purpose: "Determine FTP for power zone calibration - Coggan 20-min protocol",
+      zone: "Z4",
+      duration: 35,
+      intervals: () => [
+        interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
+        interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
+        interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
+        interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
+        restInterval(300),
+        interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
+        restInterval(600),
+        // Main 20-minute FTP test
+        interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
+        restInterval(600),
+        // Cool down with 2x2min sprints to test leg freshness
+        interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
+        restInterval(300),
+        interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
+        interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
+      ],
+    },
+  ],
+
   BASE: [
     // ─── Endurance Base (Z1-Z2): Aerobic Development ─────────────────
     {
@@ -2306,15 +2335,88 @@ export function generatePlan(
   season?: Season,
   raceType?: string,
   useAINames?: boolean,
-  riderId?: string // For per-user variation (Monday locked, other days vary by user)
+  riderId?: string, // For per-user variation (Monday locked, other days vary by user)
+  includeInitialFTPTest: boolean = true // Always start with FTP test to establish baselines
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
+  
+  // CRITICAL: Start with FTP Test week to establish power zones
+  if (includeInitialFTPTest) {
+    const ftpTestWeek: BlockDef = {
+      blockNumber: 0,
+      type: "BASE",
+      weeks: [
+        {
+          weekNumber: 0,
+          weekType: "BUILD", // FTP test week is like a build week
+          sessions: [
+            // Monday: FTP Test (before any actual training)
+            {
+              dayOfWeek: "MON",
+              sessionType: "INDOOR",
+              title: "FTP Test",
+              description: "Establish baseline functional threshold power for zone calibration",
+              purpose: "Determine FTP for all power zones - Coggan 20-minute protocol",
+              duration: 35,
+              intervals: [
+                interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
+                interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
+                interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
+                interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
+                restInterval(300),
+                interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
+                restInterval(600),
+                // Main 20-minute FTP test
+                interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
+                restInterval(600),
+                // Cool down with efforts to test leg freshness
+                interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
+                restInterval(300),
+                interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
+                interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
+              ],
+            },
+            // Rest of the week: easy recovery to let body adapt to FTP test
+            generateRestDay("TUE"),
+            generateRestDay("WED"),
+            {
+              dayOfWeek: "THU",
+              sessionType: "INDOOR",
+              title: "Easy Recovery Spin",
+              description: "Light spinning recovery after FTP test",
+              purpose: "Active recovery - flush metabolic waste",
+              duration: 45,
+              intervals: [
+                interval("Recovery Spin", 2700, 45, 60, "Easy aerobic spinning", "recovery"),
+              ],
+            },
+            generateRestDay("FRI"),
+            {
+              dayOfWeek: "SAT",
+              sessionType: "OUTDOOR",
+              title: "Easy Outdoor Recovery",
+              description: "Light outdoor ride to recover from testing week",
+              purpose: "Easy active recovery",
+              duration: 90,
+              intervals: [],
+            },
+            generateRestDay("SUN"),
+          ],
+        },
+      ],
+    };
+    blocks.push(ftpTestWeek);
+  }
   let previousWeekStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {};
   let previousWeekTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {};
 
+  // Adjust block numbers if FTP test was added
+  const blockStartNum = includeInitialFTPTest ? 1 : 0;
+  
   for (let b = 0; b < numBlocks; b++) {
     const blockType = BLOCK_SEQUENCE[b % BLOCK_SEQUENCE.length];
+    const blockNum = blockStartNum + b;
     // PHASE 4: Use seasonal theme if provided
     const blockTheme = getSeasonalBlockTheme(blockType, season);
     const weeks: WeekDef[] = [];
@@ -2328,7 +2430,7 @@ export function generatePlan(
       let sessions = generateWeekSessions(
         blockType, 
         weekType, 
-        b, 
+        blockNum, // Use adjusted block number (accounts for FTP test week)
         trainingDays, 
         outdoorDay,
         blockTheme,
@@ -2358,7 +2460,7 @@ export function generatePlan(
       });
     }
 
-    blocks.push({ blockNumber: b + 1, type: blockType, weeks });
+    blocks.push({ blockNumber: blockNum + 1, type: blockType, weeks });
   }
 
   return { blocks };
