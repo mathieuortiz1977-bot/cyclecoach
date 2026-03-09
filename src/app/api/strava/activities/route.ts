@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
     console.log(`[GET /api/strava/activities] Running query for rider ${rider.id}, cutoff: ${cutoffDate.toISOString()}`);
     
     try {
-      const activities = await prisma.stravaActivity.findMany({
+      const rawActivities = await prisma.stravaActivity.findMany({
         where: { 
           riderId: rider.id,
           startDate: { gte: cutoffDate } // Only last N years (default 2)
@@ -61,6 +61,12 @@ export async function GET(request: NextRequest) {
         orderBy: { startDate: "desc" },
         take: 500, // Max 500 rides (last 2 years usually ~250-300)
       });
+
+      // Convert BigInt stravaId to string for JSON serialization
+      const activities = rawActivities.map(a => ({
+        ...a,
+        stravaId: a.stravaId.toString() // Convert BigInt to string
+      }));
 
       console.log(`[GET /api/strava/activities] Query successful, fetched ${activities.length} activities`);
       
