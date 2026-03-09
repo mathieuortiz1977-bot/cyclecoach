@@ -20,6 +20,9 @@ export interface IntervalDef {
   coachNote: string;
 }
 
+export type WorkoutStructure = "steady" | "pyramid" | "ladder" | "micro" | "descend" | "twitchy" | "mixed";
+export type CadenceProfile = "low" | "normal" | "high" | "mixed";
+
 export interface SessionDef {
   dayOfWeek: DayOfWeek;
   sessionType: "INDOOR" | "OUTDOOR";
@@ -29,6 +32,13 @@ export interface SessionDef {
   purpose?: string; // The main purpose of this session (e.g., "Gradually raise heart rate and muscle temperature")
   intervals: IntervalDef[];
   route?: RouteData;
+  
+  // NEW: Variety tracking fields
+  structure?: WorkoutStructure;
+  cadenceProfile?: CadenceProfile;
+  themeCategory?: string;
+  psychologicalMessage?: string;
+  previousWeekStructure?: WorkoutStructure;
 }
 
 export interface WeekDef {
@@ -49,6 +59,229 @@ export interface PlanDef {
 
 const BLOCK_SEQUENCE: BlockType[] = ["BASE", "THRESHOLD", "VO2MAX", "RACE_SIM"];
 const WEEK_SEQUENCE: WeekType[] = ["BUILD", "BUILD_PLUS", "OVERREACH", "RECOVERY"];
+
+// ─── PHASE 1: Workout Structure Variety Matrix ──────────────────────
+
+/**
+ * Available workout structures for each energy zone
+ * Prevents repetitive session feeling by varying interval patterns
+ */
+const STRUCTURES_BY_ZONE: Record<string, WorkoutStructure[]> = {
+  // Recovery/Base (Z1-Z2)
+  "BASE": ["steady", "mixed", "steady", "steady", "mixed"],
+  
+  // Sweet Spot/Threshold (Z3)
+  "THRESHOLD": ["steady", "pyramid", "ladder", "micro", "descend"],
+  
+  // VO2 Max (Z4)
+  "VO2MAX": ["steady", "pyramid", "twitchy", "descend", "ladder"],
+  
+  // Anaerobic (Z5-Z6)
+  "ANAEROBIC": ["steady", "twitchy", "descend", "mixed", "ladder"],
+};
+
+/**
+ * Cadence profiles by week in block
+ * Week 1: Normal (baseline)
+ * Week 2: Low (strength emphasis)
+ * Week 3: High (efficiency emphasis)
+ * Week 4: Mixed (varied within session)
+ */
+const CADENCE_SCHEDULE_BY_WEEK: Record<number, CadenceProfile> = {
+  1: "normal",
+  2: "low",
+  3: "high",
+  4: "mixed",
+};
+
+/**
+ * Psychological themes by block type
+ * Creates narrative around each block
+ */
+const BLOCK_THEMES: Record<BlockType, string> = {
+  "BASE": "Foundation Building",
+  "THRESHOLD": "Attack & Respond",
+  "VO2MAX": "Race Preparation",
+  "RACE_SIM": "Championship Mode",
+};
+
+/**
+ * Psychological messages that explain the "why" behind each structure
+ * Motivates riders by connecting workout to broader goal
+ */
+const PSYCHOLOGY_MESSAGES: Record<string, Record<WorkoutStructure, string>> = {
+  "Foundation Building": {
+    steady: "Build your aerobic base. Consistency over intensity.",
+    pyramid: "Gentle progression. Test your rhythm.",
+    ladder: "Varied paces. Find your sweet spot.",
+    micro: "High volume, easy effort. Accumulate time.",
+    descend: "Descending power. Practice pacing.",
+    twitchy: "Light tactical work. Recovery mode.",
+    mixed: "Mix of efforts. Stay adaptable.",
+  },
+  "Attack & Respond": {
+    steady: "Sustained threshold. Build metabolic fitness.",
+    pyramid: "Attack simulation. Climb & respond.",
+    ladder: "Varied duration. Prevent adaptation staleness.",
+    micro: "Tactical repeats. High frequency learning.",
+    descend: "Controlled power. Practice finishing strong.",
+    twitchy: "Short bursts. Neuromuscular recruitment.",
+    mixed: "Mixed efforts. Race-like variability.",
+  },
+  "Race Preparation": {
+    steady: "High intensity repeats. Build VO2 capacity.",
+    pyramid: "Escalating power. Climb attack training.",
+    ladder: "Varied repeats. Tactical variety.",
+    micro: "Punchy repeats. Short power work.",
+    descend: "Descending efforts. Practice pacing.",
+    twitchy: "40sec efforts. Anaerobic threshold training.",
+    mixed: "Race simulation. Mixed intensity efforts.",
+  },
+  "Championship Mode": {
+    steady: "Race-specific fitness. Peak performance.",
+    pyramid: "Final push. Test your limits.",
+    ladder: "Competition simulation. Varied attacks.",
+    micro: "High intensity. Championship-level effort.",
+    descend: "Controlled power. Execute when ready.",
+    twitchy: "Final power test. Sprint preparation.",
+    mixed: "Full race simulation. Everything you've trained.",
+  },
+};
+
+/**
+ * Thematic workout titles that replace generic "Threshold Workout #3"
+ * Makes each session feel purposeful and unique
+ */
+const THEMATIC_TITLES: Record<string, Record<WorkoutStructure, string>> = {
+  "Foundation Building": {
+    steady: "The Grind",
+    pyramid: "Gentle Climb",
+    ladder: "Rhythm Finding",
+    micro: "Steady Accumulation",
+    descend: "Paced Progression",
+    twitchy: "Light Tactical Work",
+    mixed: "Adaptability Session",
+  },
+  "Attack & Respond": {
+    steady: "Sustained Power",
+    pyramid: "Attack Pyramid",
+    ladder: "Tactical Repeats",
+    micro: "Tactical Micro-Repeats",
+    descend: "Finish Strong",
+    twitchy: "Short Burst Practice",
+    mixed: "Race-Like Variability",
+  },
+  "Race Preparation": {
+    steady: "VO2 Max Builder",
+    pyramid: "Climbing Attacks",
+    ladder: "Varied VO2 Work",
+    micro: "Punchy Repeats",
+    descend: "Power Descends",
+    twitchy: "Short Anaerobic Work",
+    mixed: "Race Simulation",
+  },
+  "Championship Mode": {
+    steady: "Peak Performance",
+    pyramid: "Final Assault",
+    ladder: "Competition Sim",
+    micro: "Championship Effort",
+    descend: "Controlled Power",
+    twitchy: "Sprint Prep",
+    mixed: "Full Race Sim",
+  },
+};
+
+// ─── PHASE 2: Helper Functions for Variety ─────────────────────────
+
+/**
+ * Select a workout structure that avoids repetition from last week
+ * Uses randomness within valid options
+ */
+function selectWorkoutStructure(
+  zoneCategory: string,
+  previousStructure?: WorkoutStructure
+): WorkoutStructure {
+  const availableStructures = STRUCTURES_BY_ZONE[zoneCategory] || ["steady"];
+  
+  // Filter out last week's structure if provided
+  let validStructures = availableStructures;
+  if (previousStructure) {
+    validStructures = availableStructures.filter(s => s !== previousStructure);
+  }
+  
+  // Pick randomly from valid structures
+  return validStructures[Math.floor(Math.random() * validStructures.length)];
+}
+
+/**
+ * Get cadence profile based on week number (1-4 in block)
+ */
+function getCadenceProfile(weekInBlock: number): CadenceProfile {
+  return CADENCE_SCHEDULE_BY_WEEK[weekInBlock] || "normal";
+}
+
+/**
+ * Get psychological message for a workout
+ */
+function getPsychologicalMessage(
+  blockTheme: string,
+  structure: WorkoutStructure
+): string {
+  return PSYCHOLOGY_MESSAGES[blockTheme]?.[structure] || "Time to work.";
+}
+
+/**
+ * Get thematic title for a workout
+ */
+function getThematicTitle(
+  blockTheme: string,
+  structure: WorkoutStructure
+): string {
+  return THEMATIC_TITLES[blockTheme]?.[structure] || "Workout";
+}
+
+/**
+ * PHASE 2: Apply variety enhancement to a generated session
+ * Adds structure, cadence, theme, and psychology
+ */
+function applyVarietyToSession(
+  session: SessionDef,
+  blockType: BlockType,
+  blockTheme: string,
+  weekInBlock: number,
+  previousStructure?: WorkoutStructure
+): SessionDef {
+  // Determine zone category from session
+  let zoneCategory = "BASE";
+  if (session.intervals.length > 0) {
+    const mainZone = session.intervals[0].zone;
+    if (mainZone === "Z3") zoneCategory = "THRESHOLD";
+    else if (mainZone === "Z4") zoneCategory = "VO2MAX";
+    else if (mainZone === "Z5" || mainZone === "Z6") zoneCategory = "ANAEROBIC";
+  }
+  
+  // Skip variety for rest days and outdoor sessions
+  if (session.title === "Rest Day" || session.sessionType === "OUTDOOR") {
+    return session;
+  }
+  
+  // Select workout structure avoiding repetition
+  const structure = selectWorkoutStructure(zoneCategory, previousStructure);
+  const cadenceProfile = getCadenceProfile(weekInBlock);
+  const psychMessage = getPsychologicalMessage(blockTheme, structure);
+  const thematicTitle = getThematicTitle(blockTheme, structure);
+  
+  return {
+    ...session,
+    title: thematicTitle,
+    description: psychMessage,
+    structure,
+    cadenceProfile,
+    themeCategory: blockTheme,
+    psychologicalMessage: psychMessage,
+    previousWeekStructure: previousStructure,
+  };
+}
 
 // ─── Interval Templates ─────────────────────────────────────────────
 
@@ -478,23 +711,39 @@ function generateWeekSessions(
   weekType: WeekType, 
   blockNum: number,
   trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
-  outdoorDay: DayOfWeek = "SAT"
+  outdoorDay: DayOfWeek = "SAT",
+  blockTheme: string = "Foundation Building",
+  weekInBlock: number = 1,
+  previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {}
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   const sessions: SessionDef[] = [];
 
   for (const day of allDays) {
+    let session: SessionDef;
+    
     if (!trainingDays.includes(day)) {
       // Rest day
-      sessions.push(generateRestDay(day));
+      session = generateRestDay(day);
     } else if (day === outdoorDay) {
       // Outdoor day (usually longer ride)
-      sessions.push(generateOutdoorSession(weekType, blockNum, day));
+      session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day
-      sessions.push(generateIndoorSession(blockType, weekType, day));
+      session = generateIndoorSession(blockType, weekType, day);
+      
+      // PHASE 2: Apply variety enhancement to indoor sessions
+      session = applyVarietyToSession(
+        session,
+        blockType,
+        blockTheme,
+        weekInBlock,
+        previousStructures[day]
+      );
     }
+    
+    sessions.push(session);
   }
 
   return sessions;
@@ -608,16 +857,36 @@ export function generatePlan(
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
+  let previousWeekStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {};
 
   for (let b = 0; b < numBlocks; b++) {
     const blockType = BLOCK_SEQUENCE[b % BLOCK_SEQUENCE.length];
+    const blockTheme = BLOCK_THEMES[blockType];
     const weeks: WeekDef[] = [];
 
     for (let w = 0; w < 4; w++) {
       const weekType = WEEK_SEQUENCE[w];
-      const sessions = generateWeekSessions(blockType, weekType, b, trainingDays, outdoorDay).map(fixSessionDuration);
+      const weekNum = w + 1;
+      
+      // PHASE 2: Generate sessions with variety awareness
+      let sessions = generateWeekSessions(
+        blockType, 
+        weekType, 
+        b, 
+        trainingDays, 
+        outdoorDay,
+        blockTheme,
+        weekNum,
+        previousWeekStructures
+      ).map(fixSessionDuration);
+      
+      // Track structures for next week's variety
+      sessions.forEach(s => {
+        previousWeekStructures[s.dayOfWeek] = s.structure;
+      });
+      
       weeks.push({
-        weekNumber: w + 1,
+        weekNumber: weekNum,
         weekType,
         sessions,
       });
