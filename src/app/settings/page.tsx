@@ -108,6 +108,7 @@ function SettingsPage() {
   const [fromDate, setFromDate] = useState<string>(new Date(new Date().getFullYear(), 0, 1).toISOString().split('T')[0]);
   const [toDate, setToDate] = useState<string>(new Date().toISOString().split('T')[0]);
   const [importedRides, setImportedRides] = useState<Array<{ id: string; name: string; date: string; distance: number }>>([]);
+  const [stravaSummary, setStravaSummary] = useState<{ total: number; dateSince: string; summary: string } | null>(null);
 
   const handleStravaSync = async () => {
     setSyncing(true);
@@ -182,10 +183,11 @@ function SettingsPage() {
       
       if (data.success) {
         setRangeSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
-        // Wait a moment for database to update, then refresh the imported rides list
+        // Wait a moment for database to update, then refresh the imported rides list and summary
         setTimeout(() => {
-          console.log("[Settings] Refreshing rides list after sync...");
+          console.log("[Settings] Refreshing rides list and summary after sync...");
           loadImportedRides();
+          loadStravaSummary();
         }, 500);
       } else {
         setRangeSyncResult(`❌ ${data.error || "Failed to sync"}`);
@@ -195,6 +197,22 @@ function SettingsPage() {
       console.error("[Settings] Sync range error:", error);
     }
     setSyncingRange(false);
+  };
+
+  const loadStravaSummary = async () => {
+    try {
+      console.log("[Settings] Loading Strava summary...");
+      const response = await fetch("/api/strava/summary");
+      const data = await response.json();
+      
+      console.log("[Settings] Summary response:", data);
+      
+      if (data.success) {
+        setStravaSummary(data);
+      }
+    } catch (error) {
+      console.error("[Settings] Failed to load Strava summary:", error);
+    }
   };
 
   const loadImportedRides = async () => {
@@ -231,8 +249,9 @@ function SettingsPage() {
     }
   };
 
-  // Load imported rides on mount
+  // Load both on mount
   useEffect(() => {
+    loadStravaSummary();
     loadImportedRides();
   }, []);
 
@@ -566,13 +585,22 @@ function SettingsPage() {
           <div className="border border-[var(--card-border)] rounded-lg p-4 space-y-3">
             <div className="flex items-center gap-3">
               <span className="text-2xl">🟠</span>
-              <div>
+              <div className="flex-1">
                 <p className="font-semibold text-sm">Strava</p>
                 <p className="text-xs text-[var(--muted)]">
                   {stravaStatus === "connected" ? "✅ Connected" : "Sync rides since 2020 and power data"}
                 </p>
               </div>
             </div>
+
+            {/* Database Summary */}
+            {stravaSummary && stravaSummary.total > 0 && (
+              <div className="px-3 py-2 rounded-lg bg-[var(--accent)]/10 border border-[var(--accent)]/30">
+                <p className="text-xs text-[var(--accent)] font-medium">
+                  📊 {stravaSummary.summary}
+                </p>
+              </div>
+            )}
             <div className="flex gap-2">
               <a
                 href="/api/strava/auth"
