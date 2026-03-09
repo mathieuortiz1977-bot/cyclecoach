@@ -106,6 +106,87 @@ const BLOCK_THEMES: Record<BlockType, string> = {
 };
 
 /**
+ * PHASE 4: Seasonal Themes
+ * Customize block themes based on training season
+ */
+export type Season = "winter" | "spring" | "summer" | "fall";
+
+const SEASONAL_BLOCK_THEMES: Record<Season, Record<BlockType, string>> = {
+  "winter": {
+    "BASE": "Winter Base Building",
+    "THRESHOLD": "Indoor Power",
+    "VO2MAX": "Peak Indoor Preparation",
+    "RACE_SIM": "Indoor Championship",
+  },
+  "spring": {
+    "BASE": "Spring Awakening",
+    "THRESHOLD": "Attack Training",
+    "VO2MAX": "Spring Racing Prep",
+    "RACE_SIM": "Spring Classics Mode",
+  },
+  "summer": {
+    "BASE": "Summer Endurance",
+    "THRESHOLD": "Heat Adaptation",
+    "VO2MAX": "Summer Peak",
+    "RACE_SIM": "Grand Tour Training",
+  },
+  "fall": {
+    "BASE": "Fall Base",
+    "THRESHOLD": "Fall Fitness",
+    "VO2MAX": "Fall Peak",
+    "RACE_SIM": "Fall Championship",
+  },
+};
+
+/**
+ * PHASE 4: Race-Specific Templates
+ * Customize plan based on goal race
+ */
+export interface RaceTemplate {
+  name: string;
+  blockTypes: BlockType[];
+  focusZones: string[];
+  peakWeek: number;
+  taper: number; // weeks
+  description: string;
+}
+
+const RACE_TEMPLATES: Record<string, RaceTemplate> = {
+  "criterium": {
+    name: "Criterium Racing",
+    blockTypes: ["BASE", "THRESHOLD", "VO2MAX", "RACE_SIM"],
+    focusZones: ["Z4", "Z5", "Z6"],
+    peakWeek: 16,
+    taper: 1,
+    description: "High cadence, short power, repeated efforts",
+  },
+  "road_race": {
+    name: "Road Race",
+    blockTypes: ["BASE", "THRESHOLD", "VO2MAX", "RACE_SIM"],
+    focusZones: ["Z3", "Z4", "Z5"],
+    peakWeek: 16,
+    taper: 1,
+    description: "Sustained power, tactical awareness, group dynamics",
+  },
+  "gran_fondo": {
+    name: "Gran Fondo / Century Ride",
+    blockTypes: ["BASE", "THRESHOLD", "RACE_SIM"],
+    focusZones: ["Z1", "Z2", "Z3"],
+    peakWeek: 20,
+    taper: 2,
+    description: "Long endurance, pacing strategy, fueling",
+  },
+  "mtb_xc": {
+    name: "MTB Cross-Country",
+    blockTypes: ["BASE", "VO2MAX", "RACE_SIM"],
+    focusZones: ["Z2", "Z3", "Z4"],
+    peakWeek: 16,
+    taper: 1,
+    description: "Technical climbing, varied terrain, short bursts",
+  },
+};
+
+/**
  * Psychological messages that explain the "why" behind each structure
  * Motivates riders by connecting workout to broader goal
  */
@@ -241,6 +322,50 @@ function getThematicTitle(
 }
 
 /**
+ * PHASE 4: Get seasonal theme for a block
+ */
+function getSeasonalBlockTheme(blockType: BlockType, season?: Season): string {
+  if (!season) return BLOCK_THEMES[blockType];
+  return SEASONAL_BLOCK_THEMES[season]?.[blockType] || BLOCK_THEMES[blockType];
+}
+
+/**
+ * PHASE 4: AI-Powered Workout Naming Hook
+ * Framework for Claude API integration to generate creative names
+ * Can be async in future implementation
+ */
+export async function generateAIWorkoutName(
+  baseTitle: string,
+  psychMessage: string,
+  structure: WorkoutStructure,
+  _useAI: boolean = false
+): Promise<string> {
+  // Future: call Claude API for creative naming
+  // For now, use template-based naming
+  if (_useAI) {
+    // Placeholder for Claude API call
+    // const response = await claude.messages.create({
+    //   model: "claude-opus-4-6",
+    //   max_tokens: 50,
+    //   messages: [{
+    //     role: "user",
+    //     content: `Generate a creative 2-3 word cycling workout name for: ${baseTitle}. Keep it punchy and motivational.`
+    //   }]
+    // });
+    // return response.content[0].text;
+  }
+  return baseTitle;
+}
+
+/**
+ * PHASE 4: Get race-specific focus zones
+ */
+function getRaceFocusZones(raceType?: string): string[] {
+  if (!raceType) return ["Z1", "Z2", "Z3", "Z4"];
+  return RACE_TEMPLATES[raceType]?.focusZones || ["Z1", "Z2", "Z3", "Z4"];
+}
+
+/**
  * PHASE 2: Apply variety enhancement to a generated session
  * Adds structure, cadence, theme, and psychology
  */
@@ -270,6 +395,11 @@ function applyVarietyToSession(
   const cadenceProfile = getCadenceProfile(weekInBlock);
   const psychMessage = getPsychologicalMessage(blockTheme, structure);
   const thematicTitle = getThematicTitle(blockTheme, structure);
+  
+  // PHASE 3: Logging for testing & verification
+  if (typeof window === "undefined") { // Only log server-side
+    console.log(`[PlanVariety] ${session.dayOfWeek} | Zone: ${zoneCategory} | Structure: ${structure} | Cadence: ${cadenceProfile} | Title: ${thematicTitle}`);
+  }
   
   return {
     ...session,
@@ -850,10 +980,16 @@ function fixSessionDuration(session: SessionDef): SessionDef {
 
 // ─── Full Plan Generator ─────────────────────────────────────────────
 
+/**
+ * PHASE 4: Extended plan generation with personalization options
+ */
 export function generatePlan(
   numBlocks: number = 4,
   trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
-  outdoorDay: DayOfWeek = "SAT"
+  outdoorDay: DayOfWeek = "SAT",
+  season?: Season,
+  raceType?: string,
+  useAINames?: boolean
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
@@ -861,7 +997,8 @@ export function generatePlan(
 
   for (let b = 0; b < numBlocks; b++) {
     const blockType = BLOCK_SEQUENCE[b % BLOCK_SEQUENCE.length];
-    const blockTheme = BLOCK_THEMES[blockType];
+    // PHASE 4: Use seasonal theme if provided
+    const blockTheme = getSeasonalBlockTheme(blockType, season);
     const weeks: WeekDef[] = [];
 
     for (let w = 0; w < 4; w++) {
