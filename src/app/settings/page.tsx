@@ -107,7 +107,6 @@ function SettingsPage() {
   const [rangeSyncResult, setRangeSyncResult] = useState<string | null>(null);
   const [fromDate, setFromDate] = useState<string>(new Date(new Date().getFullYear(), 0, 1).toISOString().split('T')[0]);
   const [toDate, setToDate] = useState<string>(new Date().toISOString().split('T')[0]);
-  const [importedRides, setImportedRides] = useState<Array<{ id: string; name: string; date: string; distance: number }>>([]);
   const [stravaSummary, setStravaSummary] = useState<{ total: number; dateSince: string; summary: string } | null>(null);
 
   const handleStravaSync = async () => {
@@ -183,10 +182,9 @@ function SettingsPage() {
       
       if (data.success) {
         setRangeSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
-        // Wait a moment for database to update, then refresh the imported rides list and summary
+        // Wait a moment for database to update, then refresh the summary
         setTimeout(() => {
-          console.log("[Settings] Refreshing rides list and summary after sync...");
-          loadImportedRides();
+          console.log("[Settings] Refreshing summary after sync...");
           loadStravaSummary();
         }, 500);
       } else {
@@ -221,51 +219,10 @@ function SettingsPage() {
     }
   }, []);
 
-  const loadImportedRides = useCallback(async (yearsParam?: number) => {
-    try {
-      const yearsStr = yearsParam ? `?years=${yearsParam}` : "";
-      console.log("[Settings] Loading imported rides...", yearsStr || "(default 2 years)");
-      const response = await fetch(`/api/strava/activities${yearsStr}`);
-      if (!response.ok) {
-        console.error("[Settings] Activities API error:", response.status, response.statusText);
-        setImportedRides([]);
-        return;
-      }
-      const data = await response.json();
-      
-      console.log("[Settings] API response:", data);
-      
-      if (data.success && data.activities && data.activities.length > 0) {
-        // Sort by startDate first (before formatting), then format for display
-        const rides = data.activities
-          .sort((a: any, b: any) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
-          .map((activity: any) => ({
-            id: activity.stravaId?.toString() || activity.id,
-            name: activity.name,
-            date: new Date(activity.startDate).toLocaleDateString(),
-            distance: (activity.distance / 1000).toFixed(1), // Convert meters to km
-          }));
-        
-        console.log("[Settings] Formatted rides:", rides);
-        setImportedRides(rides);
-      } else if (data.success && (!data.activities || data.activities.length === 0)) {
-        console.log("[Settings] No activities found in database");
-        setImportedRides([]);
-      } else {
-        console.error("[Settings] API error:", data.error);
-        setImportedRides([]);
-      }
-    } catch (error) {
-      console.error("[Settings] Failed to load imported rides:", error);
-      setImportedRides([]);
-    }
-  }, []);
-
-  // Load both on mount (with proper dependency array)
+  // Load summary on mount
   useEffect(() => {
     loadStravaSummary();
-    loadImportedRides();
-  }, [loadStravaSummary, loadImportedRides]);
+  }, [loadStravaSummary]);
 
   // Training schedule update
   const [scheduleUpdating, setScheduleUpdating] = useState(false);
@@ -703,41 +660,6 @@ function SettingsPage() {
                       {rangeSyncResult}
                     </p>
                   )}
-
-                  {/* Imported Rides List */}
-                  <div className="pt-3 border-t border-[var(--card-border)]">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-xs font-semibold text-[var(--muted)]">
-                        🚴 Imported Rides ({importedRides.length})
-                      </p>
-                      {importedRides.length > 0 && (
-                        <button
-                          onClick={() => loadImportedRides(10)} // Load 10 years worth
-                          className="text-xs px-2 py-1 rounded border border-[var(--accent)]/50 text-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors"
-                        >
-                          Load All
-                        </button>
-                      )}
-                    </div>
-                    <div className="max-h-48 overflow-y-auto bg-[var(--bg-secondary)] rounded-lg border border-[var(--card-border)] p-2 space-y-1">
-                      {importedRides.length === 0 ? (
-                        <p className="text-xs text-[var(--muted)] py-3 text-center">No rides imported yet</p>
-                      ) : (
-                        importedRides.map((ride) => (
-                          <div
-                            key={ride.id}
-                            className="text-xs flex justify-between items-center p-2 rounded bg-[var(--card-bg)] border border-[var(--card-border)]/50 hover:border-[var(--accent)]/50 transition-colors"
-                          >
-                            <div className="flex-1 min-w-0">
-                              <p className="font-medium text-[var(--text)] truncate">{ride.name}</p>
-                              <p className="text-[var(--muted)] text-[10px]">{ride.date}</p>
-                            </div>
-                            <p className="text-[var(--accent)] font-semibold ml-2">{ride.distance} km</p>
-                          </div>
-                        ))
-                      )}
-                    </div>
-                  </div>
                 </div>
               </>
             )}
