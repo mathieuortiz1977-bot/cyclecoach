@@ -1148,7 +1148,8 @@ function generateWeekSessions(
   blockTheme: string = "Foundation Building",
   weekInBlock: number = 1,
   previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {},
-  previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {}
+  previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {},
+  userSeed?: string // For per-user variation (Monday stays locked, other days can vary)
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -1165,12 +1166,14 @@ function generateWeekSessions(
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day - use template-based generation
+      // Monday is sacred (stick to plan), other days use userSeed for variation
       session = generateIndoorSession(
         blockType, 
         weekType, 
         day,
         weekInBlock,
-        previousTemplates
+        previousTemplates,
+        userSeed
       );
     }
     
@@ -2174,60 +2177,64 @@ function generateIndoorSession(
   weekType: WeekType, 
   day: DayOfWeek,
   weekNum?: number,
-  previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>
+  previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>,
+  userSeed?: string // For per-user variation
 ): SessionDef {
-  // Map day to existing session generators to get the base structure + zone
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
   
-  let baseSession: SessionDef;
   let zone: string;
+  let isMonday = dayIndex === 0;
   
+  // MONDAY IS SACRED: Always stick to the planned block type
+  // Other days can vary more freely within the energy system
   switch (blockType) {
     case "BASE":
-      if (dayIndex === 0) baseSession = baseMonday(weekType);
-      else if (dayIndex === 1) baseSession = baseTuesday(weekType);
-      else if (dayIndex === 3) baseSession = baseThursday(weekType);
-      else if (dayIndex === 4) baseSession = baseFriday(weekType);
-      else baseSession = generateRestDay(day);
       zone = "BASE";
       break;
     case "THRESHOLD":
-      if (dayIndex === 0) baseSession = thresholdMonday(weekType);
-      else if (dayIndex === 1) baseSession = thresholdTuesday(weekType);
-      else if (dayIndex === 3) baseSession = thresholdThursday(weekType);
-      else if (dayIndex === 4) baseSession = thresholdFriday(weekType);
-      else baseSession = generateRestDay(day);
       zone = "THRESHOLD";
       break;
     case "VO2MAX":
-      if (dayIndex === 0) baseSession = vo2Monday(weekType);
-      else if (dayIndex === 1) baseSession = vo2Tuesday(weekType);
-      else if (dayIndex === 3) baseSession = vo2Thursday(weekType);
-      else if (dayIndex === 4) baseSession = vo2Friday(weekType);
-      else baseSession = generateRestDay(day);
       zone = "VO2MAX";
       break;
     case "RACE_SIM":
-      if (dayIndex === 0) baseSession = raceSimMonday(weekType);
-      else if (dayIndex === 1) baseSession = raceSimTuesday(weekType);
-      else if (dayIndex === 3) baseSession = raceSimThursday(weekType);
-      else if (dayIndex === 4) baseSession = raceSimFriday(weekType);
-      else baseSession = generateRestDay(day);
       zone = "ANAEROBIC";
       break;
     default:
-      baseSession = generateRestDay(day);
       zone = "BASE";
   }
   
-  // Skip template selection for rest days
-  if (baseSession.title === "Rest Day") {
+  // Skip rest days
+  if (dayIndex === 2 || dayIndex === 5 || dayIndex === 6) {
+    // These are typically rest days (Wed, Sat, Sun)
+    // Only generate sessions for Mon, Tue, Thu, Fri
+    const baseSession = generateRestDay(day);
     return baseSession;
   }
   
-  // Select a template for this zone, avoiding previous week's template
+  // For non-Monday sessions, allow some variation in zone selection
+  // (but keep it reasonable - stay within the same energy system)
+  let selectedZone = zone;
+  if (!isMonday && userSeed) {
+    // Seed the random variation per user (so same user gets consistent variety)
+    // but different users get different workouts
+    const userRandomizer = Math.abs(
+      userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
+    ) % 100;
+    
+    // Small chance to swap to a complementary zone on non-Monday days
+    if (userRandomizer < 20) {
+      // 20% chance to use a complementary zone on non-Monday days
+      if (zone === "BASE") selectedZone = "TEMPO";
+      else if (zone === "THRESHOLD") selectedZone = "TEMPO";
+      else if (zone === "VO2MAX") selectedZone = "THRESHOLD";
+      else if (zone === "ANAEROBIC") selectedZone = "VO2MAX";
+    }
+  }
+  
+  // Select a template for this zone/day, avoiding previous week's template
   const previousTemplate = previousTemplates?.[day];
-  const template = selectWorkoutTemplate(zone, previousTemplate?.id);
+  const template = selectWorkoutTemplate(selectedZone, previousTemplate?.id);
   
   // Build intervals from template
   const intervals = template.intervals();
@@ -2236,8 +2243,8 @@ function generateIndoorSession(
   // NOTE: Duration is calculated from actual intervals by fixSessionDuration()
   // Do NOT copy template.duration or baseSession.duration - let them be recalculated
   return {
-    dayOfWeek: baseSession.dayOfWeek,
-    sessionType: baseSession.sessionType,
+    dayOfWeek: day,
+    sessionType: "INDOOR",
     title: template.title,
     description: template.description,
     purpose: template.purpose,
@@ -2267,7 +2274,8 @@ export function generatePlan(
   outdoorDay: DayOfWeek = "SAT",
   season?: Season,
   raceType?: string,
-  useAINames?: boolean
+  useAINames?: boolean,
+  riderId?: string // For per-user variation (Monday locked, other days vary by user)
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
@@ -2285,6 +2293,7 @@ export function generatePlan(
       const weekNum = w + 1;
       
       // Generate sessions with template-based variety
+      // Monday stays locked to plan, other days vary per riderId
       let sessions = generateWeekSessions(
         blockType, 
         weekType, 
@@ -2294,7 +2303,8 @@ export function generatePlan(
         blockTheme,
         weekNum,
         previousWeekStructures,
-        previousWeekTemplates  // Pass template tracking
+        previousWeekTemplates,  // Pass template tracking
+        riderId  // Pass rider ID for per-user variation
       ).map(fixSessionDuration);
       
       // Track templates for next week's variety (avoid same template week-to-week)
