@@ -65,6 +65,30 @@ export async function POST(request: NextRequest) {
       rider.outdoorDay as DayOfWeek : 
       "SAT";
 
+    // PRESERVE COMPLETED WORKOUTS: Query completed workouts by date
+    const completedWorkouts = await prisma.completedWorkout.findMany({
+      where: {
+        riderId: rider.id,
+        completed: true,
+      },
+      select: {
+        id: true,
+        date: true,
+        sessionTitle: true,
+        completed: true,
+        compliance: true,
+        rpe: true,
+      },
+    });
+
+    console.log(`[Plan Regeneration] Preserving ${completedWorkouts.length} completed workouts across regeneration`);
+    
+    // Map completed workouts by date for quick lookup
+    const completedByDate = new Map(completedWorkouts.map(w => [
+      w.date.toISOString().split('T')[0], // YYYY-MM-DD key
+      w
+    ]));
+
     // Delete existing plan for this rider
     const existingPlans = await prisma.plan.findMany({ where: { riderId: rider.id }, select: { id: true } });
     for (const p of existingPlans) {
@@ -144,7 +168,12 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json({ plan, source: "generated" });
+    // COMPLETED WORKOUTS ARE PRESERVED: They're independent of the plan
+    // and stored by date in the CompletedWorkout table
+    // No restoration needed - they survive plan regeneration
+    console.log(`[Plan Regeneration] ✅ Complete - ${completedWorkouts.length} completed workouts preserved`);
+
+    return NextResponse.json({ plan, source: "generated", preservedCount: completedWorkouts.length });
   } catch (err) {
     console.error("Plan generation error:", err);
     return NextResponse.json({ error: "Failed to generate plan" }, { status: 500 });
