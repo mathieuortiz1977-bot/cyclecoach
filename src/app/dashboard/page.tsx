@@ -38,11 +38,13 @@ export default function Dashboard() {
 
   // Load rider profile + plan + workout data from DB
   const loadDashboardData = useCallback(async () => {
+    // Force fresh fetches by disabling cache (for plan regeneration scenarios)
+    const cacheKey = `?t=${Date.now()}`;
     const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
-      fetch("/api/rider").then((r) => r.json()).catch(() => null),
-      fetch("/api/plan").then((r) => r.json()).catch(() => null),
-      fetch("/api/workouts").then((r) => r.json()).catch(() => null),
-      fetch("/api/strava/activities").then((r) => r.json()).catch(() => null),
+      fetch("/api/rider" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/plan" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/workouts" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/strava/activities" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
     ]);
     
     return { riderData, planData, workoutResponse, stravaResponse };

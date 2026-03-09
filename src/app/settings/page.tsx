@@ -249,11 +249,16 @@ function SettingsPage() {
       
       if (planResponse.success) {
         setScheduleResult(
-          "✅ Training schedule updated! Your 16-week plan has been regenerated. " +
-          "View it in the dashboard or calendar. The changes will appear when you navigate there."
+          "✅ Training schedule updated! Your 16-week plan is regenerating... Redirecting to dashboard."
         );
+        
+        // CRITICAL: Redirect to dashboard to force fresh plan fetch
+        // This invalidates any cached plan data and loads the regenerated plan
+        setTimeout(() => {
+          window.location.href = "/dashboard?refreshed=" + Date.now();
+        }, 1500);
       } else {
-        setScheduleResult(`❌ Error: ${planResponse.error}`);
+        setScheduleResult(`❌ Plan regeneration error: ${planResponse.error}`);
       }
     } catch (err) {
       console.error("Schedule update failed:", err);
