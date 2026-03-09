@@ -2157,6 +2157,41 @@ function selectWorkoutTemplate(
   return availableTemplates[randomIndex] || templates[0];
 }
 
+// ─── GENERATION ENGINE INTEGRATION ──────────────────────────────────
+// Use training engine instead of hardcoded templates for duration-aware sessions
+
+import { createSession } from "./training-engine";
+import { scaleSessionToDuration } from "./training-engine/duration-scaler";
+import type { AthleteProfile, SessionGoal } from "./training-engine/types";
+
+/**
+ * Map block type to training goal for generation engine
+ */
+function blockTypeToGoal(blockType: BlockType): SessionGoal {
+  const goalMap: Record<BlockType, SessionGoal> = {
+    BASE: "Endurance",
+    THRESHOLD: "LactateThreshold",
+    VO2MAX: "VO2Max",
+    RACE_SIM: "SprintPower",
+  };
+  return goalMap[blockType];
+}
+
+/**
+ * Create athlete profile for generation engine
+ */
+function createAthleteProfile(): AthleteProfile {
+  // Using standard athlete profile
+  // In production, would come from user's FTP test + profile
+  return {
+    ftp: 280, // Default/placeholder
+    weight: 75,
+    maxHr: 190,
+    restingHr: 60,
+    level: "Intermediate",
+  };
+}
+
 // ─── Custom Session Generators ──────────────────────────────────────
 
 function generateRestDay(day: DayOfWeek): SessionDef {

@@ -147,6 +147,9 @@ export interface SessionBuilderConfig {
   /** Optional: override protocol (else use default for goal) */
   protocol?: IntervalProtocol;
   
+  /** TARGET DURATION IN MINUTES - SCALES ENTIRE SESSION TO THIS TIME */
+  targetDurationMinutes?: number;
+  
   /** Optional: override warmup duration (seconds) */
   warmupDuration?: number;
   
