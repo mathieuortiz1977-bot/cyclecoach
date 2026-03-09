@@ -245,11 +245,34 @@ function SettingsPage() {
       }
 
       // Regenerate the training plan based on new schedule
-      const planResponse = await api.plan.regenerate();
+      let planResponse = await api.plan.regenerate();
+      
+      // HANDLE CONFIRMATION: If there are pending sessions, ask user to confirm
+      if (planResponse.status === 409 && planResponse.error === "Pending sessions exist") {
+        const pendingCount = planResponse.pendingCount || 0;
+        const userConfirmed = confirm(
+          `You have ${pendingCount} upcoming workouts scheduled.\n\n` +
+          `Updating your training schedule will change these sessions.\n\n` +
+          `Click OK to confirm and update these sessions, or Cancel to keep them as-is.`
+        );
+        
+        if (!userConfirmed) {
+          setScheduleResult("⚠️ Update cancelled. Your pending sessions remain unchanged.");
+          setScheduleUpdating(false);
+          return;
+        }
+        
+        // User confirmed - retry with confirmation flag
+        planResponse = await api.plan.regenerate({ confirmUpdate: true });
+      }
       
       if (planResponse.success) {
+        const summary = planResponse.updateSummary;
         setScheduleResult(
-          "✅ Training schedule updated! Your 16-week plan is regenerating... Redirecting to dashboard."
+          `✅ Training schedule updated!\n` +
+          `${summary?.completedPreserved || 0} completed workouts preserved\n` +
+          `${summary?.pendingUpdated || 0} pending workouts updated\n` +
+          `Redirecting to dashboard...`
         );
         
         // CRITICAL: Redirect to dashboard to force fresh plan fetch

@@ -64,7 +64,7 @@ export function usePlan(): UsePlanReturn {
 
   const regenerate = useCallback(async (blocks?: number): Promise<boolean> => {
     try {
-      const response = await api.plan.regenerate(blocks);
+      const response = await api.plan.regenerate({ blocks });
       
       if (!response.success) {
         setError(response.error || "Failed to regenerate plan");

@@ -15,6 +15,8 @@ interface ApiResponse<T> {
   data?: T;
   error?: string;
   message?: string;
+  status?: number; // HTTP status code
+  [key: string]: any; // Allow additional properties from API responses (like requiresConfirmation, pendingCount)
 }
 
 interface ApiError {
@@ -39,18 +41,22 @@ async function fetchApi<T = any>(
       },
     });
 
+    const data = await response.json();
+    
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
       return {
         success: false,
-        error: errorData.error || `API error: ${response.status}`,
+        status: response.status,
+        error: data.error || `API error: ${response.status}`,
+        ...data, // Include all response properties (requiresConfirmation, pendingCount, etc.)
       };
     }
 
-    const data = await response.json();
     return {
       success: true,
+      status: response.status,
       data: data.data || data,
+      ...data, // Include all response properties
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
@@ -104,10 +110,13 @@ export const api = {
     /**
      * Generate/regenerate training plan
      */
-    regenerate: (blocks?: number) =>
+    regenerate: (options?: { blocks?: number; confirmUpdate?: boolean }) =>
       fetchApi("/api/plan", {
         method: "POST",
-        body: JSON.stringify({ blocks: blocks || 4 }),
+        body: JSON.stringify({ 
+          blocks: options?.blocks || 4,
+          confirmUpdate: options?.confirmUpdate || false
+        }),
       }),
   },
 

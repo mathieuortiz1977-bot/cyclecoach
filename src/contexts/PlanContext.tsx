@@ -48,7 +48,7 @@ export function PlanProvider({ children }: PlanProviderProps) {
   const regenerate = useCallback(async (blocks?: number) => {
     try {
       setError(null);
-      const response = await api.plan.regenerate(blocks);
+      const response = await api.plan.regenerate({ blocks });
       
       if (response.data?.plan) {
         setPlan(response.data.plan);

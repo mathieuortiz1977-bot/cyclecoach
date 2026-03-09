@@ -54,6 +54,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json().catch(() => ({}));
     const numBlocks = body.blocks || 4;
+    const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
 
     // Get rider's training schedule  
     const trainingDays: DayOfWeek[] = rider.trainingDays ? 
@@ -65,7 +66,10 @@ export async function POST(request: NextRequest) {
       rider.outdoorDay as DayOfWeek : 
       "SAT";
 
-    // PRESERVE COMPLETED WORKOUTS: Query completed workouts by date
+    // STEP 1: Query completed AND pending workouts
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
     const completedWorkouts = await prisma.completedWorkout.findMany({
       where: {
         riderId: rider.id,
@@ -76,23 +80,46 @@ export async function POST(request: NextRequest) {
         date: true,
         sessionTitle: true,
         completed: true,
-        compliance: true,
-        rpe: true,
       },
     });
 
-    console.log(`[Plan Regeneration] Preserving ${completedWorkouts.length} completed workouts across regeneration`);
+    const pendingWorkouts = await prisma.completedWorkout.findMany({
+      where: {
+        riderId: rider.id,
+        completed: false,
+        date: { gte: today }, // Future or today
+      },
+      select: {
+        id: true,
+        date: true,
+        sessionTitle: true,
+      },
+    });
+
+    console.log(`[Plan Update] Completed: ${completedWorkouts.length} | Pending: ${pendingWorkouts.length}`);
     
-    // Map completed workouts by date for quick lookup
+    // STEP 2: If there are pending sessions, require explicit confirmation
+    if (pendingWorkouts.length > 0 && !confirmUpdate) {
+      return NextResponse.json({
+        error: "Pending sessions exist",
+        message: `You have ${pendingWorkouts.length} pending workouts. Updating will change these sessions. Confirm to proceed.`,
+        pendingCount: pendingWorkouts.length,
+        requiresConfirmation: true,
+      }, { status: 409 }); // Conflict - needs user confirmation
+    }
+    
+    // Map completed workouts by date for preservation
     const completedByDate = new Map(completedWorkouts.map(w => [
       w.date.toISOString().split('T')[0], // YYYY-MM-DD key
       w
     ]));
 
-    // Delete existing plan for this rider
+    // STEP 3: Delete existing plan ONLY IF confirmed or no pending sessions
+    // This ensures we don't accidentally delete future sessions without user confirmation
     const existingPlans = await prisma.plan.findMany({ where: { riderId: rider.id }, select: { id: true } });
     for (const p of existingPlans) {
       // Cascade delete blocks → weeks → sessions → intervals
+      // NOTE: CompletedWorkout records are NOT deleted - they persist independently
       const blocks = await prisma.block.findMany({ where: { planId: p.id }, select: { id: true } });
       for (const b of blocks) {
         const weeks = await prisma.week.findMany({ where: { blockId: b.id }, select: { id: true } });
@@ -108,6 +135,8 @@ export async function POST(request: NextRequest) {
       await prisma.block.deleteMany({ where: { planId: p.id } });
       await prisma.plan.delete({ where: { id: p.id } });
     }
+    
+    console.log(`[Plan Update] CONFIRMED - Deleted old plan, regenerating with new parameters`);
 
     // Generate plan with custom training schedule
     const planData = generatePlan(numBlocks, trainingDays, outdoorDay);
@@ -168,12 +197,21 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // COMPLETED WORKOUTS ARE PRESERVED: They're independent of the plan
-    // and stored by date in the CompletedWorkout table
-    // No restoration needed - they survive plan regeneration
-    console.log(`[Plan Regeneration] ✅ Complete - ${completedWorkouts.length} completed workouts preserved`);
+    // SUMMARY: Completed workouts preserved, new plan generated
+    console.log(`[Plan Update] ✅ COMPLETE`);
+    console.log(`  - Completed: ${completedWorkouts.length} preserved (not changed)`);
+    console.log(`  - Pending: ${pendingWorkouts.length} regenerated (updated)`);
+    console.log(`  - Action: Plan fully regenerated with new parameters`);
 
-    return NextResponse.json({ plan, source: "generated", preservedCount: completedWorkouts.length });
+    return NextResponse.json({
+      plan,
+      source: "generated",
+      updateSummary: {
+        completedPreserved: completedWorkouts.length,
+        pendingUpdated: pendingWorkouts.length,
+        status: "Plan regenerated successfully. Completed workouts preserved, pending sessions updated."
+      }
+    });
   } catch (err) {
     console.error("Plan generation error:", err);
     return NextResponse.json({ error: "Failed to generate plan" }, { status: 500 });
