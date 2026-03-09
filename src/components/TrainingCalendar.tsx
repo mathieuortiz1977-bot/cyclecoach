@@ -392,8 +392,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       );
       
       // Find Strava ride for this day
+      // Strava rides have date as "YYYY-MM-DD" string (local), so compare directly
+      const currentDateString = tz.formatForCalendar(current); // Returns "YYYY-MM-DD"
       const stravaRide = stravaActivities.find(a =>
-        tz.formatAsISO(new Date(a.date)) === currentISO
+        a.date === currentDateString // Direct string comparison for YYYY-MM-DD format
       );
       
       // Find planned session for this day
