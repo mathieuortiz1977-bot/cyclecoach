@@ -191,8 +191,9 @@ export const api = {
 
     /**
      * Get Strava activities
+     * @param weeks - Number of weeks to fetch (default 20)
      */
-    getActivities: () => fetchApi("/api/strava/activities"),
+    getActivities: (weeks?: number) => fetchApi(`/api/strava/activities${weeks ? `?weeks=${weeks}` : ""}`),
 
     /**
      * Get segment performance data

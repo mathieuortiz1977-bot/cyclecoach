@@ -6,12 +6,12 @@ export async function GET(request: NextRequest) {
   try {
     console.log("[GET /api/strava/activities] START");
     
-    // Check for query param: ?years=5 to load 5 years instead of default 2
+    // Check for query param: ?weeks=20 to load 20 weeks (default) or more
     const searchParams = request.nextUrl.searchParams;
-    const yearsParam = searchParams.get("years");
-    const years = yearsParam ? parseInt(yearsParam, 10) : 2;
+    const weeksParam = searchParams.get("weeks");
+    const weeks = weeksParam ? parseInt(weeksParam, 10) : 20; // Default: 20 weeks (~5 months)
     
-    console.log(`[GET /api/strava/activities] Loading activities for last ${years} years`);
+    console.log(`[GET /api/strava/activities] Loading activities for last ${weeks} weeks`);
     
     const rider = await getCurrentRiderWithStrava();
 
@@ -26,13 +26,13 @@ export async function GET(request: NextRequest) {
       name: rider.name
     });
 
-    // Get Strava activities for this rider - paginated to prevent timeouts
-    // Default: last 2 years (most relevant for current training)
-    // Can be overridden with ?years=5 etc
+    // Get Strava activities for this rider - smart pagination
+    // Default: last 20 weeks (~140 rides, fast response)
+    // Can be overridden with ?weeks=100 for full history
     const cutoffDate = new Date();
-    cutoffDate.setFullYear(cutoffDate.getFullYear() - years);
+    cutoffDate.setDate(cutoffDate.getDate() - (weeks * 7)); // Convert weeks to days
     
-    console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()}`);
+    console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()} (${weeks} weeks)`);
 
     console.log(`[GET /api/strava/activities] Running query for rider ${rider.id}, cutoff: ${cutoffDate.toISOString()}`);
     

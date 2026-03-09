@@ -123,6 +123,9 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [raceEvents, setRaceEvents] = useState<RaceEvent[]>([]);
   const [showEventPlanner, setShowEventPlanner] = useState(false);
 
+  // History state
+  const [weeksLoaded, setWeeksLoaded] = useState(20); // Default: 20 weeks
+
   // TODO: Wrap loadWorkoutData in useCallback and move before these useEffects
   // For now, using currentMonth as primary dependency trigger
   // loadWorkoutData is recreated on each render, so it gets called when currentMonth changes
@@ -144,12 +147,12 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
-  const loadWorkoutData = async () => {
+  const loadWorkoutData = async (weeks: number = weeksLoaded) => {
     try {
       const [workoutResponse, riderResponse, stravaResponse, planResponse, vacationResponse, eventsResponse] = await Promise.all([
         api.workouts.list(),
         api.rider.get(),
-        api.strava.getActivities(),
+        api.strava.getActivities(weeks),
         api.plan.get(),
         api.vacations.list(),
         api.events.list()
@@ -716,6 +719,21 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             →
           </button>
         </div>
+
+        {/* Load More Weeks Button */}
+        {weeksLoaded === 20 && (
+          <div className="mb-4 text-center">
+            <button
+              onClick={() => {
+                setWeeksLoaded(52); // Load 52 weeks (1 year)
+                loadWorkoutData(52);
+              }}
+              className="px-3 py-1.5 text-xs font-medium bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
+            >
+              📅 Load More Weeks ({weeksLoaded} → 52 weeks)
+            </button>
+          </div>
+        )}
 
         {/* Day headers */}
         <div className="grid grid-cols-7 gap-2 mb-2">
