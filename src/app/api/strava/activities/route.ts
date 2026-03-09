@@ -19,10 +19,18 @@ export async function GET() {
       name: rider.name
     });
 
-    // Get all Strava activities for this rider - simplified query
-    // Only select fields actually needed by the UI
+    // Get Strava activities for this rider - paginated to prevent timeouts
+    // Calendar shows rides from last 2 years (most relevant for current training)
+    const twoYearsAgo = new Date();
+    twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
+    
+    console.log(`[GET /api/strava/activities] Fetching activities since ${twoYearsAgo.toISOString()}`);
+
     const activities = await prisma.stravaActivity.findMany({
-      where: { riderId: rider.id },
+      where: { 
+        riderId: rider.id,
+        startDate: { gte: twoYearsAgo } // Only last 2 years
+      },
       select: {
         id: true,
         stravaId: true,
@@ -30,7 +38,6 @@ export async function GET() {
         type: true,
         startDate: true,
         movingTime: true,
-        elapsedTime: true,
         distance: true,
         totalElevation: true,
         averageWatts: true,
@@ -41,7 +48,7 @@ export async function GET() {
         tss: true,
       },
       orderBy: { startDate: "desc" },
-      take: 10000, // Reasonable limit to prevent huge transfers
+      take: 500, // Max 500 rides (last 2 years usually ~250-300)
     });
 
     console.log(`[GET /api/strava/activities] Fetched ${activities.length} activities`);
