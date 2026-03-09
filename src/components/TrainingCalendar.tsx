@@ -149,6 +149,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const loadWorkoutData = async (weeks: number = weeksLoaded) => {
     try {
+      console.log("[TrainingCalendar] loadWorkoutData called with weeks:", weeks);
+      
       const [workoutResponse, riderResponse, stravaResponse, planResponse, vacationResponse, eventsResponse] = await Promise.all([
         api.workouts.list(),
         api.rider.get(),
@@ -157,6 +159,15 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         api.vacations.list(),
         api.events.list()
       ]);
+      
+      console.log("[TrainingCalendar] API responses:", {
+        workouts: workoutResponse?.success,
+        rider: riderResponse?.success,
+        strava: stravaResponse?.success,
+        plan: planResponse?.success,
+        vacations: vacationResponse?.success,
+        events: eventsResponse?.success
+      });
       
       const workoutData = workoutResponse.data || {};
       const riderData = riderResponse.data || {};
@@ -200,7 +211,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       }
 
       // Load Strava activities
+      console.log("[TrainingCalendar] Strava data received:", stravaData);
       if (stravaData.activities) {
+        console.log("[TrainingCalendar] Found", stravaData.activities.length, "total activities");
+        
         const stravaWorkouts = stravaData.activities
           .filter((a: any) => {
             // Only include cycling activities
@@ -210,6 +224,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             // Convert startDate to Bogota local date (YYYY-MM-DD)
             const startDate = new Date(a.startDate);
             const localDateString = tz.formatAsISO(startDate); // Use ISO format (YYYY-MM-DD)
+            
+            console.log("[TrainingCalendar] Strava ride:", a.name, "Date:", a.startDate, "ISO:", localDateString);
             
             return {
               id: `strava-${a.id}`,
@@ -232,7 +248,10 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               performanceGrade: gradeStravaRide(a, riderData.rider?.ftp || 190)
             };
           });
+        console.log("[TrainingCalendar] Processed", stravaWorkouts.length, "Strava workouts");
         setStravaActivities(stravaWorkouts);
+      } else {
+        console.log("[TrainingCalendar] No Strava activities in response");
       }
 
       // Generate planned sessions from training plan
@@ -394,9 +413,13 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Find Strava ride for this day
       // Strava rides have date as "YYYY-MM-DD" string (ISO format), so compare directly
       const currentDateISO = tz.formatAsISO(current); // Returns "YYYY-MM-DD"
-      const stravaRide = stravaActivities.find(a =>
-        a.date === currentDateISO // Direct string comparison for YYYY-MM-DD format
-      );
+      const stravaRide = stravaActivities.find(a => {
+        const matches = a.date === currentDateISO;
+        if (i < 10) { // Only log first 10 days to avoid spam
+          console.log("[TrainingCalendar] Calendar day", currentDateISO, "Strava activities count:", stravaActivities.length, "Match found:", matches);
+        }
+        return matches;
+      });
       
       // Find planned session for this day
       const plannedSession = plannedSessions.find(p =>
