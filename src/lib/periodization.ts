@@ -2256,10 +2256,41 @@ function generateIndoorSession(
 
 // ─── Duration Fix ────────────────────────────────────────────────────
 
-function fixSessionDuration(session: SessionDef): SessionDef {
+function fixSessionDuration(session: SessionDef, weekType?: WeekType): SessionDef {
   if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
+  
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
-  return { ...session, duration: Math.round(totalSecs / 60) };
+  let durationMins = Math.round(totalSecs / 60);
+  
+  // Adjust duration based on periodization phase
+  if (weekType) {
+    switch (weekType) {
+      case "RECOVERY":
+        // Recovery weeks: shorter sessions (target 45-50 min)
+        if (durationMins > 50) {
+          durationMins = Math.round(durationMins * 0.85); // Reduce by 15%
+        }
+        break;
+      case "BUILD":
+        // Build weeks: standard duration (target 55-65 min)
+        // Keep as calculated
+        break;
+      case "BUILD_PLUS":
+        // Build+ weeks: longer sessions (target 65-75 min)
+        if (durationMins < 65) {
+          durationMins = Math.round(durationMins * 1.1); // Increase by 10%
+        }
+        break;
+      case "OVERREACH":
+        // Overreach weeks: longest sessions (target 75+ min)
+        if (durationMins < 75) {
+          durationMins = Math.round(durationMins * 1.25); // Increase by 25%
+        }
+        break;
+    }
+  }
+  
+  return { ...session, duration: durationMins };
 }
 
 // ─── Full Plan Generator ─────────────────────────────────────────────
@@ -2305,7 +2336,7 @@ export function generatePlan(
         previousWeekStructures,
         previousWeekTemplates,  // Pass template tracking
         riderId  // Pass rider ID for per-user variation
-      ).map(fixSessionDuration);
+      ).map(s => fixSessionDuration(s, weekType)); // Apply duration scaling based on week type
       
       // Track templates for next week's variety (avoid same template week-to-week)
       sessions.forEach(s => {
