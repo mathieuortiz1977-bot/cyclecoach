@@ -120,6 +120,7 @@ export interface WorkoutData {
   averageSpeed?: number;
   kilojoules?: number;
   isStravaRide?: boolean;
+  isAutoCompleted?: boolean; // True if Strava ride auto-completed a planned workout
 }
 
 // ============================================================================
@@ -397,5 +398,6 @@ export interface CalendarDay {
   hasStravaRide: boolean;
   hasProgramSession: boolean;
   hasPlannedSession: boolean;
+  plannedSession?: any; // Actual planned session object (if exists)
   isAutoCompleted?: boolean; // True if Strava ride auto-completed a planned workout
 }

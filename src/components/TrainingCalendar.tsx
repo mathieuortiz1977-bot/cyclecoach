@@ -106,7 +106,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [workouts, setWorkouts] = useState<WorkoutData[]>([]);
   const [stravaActivities, setStravaActivities] = useState<WorkoutData[]>([]);
   const [plannedSessions, setPlannedSessions] = useState<WorkoutData[]>([]);
-  const [selectedDate, setSelectedDate] = useState<WorkoutData | null>(null);
+  const [selectedDate, setSelectedDate] = useState<(WorkoutData & { isAutoCompleted?: boolean; plannedSession?: any }) | null>(null);
   const [loading, setLoading] = useState(true);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
   const [plan, setPlan] = useState(() => generatePlan(4));
@@ -519,6 +519,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         hasStravaRide: !!stravaRide,
         hasProgramSession: !!dayWorkout,
         hasPlannedSession: !!plannedSession,
+        plannedSession, // Store the actual plannedSession object (not just boolean)
         isAutoCompleted // Track if Strava ride auto-completed a planned workout
       });
 
@@ -596,7 +597,19 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
 
   const handleDateClick = (day: any) => {
     if (day.workout) {
-      setSelectedDate(day.workout);
+      // Include isAutoCompleted flag so modal can show completion message
+      const selectedWorkoutWithMeta = {
+        ...day.workout,
+        isAutoCompleted: day.isAutoCompleted,
+        plannedSession: day.plannedSession
+      };
+      setSelectedDate(selectedWorkoutWithMeta);
+      console.log("[TrainingCalendar] Selected date:", {
+        date: day.date,
+        workout: day.workout.name || day.workout.sessionTitle,
+        isAutoCompleted: day.isAutoCompleted,
+        plannedSession: day.plannedSession
+      });
     }
   };
 
@@ -952,11 +965,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                   <p className="text-xs text-[var(--muted)]">
                     {tz.formatForDisplay(new Date(selectedDate.date))}
                   </p>
-                  {selectedDate.isStravaRide && (
-                    <span className="inline-block text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full mt-1">
-                      📱 Strava
-                    </span>
-                  )}
+                  <div className="flex gap-1 flex-wrap mt-1">
+                    {selectedDate.isStravaRide && (
+                      <span className="inline-block text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full">
+                        📱 Strava
+                      </span>
+                    )}
+                    {selectedDate.isAutoCompleted && (
+                      <span className="inline-block text-[10px] bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded-full">
+                        ✅ Completed
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <button
                   onClick={() => setSelectedDate(null)}
@@ -965,6 +985,16 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                   ✕
                 </button>
               </div>
+
+              {/* Show completion message if Strava ride completed a planned session */}
+              {selectedDate.isAutoCompleted && selectedDate.sessionTitle && (
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-2">
+                  <p className="text-xs font-medium text-green-400 mb-1">✅ Completes Planned Session</p>
+                  <p className="text-[10px] text-[var(--muted)] leading-tight">
+                    {selectedDate.sessionTitle}
+                  </p>
+                </div>
+              )}
 
               {selectedDate.plannedSession && (
                 <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2">
