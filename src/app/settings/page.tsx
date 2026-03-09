@@ -199,10 +199,15 @@ function SettingsPage() {
     setSyncingRange(false);
   };
 
-  const loadStravaSummary = async () => {
+  const loadStravaSummary = useCallback(async () => {
     try {
       console.log("[Settings] Loading Strava summary...");
       const response = await fetch("/api/strava/summary");
+      if (!response.ok) {
+        console.error("[Settings] Summary API error:", response.status);
+        setStravaSummary(null);
+        return;
+      }
       const data = await response.json();
       
       console.log("[Settings] Summary response:", data);
@@ -212,13 +217,19 @@ function SettingsPage() {
       }
     } catch (error) {
       console.error("[Settings] Failed to load Strava summary:", error);
+      setStravaSummary(null);
     }
-  };
+  }, []);
 
-  const loadImportedRides = async () => {
+  const loadImportedRides = useCallback(async () => {
     try {
       console.log("[Settings] Loading imported rides...");
       const response = await fetch("/api/strava/activities");
+      if (!response.ok) {
+        console.error("[Settings] Activities API error:", response.status, response.statusText);
+        setImportedRides([]);
+        return;
+      }
       const data = await response.json();
       
       console.log("[Settings] API response:", data);
@@ -247,13 +258,13 @@ function SettingsPage() {
       console.error("[Settings] Failed to load imported rides:", error);
       setImportedRides([]);
     }
-  };
+  }, []);
 
-  // Load both on mount
+  // Load both on mount (with proper dependency array)
   useEffect(() => {
     loadStravaSummary();
     loadImportedRides();
-  }, []);
+  }, [loadStravaSummary, loadImportedRides]);
 
   // Training schedule update
   const [scheduleUpdating, setScheduleUpdating] = useState(false);
