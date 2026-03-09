@@ -177,13 +177,16 @@ function intervalToZwoXml(interval: IntervalDef, ftp: number, opts: IntervalXmlO
   } else {
     message = escapeXml(`📌 ${interval.purpose}\n${interval.coachNote}`);
   }
+  
+  // Message display duration: 15 seconds (allows full read of longer messages)
+  const messageDuration = 15;
 
   // Determine Zwift interval type
   const nameLower = interval.name.toLowerCase();
 
   if (nameLower === "cooldown" || nameLower === "cool down") {
     return `<Cooldown Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${message}"/>
+            <textevent timeoffset="0" message="${message}" duration="${messageDuration}"/>
         </Cooldown>`;
   }
 
@@ -191,26 +194,26 @@ function intervalToZwoXml(interval: IntervalDef, ftp: number, opts: IntervalXmlO
     // Rest intervals are steady-state at low power, NOT cooldown
     const avgPower = (powerLow + powerHigh) / 2;
     return `<SteadyState Duration="${dur}" Power="${avgPower}"${cadence}>
-            <textevent timeoffset="0" message="${message}"/>
+            <textevent timeoffset="0" message="${message}" duration="${messageDuration}"/>
         </SteadyState>`;
   }
 
   if (nameLower.includes("warmup") || nameLower.includes("warm")) {
     return `<Warmup Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${message}"/>
+            <textevent timeoffset="0" message="${message}" duration="${messageDuration}"/>
         </Warmup>`;
   }
 
   if (Math.abs(powerLow - powerHigh) < 0.05) {
     // Steady state
     return `<SteadyState Duration="${dur}" Power="${(powerLow + powerHigh) / 2}"${cadence}>
-            <textevent timeoffset="0" message="${message}"/>
+            <textevent timeoffset="0" message="${message}" duration="${messageDuration}"/>
         </SteadyState>`;
   }
 
   // Ramp
   return `<Ramp Duration="${dur}" PowerLow="${powerLow}" PowerHigh="${powerHigh}"${cadence}>
-            <textevent timeoffset="0" message="${message}"/>
+            <textevent timeoffset="0" message="${message}" duration="${messageDuration}"/>
         </Ramp>`;
 }
 
