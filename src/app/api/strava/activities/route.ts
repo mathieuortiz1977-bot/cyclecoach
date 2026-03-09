@@ -7,8 +7,11 @@ export async function GET() {
     const rider = await getCurrentRiderWithStrava();
 
     if (!rider) {
+      console.error("[GET /api/strava/activities] Not authenticated");
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
+
+    console.log("[GET /api/strava/activities] Fetching activities for rider:", rider.id);
 
     // Get all Strava activities for this rider (return all fields needed by calendar)
     const activities = await prisma.stravaActivity.findMany({
@@ -37,13 +40,15 @@ export async function GET() {
       orderBy: { startDate: "desc" },
     });
 
+    console.log(`[GET /api/strava/activities] Found ${activities.length} activities`);
+
     return NextResponse.json({
       success: true,
       activities,
       total: activities.length,
     });
   } catch (err) {
-    console.error("Get activities error:", err);
+    console.error("[GET /api/strava/activities] Error:", err);
     return NextResponse.json({ error: "Failed to get activities" }, { status: 500 });
   }
 }

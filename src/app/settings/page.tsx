@@ -169,6 +169,7 @@ function SettingsPage() {
   const handleSyncRange = async () => {
     setSyncingRange(true);
     setRangeSyncResult(null);
+    console.log("[Settings] Starting sync with dates:", { fromDate, toDate });
     try {
       const response = await fetch("/api/strava/sync-range", {
         method: "POST",
@@ -177,41 +178,56 @@ function SettingsPage() {
       });
       const data = await response.json();
       
+      console.log("[Settings] Sync response:", data);
+      
       if (data.success) {
         setRangeSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
-        // Refresh the imported rides list
-        loadImportedRides();
+        // Wait a moment for database to update, then refresh the imported rides list
+        setTimeout(() => {
+          console.log("[Settings] Refreshing rides list after sync...");
+          loadImportedRides();
+        }, 500);
       } else {
         setRangeSyncResult(`❌ ${data.error || "Failed to sync"}`);
       }
     } catch (error) {
       setRangeSyncResult("❌ Sync failed");
-      console.error("Sync range error:", error);
+      console.error("[Settings] Sync range error:", error);
     }
     setSyncingRange(false);
   };
 
   const loadImportedRides = async () => {
     try {
-      // Fetch all Strava activities for this rider
+      console.log("[Settings] Loading imported rides...");
       const response = await fetch("/api/strava/activities");
       const data = await response.json();
       
-      if (data.success && data.activities) {
-        // Format rides for display: name, date, distance
+      console.log("[Settings] API response:", data);
+      
+      if (data.success && data.activities && data.activities.length > 0) {
+        // Sort by startDate first (before formatting), then format for display
         const rides = data.activities
+          .sort((a: any, b: any) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())
           .map((activity: any) => ({
             id: activity.stravaId?.toString() || activity.id,
             name: activity.name,
             date: new Date(activity.startDate).toLocaleDateString(),
             distance: (activity.distance / 1000).toFixed(1), // Convert meters to km
-          }))
-          .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+          }));
         
+        console.log("[Settings] Formatted rides:", rides);
         setImportedRides(rides);
+      } else if (data.success && (!data.activities || data.activities.length === 0)) {
+        console.log("[Settings] No activities found in database");
+        setImportedRides([]);
+      } else {
+        console.error("[Settings] API error:", data.error);
+        setImportedRides([]);
       }
     } catch (error) {
-      console.error("Failed to load imported rides:", error);
+      console.error("[Settings] Failed to load imported rides:", error);
+      setImportedRides([]);
     }
   };
 
