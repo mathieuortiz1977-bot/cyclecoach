@@ -19,14 +19,8 @@ export async function GET() {
       name: rider.name
     });
 
-    // Count total activities in database for this rider
-    const totalCount = await prisma.stravaActivity.count({
-      where: { riderId: rider.id },
-    });
-    
-    console.log(`[GET /api/strava/activities] Total activities in DB for rider ${rider.id}:`, totalCount);
-
-    // Get all Strava activities for this rider (return all fields needed by calendar)
+    // Get all Strava activities for this rider - simplified query
+    // Only select fields actually needed by the UI
     const activities = await prisma.stravaActivity.findMany({
       where: { riderId: rider.id },
       select: {
@@ -34,7 +28,7 @@ export async function GET() {
         stravaId: true,
         name: true,
         type: true,
-        startDate: true, // UTC-5 (Bogota) from start_date_local
+        startDate: true,
         movingTime: true,
         elapsedTime: true,
         distance: true,
@@ -44,13 +38,10 @@ export async function GET() {
         weightedAvgWatts: true,
         averageHeartrate: true,
         maxHeartrate: true,
-        averageCadence: true,
         tss: true,
-        intensityFactor: true,
-        hasHeartrate: true,
-        hasPower: true,
       },
       orderBy: { startDate: "desc" },
+      take: 10000, // Reasonable limit to prevent huge transfers
     });
 
     console.log(`[GET /api/strava/activities] Fetched ${activities.length} activities`);
@@ -70,6 +61,11 @@ export async function GET() {
     });
   } catch (err) {
     console.error("[GET /api/strava/activities] ERROR:", err);
-    return NextResponse.json({ error: "Failed to get activities", details: String(err) }, { status: 500 });
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ 
+      error: "Failed to get activities", 
+      details: errorMsg,
+      success: false
+    }, { status: 500 });
   }
 }
