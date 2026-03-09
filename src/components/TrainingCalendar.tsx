@@ -219,14 +219,24 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         const stravaWorkouts = stravaData.activities
           .filter((a: any) => {
             // Only include cycling activities
-            return ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type);
+            const isCycling = ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type);
+            if (!isCycling) console.log("[TrainingCalendar] Filtered out non-cycling:", a.type, a.name);
+            return isCycling;
           })
           .map((a: any) => {
             // Convert startDate to Bogota local date (YYYY-MM-DD)
             const startDate = new Date(a.startDate);
             const localDateString = tz.formatAsISO(startDate); // Use ISO format (YYYY-MM-DD)
+            const movingTimeMinutes = Math.round(a.movingTime / 60);
             
-            console.log("[TrainingCalendar] Strava ride:", a.name, "Date:", a.startDate, "ISO:", localDateString);
+            console.log("[TrainingCalendar] Strava ride:", {
+              name: a.name,
+              type: a.type,
+              rawDate: a.startDate,
+              isoDate: localDateString,
+              movingTime: a.movingTime,
+              durationMinutes: movingTimeMinutes
+            });
             
             return {
               id: `strava-${a.id}`,
@@ -236,7 +246,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
               type: a.type,
               avgPower: a.averageWatts,
               normalizedPower: a.weightedAvgWatts,
-              duration: Math.round(a.movingTime / 60), // Convert seconds to minutes
+              duration: movingTimeMinutes, // Convert seconds to minutes
               distance: a.distance / 1000, // Convert meters to km
               elevation: a.totalElevation,
               avgHr: a.averageHeartrate,
@@ -250,6 +260,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             };
           });
         console.log("[TrainingCalendar] Processed", stravaWorkouts.length, "Strava workouts");
+        console.log("[TrainingCalendar] All Strava workouts:", stravaWorkouts.map((w: WorkoutData) => ({ date: w.date, name: w.name, duration: w.duration })));
         setStravaActivities(stravaWorkouts);
       } else {
         console.log("[TrainingCalendar] No Strava activities in response");
@@ -437,36 +448,66 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       let displayData = null;
       let isAutoCompleted = false;
       
+      // Debug logging for today
+      if (isToday && i === 0) {
+        console.log("[TrainingCalendar] TODAY DEBUG:", {
+          currentDateISO,
+          dayWorkout: dayWorkout ? dayWorkout.sessionTitle : null,
+          stravaRide: stravaRide ? { name: stravaRide.name, duration: stravaRide.duration } : null,
+          plannedSession: plannedSession ? { title: plannedSession.sessionTitle, duration: plannedSession.duration, type: plannedSession.type } : null
+        });
+      }
+      
       if (dayWorkout) {
         // Completed program session exists
         displayData = dayWorkout;
+        if (isToday) console.log("[TrainingCalendar] TODAY: Using dayWorkout (completed program session)");
       } else if (stravaRide && plannedSession) {
         // Strava ride matches a planned workout → AUTO-COMPLETE
         // Check if the ride could match the planned workout by time/duration
         const plannedDuration = plannedSession.duration || 0;
         const stravaDuration = stravaRide.duration || 0;
         const durationMatch = Math.abs(plannedDuration - stravaDuration) < 15; // Within 15 mins
+        const typeMatch = plannedSession.type === stravaRide.type;
         
-        if (durationMatch || plannedSession.type === stravaRide.type) {
+        if (isToday) {
+          console.log("[TrainingCalendar] TODAY: Comparing Strava ride to planned workout", {
+            stravaName: stravaRide.name,
+            stravaDuration,
+            plannedTitle: plannedSession.sessionTitle,
+            plannedDuration,
+            plannedType: plannedSession.type,
+            stravaType: stravaRide.type,
+            durationMatch,
+            typeMatch,
+            willAutoComplete: durationMatch || typeMatch
+          });
+        }
+        
+        if (durationMatch || typeMatch) {
           // Mark as auto-completed (show completed workout, not just strava ride)
           displayData = {
             ...stravaRide,
             completed: true,
             compliance: 100, // Auto-detected as completed
-            performanceGrade: stravaRide.performanceGrade || "A High Quality"
+            performanceGrade: stravaRide.performanceGrade || "A High Quality",
+            sessionTitle: plannedSession.sessionTitle // Use planned workout name
           };
           isAutoCompleted = true;
-          console.log("[TrainingCalendar] Auto-completed:", stravaRide.name, "matched with planned:", plannedSession.sessionTitle);
+          console.log("[TrainingCalendar] ✅ AUTO-COMPLETED:", stravaRide.name, "matched with planned:", plannedSession.sessionTitle);
         } else {
           // Just a Strava ride, no matching planned workout
           displayData = stravaRide;
+          if (isToday) console.log("[TrainingCalendar] TODAY: Strava ride but no duration/type match");
         }
       } else if (stravaRide) {
         // Strava ride without planned session
         displayData = stravaRide;
+        if (isToday) console.log("[TrainingCalendar] TODAY: Strava ride only (no planned session)");
       } else if (plannedSession) {
         // Planned session with no completion
         displayData = plannedSession;
+        if (isToday) console.log("[TrainingCalendar] TODAY: Planned session only (no Strava ride)");
       }
 
       days.push({
