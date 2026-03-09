@@ -2376,17 +2376,27 @@ export function generatePlan(
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
   
-  // CRITICAL: Start with FTP Test week to establish power zones
+  // Initialize tracking variables for variety (no-repeat logic)
+  let previousWeekStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {};
+  let previousWeekTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {};
+  
+  // CRITICAL: Integrate FTP Test into Week 1 of Block 1
+  // Monday: FTP Test
+  // Rest of week: Recovery
+  // Then Blocks 2-5: Actual training
+  
+  let blockStartNum = 0;
+  
   if (includeInitialFTPTest) {
-    const ftpTestWeek: BlockDef = {
-      blockNumber: 0,
+    const firstBlock: BlockDef = {
+      blockNumber: 1,
       type: "BASE",
       weeks: [
         {
-          weekNumber: 0,
-          weekType: "BUILD", // FTP test week is like a build week
+          weekNumber: 1,
+          weekType: "BUILD",
           sessions: [
-            // Monday: FTP Test (before any actual training)
+            // MONDAY: FTP Test (20-minute Coggan protocol)
             {
               dayOfWeek: "MON",
               sessionType: "INDOOR",
@@ -2412,7 +2422,7 @@ export function generatePlan(
                 interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
               ],
             },
-            // Rest of the week: easy recovery to let body adapt to FTP test
+            // REST OF WEEK: Recovery days only
             generateRestDay("TUE"),
             generateRestDay("WED"),
             {
@@ -2431,7 +2441,7 @@ export function generatePlan(
               dayOfWeek: "SAT",
               sessionType: "OUTDOOR",
               title: "Easy Outdoor Recovery",
-              description: "Light outdoor ride to recover from testing week",
+              description: "Light outdoor ride to recover from testing day",
               purpose: "Easy active recovery",
               duration: 90,
               intervals: [],
@@ -2439,19 +2449,49 @@ export function generatePlan(
             generateRestDay("SUN"),
           ],
         },
+        // WEEKS 2-4: Regular BASE block progression
+        ...Array(3).fill(0).map((_, weekIdx) => {
+          const weekType = WEEK_SEQUENCE[weekIdx + 1]; // START FROM WEEK 2 (index 1)
+          const weekNum = 2 + weekIdx;
+          
+          let sessions = generateWeekSessions(
+            "BASE",
+            weekType,
+            0, // Block 1 (first actual training block)
+            trainingDays,
+            outdoorDay,
+            "Foundation Building",
+            weekNum,
+            previousWeekStructures,
+            previousWeekTemplates,
+            riderId
+          ).map(s => fixSessionDuration(s, weekType));
+          
+          return {
+            weekNumber: weekNum,
+            weekType,
+            sessions,
+          };
+        }),
       ],
     };
-    blocks.push(ftpTestWeek);
+    
+    blocks.push(firstBlock);
+    blockStartNum = 1; // Start actual training blocks from Block 2
   }
-  let previousWeekStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {};
-  let previousWeekTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {};
 
-  // Adjust block numbers if FTP test was added
-  const blockStartNum = includeInitialFTPTest ? 1 : 0;
+  // Generate remaining training blocks
+  // If FTP test included, Block 1 is already done (BASE+FTP week 1 + recovery weeks 2-4)
+  // So we generate numBlocks-1 more blocks (THRESHOLD, VO2MAX, RACE_SIM, BASE...)
+  // If no FTP test, generate all numBlocks (BASE, THRESHOLD, VO2MAX, RACE_SIM)
   
-  for (let b = 0; b < numBlocks; b++) {
-    const blockType = BLOCK_SEQUENCE[b % BLOCK_SEQUENCE.length];
-    const blockNum = blockStartNum + b;
+  const remainingBlocks = includeInitialFTPTest ? numBlocks - 1 : numBlocks;
+  const firstBlockIndex = includeInitialFTPTest ? 1 : 0; // Start from THRESHOLD if FTP test included
+  
+  for (let b = 0; b < remainingBlocks; b++) {
+    const blockSequenceIndex = (firstBlockIndex + b) % BLOCK_SEQUENCE.length;
+    const blockType = BLOCK_SEQUENCE[blockSequenceIndex];
+    const blockNum = (includeInitialFTPTest ? 2 : 1) + b;
     // PHASE 4: Use seasonal theme if provided
     const blockTheme = getSeasonalBlockTheme(blockType, season);
     const weeks: WeekDef[] = [];
