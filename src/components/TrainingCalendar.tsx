@@ -199,30 +199,36 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Load Strava activities
       if (stravaData.activities) {
         const stravaWorkouts = stravaData.activities
-          .filter((a: StravaActivity) => {
+          .filter((a: any) => {
             // Only include cycling activities
             return ["Ride", "VirtualRide", "GravelRide", "MountainBikeRide", "EBikeRide"].includes(a.type);
           })
-          .map((a: StravaActivity) => ({
-            id: `strava-${a.id}`,
-            date: a.date,
-            completed: true,
-            name: a.name,
-            type: a.type,
-            avgPower: a.avgPower,
-            normalizedPower: a.normalizedPower,
-            duration: Math.round(a.duration / 60), // Convert to minutes
-            distance: a.distance,
-            elevation: a.elevation,
-            avgHr: a.avgHr,
-            maxHr: a.maxHr,
-            tss: a.tss,
-            mapPolyline: a.mapPolyline,
-            averageSpeed: a.averageSpeed,
-            kilojoules: a.kilojoules,
-            isStravaRide: true,
-            performanceGrade: gradeStravaRide(a, riderData.rider?.ftp || 190)
-          }));
+          .map((a: any) => {
+            // Convert startDate to Bogota local date (YYYY-MM-DD)
+            const startDate = new Date(a.startDate);
+            const localDateString = tz.formatForCalendar(startDate);
+            
+            return {
+              id: `strava-${a.id}`,
+              date: localDateString, // Bogota local date (YYYY-MM-DD)
+              completed: true,
+              name: a.name,
+              type: a.type,
+              avgPower: a.averageWatts,
+              normalizedPower: a.weightedAvgWatts,
+              duration: Math.round(a.movingTime / 60), // Convert seconds to minutes
+              distance: a.distance / 1000, // Convert meters to km
+              elevation: a.totalElevation,
+              avgHr: a.averageHeartrate,
+              maxHr: a.maxHeartrate,
+              tss: a.tss,
+              mapPolyline: a.mapPolyline,
+              averageSpeed: a.averageSpeed,
+              kilojoules: a.kilojoules,
+              isStravaRide: true,
+              performanceGrade: gradeStravaRide(a, riderData.rider?.ftp || 190)
+            };
+          });
         setStravaActivities(stravaWorkouts);
       }
 

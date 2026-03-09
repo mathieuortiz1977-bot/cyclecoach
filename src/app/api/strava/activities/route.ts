@@ -10,17 +10,29 @@ export async function GET() {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    // Get all Strava activities for this rider
+    // Get all Strava activities for this rider (return all fields needed by calendar)
     const activities = await prisma.stravaActivity.findMany({
       where: { riderId: rider.id },
       select: {
         id: true,
         stravaId: true,
         name: true,
-        startDate: true,
-        distance: true,
         type: true,
+        startDate: true, // UTC-5 (Bogota) from start_date_local
         movingTime: true,
+        elapsedTime: true,
+        distance: true,
+        totalElevation: true,
+        averageWatts: true,
+        maxWatts: true,
+        weightedAvgWatts: true,
+        averageHeartrate: true,
+        maxHeartrate: true,
+        averageCadence: true,
+        tss: true,
+        intensityFactor: true,
+        hasHeartrate: true,
+        hasPower: true,
       },
       orderBy: { startDate: "desc" },
     });
