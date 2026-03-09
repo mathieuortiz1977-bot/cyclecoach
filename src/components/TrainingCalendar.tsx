@@ -510,6 +510,18 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         if (isToday) console.log("[TrainingCalendar] TODAY: Planned session only (no Strava ride)");
       }
 
+      if (isToday) {
+        console.log("[getDaysInMonth] TODAY push:", {
+          date: currentISO,
+          hasStravaRide: !!stravaRide,
+          isAutoCompleted,
+          hasProgramSession: !!dayWorkout,
+          hasPlannedSession: !!plannedSession,
+          stravaRideName: stravaRide?.name,
+          workoutName: dayWorkout?.sessionTitle
+        });
+      }
+
       days.push({
         date: new Date(current),
         workout: displayData,
@@ -534,19 +546,27 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     
     const dayDate = day.date;
     const todayDate = tz.today();
+    const isToday = tz.isSameDay(dayDate, todayDate);
     
     // If program hasn't started, don't show "missed"
     const programHasStarted = programStartDate && dayDate >= programStartDate;
     
     // PRIORITY 1: Completed program session (takes absolute priority)
-    if (day.hasProgramSession) return "completed";
+    if (day.hasProgramSession) {
+      if (isToday) console.log("[getDateStatus] TODAY: has program session → completed");
+      return "completed";
+    }
     
     // PRIORITY 2: Strava ride (show even on rest days!)
     // If there's a Strava ride, it's either completed (no planned) or partial (ride exists but not planned)
     if (day.hasStravaRide) {
       // If it's auto-completed (ride matches planned), show as completed
-      if (day.isAutoCompleted) return "completed";
+      if (day.isAutoCompleted) {
+        if (isToday) console.log("[getDateStatus] TODAY: Strava ride + isAutoCompleted=true → completed");
+        return "completed";
+      }
       // Otherwise show as partial (ride but no matching plan)
+      if (isToday) console.log("[getDateStatus] TODAY: Strava ride + isAutoCompleted=false → partial");
       return "partial";
     }
     
