@@ -29,10 +29,12 @@ export async function GET(request: NextRequest) {
     // Get Strava activities for this rider - smart pagination
     // Default: last 20 weeks (~140 rides, fast response)
     // Can be overridden with ?weeks=100 for full history
+    // NOTE: Always include full current and previous months to avoid missing rides
     const cutoffDate = new Date();
-    cutoffDate.setDate(cutoffDate.getDate() - (weeks * 7)); // Convert weeks to days
+    const weeksToSubtract = Math.max(weeks, 12); // Always go back at least 12 weeks (3 months)
+    cutoffDate.setDate(cutoffDate.getDate() - (weeksToSubtract * 7)); // Convert weeks to days
     
-    console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()} (${weeks} weeks)`);
+    console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()} (${weeks} weeks requested, ${weeksToSubtract} weeks actual)`);
 
     console.log(`[GET /api/strava/activities] Running query for rider ${rider.id}, cutoff: ${cutoffDate.toISOString()}`);
     

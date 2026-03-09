@@ -98,7 +98,8 @@ const monthNames = [
   "July", "August", "September", "October", "November", "December"
 ];
 
-const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+// Week starts Monday (ISO 8601 standard)
+const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "SAT"] }: Props) {
   const [currentMonth, setCurrentMonth] = useState(tz.today());
@@ -432,13 +433,39 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       const dayKey = DAY_FROM_INDEX[tz.getDayOfWeek(current)];
       const isTrainingDay = trainingDays.includes(dayKey);
 
-      // Determine what to show - priority: completed workout > Strava ride > planned session
+      // Determine what to show - priority: completed workout > Strava ride matching planned > Strava ride only > planned session
       let displayData = null;
+      let isAutoCompleted = false;
+      
       if (dayWorkout) {
+        // Completed program session exists
         displayData = dayWorkout;
+      } else if (stravaRide && plannedSession) {
+        // Strava ride matches a planned workout → AUTO-COMPLETE
+        // Check if the ride could match the planned workout by time/duration
+        const plannedDuration = plannedSession.duration || 0;
+        const stravaDuration = stravaRide.duration || 0;
+        const durationMatch = Math.abs(plannedDuration - stravaDuration) < 15; // Within 15 mins
+        
+        if (durationMatch || plannedSession.type === stravaRide.type) {
+          // Mark as auto-completed (show completed workout, not just strava ride)
+          displayData = {
+            ...stravaRide,
+            completed: true,
+            compliance: 100, // Auto-detected as completed
+            performanceGrade: stravaRide.performanceGrade || "A High Quality"
+          };
+          isAutoCompleted = true;
+          console.log("[TrainingCalendar] Auto-completed:", stravaRide.name, "matched with planned:", plannedSession.sessionTitle);
+        } else {
+          // Just a Strava ride, no matching planned workout
+          displayData = stravaRide;
+        }
       } else if (stravaRide) {
+        // Strava ride without planned session
         displayData = stravaRide;
       } else if (plannedSession) {
+        // Planned session with no completion
         displayData = plannedSession;
       }
 
@@ -450,7 +477,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         isTrainingDay,
         hasStravaRide: !!stravaRide,
         hasProgramSession: !!dayWorkout,
-        hasPlannedSession: !!plannedSession
+        hasPlannedSession: !!plannedSession,
+        isAutoCompleted // Track if Strava ride auto-completed a planned workout
       });
 
       current = tz.addDays(current, 1);
