@@ -20,31 +20,80 @@ const statusConfig: Record<SessionStatus, { badge: string; label: string; glow: 
   upcoming: { badge: "🔒", label: "Upcoming", glow: "" },
 };
 
-function getSessionStatus(dayOfWeek: string, completedWorkouts?: string[]): SessionStatus {
+function getSessionStatus(
+  dayOfWeek: string, 
+  completedWorkouts: any[] = [],
+  stravaActivities: any[] = []
+): SessionStatus {
   const today = getTodayKey();
   const todayIdx = DAY_ORDER.indexOf(today);
   const sessionIdx = DAY_ORDER.indexOf(dayOfWeek);
 
-  // Check if this specific session is completed based on real data
-  if (completedWorkouts && completedWorkouts.includes(dayOfWeek)) return "completed";
+  // Calculate what date this session would be (this week or next)
+  const now = new Date();
+  const currentWeekStart = new Date(now);
+  currentWeekStart.setDate(now.getDate() - now.getDay()); // Start of this week (Sunday)
+  
+  // Adjust for Monday = 0 logic
+  const dayOffset = DAY_ORDER.indexOf(dayOfWeek);
+  const sessionDate = new Date(currentWeekStart);
+  sessionDate.setDate(currentWeekStart.getDate() + dayOffset);
+  const sessionDateISO = sessionDate.toISOString().split('T')[0]; // YYYY-MM-DD
+
+  // Check if completed via program session
+  const hasProgramSession = completedWorkouts?.some(w => {
+    const workoutDate = new Date(w.date);
+    const workoutDateISO = workoutDate.toISOString().split('T')[0];
+    return workoutDateISO === sessionDateISO && w.completed;
+  });
+  
+  // Check if completed via Strava ride
+  const hasStravaRide = stravaActivities?.some(a => a.date === sessionDateISO);
+  
+  if (hasProgramSession || hasStravaRide) return "completed";
   
   if (sessionIdx === todayIdx) return "today";
-  if (sessionIdx < todayIdx) return "upcoming"; // Past days not completed show as upcoming
+  if (sessionIdx < todayIdx) return "upcoming"; // Past days without completion show as upcoming
   return "upcoming";
 }
 
-export function SessionCard({ session, blockIdx, weekIdx, sessionIdx, completedWorkouts }: {
+export function SessionCard({ 
+  session, 
+  blockIdx, 
+  weekIdx, 
+  sessionIdx, 
+  completedWorkouts = [],
+  stravaActivities = []
+}: {
   session: SessionDef;
   blockIdx: number;
   weekIdx: number;
   sessionIdx: number;
-  completedWorkouts?: string[];
+  completedWorkouts?: any[];
+  stravaActivities?: any[];
 }) {
   const [selectedInterval, setSelectedInterval] = useState<IntervalDetailModal | null>(null);
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   const href = `/workout/${blockIdx}-${weekIdx}-${sessionIdx}`;
-  const status = getSessionStatus(session.dayOfWeek, completedWorkouts);
+  const status = getSessionStatus(session.dayOfWeek, completedWorkouts, stravaActivities);
   const config = statusConfig[status];
+  
+  // Find the actual completion data if exists
+  const now = new Date();
+  const currentWeekStart = new Date(now);
+  currentWeekStart.setDate(now.getDate() - now.getDay());
+  const dayOffset = DAY_ORDER.indexOf(session.dayOfWeek);
+  const sessionDate = new Date(currentWeekStart);
+  sessionDate.setDate(currentWeekStart.getDate() + dayOffset);
+  const sessionDateISO = sessionDate.toISOString().split('T')[0];
+  
+  const completedWorkout = completedWorkouts?.find(w => {
+    const workoutDate = new Date(w.date);
+    const workoutDateISO = workoutDate.toISOString().split('T')[0];
+    return workoutDateISO === sessionDateISO && w.completed;
+  });
+  
+  const stravaRide = stravaActivities?.find(a => a.date === sessionDateISO);
 
   const handleIntervalClick = (interval: IntervalDef, index: number, e: React.MouseEvent) => {
     e.preventDefault();
@@ -118,6 +167,51 @@ export function SessionCard({ session, blockIdx, weekIdx, sessionIdx, completedW
               <span>{session.duration} min</span>
               {session.route && <span>{session.route.distance}km / {session.route.elevation}m ↑</span>}
             </div>
+
+            {/* Completion Stats */}
+            {status === "completed" && (completedWorkout || stravaRide) && (
+              <div className="mt-3 pt-3 border-t border-[var(--card-border)] space-y-1">
+                <div className="text-[10px] text-green-400 font-medium">✅ Completed</div>
+                <div className="grid grid-cols-2 gap-2 text-[10px]">
+                  {stravaRide && (
+                    <>
+                      {stravaRide.avgPower && (
+                        <div>
+                          <span className="text-[var(--muted)]">Avg Power</span>
+                          <div className="font-semibold text-white">{Math.round(stravaRide.avgPower)}W</div>
+                        </div>
+                      )}
+                      {stravaRide.tss && (
+                        <div>
+                          <span className="text-[var(--muted)]">TSS</span>
+                          <div className="font-semibold text-white">{Math.round(stravaRide.tss)}</div>
+                        </div>
+                      )}
+                      {stravaRide.normalizedPower && (
+                        <div>
+                          <span className="text-[var(--muted)]">NP</span>
+                          <div className="font-semibold text-white">{Math.round(stravaRide.normalizedPower)}W</div>
+                        </div>
+                      )}
+                      {stravaRide.avgHr && (
+                        <div>
+                          <span className="text-[var(--muted)]">Avg HR</span>
+                          <div className="font-semibold text-white">{Math.round(stravaRide.avgHr)} bpm</div>
+                        </div>
+                      )}
+                    </>
+                  )}
+                  {completedWorkout && !stravaRide && (
+                    <>
+                      <div>
+                        <span className="text-[var(--muted)]">Status</span>
+                        <div className="font-semibold text-white">Logged</div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </Link>
       </motion.div>

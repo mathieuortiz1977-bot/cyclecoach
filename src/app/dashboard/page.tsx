@@ -404,6 +404,8 @@ export default function Dashboard() {
               blockIdx={activeBlock}
               weekIdx={activeWeek}
               sessionIdx={i}
+              completedWorkouts={workoutData}
+              stravaActivities={stravaData}
             />
             <button
               onClick={(e) => { e.preventDefault(); setSelectedSessionIdx(i); setShowCompletion(true); }}
