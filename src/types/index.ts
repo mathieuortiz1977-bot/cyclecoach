@@ -397,4 +397,5 @@ export interface CalendarDay {
   hasStravaRide: boolean;
   hasProgramSession: boolean;
   hasPlannedSession: boolean;
+  isAutoCompleted?: boolean; // True if Strava ride auto-completed a planned workout
 }

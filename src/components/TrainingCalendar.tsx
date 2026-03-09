@@ -537,19 +537,26 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
     // If program hasn't started, don't show "missed"
     const programHasStarted = programStartDate && dayDate >= programStartDate;
     
-    if (!day.isTrainingDay) return "rest";
-    
-    // Completed program session takes priority
+    // PRIORITY 1: Completed program session (takes absolute priority)
     if (day.hasProgramSession) return "completed";
     
-    // Strava ride without program session
-    if (day.hasStravaRide && !programHasStarted) return "completed"; // Show Strava rides as completed if no program yet
-    if (day.hasStravaRide && programHasStarted) return "partial"; // Show as partial if it's a ride but not planned session
+    // PRIORITY 2: Strava ride (show even on rest days!)
+    // If there's a Strava ride, it's either completed (no planned) or partial (ride exists but not planned)
+    if (day.hasStravaRide) {
+      // If it's auto-completed (ride matches planned), show as completed
+      if (day.isAutoCompleted) return "completed";
+      // Otherwise show as partial (ride but no matching plan)
+      return "partial";
+    }
     
-    // Planned session (upcoming workout)
+    // PRIORITY 3: Check if it's a training day
+    // Only show "rest" if there's NO Strava ride
+    if (!day.isTrainingDay) return "rest";
+    
+    // PRIORITY 4: Planned session (upcoming workout)
     if (day.hasPlannedSession && !tz.isPast(dayDate)) return "planned";
     
-    // Only show "missed" if program has started and it's a past training day without any activity
+    // PRIORITY 5: Missed workout (past training day with no activity)
     if (programHasStarted && tz.isPast(dayDate) && day.isTrainingDay && !day.hasStravaRide) return "missed";
     
     return "upcoming";
@@ -943,7 +950,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
                     {selectedDate.isStravaRide ? selectedDate.name : selectedDate.sessionTitle || "Workout"}
                   </h3>
                   <p className="text-xs text-[var(--muted)]">
-                    {new Date(selectedDate.date).toLocaleDateString()}
+                    {tz.formatForDisplay(new Date(selectedDate.date))}
                   </p>
                   {selectedDate.isStravaRide && (
                     <span className="inline-block text-[10px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded-full mt-1">
