@@ -103,9 +103,11 @@ function SettingsPage() {
   const [deletingRides, setDeletingRides] = useState(false);
   const [deleteResult, setDeleteResult] = useState<string | null>(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const [syncingYear, setSyncingYear] = useState<number | null>(null);
-  const [yearSyncResult, setYearSyncResult] = useState<string | null>(null);
-  const [dataYearRange, setDataYearRange] = useState<{ min?: number; max?: number } | null>(null);
+  const [syncingRange, setSyncingRange] = useState(false);
+  const [rangeSyncResult, setRangeSyncResult] = useState<string | null>(null);
+  const [fromDate, setFromDate] = useState<string>(new Date(new Date().getFullYear(), 0, 1).toISOString().split('T')[0]);
+  const [toDate, setToDate] = useState<string>(new Date().toISOString().split('T')[0]);
+  const [importedRides, setImportedRides] = useState<Array<{ id: string; name: string; date: string; distance: number }>>([]);
 
   const handleStravaSync = async () => {
     setSyncing(true);
@@ -164,46 +166,58 @@ function SettingsPage() {
     setDeletingRides(false);
   };
 
-  const handleSyncYear = async (year: number) => {
-    setSyncingYear(year);
-    setYearSyncResult(null);
+  const handleSyncRange = async () => {
+    setSyncingRange(true);
+    setRangeSyncResult(null);
     try {
-      const response = await fetch("/api/strava/sync-year", {
+      const response = await fetch("/api/strava/sync-range", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ year }),
+        body: JSON.stringify({ fromDate, toDate }),
       });
       const data = await response.json();
       
       if (data.success) {
-        setYearSyncResult(`✅ Synced ${data.synced} new rides from ${year} (${data.skipped} already synced)`);
-        // Refresh the year range
-        loadYearRange();
+        setRangeSyncResult(`✅ Synced ${data.synced} new rides (${data.skipped} already synced)`);
+        // Refresh the imported rides list
+        loadImportedRides();
       } else {
-        setYearSyncResult(`❌ ${data.error || "Failed to sync"}`);
+        setRangeSyncResult(`❌ ${data.error || "Failed to sync"}`);
       }
     } catch (error) {
-      setYearSyncResult("❌ Sync failed");
-      console.error("Sync year error:", error);
+      setRangeSyncResult("❌ Sync failed");
+      console.error("Sync range error:", error);
     }
-    setSyncingYear(null);
+    setSyncingRange(false);
   };
 
-  const loadYearRange = async () => {
+  const loadImportedRides = async () => {
     try {
-      const response = await fetch("/api/strava/year-range");
+      // Fetch all Strava activities for this rider
+      const response = await fetch("/api/strava/activities");
       const data = await response.json();
-      if (data.success) {
-        setDataYearRange(data);
+      
+      if (data.success && data.activities) {
+        // Format rides for display: name, date, distance
+        const rides = data.activities
+          .map((activity: any) => ({
+            id: activity.stravaId?.toString() || activity.id,
+            name: activity.name,
+            date: new Date(activity.startDate).toLocaleDateString(),
+            distance: (activity.distance / 1000).toFixed(1), // Convert meters to km
+          }))
+          .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        
+        setImportedRides(rides);
       }
     } catch (error) {
-      console.error("Failed to load year range:", error);
+      console.error("Failed to load imported rides:", error);
     }
   };
 
-  // Load year range on mount
+  // Load imported rides on mount
   useEffect(() => {
-    loadYearRange();
+    loadImportedRides();
   }, []);
 
   // Training schedule update
@@ -586,36 +600,78 @@ function SettingsPage() {
                 </button>
 
                 {/* Historical Data Sync */}
-                <div className="pt-3 border-t border-[var(--card-border)]">
-                  <p className="text-xs font-semibold text-[var(--muted)] mb-2">📅 Historical Data</p>
-                  {dataYearRange && dataYearRange.min && (
-                    <p className="text-xs text-[var(--accent)] mb-2">
-                      You have data from {dataYearRange.min} to {dataYearRange.max}
-                    </p>
-                  )}
-                  <div className="grid grid-cols-4 gap-1">
-                    {[2026, 2025, 2024, 2023, 2022, 2021, 2020].map(year => (
-                      <button
-                        key={year}
-                        onClick={() => handleSyncYear(year)}
-                        disabled={syncingYear === year || !!(dataYearRange?.max && year <= dataYearRange.max)}
-                        className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
-                          dataYearRange?.max && year <= dataYearRange.max
-                            ? 'bg-green-500/20 text-green-400 cursor-default'
-                            : syncingYear === year
-                            ? 'bg-[var(--accent)]/30 text-[var(--accent)]'
-                            : 'border border-[var(--card-border)] hover:border-[var(--accent)] text-[var(--muted)]'
-                        }`}
-                      >
-                        {syncingYear === year ? '...' : year}
-                      </button>
-                    ))}
+                <div className="pt-3 border-t border-[var(--card-border)] space-y-3">
+                  <p className="text-xs font-semibold text-[var(--muted)]">📅 Import By Date Range</p>
+                  
+                  {/* Date Range Inputs */}
+                  <div className="flex gap-2">
+                    <div className="flex-1">
+                      <label className="text-xs text-[var(--muted)] block mb-1">From</label>
+                      <input
+                        type="date"
+                        value={fromDate}
+                        onChange={(e) => setFromDate(e.target.value)}
+                        disabled={syncingRange}
+                        className="w-full px-2 py-1 rounded text-xs bg-[var(--bg-secondary)] border border-[var(--card-border)] text-[var(--text)] disabled:opacity-50"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <label className="text-xs text-[var(--muted)] block mb-1">To</label>
+                      <input
+                        type="date"
+                        value={toDate}
+                        onChange={(e) => setToDate(e.target.value)}
+                        disabled={syncingRange}
+                        className="w-full px-2 py-1 rounded text-xs bg-[var(--bg-secondary)] border border-[var(--card-border)] text-[var(--text)] disabled:opacity-50"
+                      />
+                    </div>
                   </div>
-                  {yearSyncResult && (
-                    <p className={`text-xs mt-2 ${yearSyncResult.startsWith('✅') ? 'text-green-400' : 'text-red-400'}`}>
-                      {yearSyncResult}
+
+                  <button
+                    onClick={handleSyncRange}
+                    disabled={syncingRange}
+                    className="w-full px-3 py-2 rounded-lg text-sm border border-[var(--accent)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/10 transition-colors disabled:opacity-50 text-[var(--accent)] font-medium"
+                  >
+                    {syncingRange ? (
+                      <>
+                        <div className="w-3 h-3 border-2 border-[var(--accent)]/30 border-t-[var(--accent)] rounded-full animate-spin inline-block mr-2" />
+                        Importing...
+                      </>
+                    ) : (
+                      "📥 Import Rides"
+                    )}
+                  </button>
+
+                  {rangeSyncResult && (
+                    <p className={`text-xs ${rangeSyncResult.startsWith('✅') ? 'text-green-400' : 'text-red-400'}`}>
+                      {rangeSyncResult}
                     </p>
                   )}
+
+                  {/* Imported Rides List */}
+                  <div className="pt-3 border-t border-[var(--card-border)]">
+                    <p className="text-xs font-semibold text-[var(--muted)] mb-2">
+                      🚴 Imported Rides ({importedRides.length})
+                    </p>
+                    <div className="max-h-48 overflow-y-auto bg-[var(--bg-secondary)] rounded-lg border border-[var(--card-border)] p-2 space-y-1">
+                      {importedRides.length === 0 ? (
+                        <p className="text-xs text-[var(--muted)] py-3 text-center">No rides imported yet</p>
+                      ) : (
+                        importedRides.map((ride) => (
+                          <div
+                            key={ride.id}
+                            className="text-xs flex justify-between items-center p-2 rounded bg-[var(--card-bg)] border border-[var(--card-border)]/50 hover:border-[var(--accent)]/50 transition-colors"
+                          >
+                            <div className="flex-1 min-w-0">
+                              <p className="font-medium text-[var(--text)] truncate">{ride.name}</p>
+                              <p className="text-[var(--muted)] text-[10px]">{ride.date}</p>
+                            </div>
+                            <p className="text-[var(--accent)] font-semibold ml-2">{ride.distance} km</p>
+                          </div>
+                        ))
+                      )}
+                    </div>
+                  </div>
                 </div>
               </>
             )}
