@@ -1202,11 +1202,11 @@ const SESSION_TEMPLATES: Record<string, WorkoutTemplate[]> = {
       description: "Steady aerobic base building (60 min)",
       purpose: "Build aerobic base with steady Z2 effort - Coggan/Allen methodology",
       zone: "Z2",
-      duration: 70,
+      duration: 65, // 10min warmup + 45min endurance + 5min cooldown = 60min actual
       intervals: () => [
-        warmup(),
-        interval("Endurance", 3600, 56, 70, "Steady aerobic base - focus on fat oxidation", "endurance"),
-        cooldown(),
+        warmup(), // 10 min (600 secs)
+        interval("Endurance", 2700, 56, 70, "Steady aerobic base - focus on fat oxidation", "endurance"), // 45 min
+        cooldown(), // 5 min (300 secs)
       ],
     },
     {
@@ -1335,7 +1335,7 @@ const SESSION_TEMPLATES: Record<string, WorkoutTemplate[]> = {
       description: "Classic 2x20 threshold intervals", 
       purpose: "FTP development - Coggan/Allen gold standard",
       zone: "Z4",
-      duration: 65,
+      duration: 65, // 10min warmup + 20min + 10min rest + 20min + 5min cooldown
       intervals: () => [
         warmup(),
         interval("Threshold 1", 1200, 88, 94, "First 20-min threshold block", "threshold"),
@@ -2233,12 +2233,15 @@ function generateIndoorSession(
   const intervals = template.intervals();
   
   // Construct full session with template-generated intervals
+  // NOTE: Duration is calculated from actual intervals by fixSessionDuration()
+  // Do NOT copy template.duration or baseSession.duration - let them be recalculated
   return {
-    ...baseSession,
+    dayOfWeek: baseSession.dayOfWeek,
+    sessionType: baseSession.sessionType,
     title: template.title,
     description: template.description,
     purpose: template.purpose,
-    duration: template.duration,
+    duration: 0, // Placeholder - will be set by fixSessionDuration()
     intervals,
     templateId: template.id,
   };
