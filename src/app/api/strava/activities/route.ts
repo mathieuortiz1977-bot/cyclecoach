@@ -4,14 +4,27 @@ import { getCurrentRiderWithStrava } from "@/lib/get-rider";
 
 export async function GET() {
   try {
+    console.log("[GET /api/strava/activities] START");
+    
     const rider = await getCurrentRiderWithStrava();
 
     if (!rider) {
-      console.error("[GET /api/strava/activities] Not authenticated");
+      console.error("[GET /api/strava/activities] Not authenticated - no session");
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    console.log("[GET /api/strava/activities] Fetching activities for rider:", rider.id);
+    console.log("[GET /api/strava/activities] Rider found:", {
+      id: rider.id,
+      userId: rider.userId,
+      name: rider.name
+    });
+
+    // Count total activities in database for this rider
+    const totalCount = await prisma.stravaActivity.count({
+      where: { riderId: rider.id },
+    });
+    
+    console.log(`[GET /api/strava/activities] Total activities in DB for rider ${rider.id}:`, totalCount);
 
     // Get all Strava activities for this rider (return all fields needed by calendar)
     const activities = await prisma.stravaActivity.findMany({
@@ -40,7 +53,15 @@ export async function GET() {
       orderBy: { startDate: "desc" },
     });
 
-    console.log(`[GET /api/strava/activities] Found ${activities.length} activities`);
+    console.log(`[GET /api/strava/activities] Fetched ${activities.length} activities`);
+    
+    if (activities.length > 0) {
+      console.log("[GET /api/strava/activities] First activity:", {
+        id: activities[0].id,
+        name: activities[0].name,
+        date: activities[0].startDate
+      });
+    }
 
     return NextResponse.json({
       success: true,
@@ -48,7 +69,7 @@ export async function GET() {
       total: activities.length,
     });
   } catch (err) {
-    console.error("[GET /api/strava/activities] Error:", err);
-    return NextResponse.json({ error: "Failed to get activities" }, { status: 500 });
+    console.error("[GET /api/strava/activities] ERROR:", err);
+    return NextResponse.json({ error: "Failed to get activities", details: String(err) }, { status: 500 });
   }
 }

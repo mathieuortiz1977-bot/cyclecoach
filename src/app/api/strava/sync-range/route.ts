@@ -160,6 +160,12 @@ export async function POST(request: NextRequest) {
 
     console.log(`[SYNC-RANGE] Complete: synced=${synced}, skipped=${skipped}`);
 
+    // Verify rides were actually saved
+    const verifyCount = await prisma.stravaActivity.count({
+      where: { riderId: rider.id },
+    });
+    console.log(`[SYNC-RANGE] Verification: Total activities in DB for rider ${rider.id}: ${verifyCount}`);
+
     return NextResponse.json({
       success: true,
       fromDate: from.toISOString(),
@@ -167,7 +173,8 @@ export async function POST(request: NextRequest) {
       synced,
       skipped,
       total: rides.length,
-      message: `Synced ${synced} new rides from ${from.toLocaleDateString()} to ${to.toLocaleDateString()}, skipped ${skipped} existing.`
+      message: `Synced ${synced} new rides from ${from.toLocaleDateString()} to ${to.toLocaleDateString()}, skipped ${skipped} existing.`,
+      dbVerification: verifyCount // Show total in DB after sync
     });
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
