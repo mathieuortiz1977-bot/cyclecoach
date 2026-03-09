@@ -34,49 +34,60 @@ export async function GET(request: NextRequest) {
     
     console.log(`[GET /api/strava/activities] Fetching activities since ${cutoffDate.toISOString()}`);
 
-    const activities = await prisma.stravaActivity.findMany({
-      where: { 
-        riderId: rider.id,
-        startDate: { gte: cutoffDate } // Only last N years (default 2)
-      },
-      select: {
-        id: true,
-        stravaId: true,
-        name: true,
-        type: true,
-        startDate: true,
-        movingTime: true,
-        distance: true,
-        totalElevation: true,
-        averageWatts: true,
-        maxWatts: true,
-        weightedAvgWatts: true,
-        averageHeartrate: true,
-        maxHeartrate: true,
-        tss: true,
-      },
-      orderBy: { startDate: "desc" },
-      take: 500, // Max 500 rides (last 2 years usually ~250-300)
-    });
-
-    console.log(`[GET /api/strava/activities] Fetched ${activities.length} activities`);
+    console.log(`[GET /api/strava/activities] Running query for rider ${rider.id}, cutoff: ${cutoffDate.toISOString()}`);
     
-    if (activities.length > 0) {
-      console.log("[GET /api/strava/activities] First activity:", {
-        id: activities[0].id,
-        name: activities[0].name,
-        date: activities[0].startDate
+    try {
+      const activities = await prisma.stravaActivity.findMany({
+        where: { 
+          riderId: rider.id,
+          startDate: { gte: cutoffDate } // Only last N years (default 2)
+        },
+        select: {
+          id: true,
+          stravaId: true,
+          name: true,
+          type: true,
+          startDate: true,
+          movingTime: true,
+          distance: true,
+          totalElevation: true,
+          averageWatts: true,
+          maxWatts: true,
+          weightedAvgWatts: true,
+          averageHeartrate: true,
+          maxHeartrate: true,
+          tss: true,
+        },
+        orderBy: { startDate: "desc" },
+        take: 500, // Max 500 rides (last 2 years usually ~250-300)
       });
-    }
 
-    return NextResponse.json({
-      success: true,
-      activities,
-      total: activities.length,
-    });
+      console.log(`[GET /api/strava/activities] Query successful, fetched ${activities.length} activities`);
+      
+      if (activities.length > 0) {
+        console.log("[GET /api/strava/activities] First activity:", {
+          id: activities[0].id,
+          name: activities[0].name,
+          date: activities[0].startDate
+        });
+      }
+
+      return NextResponse.json({
+        success: true,
+        activities,
+        total: activities.length,
+      });
+    } catch (queryErr) {
+      console.error("[GET /api/strava/activities] QUERY ERROR:", queryErr);
+      throw queryErr;
+    }
   } catch (err) {
-    console.error("[GET /api/strava/activities] ERROR:", err);
     const errorMsg = err instanceof Error ? err.message : String(err);
+    const errorStack = err instanceof Error ? err.stack : "";
+    console.error("[GET /api/strava/activities] CATCH ERROR:", errorMsg);
+    console.error("[GET /api/strava/activities] STACK:", errorStack);
+    console.error("[GET /api/strava/activities] FULL ERROR:", err);
+    
     return NextResponse.json({ 
       error: "Failed to get activities", 
       details: errorMsg,
