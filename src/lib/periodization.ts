@@ -394,17 +394,16 @@ function applyVarietyToSession(
   const structure = selectWorkoutStructure(zoneCategory, previousStructure);
   const cadenceProfile = getCadenceProfile(weekInBlock);
   const psychMessage = getPsychologicalMessage(blockTheme, structure);
-  const thematicTitle = getThematicTitle(blockTheme, structure);
   
   // PHASE 3: Logging for testing & verification
   if (typeof window === "undefined") { // Only log server-side
-    console.log(`[PlanVariety] ${session.dayOfWeek} | Zone: ${zoneCategory} | Structure: ${structure} | Cadence: ${cadenceProfile} | Title: ${thematicTitle}`);
+    console.log(`[PlanVariety] ${session.dayOfWeek} | Zone: ${zoneCategory} | Structure: ${structure} | Cadence: ${cadenceProfile} | Original Title: ${session.title}`);
   }
   
+  // KEEP ORIGINAL TITLE & DESCRIPTION - user feedback: thematic names were worse!
+  // Store psychological message separately for future use (coaching context, etc.)
   return {
     ...session,
-    title: thematicTitle,
-    description: psychMessage,
     structure,
     cadenceProfile,
     themeCategory: blockTheme,
