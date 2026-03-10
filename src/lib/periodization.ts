@@ -6,12 +6,19 @@ import { MASTER_WORKOUTS, getMasterWorkoutsSync } from "./sessions-data-all";
 // Legacy imports still available for reference
 import { MASTER_WORKOUTS as CLASSIFIED } from "./sessions-data-classified";
 
-// CRITICAL: Force load workouts when module loads (for API server context)
+// CRITICAL: Force load workouts when module loads (for API server context ONLY)
 // This ensures MASTER_WORKOUTS is populated before any plan generation
+// GUARD: Only run on server-side (not in browser)
 let _workoutsInitialized = false;
 function ensureWorkoutsLoaded() {
+  // GUARD: Don't try to load on client-side
+  if (typeof window !== 'undefined') {
+    console.log('[periodization] Client-side detected, skipping workout loading');
+    return;
+  }
+  
   if (!_workoutsInitialized && MASTER_WORKOUTS.length === 0) {
-    console.log('[periodization] Forcing workout initialization...');
+    console.log('[periodization] SERVER-SIDE: Forcing workout initialization...');
     try {
       const loaded = getMasterWorkoutsSync();
       console.log('[periodization] Workouts loaded:', loaded.length);
@@ -1362,8 +1369,11 @@ function selectWorkoutTemplate(
   usedThisWeekIds: string[] = [] // Exclude workouts already used THIS WEEK
 ): WorkoutTemplate {
   
-  // CRITICAL FIX: Ensure workouts are loaded before using MASTER_WORKOUTS
-  ensureWorkoutsLoaded();
+  // CRITICAL FIX: Only try to load workouts on server-side
+  if (typeof window === 'undefined') {
+    // Server-side: ensure workouts are loaded
+    ensureWorkoutsLoaded();
+  }
   
   let candidates = MASTER_WORKOUTS;
   
@@ -1878,6 +1888,14 @@ export function generatePlan(
   targetFridayDurationMinutes: number = 50 // OPTIONAL: Different duration for Friday (default 50 min)
 ): PlanDef {
   console.log('🚀 [generatePlan] START - Initializing plan generation');
+  
+  // GUARD: generatePlan should ONLY be called on server-side (API routes)
+  // Client-side pages should call the API instead
+  if (typeof window !== 'undefined') {
+    console.error('❌ [generatePlan] ERROR: generatePlan was called on CLIENT-SIDE!');
+    console.error('❌ [generatePlan] Client-side pages should call /api/plan instead');
+    throw new Error('generatePlan can only be called on server-side. Use /api/plan endpoint from client.');
+  }
   
   // CRITICAL FIX: Ensure workouts are loaded FIRST
   ensureWorkoutsLoaded();
