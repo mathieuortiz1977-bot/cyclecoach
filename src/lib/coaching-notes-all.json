@@ -1,308 +1,1106 @@
 {
-  "Warmup__Z1-Z2__45-75": {
-    "DARK_HUMOR": "Your legs are waking up — give them something to wake up to. These next few minutes set the tone for everything that follows.",
-    "MOTIVATIONAL": "Great start! You're setting the foundation for an amazing workout. Every pedal stroke is preparing your body for the challenge ahead.",
-    "TECHNICAL": "Gradually elevating core temperature and muscle activation. This progressive warm-up increases blood flow and prepares neuromuscular systems for harder efforts.",
-    "MIXED": "Take your time here. You're building momentum, both physically and mentally. A solid warm-up is the difference between a good workout and a great one."
+  "15/9 VO2": {
+    "DARK_HUMOR": "15/9 VO2 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "15/9 VO2 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "15/9 VO2 is peak aerobic work. You're building real capacity."
   },
-  "Recovery__Z1__40-55": {
-    "DARK_HUMOR": "This is where you pretend to do something. Easy spinning, light breathing, zero suffering. Your legs needed this more than you realize.",
-    "MOTIVATIONAL": "You're giving your body exactly what it needs to bounce back stronger. This recovery work is part of your growth — respect the process.",
-    "TECHNICAL": "Low-intensity work promotes parasympathetic activation and lactate clearance without systemic fatigue. Critical for adaptation and long-term progression.",
-    "MIXED": "Dial it way back. This isn't about effort — it's about listening to your body. Easy breathing, easy legs, easy mind."
+  "20s Hard": {
+    "DARK_HUMOR": "20s Hard — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "20s Hard develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "20s Hard is varied work. Your body handles all intensities."
   },
-  "Easy Spin__Z1__35-50": {
-    "DARK_HUMOR": "Just spin easy and recover. Your legs earned this peace.",
-    "MOTIVATIONAL": "Active recovery is where champions build resilience. Easy spins keep your aerobic engine purring without breaking it down.",
-    "TECHNICAL": "Z1 active recovery promotes blood flow and metabolic waste clearance while keeping HR below 50% of max. Optimize daily recovery.",
-    "MIXED": "Spin smooth and easy. Your body is still learning and adapting from yesterday's hard work."
+  "20s Hard 2": {
+    "DARK_HUMOR": "20s Hard 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "20s Hard 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "20s Hard 2 is varied work. Your body handles all intensities."
   },
-  "Endurance__Z2__55-75": {
-    "DARK_HUMOR": "Welcome to the sweet spot of not dying. You can hold a conversation here, which is both a blessing and a curse because you have 90 minutes to think about life.",
-    "MOTIVATIONAL": "This is where champions are built. Long, steady efforts like this teach your body to burn fat efficiently and build an aerobic foundation that lasts.",
-    "TECHNICAL": "Zone 2 aerobic work maximizes fat oxidation and mitochondrial density while staying below lactate threshold. This is the most efficient training stimulus for endurance adaptations.",
-    "MIXED": "Stay steady. Your breathing should be controlled but present. This is the bread and butter of cycling fitness — consistent, sustainable, powerful."
+  "20s Hard 3": {
+    "DARK_HUMOR": "20s Hard 3 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "20s Hard 3 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "20s Hard 3 is varied work. Your body handles all intensities."
   },
-  "Steady Endurance__Z2__56-76": {
-    "DARK_HUMOR": "Long and steady wins races. Keep pedaling, keep breathing, don't overcomplicate it.",
-    "MOTIVATIONAL": "Every minute here builds your aerobic engine. You're becoming more efficient, more capable, more powerful with each rotation.",
-    "TECHNICAL": "Sustained Z2 work develops aerobic capacity and fat-burning efficiency. This is the foundation all hard work rests on.",
-    "MIXED": "Hold this pace smoothly. No surges, no coasting. Just consistent, controlled power that teaches your body to go the distance."
+  "30/30": {
+    "DARK_HUMOR": "30/30 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "30/30 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "30/30 is varied work. Your body handles all intensities."
   },
-  "Base Work__Z2__55-70": {
-    "DARK_HUMOR": "Boring is fast. Don't get exciting here. Just ride steady and let your fitness grow quietly.",
-    "MOTIVATIONAL": "Base fitness is where it all starts. These steady efforts are building the aerobic capacity that makes everything else possible.",
-    "TECHNICAL": "Base-building phase uses extended Z2 work to increase mitochondrial density and metabolic efficiency without high fatigue accumulation.",
-    "MIXED": "This is sustainable effort. Hard enough to count, easy enough to do forever. Your foundation is getting stronger with every pedal stroke."
+  "30/30s": {
+    "DARK_HUMOR": "30/30s — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "30/30s develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "30/30s is varied work. Your body handles all intensities."
   },
-  "Sweet Spot__Z3__88-94": {
-    "DARK_HUMOR": "You're close enough to FTP to feel it, far enough away to do this repeatedly. This is where your fitness lives — the zone where suffering becomes productive.",
-    "MOTIVATIONAL": "These efforts are building your engine. Every minute here teaches your body to hold harder power with less effort. This is real progress.",
-    "TECHNICAL": "Sweet spot intensity hits the FTP sweet spot for training adaptations — high training stress with manageable fatigue, maximizing CTL gains per unit of fatigue.",
-    "MIXED": "This is the productive pain zone. You're working but not maxing out. Stay focused, trust the effort, let your fitness grow."
+  "40/20s": {
+    "DARK_HUMOR": "40/20s — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "40/20s develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "40/20s is varied work. Your body handles all intensities."
   },
-  "Sweet Spot Block__Z3__85-95": {
-    "DARK_HUMOR": "You're in the sweet spot now. Not so easy you're joking, not so hard you're dying. This is precision training.",
-    "MOTIVATIONAL": "You're building FTP at an incredibly efficient rate. This is where the magic happens — hard enough to stimulate adaptation, manageable enough to recover from.",
-    "TECHNICAL": "Extended sweet spot efforts maximize training stress while maintaining sustainable lactate levels. Excellent for CTL development with controlled fatigue.",
-    "MIXED": "Settle into this power. It's hard, yes, but sustainable. You're teaching your body to hold harder pace with less effort."
+  "40s Easy": {
+    "DARK_HUMOR": "40s Easy is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "40s Easy is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into 40s Easy. This is where your body rebuilds."
   },
-  "Tempo__Z3__76-90": {
-    "DARK_HUMOR": "This is the warm-up for threshold work — hard enough to get your attention, easy enough that you won't quit. The gateway drug to suffering.",
-    "MOTIVATIONAL": "You're building lactate clearing capacity here. These efforts teach your body to manage harder intensities gracefully. You're getting tougher mentally and physically.",
-    "TECHNICAL": "Sub-threshold tempo work stimulates lactate threshold adaptation and buffering capacity without the systemic fatigue of threshold efforts. Perfect for building work capacity.",
-    "MIXED": "Find a rhythm you can hold. Your legs will start to feel it around the 5-minute mark. That's when you know you're in the right zone."
+  "40s Easy 2": {
+    "DARK_HUMOR": "40s Easy 2 is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "40s Easy 2 is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into 40s Easy 2. This is where your body rebuilds."
   },
-  "Tempo Progression__Z3__76-95": {
-    "DARK_HUMOR": "Building tempo endurance, one hard minute at a time. Your lactate system is getting stronger with every second.",
-    "MOTIVATIONAL": "You're progressing through tempo zones and getting stronger. Each step up teaches your body to handle harder efforts with control.",
-    "TECHNICAL": "Progressive tempo work from Z3 into lower Z4 develops lactate threshold and buffering capacity systematically. Controlled intensity increase maximizes adaptation.",
-    "MIXED": "Stay controlled as you progress. Your body is learning to handle harder power without falling apart. Trust the structure."
+  "90% SS": {
+    "DARK_HUMOR": "90% SS — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "90% SS teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "90% SS is the productive zone. You're working but sustainable."
   },
-  "Threshold__Z4__95-105": {
-    "DARK_HUMOR": "Welcome to FTP. This is your redline in polite company. It hurts, you can't do it forever, and that's exactly the point.",
-    "MOTIVATIONAL": "This is where you get faster. Threshold work raises your ceiling — every interval here makes you a stronger, more capable cyclist. You're building your engine.",
-    "TECHNICAL": "FTP-intensity efforts maximally stimulate neuromuscular recruitment and VO2max without requiring total anaerobic capacity. The most time-efficient stimulus for power increase.",
-    "MIXED": "Hold this power steady. Your legs will argue with you somewhere in the middle — listen but don't give in. This is where the magic happens."
+  "Activation Surge 1": {
+    "DARK_HUMOR": "Activation Surge 1 — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Activation Surge 1 trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Activation Surge 1 is complex work. Your body learns to be powerful everywhere."
   },
-  "FTP Work__Z4__92-105": {
-    "DARK_HUMOR": "You're right at your limit here. This is where fitness happens and suffering lives in the same place.",
-    "MOTIVATIONAL": "You're working at the power that defines your cycling engine. Every second here makes you faster, stronger, more capable.",
-    "TECHNICAL": "FTP-level efforts drive maximal neuromuscular adaptation and lactate buffering. The most efficient intensity for raising your power ceiling.",
-    "MIXED": "This is your limit in polite company. Stay focused. Your breathing should be controlled fury."
+  "Activation Surge 2": {
+    "DARK_HUMOR": "Activation Surge 2 — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Activation Surge 2 trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Activation Surge 2 is complex work. Your body learns to be powerful everywhere."
   },
-  "Threshold Repeats__Z4__95-105": {
-    "DARK_HUMOR": "Short FTP efforts with recovery. It's like threshold but you get to breathe between efforts. Living the dream.",
-    "MOTIVATIONAL": "These intervals are teaching your body to hold FTP power repeatedly. You're building muscular endurance at your limit.",
-    "TECHNICAL": "Threshold repeats allow higher volume at FTP with managed fatigue between efforts. Optimal for raising lactate threshold without excessive systemic stress.",
-    "MIXED": "Use the recovery to reset. Your body gets to recover slightly before the next effort. That's your tactical advantage here."
+  "Advanced Drills": {
+    "DARK_HUMOR": "Advanced Drills — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Advanced Drills teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Advanced Drills — smooth, controlled, efficient movement."
   },
-  "Long Threshold__Z4__90-105": {
-    "DARK_HUMOR": "Long FTP work. Your legs are going to have opinions about this for a while.",
-    "MOTIVATIONAL": "Extended threshold efforts build the endurance you need to hold hard power for the entire race. This is championship training.",
-    "TECHNICAL": "Sustained FTP work develops both lactate threshold power AND muscular endurance. Critical for lasting performance in races.",
-    "MIXED": "Pace yourself carefully here. You need to finish strong, not just survive. Control the beginning to own the end."
+  "Anaerobic 1": {
+    "DARK_HUMOR": "Anaerobic 1 — your lactate system just got a nasty surprise.",
+    "MOTIVATIONAL": "Anaerobic 1 teaches your body maximum sustained power. You're getting powerful.",
+    "TECHNICAL": "Supra-threshold work maximizing lactate tolerance and Type II recruitment.",
+    "MIXED": "Anaerobic 1 is all-out effort. Suffer now, celebrate after."
   },
-  "VO2 Max__Z5__106-120": {
-    "DARK_HUMOR": "Your aerobic system just got a nasty surprise. This is where lungs scream and legs burn simultaneously. Embrace the chaos.",
-    "MOTIVATIONAL": "You're reaching for your absolute aerobic potential here. Every breath is expanding your VO2max. This is the work of becoming an elite cyclist.",
-    "TECHNICAL": "VO2max intervals create maximal oxidative stress, driving mitochondrial biogenesis and capillary density. The most potent stimulus for aerobic power development.",
-    "MIXED": "Keep your cadence high — don't grind it. Yes, it's hard. Yes, that's the entire point. You're building something real here."
+  "Anaerobic 2": {
+    "DARK_HUMOR": "Anaerobic 2 — your lactate system just got a nasty surprise.",
+    "MOTIVATIONAL": "Anaerobic 2 teaches your body maximum sustained power. You're getting powerful.",
+    "TECHNICAL": "Supra-threshold work maximizing lactate tolerance and Type II recruitment.",
+    "MIXED": "Anaerobic 2 is all-out effort. Suffer now, celebrate after."
   },
-  "VO2 Repeats__Z5__110-125": {
-    "DARK_HUMOR": "VO2 intervals. You're training your lungs to handle maximum oxygen uptake. They will not enjoy this.",
-    "MOTIVATIONAL": "These are peak aerobic efforts. You're expanding your VO2max with every rep. This is elite fitness training.",
-    "TECHNICAL": "Supra-threshold VO2 efforts maximize EPOC and mitochondrial stimulus. Highest aerobic power development stimulus available.",
-    "MIXED": "Go hard here. Your lungs and legs are at capacity. That's exactly where you need to be."
+  "Anaerobic 3": {
+    "DARK_HUMOR": "Anaerobic 3 — your lactate system just got a nasty surprise.",
+    "MOTIVATIONAL": "Anaerobic 3 teaches your body maximum sustained power. You're getting powerful.",
+    "TECHNICAL": "Supra-threshold work maximizing lactate tolerance and Type II recruitment.",
+    "MIXED": "Anaerobic 3 is all-out effort. Suffer now, celebrate after."
   },
-  "VO2 Ladder__Z5__108-130": {
-    "DARK_HUMOR": "Ascending VO2. Getting harder with each step. Enjoy the early ones because the later ones will hurt.",
-    "MOTIVATIONAL": "You're climbing the VO2 ladder toward your aerobic ceiling. Each step up is making you stronger and more aerobically powerful.",
-    "TECHNICAL": "Progressive VO2 efforts from threshold up to maximum provide increasing oxidative stimulus. Develops both VO2max and lactate tolerance.",
-    "MIXED": "The ladder gets harder as you go up. Use the early efforts to warm your aerobic engine for the hard ones coming."
+  "Another Surge": {
+    "DARK_HUMOR": "Another Surge — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Another Surge makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Another Surge is hard but sustainable. Stay focused and execute."
   },
-  "VO2 Short Repeats__Z5__110-130": {
-    "DARK_HUMOR": "Short hard VO2 work. Quick and brutal. You get to suffer and recover in rapid succession.",
-    "MOTIVATIONAL": "Short VO2 efforts teach your body to access peak aerobic power quickly and repeatedly. Race-winning capability right here.",
-    "TECHNICAL": "Shorter VO2 repeats (3-5min) maintain higher power while allowing adequate recovery. Optimal for volume at VO2max.",
-    "MIXED": "Go hard, recover hard, go hard again. Your aerobic system is learning to be powerful AND resilient."
+  "Attacks": {
+    "DARK_HUMOR": "Attacks — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Attacks trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Attacks is complex work. Your body learns to be powerful everywhere."
   },
-  "Anaerobic__Z6__125-150": {
-    "DARK_HUMOR": "Your lactate levels just went nuclear. This is where your legs stop listening to your brain and start asking existential questions about life choices.",
-    "MOTIVATIONAL": "This is peak power work. You're tapping into your maximum effort capacity. These hard repeats teach your body and mind what you're capable of.",
-    "TECHNICAL": "Supra-threshold anaerobic work maximizes lactate production and tolerance while recruiting Type II fibers. Essential for breakaway and sprint power.",
-    "MIXED": "Go hard here — this is your time to attack. The recovery between efforts is your friend. Suffer now, celebrate later."
+  "Base": {
+    "DARK_HUMOR": "Base is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Base builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Base is where fitness is built quietly."
   },
-  "Anaerobic Repeats__Z6__130-160": {
-    "DARK_HUMOR": "Hard anaerobic work. Your legs are about to go to a dark place and come back stronger.",
-    "MOTIVATIONAL": "You're training at the edge of your anaerobic capacity. These efforts build the power needed to attack and drop competitors.",
-    "TECHNICAL": "Anaerobic repeats recruit maximum Type II fibers and tolerance lactate. Critical for race-winning breakaways.",
-    "MIXED": "These are all-out efforts. You're training your body to handle maximum sustained power. Go hard and earn the recovery."
+  "Base Block": {
+    "DARK_HUMOR": "Base Block is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Base Block builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Base Block is where fitness is built quietly."
   },
-  "Sprint__Z7__180-210": {
-    "DARK_HUMOR": "You're now riding like someone stole your bike. Maximum watts, maximum chaos, zero mercy. This is where cyclists find out what they're really made of.",
-    "MOTIVATIONAL": "All-out maximum effort. You're discovering your absolute power ceiling. These sprints build explosive strength that makes you dangerous in any race situation.",
-    "TECHNICAL": "Maximal power efforts recruit complete neuromuscular system and generate peak force output. Critical for race-winning moves and tactical acceleration.",
-    "MIXED": "Give it everything you have. This is your moment. The recovery after is earned — you've already succeeded."
+  "Base Road": {
+    "DARK_HUMOR": "Base Road is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Base Road builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Base Road is where fitness is built quietly."
   },
-  "Sprint Repeats__Z7__190-220": {
-    "DARK_HUMOR": "Max effort sprints. Your glycolytic system is about to get a serious wake-up call.",
-    "MOTIVATIONAL": "You're training peak power and sprint capacity. These efforts will make you dangerous in any finish or attack situation.",
-    "TECHNICAL": "Maximum power sprints recruit Type IIx fibers and max neuromuscular output. Essential for race tactics and finishes.",
-    "MIXED": "All-out for the duration. You're teaching your body what maximum power feels like and how to access it under fatigue."
+  "Base Spin": {
+    "DARK_HUMOR": "Base Spin is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Base Spin builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Base Spin is where fitness is built quietly."
   },
-  "Cooldown__Z1__30-50": {
-    "DARK_HUMOR": "You survived. Now your job is to convince your legs that the suffering is over. Easy spinning, deep breathing, gratitude for not being dead.",
-    "MOTIVATIONAL": "Great work! You earned this easy spin. Let your body transition gracefully from hard effort back to recovery. You should feel proud.",
-    "TECHNICAL": "Low-intensity spinning promotes active recovery, lactate clearance, and parasympathetic nervous system activation. Improves overall recovery trajectory.",
-    "MIXED": "Breathe easy now. Spin the legs out, let your heart rate come down, let the victory sink in. You did good work today."
+  "Block 1": {
+    "DARK_HUMOR": "Block 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Block 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Block 1 is varied work. Your body handles all intensities."
   },
-  "Cool-down__Z1__35-55": {
-    "DARK_HUMOR": "The suffering is over. Now just spin easy and let your body remember what normal feels like.",
-    "MOTIVATIONAL": "You earned this recovery spin. Let your breathing normalize and your muscles transition from work to rest.",
-    "TECHNICAL": "Cool-down Z1 work activates recovery pathways and begins lactate clearance. Gentle transition from exercise to baseline.",
-    "MIXED": "Easy spinning. Your workout is done. Just let yourself recover gracefully."
+  "Block 1 High": {
+    "DARK_HUMOR": "Block 1 High — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Block 1 High develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Block 1 High is varied work. Your body handles all intensities."
   },
-  "Technique__Z2__60-80": {
-    "DARK_HUMOR": "Time to remember how to pedal smoothly instead of like a washing machine. Your form coach is about to earn their paycheck.",
-    "MOTIVATIONAL": "Economy of motion = speed for free. These skill drills are teaching your body to work smarter. Small improvements in technique compound into real gains.",
-    "TECHNICAL": "Pedaling efficiency work activates neuromuscular proprioception and optimizes force application across the pedal stroke. Increases wattage without additional fatigue.",
-    "MIXED": "Focus on fluidity here. Smooth pedal strokes, consistent cadence, no dead spots. This is meditation on a bike."
+  "Block 1 Mid": {
+    "DARK_HUMOR": "Block 1 Mid — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Block 1 Mid develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Block 1 Mid is varied work. Your body handles all intensities."
   },
-  "Pedaling Drill__Z2__60-75": {
-    "DARK_HUMOR": "Pedaling drill time. Your technique is about to get a lesson in how to actually pedal.",
-    "MOTIVATIONAL": "Smooth pedaling is fast pedaling. You're training your neuromuscular system to be efficient. This builds real speed.",
-    "TECHNICAL": "Isolated pedaling drills activate neuromuscular efficiency and optimal power delivery. Improves economy at all intensities.",
-    "MIXED": "Focus on smooth, circular pedaling. No grinding, no rushing. Your body is learning efficiency."
+  "Blue Unicorn": {
+    "DARK_HUMOR": "Blue Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Blue Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Blue Unicorn is varied work. Your body handles all intensities."
   },
-  "Strength__Z2__70-90": {
-    "DARK_HUMOR": "Big gear, low cadence. Your muscles don't like this, which is exactly why your muscles are about to get a lot stronger. You're building horsepower.",
-    "MOTIVATIONAL": "Strength work builds the power foundation everything else relies on. Every heavy pedal stroke here makes you more capable at any intensity.",
-    "TECHNICAL": "Low-cadence force work maximizes mechanical advantage and Type II fiber recruitment without aerobic stress. Critical for building absolute power capacity.",
-    "MIXED": "Stay at 50-60 RPM, stay smooth. Your legs will want to spin faster — resist. The effort is real, but the form stays clean."
+  "Cadence Variation": {
+    "DARK_HUMOR": "Cadence Variation — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Cadence Variation teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Cadence Variation — smooth, controlled, efficient movement."
   },
-  "Strength Work__Z2__65-85": {
-    "DARK_HUMOR": "Big gear, heavy legs. You're building raw power here, not speed.",
-    "MOTIVATIONAL": "Every rotation in this big gear makes your muscles stronger and more powerful. You're building the foundation for everything.",
-    "TECHNICAL": "Heavy resistance low-cadence work recruits maximum muscle fibers for force development. Builds absolute power capacity.",
-    "MIXED": "Stay controlled in the big gear. Strength isn't about speed here — it's about force. Trust the resistance."
+  "Calibration": {
+    "DARK_HUMOR": "Calibration — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Calibration develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Calibration is varied work. Your body handles all intensities."
   },
-  "Low Cadence__Z2__70-85": {
-    "DARK_HUMOR": "Your legs are now rocks. Slow, heavy, powerful rocks.",
-    "MOTIVATIONAL": "Low cadence work teaches your legs to generate massive force. You're building the power that makes harder intensities possible.",
-    "TECHNICAL": "Sub-80 RPM cadence maximizes mechanical advantage and Type II fiber recruitment. Optimal for strength development.",
-    "MIXED": "Keep it slow and powerful. Your cadence might want to creep up — resist. The strength happens at 50-60 RPM."
+  "Climb 1": {
+    "DARK_HUMOR": "Climb 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Climb 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Climb 1 is varied work. Your body handles all intensities."
   },
-  "Over-Under__Z4-Z5__95-115": {
-    "DARK_HUMOR": "Over FTP, under FTP, over again. You're teaching your lactate system to handle wildly changing demands.",
-    "MOTIVATIONAL": "Over-under efforts train your body to handle rapid intensity changes. This teaches you how to respond to race attacks.",
-    "TECHNICAL": "Over-under intervals develop lactate clearance and threshold tolerance by forcing rapid steady-state adjustments. Race-specific stimulus.",
-    "MIXED": "You're riding above and below your limit. Your body learns to adapt quickly. This is race-prep training."
+  "Climb 2": {
+    "DARK_HUMOR": "Climb 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Climb 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Climb 2 is varied work. Your body handles all intensities."
   },
-  "VO2 Over-Under__Z5-Z6__110-130": {
-    "DARK_HUMOR": "Max VO2 over-under. Your aerobic system is about to learn some harsh lessons about adapting to chaos.",
-    "MOTIVATIONAL": "These intervals teach your aerobic system to handle maximum intensity variations. You're training race-winning adaptability.",
-    "TECHNICAL": "High-intensity over-under develops maximum VO2 with lactate management. Elite-level training stimulus.",
-    "MIXED": "Go hard over FTP, control under. Your body learns to access peak power even when fatigued."
+  "Cool-down": {
+    "DARK_HUMOR": "Cool-down means you survived. Spin easy and be grateful.",
+    "MOTIVATIONAL": "Great work! Cool-down is your earned recovery. Let yourself transition.",
+    "TECHNICAL": "Low-intensity recovery promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Cool-down — breathe easy and let the victory sink in."
   },
-  "Microbursts__Z2-Z5__60-130": {
-    "DARK_HUMOR": "Short power surges in easy effort. Your legs don't see it coming. That's the point.",
-    "MOTIVATIONAL": "Microbursts teach your body to access power instantly. You're training race-awareness and tactical response.",
-    "TECHNICAL": "Brief neuromuscular spikes within aerobic base develop power without fatigue accumulation. Excellent for maintaining race-readiness.",
-    "MIXED": "Easy base work with surprise power efforts. Your body learns to be ready for anything."
+  "Double VO2": {
+    "DARK_HUMOR": "Double VO2 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "Double VO2 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "Double VO2 is peak aerobic work. You're building real capacity."
   },
-  "Mixed Efforts__Z3-Z5__85-125": {
-    "DARK_HUMOR": "Your intensity is all over the place. That's exactly what your aerobic system needed to learn.",
-    "MOTIVATIONAL": "Mixed-intensity work teaches your body to handle variety. You're training adaptability and resilience.",
-    "TECHNICAL": "Varied-zone efforts develop broad training adaptations and prevent monotony. Efficient for general fitness.",
-    "MIXED": "You're working at different intensities. Your body is learning to be powerful across the spectrum."
+  "Easy": {
+    "DARK_HUMOR": "Easy is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Easy is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Easy. This is where your body rebuilds."
   },
-  "Alternating Intensity__Z3-Z6__80-140": {
-    "DARK_HUMOR": "Easy, hard, easy, hard. Your energy systems are getting a complete workout in rapid succession.",
-    "MOTIVATIONAL": "You're training rapid intensity transitions. This teaches your body to be resilient and powerful in any situation.",
-    "TECHNICAL": "Rapid intensity alternation develops lactate buffering and energy system flexibility. Excellent for race-specific adaptations.",
-    "MIXED": "You're working through all your zones. Your entire energy system is getting trained."
+  "Easy 1": {
+    "DARK_HUMOR": "Easy 1 is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Easy 1 is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Easy 1. This is where your body rebuilds."
   },
-  "Pyramid__Z4-Z5__95-125": {
-    "DARK_HUMOR": "Climbing the pyramid, then descending it. You get to suffer going up AND going down.",
-    "MOTIVATIONAL": "Pyramid efforts teach pacing and power management. You're learning to ride smart and strong.",
-    "TECHNICAL": "Progressive-then-descending efforts develop lactate tolerance and pacing awareness. Improves race performance.",
-    "MIXED": "Climb steady, descend with control. Your body learns power management across fatigue."
+  "Easy 2": {
+    "DARK_HUMOR": "Easy 2 is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Easy 2 is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Easy 2. This is where your body rebuilds."
   },
-  "Descending Intervals__Z4-Z5__105-125": {
-    "DARK_HUMOR": "Getting harder with each effort. Your legs are learning what progressive suffering feels like.",
-    "MOTIVATIONAL": "You're riding harder as you fatigue. This teaches you mental toughness and power under duress.",
-    "TECHNICAL": "Descending (increasing) intensity develops lactate tolerance and mental resilience under fatigue. Race simulation.",
-    "MIXED": "Each repeat gets harder. You're training yourself to keep power even when tired."
+  "Easy Block": {
+    "DARK_HUMOR": "Easy Block — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Easy Block develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Easy Block is varied work. Your body handles all intensities."
   },
-  "Ladder__Z4-Z5__95-130": {
-    "DARK_HUMOR": "Ascending ladder. Each rung is harder than the last. Enjoy the bottom because the top hurts.",
-    "MOTIVATIONAL": "You're climbing toward your peak power. Each step builds on the last. This is progressive strength training.",
-    "TECHNICAL": "Progressive intensity increases develop power across multiple energy systems. Excellent for comprehensive fitness.",
-    "MIXED": "Each rung climbs higher. Stay controlled early so you have power for the top."
+  "Easy Spin": {
+    "DARK_HUMOR": "Easy Spin is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Easy Spin is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Easy Spin. This is where your body rebuilds."
   },
-  "Ramp Test__Z1-Z6__35-200": {
-    "DARK_HUMOR": "Your FTP assessment. Time to find out where your real limit is. Spoiler: it hurts more than you think.",
-    "MOTIVATIONAL": "This is your moment to discover your power. You're testing your absolute capability. Own it.",
-    "TECHNICAL": "Ramp protocol establishes FTP through progressive power increase until failure. Gold standard for FTP assessment.",
-    "MIXED": "You're finding your limit. Go until you can't. That number defines your engine."
+  "Easy Start": {
+    "DARK_HUMOR": "Warming up with Easy Start. Get your engine ready for what's coming.",
+    "MOTIVATIONAL": "Great start with Easy Start! You're preparing your body for an amazing effort.",
+    "TECHNICAL": "Progressive warm-up phase activating neuromuscular systems for the work ahead.",
+    "MIXED": "Take your time with Easy Start. Building momentum for what's next."
   },
-  "FTP Test__Z4__92-100": {
-    "DARK_HUMOR": "20 minutes at your absolute limit. You can't phone this in. Your body knows.",
-    "MOTIVATIONAL": "This is your measure. 20 minutes of best effort reveals your true power. You've got this.",
-    "TECHNICAL": "20-minute max effort establishes FTP as 95% of 20-min power. Accurate real-world threshold measurement.",
-    "MIXED": "You get 20 minutes. Make them count. Your fitness is being defined right now."
+  "FTP + Surges": {
+    "DARK_HUMOR": "FTP + Surges — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "FTP + Surges makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "FTP + Surges is hard but sustainable. Stay focused and execute."
   },
-  "Extended FTP Test__Z4__90-105": {
-    "DARK_HUMOR": "Long FTP test. More than 20 minutes of your life at threshold. You're going to remember this.",
-    "MOTIVATIONAL": "You're testing sustained power. This reveals not just your FTP, but your muscular endurance at threshold.",
-    "TECHNICAL": "Extended threshold testing (30-40min) measures sustained FTP power and muscular endurance. Race-specific assessment.",
-    "MIXED": "Settle in. You need to be strong for the whole duration. Pace smart."
+  "FTP Base": {
+    "DARK_HUMOR": "FTP Base is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "FTP Base builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. FTP Base is where fitness is built quietly."
   },
-  "Race Simulation__Z3-Z6__80-150": {
-    "DARK_HUMOR": "Race simulation. Your body is about to experience what the actual race will feel like. Fun times.",
-    "MOTIVATIONAL": "You're training for race day. This prepares your body and mind for real competition. You've got this.",
-    "TECHNICAL": "Race-pace efforts with varied intensity develop race-specific fitness. Excellent pre-race preparation.",
-    "MIXED": "This is what race day feels like. Your body is learning what to expect."
+  "FTP Block 1": {
+    "DARK_HUMOR": "FTP Block 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "FTP Block 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "FTP Block 1 is hard but sustainable. Stay focused and execute."
   },
-  "Breakaway Prep__Z5-Z6__120-150": {
-    "DARK_HUMOR": "Training to attack and drop people. Your legs are going to be weapons after this.",
-    "MOTIVATIONAL": "You're training to break away and win. This is champion-level work.",
-    "TECHNICAL": "Supra-threshold repeat work develops the power needed for race-winning breakaways. Anaerobic capacity building.",
-    "MIXED": "This is tactical power. You're training to attack when it matters."
+  "FTP Repeats": {
+    "DARK_HUMOR": "FTP Repeats — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "FTP Repeats makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "FTP Repeats is hard but sustainable. Stay focused and execute."
   },
-  "Cadence Drill__Z2__60-80": {
-    "DARK_HUMOR": "Cadence variation training. Your legs are learning different rhythms.",
-    "MOTIVATIONAL": "You're developing cadence flexibility. High cadence, low cadence, smooth transitions. You're becoming a complete cyclist.",
-    "TECHNICAL": "Cadence variation improves neuromuscular adaptability across RPM ranges. Develops pedaling versatility.",
-    "MIXED": "Work through different cadences. Your body learns to be powerful at any rhythm."
+  "FTP Test": {
+    "DARK_HUMOR": "FTP Test — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "FTP Test makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "FTP Test is hard but sustainable. Stay focused and execute."
   },
-  "Standing Effort__Z4-Z5__100-130": {
-    "DARK_HUMOR": "Out of the saddle power. You're about to remember why sitting is comfortable.",
-    "MOTIVATIONAL": "Standing work teaches explosive power and tactical acceleration. You're training weapon skills.",
-    "TECHNICAL": "Out-of-saddle work recruits different muscle groups and generates max power. Essential for climbs and attacks.",
-    "MIXED": "Go hard out of the saddle. Your whole body is engaged. Control it and use that power."
+  "Final Easy": {
+    "DARK_HUMOR": "Final Easy is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Final Easy is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Final Easy. This is where your body rebuilds."
   },
-  "Seated Effort__Z4-Z5__95-120": {
-    "DARK_HUMOR": "Seated power work. You're generating force without leaving the saddle.",
-    "MOTIVATIONAL": "Seated efforts teach sustainable power management. This is the foundation of steady racing.",
-    "TECHNICAL": "Seated work develops sustainable power at threshold without neuromuscular spike. Efficient for sustained efforts.",
-    "MIXED": "Stay smooth in the saddle. Power comes from control, not violence."
+  "Force Work": {
+    "DARK_HUMOR": "Force Work — big gear, low RPM. You're building horsepower.",
+    "MOTIVATIONAL": "Force Work builds the power foundation everything else relies on.",
+    "TECHNICAL": "Low-cadence force work recruiting Type II fibers for absolute power development.",
+    "MIXED": "Force Work is strength work. Go slow and powerful."
   },
-  "Jumps__Z6-Z7__150-210": {
-    "DARK_HUMOR": "Jump intervals. Your legs are about to experience explosive acceleration. Multiple times.",
-    "MOTIVATIONAL": "You're training the power to attack. Jump intervals build your ability to surprise and drop competitors.",
-    "TECHNICAL": "Jump efforts develop neuromuscular explosiveness and max power output. Critical for tactical acceleration.",
-    "MIXED": "Each jump is all-out. Your body is learning instant power access."
+  "Free Ride": {
+    "DARK_HUMOR": "Free Ride — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Free Ride develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Free Ride is varied work. Your body handles all intensities."
   },
-  "Base Phase Work__Z2__55-70": {
-    "DARK_HUMOR": "Base building. Boring is where fitness hides.",
-    "MOTIVATIONAL": "You're laying the foundation for everything else. Base fitness is the most important fitness.",
-    "TECHNICAL": "Base phase develops aerobic capacity and fat oxidation. Foundation for all higher intensities.",
-    "MIXED": "Steady, consistent work. Your fitness is growing quietly and powerfully."
+  "Green Unicorn": {
+    "DARK_HUMOR": "Green Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Green Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Green Unicorn is varied work. Your body handles all intensities."
   },
-  "Build Phase Work__Z3-Z4__88-105": {
-    "DARK_HUMOR": "Build phase. Your training is getting serious now. The real work starts.",
-    "MOTIVATIONAL": "You're building toward your peak. Every session now is moving you closer to your best.",
-    "TECHNICAL": "Build phase emphasizes sweet spot and threshold. Develops FTP and muscular endurance.",
-    "MIXED": "You're ramping up the intensity. Your fitness is building toward something real."
+  "HIIT W4": {
+    "DARK_HUMOR": "HIIT W4 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "HIIT W4 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "HIIT W4 is peak aerobic work. You're building real capacity."
   },
-  "Peak Phase Work__Z5-Z6__110-150": {
-    "DARK_HUMOR": "Peak phase. You're training at your absolute limit. This is the final push before tapering.",
-    "MOTIVATIONAL": "This is your peak training. You're at your best right now. Race soon.",
-    "TECHNICAL": "Peak phase emphasizes VO2max and anaerobic power. Maximum fitness expression right before racing.",
-    "MIXED": "You're at your sharpest. This is what you've trained for. Use it now."
+  "HIIT W6": {
+    "DARK_HUMOR": "HIIT W6 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "HIIT W6 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "HIIT W6 is peak aerobic work. You're building real capacity."
   },
-  "Recovery Phase__Z1-Z2__40-75": {
-    "DARK_HUMOR": "Recovery phase. Your job is to not break yourself. Easy riding, light effort, lots of sleep.",
-    "MOTIVATIONAL": "You've earned recovery. Your body is adapting and growing stronger. Rest is part of training.",
-    "TECHNICAL": "Recovery phase uses low-intensity work to promote adaptation while minimizing fatigue. Essential for long-term progression.",
-    "MIXED": "Take it easy. Your body has done incredible work. Now let it recover and grow."
+  "HIIT W8": {
+    "DARK_HUMOR": "HIIT W8 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "HIIT W8 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "HIIT W8 is peak aerobic work. You're building real capacity."
   },
-  "Deload Week__Z1-Z2__40-65": {
-    "DARK_HUMOR": "Deload week. Your body is getting permission to rest. Don't waste it. Just spin easy.",
-    "MOTIVATIONAL": "This is recovery and adaptation time. Your body grows when you rest, not when you train. Enjoy this.",
-    "TECHNICAL": "Deload weeks reduce fatigue and allow nervous system recovery. Essential for long-term performance.",
-    "MIXED": "Keep it easy. You've earned this break. Just spin and recover."
+  "Hard 1": {
+    "DARK_HUMOR": "Hard 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Hard 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Hard 1 is varied work. Your body handles all intensities."
+  },
+  "Hard 2": {
+    "DARK_HUMOR": "Hard 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Hard 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Hard 2 is varied work. Your body handles all intensities."
+  },
+  "Hard Attacks": {
+    "DARK_HUMOR": "Hard Attacks — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Hard Attacks trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Hard Attacks is complex work. Your body learns to be powerful everywhere."
+  },
+  "Hard Step 1": {
+    "DARK_HUMOR": "Hard Step 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Hard Step 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Hard Step 1 is varied work. Your body handles all intensities."
+  },
+  "Heavy Resistance": {
+    "DARK_HUMOR": "Heavy Resistance — big gear, low RPM. You're building horsepower.",
+    "MOTIVATIONAL": "Heavy Resistance builds the power foundation everything else relies on.",
+    "TECHNICAL": "Low-cadence force work recruiting Type II fibers for absolute power development.",
+    "MIXED": "Heavy Resistance is strength work. Go slow and powerful."
+  },
+  "High Cadence (85%)": {
+    "DARK_HUMOR": "High Cadence (85%) — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "High Cadence (85%) teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on High Cadence (85%) — smooth, controlled, efficient movement."
+  },
+  "High Cadence 2": {
+    "DARK_HUMOR": "High Cadence 2 — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "High Cadence 2 teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on High Cadence 2 — smooth, controlled, efficient movement."
+  },
+  "Hill Surge": {
+    "DARK_HUMOR": "Hill Surge — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Hill Surge trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Hill Surge is complex work. Your body learns to be powerful everywhere."
+  },
+  "Indigo Unicorn": {
+    "DARK_HUMOR": "Indigo Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Indigo Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Indigo Unicorn is varied work. Your body handles all intensities."
+  },
+  "LOX Work": {
+    "DARK_HUMOR": "LOX Work — your lactate system just got a nasty surprise.",
+    "MOTIVATIONAL": "LOX Work teaches your body maximum sustained power. You're getting powerful.",
+    "TECHNICAL": "Supra-threshold work maximizing lactate tolerance and Type II recruitment.",
+    "MIXED": "LOX Work is all-out effort. Suffer now, celebrate after."
+  },
+  "Ladder Step 1": {
+    "DARK_HUMOR": "Ladder Step 1 — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Ladder Step 1 teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Ladder Step 1 climbs then descends. Control your effort through both."
+  },
+  "Ladder Step 2": {
+    "DARK_HUMOR": "Ladder Step 2 — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Ladder Step 2 teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Ladder Step 2 climbs then descends. Control your effort through both."
+  },
+  "Ladder Step 3": {
+    "DARK_HUMOR": "Ladder Step 3 — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Ladder Step 3 teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Ladder Step 3 climbs then descends. Control your effort through both."
+  },
+  "Ladder Step 4": {
+    "DARK_HUMOR": "Ladder Step 4 — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Ladder Step 4 teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Ladder Step 4 climbs then descends. Control your effort through both."
+  },
+  "Ladder Step 5": {
+    "DARK_HUMOR": "Ladder Step 5 — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Ladder Step 5 teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Ladder Step 5 climbs then descends. Control your effort through both."
+  },
+  "Long SS": {
+    "DARK_HUMOR": "Long SS — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "Long SS teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "Long SS is the productive zone. You're working but sustainable."
+  },
+  "Low Cadence": {
+    "DARK_HUMOR": "Low Cadence — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Low Cadence teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Low Cadence — smooth, controlled, efficient movement."
+  },
+  "Low Cadence (80%)": {
+    "DARK_HUMOR": "Low Cadence (80%) — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Low Cadence (80%) teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Low Cadence (80%) — smooth, controlled, efficient movement."
+  },
+  "Low Cadence 2": {
+    "DARK_HUMOR": "Low Cadence 2 — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Low Cadence 2 teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Low Cadence 2 — smooth, controlled, efficient movement."
+  },
+  "Low Cadence FTP 1": {
+    "DARK_HUMOR": "Low Cadence FTP 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Low Cadence FTP 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Low Cadence FTP 1 is hard but sustainable. Stay focused and execute."
+  },
+  "Low Cadence FTP 2": {
+    "DARK_HUMOR": "Low Cadence FTP 2 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Low Cadence FTP 2 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Low Cadence FTP 2 is hard but sustainable. Stay focused and execute."
+  },
+  "Malevolent": {
+    "DARK_HUMOR": "Malevolent — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Malevolent develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Malevolent is varied work. Your body handles all intensities."
+  },
+  "Microbursts": {
+    "DARK_HUMOR": "Microbursts — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Microbursts trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Microbursts is complex work. Your body learns to be powerful everywhere."
+  },
+  "Mixed": {
+    "DARK_HUMOR": "Mixed — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Mixed develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Mixed is varied work. Your body handles all intensities."
+  },
+  "Mixed Work": {
+    "DARK_HUMOR": "Mixed Work — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Mixed Work develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Mixed Work is varied work. Your body handles all intensities."
+  },
+  "Orange Unicorn": {
+    "DARK_HUMOR": "Orange Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Orange Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Orange Unicorn is varied work. Your body handles all intensities."
+  },
+  "Over-Under": {
+    "DARK_HUMOR": "Over-Under — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Over-Under trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Over-Under is complex work. Your body learns to be powerful everywhere."
+  },
+  "P1-1min": {
+    "DARK_HUMOR": "P1-1min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P1-1min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P1-1min is varied work. Your body handles all intensities."
+  },
+  "P1-2min": {
+    "DARK_HUMOR": "P1-2min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P1-2min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P1-2min is varied work. Your body handles all intensities."
+  },
+  "P1-3min": {
+    "DARK_HUMOR": "P1-3min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P1-3min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P1-3min is varied work. Your body handles all intensities."
+  },
+  "P2-1min": {
+    "DARK_HUMOR": "P2-1min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P2-1min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P2-1min is varied work. Your body handles all intensities."
+  },
+  "P2-2min": {
+    "DARK_HUMOR": "P2-2min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P2-2min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P2-2min is varied work. Your body handles all intensities."
+  },
+  "P2-3min": {
+    "DARK_HUMOR": "P2-3min — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "P2-3min develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "P2-3min is varied work. Your body handles all intensities."
+  },
+  "Part 1": {
+    "DARK_HUMOR": "Part 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Part 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Part 1 is varied work. Your body handles all intensities."
+  },
+  "Part 2": {
+    "DARK_HUMOR": "Part 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Part 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Part 2 is varied work. Your body handles all intensities."
+  },
+  "Pedaling Drills": {
+    "DARK_HUMOR": "Pedaling Drills — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Pedaling Drills teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Pedaling Drills — smooth, controlled, efficient movement."
+  },
+  "Pyramid": {
+    "DARK_HUMOR": "Pyramid — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid climbs then descends. Control your effort through both."
+  },
+  "Pyramid 1min": {
+    "DARK_HUMOR": "Pyramid 1min — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 1min teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 1min climbs then descends. Control your effort through both."
+  },
+  "Pyramid 1min Down": {
+    "DARK_HUMOR": "Pyramid 1min Down — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 1min Down teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 1min Down climbs then descends. Control your effort through both."
+  },
+  "Pyramid 2min": {
+    "DARK_HUMOR": "Pyramid 2min — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 2min teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 2min climbs then descends. Control your effort through both."
+  },
+  "Pyramid 2min Down": {
+    "DARK_HUMOR": "Pyramid 2min Down — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 2min Down teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 2min Down climbs then descends. Control your effort through both."
+  },
+  "Pyramid 3min": {
+    "DARK_HUMOR": "Pyramid 3min — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 3min teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 3min climbs then descends. Control your effort through both."
+  },
+  "Pyramid 3min Down": {
+    "DARK_HUMOR": "Pyramid 3min Down — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 3min Down teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 3min Down climbs then descends. Control your effort through both."
+  },
+  "Pyramid 4min": {
+    "DARK_HUMOR": "Pyramid 4min — climbing up then down. Suffer both ways.",
+    "MOTIVATIONAL": "Pyramid 4min teaches pacing and power management. Championship training.",
+    "TECHNICAL": "Progressive then descending intensity develops lactate tolerance and pacing awareness.",
+    "MIXED": "Pyramid 4min climbs then descends. Control your effort through both."
+  },
+  "Race Sim": {
+    "DARK_HUMOR": "Race Sim — time to find your real limit. Spoiler: it hurts.",
+    "MOTIVATIONAL": "Race Sim reveals your true capability. Own it.",
+    "TECHNICAL": "Performance assessment establishing fitness baselines for training calibration.",
+    "MIXED": "Race Sim is all-out. Push to your limit and know your power."
+  },
+  "Ramp": {
+    "DARK_HUMOR": "Ramp — time to find your real limit. Spoiler: it hurts.",
+    "MOTIVATIONAL": "Ramp reveals your true capability. Own it.",
+    "TECHNICAL": "Performance assessment establishing fitness baselines for training calibration.",
+    "MIXED": "Ramp is all-out. Push to your limit and know your power."
+  },
+  "Recovery": {
+    "DARK_HUMOR": "Recovery is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Recovery is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Recovery. This is where your body rebuilds."
+  },
+  "Red Unicorn": {
+    "DARK_HUMOR": "Red Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Red Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Red Unicorn is varied work. Your body handles all intensities."
+  },
+  "Rest": {
+    "DARK_HUMOR": "Rest is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Rest is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Rest. This is where your body rebuilds."
+  },
+  "Rest 1": {
+    "DARK_HUMOR": "Rest 1 is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Rest 1 is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Rest 1. This is where your body rebuilds."
+  },
+  "Rest 2": {
+    "DARK_HUMOR": "Rest 2 is your permission to breathe. Don't waste it.",
+    "MOTIVATIONAL": "Rest 2 is recovery — your body's chance to adapt and grow stronger.",
+    "TECHNICAL": "Low-intensity work promoting lactate clearance and parasympathetic activation.",
+    "MIXED": "Ease into Rest 2. This is where your body rebuilds."
+  },
+  "Return": {
+    "DARK_HUMOR": "Return — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Return develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Return is varied work. Your body handles all intensities."
+  },
+  "SS 1": {
+    "DARK_HUMOR": "SS 1 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS 1 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS 1 is the productive zone. You're working but sustainable."
+  },
+  "SS 2": {
+    "DARK_HUMOR": "SS 2 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS 2 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS 2 is the productive zone. You're working but sustainable."
+  },
+  "SS 3": {
+    "DARK_HUMOR": "SS 3 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS 3 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS 3 is the productive zone. You're working but sustainable."
+  },
+  "SS Block 1": {
+    "DARK_HUMOR": "SS Block 1 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS Block 1 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS Block 1 is the productive zone. You're working but sustainable."
+  },
+  "SS Block 1 Kick": {
+    "DARK_HUMOR": "SS Block 1 Kick — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS Block 1 Kick teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS Block 1 Kick is the productive zone. You're working but sustainable."
+  },
+  "SS Block 2": {
+    "DARK_HUMOR": "SS Block 2 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS Block 2 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS Block 2 is the productive zone. You're working but sustainable."
+  },
+  "SS Test 1": {
+    "DARK_HUMOR": "SS Test 1 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS Test 1 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS Test 1 is the productive zone. You're working but sustainable."
+  },
+  "SS Test 2": {
+    "DARK_HUMOR": "SS Test 2 — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "SS Test 2 teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "SS Test 2 is the productive zone. You're working but sustainable."
+  },
+  "Seated": {
+    "DARK_HUMOR": "Seated — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Seated develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Seated is varied work. Your body handles all intensities."
+  },
+  "Seated 2": {
+    "DARK_HUMOR": "Seated 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Seated 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Seated 2 is varied work. Your body handles all intensities."
+  },
+  "Settle": {
+    "DARK_HUMOR": "Settle — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Settle develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Settle is varied work. Your body handles all intensities."
+  },
+  "Skills Work": {
+    "DARK_HUMOR": "Skills Work — remember how to pedal smooth instead of like a machine.",
+    "MOTIVATIONAL": "Skills Work teaches your body efficiency. Small improvements compound into real gains.",
+    "TECHNICAL": "Neuromuscular proprioception and pedaling economy development through isolation work.",
+    "MIXED": "Focus on Skills Work — smooth, controlled, efficient movement."
+  },
+  "Sprint": {
+    "DARK_HUMOR": "Sprint — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint is all-out. Give everything and own the result."
+  },
+  "Sprint 1": {
+    "DARK_HUMOR": "Sprint 1 — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 1 builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 1 is all-out. Give everything and own the result."
+  },
+  "Sprint 10s": {
+    "DARK_HUMOR": "Sprint 10s — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 10s builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 10s is all-out. Give everything and own the result."
+  },
+  "Sprint 2": {
+    "DARK_HUMOR": "Sprint 2 — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 2 builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 2 is all-out. Give everything and own the result."
+  },
+  "Sprint 20s": {
+    "DARK_HUMOR": "Sprint 20s — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 20s builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 20s is all-out. Give everything and own the result."
+  },
+  "Sprint 3": {
+    "DARK_HUMOR": "Sprint 3 — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 3 builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 3 is all-out. Give everything and own the result."
+  },
+  "Sprint 30s": {
+    "DARK_HUMOR": "Sprint 30s — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprint 30s builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprint 30s is all-out. Give everything and own the result."
+  },
+  "Sprint Base": {
+    "DARK_HUMOR": "Sprint Base is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Sprint Base builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Sprint Base is where fitness is built quietly."
+  },
+  "Sprints": {
+    "DARK_HUMOR": "Sprints — you're now riding like your bike was stolen. Maximum power.",
+    "MOTIVATIONAL": "Sprints builds the explosive power that wins races. You've got this.",
+    "TECHNICAL": "Maximum neuromuscular recruitment generating peak power output.",
+    "MIXED": "Sprints is all-out. Give everything and own the result."
+  },
+  "Standing": {
+    "DARK_HUMOR": "Standing — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Standing develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Standing is varied work. Your body handles all intensities."
+  },
+  "Standing 1": {
+    "DARK_HUMOR": "Standing 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Standing 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Standing 1 is varied work. Your body handles all intensities."
+  },
+  "Standing 2": {
+    "DARK_HUMOR": "Standing 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Standing 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Standing 2 is varied work. Your body handles all intensities."
+  },
+  "Standing 3": {
+    "DARK_HUMOR": "Standing 3 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Standing 3 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Standing 3 is varied work. Your body handles all intensities."
+  },
+  "Steady Endurance": {
+    "DARK_HUMOR": "Steady Endurance is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Steady Endurance builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Steady Endurance is where fitness is built quietly."
+  },
+  "Steady Z2": {
+    "DARK_HUMOR": "Steady Z2 is long and steady. Boring is fast.",
+    "MOTIVATIONAL": "Steady Z2 builds your aerobic foundation. Every minute makes you stronger.",
+    "TECHNICAL": "Sustained Z2 work maximizing fat oxidation and mitochondrial development.",
+    "MIXED": "Hold this pace steady. Steady Z2 is where fitness is built quietly."
+  },
+  "Step 2": {
+    "DARK_HUMOR": "Step 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Step 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Step 2 is varied work. Your body handles all intensities."
+  },
+  "Step 3": {
+    "DARK_HUMOR": "Step 3 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Step 3 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Step 3 is varied work. Your body handles all intensities."
+  },
+  "Step 4": {
+    "DARK_HUMOR": "Step 4 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Step 4 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Step 4 is varied work. Your body handles all intensities."
+  },
+  "Strength": {
+    "DARK_HUMOR": "Strength — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Strength makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Strength is hard but sustainable. Stay focused and execute."
+  },
+  "Surge 1": {
+    "DARK_HUMOR": "Surge 1 — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Surge 1 trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Surge 1 is complex work. Your body learns to be powerful everywhere."
+  },
+  "Surge 2": {
+    "DARK_HUMOR": "Surge 2 — your energy systems are about to get complicated. Good.",
+    "MOTIVATIONAL": "Surge 2 trains race-specific adaptability. You're getting tactical.",
+    "TECHNICAL": "Advanced stimulus pattern developing multiple energy system adaptations simultaneously.",
+    "MIXED": "Surge 2 is complex work. Your body learns to be powerful everywhere."
+  },
+  "Sweet Spot": {
+    "DARK_HUMOR": "Sweet Spot — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "Sweet Spot teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "Sweet Spot is the productive zone. You're working but sustainable."
+  },
+  "Sweet Spot Block": {
+    "DARK_HUMOR": "Sweet Spot Block — close enough to hurt, easy enough to repeat. This is productive pain.",
+    "MOTIVATIONAL": "Sweet Spot Block teaches your body to hold harder power efficiently. Real progress.",
+    "TECHNICAL": "Sweet spot intensity provides optimal training stress with manageable fatigue.",
+    "MIXED": "Sweet Spot Block is the productive zone. You're working but sustainable."
+  },
+  "TH 1": {
+    "DARK_HUMOR": "TH 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH 1 is hard but sustainable. Stay focused and execute."
+  },
+  "TH 2": {
+    "DARK_HUMOR": "TH 2 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH 2 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH 2 is hard but sustainable. Stay focused and execute."
+  },
+  "TH 3": {
+    "DARK_HUMOR": "TH 3 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH 3 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH 3 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Block 1": {
+    "DARK_HUMOR": "TH Block 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Block 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Block 1 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Block 2": {
+    "DARK_HUMOR": "TH Block 2 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Block 2 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Block 2 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Rep 1": {
+    "DARK_HUMOR": "TH Rep 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Rep 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Rep 1 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Rep 2": {
+    "DARK_HUMOR": "TH Rep 2 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Rep 2 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Rep 2 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Rep 3": {
+    "DARK_HUMOR": "TH Rep 3 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Rep 3 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Rep 3 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Test 1": {
+    "DARK_HUMOR": "TH Test 1 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Test 1 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Test 1 is hard but sustainable. Stay focused and execute."
+  },
+  "TH Test 2": {
+    "DARK_HUMOR": "TH Test 2 — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "TH Test 2 makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "TH Test 2 is hard but sustainable. Stay focused and execute."
+  },
+  "Tempo": {
+    "DARK_HUMOR": "Tempo is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Tempo 1": {
+    "DARK_HUMOR": "Tempo 1 is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo 1 builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo 1 is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Tempo 2": {
+    "DARK_HUMOR": "Tempo 2 is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo 2 builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo 2 is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Tempo 3": {
+    "DARK_HUMOR": "Tempo 3 is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo 3 builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo 3 is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Tempo Block": {
+    "DARK_HUMOR": "Tempo Block is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo Block builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo Block is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Tempo Ladder": {
+    "DARK_HUMOR": "Tempo Ladder is the warm-up for real suffering. Embrace it.",
+    "MOTIVATIONAL": "Tempo Ladder builds lactate clearing capacity. You're getting tougher.",
+    "TECHNICAL": "Sub-threshold work developing lactate tolerance without excessive fatigue.",
+    "MIXED": "Tempo Ladder is controlled hard effort. Your body learns to handle intensity."
+  },
+  "Threshold": {
+    "DARK_HUMOR": "Threshold — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold A": {
+    "DARK_HUMOR": "Threshold A — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold A makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold A is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold B": {
+    "DARK_HUMOR": "Threshold B — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold B makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold B is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold C": {
+    "DARK_HUMOR": "Threshold C — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold C makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold C is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold D": {
+    "DARK_HUMOR": "Threshold D — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold D makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold D is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold E": {
+    "DARK_HUMOR": "Threshold E — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold E makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold E is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold F": {
+    "DARK_HUMOR": "Threshold F — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold F makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold F is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold High": {
+    "DARK_HUMOR": "Threshold High — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold High makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold High is hard but sustainable. Stay focused and execute."
+  },
+  "Threshold Low": {
+    "DARK_HUMOR": "Threshold Low — your limit in polite company. This is where fitness lives.",
+    "MOTIVATIONAL": "Threshold Low makes you faster. Every rep raises your ceiling.",
+    "TECHNICAL": "FTP-level work providing maximum power development stimulus.",
+    "MIXED": "Threshold Low is hard but sustainable. Stay focused and execute."
+  },
+  "VO2 1": {
+    "DARK_HUMOR": "VO2 1 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 1 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 1 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Burst 1": {
+    "DARK_HUMOR": "VO2 Burst 1 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Burst 1 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Burst 1 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Burst 2": {
+    "DARK_HUMOR": "VO2 Burst 2 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Burst 2 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Burst 2 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Burst 3": {
+    "DARK_HUMOR": "VO2 Burst 3 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Burst 3 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Burst 3 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Burst 4": {
+    "DARK_HUMOR": "VO2 Burst 4 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Burst 4 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Burst 4 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Ladder": {
+    "DARK_HUMOR": "VO2 Ladder just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Ladder expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Ladder is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Rep 1": {
+    "DARK_HUMOR": "VO2 Rep 1 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Rep 1 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Rep 1 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Rep 2": {
+    "DARK_HUMOR": "VO2 Rep 2 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Rep 2 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Rep 2 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Rep 3": {
+    "DARK_HUMOR": "VO2 Rep 3 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Rep 3 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Rep 3 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Repeats": {
+    "DARK_HUMOR": "VO2 Repeats just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Repeats expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Repeats is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Surge": {
+    "DARK_HUMOR": "VO2 Surge just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Surge expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Surge is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Surge 2": {
+    "DARK_HUMOR": "VO2 Surge 2 just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Surge 2 expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Surge 2 is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Variant": {
+    "DARK_HUMOR": "VO2 Variant just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Variant expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Variant is peak aerobic work. You're building real capacity."
+  },
+  "VO2 Work": {
+    "DARK_HUMOR": "VO2 Work just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2 Work expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2 Work is peak aerobic work. You're building real capacity."
+  },
+  "VO2max": {
+    "DARK_HUMOR": "VO2max just punched your aerobic system. Embrace the chaos.",
+    "MOTIVATIONAL": "VO2max expands your VO2max. You're reaching for elite fitness.",
+    "TECHNICAL": "Maximum oxidative stress driving mitochondrial biogenesis and capillary growth.",
+    "MIXED": "VO2max is peak aerobic work. You're building real capacity."
+  },
+  "Violet Unicorn": {
+    "DARK_HUMOR": "Violet Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Violet Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Violet Unicorn is varied work. Your body handles all intensities."
+  },
+  "Warm-up": {
+    "DARK_HUMOR": "Warming up with Warm-up. Get your engine ready for what's coming.",
+    "MOTIVATIONAL": "Great start with Warm-up! You're preparing your body for an amazing effort.",
+    "TECHNICAL": "Progressive warm-up phase activating neuromuscular systems for the work ahead.",
+    "MIXED": "Take your time with Warm-up. Building momentum for what's next."
+  },
+  "Warm-up Extended": {
+    "DARK_HUMOR": "Warming up with Warm-up Extended. Get your engine ready for what's coming.",
+    "MOTIVATIONAL": "Great start with Warm-up Extended! You're preparing your body for an amazing effort.",
+    "TECHNICAL": "Progressive warm-up phase activating neuromuscular systems for the work ahead.",
+    "MIXED": "Take your time with Warm-up Extended. Building momentum for what's next."
+  },
+  "Work 1": {
+    "DARK_HUMOR": "Work 1 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Work 1 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Work 1 is varied work. Your body handles all intensities."
+  },
+  "Work 2": {
+    "DARK_HUMOR": "Work 2 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Work 2 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Work 2 is varied work. Your body handles all intensities."
+  },
+  "Work 3": {
+    "DARK_HUMOR": "Work 3 — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Work 3 develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Work 3 is varied work. Your body handles all intensities."
+  },
+  "Yellow Unicorn": {
+    "DARK_HUMOR": "Yellow Unicorn — varied intensity keeping your systems honest.",
+    "MOTIVATIONAL": "Yellow Unicorn develops complete adaptability. You're becoming a complete athlete.",
+    "TECHNICAL": "Mixed stimulus providing broad training adaptations across multiple systems.",
+    "MIXED": "Yellow Unicorn is varied work. Your body handles all intensities."
   }
 }
