@@ -2,6 +2,7 @@
 import { getCoachNote, resetCommentaryIndex } from "./coach";
 import { getRouteForWeek, type RouteData } from "./routes";
 import { getZoneForPower } from "./zones";
+import { MASTER_WORKOUTS, COMPLETE_DATABASE } from "./sessions-data-complete";
 
 export type BlockType = "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM";
 export type WeekType = "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY";
@@ -1188,7 +1189,7 @@ function generateWeekSessions(
 // ─── SESSION TEMPLATES DATABASE ──────────────────────────────────────
 // Multiple variations per zone for REAL workout variety
 
-interface WorkoutTemplate {
+export interface WorkoutTemplate {
   id: string;
   title: string;
   description: string;
@@ -2139,24 +2140,41 @@ function selectWorkoutTemplate(
   previousTemplateId?: string,
   specialization?: string
 ): WorkoutTemplate {
-  // Map zone to template category
-  let templateZone = zone;
+  // Use MASTER_WORKOUTS pool (162 research-backed workouts)
+  let candidates = MASTER_WORKOUTS;
   
-  // If a sport specialization is specified, use it
-  if (specialization && SESSION_TEMPLATES[specialization]) {
-    templateZone = specialization;
+  // Filter out previous to avoid repetition
+  if (previousTemplateId) {
+    candidates = candidates.filter(w => w.id !== previousTemplateId);
   }
   
-  const templates = SESSION_TEMPLATES[templateZone] || SESSION_TEMPLATES.BASE;
+  // Filter by zone if possible
+  if (zone) {
+    const zoneMatches = candidates.filter(w => w.zone === zone);
+    if (zoneMatches.length > 0) {
+      candidates = zoneMatches;
+    }
+  }
   
-  // Filter out previous template to avoid repetition
-  const availableTemplates = previousTemplateId 
-    ? templates.filter(t => t.id !== previousTemplateId)
-    : templates;
-    
-  // Select random template
-  const randomIndex = Math.floor(Math.random() * availableTemplates.length);
-  return availableTemplates[randomIndex] || templates[0];
+  // Filter by specialization if provided
+  if (specialization) {
+    const specMatches = candidates.filter(w => 
+      w.id.includes(specialization.toLowerCase()) || 
+      w.zone.includes(specialization)
+    );
+    if (specMatches.length > 0) {
+      candidates = specMatches;
+    }
+  }
+  
+  // Fallback to full pool if no candidates
+  if (candidates.length === 0) {
+    candidates = MASTER_WORKOUTS;
+  }
+  
+  // Select random workout
+  const randomIndex = Math.floor(Math.random() * candidates.length);
+  return candidates[randomIndex] || MASTER_WORKOUTS[0];
 }
 
 
