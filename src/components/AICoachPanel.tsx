@@ -6,6 +6,7 @@ import {
   buildSaturdayBriefingPrompt,
   type CoachPersonality,
 } from "@/lib/ai-coach";
+import { getAllCoachingNotes } from "@/lib/coaching-notes-loader";
 
 interface Props {
   session: SessionDef;
@@ -28,16 +29,26 @@ export function AICoachPanel({ session, blockType, weekType, ftp, personality = 
     setLoading((prev) => ({ ...prev, [intervalIdx]: true }));
 
     try {
-      const prompt = buildIntervalPrompt(interval, session, blockType, weekType, ftp, personality);
-      const res = await fetch("/api/ai/coach", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, maxTokens: 150 }),
-      });
-      const data = await res.json();
-      setNotes((prev) => ({ ...prev, [intervalIdx]: data.text }));
-    } catch {
-      setNotes((prev) => ({ ...prev, [intervalIdx]: "Coach is unavailable. Using backup notes." }));
+      // FIRST: Try to get static coaching notes from the loader
+      const coachingNotes = getAllCoachingNotes(interval.name, interval.zone, interval.powerLow, interval.powerHigh);
+      const staticNote = coachingNotes[personality];
+      
+      if (staticNote) {
+        setNotes((prev) => ({ ...prev, [intervalIdx]: staticNote }));
+      } else {
+        // FALLBACK: Try API if static notes aren't available
+        const prompt = buildIntervalPrompt(interval, session, blockType, weekType, ftp, personality);
+        const res = await fetch("/api/ai/coach", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt, maxTokens: 150 }),
+        });
+        const data = await res.json();
+        setNotes((prev) => ({ ...prev, [intervalIdx]: data.text }));
+      }
+    } catch (error) {
+      // Final fallback: use the coachNote from the interval if it exists
+      setNotes((prev) => ({ ...prev, [intervalIdx]: interval.coachNote || "Stay focused and execute the plan." }));
     }
 
     setLoading((prev) => ({ ...prev, [intervalIdx]: false }));

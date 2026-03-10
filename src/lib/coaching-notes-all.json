@@ -1,0 +1,74 @@
+{
+  "Warmup__Z1-Z2__45-75": {
+    "DARK_HUMOR": "Your legs are waking up — give them something to wake up to. These next few minutes set the tone for everything that follows.",
+    "MOTIVATIONAL": "Great start! You're setting the foundation for an amazing workout. Every pedal stroke is preparing your body for the challenge ahead.",
+    "TECHNICAL": "Gradually elevating core temperature and muscle activation. This progressive warm-up increases blood flow and prepares neuromuscular systems for harder efforts.",
+    "MIXED": "Take your time here. You're building momentum, both physically and mentally. A solid warm-up is the difference between a good workout and a great one."
+  },
+  "Recovery__Z1__40-55": {
+    "DARK_HUMOR": "This is where you pretend to do something. Easy spinning, light breathing, zero suffering. Your legs needed this more than you realize.",
+    "MOTIVATIONAL": "You're giving your body exactly what it needs to bounce back stronger. This recovery work is part of your growth — respect the process.",
+    "TECHNICAL": "Low-intensity work promotes parasympathetic activation and lactate clearance without systemic fatigue. Critical for adaptation and long-term progression.",
+    "MIXED": "Dial it way back. This isn't about effort — it's about listening to your body. Easy breathing, easy legs, easy mind."
+  },
+  "Endurance__Z2__55-75": {
+    "DARK_HUMOR": "Welcome to the sweet spot of not dying. You can hold a conversation here, which is both a blessing and a curse because you have 90 minutes to think about life.",
+    "MOTIVATIONAL": "This is where champions are built. Long, steady efforts like this teach your body to burn fat efficiently and build an aerobic foundation that lasts.",
+    "TECHNICAL": "Zone 2 aerobic work maximizes fat oxidation and mitochondrial density while staying below lactate threshold. This is the most efficient training stimulus for endurance adaptations.",
+    "MIXED": "Stay steady. Your breathing should be controlled but present. This is the bread and butter of cycling fitness — consistent, sustainable, powerful."
+  },
+  "Sweet Spot__Z3__88-94": {
+    "DARK_HUMOR": "You're close enough to FTP to feel it, far enough away to do this repeatedly. This is where your fitness lives — the zone where suffering becomes productive.",
+    "MOTIVATIONAL": "These efforts are building your engine. Every minute here teaches your body to hold harder power with less effort. This is real progress.",
+    "TECHNICAL": "Sweet spot intensity hits the FTP sweet spot for training adaptations — high training stress with manageable fatigue, maximizing CTL gains per unit of fatigue.",
+    "MIXED": "This is the productive pain zone. You're working but not maxing out. Stay focused, trust the effort, let your fitness grow."
+  },
+  "Tempo__Z3__76-90": {
+    "DARK_HUMOR": "This is the warm-up for threshold work — hard enough to get your attention, easy enough that you won't quit. The gateway drug to suffering.",
+    "MOTIVATIONAL": "You're building lactate clearing capacity here. These efforts teach your body to manage harder intensities gracefully. You're getting tougher mentally and physically.",
+    "TECHNICAL": "Sub-threshold tempo work stimulates lactate threshold adaptation and buffering capacity without the systemic fatigue of threshold efforts. Perfect for building work capacity.",
+    "MIXED": "Find a rhythm you can hold. Your legs will start to feel it around the 5-minute mark. That's when you know you're in the right zone."
+  },
+  "Threshold__Z4__95-105": {
+    "DARK_HUMOR": "Welcome to FTP. This is your redline in polite company. It hurts, you can't do it forever, and that's exactly the point.",
+    "MOTIVATIONAL": "This is where you get faster. Threshold work raises your ceiling — every interval here makes you a stronger, more capable cyclist. You're building your engine.",
+    "TECHNICAL": "FTP-intensity efforts maximally stimulate neuromuscular recruitment and VO2max without requiring total anaerobic capacity. The most time-efficient stimulus for power increase.",
+    "MIXED": "Hold this power steady. Your legs will argue with you somewhere in the middle — listen but don't give in. This is where the magic happens."
+  },
+  "VO2 Max__Z5__106-120": {
+    "DARK_HUMOR": "Your aerobic system just got a nasty surprise. This is where lungs scream and legs burn simultaneously. Embrace the chaos.",
+    "MOTIVATIONAL": "You're reaching for your absolute aerobic potential here. Every breath is expanding your VO2max. This is the work of becoming an elite cyclist.",
+    "TECHNICAL": "VO2max intervals create maximal oxidative stress, driving mitochondrial biogenesis and capillary density. The most potent stimulus for aerobic power development.",
+    "MIXED": "Keep your cadence high — don't grind it. Yes, it's hard. Yes, that's the entire point. You're building something real here."
+  },
+  "Anaerobic__Z6__125-150": {
+    "DARK_HUMOR": "Your lactate levels just went nuclear. This is where your legs stop listening to your brain and start asking existential questions about life choices.",
+    "MOTIVATIONAL": "This is peak power work. You're tapping into your maximum effort capacity. These hard repeats teach your body and mind what you're capable of.",
+    "TECHNICAL": "Supra-threshold anaerobic work maximizes lactate production and tolerance while recruiting Type II fibers. Essential for breakaway and sprint power.",
+    "MIXED": "Go hard here — this is your time to attack. The recovery between efforts is your friend. Suffer now, celebrate later."
+  },
+  "Sprint__Z7__180-210": {
+    "DARK_HUMOR": "You're now riding like someone stole your bike. Maximum watts, maximum chaos, zero mercy. This is where cyclists find out what they're really made of.",
+    "MOTIVATIONAL": "All-out maximum effort. You're discovering your absolute power ceiling. These sprints build explosive strength that makes you dangerous in any race situation.",
+    "TECHNICAL": "Maximal power efforts recruit complete neuromuscular system and generate peak force output. Critical for race-winning moves and tactical acceleration.",
+    "MIXED": "Give it everything you have. This is your moment. The recovery after is earned — you've already succeeded."
+  },
+  "Cooldown__Z1__30-50": {
+    "DARK_HUMOR": "You survived. Now your job is to convince your legs that the suffering is over. Easy spinning, deep breathing, gratitude for not being dead.",
+    "MOTIVATIONAL": "Great work! You earned this easy spin. Let your body transition gracefully from hard effort back to recovery. You should feel proud.",
+    "TECHNICAL": "Low-intensity spinning promotes active recovery, lactate clearance, and parasympathetic nervous system activation. Improves overall recovery trajectory.",
+    "MIXED": "Breathe easy now. Spin the legs out, let your heart rate come down, let the victory sink in. You did good work today."
+  },
+  "Technique__Z2__60-80": {
+    "DARK_HUMOR": "Time to remember how to pedal smoothly instead of like a washing machine. Your form coach is about to earn their paycheck.",
+    "MOTIVATIONAL": "Economy of motion = speed for free. These skill drills are teaching your body to work smarter. Small improvements in technique compound into real gains.",
+    "TECHNICAL": "Pedaling efficiency work activates neuromuscular proprioception and optimizes force application across the pedal stroke. Increases wattage without additional fatigue.",
+    "MIXED": "Focus on fluidity here. Smooth pedal strokes, consistent cadence, no dead spots. This is meditation on a bike."
+  },
+  "Strength__Z2__70-90": {
+    "DARK_HUMOR": "Big gear, low cadence. Your muscles don't like this, which is exactly why your muscles are about to get a lot stronger. You're building horsepower.",
+    "MOTIVATIONAL": "Strength work builds the power foundation everything else relies on. Every heavy pedal stroke here makes you more capable at any intensity.",
+    "TECHNICAL": "Low-cadence force work maximizes mechanical advantage and Type II fiber recruitment without aerobic stress. Critical for building absolute power capacity.",
+    "MIXED": "Stay at 50-60 RPM, stay smooth. Your legs will want to spin faster — resist. The effort is real, but the form stays clean."
+  }
+}
