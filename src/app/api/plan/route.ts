@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { requireAuth } from "@/lib/api-auth";
 import { getCurrentRider } from "@/lib/get-rider";
 import { generatePlan, type DayOfWeek } from "@/lib/periodization";
+import { getMasterWorkoutsSync } from "@/lib/sessions-data-all";
 
 // GET: Fetch or generate plan for the current rider
 export async function GET() {
@@ -146,6 +147,18 @@ export async function POST(request: NextRequest) {
     
     console.log(`[Plan Update] CONFIRMED - Deleted old plan, regenerating with new parameters`);
 
+    // Verify workouts are loaded
+    const workouts = getMasterWorkoutsSync();
+    console.log('[Plan Generation] Workouts available:', workouts.length);
+    
+    if (!workouts || workouts.length === 0) {
+      console.error('[Plan Generation] CRITICAL: No workouts available!');
+      return NextResponse.json({ 
+        error: "No workouts available in database",
+        details: "The workout database failed to load. Please try again." 
+      }, { status: 500 });
+    }
+
     // Generate plan with custom training schedule and target duration
     console.log('[Plan Generation] Starting with params:', {
       numBlocks,
@@ -153,6 +166,7 @@ export async function POST(request: NextRequest) {
       outdoorDay,
       targetDurationMinutes,
       targetSundayDurationMinutes,
+      workoutsAvailable: workouts.length,
     });
 
     let planData;
