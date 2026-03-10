@@ -14,6 +14,7 @@
  */
 
 import type { WorkoutTemplate, IntervalDef } from './periodization';
+import { RESEARCH_WORKOUTS } from './research-workouts';
 
 // ─── HELPER FACTORIES ──────────────────────────────────────────────────────
 
@@ -130,6 +131,11 @@ export const MASTER_WORKOUTS: WorkoutTemplate[] = [
   { id: "recovery-easy-60", title: "Easy 60 min", description: "60 min Z1", purpose: "Recovery", zone: "Z1", duration: 70, intervals: () => [work("Easy", 3600, 50, 60, "Recovery", "Z1")], category: "RECOVERY", protocol: "Long Easy", researcher: "Seiler", structure: "steady", difficultyScore: 1 },
   { id: "base-recovery", title: "Base Recovery", description: "Easy spin", purpose: "Active recovery", zone: "Z1", duration: 45, intervals: () => [{ name: "EasySpin", durationSecs: 2700, powerLow: 45, powerHigh: 55, zone: "Z1", rpe: 1, purpose: "Easy recovery", coachNote: "Very easy" }], category: "RECOVERY", protocol: "Easy Spin", researcher: "Seiler", structure: "steady", difficultyScore: 1 },
   { id: "recovery-very-easy", title: "Very Easy", description: "Minimal intensity", purpose: "Flush", zone: "Z1", duration: 40, intervals: () => [work("VeryEasy", 2400, 40, 50, "Minimal", "Z1")], category: "RECOVERY", protocol: "Very Easy Recovery", researcher: "Seiler", structure: "steady", difficultyScore: 1 },
+
+  // ─── RESEARCH WORKOUTS (105) ──────────────────────────────────
+  // Carlos's research-backed cycling workouts database
+  // Extracted from email (March 9, 2026)
+  ...RESEARCH_WORKOUTS,
 ];
 
 export const COMPLETE_DATABASE = {
