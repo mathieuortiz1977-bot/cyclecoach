@@ -10,7 +10,7 @@ export type DayOfWeek = "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT" | "SUN";
 
 export interface IntervalDef {
   name: string;
-  durationSecs: number;
+  durationSecs: number;  // Always converted from durationSecs or durationPercent
   powerLow: number;  // % FTP
   powerHigh: number; // % FTP
   cadenceLow?: number;
@@ -19,6 +19,43 @@ export interface IntervalDef {
   zone: string;
   purpose: string;
   coachNote: string;
+}
+
+// Internal type for raw intervals that may have durationPercent
+export interface RawIntervalDef extends Omit<IntervalDef, 'durationSecs'> {
+  durationSecs?: number;
+  durationPercent?: number;
+}
+
+/**
+ * Normalize intervals: convert durationPercent to durationSecs
+ * @param intervals Raw intervals (may have durationPercent)
+ * @param totalDurationMinutes Total workout duration (for percent calculation)
+ * @returns Normalized intervals with durationSecs always defined
+ */
+function normalizeIntervals(intervals: (IntervalDef | RawIntervalDef)[], totalDurationMinutes: number): IntervalDef[] {
+  const totalSecs = totalDurationMinutes * 60;
+  
+  return intervals.map(interval => {
+    // If already has durationSecs, use it
+    if ('durationSecs' in interval && (interval as any).durationSecs !== undefined) {
+      return interval as IntervalDef;
+    }
+    
+    // If has durationPercent, convert to durationSecs
+    if ('durationPercent' in interval && (interval as any).durationPercent !== undefined) {
+      return {
+        ...interval,
+        durationSecs: Math.round(((interval as any).durationPercent / 100) * totalSecs)
+      } as IntervalDef;
+    }
+    
+    // Fallback (shouldn't happen)
+    return {
+      ...interval,
+      durationSecs: 600  // Default to 10 minutes
+    } as IntervalDef;
+  });
 }
 
 export type WorkoutStructure = "steady" | "pyramid" | "ladder" | "micro" | "descend" | "twitchy" | "mixed";
@@ -1213,7 +1250,7 @@ export interface WorkoutTemplate {
   purpose: string;
   zone: string;
   duration: number;
-  intervals: () => IntervalDef[];
+  intervals: () => any[];  // Allow intervals with either durationSecs or durationPercent
   
   // NEW: Classification fields for smart selection
   category: string;              // "BASE", "THRESHOLD", "VO2MAX", "ANAEROBIC", "SPRINT", "RECOVERY", etc.
@@ -1449,7 +1486,9 @@ function generateIndoorSession(
   const template = selectWorkoutTemplate(selectedZone, weekType, previousTemplate?.id, undefined, usedThisWeekIds);
   
   // Build intervals from template
-  const intervals = template.intervals();
+  const targetDuration = targetDurationMinutes || template.duration;
+  const rawIntervals = template.intervals();
+  const intervals = normalizeIntervals(rawIntervals, targetDuration);
   
   return {
     dayOfWeek: day,
@@ -1457,7 +1496,7 @@ function generateIndoorSession(
     title: template.title,
     description: template.description,
     purpose: template.purpose,
-    duration: targetDurationMinutes || template.duration, // Respect user's requested duration
+    duration: targetDuration, // Respect user's requested duration
     intervals,
     templateId: template.id,
   };

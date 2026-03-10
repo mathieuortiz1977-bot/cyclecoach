@@ -23,8 +23,8 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Aerobic base building, fat oxidation' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Aerobic base building, fat oxidation' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 50, coachNote: 'Easy spin, build gradually', purpose: 'Aerobic base building, fat oxidation' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 50, coachNote: 'Easy recovery spinning', purpose: 'Aerobic base building, fat oxidation' }
     ],
   },
 
@@ -39,15 +39,15 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Aerobic base with tempo touches' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 900, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 300, coachNote: '82% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 900, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 300, coachNote: '85% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 900, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 300, coachNote: '82% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 600, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Aerobic base with tempo touches' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 11, coachNote: 'Easy spin, build gradually', purpose: 'Aerobic base with tempo touches' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 17, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationPercent: 6, coachNote: '82% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 17, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 6, coachNote: '85% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 17, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationPercent: 6, coachNote: '82% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 11, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 11, coachNote: 'Easy recovery spinning', purpose: 'Aerobic base with tempo touches' }
     ],
   },
 
@@ -62,9 +62,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Muscular endurance, sustained power' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Muscular endurance, sustained power' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Muscular endurance, sustained power' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 40, coachNote: 'Easy spin, build gradually', purpose: 'Muscular endurance, sustained power' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Muscular endurance, sustained power' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 40, coachNote: 'Easy recovery spinning', purpose: 'Muscular endurance, sustained power' }
     ],
   },
 
@@ -80,10 +80,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 80,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Tempo endurance with anaerobic spikes' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 900, coachNote: '85% FTP', purpose: 'Tempo endurance with anaerobic spikes' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Tempo endurance with anaerobic spikes' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Tempo endurance with anaerobic spikes' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 25, coachNote: 'Easy spin, build gradually', purpose: 'Tempo endurance with anaerobic spikes' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 38, coachNote: '85% FTP', purpose: 'Tempo endurance with anaerobic spikes' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 12, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Tempo endurance with anaerobic spikes' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 25, coachNote: 'Easy recovery spinning', purpose: 'Tempo endurance with anaerobic spikes' }
     ],
   },
 
@@ -98,13 +98,13 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Pacing discipline, progressive overload' },
-      { name: '78% effort', zone: 'Z3', powerLow: 73, powerHigh: 83, durationSecs: 600, coachNote: '78% FTP', purpose: 'Pacing discipline, progressive overload' },
-      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 600, coachNote: '82% FTP', purpose: 'Pacing discipline, progressive overload' },
-      { name: '86% effort', zone: 'Z3', powerLow: 81, powerHigh: 91, durationSecs: 600, coachNote: '86% FTP', purpose: 'Pacing discipline, progressive overload' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 600, coachNote: '90% FTP', purpose: 'Pacing discipline, progressive overload' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Pacing discipline, progressive overload' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Pacing discipline, progressive overload' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 14, coachNote: 'Easy spin, build gradually', purpose: 'Pacing discipline, progressive overload' },
+      { name: '78% effort', zone: 'Z3', powerLow: 73, powerHigh: 83, durationPercent: 14, coachNote: '78% FTP', purpose: 'Pacing discipline, progressive overload' },
+      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationPercent: 14, coachNote: '82% FTP', purpose: 'Pacing discipline, progressive overload' },
+      { name: '86% effort', zone: 'Z3', powerLow: 81, powerHigh: 91, durationPercent: 14, coachNote: '86% FTP', purpose: 'Pacing discipline, progressive overload' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 14, coachNote: '90% FTP', purpose: 'Pacing discipline, progressive overload' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Pacing discipline, progressive overload' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy recovery spinning', purpose: 'Pacing discipline, progressive overload' }
     ],
   },
 
@@ -119,9 +119,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximize threshold adaptation with manageable fatigue' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximize threshold adaptation with manageable fatigue' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximize threshold adaptation with manageable fatigue' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 40, coachNote: 'Easy spin, build gradually', purpose: 'Maximize threshold adaptation with manageable fatigue' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximize threshold adaptation with manageable fatigue' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 40, coachNote: 'Easy recovery spinning', purpose: 'Maximize threshold adaptation with manageable fatigue' }
     ],
   },
 
@@ -137,12 +137,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 80,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Progressive overload within sweet spot' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 720, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 720, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 720, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 540, coachNote: '95% FTP', purpose: 'Progressive overload within sweet spot' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Progressive overload within sweet spot' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 15, coachNote: 'Easy spin, build gradually', purpose: 'Progressive overload within sweet spot' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 18, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 18, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 18, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Progressive overload within sweet spot' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 14, coachNote: '95% FTP', purpose: 'Progressive overload within sweet spot' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 15, coachNote: 'Easy recovery spinning', purpose: 'Progressive overload within sweet spot' }
     ],
   },
 
@@ -157,11 +157,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Introduce lactate clearing above/below threshold' },
-      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationSecs: 120, coachNote: '92% FTP', purpose: 'Introduce lactate clearing above/below threshold' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 120, coachNote: '85% FTP', purpose: 'Introduce lactate clearing above/below threshold' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 360, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Introduce lactate clearing above/below threshold' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Introduce lactate clearing above/below threshold' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 33, coachNote: 'Easy spin, build gradually', purpose: 'Introduce lactate clearing above/below threshold' },
+      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationPercent: 7, coachNote: '92% FTP', purpose: 'Introduce lactate clearing above/below threshold' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 7, coachNote: '85% FTP', purpose: 'Introduce lactate clearing above/below threshold' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Introduce lactate clearing above/below threshold' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy recovery spinning', purpose: 'Introduce lactate clearing above/below threshold' }
     ],
   },
 
@@ -176,9 +176,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Gold-standard FTP development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Gold-standard FTP development' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Gold-standard FTP development' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 33, coachNote: 'Easy spin, build gradually', purpose: 'Gold-standard FTP development' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Gold-standard FTP development' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy recovery spinning', purpose: 'Gold-standard FTP development' }
     ],
   },
 
@@ -194,11 +194,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Lactate tolerance and clearance at threshold' },
-      { name: '105% effort', zone: 'Z5', powerLow: 100, powerHigh: 110, durationSecs: 120, coachNote: '105% FTP', purpose: 'Lactate tolerance and clearance at threshold' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 120, coachNote: '90% FTP', purpose: 'Lactate tolerance and clearance at threshold' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 480, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Lactate tolerance and clearance at threshold' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Lactate tolerance and clearance at threshold' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 31, coachNote: 'Easy spin, build gradually', purpose: 'Lactate tolerance and clearance at threshold' },
+      { name: '105% effort', zone: 'Z5', powerLow: 100, powerHigh: 110, durationPercent: 6, coachNote: '105% FTP', purpose: 'Lactate tolerance and clearance at threshold' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 6, coachNote: '90% FTP', purpose: 'Lactate tolerance and clearance at threshold' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 25, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Lactate tolerance and clearance at threshold' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 31, coachNote: 'Easy recovery spinning', purpose: 'Lactate tolerance and clearance at threshold' }
     ],
   },
 
@@ -215,9 +215,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 80,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Extended VO2max accumulation' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extended VO2max accumulation' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Extended VO2max accumulation' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 50, coachNote: 'Easy spin, build gradually', purpose: 'Extended VO2max accumulation' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 17, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extended VO2max accumulation' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy recovery spinning', purpose: 'Extended VO2max accumulation' }
     ],
   },
 
@@ -232,10 +232,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 60,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Build anaerobic work capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 60, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build anaerobic work capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 480, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build anaerobic work capacity' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Build anaerobic work capacity' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 34, coachNote: 'Easy spin, build gradually', purpose: 'Build anaerobic work capacity' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 3, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build anaerobic work capacity' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 28, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build anaerobic work capacity' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 34, coachNote: 'Easy recovery spinning', purpose: 'Build anaerobic work capacity' }
     ],
   },
 
@@ -250,10 +250,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 65,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Anaerobic capacity, race breakaway power' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Anaerobic capacity, race breakaway power' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Anaerobic capacity, race breakaway power' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Anaerobic capacity, race breakaway power' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 26, coachNote: 'Easy spin, build gradually', purpose: 'Anaerobic capacity, race breakaway power' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 10, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Anaerobic capacity, race breakaway power' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 38, coachNote: '65% FTP', purpose: 'Anaerobic capacity, race breakaway power' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 26, coachNote: 'Easy recovery spinning', purpose: 'Anaerobic capacity, race breakaway power' }
     ],
   },
 
@@ -268,9 +268,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Extend anaerobic tolerance, bridge to VO2max' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extend anaerobic tolerance, bridge to VO2max' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Extend anaerobic tolerance, bridge to VO2max' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 40, coachNote: 'Easy spin, build gradually', purpose: 'Extend anaerobic tolerance, bridge to VO2max' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extend anaerobic tolerance, bridge to VO2max' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 40, coachNote: 'Easy recovery spinning', purpose: 'Extend anaerobic tolerance, bridge to VO2max' }
     ],
   },
 
@@ -285,8 +285,8 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 55,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Peak neuromuscular power, sprint form' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Peak neuromuscular power, sprint form' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 60, coachNote: 'Easy spin, build gradually', purpose: 'Peak neuromuscular power, sprint form' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 40, coachNote: 'Easy recovery spinning', purpose: 'Peak neuromuscular power, sprint form' }
     ],
   },
 
@@ -301,9 +301,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 55,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Sprint power from low speed' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sprint power from low speed' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sprint power from low speed' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 50, coachNote: 'Easy spin, build gradually', purpose: 'Sprint power from low speed' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 17, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sprint power from low speed' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy recovery spinning', purpose: 'Sprint power from low speed' }
     ],
   },
 
@@ -318,10 +318,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sprint power layered on fatigued legs' },
-      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationSecs: 2400, coachNote: '72% FTP', purpose: 'Sprint power layered on fatigued legs' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Sprint power layered on fatigued legs' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sprint power layered on fatigued legs' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 13, coachNote: 'Easy spin, build gradually', purpose: 'Sprint power layered on fatigued legs' },
+      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationPercent: 53, coachNote: '72% FTP', purpose: 'Sprint power layered on fatigued legs' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 20, coachNote: '65% FTP', purpose: 'Sprint power layered on fatigued legs' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 13, coachNote: 'Easy recovery spinning', purpose: 'Sprint power layered on fatigued legs' }
     ],
   },
 
@@ -337,12 +337,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sustain above-threshold after a hard effort' },
-      { name: '140% effort', zone: 'Z6', powerLow: 135, powerHigh: 145, durationSecs: 120, coachNote: '140% FTP', purpose: 'Sustain above-threshold after a hard effort' },
-      { name: '105% effort', zone: 'Z5', powerLow: 100, powerHigh: 110, durationSecs: 300, coachNote: '105% FTP', purpose: 'Sustain above-threshold after a hard effort' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 900, coachNote: '95% FTP', purpose: 'Sustain above-threshold after a hard effort' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustain above-threshold after a hard effort' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sustain above-threshold after a hard effort' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 19, coachNote: 'Easy spin, build gradually', purpose: 'Sustain above-threshold after a hard effort' },
+      { name: '140% effort', zone: 'Z6', powerLow: 135, powerHigh: 145, durationPercent: 4, coachNote: '140% FTP', purpose: 'Sustain above-threshold after a hard effort' },
+      { name: '105% effort', zone: 'Z5', powerLow: 100, powerHigh: 110, durationPercent: 10, coachNote: '105% FTP', purpose: 'Sustain above-threshold after a hard effort' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 29, coachNote: '95% FTP', purpose: 'Sustain above-threshold after a hard effort' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 19, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustain above-threshold after a hard effort' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 19, coachNote: 'Easy recovery spinning', purpose: 'Sustain above-threshold after a hard effort' }
     ],
   },
 
@@ -357,10 +357,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Pacing for a 40 km TT' },
-      { name: 'Rep 1', zone: 'Z4', powerLow: 92, powerHigh: 95, durationSecs: 0, coachNote: '95% FTP effort', purpose: 'Pacing for a 40 km TT' },
-      { name: 'Rep 2', zone: 'Z4', powerLow: 92, powerHigh: 95, durationSecs: 0, coachNote: '95% FTP effort', purpose: 'Pacing for a 40 km TT' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Pacing for a 40 km TT' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 50, coachNote: 'Easy spin, build gradually', purpose: 'Pacing for a 40 km TT' },
+      { name: 'Rep 1', zone: 'Z4', powerLow: 92, powerHigh: 95, durationPercent: 0, coachNote: '95% FTP effort', purpose: 'Pacing for a 40 km TT' },
+      { name: 'Rep 2', zone: 'Z4', powerLow: 92, powerHigh: 95, durationPercent: 0, coachNote: '95% FTP effort', purpose: 'Pacing for a 40 km TT' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 50, coachNote: 'Easy recovery spinning', purpose: 'Pacing for a 40 km TT' }
     ],
   },
 
@@ -375,12 +375,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Multi-system workout hitting all zones' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 60, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 120, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Multi-system workout hitting all zones' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 28, coachNote: 'Easy spin, build gradually', purpose: 'Multi-system workout hitting all zones' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 28, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 8, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 3, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 6, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-system workout hitting all zones' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 28, coachNote: 'Easy recovery spinning', purpose: 'Multi-system workout hitting all zones' }
     ],
   },
 
@@ -395,12 +395,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Variable terrain, sustained effort with power spikes' },
-      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationSecs: 480, coachNote: '75% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
-      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationSecs: 180, coachNote: '110% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 300, coachNote: '68% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 240, coachNote: '95% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Variable terrain, sustained effort with power spikes' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 25, coachNote: 'Easy spin, build gradually', purpose: 'Variable terrain, sustained effort with power spikes' },
+      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationPercent: 20, coachNote: '75% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
+      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationPercent: 8, coachNote: '110% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 12, coachNote: '68% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 10, coachNote: '95% FTP', purpose: 'Variable terrain, sustained effort with power spikes' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 25, coachNote: 'Easy recovery spinning', purpose: 'Variable terrain, sustained effort with power spikes' }
     ],
   },
 
@@ -415,7 +415,7 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 45,
     difficultyScore: 1,
     intervals: () => [
-      { name: 'Main', zone: 'Z2', powerLow: 65, powerHigh: 75, durationSecs: 1500, coachNote: 'Blood flow, recovery, loosen legs', purpose: 'Blood flow, recovery, loosen legs' }
+      { name: 'Main', zone: 'Z2', powerLow: 65, powerHigh: 75, durationPercent: 100, coachNote: 'Blood flow, recovery, loosen legs', purpose: 'Blood flow, recovery, loosen legs' }
     ],
   },
 
@@ -430,10 +430,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 50,
     difficultyScore: 1,
     intervals: () => [
-      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationSecs: 900, coachNote: '50% FTP', purpose: 'Easy ride with leg-opening accelerations' },
-      { name: 'Rep 1', zone: 'Z6', powerLow: 55, powerHigh: 120, durationSecs: 300, coachNote: '120% FTP effort', purpose: 'Easy ride with leg-opening accelerations' },
-      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationSecs: 600, coachNote: '55% FTP', purpose: 'Easy ride with leg-opening accelerations' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Easy ride with leg-opening accelerations' }
+      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationPercent: 43, coachNote: '50% FTP', purpose: 'Easy ride with leg-opening accelerations' },
+      { name: 'Rep 1', zone: 'Z6', powerLow: 55, powerHigh: 120, durationPercent: 14, coachNote: '120% FTP effort', purpose: 'Easy ride with leg-opening accelerations' },
+      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationPercent: 29, coachNote: '55% FTP', purpose: 'Easy ride with leg-opening accelerations' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy recovery spinning', purpose: 'Easy ride with leg-opening accelerations' }
     ],
   },
 
@@ -448,11 +448,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 35,
     difficultyScore: 1,
     intervals: () => [
-      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationSecs: 600, coachNote: '55% FTP', purpose: 'Prime legs and nervous system before competition' },
-      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationSecs: 300, coachNote: '70% FTP', purpose: 'Prime legs and nervous system before competition' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 60, coachNote: '90% FTP', purpose: 'Prime legs and nervous system before competition' },
-      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationSecs: 60, coachNote: '100% FTP', purpose: 'Prime legs and nervous system before competition' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Prime legs and nervous system before competition' }
+      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationPercent: 45, coachNote: '55% FTP', purpose: 'Prime legs and nervous system before competition' },
+      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationPercent: 23, coachNote: '70% FTP', purpose: 'Prime legs and nervous system before competition' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 5, coachNote: '90% FTP', purpose: 'Prime legs and nervous system before competition' },
+      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationPercent: 5, coachNote: '100% FTP', purpose: 'Prime legs and nervous system before competition' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 23, coachNote: 'Easy recovery spinning', purpose: 'Prime legs and nervous system before competition' }
     ],
   },
 
@@ -467,15 +467,15 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 1200, coachNote: '68% FTP', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Rep 1', zone: 'Z1', powerLow: 115, powerHigh: 50, durationSecs: 240, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Rep 2', zone: 'Z1', powerLow: 115, powerHigh: 50, durationSecs: 240, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Rep 3', zone: 'Z1', powerLow: 115, powerHigh: 50, durationSecs: 240, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Rep 4', zone: 'Z1', powerLow: 115, powerHigh: 50, durationSecs: 240, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Rep 5', zone: 'Z1', powerLow: 115, powerHigh: 50, durationSecs: 240, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 1200, coachNote: '68% FTP', purpose: 'Polarized model — low and high, nothing in between' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Polarized model — low and high, nothing in between' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 12, coachNote: 'Easy spin, build gradually', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 25, coachNote: '68% FTP', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Rep 1', zone: 'Z1', powerLow: 115, powerHigh: 50, durationPercent: 5, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Rep 2', zone: 'Z1', powerLow: 115, powerHigh: 50, durationPercent: 5, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Rep 3', zone: 'Z1', powerLow: 115, powerHigh: 50, durationPercent: 5, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Rep 4', zone: 'Z1', powerLow: 115, powerHigh: 50, durationPercent: 5, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Rep 5', zone: 'Z1', powerLow: 115, powerHigh: 50, durationPercent: 5, coachNote: '50% FTP effort', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationPercent: 25, coachNote: '68% FTP', purpose: 'Polarized model — low and high, nothing in between' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 12, coachNote: 'Easy recovery spinning', purpose: 'Polarized model — low and high, nothing in between' }
     ],
   },
 
@@ -491,10 +491,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 85,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'VO2max accumulation in a polarized framework' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max accumulation in a polarized framework' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 1200, coachNote: '65% FTP', purpose: 'VO2max accumulation in a polarized framework' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max accumulation in a polarized framework' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 31, coachNote: 'Easy spin, build gradually', purpose: 'VO2max accumulation in a polarized framework' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 8, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max accumulation in a polarized framework' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 41, coachNote: '65% FTP', purpose: 'VO2max accumulation in a polarized framework' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy recovery spinning', purpose: 'VO2max accumulation in a polarized framework' }
     ],
   },
 
@@ -509,11 +509,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 65,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Muscular force production, pedal strength' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 180, coachNote: '85% FTP', purpose: 'Muscular force production, pedal strength' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Muscular force production, pedal strength' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Muscular force production, pedal strength' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Muscular force production, pedal strength' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 24, coachNote: 'Easy spin, build gradually', purpose: 'Muscular force production, pedal strength' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 7, coachNote: '85% FTP', purpose: 'Muscular force production, pedal strength' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 7, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Muscular force production, pedal strength' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 37, coachNote: '65% FTP', purpose: 'Muscular force production, pedal strength' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 24, coachNote: 'Easy recovery spinning', purpose: 'Muscular force production, pedal strength' }
     ],
   },
 
@@ -530,10 +530,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 65,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
-      { name: '108% effort', zone: 'Z5', powerLow: 103, powerHigh: 113, durationSecs: 60, coachNote: '108% FTP', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max using sustained sub-max and supra-max alternation' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 38, coachNote: 'Easy spin, build gradually', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
+      { name: '108% effort', zone: 'Z5', powerLow: 103, powerHigh: 113, durationPercent: 4, coachNote: '108% FTP', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 19, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max using sustained sub-max and supra-max alternation' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 38, coachNote: 'Easy recovery spinning', purpose: 'VO2max using sustained sub-max and supra-max alternation' }
     ],
   },
 
@@ -549,8 +549,8 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 35,
     difficultyScore: 1,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 300, coachNote: 'Easy spin, build gradually', purpose: 'FTP estimation' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'FTP estimation' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 33, coachNote: 'Easy spin, build gradually', purpose: 'FTP estimation' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 67, coachNote: 'Easy recovery spinning', purpose: 'FTP estimation' }
     ],
   },
 
@@ -568,15 +568,15 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 1', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 2', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 3', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 4', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 5', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rep 6', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max via variable-intensity within each interval' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max via variable-intensity within each interval' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 18, coachNote: 'Easy spin, build gradually', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 1', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 2', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 3', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 4', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 5', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rep 6', zone: 'Z4', powerLow: 77, powerHigh: 95, durationPercent: 9, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 9, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max via variable-intensity within each interval' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 18, coachNote: 'Easy recovery spinning', purpose: 'VO2max via variable-intensity within each interval' }
     ],
   },
 
@@ -591,10 +591,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Best of both Seiler protocols in one session' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 480, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Best of both Seiler protocols in one session' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Best of both Seiler protocols in one session' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Best of both Seiler protocols in one session' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 41, coachNote: 'Easy spin, build gradually', purpose: 'Best of both Seiler protocols in one session' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 22, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Best of both Seiler protocols in one session' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 11, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Best of both Seiler protocols in one session' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 27, coachNote: 'Easy recovery spinning', purpose: 'Best of both Seiler protocols in one session' }
     ],
   },
 
@@ -611,12 +611,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Tempo endurance with Z6 attacks' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 240, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 240, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 180, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 360, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Tempo endurance with Z6 attacks' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Tempo endurance with Z6 attacks' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 27, coachNote: 'Easy spin, build gradually', purpose: 'Tempo endurance with Z6 attacks' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 11, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 11, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 8, coachNote: '85% FTP', purpose: 'Tempo endurance with Z6 attacks' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 16, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Tempo endurance with Z6 attacks' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 27, coachNote: 'Easy recovery spinning', purpose: 'Tempo endurance with Z6 attacks' }
     ],
   },
 
@@ -631,11 +631,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 80,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sweet spot endurance + VO2max spikes' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 900, coachNote: '90% FTP', purpose: 'Sweet spot endurance + VO2max spikes' },
-      { name: '115% effort', zone: 'Z5', powerLow: 110, powerHigh: 120, durationSecs: 60, coachNote: '115% FTP', purpose: 'Sweet spot endurance + VO2max spikes' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sweet spot endurance + VO2max spikes' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sweet spot endurance + VO2max spikes' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 24, coachNote: 'Easy spin, build gradually', purpose: 'Sweet spot endurance + VO2max spikes' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 37, coachNote: '90% FTP', purpose: 'Sweet spot endurance + VO2max spikes' },
+      { name: '115% effort', zone: 'Z5', powerLow: 110, powerHigh: 120, durationPercent: 2, coachNote: '115% FTP', purpose: 'Sweet spot endurance + VO2max spikes' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 12, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sweet spot endurance + VO2max spikes' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 24, coachNote: 'Easy recovery spinning', purpose: 'Sweet spot endurance + VO2max spikes' }
     ],
   },
 
@@ -651,11 +651,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Build threshold tolerance with escalating difficulty' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Build threshold tolerance with escalating difficulty' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 20, coachNote: 'Easy spin, build gradually', purpose: 'Build threshold tolerance with escalating difficulty' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Build threshold tolerance with escalating difficulty' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 20, coachNote: 'Easy recovery spinning', purpose: 'Build threshold tolerance with escalating difficulty' }
     ],
   },
 
@@ -670,10 +670,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 30,
     difficultyScore: 1,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 300, coachNote: 'Easy spin, build gradually', purpose: 'Maximum training stimulus in minimal time' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 60, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximum training stimulus in minimal time' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 300, coachNote: '65% FTP', purpose: 'Maximum training stimulus in minimal time' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy recovery spinning', purpose: 'Maximum training stimulus in minimal time' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 33, coachNote: 'Easy spin, build gradually', purpose: 'Maximum training stimulus in minimal time' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 7, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximum training stimulus in minimal time' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 33, coachNote: '65% FTP', purpose: 'Maximum training stimulus in minimal time' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 27, coachNote: 'Easy recovery spinning', purpose: 'Maximum training stimulus in minimal time' }
     ],
   },
 
@@ -688,9 +688,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 30,
     difficultyScore: 1,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 300, coachNote: 'Easy spin, build gradually', purpose: 'Threshold stimulus in 30 minutes' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 120, coachNote: '95% FTP', purpose: 'Threshold stimulus in 30 minutes' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Threshold stimulus in 30 minutes' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 42, coachNote: 'Easy spin, build gradually', purpose: 'Threshold stimulus in 30 minutes' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 17, coachNote: '95% FTP', purpose: 'Threshold stimulus in 30 minutes' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 42, coachNote: 'Easy recovery spinning', purpose: 'Threshold stimulus in 30 minutes' }
     ],
   },
 
@@ -706,10 +706,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 45,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 480, coachNote: 'Easy spin, build gradually', purpose: 'Sweet spot development in 45 minutes' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 720, coachNote: '90% FTP', purpose: 'Sweet spot development in 45 minutes' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sweet spot development in 45 minutes' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Sweet spot development in 45 minutes' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 27, coachNote: 'Easy spin, build gradually', purpose: 'Sweet spot development in 45 minutes' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 40, coachNote: '90% FTP', purpose: 'Sweet spot development in 45 minutes' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 17, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sweet spot development in 45 minutes' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 17, coachNote: 'Easy recovery spinning', purpose: 'Sweet spot development in 45 minutes' }
     ],
   },
 
@@ -725,14 +725,14 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 45,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 480, coachNote: 'Easy spin, build gradually', purpose: 'Multi-zone stimulus in compact format' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 120, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
-      { name: '135% effort', zone: 'Z6', powerLow: 130, powerHigh: 140, durationSecs: 60, coachNote: '135% FTP', purpose: 'Multi-zone stimulus in compact format' },
-      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationSecs: 300, coachNote: '60% FTP', purpose: 'Multi-zone stimulus in compact format' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Multi-zone stimulus in compact format' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 24, coachNote: 'Easy spin, build gradually', purpose: 'Multi-zone stimulus in compact format' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 15, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 12, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 9, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 6, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Multi-zone stimulus in compact format' },
+      { name: '135% effort', zone: 'Z6', powerLow: 130, powerHigh: 140, durationPercent: 3, coachNote: '135% FTP', purpose: 'Multi-zone stimulus in compact format' },
+      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationPercent: 15, coachNote: '60% FTP', purpose: 'Multi-zone stimulus in compact format' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 15, coachNote: 'Easy recovery spinning', purpose: 'Multi-zone stimulus in compact format' }
     ],
   },
 
@@ -747,14 +747,14 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 120,
     difficultyScore: 9,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Long-event pacing discipline' },
-      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationSecs: 1800, coachNote: '70% FTP', purpose: 'Long-event pacing discipline' },
-      { name: '88% effort', zone: 'Z3', powerLow: 83, powerHigh: 93, durationSecs: 600, coachNote: '88% FTP', purpose: 'Long-event pacing discipline' },
-      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationSecs: 1200, coachNote: '72% FTP', purpose: 'Long-event pacing discipline' },
-      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationSecs: 900, coachNote: '92% FTP', purpose: 'Long-event pacing discipline' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Long-event pacing discipline' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 600, coachNote: '95% FTP', purpose: 'Long-event pacing discipline' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Long-event pacing discipline' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 8, coachNote: 'Easy spin, build gradually', purpose: 'Long-event pacing discipline' },
+      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationPercent: 25, coachNote: '70% FTP', purpose: 'Long-event pacing discipline' },
+      { name: '88% effort', zone: 'Z3', powerLow: 83, powerHigh: 93, durationPercent: 8, coachNote: '88% FTP', purpose: 'Long-event pacing discipline' },
+      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationPercent: 17, coachNote: '72% FTP', purpose: 'Long-event pacing discipline' },
+      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationPercent: 12, coachNote: '92% FTP', purpose: 'Long-event pacing discipline' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 12, coachNote: '65% FTP', purpose: 'Long-event pacing discipline' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 8, coachNote: '95% FTP', purpose: 'Long-event pacing discipline' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 8, coachNote: 'Easy recovery spinning', purpose: 'Long-event pacing discipline' }
     ],
   },
 
@@ -769,14 +769,14 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 60,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'CX-specific power demands' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 180, coachNote: '95% FTP', purpose: 'CX-specific power demands' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 120, coachNote: '90% FTP', purpose: 'CX-specific power demands' },
-      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationSecs: 60, coachNote: '70% FTP', purpose: 'CX-specific power demands' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 180, coachNote: '95% FTP', purpose: 'CX-specific power demands' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 120, coachNote: '85% FTP', purpose: 'CX-specific power demands' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'CX-specific power demands' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'CX-specific power demands' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 28, coachNote: 'Easy spin, build gradually', purpose: 'CX-specific power demands' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 8, coachNote: '95% FTP', purpose: 'CX-specific power demands' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 6, coachNote: '90% FTP', purpose: 'CX-specific power demands' },
+      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationPercent: 3, coachNote: '70% FTP', purpose: 'CX-specific power demands' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 8, coachNote: '95% FTP', purpose: 'CX-specific power demands' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 6, coachNote: '85% FTP', purpose: 'CX-specific power demands' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy spinning, prepare for next effort', purpose: 'CX-specific power demands' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 28, coachNote: 'Easy recovery spinning', purpose: 'CX-specific power demands' }
     ],
   },
 
@@ -791,15 +791,15 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 90,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationSecs: 2400, coachNote: '72% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 300, coachNote: '95% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationSecs: 180, coachNote: '110% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationSecs: 120, coachNote: '75% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '130% effort', zone: 'Z6', powerLow: 125, powerHigh: 135, durationSecs: 60, coachNote: '130% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationSecs: 120, coachNote: '75% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationSecs: 300, coachNote: '100% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Practice race-finishing power on fatigued legs' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 13, coachNote: 'Easy spin, build gradually', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationPercent: 51, coachNote: '72% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 6, coachNote: '95% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationPercent: 4, coachNote: '110% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationPercent: 3, coachNote: '75% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '130% effort', zone: 'Z6', powerLow: 125, powerHigh: 135, durationPercent: 1, coachNote: '130% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationPercent: 3, coachNote: '75% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationPercent: 6, coachNote: '100% FTP', purpose: 'Practice race-finishing power on fatigued legs' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 13, coachNote: 'Easy recovery spinning', purpose: 'Practice race-finishing power on fatigued legs' }
     ],
   },
 
@@ -814,14 +814,14 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationSecs: 120, coachNote: '110% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationSecs: 60, coachNote: '60% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 180, coachNote: '95% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationSecs: 60, coachNote: '60% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationSecs: 120, coachNote: '75% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'XC MTB race demands — punchy climbs, recoveries' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 31, coachNote: 'Easy spin, build gradually', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: '110% effort', zone: 'Z5', powerLow: 105, powerHigh: 115, durationPercent: 6, coachNote: '110% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationPercent: 3, coachNote: '60% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 9, coachNote: '95% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationPercent: 3, coachNote: '60% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationPercent: 6, coachNote: '75% FTP', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 9, coachNote: 'Easy spinning, prepare for next effort', purpose: 'XC MTB race demands — punchy climbs, recoveries' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 31, coachNote: 'Easy recovery spinning', purpose: 'XC MTB race demands — punchy climbs, recoveries' }
     ],
   },
 
@@ -837,11 +837,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sustained climbing at race intensity' },
-      { name: 'Rep 1', zone: 'Z4', powerLow: 95, powerHigh: 100, durationSecs: 300, coachNote: '100% FTP effort', purpose: 'Sustained climbing at race intensity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustained climbing at race intensity' },
-      { name: '98% effort', zone: 'Z4', powerLow: 93, powerHigh: 103, durationSecs: 600, coachNote: '98% FTP', purpose: 'Sustained climbing at race intensity' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sustained climbing at race intensity' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 22, coachNote: 'Easy spin, build gradually', purpose: 'Sustained climbing at race intensity' },
+      { name: 'Rep 1', zone: 'Z4', powerLow: 95, powerHigh: 100, durationPercent: 11, coachNote: '100% FTP effort', purpose: 'Sustained climbing at race intensity' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 22, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustained climbing at race intensity' },
+      { name: '98% effort', zone: 'Z4', powerLow: 93, powerHigh: 103, durationPercent: 22, coachNote: '98% FTP', purpose: 'Sustained climbing at race intensity' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 22, coachNote: 'Easy recovery spinning', purpose: 'Sustained climbing at race intensity' }
     ],
   },
 
@@ -857,12 +857,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 100,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'FTP sustainability on tired legs' },
-      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 1800, coachNote: '82% FTP', purpose: 'FTP sustainability on tired legs' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'FTP sustainability on tired legs' },
-      { name: '97% effort', zone: 'Z4', powerLow: 92, powerHigh: 102, durationSecs: 900, coachNote: '97% FTP', purpose: 'FTP sustainability on tired legs' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'FTP sustainability on tired legs' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'FTP sustainability on tired legs' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 13, coachNote: 'Easy spin, build gradually', purpose: 'FTP sustainability on tired legs' },
+      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationPercent: 40, coachNote: '82% FTP', purpose: 'FTP sustainability on tired legs' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 7, coachNote: 'Easy spinning, prepare for next effort', purpose: 'FTP sustainability on tired legs' },
+      { name: '97% effort', zone: 'Z4', powerLow: 92, powerHigh: 102, durationPercent: 20, coachNote: '97% FTP', purpose: 'FTP sustainability on tired legs' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 7, coachNote: 'Easy spinning, prepare for next effort', purpose: 'FTP sustainability on tired legs' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 13, coachNote: 'Easy recovery spinning', purpose: 'FTP sustainability on tired legs' }
     ],
   },
 
@@ -877,12 +877,12 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 100,
     difficultyScore: 7,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Simulate late-race attacks' },
-      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationSecs: 2400, coachNote: '72% FTP', purpose: 'Simulate late-race attacks' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 600, coachNote: '85% FTP', purpose: 'Simulate late-race attacks' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Simulate late-race attacks' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Simulate late-race attacks' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Simulate late-race attacks' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 13, coachNote: 'Easy spin, build gradually', purpose: 'Simulate late-race attacks' },
+      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationPercent: 51, coachNote: '72% FTP', purpose: 'Simulate late-race attacks' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 13, coachNote: '85% FTP', purpose: 'Simulate late-race attacks' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 6, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Simulate late-race attacks' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 5, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Simulate late-race attacks' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 13, coachNote: 'Easy recovery spinning', purpose: 'Simulate late-race attacks' }
     ],
   },
 
@@ -897,13 +897,13 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 150,
     difficultyScore: 9,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 3600, coachNote: '65% FTP', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationSecs: 1800, coachNote: '72% FTP', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 1200, coachNote: '82% FTP', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationSecs: 600, coachNote: '92% FTP', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationSecs: 600, coachNote: '100% FTP', purpose: 'Negative split pacing, marathon ride prep' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Negative split pacing, marathon ride prep' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 7, coachNote: 'Easy spin, build gradually', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 40, coachNote: '65% FTP', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: '72% effort', zone: 'Z2', powerLow: 67, powerHigh: 77, durationPercent: 20, coachNote: '72% FTP', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationPercent: 13, coachNote: '82% FTP', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: '92% effort', zone: 'Z4', powerLow: 87, powerHigh: 97, durationPercent: 7, coachNote: '92% FTP', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationPercent: 7, coachNote: '100% FTP', purpose: 'Negative split pacing, marathon ride prep' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 7, coachNote: 'Easy recovery spinning', purpose: 'Negative split pacing, marathon ride prep' }
     ],
   },
 
@@ -918,11 +918,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Pedaling efficiency before sweet spot work' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 300, coachNote: '65% FTP', purpose: 'Pedaling efficiency before sweet spot work' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 720, coachNote: '90% FTP', purpose: 'Pedaling efficiency before sweet spot work' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Pedaling efficiency before sweet spot work' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Pedaling efficiency before sweet spot work' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 27, coachNote: 'Easy spin, build gradually', purpose: 'Pedaling efficiency before sweet spot work' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 14, coachNote: '65% FTP', purpose: 'Pedaling efficiency before sweet spot work' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 32, coachNote: '90% FTP', purpose: 'Pedaling efficiency before sweet spot work' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Pedaling efficiency before sweet spot work' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 14, coachNote: 'Easy recovery spinning', purpose: 'Pedaling efficiency before sweet spot work' }
     ],
   },
 
@@ -938,10 +938,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 75,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
-      { name: '80% effort', zone: 'Z3', powerLow: 75, powerHigh: 85, durationSecs: 2400, coachNote: '80% FTP', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Final block day — aerobic work with neuromuscular maintenance' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 13, coachNote: 'Easy spin, build gradually', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
+      { name: '80% effort', zone: 'Z3', powerLow: 75, powerHigh: 85, durationPercent: 53, coachNote: '80% FTP', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 20, coachNote: '65% FTP', purpose: 'Final block day — aerobic work with neuromuscular maintenance' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 13, coachNote: 'Easy recovery spinning', purpose: 'Final block day — aerobic work with neuromuscular maintenance' }
     ],
   },
 
@@ -956,10 +956,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 25,
     difficultyScore: 1,
     intervals: () => [
-      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationSecs: 300, coachNote: '50% FTP', purpose: 'Optimal activation before mass-start road race' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 300, coachNote: '65% FTP', purpose: 'Optimal activation before mass-start road race' },
-      { name: '80% effort', zone: 'Z3', powerLow: 75, powerHigh: 85, durationSecs: 120, coachNote: '80% FTP', purpose: 'Optimal activation before mass-start road race' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 60, coachNote: '95% FTP', purpose: 'Optimal activation before mass-start road race' }
+      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationPercent: 38, coachNote: '50% FTP', purpose: 'Optimal activation before mass-start road race' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 38, coachNote: '65% FTP', purpose: 'Optimal activation before mass-start road race' },
+      { name: '80% effort', zone: 'Z3', powerLow: 75, powerHigh: 85, durationPercent: 15, coachNote: '80% FTP', purpose: 'Optimal activation before mass-start road race' },
+      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationPercent: 8, coachNote: '95% FTP', purpose: 'Optimal activation before mass-start road race' }
     ],
   },
 
@@ -974,11 +974,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 30,
     difficultyScore: 1,
     intervals: () => [
-      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationSecs: 480, coachNote: '55% FTP', purpose: 'Peak activation for maximal sustained effort' },
-      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationSecs: 300, coachNote: '70% FTP', purpose: 'Peak activation for maximal sustained effort' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 180, coachNote: '85% FTP', purpose: 'Peak activation for maximal sustained effort' },
-      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationSecs: 60, coachNote: '100% FTP', purpose: 'Peak activation for maximal sustained effort' },
-      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationSecs: 180, coachNote: '60% FTP', purpose: 'Peak activation for maximal sustained effort' }
+      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationPercent: 40, coachNote: '55% FTP', purpose: 'Peak activation for maximal sustained effort' },
+      { name: '70% effort', zone: 'Z2', powerLow: 65, powerHigh: 75, durationPercent: 25, coachNote: '70% FTP', purpose: 'Peak activation for maximal sustained effort' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 15, coachNote: '85% FTP', purpose: 'Peak activation for maximal sustained effort' },
+      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationPercent: 5, coachNote: '100% FTP', purpose: 'Peak activation for maximal sustained effort' },
+      { name: '60% effort', zone: 'Z2', powerLow: 55, powerHigh: 65, durationPercent: 15, coachNote: '60% FTP', purpose: 'Peak activation for maximal sustained effort' }
     ],
   },
 
@@ -993,10 +993,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 20,
     difficultyScore: 1,
     intervals: () => [
-      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationSecs: 300, coachNote: '50% FTP', purpose: 'Thorough preparation for hard interval session' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 300, coachNote: '65% FTP', purpose: 'Thorough preparation for hard interval session' },
-      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationSecs: 180, coachNote: '75% FTP', purpose: 'Thorough preparation for hard interval session' },
-      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationSecs: 180, coachNote: '55% FTP', purpose: 'Thorough preparation for hard interval session' }
+      { name: '50% effort', zone: 'Z1', powerLow: 45, powerHigh: 55, durationPercent: 31, coachNote: '50% FTP', purpose: 'Thorough preparation for hard interval session' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 31, coachNote: '65% FTP', purpose: 'Thorough preparation for hard interval session' },
+      { name: '75% effort', zone: 'Z3', powerLow: 70, powerHigh: 80, durationPercent: 19, coachNote: '75% FTP', purpose: 'Thorough preparation for hard interval session' },
+      { name: '55% effort', zone: 'Z2', powerLow: 50, powerHigh: 60, durationPercent: 19, coachNote: '55% FTP', purpose: 'Thorough preparation for hard interval session' }
     ],
   },
 
@@ -1011,11 +1011,11 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 60,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Survive the opening surge of virtual races' },
-      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationSecs: 180, coachNote: '100% FTP', purpose: 'Survive the opening surge of virtual races' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 300, coachNote: '85% FTP', purpose: 'Survive the opening surge of virtual races' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Survive the opening surge of virtual races' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Survive the opening surge of virtual races' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 30, coachNote: 'Easy spin, build gradually', purpose: 'Survive the opening surge of virtual races' },
+      { name: '100% effort', zone: 'Z4', powerLow: 95, powerHigh: 105, durationPercent: 9, coachNote: '100% FTP', purpose: 'Survive the opening surge of virtual races' },
+      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationPercent: 15, coachNote: '85% FTP', purpose: 'Survive the opening surge of virtual races' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 15, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Survive the opening surge of virtual races' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 30, coachNote: 'Easy recovery spinning', purpose: 'Survive the opening surge of virtual races' }
     ],
   },
 
@@ -1030,10 +1030,10 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 60,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sprint finish after sustained threshold' },
-      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 480, coachNote: '90% FTP', purpose: 'Sprint finish after sustained threshold' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sprint finish after sustained threshold' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sprint finish after sustained threshold' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 31, coachNote: 'Easy spin, build gradually', purpose: 'Sprint finish after sustained threshold' },
+      { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationPercent: 25, coachNote: '90% FTP', purpose: 'Sprint finish after sustained threshold' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 12, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sprint finish after sustained threshold' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 31, coachNote: 'Easy recovery spinning', purpose: 'Sprint finish after sustained threshold' }
     ],
   },
 
@@ -1050,17 +1050,17 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 70,
     difficultyScore: 5,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 1', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 2', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 3', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 4', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 1', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 2', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 3', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Rep 4', zone: 'Z2', powerLow: 105, powerHigh: 60, durationSecs: 300, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximum time-at-intensity with minimal recovery' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 15, coachNote: 'Easy spin, build gradually', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 1', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 2', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 3', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 4', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 8, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 1', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 2', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 3', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Rep 4', zone: 'Z2', powerLow: 105, powerHigh: 60, durationPercent: 8, coachNote: '60% FTP effort', purpose: 'Maximum time-at-intensity with minimal recovery' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 15, coachNote: 'Easy recovery spinning', purpose: 'Maximum time-at-intensity with minimal recovery' }
     ],
   },
 
@@ -1075,9 +1075,9 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     duration: 55,
     difficultyScore: 3,
     intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximum power output with full recovery' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 600, coachNote: '65% FTP', purpose: 'Maximum power output with full recovery' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximum power output with full recovery' }
+      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationPercent: 33, coachNote: 'Easy spin, build gradually', purpose: 'Maximum power output with full recovery' },
+      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationPercent: 33, coachNote: '65% FTP', purpose: 'Maximum power output with full recovery' },
+      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationPercent: 33, coachNote: 'Easy recovery spinning', purpose: 'Maximum power output with full recovery' }
     ],
   },
 
