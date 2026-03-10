@@ -1734,7 +1734,8 @@ function fixSessionDuration(
   session: SessionDef,
   weekType?: WeekType,
   targetDurationWasApplied: boolean = false,
-  userTargetDuration?: number
+  userTargetDuration?: number,
+  userSundayDuration?: number  // NEW: Sunday-specific duration
 ): SessionDef {
   // ERROR MISSING #1 FIX: Validate inputs early
   if (!validateSessionInput(session, weekType)) {
@@ -1769,7 +1770,11 @@ function fixSessionDuration(
   const baseTemplateDuration = Math.round(totalSecs / 60) || 0;
   
   // Use user's target as anchor if provided, otherwise use template duration
-  const anchor = userTargetDuration || baseTemplateDuration || 60;
+  // BUG FIX: For Sunday, use Sunday-specific duration if provided
+  let anchor = userTargetDuration || baseTemplateDuration || 60;
+  if (session.dayOfWeek === "SUN" && userSundayDuration !== undefined) {
+    anchor = userSundayDuration;  // Use Sunday duration for Sunday
+  }
   
   // Calculate smart duration (Part 1) - only if NOT explicitly applied
   const smartDuration = calculateSmartDuration(
@@ -1849,8 +1854,8 @@ export function generatePlan(
       targetSundayDurationMinutes
     )
     .map(s => {
-      // Apply duration scaling (same for all days; Sunday treated as regular day)
-      return fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes);
+      // Apply duration scaling (with Sunday-specific duration support)
+      return fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes, targetSundayDurationMinutes);
     });
     
     const firstBlock: BlockDef = {
@@ -1881,8 +1886,8 @@ export function generatePlan(
             targetDurationMinutes,
             targetSundayDurationMinutes
           ).map(s => {
-            // Apply duration scaling (same for all days; Sunday treated as regular day)
-            return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
+            // Apply duration scaling (with Sunday-specific duration support)
+            return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes, targetSundayDurationMinutes);
           });
           
           return {
@@ -1934,8 +1939,8 @@ export function generatePlan(
         targetDurationMinutes,
         targetSundayDurationMinutes
       ).map(s => {
-        // Apply duration scaling (same for all days; Sunday treated as regular day)
-        return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
+        // Apply duration scaling (with Sunday-specific duration support)
+        return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes, targetSundayDurationMinutes);
       });
       
       // Track templates for next week's variety (avoid same template week-to-week)
