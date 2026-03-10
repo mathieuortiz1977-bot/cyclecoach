@@ -7,15 +7,47 @@
  * TOTAL: 242 workouts (pre-deduplication)
  * 
  * All converted to percentage-based durations
+ * 
+ * BUG #6 FIX: Error handling for database imports
  */
 
 import type { WorkoutTemplate } from './periodization';
-import { MASTER_WORKOUTS as CLASSIFIED } from './sessions-data-classified';
-import { RESEARCH_WORKOUTS } from './research-workouts';
-import { RESEARCH_WORKOUTS_V2 } from './research-workouts-v2';
-import { ZWIFT_WORKOUTS } from './zwift-workouts';
 
-// Combine all sources
+// Import with error handling (BUG #6 fix)
+let CLASSIFIED: WorkoutTemplate[] = [];
+let RESEARCH_WORKOUTS: WorkoutTemplate[] = [];
+let RESEARCH_WORKOUTS_V2: WorkoutTemplate[] = [];
+let ZWIFT_WORKOUTS: WorkoutTemplate[] = [];
+
+try {
+  const classified = require('./sessions-data-classified');
+  CLASSIFIED = classified.MASTER_WORKOUTS || [];
+} catch (e) {
+  console.error('[Database] Failed to load CLASSIFIED workouts:', e);
+}
+
+try {
+  const research = require('./research-workouts');
+  RESEARCH_WORKOUTS = research.RESEARCH_WORKOUTS || [];
+} catch (e) {
+  console.error('[Database] Failed to load RESEARCH_WORKOUTS:', e);
+}
+
+try {
+  const researchV2 = require('./research-workouts-v2');
+  RESEARCH_WORKOUTS_V2 = researchV2.RESEARCH_WORKOUTS_V2 || [];
+} catch (e) {
+  console.error('[Database] Failed to load RESEARCH_WORKOUTS_V2:', e);
+}
+
+try {
+  const zwift = require('./zwift-workouts');
+  ZWIFT_WORKOUTS = zwift.ZWIFT_WORKOUTS || [];
+} catch (e) {
+  console.error('[Database] Failed to load ZWIFT_WORKOUTS:', e);
+}
+
+// Combine all sources with fallback
 const ALL_WORKOUTS: WorkoutTemplate[] = [
   ...CLASSIFIED,
   ...RESEARCH_WORKOUTS,

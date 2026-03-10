@@ -1188,15 +1188,14 @@ function generateWeekSessions(
   blockType: BlockType, 
   weekType: WeekType, 
   blockNum: number,
-  trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
+  trainingDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"], // All days are training days by default (Carlos requirement)
   outdoorDay: DayOfWeek = "SAT",
   blockTheme: string = "Foundation Building",
   weekInBlock: number = 1,
   previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {},
   previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {},
   userSeed?: string, // For per-user variation (Monday stays locked, other days can vary)
-  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION
-  targetSundayDurationMinutes?: number // SUNDAY'S SEPARATE DURATION PARAMETER
+  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION (same for all days; Sunday treated as regular day)
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -1214,11 +1213,7 @@ function generateWeekSessions(
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day - use generation engine for duration-aware sessions
-      // Sunday uses separate duration if provided, otherwise use regular targetDurationMinutes
-      const durationForDay = (day === "SUN" && targetSundayDurationMinutes) 
-        ? targetSundayDurationMinutes 
-        : targetDurationMinutes;
-      
+      // All days use same duration; user can optionally provide different durations via trainingDayDurations array if needed
       session = generateIndoorSession(
         blockType, 
         weekType, 
@@ -1226,7 +1221,7 @@ function generateWeekSessions(
         weekInBlock,
         previousTemplates,
         userSeed,
-        durationForDay, // RESPECT USER'S REQUESTED DURATION (or Sunday's separate duration)
+        targetDurationMinutes, // Use same duration for all training days (Sunday is treated as regular day)
         usedThisWeekIds // Pass already-used workouts to avoid repeats THIS WEEK
       );
       
@@ -1423,6 +1418,12 @@ function generateIndoorSession(
   targetDurationMinutes?: number, // USER'S REQUESTED DURATION
   usedThisWeekIds: string[] = [] // Workouts already selected THIS WEEK
 ): SessionDef {
+  // Validate duration (BUG #5 fix)
+  if (targetDurationMinutes !== undefined && targetDurationMinutes < 30) {
+    console.warn(`[generateIndoorSession] Duration ${targetDurationMinutes}min is too short, using 60min default`);
+    targetDurationMinutes = 60;
+  }
+
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
   
   let zone: string;
@@ -1446,10 +1447,8 @@ function generateIndoorSession(
       zone = "BASE";
   }
   
-  // Skip rest days
-  if (dayIndex === 2 || dayIndex === 5 || dayIndex === 6) {
-    return generateRestDay(day);
-  }
+  // Note: generateIndoorSession should only be called for days in trainingDays (see generateWeekSessions)
+  // No hardcoded rest days here - all logic respects the trainingDays array
   
   // For non-Monday sessions, intelligently rotate through ALL 10 categories
   // This ensures variety while maintaining periodization structure
@@ -1730,16 +1729,21 @@ function fixSessionDuration(
  */
 export function generatePlan(
   numBlocks: number = 4,
-  trainingDays: DayOfWeek[] = ["MON", "TUE", "THU", "FRI", "SAT"],
+  trainingDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"], // All days training by default
   outdoorDay: DayOfWeek = "SAT",
   season?: Season,
   raceType?: string,
   useAINames?: boolean,
   riderId?: string, // For per-user variation (Monday locked, other days vary by user)
   includeInitialFTPTest: boolean = true, // Always start with FTP test to establish baselines
-  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION - NEW PARAM
-  targetSundayDurationMinutes?: number // SUNDAY'S SEPARATE DURATION PARAMETER - NEW PARAM
+  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION (same for all days; Sunday = regular day)
 ): PlanDef {
+  // Validate duration (BUG #5 fix)
+  if (targetDurationMinutes !== undefined && targetDurationMinutes < 30) {
+    console.warn(`[generatePlan] Duration ${targetDurationMinutes}min is too short, using 60min default`);
+    targetDurationMinutes = 60;
+  }
+
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
   
@@ -1769,15 +1773,11 @@ export function generatePlan(
       previousWeekStructures,
       previousWeekTemplates,
       riderId,
-      targetDurationMinutes,
-      targetSundayDurationMinutes
+      targetDurationMinutes
     )
     .map(s => {
-      // Apply smart scaling: use Sunday's separate duration if applicable
-      const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
-        ? targetSundayDurationMinutes 
-        : targetDurationMinutes;
-      return fixSessionDuration(s, "BUILD", !!durationToUse, durationToUse);
+      // Apply duration scaling (same for all days; Sunday treated as regular day)
+      return fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes);
     });
     
     const firstBlock: BlockDef = {
@@ -1805,14 +1805,10 @@ export function generatePlan(
             previousWeekStructures,
             previousWeekTemplates,
             riderId,
-            targetDurationMinutes,
-            targetSundayDurationMinutes // PASS USER'S REQUESTED DURATION
+            targetDurationMinutes
           ).map(s => {
-            // Apply smart scaling: use Sunday's separate duration if applicable
-            const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
-              ? targetSundayDurationMinutes 
-              : targetDurationMinutes;
-            return fixSessionDuration(s, weekType, !!durationToUse, durationToUse);
+            // Apply duration scaling (same for all days; Sunday treated as regular day)
+            return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
           });
           
           return {
@@ -1861,14 +1857,10 @@ export function generatePlan(
         previousWeekStructures,
         previousWeekTemplates,  // Pass template tracking
         riderId,  // Pass rider ID for per-user variation
-        targetDurationMinutes,
-        targetSundayDurationMinutes // PASS USER'S REQUESTED DURATION
+        targetDurationMinutes
       ).map(s => {
-        // Apply smart scaling: use Sunday's separate duration if applicable
-        const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
-          ? targetSundayDurationMinutes 
-          : targetDurationMinutes;
-        return fixSessionDuration(s, weekType, !!durationToUse, durationToUse);
+        // Apply duration scaling (same for all days; Sunday treated as regular day)
+        return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
       });
       
       // Track templates for next week's variety (avoid same template week-to-week)
