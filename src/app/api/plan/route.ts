@@ -278,6 +278,13 @@ export async function POST(request: NextRequest) {
                           durationSecs: interval.durationSecs,
                         });
                         
+                        // ISSUE #1 FIX: Provide better coaching notes for outdoor sessions (0 power)
+                        let coachNote = interval.coachNote || '';
+                        if (powerLow === 0 && powerHigh === 0) {
+                          // Outdoor session - no power data available
+                          coachNote = coachNote || 'Free ride - ride by feel, no power target';
+                        }
+                        
                         return {
                           orderNum: idx,
                           name: interval.name || `Interval ${idx}`,
@@ -288,8 +295,8 @@ export async function POST(request: NextRequest) {
                           cadenceHigh: interval.cadenceHigh ?? undefined,
                           rpe: interval.rpe ?? undefined,
                           zone,
-                          purpose: interval.purpose || '',
-                          coachNote: interval.coachNote || '',
+                          purpose: interval.purpose || (powerLow === 0 ? 'Outdoor ride' : ''),
+                          coachNote,
                         };
                       }),
                     },

@@ -85,6 +85,24 @@ export function normalizeIntervals(intervals: (IntervalDef | RawIntervalDef)[], 
   });
 }
 
+/**
+ * ISSUE #10 FIX: Rescale intervals proportionally if session duration changes
+ * Used when fixSessionDuration changes the duration from what intervals were normalized to
+ */
+function rescaleIntervals(intervals: IntervalDef[], originalDurationMinutes: number, newDurationMinutes: number): IntervalDef[] {
+  if (originalDurationMinutes === newDurationMinutes || originalDurationMinutes === 0) {
+    return intervals; // No rescaling needed
+  }
+  
+  // Calculate scale factor
+  const scaleFactor = newDurationMinutes / originalDurationMinutes;
+  
+  return intervals.map(interval => ({
+    ...interval,
+    durationSecs: Math.round(interval.durationSecs * scaleFactor)
+  }));
+}
+
 export type WorkoutStructure = "steady" | "pyramid" | "ladder" | "micro" | "descend" | "twitchy" | "mixed";
 export type CadenceProfile = "low" | "normal" | "high" | "mixed";
 
@@ -1232,11 +1250,12 @@ function generateWeekSessions(
   for (const day of allDays) {
     let session: SessionDef;
     
+    // Determine what type of session this day should be
     if (!trainingDays.includes(day)) {
-      // Rest day
+      // Rest day (not a training day)
       session = generateRestDay(day);
     } else if (day === outdoorDay) {
-      // Outdoor day (usually longer ride)
+      // Outdoor day (usually longer ride) - is a training day
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day - use generation engine for duration-aware sessions
@@ -1361,6 +1380,16 @@ function validateSessionInput(session: SessionDef | null, weekType: WeekType | u
  * 4. Difficulty score (appropriate to training phase)
  * 5. Avoid repetition (exclude previous week's workout)
  */
+
+// ISSUE #11 FIX: Category fallback mapping for when primary category has no workouts
+const CATEGORY_FALLBACKS: Record<string, string[]> = {
+  "RECOVERY": ["BASE", "TECHNIQUE", "MIXED", "SWEET_SPOT"],     // RECOVERY → base/technique (only 3 RECOVERY exist)
+  "RACE_SIM": ["ANAEROBIC", "VO2MAX", "THRESHOLD"],              // RACE_SIM → hard efforts (only 2 exist)
+  "TECHNIQUE": ["BASE", "SWEET_SPOT", "MIXED"],                  // TECHNIQUE → easy + drills (5 exist)
+  "FTP_TEST": ["BASE", "THRESHOLD", "VO2MAX"],                   // FTP_TEST → hard baseline (3 exist)
+  "COMBO": ["MIXED", "SWEET_SPOT", "TEMPO"],                     // COMBO → mixed efforts (1 exists)
+};
+
 function selectWorkoutTemplate(
   category: string,               // "BASE", "THRESHOLD", "VO2MAX", etc.
   weekType?: WeekType,            // BUILD, BUILD_PLUS, OVERREACH, RECOVERY
@@ -1388,10 +1417,28 @@ function selectWorkoutTemplate(
   }
   
   // STEP 1: Filter by CATEGORY (most important)
-  candidates = candidates.filter(w => w.category === category);
+  // ISSUE #11 FIX: Use smart fallback if category has insufficient workouts
+  let categorySearch = category;
+  candidates = candidates.filter(w => w.category === categorySearch);
+  
+  // If no workouts found, try fallback categories
   if (candidates.length === 0) {
-    // Fallback: return any workout from that category
-    candidates = MASTER_WORKOUTS.filter(w => w.category === category);
+    const fallbacks = CATEGORY_FALLBACKS[category] || [category];
+    console.log(`[selectWorkoutTemplate] Category "${category}" has 0 workouts, trying fallbacks:`, fallbacks);
+    
+    for (const fallbackCategory of fallbacks) {
+      candidates = MASTER_WORKOUTS.filter(w => w.category === fallbackCategory);
+      if (candidates.length > 0) {
+        console.log(`[selectWorkoutTemplate] Using fallback category "${fallbackCategory}" (${candidates.length} workouts)`);
+        break;
+      }
+    }
+  }
+  
+  // Final fallback: use BASE if nothing found
+  if (candidates.length === 0) {
+    console.warn(`[selectWorkoutTemplate] No workouts found for category "${category}" or fallbacks, using BASE`);
+    candidates = MASTER_WORKOUTS.filter(w => w.category === "BASE");
   }
   
   // STEP 2: Filter by difficulty based on week type
@@ -1605,9 +1652,13 @@ function generateIndoorSession(
   const template = selectWorkoutTemplate(selectedZone, weekType, previousTemplate?.id, undefined, usedThisWeekIds);
   
   // Build intervals from template
-  const targetDuration = targetDurationMinutes || template.duration;
+  // ISSUE #4 FIX: Use template's own duration for interval normalization (will be adjusted after)
+  const templateDuration = template.duration;
   const rawIntervals = typeof template.intervals === 'function' ? template.intervals() : template.intervals;
-  const intervals = normalizeIntervals(rawIntervals, targetDuration);
+  const intervals = normalizeIntervals(rawIntervals, templateDuration);
+  
+  // Use user's target duration if provided, otherwise template duration
+  const finalDuration = targetDurationMinutes || templateDuration;
   
   return {
     dayOfWeek: day,
@@ -1615,7 +1666,7 @@ function generateIndoorSession(
     title: template.title,
     description: template.description,
     purpose: template.purpose,
-    duration: targetDuration, // Respect user's requested duration
+    duration: finalDuration, // Respect user's requested duration
     intervals,
     templateId: template.id,
   };
@@ -1800,6 +1851,11 @@ function fixSessionDuration(
     return session;
   }
   
+  // ISSUE #9 FIX: Don't apply duration to rest days
+  if (session.title === "Rest Day" || session.duration === 0) {
+    return session; // Rest days keep duration 0
+  }
+  
   if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
   
   // If no week type provided, return as-is
@@ -1829,9 +1885,15 @@ function fixSessionDuration(
   if (userProvidedDuration && userProvidedDuration > 0) {
     // User explicitly selected a duration - RESPECT IT EXACTLY (no day multipliers)
     const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
+    
+    // ISSUE #10 FIX: Rescale intervals if user duration differs from current duration
+    const currentDurationMinutes = session.duration;
+    const rescaledIntervals = rescaleIntervals(session.intervals, currentDurationMinutes, userProvidedDuration);
+    
     return {
       ...session,
       duration: userProvidedDuration,          // Use user's exact selection
+      intervals: rescaledIntervals,            // Rescaled intervals
       intensityFactor,                         // But apply intensity variation
       userTargetDuration: userProvidedDuration,
       periodizationWeekType: weekType,
@@ -1858,10 +1920,14 @@ function fixSessionDuration(
   // Calculate intensity factor (Part 2)
   const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
   
+  // ISSUE #10 FIX: Rescale intervals if smart duration differs from current duration
+  const rescaledIntervals = rescaleIntervals(session.intervals, anchor, smartDuration);
+  
   // Return session with both duration AND intensity applied
   return {
     ...session,
     duration: smartDuration,
+    intervals: rescaledIntervals,              // Rescaled intervals
     intensityFactor,                          // NEW: store IF
     userTargetDuration: anchor,               // NEW: store original target
     periodizationWeekType: weekType,          // NEW: store week type for reference
@@ -2051,7 +2117,7 @@ export function generatePlan(
       });
     }
 
-    blocks.push({ blockNumber: blockNum + 1, type: blockType, weeks });
+    blocks.push({ blockNumber: blockNum, type: blockType, weeks });
   }
 
   return { blocks };
