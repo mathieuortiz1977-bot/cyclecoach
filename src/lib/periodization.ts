@@ -1149,7 +1149,8 @@ function generateWeekSessions(
   weekInBlock: number = 1,
   previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {},
   previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {},
-  userSeed?: string // For per-user variation (Monday stays locked, other days can vary)
+  userSeed?: string, // For per-user variation (Monday stays locked, other days can vary)
+  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -1165,7 +1166,7 @@ function generateWeekSessions(
       // Outdoor day (usually longer ride)
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
-      // Indoor training day - use template-based generation
+      // Indoor training day - use generation engine for duration-aware sessions
       // Monday is sacred (stick to plan), other days use userSeed for variation
       session = generateIndoorSession(
         blockType, 
@@ -1173,7 +1174,8 @@ function generateWeekSessions(
         day,
         weekInBlock,
         previousTemplates,
-        userSeed
+        userSeed,
+        targetDurationMinutes // RESPECT USER'S REQUESTED DURATION
       );
     }
     
@@ -2162,7 +2164,7 @@ function selectWorkoutTemplate(
 
 import { createSession } from "./training-engine";
 import { scaleSessionToDuration } from "./training-engine/duration-scaler";
-import type { AthleteProfile, SessionGoal } from "./training-engine/types";
+import type { AthleteProfile, SessionGoal, IntervalBlock } from "./training-engine/types";
 
 /**
  * Map block type to training goal for generation engine
@@ -2236,85 +2238,155 @@ function generateOutdoorSession(weekType: WeekType, blockNum: number, day: DayOf
 // Track selected templates to avoid repetition week-to-week
 const selectedTemplates: Map<string, WorkoutTemplate> = new Map();
 
+/**
+ * Determine if we should vary the zone for non-Monday sessions
+ * Uses user seed for reproducibility (same user always gets same variation)
+ */
+function shouldVaryZone(userSeed: string, percentChance: number): boolean {
+  const userRandomizer = Math.abs(
+    userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
+  ) % 100;
+  return userRandomizer < percentChance;
+}
+
+/**
+ * WIRED WITH GENERATION ENGINE
+ * Uses creation engine to build duration-aware sessions instead of templates
+ */
 function generateIndoorSession(
   blockType: BlockType, 
   weekType: WeekType, 
   day: DayOfWeek,
   weekNum?: number,
   previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>,
-  userSeed?: string // For per-user variation
+  userSeed?: string, // For per-user variation
+  targetDurationMinutes?: number // USER'S REQUESTED DURATION - NEW PARAM
 ): SessionDef {
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
-  
-  let zone: string;
   let isMonday = dayIndex === 0;
-  
-  // MONDAY IS SACRED: Always stick to the planned block type
-  // Other days can vary more freely within the energy system
-  switch (blockType) {
-    case "BASE":
-      zone = "BASE";
-      break;
-    case "THRESHOLD":
-      zone = "THRESHOLD";
-      break;
-    case "VO2MAX":
-      zone = "VO2MAX";
-      break;
-    case "RACE_SIM":
-      zone = "ANAEROBIC";
-      break;
-    default:
-      zone = "BASE";
-  }
   
   // Skip rest days
   if (dayIndex === 2 || dayIndex === 5 || dayIndex === 6) {
     // These are typically rest days (Wed, Sat, Sun)
     // Only generate sessions for Mon, Tue, Thu, Fri
-    const baseSession = generateRestDay(day);
-    return baseSession;
+    return generateRestDay(day);
   }
   
-  // For non-Monday sessions, allow some variation in zone selection
-  // (but keep it reasonable - stay within the same energy system)
-  let selectedZone = zone;
-  if (!isMonday && userSeed) {
-    // Seed the random variation per user (so same user gets consistent variety)
-    // but different users get different workouts
-    const userRandomizer = Math.abs(
-      userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
-    ) % 100;
-    
-    // Small chance to swap to a complementary zone on non-Monday days
-    if (userRandomizer < 20) {
-      // 20% chance to use a complementary zone on non-Monday days
-      if (zone === "BASE") selectedZone = "TEMPO";
-      else if (zone === "THRESHOLD") selectedZone = "TEMPO";
-      else if (zone === "VO2MAX") selectedZone = "THRESHOLD";
-      else if (zone === "ANAEROBIC") selectedZone = "VO2MAX";
+  // ─── GENERATION ENGINE INTEGRATION ──────────────────────────────────
+  // Instead of templates, use the generation engine to build duration-aware sessions
+  
+  let selectedGoal: SessionGoal = "Endurance"; // default
+  let selectedZone: string = "BASE";
+  
+  // MONDAY IS SACRED: Always stick to the planned block type
+  if (isMonday) {
+    switch (blockType) {
+      case "BASE":
+        selectedZone = "BASE";
+        selectedGoal = "Endurance";
+        break;
+      case "THRESHOLD":
+        selectedZone = "THRESHOLD";
+        selectedGoal = "LactateThreshold";
+        break;
+      case "VO2MAX":
+        selectedZone = "VO2MAX";
+        selectedGoal = "VO2Max";
+        break;
+      case "RACE_SIM":
+        selectedZone = "ANAEROBIC";
+        selectedGoal = "SprintPower";
+        break;
+    }
+  } else {
+    // Non-Monday: Allow variation within energy system
+    switch (blockType) {
+      case "BASE":
+        selectedZone = "BASE";
+        selectedGoal = "Endurance";
+        // 20% chance for complementary zone
+        if (userSeed && shouldVaryZone(userSeed, 20)) {
+          selectedZone = "TEMPO";
+          selectedGoal = "SweetSpot";
+        }
+        break;
+      case "THRESHOLD":
+        selectedZone = "THRESHOLD";
+        selectedGoal = "LactateThreshold";
+        if (userSeed && shouldVaryZone(userSeed, 20)) {
+          selectedZone = "TEMPO";
+          selectedGoal = "SweetSpot";
+        }
+        break;
+      case "VO2MAX":
+        selectedZone = "VO2MAX";
+        selectedGoal = "VO2Max";
+        if (userSeed && shouldVaryZone(userSeed, 20)) {
+          selectedZone = "THRESHOLD";
+          selectedGoal = "LactateThreshold";
+        }
+        break;
+      case "RACE_SIM":
+        selectedZone = "ANAEROBIC";
+        selectedGoal = "SprintPower";
+        if (userSeed && shouldVaryZone(userSeed, 20)) {
+          selectedZone = "VO2MAX";
+          selectedGoal = "VO2Max";
+        }
+        break;
     }
   }
   
-  // Select a template for this zone/day, avoiding previous week's template
-  const previousTemplate = previousTemplates?.[day];
-  const template = selectWorkoutTemplate(selectedZone, previousTemplate?.id);
+  // ─── BUILD SESSION WITH GENERATION ENGINE ─────────────────────────
   
-  // Build intervals from template
-  const intervals = template.intervals();
+  // Create athlete profile (using placeholder - in production would come from user's FTP test)
+  const athlete: AthleteProfile = {
+    ftp: 280, // Placeholder - should come from user profile
+    weight: 75,
+    maxHr: 190,
+    restingHr: 60,
+    level: "Intermediate",
+  };
   
-  // Construct full session with template-generated intervals
-  // NOTE: Duration is calculated from actual intervals by fixSessionDuration()
-  // Do NOT copy template.duration or baseSession.duration - let them be recalculated
+  // Build session using generation engine
+  const generatedSession = createSession(athlete, selectedGoal);
+  
+  // Scale to user's requested duration if provided
+  let finalSession = generatedSession;
+  if (targetDurationMinutes && targetDurationMinutes > 0) {
+    finalSession = scaleSessionToDuration(generatedSession, targetDurationMinutes);
+  }
+  
+  // ─── CONVERT TO SESSIONDEF FORMAT ──────────────────────────────────
+  
+  // Convert training session intervals back to SessionDef interval format
+  const allBlocks = [
+    ...finalSession.warmup,
+    ...finalSession.mainSets.flatMap(s => s.blocks),
+    ...finalSession.cooldown,
+  ];
+  
+  const intervals: IntervalDef[] = allBlocks.map(block => ({
+    name: block.name,
+    durationSecs: block.durationSeconds,
+    powerLow: block.targetPowerMin || 0,
+    powerHigh: block.targetPowerMax || 0,
+    cadenceLow: block.cadenceLow,
+    cadenceHigh: block.cadenceHigh,
+    rpe: block.rpe,
+    zone: block.zone,
+    purpose: block.name.toLowerCase(), // Use the block name as purpose
+    coachNote: block.coachNote || "", // Default to empty string if undefined
+  }));
+  
   return {
     dayOfWeek: day,
     sessionType: "INDOOR",
-    title: template.title,
-    description: template.description,
-    purpose: template.purpose,
-    duration: 0, // Placeholder - will be set by fixSessionDuration()
+    title: `${selectedGoal} Workout`,
+    description: `${selectedGoal} training session at ${finalSession.totalDurationMinutes || 0} minutes`,
+    purpose: selectedGoal,
+    duration: finalSession.totalDurationMinutes || 60, // Default to 60 min if not calculated
     intervals,
-    templateId: template.id,
   };
 }
 
@@ -2371,7 +2443,8 @@ export function generatePlan(
   raceType?: string,
   useAINames?: boolean,
   riderId?: string, // For per-user variation (Monday locked, other days vary by user)
-  includeInitialFTPTest: boolean = true // Always start with FTP test to establish baselines
+  includeInitialFTPTest: boolean = true, // Always start with FTP test to establish baselines
+  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION - NEW PARAM
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
@@ -2464,7 +2537,8 @@ export function generatePlan(
             weekNum,
             previousWeekStructures,
             previousWeekTemplates,
-            riderId
+            riderId,
+            targetDurationMinutes // PASS USER'S REQUESTED DURATION
           ).map(s => fixSessionDuration(s, weekType));
           
           return {
@@ -2500,7 +2574,7 @@ export function generatePlan(
       const weekType = WEEK_SEQUENCE[w];
       const weekNum = w + 1;
       
-      // Generate sessions with template-based variety
+      // Generate sessions with generation engine (duration-aware)
       // Monday stays locked to plan, other days vary per riderId
       let sessions = generateWeekSessions(
         blockType, 
@@ -2512,7 +2586,8 @@ export function generatePlan(
         weekNum,
         previousWeekStructures,
         previousWeekTemplates,  // Pass template tracking
-        riderId  // Pass rider ID for per-user variation
+        riderId,  // Pass rider ID for per-user variation
+        targetDurationMinutes // PASS USER'S REQUESTED DURATION
       ).map(s => fixSessionDuration(s, weekType)); // Apply duration scaling based on week type
       
       // Track templates for next week's variety (avoid same template week-to-week)
