@@ -2,7 +2,7 @@
 import { getCoachNote, resetCommentaryIndex } from "./coach";
 import { getRouteForWeek, type RouteData } from "./routes";
 import { getZoneForPower } from "./zones";
-import { MASTER_WORKOUTS, COMPLETE_DATABASE } from "./sessions-data-complete";
+import { MASTER_WORKOUTS, COMPLETE_DATABASE } from "./sessions-data-classified";
 
 export type BlockType = "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM";
 export type WeekType = "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY";
@@ -1202,982 +1202,103 @@ export interface WorkoutTemplate {
   zone: string;
   duration: number;
   intervals: () => IntervalDef[];
+  
+  // NEW: Classification fields for smart selection
+  category: string;              // "BASE", "THRESHOLD", "VO2MAX", "ANAEROBIC", "SPRINT", "RECOVERY", etc.
+  protocol?: string;             // "Seiler 4x8", "Billat 30/30", "Coggan 2x20", etc.
+  researcher?: string;           // "Seiler", "Billat", "Rønnestad", "Coggan", "Laursen"
+  structure?: string;            // "repeats", "pyramid", "ladder", "steady", "mixed", "alternating"
+  difficultyScore: number;       // 1-10 (1=easy recovery, 10=max effort)
+  sportVariant?: string;         // "Road", "MTB", "Gravel", "Track", or undefined for all
 }
 
-const SESSION_TEMPLATES: Record<string, WorkoutTemplate[]> = {
-  // ─── FTP TEST (Baseline Testing) ──────────────────────────────────
-  FTP_TEST: [
-    {
-      id: "ftp-test-standard",
-      title: "FTP Test",
-      description: "Establish baseline functional threshold power",
-      purpose: "Determine FTP for power zone calibration - Coggan 20-min protocol",
-      zone: "Z4",
-      duration: 35,
-      intervals: () => [
-        interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
-        interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
-        interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
-        interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
-        restInterval(300),
-        interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
-        restInterval(600),
-        // Main 20-minute FTP test
-        interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
-        restInterval(600),
-        // Cool down with 2x2min sprints to test leg freshness
-        interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
-        restInterval(300),
-        interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
-        interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
-      ],
-    },
-  ],
 
-  BASE: [
-    // ─── Endurance Base (Z1-Z2): Aerobic Development ─────────────────
-    {
-      id: "base-steady-60",
-      title: "Base Workout", 
-      description: "Steady aerobic base building (60 min)",
-      purpose: "Build aerobic base with steady Z2 effort - Coggan/Allen methodology",
-      zone: "Z2",
-      duration: 65, // 10min warmup + 45min endurance + 5min cooldown = 60min actual
-      intervals: () => [
-        warmup(), // 10 min (600 secs)
-        interval("Endurance", 2700, 56, 70, "Steady aerobic base - focus on fat oxidation", "endurance"), // 45 min
-        cooldown(), // 5 min (300 secs)
-      ],
-    },
-    {
-      id: "base-steady-90",
-      title: "Base Workout", 
-      description: "Extended aerobic base building (90 min)",
-      purpose: "Extended aerobic base - Seiler Zone 1 equivalent",
-      zone: "Z2",
-      duration: 100,
-      intervals: () => [
-        warmup(),
-        interval("Extended Endurance", 5400, 56, 68, "Long steady effort for aerobic adaptation", "endurance"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-progressive", 
-      title: "Base Workout",
-      description: "Progressive aerobic build",
-      purpose: "Progressive base build - Friel foundation method",
-      zone: "Z2",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Base Build 1", 1200, 56, 65, "Start in low Z2", "endurance"),
-        interval("Base Build 2", 1200, 65, 72, "Progress to upper Z2", "endurance"), 
-        interval("Base Build 3", 1200, 70, 78, "Touch low tempo", "endurance"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-tempo-accents",
-      title: "Base Workout", 
-      description: "Base with tempo pickups",
-      purpose: "Aerobic base with tempo training - Hunter Allen prescription",
-      zone: "Z2",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Base", 1200, 60, 68, "Aerobic base foundation", "endurance"),
-        interval("Tempo", 300, 76, 84, "First tempo accent", "tempo"),
-        restInterval(300),
-        interval("Base", 900, 60, 68, "Return to aerobic", "endurance"),
-        interval("Tempo", 300, 76, 84, "Second tempo accent", "tempo"),
-        restInterval(300),
-        interval("Base", 600, 60, 68, "Finish aerobic", "endurance"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-cadence-work",
-      title: "Base Workout",
-      description: "Base with cadence development",
-      purpose: "Aerobic base + neuromuscular efficiency - TrainingPeaks methodology",
-      zone: "Z2",
-      duration: 80,
-      intervals: () => [
-        warmup(),
-        interval("Base", 1200, 60, 68, "Easy spinning base", "endurance", {cadenceLow: 85, cadenceHigh: 95}),
-        ...Array(6).fill(0).flatMap(() => [
-          interval("High Cadence", 180, 58, 66, "High cadence drill", "cadence", {cadenceLow: 100, cadenceHigh: 110}),
-          interval("Recovery", 120, 56, 62, "Return to normal cadence", "recovery", {cadenceLow: 85, cadenceHigh: 95}),
-        ]),
-        interval("Base", 900, 60, 68, "Finish with steady base", "endurance"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-sweet-spot",
-      title: "Base Workout",
-      description: "Sweet spot intervals",
-      purpose: "Sweet spot training (Z3) - Coggan sweet spot methodology", 
-      zone: "Z3",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Sweet Spot 1", 1200, 84, 90, "First sweet spot effort", "sweetspot"),
-        restInterval(300),
-        interval("Sweet Spot 2", 1200, 84, 90, "Second sweet spot effort", "sweetspot"),
-        restInterval(300),
-        interval("Sweet Spot 3", 900, 84, 90, "Final sweet spot effort", "sweetspot"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-recovery",
-      title: "Base Workout",
-      description: "Active recovery ride", 
-      purpose: "Active recovery - Seiler easy day prescription",
-      zone: "Z1",
-      duration: 45,
-      intervals: () => [
-        interval("Easy Spin", 300, 40, 50, "Gentle warmup", "recovery"),
-        interval("Active Recovery", 2100, 45, 60, "Easy spinning for recovery", "recovery"),
-        interval("Cool Spin", 300, 40, 50, "Gentle finish", "recovery"),
-      ],
-    },
-    {
-      id: "base-fartlek",
-      title: "Base Workout",
-      description: "Aerobic base with random surges",
-      purpose: "Unstructured base + surges - Seiler/Norwegian method variation",
-      zone: "Z2", 
-      duration: 90,
-      intervals: () => [
-        warmup(),
-        interval("Base", 900, 60, 68, "Aerobic foundation", "endurance"),
-        interval("Surge 1", 30, 90, 110, "Random surge", "tempo"),
-        interval("Base", 600, 60, 68, "Back to base", "endurance"),
-        interval("Surge 2", 45, 85, 95, "Medium surge", "tempo"),
-        interval("Base", 1200, 60, 68, "Aerobic pace", "endurance"),
-        interval("Surge 3", 60, 95, 115, "Bigger surge", "threshold"),
-        interval("Base", 900, 60, 68, "Return to base", "endurance"),
-        interval("Surge 4", 20, 100, 130, "Short punch", "vo2max"),
-        interval("Base", 600, 60, 68, "Finish aerobic", "endurance"),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  THRESHOLD: [
-    // ─── Threshold (Z4): Lactate Threshold & FTP Development ────────
-    {
-      id: "threshold-2x20",
-      title: "Threshold Workout",
-      description: "Classic 2x20 threshold intervals", 
-      purpose: "FTP development - Coggan/Allen gold standard",
-      zone: "Z4",
-      duration: 65, // 10min warmup + 20min + 10min rest + 20min + 5min cooldown
-      intervals: () => [
-        warmup(),
-        interval("Threshold 1", 1200, 88, 94, "First 20-min threshold block", "threshold"),
-        restInterval(600),
-        interval("Threshold 2", 1200, 88, 94, "Second 20-min threshold block", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-3x15",
-      title: "Threshold Workout",
-      description: "3x15 threshold intervals",
-      purpose: "Threshold power with moderate recovery - TrainingPeaks classic",
-      zone: "Z4",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Threshold 1", 900, 88, 94, "First 15-min effort", "threshold"),
-        restInterval(300),
-        interval("Threshold 2", 900, 88, 94, "Second 15-min effort", "threshold"),
-        restInterval(300),
-        interval("Threshold 3", 900, 88, 94, "Third 15-min effort", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-4x10",
-      title: "Threshold Workout",
-      description: "4x10 threshold intervals",
-      purpose: "Threshold adaptation with shorter blocks - Friel Build phase",
-      zone: "Z4",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        ...Array(4).fill(0).flatMap((_, i) => [
-          interval(`Threshold ${i+1}`, 600, 88, 94, `10-min threshold effort ${i+1}`, "threshold"),
-          ...(i < 3 ? [restInterval(180)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-pyramid",
-      title: "Threshold Workout", 
-      description: "Threshold pyramid: 6-7-8-7-6",
-      purpose: "Progressive threshold building - European coaching method",
-      zone: "Z4", 
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        interval("Threshold 1", 360, 88, 94, "6-min build", "threshold"),
-        restInterval(120),
-        interval("Threshold 2", 420, 88, 94, "7-min extend", "threshold"),
-        restInterval(150),
-        interval("Threshold 3", 480, 88, 94, "8-min peak", "threshold"),
-        restInterval(150),
-        interval("Threshold 4", 420, 88, 94, "7-min descend", "threshold"),
-        restInterval(120),
-        interval("Threshold 5", 360, 88, 94, "6-min finish", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-micro-8x2",
-      title: "Threshold Workout",
-      description: "8x2 threshold micro-intervals",
-      purpose: "Threshold with frequent recovery - Seiler 4x8 variation",
-      zone: "Z4",
-      duration: 60,
-      intervals: () => [
-        warmup(),
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Threshold ${i+1}`, 120, 88, 94, `2-min threshold effort`, "threshold"),
-          ...(i < 7 ? [restInterval(60)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-ladder",
-      title: "Threshold Workout",
-      description: "Threshold ladder: 5-7-10-7-5",
-      purpose: "Variable threshold stress - Hunter Allen ladder method",
-      zone: "Z4",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        interval("Threshold 1", 300, 88, 94, "5-min start", "threshold"),
-        restInterval(120),
-        interval("Threshold 2", 420, 88, 94, "7-min build", "threshold"),
-        restInterval(180),
-        interval("Threshold 3", 600, 88, 94, "10-min peak", "threshold"),
-        restInterval(180),
-        interval("Threshold 4", 420, 88, 94, "7-min descend", "threshold"),
-        restInterval(120),
-        interval("Threshold 5", 300, 88, 94, "5-min finish", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-descending",
-      title: "Threshold Workout",
-      description: "Descending threshold: 12-8-6-4",
-      purpose: "Descending threshold intervals - British Cycling method",
-      zone: "Z4",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        interval("Threshold 1", 720, 88, 94, "12-min long effort", "threshold"),
-        restInterval(360),
-        interval("Threshold 2", 480, 88, 94, "8-min medium effort", "threshold"), 
-        restInterval(240),
-        interval("Threshold 3", 360, 88, 94, "6-min shorter effort", "threshold"),
-        restInterval(180),
-        interval("Threshold 4", 240, 88, 94, "4-min final effort", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-over-under",
-      title: "Threshold Workout",
-      description: "Over-under threshold intervals",
-      purpose: "Lactate tolerance at threshold - Coggan over-under protocol",
-      zone: "Z4",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        ...Array(3).fill(0).flatMap((_, setIndex) => [
-          ...Array(4).fill(0).flatMap((_, repIndex) => [
-            interval("Under", 150, 88, 92, "Under threshold", "threshold"),
-            interval("Over", 90, 98, 105, "Over threshold", "vo2max"),
-          ]),
-          ...(setIndex < 2 ? [restInterval(480)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-tempo-build",
-      title: "Threshold Workout", 
-      description: "Tempo to threshold progression",
-      purpose: "Progressive threshold development - Joe Friel progression",
-      zone: "Z3-Z4",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Tempo", 900, 76, 84, "15-min tempo foundation", "tempo"),
-        restInterval(300),
-        interval("Sweet Spot", 600, 84, 90, "10-min sweet spot", "sweetspot"),
-        restInterval(300),
-        interval("Threshold", 600, 88, 94, "10-min threshold peak", "threshold"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "threshold-cruise-intervals",
-      title: "Threshold Workout",
-      description: "Cruise intervals: 6x5 threshold",
-      purpose: "Classic cruise intervals - Daniels running adapted for cycling",
-      zone: "Z4",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        ...Array(6).fill(0).flatMap((_, i) => [
-          interval(`Cruise ${i+1}`, 300, 88, 94, `5-min cruise interval`, "threshold"),
-          ...(i < 5 ? [restInterval(120)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  VO2MAX: [
-    // ─── VO2 Max (Z5): Maximal Aerobic Power Development ────────────
-    {
-      id: "vo2-classic-5x5",
-      title: "VO2 Max Workout",
-      description: "Classic 5x5 VO2 max intervals",
-      purpose: "VO2 max development - Coggan/Allen classic protocol",
-      zone: "Z5", 
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        ...Array(5).fill(0).flatMap((_, i) => [
-          interval(`VO2 Max ${i+1}`, 300, 106, 120, "5-min VO2 max effort", "vo2max"),
-          ...(i < 4 ? [restInterval(300)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-6x4",
-      title: "VO2 Max Workout",
-      description: "6x4 VO2 max intervals",
-      purpose: "Shorter VO2 max blocks - British Cycling method",
-      zone: "Z5",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        ...Array(6).fill(0).flatMap((_, i) => [
-          interval(`VO2 Max ${i+1}`, 240, 106, 120, "4-min VO2 max effort", "vo2max"),
-          ...(i < 5 ? [restInterval(240)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-4x8",
-      title: "VO2 Max Workout",
-      description: "4x8 VO2 max intervals - Seiler protocol",
-      purpose: "Long VO2 max intervals - Seiler 4x8 research protocol",
-      zone: "Z5",
-      duration: 80,
-      intervals: () => [
-        warmup(),
-        ...Array(4).fill(0).flatMap((_, i) => [
-          interval(`VO2 Max ${i+1}`, 480, 104, 115, "8-min VO2 max effort", "vo2max"),
-          ...(i < 3 ? [restInterval(240)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-pyramid",
-      title: "VO2 Max Workout",
-      description: "VO2 max pyramid: 2-3-4-3-2", 
-      purpose: "Progressive VO2 max building - European method",
-      zone: "Z5",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        interval("VO2 1", 120, 106, 120, "2-min build", "vo2max"),
-        restInterval(120),
-        interval("VO2 2", 180, 106, 120, "3-min extend", "vo2max"),
-        restInterval(180),
-        interval("VO2 3", 240, 106, 120, "4-min peak", "vo2max"),
-        restInterval(240),
-        interval("VO2 4", 180, 106, 120, "3-min descend", "vo2max"),
-        restInterval(120),
-        interval("VO2 5", 120, 106, 120, "2-min finish", "vo2max"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-short-power",
-      title: "VO2 Max Workout", 
-      description: "Short high-power VO2 max repeats",
-      purpose: "Neuromuscular + VO2 max - TrainingPeaks high power protocol",
-      zone: "Z5",
-      duration: 60,
-      intervals: () => [
-        warmup(),
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`VO2 ${i+1}`, 90, 115, 130, "90s high power", "vo2max"),
-          ...(i < 7 ? [restInterval(270)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-tabata-style",
-      title: "VO2 Max Workout",
-      description: "Tabata-style VO2 max intervals", 
-      purpose: "VO2 max + anaerobic - Tabata protocol adapted for cycling",
-      zone: "Z5-Z6",
-      duration: 50,
-      intervals: () => [
-        warmup(),
-        // First set
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Tabata ${i+1}`, 20, 130, 150, "20s max effort", "anaerobic"),
-          restInterval(10),
-        ]),
-        restInterval(300),
-        // Second set
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Tabata ${i+9}`, 20, 130, 150, "20s max effort", "anaerobic"),
-          restInterval(10),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-mixed-durations",
-      title: "VO2 Max Workout",
-      description: "Mixed duration VO2 max intervals", 
-      purpose: "Varied VO2 max stress - Hunter Allen variation method",
-      zone: "Z5",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        interval("VO2 Max 1", 180, 106, 118, "3-min moderate", "vo2max"),
-        restInterval(180), 
-        interval("VO2 Max 2", 120, 110, 125, "2-min higher power", "vo2max"),
-        restInterval(240),
-        interval("VO2 Max 3", 300, 104, 115, "5-min sustained", "vo2max"),
-        restInterval(300),
-        interval("VO2 Max 4", 90, 115, 130, "90s final burst", "vo2max"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-billats",
-      title: "VO2 Max Workout",
-      description: "Billat 30-30 intervals",
-      purpose: "VO2 max via intermittent method - Billat research protocol",
-      zone: "Z5",
-      duration: 60,
-      intervals: () => [
-        warmup(),
-        // First set: 12x 30s on/30s off
-        ...Array(12).fill(0).flatMap((_, i) => [
-          interval(`Billat ${i+1}`, 30, 110, 125, "30s VO2 max effort", "vo2max"),
-          restInterval(30),
-        ]),
-        restInterval(600), // 10 min recovery
-        // Second set: 12x 30s on/30s off  
-        ...Array(12).fill(0).flatMap((_, i) => [
-          interval(`Billat ${i+13}`, 30, 110, 125, "30s VO2 max effort", "vo2max"),
-          restInterval(30),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-micro-intervals",
-      title: "VO2 Max Workout",
-      description: "VO2 max micro-intervals: 15s on/15s off",
-      purpose: "VO2 max via micro-interval method - Laursen protocol variation",
-      zone: "Z5",
-      duration: 55,
-      intervals: () => [
-        warmup(),
-        ...Array(24).fill(0).flatMap((_, i) => [
-          interval(`Micro ${i+1}`, 15, 120, 140, "15s max effort", "vo2max"),
-          restInterval(15),
-        ]),
-        restInterval(600), // Recovery
-        ...Array(16).fill(0).flatMap((_, i) => [
-          interval(`Micro ${i+25}`, 15, 120, 140, "15s max effort", "vo2max"),
-          restInterval(15),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "vo2-climbing-simulation",
-      title: "VO2 Max Workout",
-      description: "Climbing VO2 max simulation",
-      purpose: "VO2 max with climbing specificity - mountain bike/climbing focus",
-      zone: "Z5",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        ...Array(4).fill(0).flatMap((_, i) => [
-          interval(`Climb ${i+1}`, 360, 104, 115, "6-min climbing effort", "vo2max", {cadenceLow: 70, cadenceHigh: 80}),
-          ...(i < 3 ? [restInterval(360)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  ANAEROBIC: [
-    // ─── Anaerobic/Sprint (Z6): Power & Neuromuscular Development ──
-    {
-      id: "anaerobic-classic-repeats", 
-      title: "Anaerobic Workout",
-      description: "Classic anaerobic power repeats",
-      purpose: "Anaerobic power & capacity - Coggan/Allen Z6 protocol",
-      zone: "Z6",
-      duration: 60,
-      intervals: () => [
-        warmup(),
-        ...Array(6).fill(0).flatMap((_, i) => [
-          interval(`Anaerobic ${i+1}`, 45, 121, 150, "45s high power effort", "anaerobic"),
-          ...(i < 5 ? [restInterval(225)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "sprint-neuromuscular",
-      title: "Anaerobic Workout", 
-      description: "Sprint neuromuscular power",
-      purpose: "Neuromuscular power development - TrainingPeaks sprint protocol",
-      zone: "Z6",
-      duration: 60,
-      intervals: () => [
-        warmup(),
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Sprint ${i+1}`, 15, 150, 200, "15s maximal sprint", "sprint"),
-          ...(i < 7 ? [restInterval(225)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "anaerobic-hill-repeats",
-      title: "Anaerobic Workout",
-      description: "Hill repeat simulation", 
-      purpose: "Climbing power - British Cycling hill repeat protocol",
-      zone: "Z6",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        ...Array(5).fill(0).flatMap((_, i) => [
-          interval(`Hill ${i+1}`, 90, 125, 145, "90s climbing power", "anaerobic", {cadenceLow: 70, cadenceHigh: 85}),
-          ...(i < 4 ? [restInterval(360)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "anaerobic-lactate-tolerance",
-      title: "Anaerobic Workout",
-      description: "Lactate tolerance intervals",
-      purpose: "Lactate buffering capacity - Laursen lactate tolerance protocol", 
-      zone: "Z6",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        ...Array(4).fill(0).flatMap((_, i) => [
-          interval(`Lactate ${i+1}`, 120, 115, 135, "2-min lactate tolerance", "anaerobic"),
-          ...(i < 3 ? [restInterval(480)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "sprint-mixed-durations",
-      title: "Anaerobic Workout",
-      description: "Mixed duration sprint intervals",
-      purpose: "Complete power curve development - Hunter Allen mixed method", 
-      zone: "Z6",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        interval("Sprint 1", 10, 160, 220, "10s neuromuscular", "sprint"),
-        restInterval(300),
-        interval("Sprint 2", 20, 140, 180, "20s peak power", "sprint"),
-        restInterval(360),
-        interval("Sprint 3", 45, 125, 155, "45s anaerobic", "anaerobic"),
-        restInterval(480),
-        interval("Sprint 4", 90, 115, 140, "90s lactate", "anaerobic"),
-        restInterval(600),
-        interval("Sprint 5", 15, 150, 200, "Final 15s max", "sprint"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "criterium-simulation",
-      title: "Anaerobic Workout",
-      description: "Criterium race simulation",
-      purpose: "Race-specific power - criterium/circuit race preparation",
-      zone: "Z4-Z6",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        // Base tempo with surges
-        interval("Tempo Base", 600, 76, 84, "Tempo foundation", "tempo"),
-        ...Array(6).fill(0).flatMap((_, i) => [
-          interval(`Attack ${i+1}`, 15, 140, 180, "Attack simulation", "sprint"),
-          interval("Recovery", 45, 60, 70, "Soft pedal recovery", "recovery"),
-        ]),
-        interval("Tempo Base", 600, 76, 84, "Return to tempo", "tempo"),
-        ...Array(3).fill(0).flatMap((_, i) => [
-          interval(`Final Sprint ${i+1}`, 30, 130, 170, "Final sprint", "sprint"),
-          ...(i < 2 ? [restInterval(120)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "anaerobic-wingate-style",
-      title: "Anaerobic Workout",
-      description: "Wingate-style max efforts",
-      purpose: "Peak anaerobic power - Wingate test protocol adaptation",
-      zone: "Z6",
-      duration: 55,
-      intervals: () => [
-        warmup(),
-        ...Array(4).fill(0).flatMap((_, i) => [
-          interval(`Wingate ${i+1}`, 30, 140, 200, "30s all-out effort", "anaerobic"),
-          ...(i < 3 ? [restInterval(600)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "track-sprint-progression",
-      title: "Anaerobic Workout", 
-      description: "Track sprint progression",
-      purpose: "Sprint development - track cycling methodology",
-      zone: "Z6",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        // Build sprints
-        interval("Sprint Build 1", 8, 120, 160, "8s build", "sprint"),
-        restInterval(300),
-        interval("Sprint Build 2", 12, 130, 170, "12s extend", "sprint"),
-        restInterval(360),
-        interval("Sprint Build 3", 15, 140, 180, "15s peak", "sprint"),
-        restInterval(480),
-        // Flying sprints
-        interval("Flying 1", 6, 150, 200, "6s flying sprint", "sprint"),
-        restInterval(600),
-        interval("Flying 2", 6, 150, 200, "6s flying sprint", "sprint"),
-        cooldown(),
-      ],
-    },
-  ],
-
-  // ─── MORE BASE SPECIALIZATION ───────────────────────────────────
-  BASE_EXTENDED: [
-    {
-      id: "base-motorpacing-simulation",
-      title: "Base Workout",
-      description: "Motorpacing simulation",
-      purpose: "Aerobic adaptation with steady high cadence - motorpacing method",
-      zone: "Z2",
-      duration: 85,
-      intervals: () => [
-        warmup(),
-        interval("Motorpace Sim", 4200, 65, 75, "Steady high cadence pace line", "endurance", {cadenceLow: 95, cadenceHigh: 105}),
-        cooldown(),
-      ],
-    },
-    {
-      id: "base-long-endurance",
-      title: "Base Workout",
-      description: "Long endurance ride",
-      purpose: "Extended aerobic capacity - Seiler long easy day",
-      zone: "Z1-Z2",
-      duration: 150,
-      intervals: () => [
-        interval("Easy Warmup", 300, 50, 60, "Gentle start", "recovery"),
-        interval("Long Endurance", 8700, 56, 68, "Extended aerobic effort", "endurance"),
-        interval("Cool Spin", 300, 50, 60, "Easy finish", "recovery"),
-      ],
-    },
-  ],
-  
-  // ─── TEMPO/SWEETSPOT SPECIALIZATION ──────────────────────────────
-  TEMPO: [
-    {
-      id: "tempo-steady",
-      title: "Tempo Workout",
-      description: "Steady tempo efforts",
-      purpose: "Tempo power development - Coggan Z3 training",
-      zone: "Z3",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        interval("Tempo 1", 1200, 76, 84, "First tempo block", "tempo"),
-        restInterval(300),
-        interval("Tempo 2", 1200, 76, 84, "Second tempo block", "tempo"),
-        restInterval(300),
-        interval("Tempo 3", 900, 76, 84, "Final tempo block", "tempo"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "tempo-3x10",
-      title: "Tempo Workout",
-      description: "3x10 tempo intervals",
-      purpose: "Tempo power with shorter blocks",
-      zone: "Z3",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        ...Array(3).fill(0).flatMap((_, i) => [
-          interval(`Tempo ${i+1}`, 600, 76, 84, "10-min tempo effort", "tempo"),
-          ...(i < 2 ? [restInterval(240)] : []),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "tempo-pyramid-3-4-5",
-      title: "Tempo Workout",
-      description: "Tempo pyramid 3-4-5",
-      purpose: "Progressive tempo building",
-      zone: "Z3",
-      duration: 65,
-      intervals: () => [
-        warmup(),
-        interval("Tempo 1", 180, 76, 84, "3-min start", "tempo"),
-        restInterval(180),
-        interval("Tempo 2", 240, 76, 84, "4-min build", "tempo"),
-        restInterval(240),
-        interval("Tempo 3", 300, 76, 84, "5-min peak", "tempo"),
-        restInterval(240),
-        interval("Tempo 4", 240, 76, 84, "4-min descend", "tempo"),
-        restInterval(180),
-        interval("Tempo 5", 180, 76, 84, "3-min finish", "tempo"),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  // ─── ROAD RACE SPECIALIZATION ───────────────────────────────────
-  ROAD_RACE: [
-    {
-      id: "road-tempo-surges",
-      title: "Road Race Workout",
-      description: "Tempo with attacking surges",
-      purpose: "Road race specific - constant attacks in breakaway",
-      zone: "Z3-Z4",
-      duration: 90,
-      intervals: () => [
-        warmup(),
-        interval("Tempo Base", 1200, 76, 84, "Tempo pace line", "tempo"),
-        ...Array(6).fill(0).flatMap((_, i) => [
-          interval(`Attack ${i+1}`, 30, 110, 130, "Short attack", "vo2max"),
-          interval("Recovery", 60, 76, 84, "Back to tempo", "tempo"),
-        ]),
-        interval("Final Tempo", 900, 76, 84, "Tempo finish", "tempo"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "road-climb-descent",
-      title: "Road Race Workout",
-      description: "Climb + descent simulation",
-      purpose: "Road race climbing specificity",
-      zone: "Z4-Z5",
-      duration: 80,
-      intervals: () => [
-        warmup(),
-        ...Array(3).fill(0).flatMap((_, i) => [
-          interval(`Climb ${i+1}`, 300, 104, 115, "Climbing effort", "vo2max", {cadenceLow: 70, cadenceHigh: 80}),
-          interval(`Descent Recovery ${i+1}`, 180, 60, 70, "Recovery spin", "recovery", {cadenceLow: 90, cadenceHigh: 100}),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "road-long-threshold",
-      title: "Road Race Workout",
-      description: "Extended threshold for road racing",
-      purpose: "Road race threshold - sustained effort on climbs",
-      zone: "Z4",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Threshold", 1800, 88, 94, "30-min sustained threshold", "threshold"),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  // ─── MOUNTAIN BIKE SPECIALIZATION ───────────────────────────────
-  MTB: [
-    {
-      id: "mtb-pedaling-power",
-      title: "MTB Workout",
-      description: "Variable cadence climbing",
-      purpose: "MTB specific - variable cadence power",
-      zone: "Z4-Z5",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        ...Array(5).fill(0).flatMap((_, i) => [
-          interval(`High Cadence Climb ${i+1}`, 120, 105, 115, "High cadence climbing", "vo2max", {cadenceLow: 85, cadenceHigh: 95}),
-          interval(`Low Cadence Grind ${i+1}`, 120, 100, 110, "Low cadence power", "vo2max", {cadenceLow: 60, cadenceHigh: 70}),
-          restInterval(180),
-        ]),
-        cooldown(),
-      ],
-    },
-    {
-      id: "mtb-short-sharp",
-      title: "MTB Workout",
-      description: "Short sharp climbs",
-      purpose: "MTB technical climbing - repeated efforts",
-      zone: "Z5-Z6",
-      duration: 70,
-      intervals: () => [
-        warmup(),
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Climb ${i+1}`, 60, 110, 125, "Short sharp climb", "vo2max", {cadenceLow: 70, cadenceHigh: 80}),
-          interval(`Recovery ${i+1}`, 120, 60, 70, "Recovery spin", "recovery"),
-        ]),
-        cooldown(),
-      ],
-    },
-  ],
-  
-  // ─── GRAVEL/CYCLOCROSS SPECIALIZATION ──────────────────────────
-  GRAVEL: [
-    {
-      id: "gravel-mixed-terrain",
-      title: "Gravel Workout",
-      description: "Mixed terrain power",
-      purpose: "Gravel specific - varied power on technical terrain",
-      zone: "Z3-Z5",
-      duration: 90,
-      intervals: () => [
-        warmup(),
-        interval("Tempo Base", 900, 76, 84, "Gravel pace - steady", "tempo"),
-        ...Array(5).fill(0).flatMap((_, i) => [
-          interval(`Technical Effort ${i+1}`, 180, 100, 115, "Technical terrain push", "vo2max"),
-          interval("Recovery", 120, 60, 70, "Recovery spin", "recovery"),
-        ]),
-        interval("Tempo Finish", 600, 76, 84, "Return to tempo", "tempo"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "gravel-long-varied",
-      title: "Gravel Workout",
-      description: "Long varied terrain ride",
-      purpose: "Gravel endurance with varied effort",
-      zone: "Z2-Z3",
-      duration: 120,
-      intervals: () => [
-        interval("Base Start", 1200, 60, 70, "Easy aerobic base", "endurance"),
-        interval("Tempo Section", 900, 76, 84, "Tempo effort", "tempo"),
-        interval("Base", 1200, 60, 70, "Back to easy", "endurance"),
-        interval("Tempo Section", 900, 76, 84, "Second tempo", "tempo"),
-        interval("Base Finish", 900, 60, 70, "Easy finish", "endurance"),
-      ],
-    },
-  ],
-  
-  // ─── TRACK CYCLING SPECIALIZATION ───────────────────────────────
-  TRACK: [
-    {
-      id: "track-pursuit-simulation",
-      title: "Track Workout",
-      description: "Pursuit race simulation",
-      purpose: "Track pursuit - sustained high power",
-      zone: "Z4-Z5",
-      duration: 30,
-      intervals: () => [
-        warmup(),
-        interval("Pursuit Effort", 1200, 110, 125, "4-min pursuit pace", "vo2max"),
-        cooldown(),
-      ],
-    },
-    {
-      id: "track-scratch-simulation",
-      title: "Track Workout",
-      description: "Scratch race simulation",
-      purpose: "Track scratch - varied pace with surges",
-      zone: "Z3-Z6",
-      duration: 75,
-      intervals: () => [
-        warmup(),
-        interval("Base Pace", 600, 76, 84, "Scratch race pace", "tempo"),
-        ...Array(8).fill(0).flatMap((_, i) => [
-          interval(`Attack ${i+1}`, 20, 150, 200, "Sprint attack", "sprint"),
-          interval(`Recovery ${i+1}`, 60, 76, 84, "Return to pace", "tempo"),
-        ]),
-        cooldown(),
-      ],
-    },
-  ],
-};
 
 // ─── SESSION SELECTION ───────────────────────────────────────────────
 
+/**
+ * Smart Workout Selection with Classification (STEP 3)
+ * 
+ * Filters by:
+ * 1. CATEGORY (BASE, THRESHOLD, VO2MAX, RECOVERY, etc.) ← MOST IMPORTANT
+ * 2. Week type (BUILD, OVERREACH, RECOVERY) → difficulty matching
+ * 3. Sport variant (Road, MTB, Gravel, Track)
+ * 4. Difficulty score (appropriate to training phase)
+ * 5. Avoid repetition (exclude previous week's workout)
+ */
 function selectWorkoutTemplate(
-  zone: string, 
-  previousTemplateId?: string,
-  specialization?: string
+  category: string,               // "BASE", "THRESHOLD", "VO2MAX", etc.
+  weekType?: WeekType,            // BUILD, BUILD_PLUS, OVERREACH, RECOVERY
+  previousTemplateId?: string,    // Avoid using this again
+  specialization?: string         // "Road", "MTB", "Gravel", "Track"
 ): WorkoutTemplate {
-  // Use MASTER_WORKOUTS pool (162 research-backed workouts)
+  
   let candidates = MASTER_WORKOUTS;
   
-  // Filter out previous to avoid repetition
-  if (previousTemplateId) {
-    candidates = candidates.filter(w => w.id !== previousTemplateId);
+  // STEP 1: Filter by CATEGORY (most important)
+  candidates = candidates.filter(w => w.category === category);
+  if (candidates.length === 0) {
+    // Fallback: return any workout from that category
+    candidates = MASTER_WORKOUTS.filter(w => w.category === category);
   }
   
-  // Filter by zone if possible
-  if (zone) {
-    const zoneMatches = candidates.filter(w => w.zone === zone);
-    if (zoneMatches.length > 0) {
-      candidates = zoneMatches;
+  // STEP 2: Filter by difficulty based on week type
+  let difficultyCandidates = candidates;
+  if (weekType) {
+    let minDifficulty = 1;
+    let maxDifficulty = 10;
+    
+    switch (weekType) {
+      case "BUILD":
+      case "BUILD_PLUS":
+        minDifficulty = 3;  // Medium+
+        maxDifficulty = 8;  // Not peak
+        break;
+      case "OVERREACH":
+        minDifficulty = 8;  // Hard only
+        maxDifficulty = 10; // Peak
+        break;
+      case "RECOVERY":
+        minDifficulty = 1;  // Easy only
+        maxDifficulty = 3;  // Very easy
+        break;
     }
-  }
-  
-  // Filter by specialization if provided
-  if (specialization) {
-    const specMatches = candidates.filter(w => 
-      w.id.includes(specialization.toLowerCase()) || 
-      w.zone.includes(specialization)
+    
+    difficultyCandidates = candidates.filter(w => 
+      w.difficultyScore >= minDifficulty && 
+      w.difficultyScore <= maxDifficulty
     );
-    if (specMatches.length > 0) {
-      candidates = specMatches;
+    
+    // If no matches in difficulty range, use all candidates
+    if (difficultyCandidates.length > 0) {
+      candidates = difficultyCandidates;
     }
   }
   
-  // Fallback to full pool if no candidates
+  // STEP 3: Filter by sport variant if specified
+  if (specialization) {
+    const variantMatches = candidates.filter(w => 
+      !w.sportVariant || w.sportVariant === specialization
+    );
+    if (variantMatches.length > 0) {
+      candidates = variantMatches;
+    }
+  }
+  
+  // STEP 4: Exclude previous workout to avoid repetition
+  if (previousTemplateId) {
+    const nonRepeatCandidates = candidates.filter(w => w.id !== previousTemplateId);
+    if (nonRepeatCandidates.length > 0) {
+      candidates = nonRepeatCandidates;
+    }
+  }
+  
+  // FALLBACK: If somehow no candidates, return first from pool
   if (candidates.length === 0) {
     candidates = MASTER_WORKOUTS;
   }
   
-  // Select random workout
+  // STEP 5: Random selection from filtered candidates
   const randomIndex = Math.floor(Math.random() * candidates.length);
   return candidates[randomIndex] || MASTER_WORKOUTS[0];
 }
@@ -2286,9 +1407,9 @@ function generateIndoorSession(
     }
   }
   
-  // Select a template for this zone/day, avoiding previous week's template
+  // Select a template for this category/day, avoiding previous week's template
   const previousTemplate = previousTemplates?.[day];
-  const template = selectWorkoutTemplate(selectedZone, previousTemplate?.id);
+  const template = selectWorkoutTemplate(selectedZone, weekType, previousTemplate?.id);
   
   // Build intervals from template
   const intervals = template.intervals();
@@ -2543,33 +1664,7 @@ export function generatePlan(
   if (includeInitialFTPTest) {
     // FTP Test is just Week 1 Monday of Block 1 - not a special recovery week
     // Rest of the week continues normal BASE training
-    const ftpTestSession: SessionDef = {
-      dayOfWeek: "MON",
-      sessionType: "INDOOR",
-      title: "FTP Test",
-      description: "Establish baseline functional threshold power for zone calibration",
-      purpose: "Determine FTP for all power zones - Coggan 20-minute protocol",
-      duration: 35,
-      intervals: [
-        interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
-        interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
-        interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
-        interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
-        restInterval(300),
-        interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
-        restInterval(600),
-        // Main 20-minute FTP test
-        interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
-        restInterval(600),
-        // Cool down with efforts to test leg freshness
-        interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
-        restInterval(300),
-        interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
-        interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
-      ],
-    };
-    
-    // Generate full Week 1, then replace Monday with FTP test
+    // Generate full Week 1 (no FTP test - user will build one separately)
     const week1Sessions = generateWeekSessions(
       "BASE",
       "BUILD",
@@ -2583,8 +1678,7 @@ export function generatePlan(
       riderId,
       targetDurationMinutes
     )
-    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes)) // Apply smart scaling with user target
-    .map(s => s.dayOfWeek === "MON" ? ftpTestSession : s); // Replace Monday with FTP test
+    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes)); // Apply smart scaling with user target
     
     const firstBlock: BlockDef = {
       blockNumber: 1,
@@ -2666,10 +1760,9 @@ export function generatePlan(
       // Track templates for next week's variety (avoid same template week-to-week)
       sessions.forEach(s => {
         // Store template by name to avoid repetition
-        const templateKey = s.title;
-        const matchingTemplate = Object.values(SESSION_TEMPLATES)
-          .flat()
-          .find(t => t.title === templateKey);
+        const templateKey = s.templateId;
+        const matchingTemplate = MASTER_WORKOUTS
+          .find(t => t.id === templateKey);
         if (matchingTemplate) {
           previousWeekTemplates[s.dayOfWeek] = matchingTemplate;
         }
