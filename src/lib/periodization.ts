@@ -2274,6 +2274,7 @@ function generateIndoorSession(
   
   // ─── GENERATION ENGINE INTEGRATION ──────────────────────────────────
   // Instead of templates, use the generation engine to build duration-aware sessions
+  // Vary goals by day to ensure different stimulus each day
   
   let selectedGoal: SessionGoal = "Endurance"; // default
   let selectedZone: string = "BASE";
@@ -2299,41 +2300,52 @@ function generateIndoorSession(
         break;
     }
   } else {
-    // Non-Monday: Allow variation within energy system
-    switch (blockType) {
-      case "BASE":
-        selectedZone = "BASE";
-        selectedGoal = "Endurance";
-        // 20% chance for complementary zone
-        if (userSeed && shouldVaryZone(userSeed, 20)) {
-          selectedZone = "TEMPO";
-          selectedGoal = "SweetSpot";
-        }
-        break;
-      case "THRESHOLD":
-        selectedZone = "THRESHOLD";
-        selectedGoal = "LactateThreshold";
-        if (userSeed && shouldVaryZone(userSeed, 20)) {
-          selectedZone = "TEMPO";
-          selectedGoal = "SweetSpot";
-        }
-        break;
-      case "VO2MAX":
-        selectedZone = "VO2MAX";
-        selectedGoal = "VO2Max";
-        if (userSeed && shouldVaryZone(userSeed, 20)) {
-          selectedZone = "THRESHOLD";
-          selectedGoal = "LactateThreshold";
-        }
-        break;
-      case "RACE_SIM":
-        selectedZone = "ANAEROBIC";
-        selectedGoal = "SprintPower";
-        if (userSeed && shouldVaryZone(userSeed, 20)) {
-          selectedZone = "VO2MAX";
-          selectedGoal = "VO2Max";
-        }
-        break;
+    // Non-Monday: Vary goal by DAY OF WEEK for session diversity
+    // This ensures each day has different training stimulus
+    const dayVariations: Record<DayOfWeek, { zone: string; goal: SessionGoal }> = {
+      MON: { zone: "THRESHOLD", goal: "LactateThreshold" }, // Placeholder (Monday handled above)
+      TUE: { zone: "TEMPO", goal: "SweetSpot" },
+      WED: { zone: "BASE", goal: "Endurance" },
+      THU: { zone: "THRESHOLD", goal: "LactateThreshold" },
+      FRI: { zone: "VO2MAX", goal: "VO2Max" },
+      SAT: { zone: "BASE", goal: "Endurance" },
+      SUN: { zone: "BASE", goal: "Endurance" },
+    };
+    
+    // Get base goal for this block type, then apply day-based variation
+    const blockGoals: Record<BlockType, SessionGoal> = {
+      BASE: "Endurance",
+      THRESHOLD: "LactateThreshold",
+      VO2MAX: "VO2Max",
+      RACE_SIM: "SprintPower",
+    };
+    
+    const baseGoal = blockGoals[blockType];
+    const dayVar = dayVariations[day];
+    
+    // For non-Monday, vary from base goal but keep in same family
+    // TUE: SweetSpot (tempo work)
+    // THU: Threshold (harder)
+    // FRI: VO2Max (very hard)
+    // SAT: Outdoor (mixed)
+    if (day === "TUE") {
+      selectedGoal = "SweetSpot";
+      selectedZone = "TEMPO";
+    } else if (day === "THU") {
+      // Make THU harder than base
+      selectedGoal = baseGoal === "Endurance" ? "LactateThreshold" : "VO2Max";
+      selectedZone = baseGoal === "Endurance" ? "THRESHOLD" : "VO2MAX";
+    } else if (day === "FRI") {
+      // Make FRI hardest
+      selectedGoal = "VO2Max";
+      selectedZone = "VO2MAX";
+    } else if (day === "SAT") {
+      selectedGoal = "Endurance";
+      selectedZone = "BASE";
+    } else {
+      // Other days
+      selectedGoal = baseGoal;
+      selectedZone = blockType === "BASE" ? "BASE" : blockType === "THRESHOLD" ? "THRESHOLD" : "VO2MAX";
     }
   }
   
