@@ -46,14 +46,25 @@ export async function GET() {
 
 // POST: Generate and persist a new plan
 export async function POST(request: NextRequest) {
+  console.log('🚀 [PLAN API] POST /api/plan - Starting plan generation');
+  
   const { error } = await requireAuth();
-  if (error) return error;
+  if (error) {
+    console.error('❌ [PLAN API] Auth failed');
+    return error;
+  }
 
   const rider = await getCurrentRider();
-  if (!rider) return NextResponse.json({ error: "No rider profile" }, { status: 400 });
+  if (!rider) {
+    console.error('❌ [PLAN API] No rider profile found');
+    return NextResponse.json({ error: "No rider profile" }, { status: 400 });
+  }
+  
+  console.log('✅ [PLAN API] Rider found:', { riderId: rider.id, ftp: rider.ftp });
 
   try {
     const body = await request.json().catch(() => ({}));
+    console.log('📥 [PLAN API] Request body:', { blocks: body.blocks, confirmUpdate: body.confirmUpdate });
     const numBlocks = body.blocks || 4;
     const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
     const targetDurationMinutes = body.targetDurationMinutes || undefined; // User's requested session duration (default for all days)
@@ -148,12 +159,14 @@ export async function POST(request: NextRequest) {
     console.log(`[Plan Update] CONFIRMED - Deleted old plan, regenerating with new parameters`);
 
     // Verify workouts are loaded
+    console.log('🔄 [PLAN API] Loading workouts...');
     const workouts = getMasterWorkoutsSync();
-    console.log('[Plan Generation] Workouts available:', workouts.length);
+    console.log('✅ [PLAN API] Workouts loaded:', workouts.length, 'workouts available');
     
     if (!workouts || workouts.length === 0) {
-      console.error('[Plan Generation] CRITICAL: No workouts available!');
+      console.error('❌ [PLAN API] CRITICAL: No workouts available!');
       return NextResponse.json({ 
+        success: false,
         error: "No workouts available in database",
         details: "The workout database failed to load. Please try again." 
       }, { status: 500 });
@@ -169,6 +182,14 @@ export async function POST(request: NextRequest) {
       workoutsAvailable: workouts.length,
     });
 
+    console.log('🎯 [PLAN API] Calling generatePlan with:', {
+      numBlocks,
+      trainingDays: trainingDays.join(', '),
+      outdoorDay,
+      targetDurationMinutes,
+      targetSundayDurationMinutes,
+    });
+    
     let planData;
     try {
       planData = generatePlan(
@@ -184,13 +205,17 @@ export async function POST(request: NextRequest) {
         targetSundayDurationMinutes, // OPTIONAL: Different duration for Sunday
         50 // targetFridayDurationMinutes
       );
-      console.log('[Plan Generation] Success - generated', planData.blocks.length, 'blocks');
+      console.log('✅ [PLAN API] Plan generated successfully:', {
+        blocks: planData.blocks.length,
+        totalSessions: planData.blocks.reduce((sum: number, b: any) => sum + b.weeks.reduce((ws: number, w: any) => ws + w.sessions.length, 0), 0)
+      });
     } catch (generateErr) {
-      console.error('[Plan Generation] FAILED:', generateErr);
+      console.error('❌ [PLAN API] Plan generation FAILED:', generateErr);
       throw new Error(`Plan generation failed: ${generateErr instanceof Error ? generateErr.message : String(generateErr)}`);
     }
 
     // Persist to DB
+    console.log('💾 [PLAN API] Persisting plan to database...');
     const plan = await prisma.plan.create({
       data: {
         riderId: rider.id,
@@ -247,10 +272,12 @@ export async function POST(request: NextRequest) {
     });
 
     // SUMMARY: Completed workouts preserved, new plan generated
-    console.log(`[Plan Update] ✅ COMPLETE`);
-    console.log(`  - Completed: ${completedWorkouts.length} preserved (not changed)`);
-    console.log(`  - Pending: ${pendingWorkouts.length} regenerated (updated)`);
-    console.log(`  - Action: Plan fully regenerated with new parameters`);
+    console.log('✅ [PLAN API] DATABASE PERSISTENCE SUCCESSFUL');
+    console.log(`  📊 Completed: ${completedWorkouts.length} preserved (not changed)`);
+    console.log(`  📊 Pending: ${pendingWorkouts.length} regenerated (updated)`);
+    console.log(`  📊 Plan ID: ${plan.id}`);
+    console.log(`  📊 Blocks: ${plan.blocks.length}`);
+    console.log('🎉 [PLAN API] PLAN GENERATION COMPLETE - Returning success response');
 
     return NextResponse.json({
       success: true,
@@ -264,12 +291,18 @@ export async function POST(request: NextRequest) {
     });
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
-    console.error("Plan generation error:", errorMsg);
-    console.error("Full error:", err);
+    const errorStack = err instanceof Error ? err.stack : '';
+    
+    console.error('❌❌❌ [PLAN API] CRITICAL ERROR ❌❌❌');
+    console.error('📍 Error Message:', errorMsg);
+    console.error('📍 Error Stack:', errorStack);
+    console.error('📍 Full Error Object:', err);
+    
     return NextResponse.json({ 
       success: false,
       error: "Failed to generate plan",
-      details: errorMsg 
+      details: errorMsg,
+      stack: errorStack
     }, { status: 500 });
   }
 }

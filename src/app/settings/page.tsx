@@ -229,10 +229,16 @@ function SettingsPage() {
   const [scheduleResult, setScheduleResult] = useState<string | null>(null);
 
   const handleScheduleUpdate = async () => {
+    console.log('🟢 [SETTINGS] handleScheduleUpdate START');
     setScheduleUpdating(true);
     setScheduleResult(null);
     try {
       // Save training schedule to rider profile
+      console.log('📝 [SETTINGS] Saving rider profile...', {
+        trainingDays: trainingDays.join(','),
+        outdoorDay,
+        sundayDuration,
+      });
       const riderResponse = await api.rider.update({
         trainingDays: trainingDays.join(','),
         outdoorDay: outdoorDay,
@@ -243,12 +249,19 @@ function SettingsPage() {
       if (!riderResponse.success) {
         throw new Error(riderResponse.error || "Failed to save schedule");
       }
+      console.log('✅ [SETTINGS] Rider profile saved');
 
       // Regenerate the training plan based on new schedule
       // CRITICAL: Pass duration parameters so backend uses them (not undefined)
+      console.log('🔄 [SETTINGS] Calling api.plan.regenerate...');
       let planResponse = await api.plan.regenerate({
         targetDurationMinutes: duration,
         targetSundayDurationMinutes: sundayDuration,
+      });
+      console.log('📊 [SETTINGS] Plan response received:', {
+        success: planResponse.success,
+        error: planResponse.error,
+        status: planResponse.status,
       });
       
       // HANDLE CONFIRMATION: If there are pending sessions, ask user to confirm
@@ -271,6 +284,7 @@ function SettingsPage() {
       }
       
       if (planResponse.success) {
+        console.log('🎉 [SETTINGS] Plan regenerated successfully!');
         const summary = planResponse.updateSummary;
         setScheduleResult(
           `✅ Training schedule updated!\n` +
@@ -285,10 +299,19 @@ function SettingsPage() {
           window.location.href = "/dashboard?refreshed=" + Date.now();
         }, 1500);
       } else {
+        console.error('❌ [SETTINGS] Plan regeneration FAILED:', {
+          error: planResponse.error,
+          details: planResponse.details,
+          status: planResponse.status,
+          fullResponse: planResponse,
+        });
         setScheduleResult(`❌ Plan regeneration error: ${planResponse.error}`);
       }
     } catch (err) {
-      console.error("Schedule update failed:", err);
+      console.error('❌ [SETTINGS] Exception during update:', {
+        message: err instanceof Error ? err.message : "Unknown error",
+        error: err,
+      });
       setScheduleResult(`❌ Update failed: ${err instanceof Error ? err.message : "Unknown error"}`);
     }
     setScheduleUpdating(false);
