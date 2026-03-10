@@ -74,7 +74,11 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
             } else if (interval.durationPercent) {
               durationSecs = (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
             }
-            const widthPercent = (durationSecs / (totalDurationMins * 60)) * 100;
+            // BUG #1 FIX: Guard against division by zero
+            const totalDurationSecs = totalDurationMins * 60;
+            const widthPercent = totalDurationSecs > 0 
+              ? (durationSecs / totalDurationSecs) * 100 
+              : 0;
 
             return (
               <div

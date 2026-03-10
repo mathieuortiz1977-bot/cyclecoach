@@ -56,7 +56,13 @@ export async function POST(request: NextRequest) {
     const numBlocks = body.blocks || 4;
     const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
     const targetDurationMinutes = body.targetDurationMinutes || undefined; // User's requested session duration (default for all days)
-    const targetSundayDurationMinutes = body.targetSundayDurationMinutes || (rider.sundayDuration as any) || undefined; // OPTIONAL: Different duration for Sunday
+    let targetSundayDurationMinutes = body.targetSundayDurationMinutes || (rider.sundayDuration as any) || undefined; // OPTIONAL: Different duration for Sunday
+    
+    // BUG #2 FIX: Validate Sunday duration (align with weekday validation)
+    if (targetSundayDurationMinutes !== undefined && targetSundayDurationMinutes < 30) {
+      console.warn(`[API] Sunday duration ${targetSundayDurationMinutes}min is too short, using 60min default`);
+      targetSundayDurationMinutes = 60;
+    }
 
     // Get rider's training schedule  
     const trainingDays: DayOfWeek[] = rider.trainingDays ? 
