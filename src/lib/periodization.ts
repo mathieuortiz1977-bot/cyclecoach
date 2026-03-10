@@ -1258,7 +1258,55 @@ export interface WorkoutTemplate {
   sportVariant?: string;         // "Road", "MTB", "Gravel", "Track", or undefined for all
 }
 
+// ─── HELPER FUNCTIONS (Phase 3 Refactoring) ──────────────────────────
 
+/**
+ * LOGIC BUG #2 FIX: Better difficulty filter with intelligent fallback
+ * Ensures minimum difficulty is enforced even if exact range has no matches
+ */
+function filterByDifficulty(
+  candidates: WorkoutTemplate[],
+  minDifficulty: number,
+  maxDifficulty: number
+): WorkoutTemplate[] {
+  // Try exact range first
+  const exact = candidates.filter((w: WorkoutTemplate) => 
+    w.difficultyScore >= minDifficulty && 
+    w.difficultyScore <= maxDifficulty
+  );
+  
+  if (exact.length > 0) return exact;
+  
+  // If no exact match, at least enforce minimum difficulty
+  const minEnforced = candidates.filter((w: WorkoutTemplate) => w.difficultyScore >= minDifficulty);
+  return minEnforced.length > 0 ? minEnforced : candidates;
+}
+
+/**
+ * TYPE ISSUE #2 FIX: Validate optional arrays before using .includes()
+ */
+function safeIncludes<T>(arr: T[] | undefined, item: T): boolean {
+  return (arr || []).includes(item);
+}
+
+/**
+ * ERROR MISSING #1 FIX: Validate input to fixSessionDuration
+ */
+function validateSessionInput(session: SessionDef | null, weekType: WeekType | undefined): boolean {
+  if (!session) {
+    console.error('[validateSessionInput] Session is null/undefined');
+    return false;
+  }
+  if (!weekType) {
+    console.error('[validateSessionInput] WeekType is null/undefined');
+    return false;
+  }
+  if (typeof session.duration === 'number' && session.duration < 0) {
+    console.error('[validateSessionInput] Duration is negative:', session.duration);
+    return false;
+  }
+  return true;
+}
 
 // ─── SESSION SELECTION ───────────────────────────────────────────────
 
@@ -1311,15 +1359,8 @@ function selectWorkoutTemplate(
         break;
     }
     
-    difficultyCandidates = candidates.filter(w => 
-      w.difficultyScore >= minDifficulty && 
-      w.difficultyScore <= maxDifficulty
-    );
-    
-    // If no matches in difficulty range, use all candidates
-    if (difficultyCandidates.length > 0) {
-      candidates = difficultyCandidates;
-    }
+    // LOGIC BUG #2 FIX: Use better fallback logic with intelligent minimum enforcement
+    candidates = filterByDifficulty(candidates, minDifficulty, maxDifficulty);
   }
   
   // STEP 3: Filter by sport variant if specified
@@ -1690,6 +1731,12 @@ function fixSessionDuration(
   targetDurationWasApplied: boolean = false,
   userTargetDuration?: number
 ): SessionDef {
+  // ERROR MISSING #1 FIX: Validate inputs early
+  if (!validateSessionInput(session, weekType)) {
+    console.error('[fixSessionDuration] Invalid input - returning session unchanged');
+    return session;
+  }
+  
   if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
   
   // If no week type provided, return as-is
