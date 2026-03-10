@@ -1401,7 +1401,7 @@ function generateIndoorSession(
       zone = "VO2MAX";
       break;
     case "RACE_SIM":
-      zone = "ANAEROBIC";
+      zone = "RACE_SIM";  // Use RACE_SIM category directly
       break;
     default:
       zone = "BASE";
@@ -1412,20 +1412,35 @@ function generateIndoorSession(
     return generateRestDay(day);
   }
   
-  // For non-Monday sessions, allow some variation in zone selection
+  // For non-Monday sessions, intelligently rotate through ALL 10 categories
+  // This ensures variety while maintaining periodization structure
   let selectedZone = zone;
-  if (!isMonday && userSeed) {
-    // Seed the random variation per user
-    const userRandomizer = Math.abs(
+  if (!isMonday) {
+    // Create a seeded randomizer from user + day + week info
+    const dayOffset = dayIndex * 10;
+    const weekOffset = (weekNum || 1) * 100;
+    const userHash = userSeed ? Math.abs(
       userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
-    ) % 100;
+    ) : 0;
+    const seed = (dayOffset + weekOffset + userHash) % 1000;
     
-    // Small chance to swap to a complementary zone on non-Monday days
-    if (userRandomizer < 20) {
-      if (zone === "BASE") selectedZone = "TEMPO";
-      else if (zone === "THRESHOLD") selectedZone = "TEMPO";
-      else if (zone === "VO2MAX") selectedZone = "THRESHOLD";
-      else if (zone === "ANAEROBIC") selectedZone = "VO2MAX";
+    // Map days to category rotations (ensures all 10 categories distributed throughout week)
+    // Each day gets diverse category options to guarantee variety
+    const categoryRotations: Record<number, string[]> = {
+      1: ["SWEET_SPOT", "TEMPO", "SPRINT", "RECOVERY"],  // TUE: Sweet spot focus + options
+      2: ["RECOVERY", "BASE", "SWEET_SPOT", "TEMPO"],    // WED: Recovery-focused
+      3: ["THRESHOLD", "SPRINT", "VO2MAX", "TEMPO"],     // THU: Hard effort
+      4: ["SPRINT", "ANAEROBIC", "FTP_TEST", "RECOVERY"],// FRI: Specialty/testing
+    };
+    
+    const dayRotation = categoryRotations[dayIndex];
+    if (dayRotation && dayRotation.length > 0) {
+      // Rotate based on seeded randomness
+      const categoryIndex = seed % dayRotation.length;
+      const rotatedZone = dayRotation[categoryIndex];
+      
+      // Prefer the rotated category, but fall back to primary if needed
+      selectedZone = rotatedZone;
     }
   }
   
