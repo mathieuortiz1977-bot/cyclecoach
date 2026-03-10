@@ -2239,28 +2239,47 @@ function generateOutdoorSession(weekType: WeekType, blockNum: number, day: DayOf
 const selectedTemplates: Map<string, WorkoutTemplate> = new Map();
 
 /**
- * Determine if we should vary the zone for non-Monday sessions
- * Uses user seed for reproducibility (same user always gets same variation)
+ * Rotate goal for a day across weeks to ensure every session is different
+ * Prevents Week 1 Tue, Week 2 Tue, Week 3 Tue from being the same
  */
-function shouldVaryZone(userSeed: string, percentChance: number): boolean {
-  const userRandomizer = Math.abs(
-    userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
-  ) % 100;
-  return userRandomizer < percentChance;
+function rotateGoalByWeek(
+  baseGoal: SessionGoal,
+  day: DayOfWeek,
+  weekNum: number,
+  blockType: BlockType
+): SessionGoal {
+  // Create a rotation pattern for each day
+  // Week 1 → Goal A, Week 2 → Goal B, Week 3 → Goal C, Week 4 → Goal D
+  
+  const goalRotations: Record<DayOfWeek, SessionGoal[]> = {
+    MON: ["LactateThreshold", "VO2Max", "SweetSpot", "Endurance"], // Monday follows block, but rotate hard/easy
+    TUE: ["SweetSpot", "Endurance", "LactateThreshold", "SweetSpot"], // Recovery focus, rotate
+    WED: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
+    THU: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // Progression: threshold → VO2 → anaerobic → recovery
+    FRI: ["VO2Max", "Anaerobic", "SprintPower", "LactateThreshold"], // Peak day: hardest workouts
+    SAT: ["Endurance", "Endurance", "Endurance", "Endurance"], // Outdoor endurance
+    SUN: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
+  };
+  
+  const weekIndex = Math.max(0, Math.min(3, weekNum - 1)); // Weeks 1-4 → indices 0-3
+  const rotation = goalRotations[day];
+  
+  return rotation[weekIndex] as SessionGoal;
 }
 
 /**
  * WIRED WITH GENERATION ENGINE
  * Uses creation engine to build duration-aware sessions instead of templates
+ * Every session is dynamically generated, ensuring variety across 4-week block
  */
 function generateIndoorSession(
   blockType: BlockType, 
   weekType: WeekType, 
   day: DayOfWeek,
-  weekNum?: number,
+  weekNum: number = 1, // CRITICAL: Week number (1-4) for goal rotation
   previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>,
   userSeed?: string, // For per-user variation
-  targetDurationMinutes?: number // USER'S REQUESTED DURATION - NEW PARAM
+  targetDurationMinutes?: number // USER'S REQUESTED DURATION
 ): SessionDef {
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
   let isMonday = dayIndex === 0;
@@ -2300,53 +2319,29 @@ function generateIndoorSession(
         break;
     }
   } else {
-    // Non-Monday: Vary goal by DAY OF WEEK for session diversity
-    // This ensures each day has different training stimulus
-    const dayVariations: Record<DayOfWeek, { zone: string; goal: SessionGoal }> = {
-      MON: { zone: "THRESHOLD", goal: "LactateThreshold" }, // Placeholder (Monday handled above)
-      TUE: { zone: "TEMPO", goal: "SweetSpot" },
-      WED: { zone: "BASE", goal: "Endurance" },
-      THU: { zone: "THRESHOLD", goal: "LactateThreshold" },
-      FRI: { zone: "VO2MAX", goal: "VO2Max" },
-      SAT: { zone: "BASE", goal: "Endurance" },
-      SUN: { zone: "BASE", goal: "Endurance" },
-    };
+    // Non-Monday: Use WEEK-BASED GOAL ROTATION
+    // This ensures every session is different across the 4-week block
+    // Week 1 Tue ≠ Week 2 Tue ≠ Week 3 Tue ≠ Week 4 Tue
     
-    // Get base goal for this block type, then apply day-based variation
-    const blockGoals: Record<BlockType, SessionGoal> = {
-      BASE: "Endurance",
-      THRESHOLD: "LactateThreshold",
-      VO2MAX: "VO2Max",
-      RACE_SIM: "SprintPower",
-    };
+    const baseGoal: SessionGoal = blockType === "BASE" 
+      ? "Endurance" 
+      : blockType === "THRESHOLD" 
+      ? "LactateThreshold" 
+      : blockType === "VO2MAX" 
+      ? "VO2Max" 
+      : "SprintPower";
     
-    const baseGoal = blockGoals[blockType];
-    const dayVar = dayVariations[day];
+    // Rotate goal based on week number for this day
+    selectedGoal = rotateGoalByWeek(baseGoal, day, weekNum, blockType);
     
-    // For non-Monday, vary from base goal but keep in same family
-    // TUE: SweetSpot (tempo work)
-    // THU: Threshold (harder)
-    // FRI: VO2Max (very hard)
-    // SAT: Outdoor (mixed)
-    if (day === "TUE") {
-      selectedGoal = "SweetSpot";
-      selectedZone = "TEMPO";
-    } else if (day === "THU") {
-      // Make THU harder than base
-      selectedGoal = baseGoal === "Endurance" ? "LactateThreshold" : "VO2Max";
-      selectedZone = baseGoal === "Endurance" ? "THRESHOLD" : "VO2MAX";
-    } else if (day === "FRI") {
-      // Make FRI hardest
-      selectedGoal = "VO2Max";
-      selectedZone = "VO2MAX";
-    } else if (day === "SAT") {
-      selectedGoal = "Endurance";
-      selectedZone = "BASE";
-    } else {
-      // Other days
-      selectedGoal = baseGoal;
-      selectedZone = blockType === "BASE" ? "BASE" : blockType === "THRESHOLD" ? "THRESHOLD" : "VO2MAX";
-    }
+    // Map goal back to zone for reference
+    selectedZone = selectedGoal === "Endurance" ? "BASE" 
+      : selectedGoal === "SweetSpot" ? "TEMPO"
+      : selectedGoal === "LactateThreshold" ? "THRESHOLD"
+      : selectedGoal === "VO2Max" ? "VO2MAX"
+      : selectedGoal === "Anaerobic" ? "ANAEROBIC"
+      : selectedGoal === "SprintPower" ? "ANAEROBIC"
+      : "BASE";
   }
   
   // ─── BUILD SESSION WITH GENERATION ENGINE ─────────────────────────
