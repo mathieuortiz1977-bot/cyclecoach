@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { MASTER_WORKOUTS } from '@/lib/sessions-data-classified';
+import { MASTER_WORKOUTS } from '@/lib/sessions-data-all';
 import { WorkoutCard } from '@/components/WorkoutCard';
 import { useRider } from '@/hooks/useRider';
 import Link from 'next/link';
