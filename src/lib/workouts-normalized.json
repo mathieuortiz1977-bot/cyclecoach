@@ -1,0 +1,3152 @@
+[
+  {
+    "id": "carlos_w001",
+    "title": "Steady State Endurance",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 55,
+    "description": "Aerobic base building, fat oxidation",
+    "purpose": "Aerobic base building, fat oxidation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 5400,
+        "purpose": "Aerobic base building, fat oxidation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w002",
+    "title": "Long Endurance Ride",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 150,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 100,
+    "description": "Extended aerobic development",
+    "purpose": "Extended aerobic development",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 9000,
+        "purpose": "Extended aerobic development",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w003",
+    "title": "Tempo Sprinkle Endurance",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 70,
+    "description": "Aerobic base with tempo touches",
+    "purpose": "Aerobic base with tempo touches",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 5400,
+        "purpose": "Aerobic base with tempo touches",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w004",
+    "title": "Cadence Pyramids",
+    "category": "TECHNIQUE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 3,
+    "tss": 50,
+    "description": "Neuromuscular efficiency and pedaling economy",
+    "purpose": "Neuromuscular efficiency and pedaling economy",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Neuromuscular efficiency and pedaling economy",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w005",
+    "title": "Classic Tempo Blocks",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 70,
+    "description": "Muscular endurance, sustained power",
+    "purpose": "Muscular endurance, sustained power",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Muscular endurance, sustained power",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w006",
+    "title": "Extended Tempo",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 85,
+    "description": "Time-in-zone for muscular endurance",
+    "purpose": "Time-in-zone for muscular endurance",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 5400,
+        "purpose": "Time-in-zone for muscular endurance",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w007",
+    "title": "Tempo with Surges",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 80,
+    "description": "Tempo endurance with anaerobic spikes",
+    "purpose": "Tempo endurance with anaerobic spikes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4800,
+        "purpose": "Tempo endurance with anaerobic spikes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w008",
+    "title": "Progressive Tempo",
+    "category": "TEMPO",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 5,
+    "tss": 65,
+    "description": "Pacing discipline, progressive overload",
+    "purpose": "Pacing discipline, progressive overload",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4200,
+        "purpose": "Pacing discipline, progressive overload",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w009",
+    "title": "Sweet Spot Intervals",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 75,
+    "description": "Maximize threshold adaptation with manageable fatigue",
+    "purpose": "Maximize threshold adaptation with manageable fatigue",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Maximize threshold adaptation with manageable fatigue",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w010",
+    "title": "Extended Sweet Spot",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 90,
+    "description": "Long duration sweet spot for advanced riders",
+    "purpose": "Long duration sweet spot for advanced riders",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 5400,
+        "purpose": "Long duration sweet spot for advanced riders",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w011",
+    "title": "Sweet Spot Progression",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "Progressive overload within sweet spot",
+    "purpose": "Progressive overload within sweet spot",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4800,
+        "purpose": "Progressive overload within sweet spot",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w012",
+    "title": "Sweet Spot Over-Unders (Intro)",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 78,
+    "description": "Introduce lactate clearing above/below threshold",
+    "purpose": "Introduce lactate clearing above/below threshold",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Introduce lactate clearing above/below threshold",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w013",
+    "title": "Classic 2 × 20",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "Gold-standard FTP development",
+    "purpose": "Gold-standard FTP development",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Gold-standard FTP development",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w014",
+    "title": "Threshold Steps",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 75,
+    "description": "Progressive threshold exposure",
+    "purpose": "Progressive threshold exposure",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 4200,
+        "purpose": "Progressive threshold exposure",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w015",
+    "title": "Over-Under Intervals",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 82,
+    "description": "Lactate tolerance and clearance at threshold",
+    "purpose": "Lactate tolerance and clearance at threshold",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 4500,
+        "purpose": "Lactate tolerance and clearance at threshold",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w016",
+    "title": "FTP Long Block",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 85,
+    "description": "Sustained threshold ability",
+    "purpose": "Sustained threshold ability",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4800,
+        "purpose": "Sustained threshold ability",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w017",
+    "title": "Criss-Cross Intervals",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 78,
+    "description": "Threshold power with repeated micro-surges",
+    "purpose": "Threshold power with repeated micro-surges",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 68,
+        "durationSecs": 4200,
+        "purpose": "Threshold power with repeated micro-surges",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w018",
+    "title": "Threshold Ramp",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 68,
+    "description": "Finding and holding peak sustainable power",
+    "purpose": "Finding and holding peak sustainable power",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3900,
+        "purpose": "Finding and holding peak sustainable power",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w019",
+    "title": "Classic 5 × 5",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 75,
+    "description": "VO2max development",
+    "purpose": "VO2max development",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "VO2max development",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w020",
+    "title": "Billat 30/30s",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 65,
+    "description": "VO2max with short, repeatable efforts",
+    "purpose": "VO2max with short, repeatable efforts",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "VO2max with short, repeatable efforts",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w021",
+    "title": "4 × 8 VO2max",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 85,
+    "description": "Extended VO2max accumulation",
+    "purpose": "Extended VO2max accumulation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4800,
+        "purpose": "Extended VO2max accumulation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w022",
+    "title": "VO2max Pyramids",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 72,
+    "description": "Varied VO2max stimulus",
+    "purpose": "Varied VO2max stimulus",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Varied VO2max stimulus",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w023",
+    "title": "40/20 Repeats",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 68,
+    "description": "VO2max with high-intensity short bursts",
+    "purpose": "VO2max with high-intensity short bursts",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "VO2max with high-intensity short bursts",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w024",
+    "title": "VO2max Over-Unders",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 80,
+    "description": "VO2max with threshold base",
+    "purpose": "VO2max with threshold base",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "VO2max with threshold base",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w025",
+    "title": "Norwegian 4 × 4",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 60,
+    "description": "VO2max capacity (research-validated protocol)",
+    "purpose": "VO2max capacity (research-validated protocol)",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "VO2max capacity (research-validated protocol)",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w026",
+    "title": "Descending VO2max",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 70,
+    "description": "Fatigue-resistant VO2max capacity",
+    "purpose": "Fatigue-resistant VO2max capacity",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Fatigue-resistant VO2max capacity",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w027",
+    "title": "Tabata Protocol",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 50,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 55,
+    "description": "Anaerobic capacity, VO2max ceiling",
+    "purpose": "Anaerobic capacity, VO2max ceiling",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3000,
+        "purpose": "Anaerobic capacity, VO2max ceiling",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w028",
+    "title": "Anaerobic Repeats",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 65,
+    "description": "Build anaerobic work capacity",
+    "purpose": "Build anaerobic work capacity",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "Build anaerobic work capacity",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w029",
+    "title": "2-Minute Power",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 70,
+    "description": "Anaerobic capacity, race breakaway power",
+    "purpose": "Anaerobic capacity, race breakaway power",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Anaerobic capacity, race breakaway power",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w030",
+    "title": "Microbursts",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 60,
+    "description": "Anaerobic power with minimal rest, simulate racing",
+    "purpose": "Anaerobic power with minimal rest, simulate racing",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Anaerobic power with minimal rest, simulate racing",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w031",
+    "title": "Anaerobic Ladders",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 68,
+    "description": "Wide-spectrum anaerobic development",
+    "purpose": "Wide-spectrum anaerobic development",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Wide-spectrum anaerobic development",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w032",
+    "title": "3-Minute Anaerobic Blocks",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 72,
+    "description": "Extend anaerobic tolerance, bridge to VO2max",
+    "purpose": "Extend anaerobic tolerance, bridge to VO2max",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Extend anaerobic tolerance, bridge to VO2max",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w033",
+    "title": "Sprint Repeats",
+    "category": "SPRINT",
+    "primaryZone": "Z6",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 9,
+    "tss": 45,
+    "description": "Peak neuromuscular power, sprint form",
+    "purpose": "Peak neuromuscular power, sprint form",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z6",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Peak neuromuscular power, sprint form",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w034",
+    "title": "Standing Start Sprints",
+    "category": "SPRINT",
+    "primaryZone": "Z6",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 9,
+    "tss": 42,
+    "description": "Sprint power from low speed",
+    "purpose": "Sprint power from low speed",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z6",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Sprint power from low speed",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w035",
+    "title": "Sprint-Endurance Combo",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 70,
+    "description": "Sprint power layered on fatigued legs",
+    "purpose": "Sprint power layered on fatigued legs",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Sprint power layered on fatigued legs",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w036",
+    "title": "Explosive Repeats",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 50,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 40,
+    "description": "Maximal acceleration, fast-twitch recruitment",
+    "purpose": "Maximal acceleration, fast-twitch recruitment",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3000,
+        "purpose": "Maximal acceleration, fast-twitch recruitment",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w037",
+    "title": "Crit Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 72,
+    "description": "Simulate criterium race demands",
+    "purpose": "Simulate criterium race demands",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "Simulate criterium race demands",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w038",
+    "title": "Race Breakaway Simulation",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 80,
+    "description": "Sustain above-threshold after a hard effort",
+    "purpose": "Sustain above-threshold after a hard effort",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Sustain above-threshold after a hard effort",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w039",
+    "title": "Group Ride Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 75,
+    "description": "Manage variable power surges",
+    "purpose": "Manage variable power surges",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4800,
+        "purpose": "Manage variable power surges",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w040",
+    "title": "Climbing Repeats",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 82,
+    "description": "Climbing power and pacing",
+    "purpose": "Climbing power and pacing",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4800,
+        "purpose": "Climbing power and pacing",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w041",
+    "title": "Time Trial Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 85,
+    "description": "Pacing for a 40 km TT",
+    "purpose": "Pacing for a 40 km TT",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 45,
+        "powerHigh": 75,
+        "durationSecs": 4500,
+        "purpose": "Pacing for a 40 km TT",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w042",
+    "title": "Kitchen Sink",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 90,
+    "description": "Multi-system workout hitting all zones",
+    "purpose": "Multi-system workout hitting all zones",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 5400,
+        "purpose": "Multi-system workout hitting all zones",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w043",
+    "title": "Gravel Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 80,
+    "description": "Variable terrain, sustained effort with power spikes",
+    "purpose": "Variable terrain, sustained effort with power spikes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 5400,
+        "purpose": "Variable terrain, sustained effort with power spikes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w044",
+    "title": "Active Recovery",
+    "category": "RECOVERY",
+    "primaryZone": "Z1",
+    "structure": "mixed",
+    "duration": 45,
+    "scalable": true,
+    "difficultyScore": 1,
+    "tss": 18,
+    "description": "Blood flow, recovery, loosen legs",
+    "purpose": "Blood flow, recovery, loosen legs",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "durationSecs": 2700,
+        "purpose": "Blood flow, recovery, loosen legs",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w045",
+    "title": "Recovery with Openers",
+    "category": "RECOVERY",
+    "primaryZone": "Z1",
+    "structure": "mixed",
+    "duration": 50,
+    "scalable": true,
+    "difficultyScore": 1,
+    "tss": 28,
+    "description": "Easy ride with leg-opening accelerations",
+    "purpose": "Easy ride with leg-opening accelerations",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "durationSecs": 3000,
+        "purpose": "Easy ride with leg-opening accelerations",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w046",
+    "title": "Pre-Race Activation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 35,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 22,
+    "description": "Prime legs and nervous system before competition",
+    "purpose": "Prime legs and nervous system before competition",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "durationSecs": 2100,
+        "purpose": "Prime legs and nervous system before competition",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w047",
+    "title": "Polarized Z2 + VO2max",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 75,
+    "description": "Polarized model — low and high, nothing in between",
+    "purpose": "Polarized model — low and high, nothing in between",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 5400,
+        "purpose": "Polarized model — low and high, nothing in between",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w048",
+    "title": "Polarized Sprint Day",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 50,
+    "description": "Polarized low-intensity base with neuromuscular bursts",
+    "purpose": "Polarized low-intensity base with neuromuscular bursts",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Polarized low-intensity base with neuromuscular bursts",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w049",
+    "title": "Seiler 4 × 8",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 85,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 85,
+    "description": "VO2max accumulation in a polarized framework",
+    "purpose": "VO2max accumulation in a polarized framework",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 5100,
+        "purpose": "VO2max accumulation in a polarized framework",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w050",
+    "title": "Big Gear Force Reps",
+    "category": "STRENGTH",
+    "primaryZone": "Z2-Z3",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 4,
+    "tss": 52,
+    "description": "Muscular force production, pedal strength",
+    "purpose": "Muscular force production, pedal strength",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3900,
+        "purpose": "Muscular force production, pedal strength",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w051",
+    "title": "Single-Leg Drills",
+    "category": "TECHNIQUE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 3,
+    "tss": 35,
+    "description": "Pedaling efficiency, eliminate dead spots",
+    "purpose": "Pedaling efficiency, eliminate dead spots",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3300,
+        "purpose": "Pedaling efficiency, eliminate dead spots",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w052",
+    "title": "Torque Intervals",
+    "category": "STRENGTH",
+    "primaryZone": "Z2-Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 4,
+    "tss": 60,
+    "description": "Max force per pedal stroke, climbing strength",
+    "purpose": "Max force per pedal stroke, climbing strength",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4200,
+        "purpose": "Max force per pedal stroke, climbing strength",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w053",
+    "title": "Ronnestad Intervals",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 62,
+    "description": "VO2max with declining rest (research protocol)",
+    "purpose": "VO2max with declining rest (research protocol)",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "VO2max with declining rest (research protocol)",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w054",
+    "title": "Gimenez Intervals",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 70,
+    "description": "VO2max using sustained sub-max and supra-max alternation",
+    "purpose": "VO2max using sustained sub-max and supra-max alternation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "VO2max using sustained sub-max and supra-max alternation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w055",
+    "title": "Miracle Intervals",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 55,
+    "description": "Motor unit activation, anaerobic/sprint power",
+    "purpose": "Motor unit activation, anaerobic/sprint power",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Motor unit activation, anaerobic/sprint power",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w056",
+    "title": "Ramp Test (FTP Assessment)",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 35,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 35,
+    "description": "FTP estimation",
+    "purpose": "FTP estimation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "durationSecs": 2100,
+        "purpose": "FTP estimation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w057",
+    "title": "20-Minute FTP Test",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 55,
+    "description": "FTP measurement",
+    "purpose": "FTP measurement",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3300,
+        "purpose": "FTP measurement",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w058",
+    "title": "Kolie Moore FTP Test",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 65,
+    "description": "Longer, steadier FTP assessment",
+    "purpose": "Longer, steadier FTP assessment",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Longer, steadier FTP assessment",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w059",
+    "title": "Rønnestad 30/15s",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 75,
+    "description": "Superior VO2max stimulus via short intervals",
+    "purpose": "Superior VO2max stimulus via short intervals",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Superior VO2max stimulus via short intervals",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w060",
+    "title": "Rønnestad Fast-Start 5 × 5",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 78,
+    "description": "Accelerated VO2max response via hard-start pacing",
+    "purpose": "Accelerated VO2max response via hard-start pacing",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Accelerated VO2max response via hard-start pacing",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w061",
+    "title": "Bossi Oscillating Intervals",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 76,
+    "description": "VO2max via variable-intensity within each interval",
+    "purpose": "VO2max via variable-intensity within each interval",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "VO2max via variable-intensity within each interval",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w062",
+    "title": "Billat 30/30s (Extended)",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 72,
+    "description": "Maximal VO2max accumulation, research-optimized dose",
+    "purpose": "Maximal VO2max accumulation, research-optimized dose",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Maximal VO2max accumulation, research-optimized dose",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w063",
+    "title": "Seiler 4 × 4 vs 4 × 8 Hybrid",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "Best of both Seiler protocols in one session",
+    "purpose": "Best of both Seiler protocols in one session",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Best of both Seiler protocols in one session",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w064",
+    "title": "Hard-Start Decreasing VO2max",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 72,
+    "description": "Maximize time near VO2max with fatigue-managed pacing",
+    "purpose": "Maximize time near VO2max with fatigue-managed pacing",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Maximize time near VO2max with fatigue-managed pacing",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w065",
+    "title": "40/20 VO2max (MTB Style)",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 68,
+    "description": "VO2max + anaerobic power, MTB race simulation",
+    "purpose": "VO2max + anaerobic power, MTB race simulation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "VO2max + anaerobic power, MTB race simulation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w066",
+    "title": "Diabolical Criss-Cross",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 85,
+    "description": "Extreme lactate tolerance, criterium/gravel racing",
+    "purpose": "Extreme lactate tolerance, criterium/gravel racing",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Extreme lactate tolerance, criterium/gravel racing",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w067",
+    "title": "Tempo Over-Unders with Anaerobic Spikes",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 78,
+    "description": "Tempo endurance with Z6 attacks",
+    "purpose": "Tempo endurance with Z6 attacks",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Tempo endurance with Z6 attacks",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w068",
+    "title": "Sweet Spot with VO2max Kicks",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 82,
+    "description": "Sweet spot endurance + VO2max spikes",
+    "purpose": "Sweet spot endurance + VO2max spikes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4800,
+        "purpose": "Sweet spot endurance + VO2max spikes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w069",
+    "title": "Ritter-Style Mixed Over-Unders",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 78,
+    "description": "Threshold with variable over/under durations",
+    "purpose": "Threshold with variable over/under durations",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Threshold with variable over/under durations",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w070",
+    "title": "Progressive Over-Unders",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "Build threshold tolerance with escalating difficulty",
+    "purpose": "Build threshold tolerance with escalating difficulty",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Build threshold tolerance with escalating difficulty",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w071",
+    "title": "The 30-Minute VO2max Blitz",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 30,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 38,
+    "description": "Maximum training stimulus in minimal time",
+    "purpose": "Maximum training stimulus in minimal time",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 45,
+        "powerHigh": 75,
+        "durationSecs": 1800,
+        "purpose": "Maximum training stimulus in minimal time",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w072",
+    "title": "30-Minute Over-Under Express",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 30,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 35,
+    "description": "Threshold stimulus in 30 minutes",
+    "purpose": "Threshold stimulus in 30 minutes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 1800,
+        "purpose": "Threshold stimulus in 30 minutes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w073",
+    "title": "30-Minute Speed Intervals",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 30,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 32,
+    "description": "Neuromuscular and anaerobic in 30 minutes",
+    "purpose": "Neuromuscular and anaerobic in 30 minutes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 1800,
+        "purpose": "Neuromuscular and anaerobic in 30 minutes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w074",
+    "title": "45-Minute Sweet Spot Express",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 45,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 42,
+    "description": "Sweet spot development in 45 minutes",
+    "purpose": "Sweet spot development in 45 minutes",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 2700,
+        "purpose": "Sweet spot development in 45 minutes",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w075",
+    "title": "45-Minute Tabata + Threshold Combo",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 45,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 48,
+    "description": "Anaerobic + threshold in short duration",
+    "purpose": "Anaerobic + threshold in short duration",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 2700,
+        "purpose": "Anaerobic + threshold in short duration",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w076",
+    "title": "45-Minute Descending Pyramid",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 45,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 45,
+    "description": "Multi-zone stimulus in compact format",
+    "purpose": "Multi-zone stimulus in compact format",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 2700,
+        "purpose": "Multi-zone stimulus in compact format",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w077",
+    "title": "Gran Fondo Pacing",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 120,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 100,
+    "description": "Long-event pacing discipline",
+    "purpose": "Long-event pacing discipline",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 7200,
+        "purpose": "Long-event pacing discipline",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w078",
+    "title": "Cyclocross Race Simulation",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 70,
+    "description": "CX-specific power demands",
+    "purpose": "CX-specific power demands",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "CX-specific power demands",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w079",
+    "title": "Road Race Finale Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 90,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 85,
+    "description": "Practice race-finishing power on fatigued legs",
+    "purpose": "Practice race-finishing power on fatigued legs",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 5400,
+        "purpose": "Practice race-finishing power on fatigued legs",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w080",
+    "title": "MTB Cross-Country Simulation",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 78,
+    "description": "XC MTB race demands — punchy climbs, recoveries",
+    "purpose": "XC MTB race demands — punchy climbs, recoveries",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "XC MTB race demands — punchy climbs, recoveries",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w081",
+    "title": "Track Pursuit Preparation",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 58,
+    "description": "Sustained supra-threshold for individual pursuit",
+    "purpose": "Sustained supra-threshold for individual pursuit",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Sustained supra-threshold for individual pursuit",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w082",
+    "title": "Hill Climb TT Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 75,
+    "description": "Sustained climbing at race intensity",
+    "purpose": "Sustained climbing at race intensity",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Sustained climbing at race intensity",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w083",
+    "title": "Sweet Spot After Endurance",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 120,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 95,
+    "description": "Quality work on pre-fatigued legs",
+    "purpose": "Quality work on pre-fatigued legs",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 7200,
+        "purpose": "Quality work on pre-fatigued legs",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w084",
+    "title": "Threshold After Tempo",
+    "category": "TEMPO",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 100,
+    "scalable": true,
+    "difficultyScore": 5,
+    "tss": 92,
+    "description": "FTP sustainability on tired legs",
+    "purpose": "FTP sustainability on tired legs",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 6000,
+        "purpose": "FTP sustainability on tired legs",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w085",
+    "title": "VO2max on Tired Legs",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 100,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 90,
+    "description": "Simulate late-race attacks",
+    "purpose": "Simulate late-race attacks",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 6000,
+        "purpose": "Simulate late-race attacks",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w086",
+    "title": "Endurance with Progressive Finale",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 150,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 110,
+    "description": "Negative split pacing, marathon ride prep",
+    "purpose": "Negative split pacing, marathon ride prep",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 9000,
+        "purpose": "Negative split pacing, marathon ride prep",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w087",
+    "title": "Spin-Ups",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 50,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 30,
+    "description": "Maximum cadence development, neuromuscular speed",
+    "purpose": "Maximum cadence development, neuromuscular speed",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3000,
+        "purpose": "Maximum cadence development, neuromuscular speed",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w088",
+    "title": "Cadence Contrast Intervals",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 50,
+    "description": "Muscle recruitment across cadence spectrum",
+    "purpose": "Muscle recruitment across cadence spectrum",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 3900,
+        "purpose": "Muscle recruitment across cadence spectrum",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w089",
+    "title": "Isolated Leg Training (ILT) + Sweet Spot",
+    "category": "TECHNIQUE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 3,
+    "tss": 55,
+    "description": "Pedaling efficiency before sweet spot work",
+    "purpose": "Pedaling efficiency before sweet spot work",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4200,
+        "purpose": "Pedaling efficiency before sweet spot work",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w090",
+    "title": "Block Day 1: Threshold Focus",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "First session of a 2–3 day training block",
+    "purpose": "First session of a 2–3 day training block",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "First session of a 2–3 day training block",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w091",
+    "title": "Block Day 2: VO2max Focus",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 75,
+    "description": "Second session, build on Day 1 fatigue",
+    "purpose": "Second session, build on Day 1 fatigue",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Second session, build on Day 1 fatigue",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w092",
+    "title": "Block Day 3: Tempo + Sprints",
+    "category": "TEMPO",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 5,
+    "tss": 60,
+    "description": "Final block day — aerobic work with neuromuscular maintenance",
+    "purpose": "Final block day — aerobic work with neuromuscular maintenance",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 65,
+        "durationSecs": 4500,
+        "purpose": "Final block day — aerobic work with neuromuscular maintenance",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w093",
+    "title": "Race Day Warm-Up (Road Race)",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 25,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 15,
+    "description": "Optimal activation before mass-start road race",
+    "purpose": "Optimal activation before mass-start road race",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "durationSecs": 1500,
+        "purpose": "Optimal activation before mass-start road race",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w094",
+    "title": "Race Day Warm-Up (Time Trial)",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 30,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 20,
+    "description": "Peak activation for maximal sustained effort",
+    "purpose": "Peak activation for maximal sustained effort",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "durationSecs": 1800,
+        "purpose": "Peak activation for maximal sustained effort",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w095",
+    "title": "Interval Day Warm-Up (Detailed)",
+    "category": "SWEET_SPOT",
+    "primaryZone": "Z3",
+    "structure": "mixed",
+    "duration": 20,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 10,
+    "description": "Thorough preparation for hard interval session",
+    "purpose": "Thorough preparation for hard interval session",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z3",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "durationSecs": 1200,
+        "purpose": "Thorough preparation for hard interval session",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w096",
+    "title": "Zwift Race Prep: Pen Start Simulation",
+    "category": "RACE_SIM",
+    "primaryZone": "Z4-Z6",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 68,
+    "description": "Survive the opening surge of virtual races",
+    "purpose": "Survive the opening surge of virtual races",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4-Z6",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "Survive the opening surge of virtual races",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w097",
+    "title": "Zwift Race Finish Kicker",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 65,
+    "description": "Sprint finish after sustained threshold",
+    "purpose": "Sprint finish after sustained threshold",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "Sprint finish after sustained threshold",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w098",
+    "title": "Laursen Pmax/Tmax Protocol",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 75,
+    "description": "Individualized VO2max intervals based on personal physiology",
+    "purpose": "Individualized VO2max intervals based on personal physiology",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Individualized VO2max intervals based on personal physiology",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w099",
+    "title": "Laursen Supramaximal Sprint Protocol",
+    "category": "BASE",
+    "primaryZone": "Z2",
+    "structure": "mixed",
+    "duration": 65,
+    "scalable": true,
+    "difficultyScore": 2,
+    "tss": 68,
+    "description": "Sprint-based performance improvement for trained cyclists",
+    "purpose": "Sprint-based performance improvement for trained cyclists",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3900,
+        "purpose": "Sprint-based performance improvement for trained cyclists",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w100",
+    "title": "Lindsay 80% MAP Protocol",
+    "category": "THRESHOLD",
+    "primaryZone": "Z4",
+    "structure": "mixed",
+    "duration": 80,
+    "scalable": true,
+    "difficultyScore": 7,
+    "tss": 82,
+    "description": "Race-specific threshold improvement for trained cyclists",
+    "purpose": "Race-specific threshold improvement for trained cyclists",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z4",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4800,
+        "purpose": "Race-specific threshold improvement for trained cyclists",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w101",
+    "title": "Stepto Optimal Duration Protocol",
+    "category": "MIXED",
+    "primaryZone": "Z2-Z5",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 6,
+    "tss": 80,
+    "description": "Maximum TT performance improvement (research-optimized)",
+    "purpose": "Maximum TT performance improvement (research-optimized)",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z2-Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Maximum TT performance improvement (research-optimized)",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w102",
+    "title": "Rønnestad 30s MAP with 2:1 Ratio",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 60,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 70,
+    "description": "Maximize time ≥90% VO2max using fixed 30s intervals at MAP",
+    "purpose": "Maximize time ≥90% VO2max using fixed 30s intervals at MAP",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3600,
+        "purpose": "Maximize time ≥90% VO2max using fixed 30s intervals at MAP",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w103",
+    "title": "High Work:Rest Ratio (5:1)",
+    "category": "RECOVERY",
+    "primaryZone": "Z1",
+    "structure": "mixed",
+    "duration": 70,
+    "scalable": true,
+    "difficultyScore": 1,
+    "tss": 78,
+    "description": "Maximum time-at-intensity with minimal recovery",
+    "purpose": "Maximum time-at-intensity with minimal recovery",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4200,
+        "purpose": "Maximum time-at-intensity with minimal recovery",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w104",
+    "title": "Low Work:Rest Ratio Sprint (1:8)",
+    "category": "RECOVERY",
+    "primaryZone": "Z1",
+    "structure": "mixed",
+    "duration": 55,
+    "scalable": true,
+    "difficultyScore": 1,
+    "tss": 40,
+    "description": "Maximum power output with full recovery",
+    "purpose": "Maximum power output with full recovery",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 3300,
+        "purpose": "Maximum power output with full recovery",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  },
+  {
+    "id": "carlos_w105",
+    "title": "Self-Paced 4 × 8 with 2:1 Ratio",
+    "category": "VO2MAX",
+    "primaryZone": "Z5",
+    "structure": "mixed",
+    "duration": 75,
+    "scalable": true,
+    "difficultyScore": 8,
+    "tss": 80,
+    "description": "Optimized self-paced VO2max accumulation",
+    "purpose": "Optimized self-paced VO2max accumulation",
+    "source": "carlos",
+    "intervals": [
+      {
+        "name": "Complete Workout",
+        "zone": "Z5",
+        "powerLow": 40,
+        "powerHigh": 70,
+        "durationSecs": 4500,
+        "purpose": "Optimized self-paced VO2max accumulation",
+        "coachingNotes": {
+          "DARK_HUMOR": "Welcome to FTP. This is your redline — it hurts, and that's the point.",
+          "MOTIVATIONAL": "This is where you get faster. Every interval raises your ceiling.",
+          "TECHNICAL": "FTP-level work maximally stimulates neuromuscular recruitment and power.",
+          "MIXED": "Hold this power steady. Your legs will argue — listen but don't give in."
+        }
+      }
+    ]
+  }
+]
