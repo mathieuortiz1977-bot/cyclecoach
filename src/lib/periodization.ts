@@ -1526,13 +1526,15 @@ function generateIndoorSession(
     ) : 0;
     const seed = (dayOffset + weekOffset + userHash) % 1000;
     
-    // Map days to category rotations (ensures all 10 categories distributed throughout week)
+    // Map days to category rotations (ensures all 10+ categories distributed throughout week)
     // Each day gets diverse category options to guarantee variety
+    // TECHNIQUE: pedal economy, skill work (good for any day)
+    // STRENGTH: force development, power (good for harder or recovery days with activation)
     const categoryRotations: Record<number, string[]> = {
-      1: ["SWEET_SPOT", "TEMPO", "SPRINT", "RECOVERY"],  // TUE: Sweet spot focus + options
-      2: ["RECOVERY", "BASE", "SWEET_SPOT", "TEMPO"],    // WED: Recovery-focused
-      3: ["THRESHOLD", "SPRINT", "VO2MAX", "TEMPO"],     // THU: Hard effort
-      4: ["SPRINT", "ANAEROBIC", "FTP_TEST", "RECOVERY"],// FRI: Specialty/testing
+      1: ["SWEET_SPOT", "TEMPO", "TECHNIQUE", "SPRINT", "RECOVERY"],  // TUE: Sweet spot + skill + options
+      2: ["RECOVERY", "BASE", "TECHNIQUE", "SWEET_SPOT", "STRENGTH"],    // WED: Recovery-focused, skill work, or light strength
+      3: ["THRESHOLD", "STRENGTH", "VO2MAX", "SPRINT", "TEMPO"],     // THU: Hard effort + strength
+      4: ["SPRINT", "ANAEROBIC", "STRENGTH", "FTP_TEST", "RECOVERY"],// FRI: Specialty/testing + neuromuscular strength
     };
     
     const dayRotation = categoryRotations[dayIndex];
