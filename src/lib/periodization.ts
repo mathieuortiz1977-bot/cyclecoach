@@ -1195,7 +1195,8 @@ function generateWeekSessions(
   previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {},
   previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {},
   userSeed?: string, // For per-user variation (Monday stays locked, other days can vary)
-  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION (same for all days; Sunday treated as regular day)
+  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION (default for all days)
+  targetSundayDurationMinutes?: number // OPTIONAL: Different duration for Sunday
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -1213,7 +1214,11 @@ function generateWeekSessions(
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day - use generation engine for duration-aware sessions
-      // All days use same duration; user can optionally provide different durations via trainingDayDurations array if needed
+      // Use Sunday-specific duration if provided, otherwise use standard duration
+      const dayDuration = (day === "SUN" && targetSundayDurationMinutes !== undefined) 
+        ? targetSundayDurationMinutes 
+        : targetDurationMinutes;
+      
       session = generateIndoorSession(
         blockType, 
         weekType, 
@@ -1221,7 +1226,7 @@ function generateWeekSessions(
         weekInBlock,
         previousTemplates,
         userSeed,
-        targetDurationMinutes, // Use same duration for all training days (Sunday is treated as regular day)
+        dayDuration, // Use day-specific duration (Sunday uses targetSundayDurationMinutes if provided)
         usedThisWeekIds // Pass already-used workouts to avoid repeats THIS WEEK
       );
       
@@ -1802,7 +1807,8 @@ export function generatePlan(
   useAINames?: boolean,
   riderId?: string, // For per-user variation (Monday locked, other days vary by user)
   includeInitialFTPTest: boolean = true, // Always start with FTP test to establish baselines
-  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION (same for all days; Sunday = regular day)
+  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION (default for all days)
+  targetSundayDurationMinutes?: number // OPTIONAL: Different duration for Sunday
 ): PlanDef {
   // Validate duration (BUG #5 fix)
   if (targetDurationMinutes !== undefined && targetDurationMinutes < 30) {
@@ -1839,7 +1845,8 @@ export function generatePlan(
       previousWeekStructures,
       previousWeekTemplates,
       riderId,
-      targetDurationMinutes
+      targetDurationMinutes,
+      targetSundayDurationMinutes
     )
     .map(s => {
       // Apply duration scaling (same for all days; Sunday treated as regular day)
@@ -1871,7 +1878,8 @@ export function generatePlan(
             previousWeekStructures,
             previousWeekTemplates,
             riderId,
-            targetDurationMinutes
+            targetDurationMinutes,
+            targetSundayDurationMinutes
           ).map(s => {
             // Apply duration scaling (same for all days; Sunday treated as regular day)
             return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
@@ -1923,7 +1931,8 @@ export function generatePlan(
         previousWeekStructures,
         previousWeekTemplates,  // Pass template tracking
         riderId,  // Pass rider ID for per-user variation
-        targetDurationMinutes
+        targetDurationMinutes,
+        targetSundayDurationMinutes
       ).map(s => {
         // Apply duration scaling (same for all days; Sunday treated as regular day)
         return fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes);
