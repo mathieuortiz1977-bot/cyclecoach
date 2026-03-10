@@ -2239,8 +2239,33 @@ function generateOutdoorSession(weekType: WeekType, blockNum: number, day: DayOf
 const selectedTemplates: Map<string, WorkoutTemplate> = new Map();
 
 /**
+ * Select a protocol variant for a goal
+ * Multiple protocols per goal = more session variety even for same goal
+ */
+function selectProtocolForGoal(goal: SessionGoal, weekNum: number, day: DayOfWeek): string | undefined {
+  // Multiple protocols per goal for variety
+  const protocolOptions: Record<SessionGoal, string[]> = {
+    Endurance: ["2x20"],
+    SweetSpot: ["2x20"],
+    LactateThreshold: ["3x10", "4x8", "2x20"],
+    VO2Max: ["30_30", "40_20", "4x8"],
+    Anaerobic: ["Tabata", "Pyramid"],
+    SprintPower: ["Pyramid", "Tabata"],
+  };
+  
+  const options = protocolOptions[goal];
+  if (!options || options.length === 0) return undefined;
+  
+  // Deterministic selection: different weeks get different protocols for same goal
+  const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
+  const index = (weekNum + dayIndex) % options.length;
+  
+  return options[index];
+}
+
+/**
  * Rotate goal for a day across weeks to ensure every session is different
- * Prevents Week 1 Tue, Week 2 Tue, Week 3 Tue from being the same
+ * CRITICAL: No goal repeats within a 4-week block on the same day
  */
 function rotateGoalByWeek(
   baseGoal: SessionGoal,
@@ -2252,11 +2277,11 @@ function rotateGoalByWeek(
   // Week 1 → Goal A, Week 2 → Goal B, Week 3 → Goal C, Week 4 → Goal D
   
   const goalRotations: Record<DayOfWeek, SessionGoal[]> = {
-    MON: ["LactateThreshold", "VO2Max", "SweetSpot", "Endurance"], // Monday follows block, but rotate hard/easy
-    TUE: ["SweetSpot", "Endurance", "LactateThreshold", "SweetSpot"], // Recovery focus, rotate
+    MON: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // NO REPEATS within block
+    TUE: ["SweetSpot", "LactateThreshold", "VO2Max", "Endurance"], // Recovery-focused, NO REPEATS
     WED: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
-    THU: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // Progression: threshold → VO2 → anaerobic → recovery
-    FRI: ["VO2Max", "Anaerobic", "SprintPower", "LactateThreshold"], // Peak day: hardest workouts
+    THU: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // Build → peak → recovery, NO REPEATS
+    FRI: ["VO2Max", "Anaerobic", "SprintPower", "LactateThreshold"], // Peak day, NO REPEATS
     SAT: ["Endurance", "Endurance", "Endurance", "Endurance"], // Outdoor endurance
     SUN: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
   };
@@ -2355,8 +2380,11 @@ function generateIndoorSession(
     level: "Intermediate",
   };
   
-  // Build session using generation engine
-  const generatedSession = createSession(athlete, selectedGoal);
+  // Select protocol variant for this goal (different protocols = more variety)
+  const selectedProtocol = selectProtocolForGoal(selectedGoal, weekNum, day);
+  
+  // Build session using generation engine with selected protocol
+  const generatedSession = createSession(athlete, selectedGoal, selectedProtocol);
   
   // Scale to user's requested duration if provided
   let finalSession = generatedSession;
