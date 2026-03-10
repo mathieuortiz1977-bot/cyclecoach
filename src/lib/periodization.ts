@@ -1750,38 +1750,37 @@ function fixSessionDuration(
     return session;
   }
   
-  // CRITICAL FIX: If target was already applied (user selection), DON'T apply scaling
-  // Special case: If Sunday and user selected Sunday duration, use it exactly
-  const useExactDuration = targetDurationWasApplied && userTargetDuration;
-  const useSundayExact = session.dayOfWeek === "SUN" && userSundayDuration !== undefined && userSundayDuration > 0;
+  // GENERAL FIX: User-selected durations are SACRED
+  // When a user explicitly selects a duration (any day, any week), use it WITHOUT day multipliers
+  // Day multipliers affect INTENSITY only, not the user's duration selection
   
-  if (useExactDuration || useSundayExact) {
-    // User explicitly selected a duration - respect it exactly
-    // Only apply intensity factor, not duration scaling
+  // Check if user provided an explicit duration for this day
+  const userProvidedDuration = session.dayOfWeek === "SUN" 
+    ? (userSundayDuration !== undefined ? userSundayDuration : userTargetDuration)
+    : userTargetDuration;
+  
+  if (userProvidedDuration && userProvidedDuration > 0) {
+    // User explicitly selected a duration - RESPECT IT EXACTLY (no day multipliers)
     const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
-    const exactDuration = useSundayExact ? (userSundayDuration as number) : (userTargetDuration as number);
     return {
       ...session,
-      duration: exactDuration,                 // Use user's exact selection
-      intensityFactor,
-      userTargetDuration: exactDuration,
+      duration: userProvidedDuration,          // Use user's exact selection
+      intensityFactor,                         // But apply intensity variation
+      userTargetDuration: userProvidedDuration,
       periodizationWeekType: weekType,
     };
   }
   
+  // No user duration provided - fall back to template duration
   // Calculate base duration from intervals
   // BUG #9 FIX: Handle null/undefined intervals (e.g., rest days)
   const totalSecs = (session.intervals || []).reduce((s, i) => s + i.durationSecs, 0);
   const baseTemplateDuration = Math.round(totalSecs / 60) || 0;
   
-  // Use user's target as anchor if provided, otherwise use template duration
-  // BUG FIX: For Sunday, use Sunday-specific duration if provided
-  let anchor = userTargetDuration || baseTemplateDuration || 60;
-  if (session.dayOfWeek === "SUN" && userSundayDuration !== undefined) {
-    anchor = userSundayDuration;  // Use Sunday duration for Sunday
-  }
+  // Use template duration as anchor (no user selection provided)
+  const anchor = baseTemplateDuration || 60;
   
-  // Calculate smart duration (Part 1) - only if NOT explicitly applied
+  // For template-based sessions (user didn't select duration), apply smart scaling
   const smartDuration = calculateSmartDuration(
     anchor,
     weekType,
