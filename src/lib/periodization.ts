@@ -34,8 +34,10 @@ export interface RawIntervalDef extends Omit<IntervalDef, 'durationSecs'> {
  * @param intervals Raw intervals (may have durationPercent)
  * @param totalDurationMinutes Total workout duration (for percent calculation)
  * @returns Normalized intervals with durationSecs always defined
+ * 
+ * EXPORTED: Used in testing and integration
  */
-function normalizeIntervals(intervals: (IntervalDef | RawIntervalDef)[], totalDurationMinutes: number): IntervalDef[] {
+export function normalizeIntervals(intervals: (IntervalDef | RawIntervalDef)[], totalDurationMinutes: number): IntervalDef[] {
   const totalSecs = totalDurationMinutes * 60;
   
   return intervals.map(interval => {
