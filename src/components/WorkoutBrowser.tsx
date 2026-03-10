@@ -201,7 +201,7 @@ export function WorkoutBrowser({ onSelectWorkout }: WorkoutBrowserProps) {
                 </div>
                 <div className="text-right">
                   <div className="text-sm text-light/70">{workout.duration}m</div>
-                  {workout.tss && (
+                  {workout.tss !== undefined && (
                     <div className="text-xs text-light/50">TSS: {workout.tss}</div>
                   )}
                 </div>
@@ -209,22 +209,31 @@ export function WorkoutBrowser({ onSelectWorkout }: WorkoutBrowserProps) {
 
               {/* Interval Preview */}
               <div className="flex gap-1 mt-3">
-                {workout.intervals?.slice(0, 5).map((interval, i) => (
-                  <div
-                    key={i}
-                    className="flex-1 h-8 rounded"
-                    style={{
-                      backgroundColor: getZoneColor(interval.intensity?.zone || 'Z2'),
-                      opacity: 0.6,
-                    }}
-                    title={interval.name}
-                  />
-                ))}
-                {(workout.intervals?.length || 0) > 5 && (
-                  <div className="w-8 h-8 rounded bg-light/10 flex items-center justify-center text-xs text-light/50">
-                    +{(workout.intervals?.length || 0) - 5}
-                  </div>
-                )}
+                {(() => {
+                  const intervals = typeof workout.intervals === 'function' 
+                    ? workout.intervals() 
+                    : (workout.intervals || []);
+                  return (
+                    <>
+                      {intervals.slice(0, 5).map((interval: any, i: number) => (
+                        <div
+                          key={i}
+                          className="flex-1 h-8 rounded"
+                          style={{
+                            backgroundColor: getZoneColor(interval.intensity?.zone || 'Z2'),
+                            opacity: 0.6,
+                          }}
+                          title={interval.name}
+                        />
+                      ))}
+                      {intervals.length > 5 && (
+                        <div className="w-8 h-8 rounded bg-light/10 flex items-center justify-center text-xs text-light/50">
+                          +{intervals.length - 5}
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             </motion.div>
           ))}

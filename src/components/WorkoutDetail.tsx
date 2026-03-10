@@ -37,7 +37,15 @@ export function WorkoutDetail({
     };
   };
 
-  const scaledIntervals = (workout.intervals || []).map(scaleInterval);
+  // Get intervals as array (handle both function and direct array)
+  const getIntervalArray = () => {
+    return typeof workout.intervals === 'function' 
+      ? workout.intervals() 
+      : (workout.intervals || []);
+  };
+
+  const allIntervals = getIntervalArray();
+  const scaledIntervals = allIntervals.map(scaleInterval);
   const totalScaledSecs = scaledIntervals.reduce((sum, i) => sum + i.scaledDuration, 0);
   const totalScaledMins = Math.round(totalScaledSecs / 60);
 
@@ -94,18 +102,18 @@ export function WorkoutDetail({
         </div>
         <div>
           <div className="text-light/60 text-sm">TSS</div>
-          <div className="text-lg font-semibold text-light">{workout.tss || 'N/A'}</div>
+          <div className="text-lg font-semibold text-light">{workout.tss ?? 'N/A'}</div>
         </div>
         <div>
           <div className="text-light/60 text-sm">Difficulty</div>
           <div className="text-lg font-semibold text-light">
-            {workout.difficulty}/10
+            {(workout.difficulty ?? workout.difficultyScore ?? 'N/A')}/10
           </div>
         </div>
         <div>
           <div className="text-light/60 text-sm">Intervals</div>
           <div className="text-lg font-semibold text-light">
-            {workout.intervals?.length || 0}
+            {allIntervals.length || 0}
           </div>
         </div>
       </div>
@@ -143,16 +151,15 @@ export function WorkoutDetail({
       <div className="space-y-3">
         <h3 className="text-light font-semibold text-lg">Intervals</h3>
 
-        {scaledIntervals.map((interval, idx) => {
-          const zoneInfo = getTrainingZoneInfo(
-            interval.intensity?.zone?.split('-')[0] || 'Z2'
-          );
+        {scaledIntervals.map((interval: any, idx) => {
+          const zone = (interval.intensity?.zone || interval.zone || 'Z2');
           const powerLow = Math.round(
-            (interval.intensity?.powerLow || 0) * (userFtp / 100)
+            ((interval.intensity?.powerLow || interval.powerLow || 0) / 100) * userFtp
           );
           const powerHigh = Math.round(
-            (interval.intensity?.powerHigh || 0) * (userFtp / 100)
+            ((interval.intensity?.powerHigh || interval.powerHigh || 0) / 100) * userFtp
           );
+          const zoneInfo = getTrainingZoneInfo(zone.split('-')[0]);
 
           return (
             <motion.div
@@ -168,9 +175,7 @@ export function WorkoutDetail({
                   <div
                     className="w-4 h-4 rounded"
                     style={{
-                      backgroundColor: getZoneColor(
-                        interval.intensity?.zone || 'Z2'
-                      ),
+                      backgroundColor: getZoneColor(zone),
                     }}
                   />
                   <div>
@@ -184,7 +189,7 @@ export function WorkoutDetail({
                       interval.scaledDuration % 60
                     ).padStart(2, '0')}
                   </div>
-                  <div className="text-xs text-light/50">{interval.intensity?.zone}</div>
+                  <div className="text-xs text-light/50">{zone}</div>
                 </div>
               </div>
 

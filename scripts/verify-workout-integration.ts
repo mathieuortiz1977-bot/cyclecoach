@@ -138,7 +138,7 @@ try {
   const testWorkout = MASTER_WORKOUTS[Math.floor(Math.random() * MASTER_WORKOUTS.length)];
   const targetDuration = 60; // 60 minutes
   
-  const intervals = testWorkout.intervals();
+  const intervals = typeof testWorkout.intervals === 'function' ? testWorkout.intervals() : testWorkout.intervals;
   
   if (!Array.isArray(intervals) || intervals.length === 0) {
     console.error(`❌ ${testWorkout.title}: No intervals returned`);

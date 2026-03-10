@@ -9,7 +9,7 @@ interface WorkoutCardProps {
 }
 
 export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
-  const intervals = workout.intervals();
+  const intervals = typeof workout.intervals === 'function' ? workout.intervals() : workout.intervals;
   const DISPLAY_DURATION_MINS = 60; // Standard 60-minute display duration
   
   // Calculate total duration: handle both durationSecs and durationPercent

@@ -1255,9 +1255,9 @@ export interface WorkoutTemplate {
   title: string;
   description: string;
   purpose: string;
-  zone: string;
+  zone?: string;
   duration: number;
-  intervals: () => any[];  // Allow intervals with either durationSecs or durationPercent
+  intervals: any[] | (() => any[]);  // Can be array or function
   
   // NEW: Classification fields for smart selection
   category: string;              // "BASE", "THRESHOLD", "VO2MAX", "ANAEROBIC", "SPRINT", "RECOVERY", etc.
@@ -1265,8 +1265,12 @@ export interface WorkoutTemplate {
   protocol?: string;             // "Seiler 4x8", "Billat 30/30", "Coggan 2x20", etc.
   researcher?: string;           // "Seiler", "Billat", "Rønnestad", "Coggan", "Laursen"
   structure?: string;            // "repeats", "pyramid", "ladder", "steady", "mixed", "alternating"
-  difficultyScore: number;       // 1-10 (1=easy recovery, 10=max effort)
+  difficultyScore?: number;      // 1-10 (1=easy recovery, 10=max effort)
+  difficulty?: number;           // Alternative name for difficulty (from JSON files)
   sportVariant?: string;         // "Road", "MTB", "Gravel", "Track", or undefined for all
+  primaryZone?: string;          // "Z1", "Z2", "Z3", etc. (from JSON)
+  tss?: number;                  // Training Stress Score (from JSON)
+  scalable?: boolean;            // Whether workout can be scaled to different durations
 }
 
 // ─── HELPER FUNCTIONS (Phase 3 Refactoring) ──────────────────────────
@@ -1281,15 +1285,18 @@ function filterByDifficulty(
   maxDifficulty: number
 ): WorkoutTemplate[] {
   // Try exact range first
-  const exact = candidates.filter((w: WorkoutTemplate) => 
-    w.difficultyScore >= minDifficulty && 
-    w.difficultyScore <= maxDifficulty
-  );
+  const exact = candidates.filter((w: WorkoutTemplate) => {
+    const score = w.difficultyScore ?? w.difficulty ?? 5;
+    return score >= minDifficulty && score <= maxDifficulty;
+  });
   
   if (exact.length > 0) return exact;
   
   // If no exact match, at least enforce minimum difficulty
-  const minEnforced = candidates.filter((w: WorkoutTemplate) => w.difficultyScore >= minDifficulty);
+  const minEnforced = candidates.filter((w: WorkoutTemplate) => {
+    const score = w.difficultyScore ?? w.difficulty ?? 5;
+    return score >= minDifficulty;
+  });
   return minEnforced.length > 0 ? minEnforced : candidates;
 }
 
@@ -1560,7 +1567,7 @@ function generateIndoorSession(
   
   // Build intervals from template
   const targetDuration = targetDurationMinutes || template.duration;
-  const rawIntervals = template.intervals();
+  const rawIntervals = typeof template.intervals === 'function' ? template.intervals() : template.intervals;
   const intervals = normalizeIntervals(rawIntervals, targetDuration);
   
   return {
