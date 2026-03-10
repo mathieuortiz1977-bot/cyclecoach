@@ -18,28 +18,39 @@ import type { WorkoutTemplate, IntervalDef } from './periodization';
 // ─── HELPER FACTORIES ──────────────────────────────────────────────────────
 
 const warmup = (endPower = 70): IntervalDef[] => [
-  { name: "Warmup", durationSecs: 600, powerLow: 45, powerHigh: endPower, zone: "Z1", rpe: 2, purpose: "Prepare body", coachNote: "Gradual ramp" }
+  { name: "Warmup", durationSecs: 600, powerLow: 45, powerHigh: endPower, zone: "Z1", rpe: 2, purpose: "Prepare body", coachNote: "Spin easy. Enjoy it. After this, suffering is mandatory." }
 ];
 
 const cooldown = (): IntervalDef[] => [
-  { name: "Cooldown", durationSecs: 300, powerLow: 30, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Recovery", coachNote: "Easy spin" }
+  { name: "Cooldown", durationSecs: 300, powerLow: 30, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Recovery", coachNote: "You survived. Barely. Let your legs know they're done." }
 ];
 
 const rest = (secs = 300): IntervalDef => ({
-  name: "Rest", durationSecs: secs, powerLow: 40, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Active recovery", coachNote: "Easy"
+  name: "Rest", durationSecs: secs, powerLow: 40, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Active recovery", coachNote: "Breathe. Your legs are filing a complaint. Noted and ignored."
 });
 
-const work = (name: string, secs: number, low: number, high: number, purpose: string, zone: string, cadenceLow?: number, cadenceHigh?: number): IntervalDef => ({
-  name, durationSecs: secs, powerLow: low, powerHigh: high, zone, rpe: 5, purpose, coachNote: `${Math.round((low + high) / 2)}% FTP`, cadenceLow, cadenceHigh
-});
+const work = (name: string, secs: number, low: number, high: number, purpose: string, zone: string, cadenceLow?: number, cadenceHigh?: number): IntervalDef => {
+  const avgPower = Math.round((low + high) / 2);
+  let coachNote = `${avgPower}% FTP`;
+  
+  if (avgPower >= 150) coachNote = `${avgPower}% - Your face will be colors not found in nature.`;
+  else if (avgPower >= 130) coachNote = `${avgPower}% - Max effort. Go like you mean it.`;
+  else if (avgPower >= 105) coachNote = `${avgPower}% - Hard zone. Embrace the discomfort.`;
+  else if (avgPower >= 95) coachNote = `${avgPower}% - FTP. The sweet spot of suffering.`;
+  else if (avgPower >= 85) coachNote = `${avgPower}% - Threshold adjacent. Stay sharp.`;
+  else if (avgPower >= 70) coachNote = `${avgPower}% - Steady. Don't overthink it.`;
+  else coachNote = `${avgPower}% - Easy. Your legs shouldn't complain.`;
+  
+  return { name, durationSecs: secs, powerLow: low, powerHigh: high, zone, rpe: 5, purpose, coachNote, cadenceLow, cadenceHigh };
+};
 
 // ─── 162 MASTER WORKOUTS WITH CLASSIFICATION ─────────────────────────────
 
 export const MASTER_WORKOUTS: WorkoutTemplate[] = [
   // ─── FTP_TEST (3) ─────────────────────────────────────────────────
-  { id: "w056-ramp", title: "Ramp Test", description: "20W/min ramp to failure", purpose: "FTP ~75% 1-min max", zone: "Z4", duration: 35, intervals: () => [...warmup(60), work("Ramp", 1800, 35, 140, "Progressive effort to failure", "Z4"), ...cooldown()], category: "FTP_TEST", protocol: "Ramp Protocol", researcher: "Coggan", structure: "ramp", difficultyScore: 10 },
-  { id: "w057-20min", title: "20-Minute FTP Test", description: "Coggan protocol", purpose: "20-min max = FTP", zone: "Z4", duration: 55, intervals: () => [...warmup(70), work("BlowOut", 300, 110, 120, "Clear anaerobic", "Z5"), rest(300), work("Test", 1200, 92, 100, "FTP effort", "Z4"), ...cooldown()], category: "FTP_TEST", protocol: "Coggan 20-Minute", researcher: "Coggan", structure: "steady", difficultyScore: 10 },
-  { id: "w058-kolie", title: "Kolie Moore FTP", description: "Longer assessment", purpose: "Steady FTP measure", zone: "Z4", duration: 70, intervals: () => [...warmup(75), work("FTP", 2100, 90, 102, "Best sustainable", "Z4"), ...cooldown()], category: "FTP_TEST", protocol: "Moore Extended", researcher: "Moore", structure: "steady", difficultyScore: 9 },
+  { id: "w056-ramp", title: "Ramp Test", description: "20W/min ramp to failure", purpose: "FTP ~75% 1-min max", zone: "Z4", duration: 35, intervals: () => [...warmup(60), { name: "Ramp", durationSecs: 1800, powerLow: 35, powerHigh: 140, zone: "Z4", rpe: 5, purpose: "Progressive effort to failure", coachNote: "20W every minute. Go until your legs say 'absolutely not.'" }, ...cooldown()], category: "FTP_TEST", protocol: "Ramp Protocol", researcher: "Coggan", structure: "ramp", difficultyScore: 10 },
+  { id: "w057-20min", title: "20-Minute FTP Test", description: "Coggan protocol", purpose: "20-min max = FTP", zone: "Z4", duration: 55, intervals: () => [...warmup(70), { name: "BlowOut", durationSecs: 300, powerLow: 110, powerHigh: 120, zone: "Z5", rpe: 5, purpose: "Clear anaerobic", coachNote: "Burn it out. You need fresh legs for the test." }, rest(300), { name: "Test", durationSecs: 1200, powerLow: 92, powerHigh: 100, zone: "Z4", rpe: 5, purpose: "FTP effort", coachNote: "20 minutes of 'this is hard but I can hold it.' Know your limits." }, ...cooldown()], category: "FTP_TEST", protocol: "Coggan 20-Minute", researcher: "Coggan", structure: "steady", difficultyScore: 10 },
+  { id: "w058-kolie", title: "Kolie Moore FTP", description: "Longer assessment", purpose: "Steady FTP measure", zone: "Z4", duration: 70, intervals: () => [...warmup(75), { name: "FTP", durationSecs: 2100, powerLow: 90, powerHigh: 102, zone: "Z4", rpe: 5, purpose: "Best sustainable", coachNote: "35 minutes of best-effort steadiness. This defines your engine." }, ...cooldown()], category: "FTP_TEST", protocol: "Moore Extended", researcher: "Moore", structure: "steady", difficultyScore: 9 },
 
   // ─── BASE (15) ──────────────────────────────────────────────────
   { id: "w001-90", title: "Steady 90 min", description: "Z2 aerobic", purpose: "Aerobic foundation", zone: "Z2", duration: 90, intervals: () => [...warmup(68), work("Endurance", 4500, 56, 72, "Z2 steady", "Z2"), ...cooldown()], category: "BASE", protocol: "Long Steady", researcher: "Seiler", structure: "steady", difficultyScore: 2, sportVariant: "Road" },
