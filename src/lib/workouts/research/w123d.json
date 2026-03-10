@@ -1,6 +1,6 @@
 {
   "id": "w123d",
-  "title": "SS Progression Week 4 – TEST",
+  "title": "SS Progression Week 4 \u2013 TEST",
   "source": "research-v2",
   "category": "SWEET_SPOT",
   "primaryZone": "Z3",
@@ -8,7 +8,7 @@
   "difficulty": 8,
   "duration": 80,
   "scalable": true,
-  "tss": 13,
+  "tss": 82,
   "description": "2x20 min at 92% FTP",
   "purpose": "Week 4: extended work at higher intensity (test)",
   "protocol": "4-Week Ramp",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 672
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Extended work",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1392
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 672
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Extended work",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1392
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 672
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

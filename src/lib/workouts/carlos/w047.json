@@ -3,21 +3,21 @@
   "title": "Polarized Z2 + VO2max",
   "source": "carlos",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 5,
-  "duration": 90,
+  "duration": 96,
   "scalable": true,
-  "tss": 75,
-  "description": "Polarized model — low and high, nothing in between",
-  "purpose": "Polarized model — low and high, nothing in between",
+  "tss": 90,
+  "description": "Polarized model \u2014 low and high, nothing in between",
+  "purpose": "Polarized model \u2014 low and high, nothing in between",
   "intervals": [
     {
       "name": "Warmup",
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 11.11111111111111,
+        "percent": 10.4,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,267 @@
       }
     },
     {
-      "name": "Polarized model — low and high, nothing in between",
-      "purpose": "Polarized model — low and high, nothing in between",
+      "name": "Z2 Block 1",
+      "purpose": "Aerobic endurance",
       "phase": "work",
       "duration": {
-        "percent": 111.11111111111111,
-        "absoluteSecs": 6000
+        "percent": 20.8,
+        "absoluteSecs": 1200
       },
       "intensity": {
-        "zone": "Z3-Z5",
-        "powerLow": 110,
-        "powerHigh": 115,
+        "zone": "Z2",
+        "powerLow": 68,
+        "powerHigh": 68,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 3
       },
-      "reps": {
-        "count": 5,
-        "work": {
-          "duration": {
-            "secs": 240,
-            "label": "4 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 110,
-            "powerHigh": 115,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 1200,
-            "label": "20 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 110-115% FTP for full duration. Steady power.",
+      "instruction": "Z2 Block 1 at 68-68% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "5 minutes at 110%+ FTP. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "VO2max 1/5",
+      "purpose": "VO2max interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 8
+      },
+      "instruction": "VO2max 1/5 at 110-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max 2/5",
+      "purpose": "VO2max interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 8
+      },
+      "instruction": "VO2max 2/5 at 110-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max 3/5",
+      "purpose": "VO2max interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 8
+      },
+      "instruction": "VO2max 3/5 at 110-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 3 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max 4/5",
+      "purpose": "VO2max interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 8
+      },
+      "instruction": "VO2max 4/5 at 110-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 4 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max 5/5",
+      "purpose": "VO2max interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.2,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 8
+      },
+      "instruction": "VO2max 5/5 at 110-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Z2 Block 2",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 20.8,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 68,
+        "powerHigh": 68,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Z2 Block 2 at 68-68% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
       }
     },
     {
@@ -96,7 +305,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 11.11111111111111,
+        "percent": 10.4,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -115,5 +324,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.75
 }

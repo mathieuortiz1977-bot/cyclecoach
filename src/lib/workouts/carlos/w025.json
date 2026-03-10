@@ -1,14 +1,14 @@
 {
   "id": "w025",
-  "title": "Norwegian 4 × 4",
+  "title": "Norwegian 4 \u00d7 4",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 55,
+  "duration": 45,
   "scalable": true,
-  "tss": 60,
+  "tss": 49,
   "description": "VO2max capacity (research-validated protocol)",
   "purpose": "VO2max capacity (research-validated protocol)",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 18.181818181818183,
+        "percent": 22.2,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,171 @@
       }
     },
     {
-      "name": "VO2max capacity (research-validated protocol)",
-      "purpose": "VO2max capacity (research-validated protocol)",
+      "name": "4x4 VO2 1/4",
+      "purpose": "4x4 VO2 interval",
       "phase": "work",
       "duration": {
-        "percent": 50.90909090909091,
-        "absoluteSecs": 1680
+        "percent": 8.9,
+        "absoluteSecs": 240
       },
       "intensity": {
-        "zone": "Z3-Z5",
+        "zone": "Z5",
         "powerLow": 110,
-        "powerHigh": 115,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
+        "powerHigh": 118,
+        "cadenceLow": 95,
+        "cadenceHigh": 105,
         "rpe": 9
       },
-      "reps": {
-        "count": 4,
-        "work": {
-          "duration": {
-            "secs": 240,
-            "label": "4 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 110,
-            "powerHigh": 115,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 240,
-            "label": "4 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 110-115% FTP for full duration. Steady power.",
+      "instruction": "4x4 VO2 1/4 at 110-118% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "5 minutes at 110%+ FTP. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "4x4 VO2 2/4",
+      "purpose": "4x4 VO2 interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.9,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 118,
+        "cadenceLow": 95,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "4x4 VO2 2/4 at 110-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "4x4 VO2 3/4",
+      "purpose": "4x4 VO2 interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.9,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 118,
+        "cadenceLow": 95,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "4x4 VO2 3/4 at 110-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 3 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "4x4 VO2 4/4",
+      "purpose": "4x4 VO2 interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.9,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 118,
+        "cadenceLow": 95,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "4x4 VO2 4/4 at 110-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
       }
     },
     {
@@ -96,7 +209,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 18.181818181818183,
+        "percent": 22.2,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -115,5 +228,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.81
 }

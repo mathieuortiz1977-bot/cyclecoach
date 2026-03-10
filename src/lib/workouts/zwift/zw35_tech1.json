@@ -3,12 +3,12 @@
   "title": "Tech Work 1",
   "source": "zwift",
   "category": "TECHNIQUE",
-  "primaryZone": "Z2-Z3",
+  "primaryZone": "Z2",
   "structure": "mixed",
   "difficulty": 4,
-  "duration": 45,
+  "duration": 49,
   "scalable": true,
-  "tss": 4,
+  "tss": 29,
   "description": "Cadence variation work",
   "purpose": "Pedal versatility",
   "protocol": "Zwift - Tech Work 1",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 11.9,
         "absoluteSecs": 351
       },
       "intensity": {
@@ -39,27 +39,267 @@
       }
     },
     {
-      "name": "Cadence Variation",
-      "purpose": "Technique",
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 2160
+        "percent": 10.2,
+        "absoluteSecs": 300
       },
       "intensity": {
         "zone": "Z2",
         "powerLow": 60,
-        "powerHigh": 80,
+        "powerHigh": 65,
         "cadenceLow": 85,
         "cadenceHigh": 100,
         "rpe": 3
       },
-      "instruction": "Cadence Variation at 60-80% FTP",
+      "instruction": "Drill 1 at 60-65% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
+      "phase": "work",
+      "duration": {
+        "percent": 10.2,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Drill 1 at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
+      "phase": "work",
+      "duration": {
+        "percent": 10.2,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Drill 1 at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
+      "phase": "work",
+      "duration": {
+        "percent": 10.2,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Drill 1 at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
+      "phase": "work",
+      "duration": {
+        "percent": 10.2,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Drill 1 at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Drill 1",
+      "purpose": "Pedaling circles",
+      "phase": "work",
+      "duration": {
+        "percent": 10.2,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Drill 1 at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 4.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
@@ -67,7 +307,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 6.4,
         "absoluteSecs": 189
       },
       "intensity": {
@@ -86,5 +326,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.59
 }

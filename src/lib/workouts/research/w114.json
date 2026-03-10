@@ -3,12 +3,12 @@
   "title": "Double Pyramid",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z4",
   "structure": "pyramid",
   "difficulty": 9,
-  "duration": 75,
+  "duration": 74,
   "scalable": true,
-  "tss": 14,
+  "tss": 85,
   "description": "Two pyramids with recovery between",
   "purpose": "Two pyramid sets with recovery",
   "protocol": "Double Pyramid",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 22,
+        "percent": 22.2,
         "absoluteSecs": 990
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 7,
+        "percent": 7.1,
         "absoluteSecs": 315
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Full recovery",
       "phase": "work",
       "duration": {
-        "percent": 17,
+        "percent": 17.2,
         "absoluteSecs": 765
       },
       "intensity": {
@@ -187,7 +187,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -211,7 +211,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -235,7 +235,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 7,
+        "percent": 7.1,
         "absoluteSecs": 315
       },
       "intensity": {
@@ -259,7 +259,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -283,7 +283,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -307,7 +307,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 22,
+        "percent": 22.2,
         "absoluteSecs": 990
       },
       "intensity": {
@@ -326,5 +326,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.83
 }

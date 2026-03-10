@@ -3,12 +3,12 @@
   "title": "Active Recovery",
   "source": "carlos",
   "category": "RECOVERY",
-  "primaryZone": "Z1",
+  "primaryZone": "Z2",
   "structure": "steady",
   "difficulty": 1,
-  "duration": 45,
+  "duration": 36,
   "scalable": true,
-  "tss": 18,
+  "tss": 29,
   "description": "Blood flow, recovery, loosen legs",
   "purpose": "Blood flow, recovery, loosen legs",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Blood flow, recovery, loosen legs",
       "phase": "work",
       "duration": {
-        "percent": 80,
+        "percent": 100.0,
         "absoluteSecs": 2160
       },
       "intensity": {
@@ -36,5 +36,6 @@
         "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
       }
     }
-  ]
+  ],
+  "if": 0.7
 }

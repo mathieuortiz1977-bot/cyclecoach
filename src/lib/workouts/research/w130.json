@@ -6,9 +6,9 @@
   "primaryZone": "Z2",
   "structure": "steady",
   "difficulty": 3,
-  "duration": 180,
+  "duration": 182,
   "scalable": true,
-  "tss": 11,
+  "tss": 143,
   "description": "Pure aerobic base for event prep",
   "purpose": "Long aerobic capacity building",
   "protocol": "Long Steady",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 6,
+        "percent": 5.9,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Aerobic base",
       "phase": "work",
       "duration": {
-        "percent": 89,
+        "percent": 88.1,
         "absoluteSecs": 9612
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 6,
+        "percent": 5.9,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -86,5 +86,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.69
 }

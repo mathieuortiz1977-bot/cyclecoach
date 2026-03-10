@@ -6,9 +6,9 @@
   "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 9,
-  "duration": 60,
+  "duration": 36,
   "scalable": true,
-  "tss": 11,
+  "tss": 36,
   "description": "Double VO2max work",
   "purpose": "VO2max power",
   "protocol": "Zwift - VO2 Tines",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 20.0,
         "absoluteSecs": 432
       },
       "intensity": {
@@ -39,27 +39,363 @@
       }
     },
     {
-      "name": "Double VO2",
-      "purpose": "VO2max",
+      "name": "VO2max",
+      "purpose": "VO2max development",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 2880
+        "percent": 2.8,
+        "absoluteSecs": 60
       },
       "intensity": {
         "zone": "Z5",
-        "powerLow": 120,
-        "powerHigh": 130,
-        "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
         "rpe": 9
       },
-      "instruction": "Double VO2 at 120-130% FTP",
+      "instruction": "VO2max at 105-105% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
-        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
-        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
-        "MIXED": "Explosive effort. Go hard and trust your training."
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 108,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 108-108% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 112,
+        "powerHigh": 112,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 112-112% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 11.1,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 105-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 108,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 108-108% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 112,
+        "powerHigh": 112,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 112-112% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 11.1,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 105-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 108,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 108-108% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 112,
+        "powerHigh": 112,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 112-112% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "VO2max",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 2.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "VO2max at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 11.1,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
@@ -67,7 +403,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 8,
+        "percent": 13.3,
         "absoluteSecs": 288
       },
       "intensity": {
@@ -86,5 +422,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

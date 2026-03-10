@@ -8,7 +8,7 @@
   "difficulty": 5,
   "duration": 120,
   "scalable": true,
-  "tss": 12,
+  "tss": 110,
   "description": "Simulate undulating terrain endurance ride",
   "purpose": "Muscular endurance on varied terrain",
   "protocol": "Undulating",
@@ -19,7 +19,7 @@
       "purpose": "Warmup",
       "phase": "work",
       "duration": {
-        "percent": 27,
+        "percent": 27.0,
         "absoluteSecs": 1944
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Climb effort",
       "phase": "work",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 1008
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.0,
         "absoluteSecs": 1296
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Climb effort",
       "phase": "work",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 1008
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.0,
         "absoluteSecs": 1296
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 9,
+        "percent": 9.0,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.74
 }

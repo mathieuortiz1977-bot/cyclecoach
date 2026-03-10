@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 60,
+  "duration": 52,
   "scalable": true,
-  "tss": 8,
+  "tss": 51,
   "description": "90% FTP repeats (Devedeset)",
   "purpose": "Sweet spot repeats",
   "protocol": "Zwift - 90% Devedeset",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 15.0,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -39,27 +39,123 @@
       }
     },
     {
-      "name": "90% SS",
-      "purpose": "Sweet spot",
+      "name": "SS 1",
+      "purpose": "Sweet spot development",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 2880
+        "percent": 19.2,
+        "absoluteSecs": 600
       },
       "intensity": {
-        "zone": "Z3",
-        "powerLow": 88,
-        "powerHigh": 95,
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 7
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "90% SS at 88-95% FTP",
+      "instruction": "SS 1 at 90-90% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 2",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 19.2,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 2 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 3",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 19.2,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 3 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
       }
     },
     {
@@ -67,7 +163,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 8.1,
         "absoluteSecs": 252
       },
       "intensity": {
@@ -86,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

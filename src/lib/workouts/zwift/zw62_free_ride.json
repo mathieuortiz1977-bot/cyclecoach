@@ -3,12 +3,12 @@
   "title": "Free Ride",
   "source": "zwift",
   "category": "MIXED",
-  "primaryZone": "Z2-Z5",
+  "primaryZone": "Z5",
   "structure": "mixed",
   "difficulty": 1,
   "duration": 60,
   "scalable": true,
-  "tss": 1,
+  "tss": 132,
   "description": "Unstructured free ride",
   "purpose": "Flexible training",
   "protocol": "Zwift - Free Ride",
@@ -19,7 +19,7 @@
       "purpose": "Free",
       "phase": "work",
       "duration": {
-        "percent": 100,
+        "percent": 100.0,
         "absoluteSecs": 3600
       },
       "intensity": {
@@ -38,5 +38,6 @@
         "MIXED": "Go hard but controlled. Breathe through the discomfort."
       }
     }
-  ]
+  ],
+  "if": 1.15
 }

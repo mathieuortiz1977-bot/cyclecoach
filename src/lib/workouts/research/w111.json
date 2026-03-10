@@ -3,12 +3,12 @@
   "title": "VO2max Ladder (Wattbike Style)",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "ladder",
   "difficulty": 9,
-  "duration": 65,
+  "duration": 66,
   "scalable": true,
-  "tss": 12,
+  "tss": 77,
   "description": "Progressive intensity across all aerobic zones",
   "purpose": "Progressive intensity across all aerobic zones",
   "protocol": "VO2 Ladder",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 19,
+        "percent": 18.8,
         "absoluteSecs": 741
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Base",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 18.8,
         "absoluteSecs": 741
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 156
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "FTP",
       "phase": "work",
       "duration": {
-        "percent": 15,
+        "percent": 14.9,
         "absoluteSecs": 585
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 156
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 11,
+        "percent": 10.9,
         "absoluteSecs": 429
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 156
       },
       "intensity": {
@@ -187,7 +187,7 @@
       "purpose": "Peak VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.9,
         "absoluteSecs": 312
       },
       "intensity": {
@@ -211,7 +211,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 156
       },
       "intensity": {
@@ -235,7 +235,7 @@
       "purpose": "Max",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 156
       },
       "intensity": {
@@ -259,7 +259,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 9,
+        "percent": 8.9,
         "absoluteSecs": 351
       },
       "intensity": {
@@ -278,5 +278,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.84
 }

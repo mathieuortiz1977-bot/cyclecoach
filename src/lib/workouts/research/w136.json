@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 7,
-  "duration": 70,
+  "duration": 71,
   "scalable": true,
-  "tss": 10,
+  "tss": 72,
   "description": "Alternate high-torque and high-spin at same power",
   "purpose": "Force across full RPM spectrum",
   "protocol": "Force-Velocity",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Force",
       "phase": "work",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Speed",
       "phase": "work",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Force",
       "phase": "work",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Speed",
       "phase": "work",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 17,
+        "percent": 16.7,
         "absoluteSecs": 714
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

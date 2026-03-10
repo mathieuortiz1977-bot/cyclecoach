@@ -3,12 +3,12 @@
   "title": "The Works",
   "source": "zwift",
   "category": "RACE_SIM",
-  "primaryZone": "Z3-Z6",
+  "primaryZone": "Z4",
   "structure": "mixed",
   "difficulty": 9,
-  "duration": 75,
+  "duration": 94,
   "scalable": true,
-  "tss": 14,
+  "tss": 97,
   "description": "Full race simulation",
   "purpose": "Race simulation",
   "protocol": "Zwift - The Works",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 10,
+        "percent": 8.0,
         "absoluteSecs": 450
       },
       "intensity": {
@@ -39,27 +39,939 @@
       }
     },
     {
-      "name": "Race Sim",
-      "purpose": "Race",
+      "name": "FTP 1",
+      "purpose": "FTP development",
       "phase": "work",
       "duration": {
-        "percent": 82,
-        "absoluteSecs": 3690
+        "percent": 5.3,
+        "absoluteSecs": 300
       },
       "intensity": {
-        "zone": "Z1-Z6",
-        "powerLow": 70,
-        "powerHigh": 150,
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceHigh": 95,
+        "rpe": 7
       },
-      "instruction": "Race Sim at 70-150% FTP",
+      "instruction": "FTP 1 at 100-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 2",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 2 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 3",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 3 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 4",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 4 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Easy Spin",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 10.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Easy Spin at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Z6 Power 1/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 1/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z6 Power 2/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 2/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z6 Power 3/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 3/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 3 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z6 Power 4/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 4/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 4 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z6 Power 5/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 5/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest 5",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.1,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 5 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z6 Power 6/6",
+      "purpose": "Z6 Power interval",
+      "phase": "work",
+      "duration": {
+        "percent": 1.1,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 125,
+        "powerHigh": 125,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Z6 Power 6/6 at 125-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Easy Spin",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 10.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Easy Spin at 60-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "MAX Sprint 1/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 1/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 2/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 2/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 3/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 3/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 3 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 4/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 4/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 4 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 5/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 5/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 5",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 5 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 6/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 6/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 6",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 6 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 7/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 7/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 7",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 7 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 8/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 8/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 8",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 8 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 9/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 9/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 9",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 9 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "MAX Sprint 10/10",
+      "purpose": "MAX Sprint interval",
+      "phase": "work",
+      "duration": {
+        "percent": 0.3,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 100,
+        "cadenceHigh": 130,
+        "rpe": 10
+      },
+      "instruction": "MAX Sprint 10/10 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
       }
     },
     {
@@ -67,7 +979,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 8,
+        "percent": 6.4,
         "absoluteSecs": 360
       },
       "intensity": {
@@ -86,5 +998,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.79
 }

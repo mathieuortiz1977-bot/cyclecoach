@@ -3,12 +3,12 @@
   "title": "Ramp Test",
   "source": "zwift",
   "category": "FTP_TEST",
-  "primaryZone": "Z4-Z6",
+  "primaryZone": "Z3",
   "structure": "ramp",
   "difficulty": 10,
   "duration": 45,
   "scalable": true,
-  "tss": 9,
+  "tss": 51,
   "description": "20W/min ramp to failure",
   "purpose": "FTP assessment",
   "protocol": "Zwift - Ramp Test",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 13.0,
         "absoluteSecs": 351
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "FTP test",
       "phase": "work",
       "duration": {
-        "percent": 80,
+        "percent": 80.0,
         "absoluteSecs": 2160
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 7.0,
         "absoluteSecs": 189
       },
       "intensity": {
@@ -86,5 +86,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.82
 }

@@ -82,6 +82,10 @@ export async function loadAllNormalizedWorkouts(
  * Synchronous version for compatibility with existing code
  * SERVER-SIDE ONLY - Uses Node.js fs module
  * (fs is not available in browser/client-side code)
+ * 
+ * Loads from all 9 sources:
+ * - Original: carlos, zwift, research
+ * - New: british-cycling, dylan-johnson, san-millan, sufferfest, trainerroad, xert
  */
 export function loadAllNormalizedWorkoutsSync(
   workoutsRoot?: string
@@ -108,21 +112,35 @@ export function loadAllNormalizedWorkoutsSync(
   console.log('[Workout Load] Starting comprehensive workout database load (sync)...');
   
   const allWorkouts: WorkoutTemplate[] = [];
+  const sources = [
+    'carlos',
+    'zwift',
+    'research',
+    'british-cycling',
+    'dylan-johnson',
+    'san-millan',
+    'sufferfest',
+    'trainerroad',
+    'xert',
+  ] as const;
   
   try {
     // Load each source sequentially
-    const carlosWorkouts = loadWorkoutsFromDirectorySync('carlos', root, fs, path);
-    const zwiftWorkouts = loadWorkoutsFromDirectorySync('zwift', root, fs, path);
-    const researchWorkouts = loadWorkoutsFromDirectorySync('research', root, fs, path);
-
-    allWorkouts.push(...carlosWorkouts);
-    allWorkouts.push(...zwiftWorkouts);
-    allWorkouts.push(...researchWorkouts);
+    const loadedBySource: Record<string, number> = {};
+    
+    for (const source of sources) {
+      const sourceWorkouts = loadWorkoutsFromDirectorySync(source, root, fs, path);
+      allWorkouts.push(...sourceWorkouts);
+      loadedBySource[source] = sourceWorkouts.length;
+    }
 
     console.log(`[Workout Load] Total loaded: ${allWorkouts.length} workouts`);
-    console.log(`[Workout Load]   - Carlos: ${carlosWorkouts.length}`);
-    console.log(`[Workout Load]   - Zwift: ${zwiftWorkouts.length}`);
-    console.log(`[Workout Load]   - Research: ${researchWorkouts.length}`);
+    console.log(`[Workout Load] Breakdown by source:`);
+    for (const [source, count] of Object.entries(loadedBySource)) {
+      if (count > 0) {
+        console.log(`[Workout Load]   - ${source}: ${count}`);
+      }
+    }
 
     return allWorkouts;
   } catch (error) {
@@ -134,9 +152,13 @@ export function loadAllNormalizedWorkoutsSync(
 /**
  * Synchronous version of loadWorkoutsFromDirectory
  * (Internal function - requires fs/path as parameters)
+ * 
+ * Supports all 9 sources:
+ * Original: carlos, zwift, research
+ * New: british-cycling, dylan-johnson, san-millan, sufferfest, trainerroad, xert
  */
 function loadWorkoutsFromDirectorySync(
-  sourceDir: 'carlos' | 'zwift' | 'research',
+  sourceDir: 'carlos' | 'zwift' | 'research' | 'british-cycling' | 'dylan-johnson' | 'san-millan' | 'sufferfest' | 'trainerroad' | 'xert',
   workoutsRoot: string,
   fs: any,
   path: any

@@ -1,14 +1,14 @@
 {
   "id": "w063",
-  "title": "Seiler 4 × 4 vs 4 × 8 Hybrid",
+  "title": "Seiler 4 \u00d7 4 vs 4 \u00d7 8 Hybrid",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 75,
+  "duration": 73,
   "scalable": true,
-  "tss": 80,
+  "tss": 119,
   "description": "Best of both Seiler protocols in one session",
   "purpose": "Best of both Seiler protocols in one session",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 20,
+        "percent": 20.5,
         "absoluteSecs": 900
       },
       "intensity": {
@@ -41,7 +41,7 @@
       "purpose": "Best of both Seiler protocols in one session",
       "phase": "work",
       "duration": {
-        "percent": 26.666666666666668,
+        "percent": 27.4,
         "absoluteSecs": 1200
       },
       "intensity": {
@@ -96,7 +96,7 @@
       "purpose": "Best of both Seiler protocols in one session",
       "phase": "work",
       "duration": {
-        "percent": 37.333333333333336,
+        "percent": 38.4,
         "absoluteSecs": 1680
       },
       "intensity": {
@@ -151,7 +151,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 13.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -170,5 +170,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.99
 }

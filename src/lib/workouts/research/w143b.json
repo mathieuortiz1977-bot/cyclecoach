@@ -3,12 +3,12 @@
   "title": "3-Day Taper Sequence Day 2",
   "source": "research-v2",
   "category": "THRESHOLD",
-  "primaryZone": "Z4",
+  "primaryZone": "Z2",
   "structure": "mixed",
   "difficulty": 3,
   "duration": 45,
   "scalable": true,
-  "tss": 3,
+  "tss": 35,
   "description": "45 min: 10 easy + 15 at 70% + 3x1 at 100% + 10 CD",
   "purpose": "3-day pre-race sequence, day 2",
   "protocol": "Taper",
@@ -19,7 +19,7 @@
       "purpose": "Warmup",
       "phase": "work",
       "duration": {
-        "percent": 26,
+        "percent": 26.0,
         "absoluteSecs": 702
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Steady",
       "phase": "work",
       "duration": {
-        "percent": 39,
+        "percent": 39.0,
         "absoluteSecs": 1053
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Activation",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 81
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Activation",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 81
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Activation",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 81
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 26,
+        "percent": 26.0,
         "absoluteSecs": 702
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.69
 }

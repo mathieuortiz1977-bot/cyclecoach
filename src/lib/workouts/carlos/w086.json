@@ -8,7 +8,7 @@
   "difficulty": 5,
   "duration": 150,
   "scalable": true,
-  "tss": 110,
+  "tss": 132,
   "description": "Negative split pacing, marathon ride prep",
   "purpose": "Negative split pacing, marathon ride prep",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 6.666666666666667,
+        "percent": 6.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,131 @@
       }
     },
     {
+      "name": "Endurance",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 40.0,
+        "absoluteSecs": 3600
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Endurance at 65-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Endurance",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 20.0,
+        "absoluteSecs": 1800
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 72,
+        "powerHigh": 72,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Endurance at 72-72% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Tempo",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 13.3,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 82,
+        "powerHigh": 82,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Tempo at 82-82% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Sweet Spot",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 6.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Sweet Spot at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Threshold",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 6.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 6.666666666666667,
+        "percent": 6.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +180,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.73
 }

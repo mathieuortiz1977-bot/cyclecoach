@@ -3,12 +3,12 @@
   "title": "Crit Simulation",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z3",
   "structure": "alternating",
   "difficulty": 8,
-  "duration": 60,
+  "duration": 59,
   "scalable": true,
-  "tss": 72,
+  "tss": 66,
   "description": "Simulate criterium race demands",
   "purpose": "Simulate criterium race demands",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 16.666666666666664,
+        "percent": 16.9,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,659 @@
       }
     },
     {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Surge",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 1.3,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 130,
+        "powerHigh": 130,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Surge at 130-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Settle",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 2.5,
+        "absoluteSecs": 90
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Settle at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 16.9,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Recovery at 65-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 16.666666666666664,
+        "percent": 16.9,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +708,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.82
 }

@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 55,
+  "duration": 50,
   "scalable": true,
-  "tss": 55,
+  "tss": 56,
   "description": "FTP measurement",
   "purpose": "FTP measurement",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 18.181818181818183,
+        "percent": 20.0,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,83 @@
       }
     },
     {
+      "name": "Blow-out",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 10.0,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Blow-out at 110-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 10.0,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "20min Test",
+      "purpose": "Max sustainable",
+      "phase": "work",
+      "duration": {
+        "percent": 40.0,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 105,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 9
+      },
+      "instruction": "20min Test at 95-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 18.181818181818183,
+        "percent": 20.0,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +132,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.82
 }

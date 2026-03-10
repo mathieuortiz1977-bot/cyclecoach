@@ -8,7 +8,7 @@
   "difficulty": 9,
   "duration": 60,
   "scalable": true,
-  "tss": 11,
+  "tss": 70,
   "description": "Threshold endurance with VO2 surges",
   "purpose": "Threshold endurance with VO2 surges",
   "protocol": "Zwift Famous",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 19,
+        "percent": 19.0,
         "absoluteSecs": 684
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "95% FTP",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1044
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "VO2 kick",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 72
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "95% FTP",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1044
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "VO2 kick",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 72
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 19,
+        "percent": 19.0,
         "absoluteSecs": 684
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.84
 }

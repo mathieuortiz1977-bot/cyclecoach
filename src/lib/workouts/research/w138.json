@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "mixed",
   "difficulty": 7,
-  "duration": 65,
+  "duration": 64,
   "scalable": true,
-  "tss": 9,
+  "tss": 69,
   "description": "Position-specific power development",
   "purpose": "Transition power without loss",
   "protocol": "Position Shifts",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 25,
+        "percent": 25.5,
         "absoluteSecs": 975
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "FTP seated",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "FTP standing",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "FTP seated",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "FTP standing",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 25,
+        "percent": 25.5,
         "absoluteSecs": 975
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.81
 }

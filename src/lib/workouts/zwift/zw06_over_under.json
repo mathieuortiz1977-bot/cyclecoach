@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "alternating",
   "difficulty": 8,
-  "duration": 60,
+  "duration": 52,
   "scalable": true,
-  "tss": 10,
+  "tss": 63,
   "description": "110% / 90% alternating",
   "purpose": "Threshold dynamics",
   "protocol": "Zwift - Over-Under",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 15.0,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -39,27 +39,195 @@
       }
     },
     {
-      "name": "Over-Under",
-      "purpose": "Threshold",
+      "name": "Over SS",
+      "purpose": "Sweet spot development",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 2880
+        "percent": 9.6,
+        "absoluteSecs": 300
       },
       "intensity": {
-        "zone": "Z4-Z5",
-        "powerLow": 90,
-        "powerHigh": 110,
+        "zone": "Z3-Z4",
+        "powerLow": 96,
+        "powerHigh": 96,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "Over-Under at 90-110% FTP",
+      "instruction": "Over SS at 96-96% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Under SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under SS at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Over SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 96,
+        "powerHigh": 96,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Over SS at 96-96% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Under SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under SS at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Over SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 96,
+        "powerHigh": 96,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Over SS at 96-96% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Under SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under SS at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Over SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 96,
+        "powerHigh": 96,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Over SS at 96-96% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Under SS",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under SS at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
       }
     },
     {
@@ -67,7 +235,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 8.1,
         "absoluteSecs": 252
       },
       "intensity": {
@@ -86,5 +254,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.86
 }

@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 100,
+  "duration": 90,
   "scalable": true,
-  "tss": 92,
+  "tss": 96,
   "description": "FTP sustainability on tired legs",
   "purpose": "FTP sustainability on tired legs",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 10,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,123 @@
       }
     },
     {
-      "name": "FTP sustainability on tired legs",
-      "purpose": "FTP sustainability on tired legs",
+      "name": "Tempo",
+      "purpose": "Muscular endurance",
       "phase": "work",
       "duration": {
-        "percent": 45,
-        "absoluteSecs": 2700
+        "percent": 33.3,
+        "absoluteSecs": 1800
       },
       "intensity": {
-        "zone": "Z3-Z5",
-        "powerLow": 97,
-        "powerHigh": 102,
+        "zone": "Z3",
+        "powerLow": 82,
+        "powerHigh": 82,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 5
       },
-      "reps": {
-        "count": 2,
-        "work": {
-          "duration": {
-            "secs": 900,
-            "label": "15 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 97,
-            "powerHigh": 102,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 900,
-            "label": "15 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 97-102% FTP for full duration. Steady power.",
+      "instruction": "Tempo at 82-82% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 1",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 16.7,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 97,
+        "powerHigh": 97,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 1 at 97-97% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 2",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 16.7,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 97,
+        "powerHigh": 97,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 2 at 97-97% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
       }
     },
     {
@@ -96,7 +161,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 10,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -115,5 +180,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.8
 }

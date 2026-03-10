@@ -3,12 +3,12 @@
   "title": "Ramp Test (FTP Assessment)",
   "source": "carlos",
   "category": "THRESHOLD",
-  "primaryZone": "Z4",
+  "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 7,
   "duration": 35,
   "scalable": true,
-  "tss": 35,
+  "tss": 52,
   "description": "FTP estimation",
   "purpose": "FTP estimation",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 14.3,
         "absoluteSecs": 300
       },
       "intensity": {
@@ -37,11 +37,35 @@
       }
     },
     {
+      "name": "Ramp",
+      "purpose": "FTP test ramp",
+      "phase": "work",
+      "duration": {
+        "percent": 57.1,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z1-Z7",
+        "powerLow": 30,
+        "powerHigh": 200,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 10
+      },
+      "instruction": "Ramp at 30-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 28.57142857142857,
+        "percent": 28.6,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +84,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.94
 }

@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "ladder",
   "difficulty": 7,
-  "duration": 70,
+  "duration": 69,
   "scalable": true,
-  "tss": 10,
+  "tss": 74,
   "description": "Build from comfortable to painful progressively",
   "purpose": "Progressive intensity escalation: pacing progression",
   "protocol": "Continuous Build",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 504
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Tempo effort",
       "phase": "work",
       "duration": {
-        "percent": 25,
+        "percent": 25.5,
         "absoluteSecs": 1050
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Escalate intensity",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 19.4,
         "absoluteSecs": 798
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Approach FTP",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 504
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Sustain FTP",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 504
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 6,
+        "percent": 6.1,
         "absoluteSecs": 252
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 12,
+        "percent": 12.2,
         "absoluteSecs": 504
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.81
 }

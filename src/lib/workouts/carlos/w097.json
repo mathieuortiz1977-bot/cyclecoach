@@ -3,12 +3,12 @@
   "title": "Zwift Race Finish Kicker",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 60,
+  "duration": 70,
   "scalable": true,
-  "tss": 65,
+  "tss": 72,
   "description": "Sprint finish after sustained threshold",
   "purpose": "Sprint finish after sustained threshold",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 16.666666666666664,
+        "percent": 14.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,291 @@
       }
     },
     {
-      "name": "Sprint finish after sustained threshold",
-      "purpose": "Sprint finish after sustained threshold",
+      "name": "SS 1",
+      "purpose": "Sweet spot development",
       "phase": "work",
       "duration": {
-        "percent": 93.33333333333333,
-        "absoluteSecs": 3360
+        "percent": 11.4,
+        "absoluteSecs": 480
       },
       "intensity": {
-        "zone": "Z3-Z5",
+        "zone": "Z3-Z4",
         "powerLow": 90,
-        "powerHigh": 95,
+        "powerHigh": 90,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 6
       },
-      "reps": {
-        "count": 4,
-        "work": {
-          "duration": {
-            "secs": 480,
-            "label": "8 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 90,
-            "powerHigh": 95,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 480,
-            "label": "8 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 90-95% FTP for full duration. Steady power.",
+      "instruction": "SS 1 at 90-90% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Sprint Finish 1",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Sprint Finish 1 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 2",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 11.4,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 2 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Sprint Finish 2",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Sprint Finish 2 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 3",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 11.4,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 3 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Sprint Finish 3",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Sprint Finish 3 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 3",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 3 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 4",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 11.4,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 4 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Sprint Finish 4",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 170,
+        "powerHigh": 200,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Sprint Finish 4 at 170-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Rest 4",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 4 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
@@ -96,7 +329,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 16.666666666666664,
+        "percent": 14.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -115,5 +348,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.79
 }

@@ -3,12 +3,12 @@
   "title": "VO2max Surge on Threshold",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z4",
   "structure": "mixed",
   "difficulty": 9,
-  "duration": 70,
+  "duration": 71,
   "scalable": true,
-  "tss": 13,
+  "tss": 86,
   "description": "VO2max intervals layered over FTP base",
   "purpose": "VO2 intervals with high lactate baseline",
   "protocol": "Threshold+",
@@ -19,7 +19,7 @@
       "purpose": "Prepare",
       "phase": "warmup",
       "duration": {
-        "percent": 19,
+        "percent": 18.6,
         "absoluteSecs": 798
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "FTP foundation",
       "phase": "work",
       "duration": {
-        "percent": 37,
+        "percent": 36.3,
         "absoluteSecs": 1554
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "VO2 kick",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 3.9,
         "absoluteSecs": 168
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Back to FTP",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 18.6,
         "absoluteSecs": 798
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "VO2 kick",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 3.9,
         "absoluteSecs": 168
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 19,
+        "percent": 18.6,
         "absoluteSecs": 798
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.85
 }

@@ -1,0 +1,523 @@
+{
+  "id": "bc07",
+  "title": "BC Seated Accelerations",
+  "source": "british-cycling",
+  "category": "STRENGTH",
+  "primaryZone": "Z7",
+  "structure": "mixed",
+  "difficulty": 7,
+  "duration": 50,
+  "scalable": true,
+  "tss": 35,
+  "if": 0.65,
+  "description": "Pure seated strength \u2014 maximal seated power development",
+  "purpose": "Strength-endurance via seated max efforts",
+  "protocol": "Seated Accelerations",
+  "researcher": "British Cycling Sprint Plan",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
+      "phase": "warmup",
+      "duration": {
+        "percent": 19.9,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+      }
+    },
+    {
+      "name": "Seated Accel 1",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 1 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 2",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 2 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 3",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 3 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 4",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 4 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 5",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 5 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 6",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 6 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 7",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 7 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 8",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 8 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 9",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 9 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Seated Accel 10",
+      "purpose": "Max seated force",
+      "phase": "work",
+      "duration": {
+        "percent": 0.7,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6-Z7",
+        "powerLow": 140,
+        "powerHigh": 180,
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9
+      },
+      "instruction": "Seated Accel 10 at 140-180% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.0,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Facilitate recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 19.9,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
+      }
+    }
+  ]
+}

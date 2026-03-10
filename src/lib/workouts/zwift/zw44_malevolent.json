@@ -3,12 +3,12 @@
   "title": "Malevolent",
   "source": "zwift",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 9,
-  "duration": 60,
+  "duration": 65,
   "scalable": true,
-  "tss": 11,
+  "tss": 64,
   "description": "Difficult VO2max work",
   "purpose": "Extreme VO2",
   "protocol": "Zwift - Malevolent",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 10,
+        "percent": 9.3,
         "absoluteSecs": 360
       },
       "intensity": {
@@ -39,27 +39,291 @@
       }
     },
     {
-      "name": "Malevolent",
-      "purpose": "VO2max",
+      "name": "Z4 1",
+      "purpose": "FTP development",
       "phase": "work",
       "duration": {
-        "percent": 82,
-        "absoluteSecs": 2952
+        "percent": 13.9,
+        "absoluteSecs": 540
       },
       "intensity": {
-        "zone": "Z5-Z6",
-        "powerLow": 125,
-        "powerHigh": 140,
+        "zone": "Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Z4 1 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Surge 1",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
         "rpe": 9
       },
-      "instruction": "Malevolent at 125-140% FTP",
+      "instruction": "Surge 1 at 115-115% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
-        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
-        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
-        "MIXED": "Explosive effort. Go hard and trust your training."
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z4 2",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 12.3,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Z4 2 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Surge 2",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Surge 2 at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z4 3",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 10.8,
+        "absoluteSecs": 420
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Z4 3 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Surge 3",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Surge 3 at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Z4 4",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 9.3,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Z4 4 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Surge 4",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Surge 4 at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
@@ -67,7 +331,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 8,
+        "percent": 7.4,
         "absoluteSecs": 288
       },
       "intensity": {
@@ -86,5 +350,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

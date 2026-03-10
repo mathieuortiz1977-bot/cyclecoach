@@ -6,9 +6,9 @@
   "primaryZone": "Z5",
   "structure": "pyramid",
   "difficulty": 9,
-  "duration": 60,
+  "duration": 61,
   "scalable": true,
-  "tss": 11,
+  "tss": 75,
   "description": "Multi-duration VO2max pyramid",
   "purpose": "Multi-duration VO2 pyramid work",
   "protocol": "VO2 Pyramid",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 28,
+        "percent": 27.7,
         "absoluteSecs": 1008
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 108
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 6,
+        "percent": 5.9,
         "absoluteSecs": 216
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.9,
         "absoluteSecs": 288
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 11,
+        "percent": 10.9,
         "absoluteSecs": 396
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.9,
         "absoluteSecs": 288
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 6,
+        "percent": 5.9,
         "absoluteSecs": 216
       },
       "intensity": {
@@ -187,7 +187,7 @@
       "purpose": "Peak",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 108
       },
       "intensity": {
@@ -211,7 +211,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 28,
+        "percent": 27.7,
         "absoluteSecs": 1008
       },
       "intensity": {
@@ -230,5 +230,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.86
 }

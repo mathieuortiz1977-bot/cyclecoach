@@ -3,12 +3,12 @@
   "title": "Threshold Ramp",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 65,
+  "duration": 57,
   "scalable": true,
-  "tss": 68,
+  "tss": 58,
   "description": "Finding and holding peak sustainable power",
   "purpose": "Finding and holding peak sustainable power",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 15.384615384615385,
+        "percent": 17.5,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,83 @@
       }
     },
     {
+      "name": "Ramp 1",
+      "purpose": ".",
+      "phase": "work",
+      "duration": {
+        "percent": 26.3,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Ramp 1 at 88-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 12.3,
+        "absoluteSecs": 420
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Ramp 2",
+      "purpose": ".",
+      "phase": "work",
+      "duration": {
+        "percent": 26.3,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Ramp 2 at 88-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 15.384615384615385,
+        "percent": 17.5,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +132,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

@@ -3,12 +3,12 @@
   "title": "Torque Intervals",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 5,
-  "duration": 70,
+  "duration": 59,
   "scalable": true,
-  "tss": 60,
+  "tss": 44,
   "description": "Max force per pedal stroke, climbing strength",
   "purpose": "Max force per pedal stroke, climbing strength",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 16.9,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,371 @@
       }
     },
     {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.5,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.5,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Low RPM",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Normal RPM",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 3.4,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 75,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Normal RPM at 75-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.5,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 16.9,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +420,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.67
 }

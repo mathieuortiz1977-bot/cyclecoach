@@ -1,422 +1,701 @@
 {
-  "version": "1.0",
+  "version": "3.0-extended",
   "generatedAt": "2026-03-10T20:15:31.747Z",
-  "totalWorkouts": 220,
+  "totalWorkouts": 260,
   "byCategory": {
     "BASE": [
       {
         "id": "w001",
         "title": "Steady State Endurance",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 64,
+        "duration": 90,
+        "intervals": 3
       },
       {
         "id": "w002",
         "title": "Long Endurance Ride",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 112,
+        "duration": 150,
+        "intervals": 3
       },
       {
         "id": "w003",
         "title": "Tempo Sprinkle Endurance",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 70,
+        "duration": 90,
+        "intervals": 9
       },
       {
         "id": "w004",
         "title": "Cadence Pyramids",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 54,
+        "duration": 76,
+        "intervals": 16
       },
       {
         "id": "w013",
-        "title": "Classic 2 × 20",
+        "title": "Classic 2 \u00d7 20",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 78,
+        "duration": 70,
+        "intervals": 5
       },
       {
         "id": "w014",
         "title": "Threshold Steps",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 63,
+        "duration": 60,
+        "intervals": 7
       },
       {
         "id": "w015",
         "title": "Over-Under Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 78,
+        "duration": 80,
+        "intervals": 23
       },
       {
         "id": "w017",
         "title": "Criss-Cross Intervals",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 68,
+        "duration": 71,
+        "intervals": 65
       },
       {
         "id": "w018",
         "title": "Threshold Ramp",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 58,
+        "duration": 57,
+        "intervals": 5
       },
       {
         "id": "w019",
-        "title": "Classic 5 × 5",
+        "title": "Classic 5 \u00d7 5",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 73,
+        "duration": 70,
+        "intervals": 11
       },
       {
         "id": "w020",
         "title": "Billat 30/30s",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 57,
+        "duration": 60,
+        "intervals": 64
       },
       {
         "id": "w023",
         "title": "40/20 Repeats",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 77,
+        "duration": 67,
+        "intervals": 69
       },
       {
         "id": "w025",
-        "title": "Norwegian 4 × 4",
+        "title": "Norwegian 4 \u00d7 4",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 49,
+        "duration": 45,
+        "intervals": 9
       },
       {
         "id": "w027",
         "title": "Tabata Protocol",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 57,
+        "duration": 47,
+        "intervals": 52
       },
       {
         "id": "w030",
         "title": "Microbursts",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 46,
+        "duration": 45,
+        "intervals": 64
       },
       {
         "id": "w035",
         "title": "Sprint-Endurance Combo",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 60,
+        "duration": 75,
+        "intervals": 13
       },
       {
         "id": "w036",
         "title": "Explosive Repeats",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 29,
+        "duration": 46,
+        "intervals": 23
       },
       {
         "id": "w037",
         "title": "Crit Simulation",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 66,
+        "duration": 59,
+        "intervals": 29
       },
       {
         "id": "w038",
         "title": "Race Breakaway Simulation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 91,
+        "duration": 74,
+        "intervals": 9
       },
       {
         "id": "w039",
         "title": "Group Ride Simulation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 80,
+        "duration": 85,
+        "intervals": 24
       },
       {
         "id": "w040",
         "title": "Climbing Repeats",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 80,
+        "duration": 75,
+        "intervals": 9
       },
       {
         "id": "w041",
         "title": "Time Trial Simulation",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 77,
+        "duration": 65,
+        "intervals": 5
       },
       {
         "id": "w042",
         "title": "Kitchen Sink",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 75,
+        "duration": 46,
+        "intervals": 4
       },
       {
         "id": "w043",
         "title": "Gravel Simulation",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 88,
+        "duration": 90,
+        "intervals": 15
       },
       {
         "id": "w046",
         "title": "Pre-Race Activation",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 25,
+        "duration": 39,
+        "intervals": 11
       },
       {
         "id": "w049",
-        "title": "Seiler 4 × 8",
+        "title": "Seiler 4 \u00d7 8",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 98,
+        "duration": 89,
+        "intervals": 10
       },
       {
         "id": "w050",
         "title": "Big Gear Force Reps",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 49,
+        "duration": 68,
+        "intervals": 14
       },
       {
         "id": "w051",
         "title": "Single-Leg Drills",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 32,
+        "duration": 57,
+        "intervals": 19
       },
       {
         "id": "w052",
         "title": "Torque Intervals",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 44,
+        "duration": 59,
+        "intervals": 17
       },
       {
         "id": "w053",
         "title": "Ronnestad Intervals",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 27,
+        "duration": 33,
+        "intervals": 22
       },
       {
         "id": "w054",
         "title": "Gimenez Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 61,
+        "duration": 65,
+        "intervals": 17
       },
       {
         "id": "w055",
         "title": "Miracle Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 77,
+        "duration": 50,
+        "intervals": 64
       },
       {
         "id": "w059",
-        "title": "Rønnestad 30/15s",
+        "title": "R\u00f8nnestad 30/15s",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 78,
+        "duration": 59,
+        "intervals": 82
       },
       {
         "id": "w060",
-        "title": "Rønnestad Fast-Start 5 × 5",
+        "title": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 73,
+        "duration": 75,
+        "intervals": 17
       },
       {
         "id": "w061",
         "title": "Bossi Oscillating Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 64,
+        "duration": 65,
+        "intervals": 38
       },
       {
         "id": "w062",
         "title": "Billat 30/30s (Extended)",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 77,
+        "duration": 61,
+        "intervals": 75
       },
       {
         "id": "w063",
-        "title": "Seiler 4 × 4 vs 4 × 8 Hybrid",
+        "title": "Seiler 4 \u00d7 4 vs 4 \u00d7 8 Hybrid",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 119,
+        "duration": 73,
+        "intervals": 4
       },
       {
         "id": "w066",
         "title": "Diabolical Criss-Cross",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 81,
+        "duration": 80,
+        "intervals": 41
       },
       {
         "id": "w069",
         "title": "Ritter-Style Mixed Over-Unders",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 62,
+        "duration": 65,
+        "intervals": 20
       },
       {
         "id": "w070",
         "title": "Progressive Over-Unders",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 61,
+        "duration": 60,
+        "intervals": 19
       },
       {
         "id": "w072",
         "title": "30-Minute Over-Under Express",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 28,
+        "duration": 25,
+        "intervals": 17
       },
       {
         "id": "w073",
         "title": "30-Minute Speed Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 37,
+        "duration": 28,
+        "intervals": 23
       },
       {
         "id": "w075",
         "title": "45-Minute Tabata + Threshold Combo",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 52,
+        "duration": 39,
+        "intervals": 37
       },
       {
         "id": "w076",
         "title": "45-Minute Descending Pyramid",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 43,
+        "duration": 43,
+        "intervals": 12
       },
       {
         "id": "w077",
         "title": "Gran Fondo Pacing",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 112,
+        "duration": 120,
+        "intervals": 8
       },
       {
         "id": "w078",
         "title": "Cyclocross Race Simulation",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 57,
+        "duration": 55,
+        "intervals": 24
       },
       {
         "id": "w079",
         "title": "Road Race Finale Simulation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 77,
+        "duration": 78,
+        "intervals": 10
       },
       {
         "id": "w080",
         "title": "MTB Cross-Country Simulation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 75,
+        "duration": 71,
+        "intervals": 34
       },
       {
         "id": "w081",
         "title": "Track Pursuit Preparation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 55,
+        "duration": 53,
+        "intervals": 13
       },
       {
         "id": "w082",
         "title": "Hill Climb TT Simulation",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 75,
+        "duration": 60,
+        "intervals": 4
       },
       {
         "id": "w083",
         "title": "Sweet Spot After Endurance",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 100,
+        "duration": 115,
+        "intervals": 6
       },
       {
         "id": "w086",
         "title": "Endurance with Progressive Finale",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 132,
+        "duration": 150,
+        "intervals": 7
       },
       {
         "id": "w087",
         "title": "Spin-Ups",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 27,
+        "duration": 51,
+        "intervals": 15
       },
       {
         "id": "w088",
         "title": "Cadence Contrast Intervals",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 56,
+        "duration": 68,
+        "intervals": 22
       },
       {
         "id": "w090",
         "title": "Block Day 1: Threshold Focus",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 73,
+        "duration": 68,
+        "intervals": 7
       },
       {
         "id": "w093",
         "title": "Race Day Warm-Up (Road Race)",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 23,
+        "duration": 38,
+        "intervals": 11
       },
       {
         "id": "w094",
         "title": "Race Day Warm-Up (Time Trial)",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 29,
+        "duration": 45,
+        "intervals": 11
       },
       {
         "id": "w095",
         "title": "Interval Day Warm-Up (Detailed)",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 23,
+        "duration": 38,
+        "intervals": 11
       },
       {
         "id": "w096",
         "title": "Zwift Race Prep: Pen Start Simulation",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 59,
+        "duration": 60,
+        "intervals": 14
       },
       {
         "id": "w097",
         "title": "Zwift Race Finish Kicker",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 72,
+        "duration": 70,
+        "intervals": 14
       },
       {
         "id": "w098",
         "title": "Laursen Pmax/Tmax Protocol",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 87,
+        "duration": 91,
+        "intervals": 17
       },
       {
         "id": "w100",
         "title": "Lindsay 80% MAP Protocol",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 78,
+        "duration": 61,
+        "intervals": 15
       },
       {
         "id": "w101",
         "title": "Stepto Optimal Duration Protocol",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 66,
+        "duration": 61,
+        "intervals": 11
       },
       {
         "id": "w102",
-        "title": "Rønnestad 30s MAP with 2:1 Ratio",
+        "title": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 78,
+        "duration": 59,
+        "intervals": 82
       },
       {
         "id": "w103",
         "title": "High Work:Rest Ratio (5:1)",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 146,
+        "duration": 90,
+        "intervals": 4
       },
       {
         "id": "w105",
-        "title": "Self-Paced 4 × 8 with 2:1 Ratio",
+        "title": "Self-Paced 4 \u00d7 8 with 2:1 Ratio",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 80,
+        "duration": 64,
+        "intervals": 9
       },
       {
         "id": "zw15_long_endurance",
         "title": "Long Endurance",
         "source": "zwift",
-        "difficulty": 2
+        "difficulty": 2,
+        "tss": 80,
+        "duration": 120,
+        "intervals": 3
       },
       {
         "id": "zw20_calibration",
         "title": "Calibration",
         "source": "zwift",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 33,
+        "duration": 38,
+        "intervals": 9
       },
       {
         "id": "zw48_ftp_foundation",
         "title": "FTP Foundation",
         "source": "zwift",
-        "difficulty": 2
+        "difficulty": 2,
+        "tss": 27,
+        "duration": 45,
+        "intervals": 1
+      },
+      {
+        "id": "w108",
+        "title": "Endurance with Neuromuscular Bursts",
+        "source": "research",
+        "difficulty": 5,
+        "tss": 74,
+        "duration": 92,
+        "intervals": 6
+      },
+      {
+        "id": "w129",
+        "title": "Caf\u00e9 Ride with Purpose",
+        "source": "research",
+        "difficulty": 4,
+        "tss": 102,
+        "duration": 119,
+        "intervals": 3
+      },
+      {
+        "id": "w130",
+        "title": "3-Hour Endurance Foundation",
+        "source": "research",
+        "difficulty": 3,
+        "tss": 143,
+        "duration": 182,
+        "intervals": 3
+      },
+      {
+        "id": "w131",
+        "title": "Endurance with Tempo Climbs",
+        "source": "research",
+        "difficulty": 5,
+        "tss": 110,
+        "duration": 120,
+        "intervals": 6
+      },
+      {
+        "id": "dj04",
+        "title": "DJ Polarized Z2 Day",
+        "source": "dylan-johnson",
+        "difficulty": 3,
+        "tss": 77,
+        "duration": 110,
+        "intervals": 3
+      },
+      {
+        "id": "sm01",
+        "title": "San Mill\u00e1n Zone 2 Protocol",
+        "source": "san-millan",
+        "difficulty": 3,
+        "tss": 74,
+        "duration": 95,
+        "intervals": 3
+      },
+      {
+        "id": "sm02",
+        "title": "San Mill\u00e1n 80/20 Session",
+        "source": "san-millan",
+        "difficulty": 5,
+        "tss": 86,
+        "duration": 95,
+        "intervals": 6
+      },
+      {
+        "id": "sm05",
+        "title": "San Mill\u00e1n Z2 with Sprints",
+        "source": "san-millan",
+        "difficulty": 4,
+        "tss": 107,
+        "duration": 120,
+        "intervals": 28
       }
     ],
     "TEMPO": [
@@ -424,67 +703,127 @@
         "id": "w005",
         "title": "Classic Tempo Blocks",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 70,
+        "duration": 75,
+        "intervals": 7
       },
       {
         "id": "w006",
         "title": "Extended Tempo",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 86,
+        "duration": 90,
+        "intervals": 5
       },
       {
         "id": "w007",
         "title": "Tempo with Surges",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 74,
+        "duration": 80,
+        "intervals": 20
       },
       {
         "id": "w008",
         "title": "Progressive Tempo",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 62,
+        "duration": 70,
+        "intervals": 7
       },
       {
         "id": "w067",
         "title": "Tempo Over-Unders with Anaerobic Spikes",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 68,
+        "duration": 74,
+        "intervals": 23
       },
       {
         "id": "w084",
         "title": "Threshold After Tempo",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 96,
+        "duration": 90,
+        "intervals": 7
       },
       {
         "id": "w092",
         "title": "Block Day 3: Tempo + Sprints",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 74,
+        "duration": 82,
+        "intervals": 12
       },
       {
         "id": "zw18_tempo_ladder",
         "title": "Tempo Ladder",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 65,
+        "duration": 72,
+        "intervals": 11
       },
       {
         "id": "zw50_tempo_prog1",
         "title": "Tempo Progression 1",
         "source": "zwift",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 31,
+        "duration": 35,
+        "intervals": 5
       },
       {
         "id": "zw51_tempo_prog2",
         "title": "Tempo Progression 2",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 44,
+        "duration": 46,
+        "intervals": 5
       },
       {
         "id": "zw52_tempo_prog3",
         "title": "Tempo Progression 3",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 56,
+        "duration": 58,
+        "intervals": 7
+      },
+      {
+        "id": "w107",
+        "title": "Tempo into Threshold Ramp",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 74,
+        "duration": 69,
+        "intervals": 7
+      },
+      {
+        "id": "w141",
+        "title": "Masters Tempo Endurance",
+        "source": "research",
+        "difficulty": 5,
+        "tss": 89,
+        "duration": 89,
+        "intervals": 3
+      },
+      {
+        "id": "w143a",
+        "title": "3-Day Taper Sequence Day 1",
+        "source": "research",
+        "difficulty": 4,
+        "tss": 58,
+        "duration": 59,
+        "intervals": 6
       }
     ],
     "THRESHOLD": [
@@ -492,321 +831,912 @@
         "id": "w009",
         "title": "Sweet Spot Intervals",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 76,
+        "duration": 75,
+        "intervals": 7
       },
       {
         "id": "w010",
         "title": "Extended Sweet Spot",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 85,
+        "duration": 80,
+        "intervals": 5
       },
       {
         "id": "w011",
         "title": "Sweet Spot Progression",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 79,
+        "duration": 80,
+        "intervals": 9
       },
       {
         "id": "w012",
         "title": "Sweet Spot Over-Unders (Intro)",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 65,
+        "duration": 74,
+        "intervals": 23
       },
       {
         "id": "w016",
         "title": "FTP Long Block",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 90,
+        "duration": 70,
+        "intervals": 4
       },
       {
         "id": "w056",
         "title": "Ramp Test (FTP Assessment)",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 52,
+        "duration": 35,
+        "intervals": 3
       },
       {
         "id": "w057",
         "title": "20-Minute FTP Test",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 56,
+        "duration": 50,
+        "intervals": 5
       },
       {
         "id": "w058",
         "title": "Kolie Moore FTP Test",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 68,
+        "duration": 60,
+        "intervals": 3
       },
       {
         "id": "w068",
         "title": "Sweet Spot with VO2max Kicks",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 83,
+        "duration": 80,
+        "intervals": 20
       },
       {
         "id": "w074",
         "title": "45-Minute Sweet Spot Express",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 42,
+        "duration": 42,
+        "intervals": 5
       },
       {
         "id": "w089",
         "title": "Isolated Leg Training (ILT) + Sweet Spot",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 51,
+        "duration": 58,
+        "intervals": 15
       },
       {
         "id": "zw03_mccarthy",
         "title": "McCarthy Special",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 64,
+        "duration": 49,
+        "intervals": 13
       },
       {
         "id": "zw06_over_under",
         "title": "Over-Under Threshold",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 63,
+        "duration": 52,
+        "intervals": 10
       },
       {
         "id": "zw11_5x8_ftp",
-        "title": "5×8 FTP",
+        "title": "5\u00d78 FTP",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 81,
+        "duration": 73,
+        "intervals": 11
       },
       {
         "id": "zw12_3x12_threshold",
-        "title": "3×12 Threshold",
+        "title": "3\u00d712 Threshold",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 71,
+        "duration": 62,
+        "intervals": 7
       },
       {
         "id": "zw13_threshold_pyramid",
         "title": "Threshold Pyramid",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 64,
+        "duration": 60,
+        "intervals": 11
       },
       {
         "id": "zw47_alpha",
         "title": "Alpha",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 21,
+        "duration": 31,
+        "intervals": 10
       },
       {
         "id": "zw56_threshold_a",
         "title": "Threshold A",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 45,
+        "duration": 46,
+        "intervals": 9
       },
       {
         "id": "zw57_threshold_b",
         "title": "Threshold B",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 52,
+        "duration": 51,
+        "intervals": 9
       },
       {
         "id": "zw58_threshold_c",
         "title": "Threshold C",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 50,
+        "duration": 47,
+        "intervals": 7
       },
       {
         "id": "zw59_threshold_d",
         "title": "Threshold D",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 61,
+        "duration": 53,
+        "intervals": 7
       },
       {
         "id": "zw60_threshold_e",
         "title": "Threshold E",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 51,
+        "duration": 45,
+        "intervals": 5
       },
       {
         "id": "zw61_threshold_f",
         "title": "Threshold F",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 62,
+        "duration": 53,
+        "intervals": 5
+      },
+      {
+        "id": "w117",
+        "title": "The McCarthy Special (Zwift)",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 70,
+        "duration": 60,
+        "intervals": 6
+      },
+      {
+        "id": "w125a",
+        "title": "TH Progression Week 1",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 66,
+        "duration": 66,
+        "intervals": 7
+      },
+      {
+        "id": "w125b",
+        "title": "TH Progression Week 2",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 76,
+        "duration": 71,
+        "intervals": 7
+      },
+      {
+        "id": "w125c",
+        "title": "TH Progression Week 3",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 80,
+        "duration": 72,
+        "intervals": 5
+      },
+      {
+        "id": "w125d",
+        "title": "TH Progression Week 4 \u2013 TEST",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 91,
+        "duration": 78,
+        "intervals": 5
+      },
+      {
+        "id": "w126",
+        "title": "FTP with 30s Bursts",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 101,
+        "duration": 74,
+        "intervals": 5
+      },
+      {
+        "id": "w127",
+        "title": "Threshold with Declining Rest",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 77,
+        "duration": 69,
+        "intervals": 7
+      },
+      {
+        "id": "w137",
+        "title": "Low-Cadence Threshold",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 80,
+        "duration": 69,
+        "intervals": 5
+      },
+      {
+        "id": "w138",
+        "title": "Seated/Standing Alternation",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 69,
+        "duration": 64,
+        "intervals": 6
+      },
+      {
+        "id": "w143b",
+        "title": "3-Day Taper Sequence Day 2",
+        "source": "research",
+        "difficulty": 3,
+        "tss": 35,
+        "duration": 45,
+        "intervals": 6
+      },
+      {
+        "id": "dj05",
+        "title": "DJ Anti-Sweet Spot Threshold",
+        "source": "dylan-johnson",
+        "difficulty": 8,
+        "tss": 75,
+        "duration": 68,
+        "intervals": 7
+      },
+      {
+        "id": "sm03",
+        "title": "San Mill\u00e1n Z4 Threshold Day",
+        "source": "san-millan",
+        "difficulty": 8,
+        "tss": 78,
+        "duration": 73,
+        "intervals": 7
+      },
+      {
+        "id": "suf03",
+        "title": "Angels",
+        "source": "sufferfest",
+        "difficulty": 8,
+        "tss": 57,
+        "duration": 54,
+        "intervals": 7
+      },
+      {
+        "id": "suf05",
+        "title": "A Very Dark Place",
+        "source": "sufferfest",
+        "difficulty": 9,
+        "tss": 71,
+        "duration": 63,
+        "intervals": 9
+      },
+      {
+        "id": "suf07",
+        "title": "There Is No Try",
+        "source": "sufferfest",
+        "difficulty": 9,
+        "tss": 65,
+        "duration": 61,
+        "intervals": 19
+      },
+      {
+        "id": "tr08",
+        "title": "Mansfield +3",
+        "source": "trainerroad",
+        "difficulty": 8,
+        "tss": 82,
+        "duration": 79,
+        "intervals": 15
+      },
+      {
+        "id": "tr10",
+        "title": "Robion",
+        "source": "trainerroad",
+        "difficulty": 8,
+        "tss": 59,
+        "duration": 58,
+        "intervals": 11
+      },
+      {
+        "id": "xert01",
+        "title": "Xert SMART Threshold",
+        "source": "xert",
+        "difficulty": 7,
+        "tss": 75,
+        "duration": 70,
+        "intervals": 9
       }
     ],
     "VO2MAX": [
       {
         "id": "w021",
-        "title": "4 × 8 VO2max",
+        "title": "4 \u00d7 8 VO2max",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 84,
+        "duration": 72,
+        "intervals": 9
       },
       {
         "id": "w022",
         "title": "VO2max Pyramids",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 70,
+        "duration": 69,
+        "intervals": 15
       },
       {
         "id": "w024",
         "title": "VO2max Over-Unders",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 73,
+        "duration": 72,
+        "intervals": 26
       },
       {
         "id": "w026",
         "title": "Descending VO2max",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 59,
+        "duration": 56,
+        "intervals": 11
       },
       {
         "id": "w047",
         "title": "Polarized Z2 + VO2max",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 90,
+        "duration": 96,
+        "intervals": 13
       },
       {
         "id": "w064",
         "title": "Hard-Start Decreasing VO2max",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 62,
+        "duration": 60,
+        "intervals": 17
       },
       {
         "id": "w065",
         "title": "40/20 VO2max (MTB Style)",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 65,
+        "duration": 59,
+        "intervals": 53
       },
       {
         "id": "w071",
         "title": "The 30-Minute VO2max Blitz",
         "source": "carlos",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 29,
+        "duration": 27,
+        "intervals": 16
       },
       {
         "id": "w085",
         "title": "VO2max on Tired Legs",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 97,
+        "duration": 103,
+        "intervals": 12
       },
       {
         "id": "w091",
         "title": "Block Day 2: VO2max Focus",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 68,
+        "duration": 66,
+        "intervals": 12
       },
       {
         "id": "zw01_gorby",
         "title": "The Gorby",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 65,
+        "duration": 57,
+        "intervals": 11
       },
       {
         "id": "zw07_40_20",
         "title": "40/20 Repeats",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 76,
+        "duration": 56,
+        "intervals": 69
       },
       {
         "id": "zw08_30_30",
         "title": "30/30 Efforts",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 76,
+        "duration": 64,
+        "intervals": 85
       },
       {
         "id": "zw17_vo2_ladder",
         "title": "VO2 Ladder",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 59,
+        "duration": 49,
+        "intervals": 11
       },
       {
         "id": "zw24_unicorn_red",
         "title": "Unicorn Red",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 34,
+        "duration": 40,
+        "intervals": 14
       },
       {
         "id": "zw25_unicorn_orange",
         "title": "Unicorn Orange",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 42,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw26_unicorn_yellow",
         "title": "Unicorn Yellow",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 42,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw27_unicorn_green",
         "title": "Unicorn Green",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 42,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw28_unicorn_blue",
         "title": "Unicorn Blue",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 43,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw29_unicorn_indigo",
         "title": "Unicorn Indigo",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 43,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw30_unicorn_violet",
         "title": "Unicorn Violet",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 43,
+        "duration": 47,
+        "intervals": 17
       },
       {
         "id": "zw37_vo2_method",
         "title": "VO2 Method",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 33,
+        "duration": 31,
+        "intervals": 9
       },
       {
         "id": "zw38_vo2_tine",
         "title": "VO2 Tine",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 35,
+        "duration": 34,
+        "intervals": 17
       },
       {
         "id": "zw39_vo2_tines",
         "title": "VO2 Tines",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 36,
+        "duration": 36,
+        "intervals": 17
       },
       {
         "id": "zw40_vo2_15_9",
         "title": "VO2 15/9",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 42,
+        "duration": 38,
+        "intervals": 7
       },
       {
         "id": "zw41_vo2_lox",
         "title": "VO2 LOX",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 48,
+        "duration": 42,
+        "intervals": 9
       },
       {
         "id": "zw44_malevolent",
         "title": "Malevolent",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 64,
+        "duration": 65,
+        "intervals": 14
       },
       {
         "id": "zw53_hiit_w4",
         "title": "HIIT Week 4",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 43,
+        "duration": 43,
+        "intervals": 52
       },
       {
         "id": "zw54_hiit_w6",
         "title": "HIIT Week 6",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 55,
+        "duration": 50,
+        "intervals": 64
       },
       {
         "id": "zw55_hiit_w8",
         "title": "HIIT Week 8",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 77,
+        "duration": 66,
+        "intervals": 85
+      },
+      {
+        "id": "w109",
+        "title": "Mixed Energy Systems Medley",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 80,
+        "duration": 79,
+        "intervals": 8
+      },
+      {
+        "id": "w111",
+        "title": "VO2max Ladder (Wattbike Style)",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 77,
+        "duration": 66,
+        "intervals": 11
+      },
+      {
+        "id": "w112",
+        "title": "Inverted VO2max Ladder",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 66,
+        "duration": 64,
+        "intervals": 9
+      },
+      {
+        "id": "w113",
+        "title": "1-2-3-4-3-2-1 Pyramid",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 75,
+        "duration": 61,
+        "intervals": 9
+      },
+      {
+        "id": "w114",
+        "title": "Double Pyramid",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 85,
+        "duration": 74,
+        "intervals": 13
+      },
+      {
+        "id": "w116",
+        "title": "The Gorby (Zwift)",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 78,
+        "duration": 59,
+        "intervals": 5
+      },
+      {
+        "id": "w118",
+        "title": "Baird (TrainerRoad Style)",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 43,
+        "duration": 60,
+        "intervals": 7
+      },
+      {
+        "id": "w120",
+        "title": "Kaiser (TrainerRoad Style)",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 46,
+        "duration": 65,
+        "intervals": 4
+      },
+      {
+        "id": "w124a",
+        "title": "VO2 Progression Week 1",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 41,
+        "duration": 60,
+        "intervals": 4
+      },
+      {
+        "id": "w124c",
+        "title": "VO2 Progression Week 3",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 54,
+        "duration": 70,
+        "intervals": 4
+      },
+      {
+        "id": "w124d",
+        "title": "VO2 Progression Week 4 \u2013 TEST",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 55,
+        "duration": 69,
+        "intervals": 4
+      },
+      {
+        "id": "w128",
+        "title": "VO2max Surge on Threshold",
+        "source": "research",
+        "difficulty": 9,
+        "tss": 86,
+        "duration": 71,
+        "intervals": 6
+      },
+      {
+        "id": "w139",
+        "title": "Masters VO2max (Conservative)",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 64,
+        "duration": 72,
+        "intervals": 7
+      },
+      {
+        "id": "bc01",
+        "title": "BC Track Pursuit Intervals",
+        "source": "british-cycling",
+        "difficulty": 9,
+        "tss": 92,
+        "duration": 73,
+        "intervals": 21
+      },
+      {
+        "id": "bc05",
+        "title": "BC Ramped VO2 Intervals",
+        "source": "british-cycling",
+        "difficulty": 8,
+        "tss": 58,
+        "duration": 61,
+        "intervals": 17
+      },
+      {
+        "id": "bc08",
+        "title": "BC 1-Min Neuromuscular Intervals",
+        "source": "british-cycling",
+        "difficulty": 8,
+        "tss": 43,
+        "duration": 63,
+        "intervals": 17
+      },
+      {
+        "id": "dj01",
+        "title": "DJ Self-Paced VO2max (4x8)",
+        "source": "dylan-johnson",
+        "difficulty": 8,
+        "tss": 78,
+        "duration": 64,
+        "intervals": 9
+      },
+      {
+        "id": "dj02",
+        "title": "DJ VO2max 5x5 Constant",
+        "source": "dylan-johnson",
+        "difficulty": 8,
+        "tss": 70,
+        "duration": 65,
+        "intervals": 11
+      },
+      {
+        "id": "dj03",
+        "title": "DJ Block Periodization HIIT Day",
+        "source": "dylan-johnson",
+        "difficulty": 9,
+        "tss": 80,
+        "duration": 68,
+        "intervals": 13
+      },
+      {
+        "id": "suf01",
+        "title": "Nine Hammers",
+        "source": "sufferfest",
+        "difficulty": 9,
+        "tss": 74,
+        "duration": 64,
+        "intervals": 19
+      },
+      {
+        "id": "suf02",
+        "title": "Revolver",
+        "source": "sufferfest",
+        "difficulty": 8,
+        "tss": 52,
+        "duration": 49,
+        "intervals": 31
+      },
+      {
+        "id": "suf04",
+        "title": "Downward Spiral",
+        "source": "sufferfest",
+        "difficulty": 9,
+        "tss": 61,
+        "duration": 66,
+        "intervals": 34
+      },
+      {
+        "id": "tr01",
+        "title": "Baird +2",
+        "source": "trainerroad",
+        "difficulty": 7,
+        "tss": 56,
+        "duration": 66,
+        "intervals": 34
+      },
+      {
+        "id": "tr02",
+        "title": "Spencer +2",
+        "source": "trainerroad",
+        "difficulty": 8,
+        "tss": 49,
+        "duration": 47,
+        "intervals": 11
+      },
+      {
+        "id": "tr03",
+        "title": "Kaiser",
+        "source": "trainerroad",
+        "difficulty": 9,
+        "tss": 57,
+        "duration": 53,
+        "intervals": 13
+      },
+      {
+        "id": "tr04",
+        "title": "Mills",
+        "source": "trainerroad",
+        "difficulty": 8,
+        "tss": 110,
+        "duration": 102,
+        "intervals": 40
+      },
+      {
+        "id": "tr05",
+        "title": "Bluebell",
+        "source": "trainerroad",
+        "difficulty": 7,
+        "tss": 54,
+        "duration": 60,
+        "intervals": 34
+      },
+      {
+        "id": "xert02",
+        "title": "Xert SMART VO2max Hard-Start",
+        "source": "xert",
+        "difficulty": 8,
+        "tss": 69,
+        "duration": 70,
+        "intervals": 17
+      },
+      {
+        "id": "xert03",
+        "title": "Xert XSSR Interval",
+        "source": "xert",
+        "difficulty": 8,
+        "tss": 46,
+        "duration": 50,
+        "intervals": 20
+      },
+      {
+        "id": "xert04",
+        "title": "Xert Breakthrough Workout",
+        "source": "xert",
+        "difficulty": 9,
+        "tss": 66,
+        "duration": 62,
+        "intervals": 13
       }
     ],
     "ANAEROBIC": [
@@ -814,55 +1744,136 @@
         "id": "w028",
         "title": "Anaerobic Repeats",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 60,
+        "duration": 64,
+        "intervals": 27
       },
       {
         "id": "w031",
         "title": "Anaerobic Ladders",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 60,
+        "duration": 64,
+        "intervals": 30
       },
       {
         "id": "w032",
         "title": "3-Minute Anaerobic Blocks",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 58,
+        "duration": 55,
+        "intervals": 11
       },
       {
         "id": "zw02_wringer",
         "title": "The Wringer",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 53,
+        "duration": 40,
+        "intervals": 25
       },
       {
         "id": "zw14_microbursts",
         "title": "Microbursts",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 42,
+        "duration": 37,
+        "intervals": 64
       },
       {
         "id": "zw42_attack1",
         "title": "Attack 1",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 29,
+        "duration": 37,
+        "intervals": 19
       },
       {
         "id": "zw43_attack2",
         "title": "Attack 2",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 35,
+        "duration": 37,
+        "intervals": 23
       },
       {
         "id": "zw67_microbursts_crit",
         "title": "Crit Microbursts",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 116,
+        "duration": 65,
+        "intervals": 154
       },
       {
         "id": "zw68_30_30_anaerobic",
         "title": "30/30 Anaerobic",
         "source": "zwift",
-        "difficulty": 8
+        "difficulty": 8,
+        "tss": 47,
+        "duration": 39,
+        "intervals": 43
+      },
+      {
+        "id": "w110",
+        "title": "Gravel Unbound Simulation",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 69,
+        "duration": 90,
+        "intervals": 6
+      },
+      {
+        "id": "w115",
+        "title": "The Wringer (Zwift)",
+        "source": "research",
+        "difficulty": 10,
+        "tss": 36,
+        "duration": 45,
+        "intervals": 5
+      },
+      {
+        "id": "w132",
+        "title": "The Wringer Light",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 41,
+        "duration": 50,
+        "intervals": 7
+      },
+      {
+        "id": "w134",
+        "title": "20/40 Anaerobic Repeats",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 34,
+        "duration": 54,
+        "intervals": 7
+      },
+      {
+        "id": "w135",
+        "title": "Standing Power Intervals",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 58,
+        "duration": 59,
+        "intervals": 7
+      },
+      {
+        "id": "suf06",
+        "title": "The Shovel",
+        "source": "sufferfest",
+        "difficulty": 9,
+        "tss": 61,
+        "duration": 66,
+        "intervals": 40
       }
     ],
     "SPRINT": [
@@ -870,43 +1881,100 @@
         "id": "w029",
         "title": "2-Minute Power",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 53,
+        "duration": 52,
+        "intervals": 13
       },
       {
         "id": "w033",
         "title": "Sprint Repeats",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 36,
+        "duration": 61,
+        "intervals": 17
       },
       {
         "id": "w034",
         "title": "Standing Start Sprints",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 31,
+        "duration": 52,
+        "intervals": 13
       },
       {
         "id": "w048",
         "title": "Polarized Sprint Day",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 56,
+        "duration": 76,
+        "intervals": 13
       },
       {
         "id": "w099",
         "title": "Laursen Supramaximal Sprint Protocol",
         "source": "carlos",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 65,
+        "duration": 80,
+        "intervals": 25
       },
       {
         "id": "w104",
         "title": "Low Work:Rest Ratio Sprint (1:8)",
         "source": "carlos",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 31,
+        "duration": 48,
+        "intervals": 27
       },
       {
         "id": "zw64_crit_foundation",
         "title": "Crit Foundation",
         "source": "zwift",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 59,
+        "duration": 45,
+        "intervals": 3
+      },
+      {
+        "id": "w133",
+        "title": "Sprint Ladder",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 39,
+        "duration": 55,
+        "intervals": 7
+      },
+      {
+        "id": "w142",
+        "title": "Race Eve Sharpener",
+        "source": "research",
+        "difficulty": 3,
+        "tss": 23,
+        "duration": 32,
+        "intervals": 5
+      },
+      {
+        "id": "w143c",
+        "title": "3-Day Taper Sequence Day 3 (Race Eve)",
+        "source": "research",
+        "difficulty": 2,
+        "tss": 20,
+        "duration": 30,
+        "intervals": 5
+      },
+      {
+        "id": "bc03",
+        "title": "BC Standing Start Sprints",
+        "source": "british-cycling",
+        "difficulty": 8,
+        "tss": 37,
+        "duration": 57,
+        "intervals": 17
       }
     ],
     "RECOVERY": [
@@ -914,19 +1982,28 @@
         "id": "w044",
         "title": "Active Recovery",
         "source": "carlos",
-        "difficulty": 1
+        "difficulty": 1,
+        "tss": 29,
+        "duration": 36,
+        "intervals": 1
       },
       {
         "id": "w045",
         "title": "Recovery with Openers",
         "source": "carlos",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 31,
+        "duration": 60,
+        "intervals": 10
       },
       {
         "id": "zw16_recovery_spin",
         "title": "Recovery Spin",
         "source": "zwift",
-        "difficulty": 1
+        "difficulty": 1,
+        "tss": 12,
+        "duration": 45,
+        "intervals": 1
       }
     ],
     "SWEET_SPOT": [
@@ -934,37 +2011,154 @@
         "id": "zw04_sst1",
         "title": "SST Tier 1",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 63,
+        "duration": 52,
+        "intervals": 10
       },
       {
         "id": "zw05_sst2",
         "title": "SST Tier 2",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 98,
+        "duration": 78,
+        "intervals": 10
       },
       {
         "id": "zw21_90_trifecta_ded",
         "title": "90% Trifecta - Devedeset",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 51,
+        "duration": 52,
+        "intervals": 7
       },
       {
         "id": "zw22_90_trifecta_half",
         "title": "90% Trifecta - Halfems",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 60,
+        "duration": 58,
+        "intervals": 7
       },
       {
         "id": "zw23_90_trifecta_nov",
         "title": "90% Trifecta - Novanta",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 51,
+        "duration": 50,
+        "intervals": 5
       },
       {
         "id": "zw45_sweetheart",
         "title": "Sweetheart",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 64,
+        "duration": 57,
+        "intervals": 14
+      },
+      {
+        "id": "w121",
+        "title": "Carson (TrainerRoad Style Sweet Spot)",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 65,
+        "duration": 75,
+        "intervals": 4
+      },
+      {
+        "id": "w122",
+        "title": "Eclipse (TrainerRoad Style)",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 69,
+        "duration": 70,
+        "intervals": 5
+      },
+      {
+        "id": "w123a",
+        "title": "SS Progression Week 1",
+        "source": "research",
+        "difficulty": 6,
+        "tss": 59,
+        "duration": 66,
+        "intervals": 7
+      },
+      {
+        "id": "w123b",
+        "title": "SS Progression Week 2",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 68,
+        "duration": 71,
+        "intervals": 7
+      },
+      {
+        "id": "w123c",
+        "title": "SS Progression Week 3",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 82,
+        "duration": 80,
+        "intervals": 7
+      },
+      {
+        "id": "w123d",
+        "title": "SS Progression Week 4 \u2013 TEST",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 82,
+        "duration": 80,
+        "intervals": 5
+      },
+      {
+        "id": "w136",
+        "title": "Force-Velocity Contrast",
+        "source": "research",
+        "difficulty": 7,
+        "tss": 72,
+        "duration": 71,
+        "intervals": 6
+      },
+      {
+        "id": "w140",
+        "title": "Masters Sweet Spot",
+        "source": "research",
+        "difficulty": 6,
+        "tss": 78,
+        "duration": 75,
+        "intervals": 5
+      },
+      {
+        "id": "tr06",
+        "title": "Carson",
+        "source": "trainerroad",
+        "difficulty": 6,
+        "tss": 77,
+        "duration": 80,
+        "intervals": 20
+      },
+      {
+        "id": "tr07",
+        "title": "Eclipse",
+        "source": "trainerroad",
+        "difficulty": 6,
+        "tss": 68,
+        "duration": 70,
+        "intervals": 5
+      },
+      {
+        "id": "tr09",
+        "title": "Icefall -3",
+        "source": "trainerroad",
+        "difficulty": 7,
+        "tss": 80,
+        "duration": 83,
+        "intervals": 29
       }
     ],
     "FTP_TEST": [
@@ -972,13 +2166,28 @@
         "id": "zw09_ramp_test",
         "title": "Ramp Test",
         "source": "zwift",
-        "difficulty": 10
+        "difficulty": 10,
+        "tss": 51,
+        "duration": 45,
+        "intervals": 3
       },
       {
         "id": "zw10_ftp_20min",
         "title": "FTP Test 20-Minute",
         "source": "zwift",
-        "difficulty": 10
+        "difficulty": 10,
+        "tss": 52,
+        "duration": 41,
+        "intervals": 5
+      },
+      {
+        "id": "suf08",
+        "title": "Full Frontal 4DP Test",
+        "source": "sufferfest",
+        "difficulty": 10,
+        "tss": 69,
+        "duration": 67,
+        "intervals": 11
       }
     ],
     "MIXED": [
@@ -986,25 +2195,46 @@
         "id": "zw19_mixed_intervals",
         "title": "Mixed Intervals",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 92,
+        "duration": 86,
+        "intervals": 18
       },
       {
         "id": "zw46_exemplary",
         "title": "Exemplary",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 61,
+        "duration": 52,
+        "intervals": 12
       },
       {
         "id": "zw62_free_ride",
         "title": "Free Ride",
         "source": "zwift",
-        "difficulty": 1
+        "difficulty": 1,
+        "tss": 132,
+        "duration": 60,
+        "intervals": 1
       },
       {
         "id": "zw65_split_session",
         "title": "Split Session",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 88,
+        "duration": 60,
+        "intervals": 4
+      },
+      {
+        "id": "bc06",
+        "title": "BC Intensity Slide",
+        "source": "british-cycling",
+        "difficulty": 8,
+        "tss": 45,
+        "duration": 51,
+        "intervals": 15
       }
     ],
     "TECHNIQUE": [
@@ -1012,25 +2242,46 @@
         "id": "zw31_pedal_drill1",
         "title": "Pedaling Drill 1",
         "source": "zwift",
-        "difficulty": 3
+        "difficulty": 3,
+        "tss": 30,
+        "duration": 51,
+        "intervals": 13
       },
       {
         "id": "zw32_pedal_drill2",
         "title": "Pedaling Drill 2",
         "source": "zwift",
-        "difficulty": 4
+        "difficulty": 4,
+        "tss": 33,
+        "duration": 51,
+        "intervals": 13
       },
       {
         "id": "zw35_tech1",
         "title": "Tech Work 1",
         "source": "zwift",
-        "difficulty": 4
+        "difficulty": 4,
+        "tss": 29,
+        "duration": 49,
+        "intervals": 13
       },
       {
         "id": "zw36_tech2",
         "title": "Tech Work 2",
         "source": "zwift",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 32,
+        "duration": 50,
+        "intervals": 13
+      },
+      {
+        "id": "bc02",
+        "title": "BC Superspin Drill",
+        "source": "british-cycling",
+        "difficulty": 5,
+        "tss": 20,
+        "duration": 40,
+        "intervals": 16
       }
     ],
     "STRENGTH": [
@@ -1038,25 +2289,55 @@
         "id": "zw33_strength1",
         "title": "Strength Tier 1",
         "source": "zwift",
-        "difficulty": 5
+        "difficulty": 5,
+        "tss": 33,
+        "duration": 42,
+        "intervals": 13
       },
       {
         "id": "zw34_strength2",
         "title": "Strength Tier 2",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 43,
+        "duration": 48,
+        "intervals": 13
       },
       {
         "id": "zw49_ftp_strength",
         "title": "FTP Strength",
         "source": "zwift",
-        "difficulty": 6
+        "difficulty": 6,
+        "tss": 23,
+        "duration": 26,
+        "intervals": 17
       },
       {
         "id": "zw66_crit_strength",
         "title": "Crit Strength",
         "source": "zwift",
-        "difficulty": 7
+        "difficulty": 7,
+        "tss": 40,
+        "duration": 45,
+        "intervals": 9
+      },
+      {
+        "id": "bc04",
+        "title": "BC Force Intervals",
+        "source": "british-cycling",
+        "difficulty": 7,
+        "tss": 44,
+        "duration": 53,
+        "intervals": 13
+      },
+      {
+        "id": "bc07",
+        "title": "BC Seated Accelerations",
+        "source": "british-cycling",
+        "difficulty": 7,
+        "tss": 35,
+        "duration": 50,
+        "intervals": 21
       }
     ],
     "RACE_SIM": [
@@ -1064,7 +2345,30 @@
         "id": "zw63_works",
         "title": "The Works",
         "source": "zwift",
-        "difficulty": 9
+        "difficulty": 9,
+        "tss": 97,
+        "duration": 94,
+        "intervals": 41
+      },
+      {
+        "id": "sm04",
+        "title": "Poga\u010dar Climbing Simulation",
+        "source": "san-millan",
+        "difficulty": 9,
+        "tss": 73,
+        "duration": 74,
+        "intervals": 9
+      }
+    ],
+    "COMBO": [
+      {
+        "id": "w106",
+        "title": "Sweet Spot into VO2max Finisher",
+        "source": "research",
+        "difficulty": 8,
+        "tss": 80,
+        "duration": 76,
+        "intervals": 11
       }
     ]
   },
@@ -1303,9 +2607,199 @@
         "research/w143b.json",
         "research/w143c.json"
       ]
+    },
+    "british-cycling": {
+      "count": 8,
+      "files": [
+        "external/bc01.json",
+        "external/bc02.json",
+        "external/bc03.json",
+        "external/bc04.json",
+        "external/bc05.json",
+        "external/bc06.json",
+        "external/bc07.json",
+        "external/bc08.json"
+      ]
+    },
+    "dylan-johnson": {
+      "count": 5,
+      "files": [
+        "external/dj01.json",
+        "external/dj02.json",
+        "external/dj03.json",
+        "external/dj04.json",
+        "external/dj05.json"
+      ]
+    },
+    "san-millan": {
+      "count": 5,
+      "files": [
+        "external/sm01.json",
+        "external/sm02.json",
+        "external/sm03.json",
+        "external/sm04.json",
+        "external/sm05.json"
+      ]
+    },
+    "sufferfest": {
+      "count": 8,
+      "files": [
+        "external/suf01.json",
+        "external/suf02.json",
+        "external/suf03.json",
+        "external/suf04.json",
+        "external/suf05.json",
+        "external/suf06.json",
+        "external/suf07.json",
+        "external/suf08.json"
+      ]
+    },
+    "trainerroad": {
+      "count": 10,
+      "files": [
+        "external/tr01.json",
+        "external/tr02.json",
+        "external/tr03.json",
+        "external/tr04.json",
+        "external/tr05.json",
+        "external/tr06.json",
+        "external/tr07.json",
+        "external/tr08.json",
+        "external/tr09.json",
+        "external/tr10.json"
+      ]
+    },
+    "xert": {
+      "count": 4,
+      "files": [
+        "external/xert01.json",
+        "external/xert02.json",
+        "external/xert03.json",
+        "external/xert04.json"
+      ]
     }
   },
   "all": [
+    {
+      "id": "w028",
+      "title": "Anaerobic Repeats",
+      "category": "ANAEROBIC",
+      "source": "carlos",
+      "file": "carlos/w028.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w031",
+      "title": "Anaerobic Ladders",
+      "category": "ANAEROBIC",
+      "source": "carlos",
+      "file": "carlos/w031.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w032",
+      "title": "3-Minute Anaerobic Blocks",
+      "category": "ANAEROBIC",
+      "source": "carlos",
+      "file": "carlos/w032.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw02_wringer",
+      "title": "The Wringer",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw02_wringer.json",
+      "difficulty": 9
+    },
+    {
+      "id": "zw14_microbursts",
+      "title": "Microbursts",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw14_microbursts.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw42_attack1",
+      "title": "Attack 1",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw42_attack1.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw43_attack2",
+      "title": "Attack 2",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw43_attack2.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw67_microbursts_crit",
+      "title": "Crit Microbursts",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw67_microbursts_crit.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw68_30_30_anaerobic",
+      "title": "30/30 Anaerobic",
+      "category": "ANAEROBIC",
+      "source": "zwift",
+      "file": "zwift/zw68_30_30_anaerobic.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w110",
+      "title": "Gravel Unbound Simulation",
+      "category": "ANAEROBIC",
+      "source": "research",
+      "file": "research/w110.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w115",
+      "title": "The Wringer (Zwift)",
+      "category": "ANAEROBIC",
+      "source": "research",
+      "file": "research/w115.json",
+      "difficulty": 10
+    },
+    {
+      "id": "w132",
+      "title": "The Wringer Light",
+      "category": "ANAEROBIC",
+      "source": "research",
+      "file": "research/w132.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w134",
+      "title": "20/40 Anaerobic Repeats",
+      "category": "ANAEROBIC",
+      "source": "research",
+      "file": "research/w134.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w135",
+      "title": "Standing Power Intervals",
+      "category": "ANAEROBIC",
+      "source": "research",
+      "file": "research/w135.json",
+      "difficulty": 8
+    },
+    {
+      "id": "suf06",
+      "title": "The Shovel",
+      "category": "ANAEROBIC",
+      "source": "sufferfest",
+      "file": "external/suf06.json",
+      "difficulty": 9
+    },
     {
       "id": "w001",
       "title": "Steady State Endurance",
@@ -1339,72 +2833,8 @@
       "difficulty": 3
     },
     {
-      "id": "w005",
-      "title": "Classic Tempo Blocks",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w005.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w006",
-      "title": "Extended Tempo",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w006.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w007",
-      "title": "Tempo with Surges",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w007.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w008",
-      "title": "Progressive Tempo",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w008.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w009",
-      "title": "Sweet Spot Intervals",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w009.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w010",
-      "title": "Extended Sweet Spot",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w010.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w011",
-      "title": "Sweet Spot Progression",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w011.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w012",
-      "title": "Sweet Spot Over-Unders (Intro)",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w012.json",
-      "difficulty": 7
-    },
-    {
       "id": "w013",
-      "title": "Classic 2 × 20",
+      "title": "Classic 2 \u00d7 20",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w013.json",
@@ -1427,14 +2857,6 @@
       "difficulty": 7
     },
     {
-      "id": "w016",
-      "title": "FTP Long Block",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w016.json",
-      "difficulty": 7
-    },
-    {
       "id": "w017",
       "title": "Criss-Cross Intervals",
       "category": "BASE",
@@ -1452,7 +2874,7 @@
     },
     {
       "id": "w019",
-      "title": "Classic 5 × 5",
+      "title": "Classic 5 \u00d7 5",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w019.json",
@@ -1467,22 +2889,6 @@
       "difficulty": 7
     },
     {
-      "id": "w021",
-      "title": "4 × 8 VO2max",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w021.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w022",
-      "title": "VO2max Pyramids",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w022.json",
-      "difficulty": 7
-    },
-    {
       "id": "w023",
       "title": "40/20 Repeats",
       "category": "BASE",
@@ -1491,27 +2897,11 @@
       "difficulty": 8
     },
     {
-      "id": "w024",
-      "title": "VO2max Over-Unders",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w024.json",
-      "difficulty": 7
-    },
-    {
       "id": "w025",
-      "title": "Norwegian 4 × 4",
+      "title": "Norwegian 4 \u00d7 4",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w025.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w026",
-      "title": "Descending VO2max",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w026.json",
       "difficulty": 7
     },
     {
@@ -1523,60 +2913,12 @@
       "difficulty": 8
     },
     {
-      "id": "w028",
-      "title": "Anaerobic Repeats",
-      "category": "ANAEROBIC",
-      "source": "carlos",
-      "file": "carlos/w028.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w029",
-      "title": "2-Minute Power",
-      "category": "SPRINT",
-      "source": "carlos",
-      "file": "carlos/w029.json",
-      "difficulty": 7
-    },
-    {
       "id": "w030",
       "title": "Microbursts",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w030.json",
       "difficulty": 7
-    },
-    {
-      "id": "w031",
-      "title": "Anaerobic Ladders",
-      "category": "ANAEROBIC",
-      "source": "carlos",
-      "file": "carlos/w031.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w032",
-      "title": "3-Minute Anaerobic Blocks",
-      "category": "ANAEROBIC",
-      "source": "carlos",
-      "file": "carlos/w032.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w033",
-      "title": "Sprint Repeats",
-      "category": "SPRINT",
-      "source": "carlos",
-      "file": "carlos/w033.json",
-      "difficulty": 5
-    },
-    {
-      "id": "w034",
-      "title": "Standing Start Sprints",
-      "category": "SPRINT",
-      "source": "carlos",
-      "file": "carlos/w034.json",
-      "difficulty": 5
     },
     {
       "id": "w035",
@@ -1651,22 +2993,6 @@
       "difficulty": 5
     },
     {
-      "id": "w044",
-      "title": "Active Recovery",
-      "category": "RECOVERY",
-      "source": "carlos",
-      "file": "carlos/w044.json",
-      "difficulty": 1
-    },
-    {
-      "id": "w045",
-      "title": "Recovery with Openers",
-      "category": "RECOVERY",
-      "source": "carlos",
-      "file": "carlos/w045.json",
-      "difficulty": 3
-    },
-    {
       "id": "w046",
       "title": "Pre-Race Activation",
       "category": "BASE",
@@ -1675,24 +3001,8 @@
       "difficulty": 3
     },
     {
-      "id": "w047",
-      "title": "Polarized Z2 + VO2max",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w047.json",
-      "difficulty": 5
-    },
-    {
-      "id": "w048",
-      "title": "Polarized Sprint Day",
-      "category": "SPRINT",
-      "source": "carlos",
-      "file": "carlos/w048.json",
-      "difficulty": 3
-    },
-    {
       "id": "w049",
-      "title": "Seiler 4 × 8",
+      "title": "Seiler 4 \u00d7 8",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w049.json",
@@ -1747,32 +3057,8 @@
       "difficulty": 7
     },
     {
-      "id": "w056",
-      "title": "Ramp Test (FTP Assessment)",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w056.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w057",
-      "title": "20-Minute FTP Test",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w057.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w058",
-      "title": "Kolie Moore FTP Test",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w058.json",
-      "difficulty": 7
-    },
-    {
       "id": "w059",
-      "title": "Rønnestad 30/15s",
+      "title": "R\u00f8nnestad 30/15s",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w059.json",
@@ -1780,7 +3066,7 @@
     },
     {
       "id": "w060",
-      "title": "Rønnestad Fast-Start 5 × 5",
+      "title": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w060.json",
@@ -1804,27 +3090,11 @@
     },
     {
       "id": "w063",
-      "title": "Seiler 4 × 4 vs 4 × 8 Hybrid",
+      "title": "Seiler 4 \u00d7 4 vs 4 \u00d7 8 Hybrid",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w063.json",
       "difficulty": 7
-    },
-    {
-      "id": "w064",
-      "title": "Hard-Start Decreasing VO2max",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w064.json",
-      "difficulty": 8
-    },
-    {
-      "id": "w065",
-      "title": "40/20 VO2max (MTB Style)",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w065.json",
-      "difficulty": 8
     },
     {
       "id": "w066",
@@ -1833,22 +3103,6 @@
       "source": "carlos",
       "file": "carlos/w066.json",
       "difficulty": 8
-    },
-    {
-      "id": "w067",
-      "title": "Tempo Over-Unders with Anaerobic Spikes",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w067.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w068",
-      "title": "Sweet Spot with VO2max Kicks",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w068.json",
-      "difficulty": 7
     },
     {
       "id": "w069",
@@ -1867,14 +3121,6 @@
       "difficulty": 7
     },
     {
-      "id": "w071",
-      "title": "The 30-Minute VO2max Blitz",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w071.json",
-      "difficulty": 8
-    },
-    {
       "id": "w072",
       "title": "30-Minute Over-Under Express",
       "category": "BASE",
@@ -1888,14 +3134,6 @@
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w073.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w074",
-      "title": "45-Minute Sweet Spot Express",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w074.json",
       "difficulty": 7
     },
     {
@@ -1971,22 +3209,6 @@
       "difficulty": 5
     },
     {
-      "id": "w084",
-      "title": "Threshold After Tempo",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w084.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w085",
-      "title": "VO2max on Tired Legs",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w085.json",
-      "difficulty": 7
-    },
-    {
       "id": "w086",
       "title": "Endurance with Progressive Finale",
       "category": "BASE",
@@ -2011,36 +3233,12 @@
       "difficulty": 5
     },
     {
-      "id": "w089",
-      "title": "Isolated Leg Training (ILT) + Sweet Spot",
-      "category": "THRESHOLD",
-      "source": "carlos",
-      "file": "carlos/w089.json",
-      "difficulty": 5
-    },
-    {
       "id": "w090",
       "title": "Block Day 1: Threshold Focus",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w090.json",
       "difficulty": 7
-    },
-    {
-      "id": "w091",
-      "title": "Block Day 2: VO2max Focus",
-      "category": "VO2MAX",
-      "source": "carlos",
-      "file": "carlos/w091.json",
-      "difficulty": 7
-    },
-    {
-      "id": "w092",
-      "title": "Block Day 3: Tempo + Sprints",
-      "category": "TEMPO",
-      "source": "carlos",
-      "file": "carlos/w092.json",
-      "difficulty": 5
     },
     {
       "id": "w093",
@@ -2091,14 +3289,6 @@
       "difficulty": 7
     },
     {
-      "id": "w099",
-      "title": "Laursen Supramaximal Sprint Protocol",
-      "category": "SPRINT",
-      "source": "carlos",
-      "file": "carlos/w099.json",
-      "difficulty": 7
-    },
-    {
       "id": "w100",
       "title": "Lindsay 80% MAP Protocol",
       "category": "BASE",
@@ -2116,7 +3306,7 @@
     },
     {
       "id": "w102",
-      "title": "Rønnestad 30s MAP with 2:1 Ratio",
+      "title": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
       "category": "BASE",
       "source": "carlos",
       "file": "carlos/w102.json",
@@ -2131,6 +3321,254 @@
       "difficulty": 8
     },
     {
+      "id": "w105",
+      "title": "Self-Paced 4 \u00d7 8 with 2:1 Ratio",
+      "category": "BASE",
+      "source": "carlos",
+      "file": "carlos/w105.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw15_long_endurance",
+      "title": "Long Endurance",
+      "category": "BASE",
+      "source": "zwift",
+      "file": "zwift/zw15_long_endurance.json",
+      "difficulty": 2
+    },
+    {
+      "id": "zw20_calibration",
+      "title": "Calibration",
+      "category": "BASE",
+      "source": "zwift",
+      "file": "zwift/zw20_calibration.json",
+      "difficulty": 3
+    },
+    {
+      "id": "zw48_ftp_foundation",
+      "title": "FTP Foundation",
+      "category": "BASE",
+      "source": "zwift",
+      "file": "zwift/zw48_ftp_foundation.json",
+      "difficulty": 2
+    },
+    {
+      "id": "w108",
+      "title": "Endurance with Neuromuscular Bursts",
+      "category": "BASE",
+      "source": "research",
+      "file": "research/w108.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w129",
+      "title": "Caf\u00e9 Ride with Purpose",
+      "category": "BASE",
+      "source": "research",
+      "file": "research/w129.json",
+      "difficulty": 4
+    },
+    {
+      "id": "w130",
+      "title": "3-Hour Endurance Foundation",
+      "category": "BASE",
+      "source": "research",
+      "file": "research/w130.json",
+      "difficulty": 3
+    },
+    {
+      "id": "w131",
+      "title": "Endurance with Tempo Climbs",
+      "category": "BASE",
+      "source": "research",
+      "file": "research/w131.json",
+      "difficulty": 5
+    },
+    {
+      "id": "dj04",
+      "title": "DJ Polarized Z2 Day",
+      "category": "BASE",
+      "source": "dylan-johnson",
+      "file": "external/dj04.json",
+      "difficulty": 3
+    },
+    {
+      "id": "sm01",
+      "title": "San Mill\u00e1n Zone 2 Protocol",
+      "category": "BASE",
+      "source": "san-millan",
+      "file": "external/sm01.json",
+      "difficulty": 3
+    },
+    {
+      "id": "sm02",
+      "title": "San Mill\u00e1n 80/20 Session",
+      "category": "BASE",
+      "source": "san-millan",
+      "file": "external/sm02.json",
+      "difficulty": 5
+    },
+    {
+      "id": "sm05",
+      "title": "San Mill\u00e1n Z2 with Sprints",
+      "category": "BASE",
+      "source": "san-millan",
+      "file": "external/sm05.json",
+      "difficulty": 4
+    },
+    {
+      "id": "w106",
+      "title": "Sweet Spot into VO2max Finisher",
+      "category": "COMBO",
+      "source": "research",
+      "file": "research/w106.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw09_ramp_test",
+      "title": "Ramp Test",
+      "category": "FTP_TEST",
+      "source": "zwift",
+      "file": "zwift/zw09_ramp_test.json",
+      "difficulty": 10
+    },
+    {
+      "id": "zw10_ftp_20min",
+      "title": "FTP Test 20-Minute",
+      "category": "FTP_TEST",
+      "source": "zwift",
+      "file": "zwift/zw10_ftp_20min.json",
+      "difficulty": 10
+    },
+    {
+      "id": "suf08",
+      "title": "Full Frontal 4DP Test",
+      "category": "FTP_TEST",
+      "source": "sufferfest",
+      "file": "external/suf08.json",
+      "difficulty": 10
+    },
+    {
+      "id": "zw19_mixed_intervals",
+      "title": "Mixed Intervals",
+      "category": "MIXED",
+      "source": "zwift",
+      "file": "zwift/zw19_mixed_intervals.json",
+      "difficulty": 6
+    },
+    {
+      "id": "zw46_exemplary",
+      "title": "Exemplary",
+      "category": "MIXED",
+      "source": "zwift",
+      "file": "zwift/zw46_exemplary.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw62_free_ride",
+      "title": "Free Ride",
+      "category": "MIXED",
+      "source": "zwift",
+      "file": "zwift/zw62_free_ride.json",
+      "difficulty": 1
+    },
+    {
+      "id": "zw65_split_session",
+      "title": "Split Session",
+      "category": "MIXED",
+      "source": "zwift",
+      "file": "zwift/zw65_split_session.json",
+      "difficulty": 6
+    },
+    {
+      "id": "bc06",
+      "title": "BC Intensity Slide",
+      "category": "MIXED",
+      "source": "british-cycling",
+      "file": "external/bc06.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw63_works",
+      "title": "The Works",
+      "category": "RACE_SIM",
+      "source": "zwift",
+      "file": "zwift/zw63_works.json",
+      "difficulty": 9
+    },
+    {
+      "id": "sm04",
+      "title": "Poga\u010dar Climbing Simulation",
+      "category": "RACE_SIM",
+      "source": "san-millan",
+      "file": "external/sm04.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w044",
+      "title": "Active Recovery",
+      "category": "RECOVERY",
+      "source": "carlos",
+      "file": "carlos/w044.json",
+      "difficulty": 1
+    },
+    {
+      "id": "w045",
+      "title": "Recovery with Openers",
+      "category": "RECOVERY",
+      "source": "carlos",
+      "file": "carlos/w045.json",
+      "difficulty": 3
+    },
+    {
+      "id": "zw16_recovery_spin",
+      "title": "Recovery Spin",
+      "category": "RECOVERY",
+      "source": "zwift",
+      "file": "zwift/zw16_recovery_spin.json",
+      "difficulty": 1
+    },
+    {
+      "id": "w029",
+      "title": "2-Minute Power",
+      "category": "SPRINT",
+      "source": "carlos",
+      "file": "carlos/w029.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w033",
+      "title": "Sprint Repeats",
+      "category": "SPRINT",
+      "source": "carlos",
+      "file": "carlos/w033.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w034",
+      "title": "Standing Start Sprints",
+      "category": "SPRINT",
+      "source": "carlos",
+      "file": "carlos/w034.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w048",
+      "title": "Polarized Sprint Day",
+      "category": "SPRINT",
+      "source": "carlos",
+      "file": "carlos/w048.json",
+      "difficulty": 3
+    },
+    {
+      "id": "w099",
+      "title": "Laursen Supramaximal Sprint Protocol",
+      "category": "SPRINT",
+      "source": "carlos",
+      "file": "carlos/w099.json",
+      "difficulty": 7
+    },
+    {
       "id": "w104",
       "title": "Low Work:Rest Ratio Sprint (1:8)",
       "category": "SPRINT",
@@ -2139,35 +3577,91 @@
       "difficulty": 5
     },
     {
-      "id": "w105",
-      "title": "Self-Paced 4 × 8 with 2:1 Ratio",
-      "category": "BASE",
-      "source": "carlos",
-      "file": "carlos/w105.json",
+      "id": "zw64_crit_foundation",
+      "title": "Crit Foundation",
+      "category": "SPRINT",
+      "source": "zwift",
+      "file": "zwift/zw64_crit_foundation.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w133",
+      "title": "Sprint Ladder",
+      "category": "SPRINT",
+      "source": "research",
+      "file": "research/w133.json",
       "difficulty": 7
     },
     {
-      "id": "zw01_gorby",
-      "title": "The Gorby",
-      "category": "VO2MAX",
-      "source": "zwift",
-      "file": "zwift/zw01_gorby.json",
+      "id": "w142",
+      "title": "Race Eve Sharpener",
+      "category": "SPRINT",
+      "source": "research",
+      "file": "research/w142.json",
+      "difficulty": 3
+    },
+    {
+      "id": "w143c",
+      "title": "3-Day Taper Sequence Day 3 (Race Eve)",
+      "category": "SPRINT",
+      "source": "research",
+      "file": "research/w143c.json",
+      "difficulty": 2
+    },
+    {
+      "id": "bc03",
+      "title": "BC Standing Start Sprints",
+      "category": "SPRINT",
+      "source": "british-cycling",
+      "file": "external/bc03.json",
       "difficulty": 8
     },
     {
-      "id": "zw02_wringer",
-      "title": "The Wringer",
-      "category": "ANAEROBIC",
+      "id": "zw33_strength1",
+      "title": "Strength Tier 1",
+      "category": "STRENGTH",
       "source": "zwift",
-      "file": "zwift/zw02_wringer.json",
-      "difficulty": 9
+      "file": "zwift/zw33_strength1.json",
+      "difficulty": 5
     },
     {
-      "id": "zw03_mccarthy",
-      "title": "McCarthy Special",
-      "category": "THRESHOLD",
+      "id": "zw34_strength2",
+      "title": "Strength Tier 2",
+      "category": "STRENGTH",
       "source": "zwift",
-      "file": "zwift/zw03_mccarthy.json",
+      "file": "zwift/zw34_strength2.json",
+      "difficulty": 6
+    },
+    {
+      "id": "zw49_ftp_strength",
+      "title": "FTP Strength",
+      "category": "STRENGTH",
+      "source": "zwift",
+      "file": "zwift/zw49_ftp_strength.json",
+      "difficulty": 6
+    },
+    {
+      "id": "zw66_crit_strength",
+      "title": "Crit Strength",
+      "category": "STRENGTH",
+      "source": "zwift",
+      "file": "zwift/zw66_crit_strength.json",
+      "difficulty": 7
+    },
+    {
+      "id": "bc04",
+      "title": "BC Force Intervals",
+      "category": "STRENGTH",
+      "source": "british-cycling",
+      "file": "external/bc04.json",
+      "difficulty": 7
+    },
+    {
+      "id": "bc07",
+      "title": "BC Seated Accelerations",
+      "category": "STRENGTH",
+      "source": "british-cycling",
+      "file": "external/bc07.json",
       "difficulty": 7
     },
     {
@@ -2187,11 +3681,691 @@
       "difficulty": 7
     },
     {
+      "id": "zw21_90_trifecta_ded",
+      "title": "90% Trifecta - Devedeset",
+      "category": "SWEET_SPOT",
+      "source": "zwift",
+      "file": "zwift/zw21_90_trifecta_ded.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw22_90_trifecta_half",
+      "title": "90% Trifecta - Halfems",
+      "category": "SWEET_SPOT",
+      "source": "zwift",
+      "file": "zwift/zw22_90_trifecta_half.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw23_90_trifecta_nov",
+      "title": "90% Trifecta - Novanta",
+      "category": "SWEET_SPOT",
+      "source": "zwift",
+      "file": "zwift/zw23_90_trifecta_nov.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw45_sweetheart",
+      "title": "Sweetheart",
+      "category": "SWEET_SPOT",
+      "source": "zwift",
+      "file": "zwift/zw45_sweetheart.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w121",
+      "title": "Carson (TrainerRoad Style Sweet Spot)",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w121.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w122",
+      "title": "Eclipse (TrainerRoad Style)",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w122.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w123a",
+      "title": "SS Progression Week 1",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w123a.json",
+      "difficulty": 6
+    },
+    {
+      "id": "w123b",
+      "title": "SS Progression Week 2",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w123b.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w123c",
+      "title": "SS Progression Week 3",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w123c.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w123d",
+      "title": "SS Progression Week 4 \u2013 TEST",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w123d.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w136",
+      "title": "Force-Velocity Contrast",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w136.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w140",
+      "title": "Masters Sweet Spot",
+      "category": "SWEET_SPOT",
+      "source": "research",
+      "file": "research/w140.json",
+      "difficulty": 6
+    },
+    {
+      "id": "tr06",
+      "title": "Carson",
+      "category": "SWEET_SPOT",
+      "source": "trainerroad",
+      "file": "external/tr06.json",
+      "difficulty": 6
+    },
+    {
+      "id": "tr07",
+      "title": "Eclipse",
+      "category": "SWEET_SPOT",
+      "source": "trainerroad",
+      "file": "external/tr07.json",
+      "difficulty": 6
+    },
+    {
+      "id": "tr09",
+      "title": "Icefall -3",
+      "category": "SWEET_SPOT",
+      "source": "trainerroad",
+      "file": "external/tr09.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw31_pedal_drill1",
+      "title": "Pedaling Drill 1",
+      "category": "TECHNIQUE",
+      "source": "zwift",
+      "file": "zwift/zw31_pedal_drill1.json",
+      "difficulty": 3
+    },
+    {
+      "id": "zw32_pedal_drill2",
+      "title": "Pedaling Drill 2",
+      "category": "TECHNIQUE",
+      "source": "zwift",
+      "file": "zwift/zw32_pedal_drill2.json",
+      "difficulty": 4
+    },
+    {
+      "id": "zw35_tech1",
+      "title": "Tech Work 1",
+      "category": "TECHNIQUE",
+      "source": "zwift",
+      "file": "zwift/zw35_tech1.json",
+      "difficulty": 4
+    },
+    {
+      "id": "zw36_tech2",
+      "title": "Tech Work 2",
+      "category": "TECHNIQUE",
+      "source": "zwift",
+      "file": "zwift/zw36_tech2.json",
+      "difficulty": 5
+    },
+    {
+      "id": "bc02",
+      "title": "BC Superspin Drill",
+      "category": "TECHNIQUE",
+      "source": "british-cycling",
+      "file": "external/bc02.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w005",
+      "title": "Classic Tempo Blocks",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w005.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w006",
+      "title": "Extended Tempo",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w006.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w007",
+      "title": "Tempo with Surges",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w007.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w008",
+      "title": "Progressive Tempo",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w008.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w067",
+      "title": "Tempo Over-Unders with Anaerobic Spikes",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w067.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w084",
+      "title": "Threshold After Tempo",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w084.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w092",
+      "title": "Block Day 3: Tempo + Sprints",
+      "category": "TEMPO",
+      "source": "carlos",
+      "file": "carlos/w092.json",
+      "difficulty": 5
+    },
+    {
+      "id": "zw18_tempo_ladder",
+      "title": "Tempo Ladder",
+      "category": "TEMPO",
+      "source": "zwift",
+      "file": "zwift/zw18_tempo_ladder.json",
+      "difficulty": 6
+    },
+    {
+      "id": "zw50_tempo_prog1",
+      "title": "Tempo Progression 1",
+      "category": "TEMPO",
+      "source": "zwift",
+      "file": "zwift/zw50_tempo_prog1.json",
+      "difficulty": 5
+    },
+    {
+      "id": "zw51_tempo_prog2",
+      "title": "Tempo Progression 2",
+      "category": "TEMPO",
+      "source": "zwift",
+      "file": "zwift/zw51_tempo_prog2.json",
+      "difficulty": 6
+    },
+    {
+      "id": "zw52_tempo_prog3",
+      "title": "Tempo Progression 3",
+      "category": "TEMPO",
+      "source": "zwift",
+      "file": "zwift/zw52_tempo_prog3.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w107",
+      "title": "Tempo into Threshold Ramp",
+      "category": "TEMPO",
+      "source": "research",
+      "file": "research/w107.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w141",
+      "title": "Masters Tempo Endurance",
+      "category": "TEMPO",
+      "source": "research",
+      "file": "research/w141.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w143a",
+      "title": "3-Day Taper Sequence Day 1",
+      "category": "TEMPO",
+      "source": "research",
+      "file": "research/w143a.json",
+      "difficulty": 4
+    },
+    {
+      "id": "w009",
+      "title": "Sweet Spot Intervals",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w009.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w010",
+      "title": "Extended Sweet Spot",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w010.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w011",
+      "title": "Sweet Spot Progression",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w011.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w012",
+      "title": "Sweet Spot Over-Unders (Intro)",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w012.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w016",
+      "title": "FTP Long Block",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w016.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w056",
+      "title": "Ramp Test (FTP Assessment)",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w056.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w057",
+      "title": "20-Minute FTP Test",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w057.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w058",
+      "title": "Kolie Moore FTP Test",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w058.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w068",
+      "title": "Sweet Spot with VO2max Kicks",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w068.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w074",
+      "title": "45-Minute Sweet Spot Express",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w074.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w089",
+      "title": "Isolated Leg Training (ILT) + Sweet Spot",
+      "category": "THRESHOLD",
+      "source": "carlos",
+      "file": "carlos/w089.json",
+      "difficulty": 5
+    },
+    {
+      "id": "zw03_mccarthy",
+      "title": "McCarthy Special",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw03_mccarthy.json",
+      "difficulty": 7
+    },
+    {
       "id": "zw06_over_under",
       "title": "Over-Under Threshold",
       "category": "THRESHOLD",
       "source": "zwift",
       "file": "zwift/zw06_over_under.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw11_5x8_ftp",
+      "title": "5\u00d78 FTP",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw11_5x8_ftp.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw12_3x12_threshold",
+      "title": "3\u00d712 Threshold",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw12_3x12_threshold.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw13_threshold_pyramid",
+      "title": "Threshold Pyramid",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw13_threshold_pyramid.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw47_alpha",
+      "title": "Alpha",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw47_alpha.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw56_threshold_a",
+      "title": "Threshold A",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw56_threshold_a.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw57_threshold_b",
+      "title": "Threshold B",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw57_threshold_b.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw58_threshold_c",
+      "title": "Threshold C",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw58_threshold_c.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw59_threshold_d",
+      "title": "Threshold D",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw59_threshold_d.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw60_threshold_e",
+      "title": "Threshold E",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw60_threshold_e.json",
+      "difficulty": 8
+    },
+    {
+      "id": "zw61_threshold_f",
+      "title": "Threshold F",
+      "category": "THRESHOLD",
+      "source": "zwift",
+      "file": "zwift/zw61_threshold_f.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w117",
+      "title": "The McCarthy Special (Zwift)",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w117.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w125a",
+      "title": "TH Progression Week 1",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w125a.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w125b",
+      "title": "TH Progression Week 2",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w125b.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w125c",
+      "title": "TH Progression Week 3",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w125c.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w125d",
+      "title": "TH Progression Week 4 \u2013 TEST",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w125d.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w126",
+      "title": "FTP with 30s Bursts",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w126.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w127",
+      "title": "Threshold with Declining Rest",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w127.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w137",
+      "title": "Low-Cadence Threshold",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w137.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w138",
+      "title": "Seated/Standing Alternation",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w138.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w143b",
+      "title": "3-Day Taper Sequence Day 2",
+      "category": "THRESHOLD",
+      "source": "research",
+      "file": "research/w143b.json",
+      "difficulty": 3
+    },
+    {
+      "id": "dj05",
+      "title": "DJ Anti-Sweet Spot Threshold",
+      "category": "THRESHOLD",
+      "source": "dylan-johnson",
+      "file": "external/dj05.json",
+      "difficulty": 8
+    },
+    {
+      "id": "sm03",
+      "title": "San Mill\u00e1n Z4 Threshold Day",
+      "category": "THRESHOLD",
+      "source": "san-millan",
+      "file": "external/sm03.json",
+      "difficulty": 8
+    },
+    {
+      "id": "suf03",
+      "title": "Angels",
+      "category": "THRESHOLD",
+      "source": "sufferfest",
+      "file": "external/suf03.json",
+      "difficulty": 8
+    },
+    {
+      "id": "suf05",
+      "title": "A Very Dark Place",
+      "category": "THRESHOLD",
+      "source": "sufferfest",
+      "file": "external/suf05.json",
+      "difficulty": 9
+    },
+    {
+      "id": "suf07",
+      "title": "There Is No Try",
+      "category": "THRESHOLD",
+      "source": "sufferfest",
+      "file": "external/suf07.json",
+      "difficulty": 9
+    },
+    {
+      "id": "tr08",
+      "title": "Mansfield +3",
+      "category": "THRESHOLD",
+      "source": "trainerroad",
+      "file": "external/tr08.json",
+      "difficulty": 8
+    },
+    {
+      "id": "tr10",
+      "title": "Robion",
+      "category": "THRESHOLD",
+      "source": "trainerroad",
+      "file": "external/tr10.json",
+      "difficulty": 8
+    },
+    {
+      "id": "xert01",
+      "title": "Xert SMART Threshold",
+      "category": "THRESHOLD",
+      "source": "xert",
+      "file": "external/xert01.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w021",
+      "title": "4 \u00d7 8 VO2max",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w021.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w022",
+      "title": "VO2max Pyramids",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w022.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w024",
+      "title": "VO2max Over-Unders",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w024.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w026",
+      "title": "Descending VO2max",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w026.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w047",
+      "title": "Polarized Z2 + VO2max",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w047.json",
+      "difficulty": 5
+    },
+    {
+      "id": "w064",
+      "title": "Hard-Start Decreasing VO2max",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w064.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w065",
+      "title": "40/20 VO2max (MTB Style)",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w065.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w071",
+      "title": "The 30-Minute VO2max Blitz",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w071.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w085",
+      "title": "VO2max on Tired Legs",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w085.json",
+      "difficulty": 7
+    },
+    {
+      "id": "w091",
+      "title": "Block Day 2: VO2max Focus",
+      "category": "VO2MAX",
+      "source": "carlos",
+      "file": "carlos/w091.json",
+      "difficulty": 7
+    },
+    {
+      "id": "zw01_gorby",
+      "title": "The Gorby",
+      "category": "VO2MAX",
+      "source": "zwift",
+      "file": "zwift/zw01_gorby.json",
       "difficulty": 8
     },
     {
@@ -2211,100 +4385,12 @@
       "difficulty": 7
     },
     {
-      "id": "zw09_ramp_test",
-      "title": "Ramp Test",
-      "category": "FTP_TEST",
-      "source": "zwift",
-      "file": "zwift/zw09_ramp_test.json",
-      "difficulty": 10
-    },
-    {
-      "id": "zw10_ftp_20min",
-      "title": "FTP Test 20-Minute",
-      "category": "FTP_TEST",
-      "source": "zwift",
-      "file": "zwift/zw10_ftp_20min.json",
-      "difficulty": 10
-    },
-    {
-      "id": "zw11_5x8_ftp",
-      "title": "5×8 FTP",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw11_5x8_ftp.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw12_3x12_threshold",
-      "title": "3×12 Threshold",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw12_3x12_threshold.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw13_threshold_pyramid",
-      "title": "Threshold Pyramid",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw13_threshold_pyramid.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw14_microbursts",
-      "title": "Microbursts",
-      "category": "ANAEROBIC",
-      "source": "zwift",
-      "file": "zwift/zw14_microbursts.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw15_long_endurance",
-      "title": "Long Endurance",
-      "category": "BASE",
-      "source": "zwift",
-      "file": "zwift/zw15_long_endurance.json",
-      "difficulty": 2
-    },
-    {
-      "id": "zw16_recovery_spin",
-      "title": "Recovery Spin",
-      "category": "RECOVERY",
-      "source": "zwift",
-      "file": "zwift/zw16_recovery_spin.json",
-      "difficulty": 1
-    },
-    {
       "id": "zw17_vo2_ladder",
       "title": "VO2 Ladder",
       "category": "VO2MAX",
       "source": "zwift",
       "file": "zwift/zw17_vo2_ladder.json",
       "difficulty": 9
-    },
-    {
-      "id": "zw18_tempo_ladder",
-      "title": "Tempo Ladder",
-      "category": "TEMPO",
-      "source": "zwift",
-      "file": "zwift/zw18_tempo_ladder.json",
-      "difficulty": 6
-    },
-    {
-      "id": "zw19_mixed_intervals",
-      "title": "Mixed Intervals",
-      "category": "MIXED",
-      "source": "zwift",
-      "file": "zwift/zw19_mixed_intervals.json",
-      "difficulty": 6
-    },
-    {
-      "id": "zw20_calibration",
-      "title": "Calibration",
-      "category": "BASE",
-      "source": "zwift",
-      "file": "zwift/zw20_calibration.json",
-      "difficulty": 3
     },
     {
       "id": "zw24_unicorn_red",
@@ -2363,78 +4449,6 @@
       "difficulty": 9
     },
     {
-      "id": "zw21_90_trifecta_ded",
-      "title": "90% Trifecta - Devedeset",
-      "category": "SWEET_SPOT",
-      "source": "zwift",
-      "file": "zwift/zw21_90_trifecta_ded.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw22_90_trifecta_half",
-      "title": "90% Trifecta - Halfems",
-      "category": "SWEET_SPOT",
-      "source": "zwift",
-      "file": "zwift/zw22_90_trifecta_half.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw23_90_trifecta_nov",
-      "title": "90% Trifecta - Novanta",
-      "category": "SWEET_SPOT",
-      "source": "zwift",
-      "file": "zwift/zw23_90_trifecta_nov.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw31_pedal_drill1",
-      "title": "Pedaling Drill 1",
-      "category": "TECHNIQUE",
-      "source": "zwift",
-      "file": "zwift/zw31_pedal_drill1.json",
-      "difficulty": 3
-    },
-    {
-      "id": "zw32_pedal_drill2",
-      "title": "Pedaling Drill 2",
-      "category": "TECHNIQUE",
-      "source": "zwift",
-      "file": "zwift/zw32_pedal_drill2.json",
-      "difficulty": 4
-    },
-    {
-      "id": "zw33_strength1",
-      "title": "Strength Tier 1",
-      "category": "STRENGTH",
-      "source": "zwift",
-      "file": "zwift/zw33_strength1.json",
-      "difficulty": 5
-    },
-    {
-      "id": "zw34_strength2",
-      "title": "Strength Tier 2",
-      "category": "STRENGTH",
-      "source": "zwift",
-      "file": "zwift/zw34_strength2.json",
-      "difficulty": 6
-    },
-    {
-      "id": "zw35_tech1",
-      "title": "Tech Work 1",
-      "category": "TECHNIQUE",
-      "source": "zwift",
-      "file": "zwift/zw35_tech1.json",
-      "difficulty": 4
-    },
-    {
-      "id": "zw36_tech2",
-      "title": "Tech Work 2",
-      "category": "TECHNIQUE",
-      "source": "zwift",
-      "file": "zwift/zw36_tech2.json",
-      "difficulty": 5
-    },
-    {
       "id": "zw37_vo2_method",
       "title": "VO2 Method",
       "category": "VO2MAX",
@@ -2475,92 +4489,12 @@
       "difficulty": 9
     },
     {
-      "id": "zw42_attack1",
-      "title": "Attack 1",
-      "category": "ANAEROBIC",
-      "source": "zwift",
-      "file": "zwift/zw42_attack1.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw43_attack2",
-      "title": "Attack 2",
-      "category": "ANAEROBIC",
-      "source": "zwift",
-      "file": "zwift/zw43_attack2.json",
-      "difficulty": 8
-    },
-    {
       "id": "zw44_malevolent",
       "title": "Malevolent",
       "category": "VO2MAX",
       "source": "zwift",
       "file": "zwift/zw44_malevolent.json",
       "difficulty": 9
-    },
-    {
-      "id": "zw45_sweetheart",
-      "title": "Sweetheart",
-      "category": "SWEET_SPOT",
-      "source": "zwift",
-      "file": "zwift/zw45_sweetheart.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw46_exemplary",
-      "title": "Exemplary",
-      "category": "MIXED",
-      "source": "zwift",
-      "file": "zwift/zw46_exemplary.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw47_alpha",
-      "title": "Alpha",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw47_alpha.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw48_ftp_foundation",
-      "title": "FTP Foundation",
-      "category": "BASE",
-      "source": "zwift",
-      "file": "zwift/zw48_ftp_foundation.json",
-      "difficulty": 2
-    },
-    {
-      "id": "zw49_ftp_strength",
-      "title": "FTP Strength",
-      "category": "STRENGTH",
-      "source": "zwift",
-      "file": "zwift/zw49_ftp_strength.json",
-      "difficulty": 6
-    },
-    {
-      "id": "zw50_tempo_prog1",
-      "title": "Tempo Progression 1",
-      "category": "TEMPO",
-      "source": "zwift",
-      "file": "zwift/zw50_tempo_prog1.json",
-      "difficulty": 5
-    },
-    {
-      "id": "zw51_tempo_prog2",
-      "title": "Tempo Progression 2",
-      "category": "TEMPO",
-      "source": "zwift",
-      "file": "zwift/zw51_tempo_prog2.json",
-      "difficulty": 6
-    },
-    {
-      "id": "zw52_tempo_prog3",
-      "title": "Tempo Progression 3",
-      "category": "TEMPO",
-      "source": "zwift",
-      "file": "zwift/zw52_tempo_prog3.json",
-      "difficulty": 7
     },
     {
       "id": "zw53_hiit_w4",
@@ -2587,108 +4521,260 @@
       "difficulty": 9
     },
     {
-      "id": "zw56_threshold_a",
-      "title": "Threshold A",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw56_threshold_a.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw57_threshold_b",
-      "title": "Threshold B",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw57_threshold_b.json",
-      "difficulty": 7
-    },
-    {
-      "id": "zw58_threshold_c",
-      "title": "Threshold C",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw58_threshold_c.json",
+      "id": "w109",
+      "title": "Mixed Energy Systems Medley",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w109.json",
       "difficulty": 8
     },
     {
-      "id": "zw59_threshold_d",
-      "title": "Threshold D",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw59_threshold_d.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw60_threshold_e",
-      "title": "Threshold E",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw60_threshold_e.json",
-      "difficulty": 8
-    },
-    {
-      "id": "zw61_threshold_f",
-      "title": "Threshold F",
-      "category": "THRESHOLD",
-      "source": "zwift",
-      "file": "zwift/zw61_threshold_f.json",
+      "id": "w111",
+      "title": "VO2max Ladder (Wattbike Style)",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w111.json",
       "difficulty": 9
     },
     {
-      "id": "zw62_free_ride",
-      "title": "Free Ride",
-      "category": "MIXED",
-      "source": "zwift",
-      "file": "zwift/zw62_free_ride.json",
-      "difficulty": 1
-    },
-    {
-      "id": "zw63_works",
-      "title": "The Works",
-      "category": "RACE_SIM",
-      "source": "zwift",
-      "file": "zwift/zw63_works.json",
+      "id": "w112",
+      "title": "Inverted VO2max Ladder",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w112.json",
       "difficulty": 9
     },
     {
-      "id": "zw64_crit_foundation",
-      "title": "Crit Foundation",
-      "category": "SPRINT",
-      "source": "zwift",
-      "file": "zwift/zw64_crit_foundation.json",
-      "difficulty": 5
+      "id": "w113",
+      "title": "1-2-3-4-3-2-1 Pyramid",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w113.json",
+      "difficulty": 9
     },
     {
-      "id": "zw65_split_session",
-      "title": "Split Session",
-      "category": "MIXED",
-      "source": "zwift",
-      "file": "zwift/zw65_split_session.json",
-      "difficulty": 6
+      "id": "w114",
+      "title": "Double Pyramid",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w114.json",
+      "difficulty": 9
     },
     {
-      "id": "zw66_crit_strength",
-      "title": "Crit Strength",
-      "category": "STRENGTH",
-      "source": "zwift",
-      "file": "zwift/zw66_crit_strength.json",
+      "id": "w116",
+      "title": "The Gorby (Zwift)",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w116.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w118",
+      "title": "Baird (TrainerRoad Style)",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w118.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w120",
+      "title": "Kaiser (TrainerRoad Style)",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w120.json",
+      "difficulty": 8
+    },
+    {
+      "id": "w124a",
+      "title": "VO2 Progression Week 1",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w124a.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w124c",
+      "title": "VO2 Progression Week 3",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w124c.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w124d",
+      "title": "VO2 Progression Week 4 \u2013 TEST",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w124d.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w128",
+      "title": "VO2max Surge on Threshold",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w128.json",
+      "difficulty": 9
+    },
+    {
+      "id": "w139",
+      "title": "Masters VO2max (Conservative)",
+      "category": "VO2MAX",
+      "source": "research",
+      "file": "research/w139.json",
+      "difficulty": 8
+    },
+    {
+      "id": "bc01",
+      "title": "BC Track Pursuit Intervals",
+      "category": "VO2MAX",
+      "source": "british-cycling",
+      "file": "external/bc01.json",
+      "difficulty": 9
+    },
+    {
+      "id": "bc05",
+      "title": "BC Ramped VO2 Intervals",
+      "category": "VO2MAX",
+      "source": "british-cycling",
+      "file": "external/bc05.json",
+      "difficulty": 8
+    },
+    {
+      "id": "bc08",
+      "title": "BC 1-Min Neuromuscular Intervals",
+      "category": "VO2MAX",
+      "source": "british-cycling",
+      "file": "external/bc08.json",
+      "difficulty": 8
+    },
+    {
+      "id": "dj01",
+      "title": "DJ Self-Paced VO2max (4x8)",
+      "category": "VO2MAX",
+      "source": "dylan-johnson",
+      "file": "external/dj01.json",
+      "difficulty": 8
+    },
+    {
+      "id": "dj02",
+      "title": "DJ VO2max 5x5 Constant",
+      "category": "VO2MAX",
+      "source": "dylan-johnson",
+      "file": "external/dj02.json",
+      "difficulty": 8
+    },
+    {
+      "id": "dj03",
+      "title": "DJ Block Periodization HIIT Day",
+      "category": "VO2MAX",
+      "source": "dylan-johnson",
+      "file": "external/dj03.json",
+      "difficulty": 9
+    },
+    {
+      "id": "suf01",
+      "title": "Nine Hammers",
+      "category": "VO2MAX",
+      "source": "sufferfest",
+      "file": "external/suf01.json",
+      "difficulty": 9
+    },
+    {
+      "id": "suf02",
+      "title": "Revolver",
+      "category": "VO2MAX",
+      "source": "sufferfest",
+      "file": "external/suf02.json",
+      "difficulty": 8
+    },
+    {
+      "id": "suf04",
+      "title": "Downward Spiral",
+      "category": "VO2MAX",
+      "source": "sufferfest",
+      "file": "external/suf04.json",
+      "difficulty": 9
+    },
+    {
+      "id": "tr01",
+      "title": "Baird +2",
+      "category": "VO2MAX",
+      "source": "trainerroad",
+      "file": "external/tr01.json",
       "difficulty": 7
     },
     {
-      "id": "zw67_microbursts_crit",
-      "title": "Crit Microbursts",
-      "category": "ANAEROBIC",
-      "source": "zwift",
-      "file": "zwift/zw67_microbursts_crit.json",
+      "id": "tr02",
+      "title": "Spencer +2",
+      "category": "VO2MAX",
+      "source": "trainerroad",
+      "file": "external/tr02.json",
       "difficulty": 8
     },
     {
-      "id": "zw68_30_30_anaerobic",
-      "title": "30/30 Anaerobic",
-      "category": "ANAEROBIC",
-      "source": "zwift",
-      "file": "zwift/zw68_30_30_anaerobic.json",
+      "id": "tr03",
+      "title": "Kaiser",
+      "category": "VO2MAX",
+      "source": "trainerroad",
+      "file": "external/tr03.json",
+      "difficulty": 9
+    },
+    {
+      "id": "tr04",
+      "title": "Mills",
+      "category": "VO2MAX",
+      "source": "trainerroad",
+      "file": "external/tr04.json",
       "difficulty": 8
+    },
+    {
+      "id": "tr05",
+      "title": "Bluebell",
+      "category": "VO2MAX",
+      "source": "trainerroad",
+      "file": "external/tr05.json",
+      "difficulty": 7
+    },
+    {
+      "id": "xert02",
+      "title": "Xert SMART VO2max Hard-Start",
+      "category": "VO2MAX",
+      "source": "xert",
+      "file": "external/xert02.json",
+      "difficulty": 8
+    },
+    {
+      "id": "xert03",
+      "title": "Xert XSSR Interval",
+      "category": "VO2MAX",
+      "source": "xert",
+      "file": "external/xert03.json",
+      "difficulty": 8
+    },
+    {
+      "id": "xert04",
+      "title": "Xert Breakthrough Workout",
+      "category": "VO2MAX",
+      "source": "xert",
+      "file": "external/xert04.json",
+      "difficulty": 9
     }
-  ]
+  ],
+  "repairStats": {
+    "carlosFixed": 99,
+    "zwiftFixed": 61,
+    "tssRecalculated": 215,
+    "emptyRemaining": 0,
+    "singleBlockRemaining": 13,
+    "multiBlockTotal": 207
+  },
+  "externalSources": {
+    "sufferfest": 8,
+    "trainerroad": 10,
+    "dylan-johnson": 5,
+    "san-millan": 5,
+    "british-cycling": 8,
+    "xert": 4
+  }
 }

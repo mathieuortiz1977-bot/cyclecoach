@@ -3,12 +3,12 @@
   "title": "Baird (TrainerRoad Style)",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
   "duration": 60,
   "scalable": true,
-  "tss": 10,
+  "tss": 43,
   "description": "Short sharp VO2max repeats with long recovery",
   "purpose": "Short VO2max repeats with full recovery",
   "protocol": "TrainerRoad",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 40,
+        "percent": 40.0,
         "absoluteSecs": 1440
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "120%",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 144
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 144
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "120%",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 144
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 144
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "120%",
       "phase": "work",
       "duration": {
-        "percent": 4,
+        "percent": 4.0,
         "absoluteSecs": 144
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 40,
+        "percent": 40.0,
         "absoluteSecs": 1440
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.66
 }

@@ -3,12 +3,12 @@
   "title": "Gravel Unbound Simulation",
   "source": "research-v2",
   "category": "ANAEROBIC",
-  "primaryZone": "Z6",
+  "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 7,
   "duration": 90,
   "scalable": true,
-  "tss": 13,
+  "tss": 69,
   "description": "Variable power with surges simulating gravel racing",
   "purpose": "Simulate unpredictable nature of gravel racing",
   "protocol": "Gravel Race Sim",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 30,
+        "percent": 30.0,
         "absoluteSecs": 1620
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Gravel road pace",
       "phase": "work",
       "duration": {
-        "percent": 24,
+        "percent": 24.0,
         "absoluteSecs": 1296
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Attack over hill",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 108
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Return to pace",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.0,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Attack again",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 108
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 30,
+        "percent": 30.0,
         "absoluteSecs": 1620
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.68
 }

@@ -3,12 +3,12 @@
   "title": "20/40 Anaerobic Repeats",
   "source": "research-v2",
   "category": "ANAEROBIC",
-  "primaryZone": "Z6",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 55,
+  "duration": 54,
   "scalable": true,
-  "tss": 9,
+  "tss": 34,
   "description": "High power density with moderate recovery",
   "purpose": "Peak power repeatability",
   "protocol": "Anaerobic",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 45,
+        "percent": 45.5,
         "absoluteSecs": 1485
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Hard effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 33
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 99
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Hard effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 33
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 3.0,
         "absoluteSecs": 99
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Hard effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 33
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 45,
+        "percent": 45.5,
         "absoluteSecs": 1485
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.62
 }

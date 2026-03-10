@@ -8,7 +8,7 @@
   "difficulty": 3,
   "duration": 90,
   "scalable": true,
-  "tss": 55,
+  "tss": 64,
   "description": "Aerobic base building, fat oxidation",
   "purpose": "Aerobic base building, fat oxidation",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 11.11111111111111,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,35 @@
       }
     },
     {
+      "name": "Steady Endurance",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 77.8,
+        "absoluteSecs": 4200
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 72,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Steady Endurance at 65-72% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 11.11111111111111,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +84,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.65
 }

@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 65,
+  "duration": 47,
   "scalable": true,
-  "tss": 10,
+  "tss": 50,
   "description": "Threshold progression step C",
   "purpose": "Threshold building",
   "protocol": "Zwift - Threshold C",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 16.6,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -39,27 +39,123 @@
       }
     },
     {
-      "name": "Threshold C",
-      "purpose": "Threshold",
+      "name": "FTP 8min 1/3",
+      "purpose": "FTP 8min interval",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 3120
+        "percent": 17.0,
+        "absoluteSecs": 480
       },
       "intensity": {
         "zone": "Z4",
-        "powerLow": 96,
-        "powerHigh": 104,
+        "powerLow": 95,
+        "powerHigh": 100,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceHigh": 95,
+        "rpe": 7
       },
-      "instruction": "Threshold C at 96-104% FTP",
+      "instruction": "FTP 8min 1/3 at 95-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 10.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 8min 2/3",
+      "purpose": "FTP 8min interval",
+      "phase": "work",
+      "duration": {
+        "percent": 17.0,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 8min 2/3 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 10.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 8min 3/3",
+      "purpose": "FTP 8min interval",
+      "phase": "work",
+      "duration": {
+        "percent": 17.0,
+        "absoluteSecs": 480
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 8min 3/3 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
       }
     },
     {
@@ -67,7 +163,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 8,
+        "percent": 11.1,
         "absoluteSecs": 312
       },
       "intensity": {
@@ -86,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.8
 }

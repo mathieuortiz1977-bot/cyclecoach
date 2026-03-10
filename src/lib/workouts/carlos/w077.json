@@ -3,12 +3,12 @@
   "title": "Gran Fondo Pacing",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z3",
   "structure": "steady",
   "difficulty": 5,
   "duration": 120,
   "scalable": true,
-  "tss": 100,
+  "tss": 112,
   "description": "Long-event pacing discipline",
   "purpose": "Long-event pacing discipline",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 8.333333333333332,
+        "percent": 8.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,155 @@
       }
     },
     {
+      "name": "Pack",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 25.0,
+        "absoluteSecs": 1800
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 70,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Pack at 70-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Climb 1",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Climb 1 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Valley",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 16.7,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 72,
+        "powerHigh": 72,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Valley at 72-72% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Main Climb",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 12.5,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Main Climb at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Descent",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 12.5,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Descent at 65-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Finish Push",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 95,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Finish Push at 95-95% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 8.333333333333332,
+        "percent": 8.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +204,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.75
 }

@@ -3,12 +3,12 @@
   "title": "Sprint Ladder",
   "source": "research-v2",
   "category": "SPRINT",
-  "primaryZone": "Z6",
+  "primaryZone": "Z2",
   "structure": "ladder",
   "difficulty": 7,
   "duration": 55,
   "scalable": true,
-  "tss": 8,
+  "tss": 39,
   "description": "Full-spectrum sprint development",
   "purpose": "Multi-duration sprint training",
   "protocol": "Sprint Ladder",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 37,
+        "percent": 37.0,
         "absoluteSecs": 1221
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Max sprint",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 33
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 11,
+        "percent": 11.0,
         "absoluteSecs": 363
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Sprint",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 33
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 11,
+        "percent": 11.0,
         "absoluteSecs": 363
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Sprint",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 66
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 37,
+        "percent": 37.0,
         "absoluteSecs": 1221
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.65
 }

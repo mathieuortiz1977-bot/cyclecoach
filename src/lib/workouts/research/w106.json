@@ -3,12 +3,12 @@
   "title": "Sweet Spot into VO2max Finisher",
   "source": "research-v2",
   "category": "COMBO",
-  "primaryZone": "Z3-Z5",
+  "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 8,
-  "duration": 75,
+  "duration": 76,
   "scalable": true,
-  "tss": 12,
+  "tss": 80,
   "description": "SS depletes fuel, VO2max challenges tired legs",
   "purpose": "Deplete fuel reserves at sweet spot, then challenge VO2max on tired legs",
   "protocol": "Hybrid Combo",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 19,
+        "percent": 18.6,
         "absoluteSecs": 855
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Glycogen depletion",
       "phase": "work",
       "duration": {
-        "percent": 23,
+        "percent": 22.5,
         "absoluteSecs": 1035
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Glycogen depletion",
       "phase": "work",
       "duration": {
-        "percent": 23,
+        "percent": 22.5,
         "absoluteSecs": 1035
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 6,
+        "percent": 5.9,
         "absoluteSecs": 270
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Challenge fatigued muscles",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Challenge fatigued muscles",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -187,7 +187,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -211,7 +211,7 @@
       "purpose": "Challenge fatigued muscles",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -235,7 +235,7 @@
       "purpose": "Challenge fatigued muscles",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 90
       },
       "intensity": {
@@ -259,7 +259,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 19,
+        "percent": 18.6,
         "absoluteSecs": 855
       },
       "intensity": {
@@ -278,5 +278,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.79
 }

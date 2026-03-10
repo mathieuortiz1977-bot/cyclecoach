@@ -3,12 +3,12 @@
   "title": "TH Progression Week 2",
   "source": "research-v2",
   "category": "THRESHOLD",
-  "primaryZone": "Z4",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
   "duration": 71,
   "scalable": true,
-  "tss": 11,
+  "tss": 76,
   "description": "3x12 min at 97% FTP",
   "purpose": "Week 2: increased duration + intensity",
   "protocol": "4-Week Ramp",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 15,
+        "percent": 15.0,
         "absoluteSecs": 639
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Threshold",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.0,
         "absoluteSecs": 767
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 8.0,
         "absoluteSecs": 341
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Threshold",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.0,
         "absoluteSecs": 767
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 8.0,
         "absoluteSecs": 341
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Threshold",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.0,
         "absoluteSecs": 767
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 15,
+        "percent": 15.0,
         "absoluteSecs": 639
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.8
 }

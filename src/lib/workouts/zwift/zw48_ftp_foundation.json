@@ -8,7 +8,7 @@
   "difficulty": 2,
   "duration": 45,
   "scalable": true,
-  "tss": 2,
+  "tss": 27,
   "description": "Easy base work",
   "purpose": "Aerobic base",
   "protocol": "Zwift - FTP Foundation",
@@ -19,7 +19,7 @@
       "purpose": "Base",
       "phase": "work",
       "duration": {
-        "percent": 100,
+        "percent": 100.0,
         "absoluteSecs": 2700
       },
       "intensity": {
@@ -38,5 +38,6 @@
         "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
       }
     }
-  ]
+  ],
+  "if": 0.6
 }

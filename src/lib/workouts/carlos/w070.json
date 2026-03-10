@@ -3,12 +3,12 @@
   "title": "Progressive Over-Unders",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "steady",
   "difficulty": 7,
-  "duration": 75,
+  "duration": 60,
   "scalable": true,
-  "tss": 80,
+  "tss": 61,
   "description": "Build threshold tolerance with escalating difficulty",
   "purpose": "Build threshold tolerance with escalating difficulty",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 16.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,419 @@
       }
     },
     {
+      "name": "Set 1 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 1 Under at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 1 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 1 Over at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 1 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 1 Under at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 1 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 1 Over at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 1 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 1 Under at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Set 2 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 2 Under at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 2 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 2 Over at 105-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 2 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 2 Under at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 2 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 2 Over at 105-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 2 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Set 2 Under at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Set 3 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 3 Under at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 3 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 108,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 8
+      },
+      "instruction": "Set 3 Over at 108-108% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 3 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 3 Under at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Set 3 Over",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 108,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 8
+      },
+      "instruction": "Set 3 Over at 108-108% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Set 3 Under",
+      "purpose": "OU",
+      "phase": "work",
+      "duration": {
+        "percent": 3.3,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Set 3 Under at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 16.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +468,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

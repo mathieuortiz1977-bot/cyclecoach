@@ -3,12 +3,12 @@
   "title": "Time Trial Simulation",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 75,
+  "duration": 65,
   "scalable": true,
-  "tss": 85,
+  "tss": 77,
   "description": "Pacing for a 40 km TT",
   "purpose": "Pacing for a 40 km TT",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 15.4,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,83 @@
       }
     },
     {
+      "name": "TT Start",
+      "purpose": "Pacing",
+      "phase": "work",
+      "duration": {
+        "percent": 30.8,
+        "absoluteSecs": 1200
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "TT Start at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "TT Mid",
+      "purpose": "Build",
+      "phase": "work",
+      "duration": {
+        "percent": 23.1,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 95,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "TT Mid at 95-95% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "TT Finish",
+      "purpose": "Push",
+      "phase": "work",
+      "duration": {
+        "percent": 15.4,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 98,
+        "powerHigh": 98,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 8
+      },
+      "instruction": "TT Finish at 98-98% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 15.4,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +132,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.85
 }

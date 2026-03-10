@@ -1,0 +1,331 @@
+{
+  "id": "bc04",
+  "title": "BC Force Intervals",
+  "source": "british-cycling",
+  "category": "STRENGTH",
+  "primaryZone": "Z4",
+  "structure": "mixed",
+  "difficulty": 7,
+  "duration": 53,
+  "scalable": true,
+  "tss": 44,
+  "if": 0.7,
+  "description": "Low cadence high torque \u2014 6x3 min @ 60 rpm at threshold",
+  "purpose": "Track-specific force production \u2014 low RPM strength",
+  "protocol": "Force Interval Protocol",
+  "researcher": "British Cycling / UCI",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
+      "phase": "warmup",
+      "duration": {
+        "percent": 18.9,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+      }
+    },
+    {
+      "name": "Force Rep 1/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 1/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Spin 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Spin 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Force Rep 2/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 2/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Spin 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Spin 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Force Rep 3/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 3/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Spin 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Spin 3 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Force Rep 4/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 4/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Spin 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Spin 4 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Force Rep 5/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 5/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Spin 5",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Spin 5 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Force Rep 6/6",
+      "purpose": "Force Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 5.7,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 55,
+        "cadenceHigh": 65,
+        "rpe": 7
+      },
+      "instruction": "Force Rep 6/6 at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Facilitate recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 18.9,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
+      }
+    }
+  ]
+}

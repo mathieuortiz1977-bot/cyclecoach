@@ -8,7 +8,7 @@
   "difficulty": 7,
   "duration": 70,
   "scalable": true,
-  "tss": 10,
+  "tss": 69,
   "description": "Classic 2x20 sweet spot",
   "purpose": "40 min total sweet spot time",
   "protocol": "TrainerRoad",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 588
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1218
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 588
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1218
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 588
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

@@ -8,7 +8,7 @@
   "difficulty": 7,
   "duration": 75,
   "scalable": true,
-  "tss": 11,
+  "tss": 65,
   "description": "Sweet spot with short threshold kicks",
   "purpose": "Sweet spot with periodic threshold kicks",
   "protocol": "TrainerRoad",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 28,
+        "percent": 28.0,
         "absoluteSecs": 1260
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 43,
+        "percent": 43.0,
         "absoluteSecs": 1935
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Quick kick",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 45
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 28,
+        "percent": 28.0,
         "absoluteSecs": 1260
       },
       "intensity": {
@@ -110,5 +110,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.72
 }

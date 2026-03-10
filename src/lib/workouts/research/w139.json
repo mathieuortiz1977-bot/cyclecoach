@@ -3,12 +3,12 @@
   "title": "Masters VO2max (Conservative)",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 70,
+  "duration": 72,
   "scalable": true,
-  "tss": 11,
+  "tss": 64,
   "description": "VO2 stimulus with extended warm-up",
   "purpose": "Age-appropriate VO2 training",
   "protocol": "Masters",
@@ -19,7 +19,7 @@
       "purpose": "Extended warmup",
       "phase": "warmup",
       "duration": {
-        "percent": 38,
+        "percent": 36.9,
         "absoluteSecs": 1596
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.8,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.8,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.8,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.8,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "VO2",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.8,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 25,
+        "percent": 24.3,
         "absoluteSecs": 1050
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.73
 }

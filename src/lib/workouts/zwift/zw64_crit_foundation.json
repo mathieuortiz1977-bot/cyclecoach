@@ -3,12 +3,12 @@
   "title": "Crit Foundation",
   "source": "zwift",
   "category": "SPRINT",
-  "primaryZone": "Z6",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 5,
   "duration": 45,
   "scalable": true,
-  "tss": 5,
+  "tss": 59,
   "description": "Sprint foundation work",
   "purpose": "Sprint base",
   "protocol": "Zwift - Crit Foundation",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 13.0,
         "absoluteSecs": 351
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Sprint base",
       "phase": "work",
       "duration": {
-        "percent": 80,
+        "percent": 80.0,
         "absoluteSecs": 2160
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 7.0,
         "absoluteSecs": 189
       },
       "intensity": {
@@ -86,5 +86,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.89
 }

@@ -3,21 +3,21 @@
   "title": "Block Day 1: Threshold Focus",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 75,
+  "duration": 68,
   "scalable": true,
-  "tss": 80,
-  "description": "First session of a 2–3 day training block",
-  "purpose": "First session of a 2–3 day training block",
+  "tss": 73,
+  "description": "First session of a 2\u20133 day training block",
+  "purpose": "First session of a 2\u20133 day training block",
   "intervals": [
     {
       "name": "Warmup",
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 14.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,123 @@
       }
     },
     {
-      "name": "First session of a 2–3 day training block",
-      "purpose": "First session of a 2–3 day training block",
+      "name": "Threshold 1/3",
+      "purpose": "Threshold interval",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 3600
+        "percent": 17.6,
+        "absoluteSecs": 720
       },
       "intensity": {
-        "zone": "Z3-Z5",
+        "zone": "Z4",
         "powerLow": 95,
         "powerHigh": 100,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 7
       },
-      "reps": {
-        "count": 3,
-        "work": {
-          "duration": {
-            "secs": 720,
-            "label": "12 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 95,
-            "powerHigh": 100,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 720,
-            "label": "12 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 95-100% FTP for full duration. Steady power.",
+      "instruction": "Threshold 1/3 at 95-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Threshold 2/3",
+      "purpose": "Threshold interval",
+      "phase": "work",
+      "duration": {
+        "percent": 17.6,
+        "absoluteSecs": 720
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold 2/3 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Threshold 3/3",
+      "purpose": "Threshold interval",
+      "phase": "work",
+      "duration": {
+        "percent": 17.6,
+        "absoluteSecs": 720
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold 3/3 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
       }
     },
     {
@@ -96,7 +161,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 13.333333333333334,
+        "percent": 14.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -115,5 +180,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.8
 }

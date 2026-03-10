@@ -6,9 +6,9 @@
   "primaryZone": "Z2",
   "structure": "mixed",
   "difficulty": 5,
-  "duration": 90,
+  "duration": 92,
   "scalable": true,
-  "tss": 9,
+  "tss": 74,
   "description": "Aerobic base with fast-twitch activation",
   "purpose": "Aerobic base with neuromuscular fiber recruitment",
   "protocol": "Endurance + Activators",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 11.8,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Aerobic base",
       "phase": "work",
       "duration": {
-        "percent": 75,
+        "percent": 73.5,
         "absoluteSecs": 4050
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Max effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 54
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Max effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 54
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Max effort",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 54
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 12,
+        "percent": 11.8,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.69
 }

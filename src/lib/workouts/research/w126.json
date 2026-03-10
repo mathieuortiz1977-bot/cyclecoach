@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "mixed",
   "difficulty": 8,
-  "duration": 75,
+  "duration": 74,
   "scalable": true,
-  "tss": 12,
+  "tss": 101,
   "description": "FTP durability with race-like surges",
   "purpose": "Sustain FTP with periodic surges",
   "protocol": "Threshold+",
@@ -19,7 +19,7 @@
       "purpose": "Prepare",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 12.1,
         "absoluteSecs": 540
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "FTP work",
       "phase": "work",
       "duration": {
-        "percent": 38,
+        "percent": 38.4,
         "absoluteSecs": 1710
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.1,
         "absoluteSecs": 540
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Surges on FTP",
       "phase": "work",
       "duration": {
-        "percent": 25,
+        "percent": 25.3,
         "absoluteSecs": 1125
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 12,
+        "percent": 12.1,
         "absoluteSecs": 540
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.9
 }

@@ -3,12 +3,12 @@
   "title": "Race Eve Sharpener",
   "source": "research-v2",
   "category": "SPRINT",
-  "primaryZone": "Z6",
+  "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 3,
-  "duration": 30,
+  "duration": 32,
   "scalable": true,
-  "tss": 2,
+  "tss": 23,
   "description": "Final activation the day before racing",
   "purpose": "Nervous system priming",
   "protocol": "Taper",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 53,
+        "percent": 50.5,
         "absoluteSecs": 954
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Nerve activation",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 2.9,
         "absoluteSecs": 54
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Easy",
       "phase": "work",
       "duration": {
-        "percent": 16,
+        "percent": 15.2,
         "absoluteSecs": 288
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Nerve activation",
       "phase": "work",
       "duration": {
-        "percent": 3,
+        "percent": 2.9,
         "absoluteSecs": 54
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 30,
+        "percent": 28.6,
         "absoluteSecs": 540
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.66
 }

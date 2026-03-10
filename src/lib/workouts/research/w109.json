@@ -3,12 +3,12 @@
   "title": "Mixed Energy Systems Medley",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 8,
-  "duration": 80,
+  "duration": 79,
   "scalable": true,
-  "tss": 13,
+  "tss": 80,
   "description": "Touch all energy systems in ascending order",
   "purpose": "Touch all energy systems in one session",
   "protocol": "Energy Spectrum",
@@ -19,7 +19,7 @@
       "purpose": "Build gradually",
       "phase": "warmup",
       "duration": {
-        "percent": 17,
+        "percent": 17.2,
         "absoluteSecs": 816
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Endurance foundation",
       "phase": "work",
       "duration": {
-        "percent": 25,
+        "percent": 25.3,
         "absoluteSecs": 1200
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Tempo effort",
       "phase": "work",
       "duration": {
-        "percent": 13,
+        "percent": 13.1,
         "absoluteSecs": 624
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Sweet spot work",
       "phase": "work",
       "duration": {
-        "percent": 13,
+        "percent": 13.1,
         "absoluteSecs": 624
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Threshold effort",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 8.1,
         "absoluteSecs": 384
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "VO2 push",
       "phase": "work",
       "duration": {
-        "percent": 5,
+        "percent": 5.1,
         "absoluteSecs": 240
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Peak power",
       "phase": "work",
       "duration": {
-        "percent": 1,
+        "percent": 1.0,
         "absoluteSecs": 48
       },
       "intensity": {
@@ -187,7 +187,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 17,
+        "percent": 17.2,
         "absoluteSecs": 816
       },
       "intensity": {
@@ -206,5 +206,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

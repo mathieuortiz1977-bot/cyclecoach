@@ -6,9 +6,9 @@
   "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 9,
-  "duration": 70,
+  "duration": 53,
   "scalable": true,
-  "tss": 13,
+  "tss": 62,
   "description": "Threshold progression step F",
   "purpose": "Threshold building",
   "protocol": "Zwift - Threshold F",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 11,
+        "percent": 14.4,
         "absoluteSecs": 462
       },
       "intensity": {
@@ -39,27 +39,75 @@
       }
     },
     {
-      "name": "Threshold F",
-      "purpose": "Threshold",
+      "name": "FTP 15min 1",
+      "purpose": "FTP development",
       "phase": "work",
       "duration": {
-        "percent": 81,
-        "absoluteSecs": 3402
+        "percent": 28.1,
+        "absoluteSecs": 900
       },
       "intensity": {
         "zone": "Z4",
-        "powerLow": 102,
-        "powerHigh": 110,
+        "powerLow": 100,
+        "powerHigh": 100,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceHigh": 95,
+        "rpe": 7
       },
-      "instruction": "Threshold F at 102-110% FTP",
+      "instruction": "FTP 15min 1 at 100-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 18.8,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP 15min 2",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 28.1,
+        "absoluteSecs": 900
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "FTP 15min 2 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
       }
     },
     {
@@ -67,7 +115,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 8,
+        "percent": 10.5,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -86,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.83
 }

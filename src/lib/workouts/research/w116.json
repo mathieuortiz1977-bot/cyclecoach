@@ -6,9 +6,9 @@
   "primaryZone": "Z5",
   "structure": "mixed",
   "difficulty": 9,
-  "duration": 60,
+  "duration": 59,
   "scalable": true,
-  "tss": 11,
+  "tss": 78,
   "description": "Sustained VO2max endurance",
   "purpose": "Sustained VO2max endurance",
   "protocol": "Zwift Famous",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 21,
+        "percent": 21.2,
         "absoluteSecs": 756
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "115%",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 19.2,
         "absoluteSecs": 684
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "88%",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 19.2,
         "absoluteSecs": 684
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "115%",
       "phase": "work",
       "duration": {
-        "percent": 19,
+        "percent": 19.2,
         "absoluteSecs": 684
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 21,
+        "percent": 21.2,
         "absoluteSecs": 756
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.89
 }

@@ -3,10 +3,10 @@
   "title": "Hill Climb TT Simulation",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 7,
-  "duration": 70,
+  "duration": 60,
   "scalable": true,
   "tss": 75,
   "description": "Sustained climbing at race intensity",
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 16.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -41,7 +41,7 @@
       "purpose": "Sustained climbing at race intensity",
       "phase": "work",
       "duration": {
-        "percent": 42.857142857142854,
+        "percent": 50.0,
         "absoluteSecs": 1800
       },
       "intensity": {
@@ -96,7 +96,7 @@
       "purpose": "Sustained climbing at race intensity",
       "phase": "work",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 16.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -151,7 +151,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 16.7,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -170,5 +170,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.87
 }

@@ -3,12 +3,12 @@
   "title": "The Wringer Light",
   "source": "research-v2",
   "category": "ANAEROBIC",
-  "primaryZone": "Z6",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
   "duration": 50,
   "scalable": true,
-  "tss": 8,
+  "tss": 41,
   "description": "Anaerobic repeats with decreasing rest (accessible)",
   "purpose": "Anaerobic training with lower volume",
   "protocol": "Anaerobic",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 38,
+        "percent": 37.6,
         "absoluteSecs": 1140
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Max power",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 60
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 11,
+        "percent": 10.9,
         "absoluteSecs": 330
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Max power",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 60
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 8,
+        "percent": 7.9,
         "absoluteSecs": 240
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Max power",
       "phase": "work",
       "duration": {
-        "percent": 2,
+        "percent": 2.0,
         "absoluteSecs": 60
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 38,
+        "percent": 37.6,
         "absoluteSecs": 1140
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.7
 }

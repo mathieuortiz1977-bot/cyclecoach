@@ -3,12 +3,12 @@
   "title": "Split Session",
   "source": "zwift",
   "category": "MIXED",
-  "primaryZone": "Z2-Z5",
+  "primaryZone": "Z4",
   "structure": "mixed",
   "difficulty": 6,
   "duration": 60,
   "scalable": true,
-  "tss": 7,
+  "tss": 88,
   "description": "Two-part workout session",
   "purpose": "Mixed efforts",
   "protocol": "Zwift - Split Session",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "work",
       "duration": {
-        "percent": 40,
+        "percent": 40.0,
         "absoluteSecs": 1440
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 10,
+        "percent": 10.0,
         "absoluteSecs": 360
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Hard",
       "phase": "work",
       "duration": {
-        "percent": 40,
+        "percent": 40.0,
         "absoluteSecs": 1440
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 10,
+        "percent": 10.0,
         "absoluteSecs": 360
       },
       "intensity": {
@@ -110,5 +110,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.94
 }

@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "steady",
   "difficulty": 5,
-  "duration": 90,
+  "duration": 89,
   "scalable": true,
-  "tss": 9,
+  "tss": 89,
   "description": "Aerobic endurance with moderate stress",
   "purpose": "Zone 3 sweet spot for masters",
   "protocol": "Masters",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 12,
+        "percent": 12.1,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Zone 3",
       "phase": "work",
       "duration": {
-        "percent": 75,
+        "percent": 75.8,
         "absoluteSecs": 4050
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 12,
+        "percent": 12.1,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -86,5 +86,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

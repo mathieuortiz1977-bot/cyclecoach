@@ -1,6 +1,6 @@
 {
   "id": "w125d",
-  "title": "TH Progression Week 4 – TEST",
+  "title": "TH Progression Week 4 \u2013 TEST",
   "source": "research-v2",
   "category": "THRESHOLD",
   "primaryZone": "Z4",
@@ -8,7 +8,7 @@
   "difficulty": 8,
   "duration": 78,
   "scalable": true,
-  "tss": 12,
+  "tss": 91,
   "description": "2x20 min at 100% FTP",
   "purpose": "Week 4: classic 2x20 FTP test",
   "protocol": "4-Week Ramp",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 655
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "FTP effort",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1357
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 655
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "FTP effort",
       "phase": "work",
       "duration": {
-        "percent": 29,
+        "percent": 29.0,
         "absoluteSecs": 1357
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14,
+        "percent": 14.0,
         "absoluteSecs": 655
       },
       "intensity": {
@@ -134,5 +134,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.84
 }

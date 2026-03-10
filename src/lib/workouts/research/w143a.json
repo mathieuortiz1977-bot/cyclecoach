@@ -6,9 +6,9 @@
   "primaryZone": "Z3",
   "structure": "mixed",
   "difficulty": 4,
-  "duration": 60,
+  "duration": 59,
   "scalable": true,
-  "tss": 5,
+  "tss": 58,
   "description": "60 min: 10 easy + 20 at 85% + 2x5 at 95%/55% + 10 CD",
   "purpose": "3-day pre-race sequence, day 1",
   "protocol": "Taper",
@@ -19,7 +19,7 @@
       "purpose": "Warmup",
       "phase": "work",
       "duration": {
-        "percent": 18,
+        "percent": 18.2,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Tempo work",
       "phase": "work",
       "duration": {
-        "percent": 36,
+        "percent": 36.4,
         "absoluteSecs": 1296
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "FTP",
       "phase": "work",
       "duration": {
-        "percent": 9,
+        "percent": 9.1,
         "absoluteSecs": 324
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 9,
+        "percent": 9.1,
         "absoluteSecs": 324
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "FTP",
       "phase": "work",
       "duration": {
-        "percent": 9,
+        "percent": 9.1,
         "absoluteSecs": 324
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 18,
+        "percent": 18.2,
         "absoluteSecs": 648
       },
       "intensity": {
@@ -158,5 +158,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.77
 }

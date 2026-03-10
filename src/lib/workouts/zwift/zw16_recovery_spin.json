@@ -8,7 +8,7 @@
   "difficulty": 1,
   "duration": 45,
   "scalable": true,
-  "tss": 1,
+  "tss": 12,
   "description": "Easy Z1 recovery spinning",
   "purpose": "Active recovery",
   "protocol": "Zwift - Recovery",
@@ -19,7 +19,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 100,
+        "percent": 100.0,
         "absoluteSecs": 2700
       },
       "intensity": {
@@ -38,5 +38,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.4
 }

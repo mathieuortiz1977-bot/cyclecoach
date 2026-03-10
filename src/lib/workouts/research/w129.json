@@ -1,14 +1,14 @@
 {
   "id": "w129",
-  "title": "Café Ride with Purpose",
+  "title": "Caf\u00e9 Ride with Purpose",
   "source": "research-v2",
   "category": "BASE",
   "primaryZone": "Z2",
   "structure": "mixed",
   "difficulty": 4,
-  "duration": 120,
+  "duration": 119,
   "scalable": true,
-  "tss": 10,
+  "tss": 102,
   "description": "Social endurance ride with structured blocks",
   "purpose": "Group dynamics with training value",
   "protocol": "Social Endurance",
@@ -19,7 +19,7 @@
       "purpose": "Group warmup",
       "phase": "work",
       "duration": {
-        "percent": 36,
+        "percent": 36.4,
         "absoluteSecs": 2592
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Mixed pace",
       "phase": "work",
       "duration": {
-        "percent": 27,
+        "percent": 27.3,
         "absoluteSecs": 1944
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Social finish",
       "phase": "work",
       "duration": {
-        "percent": 36,
+        "percent": 36.4,
         "absoluteSecs": 2592
       },
       "intensity": {
@@ -86,5 +86,6 @@
         "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
       }
     }
-  ]
+  ],
+  "if": 0.72
 }

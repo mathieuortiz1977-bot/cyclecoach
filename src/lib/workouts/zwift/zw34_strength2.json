@@ -3,12 +3,12 @@
   "title": "Strength Tier 2",
   "source": "zwift",
   "category": "STRENGTH",
-  "primaryZone": "Z2-Z3",
+  "primaryZone": "Z3",
   "structure": "steady",
   "difficulty": 6,
-  "duration": 45,
+  "duration": 48,
   "scalable": true,
-  "tss": 5,
+  "tss": 43,
   "description": "Heavy resistance strength work",
   "purpose": "Build strength",
   "protocol": "Zwift - Strength Tier 2",
@@ -19,7 +19,7 @@
       "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 12.2,
         "absoluteSecs": 351
       },
       "intensity": {
@@ -39,27 +39,267 @@
       }
     },
     {
-      "name": "Heavy Resistance",
-      "purpose": "Strength",
+      "name": "Low RPM Force+ 1/6",
+      "purpose": "Low RPM Force+ interval",
       "phase": "work",
       "duration": {
-        "percent": 80,
-        "absoluteSecs": 2160
+        "percent": 8.3,
+        "absoluteSecs": 240
       },
       "intensity": {
-        "zone": "Z2-Z3",
-        "powerLow": 75,
-        "powerHigh": 90,
-        "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
         "rpe": 6
       },
-      "instruction": "Heavy Resistance at 75-90% FTP",
+      "instruction": "Low RPM Force+ 1/6 at 88-88% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
-        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
-        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
-        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 1 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM Force+ 2/6",
+      "purpose": "Low RPM Force+ interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM Force+ 2/6 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 2 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM Force+ 3/6",
+      "purpose": "Low RPM Force+ interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM Force+ 3/6 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 3 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM Force+ 4/6",
+      "purpose": "Low RPM Force+ interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM Force+ 4/6 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 4 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM Force+ 5/6",
+      "purpose": "Low RPM Force+ interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM Force+ 5/6 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Recovery 5",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 6.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 5 at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Low RPM Force+ 6/6",
+      "purpose": "Low RPM Force+ interval",
+      "phase": "work",
+      "duration": {
+        "percent": 8.3,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 50,
+        "cadenceHigh": 60,
+        "rpe": 6
+      },
+      "instruction": "Low RPM Force+ 6/6 at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
       }
     },
     {
@@ -67,7 +307,7 @@
       "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 7,
+        "percent": 6.6,
         "absoluteSecs": 189
       },
       "intensity": {
@@ -86,5 +326,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.73
 }

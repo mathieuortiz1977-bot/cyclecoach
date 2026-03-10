@@ -3,12 +3,12 @@
   "title": "VO2 Progression Week 1",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 9,
   "duration": 60,
   "scalable": true,
-  "tss": 11,
+  "tss": 41,
   "description": "5x3 min at 110% FTP",
   "purpose": "Week 1 of 4-week VO2 ramp",
   "protocol": "4-Week Ramp",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 38,
+        "percent": 38.0,
         "absoluteSecs": 1368
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "VO2 effort",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.0,
         "absoluteSecs": 432
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.0,
         "absoluteSecs": 432
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 38,
+        "percent": 38.0,
         "absoluteSecs": 1368
       },
       "intensity": {
@@ -110,5 +110,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.64
 }

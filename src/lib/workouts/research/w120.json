@@ -3,13 +3,13 @@
   "title": "Kaiser (TrainerRoad Style)",
   "source": "research-v2",
   "category": "VO2MAX",
-  "primaryZone": "Z5",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 8,
   "duration": 65,
   "scalable": true,
-  "tss": 10,
-  "description": "Extended Spencer – more VO2max volume",
+  "tss": 46,
+  "description": "Extended Spencer \u2013 more VO2max volume",
   "purpose": "Extended Spencer for max VO2 volume",
   "protocol": "TrainerRoad",
   "researcher": "TrainerRoad",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 38,
+        "percent": 38.0,
         "absoluteSecs": 1482
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "120%",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.0,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 12,
+        "percent": 12.0,
         "absoluteSecs": 468
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 38,
+        "percent": 38.0,
         "absoluteSecs": 1482
       },
       "intensity": {
@@ -110,5 +110,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.65
 }

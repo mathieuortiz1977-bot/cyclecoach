@@ -8,7 +8,7 @@
   "difficulty": 7,
   "duration": 80,
   "scalable": true,
-  "tss": 11,
+  "tss": 82,
   "description": "3x15 min at 91% FTP",
   "purpose": "Week 3: longer intervals at higher intensity",
   "protocol": "4-Week Ramp",
@@ -19,7 +19,7 @@
       "purpose": "Build",
       "phase": "warmup",
       "duration": {
-        "percent": 13,
+        "percent": 13.0,
         "absoluteSecs": 624
       },
       "intensity": {
@@ -43,7 +43,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 20,
+        "percent": 20.0,
         "absoluteSecs": 960
       },
       "intensity": {
@@ -67,7 +67,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 7,
+        "percent": 7.0,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -91,7 +91,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 20,
+        "percent": 20.0,
         "absoluteSecs": 960
       },
       "intensity": {
@@ -115,7 +115,7 @@
       "purpose": "Recovery",
       "phase": "work",
       "duration": {
-        "percent": 7,
+        "percent": 7.0,
         "absoluteSecs": 336
       },
       "intensity": {
@@ -139,7 +139,7 @@
       "purpose": "Sweet spot",
       "phase": "work",
       "duration": {
-        "percent": 20,
+        "percent": 20.0,
         "absoluteSecs": 960
       },
       "intensity": {
@@ -163,7 +163,7 @@
       "purpose": "Easy recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 13,
+        "percent": 13.0,
         "absoluteSecs": 624
       },
       "intensity": {
@@ -182,5 +182,6 @@
         "MIXED": "Keep it easy and enjoy the ride."
       }
     }
-  ]
+  ],
+  "if": 0.78
 }

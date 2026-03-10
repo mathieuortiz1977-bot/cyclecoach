@@ -3,12 +3,12 @@
   "title": "Isolated Leg Training (ILT) + Sweet Spot",
   "source": "carlos",
   "category": "THRESHOLD",
-  "primaryZone": "Z4",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 5,
-  "duration": 70,
+  "duration": 58,
   "scalable": true,
-  "tss": 55,
+  "tss": 51,
   "description": "Pedaling efficiency before sweet spot work",
   "purpose": "Pedaling efficiency before sweet spot work",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 17.2,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,58 +37,315 @@
       }
     },
     {
-      "name": "Pedaling efficiency before sweet spot work",
-      "purpose": "Pedaling efficiency before sweet spot work",
+      "name": "R Leg",
+      "purpose": "ILT",
       "phase": "work",
       "duration": {
-        "percent": 51.42857142857142,
-        "absoluteSecs": 2160
+        "percent": 1.7,
+        "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z3-Z5",
-        "powerLow": 90,
-        "powerHigh": 95,
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "R Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "L Leg",
+      "purpose": "ILT",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "L Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Both",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 3
       },
-      "reps": {
-        "count": 2,
-        "work": {
-          "duration": {
-            "secs": 720,
-            "label": "12 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 90,
-            "powerHigh": 95,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 720,
-            "label": "12 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 90-95% FTP for full duration. Steady power.",
+      "instruction": "Both at 60-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "R Leg",
+      "purpose": "ILT",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "R Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "L Leg",
+      "purpose": "ILT",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "L Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Both",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Both at 60-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "R Leg",
+      "purpose": "ILT",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "R Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "L Leg",
+      "purpose": "ILT",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 60,
+        "cadenceHigh": 70,
+        "rpe": 3
+      },
+      "instruction": "L Leg at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Both",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 1.7,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Both at 60-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Endurance",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 8.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "Endurance at 65-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "SS 1",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 20.7,
+        "absoluteSecs": 720
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 1 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.6,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "SS 2",
+      "purpose": "Sweet spot development",
+      "phase": "work",
+      "duration": {
+        "percent": 20.7,
+        "absoluteSecs": 720
+      },
+      "intensity": {
+        "zone": "Z3-Z4",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "SS 2 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
+        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
+        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
+        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
       }
     },
     {
@@ -96,7 +353,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 7.142857142857142,
+        "percent": 8.6,
         "absoluteSecs": 300
       },
       "intensity": {
@@ -115,5 +372,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.73
 }

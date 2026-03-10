@@ -3,12 +3,12 @@
   "title": "High Work:Rest Ratio (5:1)",
   "source": "carlos",
   "category": "BASE",
-  "primaryZone": "Z2",
+  "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 70,
+  "duration": 90,
   "scalable": true,
-  "tss": 78,
+  "tss": 146,
   "description": "Maximum time-at-intensity with minimal recovery",
   "purpose": "Maximum time-at-intensity with minimal recovery",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -41,7 +41,7 @@
       "purpose": "Maximum time-at-intensity with minimal recovery",
       "phase": "work",
       "duration": {
-        "percent": 50,
+        "percent": 38.9,
         "absoluteSecs": 2100
       },
       "intensity": {
@@ -96,7 +96,7 @@
       "purpose": "Maximum time-at-intensity with minimal recovery",
       "phase": "work",
       "duration": {
-        "percent": 50,
+        "percent": 38.9,
         "absoluteSecs": 2100
       },
       "intensity": {
@@ -151,7 +151,7 @@
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 11.1,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -170,5 +170,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.98
 }

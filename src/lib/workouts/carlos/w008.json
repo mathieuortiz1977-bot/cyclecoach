@@ -8,7 +8,7 @@
   "difficulty": 7,
   "duration": 70,
   "scalable": true,
-  "tss": 65,
+  "tss": 62,
   "description": "Pacing discipline, progressive overload",
   "purpose": "Pacing discipline, progressive overload",
   "intervals": [
@@ -17,7 +17,7 @@
       "purpose": "Prepare system and elevate heart rate",
       "phase": "warmup",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 14.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -37,11 +37,131 @@
       }
     },
     {
+      "name": "Block 1",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 14.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Block 1 at 78-78% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Block 2",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 14.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 82,
+        "powerHigh": 82,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Block 2 at 82-82% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Block 3",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 14.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 86,
+        "powerHigh": 86,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Block 3 at 86-86% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Block 4",
+      "purpose": "Muscular endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 14.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 5
+      },
+      "instruction": "Block 4 at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
+        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
+        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
+        "MIXED": "Steady effort. You should be breathing harder but in control."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 14.3,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
       "name": "Cool-down",
       "purpose": "Gradually lower heart rate and begin recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 14.285714285714285,
+        "percent": 14.3,
         "absoluteSecs": 600
       },
       "intensity": {
@@ -60,5 +180,6 @@
         "MIXED": "Bring it down smoothly. You earned this recovery."
       }
     }
-  ]
+  ],
+  "if": 0.73
 }
