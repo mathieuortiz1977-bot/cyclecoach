@@ -2,9 +2,25 @@
 import { getCoachNote, resetCommentaryIndex } from "./coach";
 import { getRouteForWeek, type RouteData } from "./routes";
 import { getZoneForPower } from "./zones";
-import { MASTER_WORKOUTS } from "./sessions-data-all";
+import { MASTER_WORKOUTS, getMasterWorkoutsSync } from "./sessions-data-all";
 // Legacy imports still available for reference
 import { MASTER_WORKOUTS as CLASSIFIED } from "./sessions-data-classified";
+
+// CRITICAL: Force load workouts when module loads (for API server context)
+// This ensures MASTER_WORKOUTS is populated before any plan generation
+let _workoutsInitialized = false;
+function ensureWorkoutsLoaded() {
+  if (!_workoutsInitialized && MASTER_WORKOUTS.length === 0) {
+    console.log('[periodization] Forcing workout initialization...');
+    try {
+      const loaded = getMasterWorkoutsSync();
+      console.log('[periodization] Workouts loaded:', loaded.length);
+      _workoutsInitialized = true;
+    } catch (err) {
+      console.error('[periodization] Failed to load workouts:', err);
+    }
+  }
+}
 
 export type BlockType = "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM";
 export type WeekType = "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY";
@@ -1346,6 +1362,9 @@ function selectWorkoutTemplate(
   usedThisWeekIds: string[] = [] // Exclude workouts already used THIS WEEK
 ): WorkoutTemplate {
   
+  // CRITICAL FIX: Ensure workouts are loaded before using MASTER_WORKOUTS
+  ensureWorkoutsLoaded();
+  
   let candidates = MASTER_WORKOUTS;
   
   // Debug logging
@@ -1858,6 +1877,12 @@ export function generatePlan(
   targetSundayDurationMinutes?: number, // OPTIONAL: Different duration for Sunday
   targetFridayDurationMinutes: number = 50 // OPTIONAL: Different duration for Friday (default 50 min)
 ): PlanDef {
+  console.log('🚀 [generatePlan] START - Initializing plan generation');
+  
+  // CRITICAL FIX: Ensure workouts are loaded FIRST
+  ensureWorkoutsLoaded();
+  console.log('✅ [generatePlan] Workouts ready:', MASTER_WORKOUTS.length, 'available');
+  
   // Validate duration (BUG #5 fix)
   if (targetDurationMinutes !== undefined && targetDurationMinutes < 30) {
     console.warn(`[generatePlan] Duration ${targetDurationMinutes}min is too short, using 60min default`);
