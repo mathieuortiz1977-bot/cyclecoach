@@ -2159,40 +2159,7 @@ function selectWorkoutTemplate(
   return availableTemplates[randomIndex] || templates[0];
 }
 
-// ─── GENERATION ENGINE INTEGRATION ──────────────────────────────────
-// Use training engine instead of hardcoded templates for duration-aware sessions
 
-import { createSession } from "./training-engine";
-import { scaleSessionToDuration } from "./training-engine/duration-scaler";
-import type { AthleteProfile, SessionGoal, IntervalBlock } from "./training-engine/types";
-
-/**
- * Map block type to training goal for generation engine
- */
-function blockTypeToGoal(blockType: BlockType): SessionGoal {
-  const goalMap: Record<BlockType, SessionGoal> = {
-    BASE: "Endurance",
-    THRESHOLD: "LactateThreshold",
-    VO2MAX: "VO2Max",
-    RACE_SIM: "SprintPower",
-  };
-  return goalMap[blockType];
-}
-
-/**
- * Create athlete profile for generation engine
- */
-function createAthleteProfile(): AthleteProfile {
-  // Using standard athlete profile
-  // In production, would come from user's FTP test + profile
-  return {
-    ftp: 280, // Default/placeholder
-    weight: 75,
-    maxHr: 190,
-    restingHr: 60,
-    level: "Intermediate",
-  };
-}
 
 // ─── Custom Session Generators ──────────────────────────────────────
 
@@ -2239,210 +2206,79 @@ function generateOutdoorSession(weekType: WeekType, blockNum: number, day: DayOf
 const selectedTemplates: Map<string, WorkoutTemplate> = new Map();
 
 /**
- * Select a protocol variant for a goal
- * Multiple protocols per goal = more session variety even for same goal
- */
-function selectProtocolForGoal(goal: SessionGoal, weekNum: number, day: DayOfWeek): string | undefined {
-  // Multiple protocols per goal for variety
-  const protocolOptions: Record<SessionGoal, string[]> = {
-    Endurance: ["2x20"],
-    SweetSpot: ["2x20"],
-    LactateThreshold: ["3x10", "4x8", "2x20"],
-    VO2Max: ["30_30", "40_20", "4x8"],
-    Anaerobic: ["Tabata", "Pyramid"],
-    SprintPower: ["Pyramid", "Tabata"],
-  };
-  
-  const options = protocolOptions[goal];
-  if (!options || options.length === 0) return undefined;
-  
-  // Deterministic selection: different weeks get different protocols for same goal
-  const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
-  const index = (weekNum + dayIndex) % options.length;
-  
-  return options[index];
-}
-
-/**
- * Rotate goal for a day across weeks to ensure every session is different
- * CRITICAL: No goal repeats within a 4-week block on the same day
- */
-function rotateGoalByWeek(
-  baseGoal: SessionGoal,
-  day: DayOfWeek,
-  weekNum: number,
-  blockType: BlockType
-): SessionGoal {
-  // Create a rotation pattern for each day
-  // Week 1 → Goal A, Week 2 → Goal B, Week 3 → Goal C, Week 4 → Goal D
-  
-  const goalRotations: Record<DayOfWeek, SessionGoal[]> = {
-    MON: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // NO REPEATS within block
-    TUE: ["SweetSpot", "LactateThreshold", "VO2Max", "Endurance"], // Recovery-focused, NO REPEATS
-    WED: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
-    THU: ["LactateThreshold", "VO2Max", "Anaerobic", "SweetSpot"], // Build → peak → recovery, NO REPEATS
-    FRI: ["VO2Max", "Anaerobic", "SprintPower", "LactateThreshold"], // Peak day, NO REPEATS
-    SAT: ["Endurance", "Endurance", "Endurance", "Endurance"], // Outdoor endurance
-    SUN: ["Endurance", "Endurance", "Endurance", "Endurance"], // Rest day
-  };
-  
-  const weekIndex = Math.max(0, Math.min(3, weekNum - 1)); // Weeks 1-4 → indices 0-3
-  const rotation = goalRotations[day];
-  
-  return rotation[weekIndex] as SessionGoal;
-}
-
-/**
- * WIRED WITH GENERATION ENGINE
- * Uses creation engine to build duration-aware sessions instead of templates
- * Every session is dynamically generated, ensuring variety across 4-week block
+ * Generate indoor session using SESSION_TEMPLATES database
+ * Back to proven, high-quality session designs with coaching notes
  */
 function generateIndoorSession(
   blockType: BlockType, 
   weekType: WeekType, 
   day: DayOfWeek,
-  weekNum: number = 1, // CRITICAL: Week number (1-4) for goal rotation
+  weekNum?: number,
   previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>,
   userSeed?: string, // For per-user variation
   targetDurationMinutes?: number // USER'S REQUESTED DURATION
 ): SessionDef {
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
+  
+  let zone: string;
   let isMonday = dayIndex === 0;
+  
+  // MONDAY IS SACRED: Always stick to the planned block type
+  switch (blockType) {
+    case "BASE":
+      zone = "BASE";
+      break;
+    case "THRESHOLD":
+      zone = "THRESHOLD";
+      break;
+    case "VO2MAX":
+      zone = "VO2MAX";
+      break;
+    case "RACE_SIM":
+      zone = "ANAEROBIC";
+      break;
+    default:
+      zone = "BASE";
+  }
   
   // Skip rest days
   if (dayIndex === 2 || dayIndex === 5 || dayIndex === 6) {
-    // These are typically rest days (Wed, Sat, Sun)
-    // Only generate sessions for Mon, Tue, Thu, Fri
     return generateRestDay(day);
   }
   
-  // ─── GENERATION ENGINE INTEGRATION ──────────────────────────────────
-  // Instead of templates, use the generation engine to build duration-aware sessions
-  // Vary goals by day to ensure different stimulus each day
-  
-  let selectedGoal: SessionGoal = "Endurance"; // default
-  let selectedZone: string = "BASE";
-  
-  // MONDAY IS SACRED: Always stick to the planned block type
-  if (isMonday) {
-    switch (blockType) {
-      case "BASE":
-        selectedZone = "BASE";
-        selectedGoal = "Endurance";
-        break;
-      case "THRESHOLD":
-        selectedZone = "THRESHOLD";
-        selectedGoal = "LactateThreshold";
-        break;
-      case "VO2MAX":
-        selectedZone = "VO2MAX";
-        selectedGoal = "VO2Max";
-        break;
-      case "RACE_SIM":
-        selectedZone = "ANAEROBIC";
-        selectedGoal = "SprintPower";
-        break;
+  // For non-Monday sessions, allow some variation in zone selection
+  let selectedZone = zone;
+  if (!isMonday && userSeed) {
+    // Seed the random variation per user
+    const userRandomizer = Math.abs(
+      userSeed.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0)
+    ) % 100;
+    
+    // Small chance to swap to a complementary zone on non-Monday days
+    if (userRandomizer < 20) {
+      if (zone === "BASE") selectedZone = "TEMPO";
+      else if (zone === "THRESHOLD") selectedZone = "TEMPO";
+      else if (zone === "VO2MAX") selectedZone = "THRESHOLD";
+      else if (zone === "ANAEROBIC") selectedZone = "VO2MAX";
     }
-  } else {
-    // Non-Monday: Use WEEK-BASED GOAL ROTATION
-    // This ensures every session is different across the 4-week block
-    // Week 1 Tue ≠ Week 2 Tue ≠ Week 3 Tue ≠ Week 4 Tue
-    
-    const baseGoal: SessionGoal = blockType === "BASE" 
-      ? "Endurance" 
-      : blockType === "THRESHOLD" 
-      ? "LactateThreshold" 
-      : blockType === "VO2MAX" 
-      ? "VO2Max" 
-      : "SprintPower";
-    
-    // Rotate goal based on week number for this day
-    selectedGoal = rotateGoalByWeek(baseGoal, day, weekNum, blockType);
-    
-    // Map goal back to zone for reference
-    selectedZone = selectedGoal === "Endurance" ? "BASE" 
-      : selectedGoal === "SweetSpot" ? "TEMPO"
-      : selectedGoal === "LactateThreshold" ? "THRESHOLD"
-      : selectedGoal === "VO2Max" ? "VO2MAX"
-      : selectedGoal === "Anaerobic" ? "ANAEROBIC"
-      : selectedGoal === "SprintPower" ? "ANAEROBIC"
-      : "BASE";
   }
   
-  // ─── BUILD SESSION WITH GENERATION ENGINE ─────────────────────────
+  // Select a template for this zone/day, avoiding previous week's template
+  const previousTemplate = previousTemplates?.[day];
+  const template = selectWorkoutTemplate(selectedZone, previousTemplate?.id);
   
-  // Create athlete profile (using placeholder - in production would come from user's FTP test)
-  const athlete: AthleteProfile = {
-    ftp: 280, // Placeholder - should come from user profile
-    weight: 75,
-    maxHr: 190,
-    restingHr: 60,
-    level: "Intermediate",
-  };
-  
-  // Select protocol variant for this goal (different protocols = more variety)
-  const selectedProtocol = selectProtocolForGoal(selectedGoal, weekNum, day);
-  
-  // Build session using generation engine with selected protocol
-  const generatedSession = createSession(athlete, selectedGoal, selectedProtocol);
-  
-  // Scale to user's requested duration if provided
-  let finalSession = generatedSession;
-  if (targetDurationMinutes && targetDurationMinutes > 0) {
-    finalSession = scaleSessionToDuration(generatedSession, targetDurationMinutes);
-  }
-  
-  // ─── CONVERT TO SESSIONDEF FORMAT ──────────────────────────────────
-  
-  // Convert training session intervals back to SessionDef interval format
-  // CRITICAL: Expand repetitions! Tabata(8 reps × 2 blocks) = 16 intervals, not 2!
-  const expandedBlocks: IntervalBlock[] = [];
-  
-  expandedBlocks.push(...finalSession.warmup);
-  
-  // Expand each IntervalSet by its repetitions count
-  finalSession.mainSets.forEach((set, setIdx) => {
-    for (let rep = 0; rep < set.repetitions; rep++) {
-      expandedBlocks.push(...set.blocks);
-    }
-    // Add rest between sets (if defined and not last set)
-    if (set.restBetweenSets && setIdx < finalSession.mainSets.length - 1) {
-      expandedBlocks.push({
-        name: "Rest",
-        durationSeconds: set.restBetweenSets,
-        targetPowerMin: 30,
-        targetPowerMax: 45,
-        zone: "Z1",
-        coachNote: "Easy recovery between sets",
-      });
-    }
-  });
-  
-  expandedBlocks.push(...finalSession.cooldown);
-  
-  const allBlocks = expandedBlocks;
-  
-  const intervals: IntervalDef[] = allBlocks.map(block => ({
-    name: block.name,
-    durationSecs: block.durationSeconds,
-    powerLow: block.targetPowerMin || 0,
-    powerHigh: block.targetPowerMax || 0,
-    cadenceLow: block.cadenceLow,
-    cadenceHigh: block.cadenceHigh,
-    rpe: block.rpe,
-    zone: block.zone,
-    purpose: block.name.toLowerCase(), // Use the block name as purpose
-    coachNote: block.coachNote || "", // Default to empty string if undefined
-  }));
+  // Build intervals from template
+  const intervals = template.intervals();
   
   return {
     dayOfWeek: day,
     sessionType: "INDOOR",
-    title: `${selectedGoal} Workout`,
-    description: `${selectedGoal} training session at ${finalSession.totalDurationMinutes || 0} minutes`,
-    purpose: selectedGoal,
-    duration: finalSession.totalDurationMinutes || 60, // Default to 60 min if not calculated
+    title: template.title,
+    description: template.description,
+    purpose: template.purpose,
+    duration: targetDurationMinutes || template.duration, // Respect user's requested duration
     intervals,
+    templateId: template.id,
   };
 }
 
