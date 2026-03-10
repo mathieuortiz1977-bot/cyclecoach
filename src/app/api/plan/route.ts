@@ -7,11 +7,21 @@ import { getMasterWorkoutsSync } from "@/lib/sessions-data-all";
 
 // GET: Fetch or generate plan for the current rider
 export async function GET() {
+  console.log('🚀 [PLAN API] GET /api/plan - Fetching plan for current rider');
+  
   const { error } = await requireAuth();
-  if (error) return error;
+  if (error) {
+    console.error('❌ [PLAN API] Auth failed');
+    return error;
+  }
 
   const rider = await getCurrentRider();
-  if (!rider) return NextResponse.json({ error: "No rider profile" }, { status: 400 });
+  if (!rider) {
+    console.error('❌ [PLAN API] No rider profile found');
+    return NextResponse.json({ error: "No rider profile" }, { status: 400 });
+  }
+
+  console.log('✅ [PLAN API] Rider found:', { riderId: rider.id });
 
   // Check for existing plan
   const existingPlan = await prisma.plan.findFirst({
@@ -37,9 +47,18 @@ export async function GET() {
   });
 
   if (existingPlan) {
+    console.log('✅ [PLAN API] Plan found in database:', {
+      planId: existingPlan.id,
+      blocks: existingPlan.blocks.length,
+      totalWeeks: existingPlan.blocks.reduce((s: number, b: any) => s + b.weeks.length, 0),
+      totalSessions: existingPlan.blocks.reduce((s: number, b: any) => s + b.weeks.reduce((ws: number, w: any) => ws + w.sessions.length, 0), 0),
+      totalIntervals: existingPlan.blocks.reduce((s: number, b: any) => s + b.weeks.reduce((ws: number, w: any) => ws + w.sessions.reduce((ss: number, s: any) => ss + s.intervals.length, 0), 0), 0),
+    });
+    console.log('📤 [PLAN API] Returning plan from database');
     return NextResponse.json({ plan: existingPlan, source: "database" });
   }
 
+  console.log('ℹ️  [PLAN API] No plan found in database, returning null for client-side generation');
   // No plan exists — return null (client will generate + persist)
   return NextResponse.json({ plan: null, source: "none" });
 }
@@ -216,6 +235,17 @@ export async function POST(request: NextRequest) {
 
     // Persist to DB
     console.log('💾 [PLAN API] Persisting plan to database...');
+    console.log('📊 [PLAN API] Plan structure:', {
+      blocks: planData.blocks.length,
+      blockDetails: planData.blocks.map((b: any) => ({
+        blockNumber: b.blockNumber,
+        type: b.type,
+        weeks: b.weeks.length,
+        sessions: b.weeks.reduce((s: number, w: any) => s + w.sessions.length, 0),
+        intervals: b.weeks.reduce((s: number, w: any) => s + w.sessions.reduce((x: number, sess: any) => x + sess.intervals.length, 0), 0),
+      }))
+    });
+    
     const plan = await prisma.plan.create({
       data: {
         riderId: rider.id,
@@ -291,6 +321,17 @@ export async function POST(request: NextRequest) {
     console.log(`  📊 Pending: ${pendingWorkouts.length} regenerated (updated)`);
     console.log(`  📊 Plan ID: ${plan.id}`);
     console.log(`  📊 Blocks: ${plan.blocks.length}`);
+    
+    // Log returned plan structure
+    console.log('📤 [PLAN API] RESPONSE STRUCTURE:');
+    console.log('  Blocks:', plan.blocks.length);
+    plan.blocks.forEach((b, bi) => {
+      console.log(`    Block ${bi}: ${b.blockNumber} weeks, ${b.weeks.length} weeks total, ${b.weeks.reduce((s: number, w: any) => s + w.sessions.length, 0)} sessions, ${b.weeks.reduce((s: number, w: any) => s + w.sessions.reduce((x: number, sess: any) => x + sess.intervals.length, 0), 0)} intervals`);
+      b.weeks.forEach((w, wi) => {
+        console.log(`      Week ${wi}: ${w.weekNumber} (${w.weekType}), ${w.sessions.length} sessions`);
+      });
+    });
+    
     console.log('🎉 [PLAN API] PLAN GENERATION COMPLETE - Returning success response');
 
     return NextResponse.json({
