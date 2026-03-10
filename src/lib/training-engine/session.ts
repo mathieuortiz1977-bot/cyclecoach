@@ -354,8 +354,28 @@ export class SessionBuilder {
     const mainSets = this.protocolLib.getProtocol(protocol);
     const cooldown = [this.factory.createCooldownBlock(cooldownDuration)];
 
-    // Calculate totals
-    const allBlocks = [...warmup, ...mainSets.flatMap((s) => s.blocks.flatMap((b) => [b])), ...cooldown];
+    // Calculate totals - EXPAND REPETITIONS PROPERLY!
+    // Bug fix: Must account for set.repetitions, not just blocks
+    const expandedMainBlocks: IntervalBlock[] = [];
+    mainSets.forEach((set, setIdx) => {
+      // Expand each repetition
+      for (let rep = 0; rep < set.repetitions; rep++) {
+        expandedMainBlocks.push(...set.blocks);
+      }
+      // Add rest between sets (if defined and not last set)
+      if (set.restBetweenSets && setIdx < mainSets.length - 1) {
+        expandedMainBlocks.push({
+          name: "Rest",
+          durationSeconds: set.restBetweenSets,
+          targetPowerMin: 30,
+          targetPowerMax: 45,
+          zone: "Z1",
+          coachNote: "Rest between sets",
+        });
+      }
+    });
+
+    const allBlocks = [...warmup, ...expandedMainBlocks, ...cooldown];
     const totalDurationSeconds = allBlocks.reduce((sum, b) => sum + b.durationSeconds, 0);
     const blockAvgPowers = allBlocks.map((b) => b.avgPower || 0);
 
