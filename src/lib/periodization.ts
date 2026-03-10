@@ -1349,13 +1349,25 @@ function selectWorkoutTemplate(
   }
   
   // FALLBACK: If somehow no candidates, return first from pool
+  // BUG #8 FIX: Guard against empty MASTER_WORKOUTS
   if (candidates.length === 0) {
+    if (MASTER_WORKOUTS.length === 0) {
+      console.error('[selectWorkoutTemplate] CRITICAL: MASTER_WORKOUTS is empty! Database failed to load.');
+      throw new Error('Database failed to load - no workouts available');
+    }
     candidates = MASTER_WORKOUTS;
   }
   
   // STEP 6: Random selection from filtered candidates
   const randomIndex = Math.floor(Math.random() * candidates.length);
-  return candidates[randomIndex] || MASTER_WORKOUTS[0];
+  const selected = candidates[randomIndex];
+  
+  if (!selected) {
+    console.error('[selectWorkoutTemplate] ERROR: Selected undefined workout');
+    throw new Error('Workout selection returned undefined');
+  }
+  
+  return selected;
 }
 
 
@@ -1425,6 +1437,12 @@ function generateIndoorSession(
   }
 
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
+  
+  // BUG #10 FIX: Validate day is valid
+  if (dayIndex === -1) {
+    console.error(`[generateIndoorSession] CRITICAL: Invalid day '${day}' received`);
+    throw new Error(`Invalid day of week: ${day}`);
+  }
   
   let zone: string;
   let isMonday = dayIndex === 0;
@@ -1694,8 +1712,9 @@ function fixSessionDuration(
   }
   
   // Calculate base duration from intervals
-  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
-  const baseTemplateDuration = Math.round(totalSecs / 60);
+  // BUG #9 FIX: Handle null/undefined intervals (e.g., rest days)
+  const totalSecs = (session.intervals || []).reduce((s, i) => s + i.durationSecs, 0);
+  const baseTemplateDuration = Math.round(totalSecs / 60) || 0;
   
   // Use user's target as anchor if provided, otherwise use template duration
   const anchor = userTargetDuration || baseTemplateDuration || 60;
