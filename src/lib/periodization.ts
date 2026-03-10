@@ -34,6 +34,11 @@ export interface SessionDef {
   intervals: IntervalDef[];
   route?: RouteData;
   
+  // NEW: Periodization & Intensity Factors (Option B)
+  intensityFactor?: number; // IF as % (e.g., 0.85 = 85% FTP)
+  userTargetDuration?: number; // User's selected baseline duration (anchor point)
+  periodizationWeekType?: WeekType; // Which week type this is from
+  
   // NEW: Variety tracking fields
   structure?: WorkoutStructure;
   cadenceProfile?: CadenceProfile;
@@ -2306,46 +2311,202 @@ function generateIndoorSession(
  * Fix session duration by recalculating from intervals
  * If targetDurationWasApplied=true, skip week-type adjustments (target already respected)
  */
-function fixSessionDuration(session: SessionDef, weekType?: WeekType, targetDurationWasApplied: boolean = false): SessionDef {
-  if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
+// ─── PART 1: Smart Duration Scaling (Option B with 3-Part Strategy) ──────
+
+/**
+ * Calculate smart duration based on:
+ * 1. User's selected baseline (anchor)
+ * 2. Week type (BUILD, BUILD_PLUS, OVERREACH, RECOVERY)
+ * 3. Day of week (MON, WED, SAT = different roles)
+ * 
+ * Research: Issurin, Seiler, Coggan, Friel
+ * Key: Intensity varies MORE than duration; duration provides context
+ */
+function calculateSmartDuration(
+  userTargetDuration: number,  // User's selected duration (e.g., 60)
+  weekType: WeekType,
+  dayOfWeek: DayOfWeek,
+  baseTemplateDuration: number  // Template's base duration
+): number {
+  // Step 1: Week-type multiplier (how much to adjust from target)
+  let weekMultiplier = 1.0;
   
-  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
-  let durationMins = Math.round(totalSecs / 60);
-  
-  // If target duration was already applied, don't adjust further
-  if (targetDurationWasApplied) {
-    return { ...session, duration: durationMins };
+  switch (weekType) {
+    case "BUILD":
+      weekMultiplier = 1.0;      // Baseline (BUILD week = anchor)
+      break;
+    case "BUILD_PLUS":
+      weekMultiplier = 1.05;     // +5% duration (build up)
+      break;
+    case "OVERREACH":
+      weekMultiplier = 1.0;      // Same duration, peak intensity (not longer)
+      break;
+    case "RECOVERY":
+      weekMultiplier = 0.80;     // -20% duration (recovery)
+      break;
   }
   
-  // Adjust duration based on periodization phase (only if no target was applied)
-  if (weekType) {
-    switch (weekType) {
-      case "RECOVERY":
-        // Recovery weeks: shorter sessions (target 45-50 min)
-        if (durationMins > 50) {
-          durationMins = Math.round(durationMins * 0.85); // Reduce by 15%
-        }
-        break;
-      case "BUILD":
-        // Build weeks: standard duration (target 55-65 min)
-        // Keep as calculated
-        break;
-      case "BUILD_PLUS":
-        // Build+ weeks: longer sessions (target 65-75 min)
-        if (durationMins < 65) {
-          durationMins = Math.round(durationMins * 1.1); // Increase by 10%
-        }
-        break;
-      case "OVERREACH":
-        // Overreach weeks: longest sessions (target 75+ min)
-        if (durationMins < 75) {
-          durationMins = Math.round(durationMins * 1.25); // Increase by 25%
-        }
-        break;
+  // Step 2: Day-specific multiplier (some days are key sessions, some are supporting)
+  let dayMultiplier = 1.0;
+  
+  switch (dayOfWeek) {
+    case "MON":
+      // Monday: Key structured session (100%)
+      dayMultiplier = 1.0;
+      break;
+    case "TUE":
+      // Tuesday: Secondary session (-15%)
+      dayMultiplier = 0.85;
+      break;
+    case "WED":
+      // Wednesday: Support session (-25%)
+      dayMultiplier = 0.75;
+      break;
+    case "THU":
+      // Thursday: Recovery/optional (-30%)
+      dayMultiplier = 0.70;
+      break;
+    case "FRI":
+      // Friday: Easy/preparation (-20%)
+      dayMultiplier = 0.80;
+      break;
+    case "SAT":
+      // Saturday: Long ride or key session (+20-25% in BUILD weeks, same in OVERREACH)
+      if (weekType === "OVERREACH" || weekType === "RECOVERY") {
+        dayMultiplier = 1.0;     // Even on SAT, keep reasonable in peak
+      } else {
+        dayMultiplier = 1.25;    // Long rides in build phases
+      }
+      break;
+    case "SUN":
+      // Sunday: Optional/flex (-20%)
+      dayMultiplier = 0.80;
+      break;
+  }
+  
+  // Step 3: Calculate final duration
+  // Anchor to user's target, apply multipliers, but keep within reasonable bounds
+  let finalDuration = Math.round(userTargetDuration * weekMultiplier * dayMultiplier);
+  
+  // Safeguards: don't go too extreme
+  const minDuration = Math.max(20, userTargetDuration * 0.5);  // Never below 50% of target
+  const maxDuration = userTargetDuration * 1.5;                // Never above 150% of target
+  
+  finalDuration = Math.max(minDuration, Math.min(maxDuration, finalDuration));
+  
+  return finalDuration;
+}
+
+// ─── PART 2: Intensity Factor (IF) Scaling ──────────────────────────────
+
+/**
+ * Calculate Intensity Factor (IF) as % of FTP based on:
+ * 1. Week type (periodization phase)
+ * 2. Workout type (threshold vs. VO2max vs. easy)
+ * 
+ * Used for TSS calculation: TSS = (secs × NP × IF) / (FTP × 3600) × 100
+ */
+function calculateIntensityFactor(
+  weekType: WeekType,
+  workoutPurpose?: string  // "threshold", "vo2max", "easy", etc.
+): number {
+  // Base IF by workout type
+  let baseIF = 0.75;  // Default easy
+  
+  if (workoutPurpose) {
+    const purpose = workoutPurpose.toLowerCase();
+    if (purpose.includes("threshold") || purpose.includes("ftp") || purpose.includes("tempo")) {
+      baseIF = 0.95;  // ~95% FTP for threshold work
+    } else if (purpose.includes("vo2") || purpose.includes("vo2max") || purpose.includes("anaerobic")) {
+      baseIF = 1.08;  // ~108% FTP for VO2max work
+    } else if (purpose.includes("sprint") || purpose.includes("power")) {
+      baseIF = 1.10;  // ~110% FTP for sprint/power
+    } else if (purpose.includes("recovery") || purpose.includes("easy")) {
+      baseIF = 0.65;  // ~65% FTP for easy
     }
   }
   
-  return { ...session, duration: durationMins };
+  // Adjust IF by week type
+  switch (weekType) {
+    case "BUILD":
+      // Standard intensity
+      return baseIF;
+      
+    case "BUILD_PLUS":
+      // Slightly higher intensity (+5%)
+      return baseIF * 1.05;
+      
+    case "OVERREACH":
+      // PEAK intensity (+15-25% depending on type)
+      if (baseIF >= 1.0) {
+        // Hard sessions get very hard (supra-TH, supra-VO2max)
+        return Math.min(1.20, baseIF * 1.15);  // Cap at 120%
+      } else {
+        // Easy sessions stay easy
+        return 0.75;
+      }
+      
+    case "RECOVERY":
+      // Easy weeks: all intensity reduced (65% max)
+      return Math.min(0.70, baseIF * 0.75);
+  }
+  
+  return baseIF;
+}
+
+// ─── PART 3: Apply Smart Scaling to Session ──────────────────────────────
+
+/**
+ * Main function: Apply Option B scaling (duration + intensity) to a session
+ * 
+ * INPUT:
+ * - session: The generated session
+ * - weekType: Which week of the block (BUILD, BUILD_PLUS, OVERREACH, RECOVERY)
+ * - userTargetDuration: User's selected baseline duration (60 min, 45 min, 90 min, etc.)
+ * - targetDurationWasApplied: Was user target already baked in?
+ * 
+ * OUTPUT:
+ * - Modified session with smart duration AND intensity factor
+ */
+function fixSessionDuration(
+  session: SessionDef,
+  weekType?: WeekType,
+  targetDurationWasApplied: boolean = false,
+  userTargetDuration?: number
+): SessionDef {
+  if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
+  
+  // If no week type provided, return as-is
+  if (!weekType) {
+    return session;
+  }
+  
+  // Calculate base duration from intervals
+  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
+  const baseTemplateDuration = Math.round(totalSecs / 60);
+  
+  // Use user's target as anchor if provided, otherwise use template duration
+  const anchor = userTargetDuration || baseTemplateDuration || 60;
+  
+  // Calculate smart duration (Part 1)
+  const smartDuration = calculateSmartDuration(
+    anchor,
+    weekType,
+    session.dayOfWeek,
+    baseTemplateDuration
+  );
+  
+  // Calculate intensity factor (Part 2)
+  const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
+  
+  // Return session with both duration AND intensity applied
+  return {
+    ...session,
+    duration: smartDuration,
+    intensityFactor,                          // NEW: store IF
+    userTargetDuration: anchor,               // NEW: store original target
+    periodizationWeekType: weekType,          // NEW: store week type for reference
+  };
 }
 
 // ─── Full Plan Generator ─────────────────────────────────────────────
@@ -2422,7 +2583,7 @@ export function generatePlan(
       riderId,
       targetDurationMinutes
     )
-    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes)) // Don't adjust if target applied
+    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes)) // Apply smart scaling with user target
     .map(s => s.dayOfWeek === "MON" ? ftpTestSession : s); // Replace Monday with FTP test
     
     const firstBlock: BlockDef = {
@@ -2451,7 +2612,7 @@ export function generatePlan(
             previousWeekTemplates,
             riderId,
             targetDurationMinutes // PASS USER'S REQUESTED DURATION
-          ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes));
+          ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes)); // Apply Option B scaling
           
           return {
             weekNumber: weekNum,
@@ -2500,7 +2661,7 @@ export function generatePlan(
         previousWeekTemplates,  // Pass template tracking
         riderId,  // Pass rider ID for per-user variation
         targetDurationMinutes // PASS USER'S REQUESTED DURATION
-      ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes)); // Skip adjustments if target applied
+      ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes)); // Apply Option B scaling
       
       // Track templates for next week's variety (avoid same template week-to-week)
       sessions.forEach(s => {
