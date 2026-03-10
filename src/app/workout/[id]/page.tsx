@@ -22,6 +22,8 @@ export default function WorkoutPage() {
   const [showCompletion, setShowCompletion] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const { rider } = useRider();
+  const [plan, setPlan] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   // Extract training days and outdoor day from rider profile
   const trainingDays = useMemo(() => {
@@ -44,8 +46,71 @@ export default function WorkoutPage() {
     if (rider?.ftp) setFtp(rider.ftp);
   }, [rider?.ftp]);
 
-  const plan = useMemo(() => generatePlan(4, trainingDays, outdoorDay), [trainingDays, outdoorDay]);
-  const block = plan.blocks[blockIdx];
+  // Load PERSISTED plan from database (not regenerated!)
+  useEffect(() => {
+    const loadPlan = async () => {
+      try {
+        const response = await fetch("/api/plan", { cache: "no-store" });
+        const data = await response.json();
+        
+        if (data.plan) {
+          // Use persisted plan from DB
+          const dbPlan = {
+            blocks: data.plan.blocks.map((b: any) => ({
+              blockNumber: b.blockNumber,
+              type: b.type,
+              weeks: b.weeks.map((w: any) => ({
+                weekNumber: w.weekNumber,
+                weekType: w.weekType,
+                sessions: w.sessions.map((s: any) => ({
+                  dayOfWeek: s.dayOfWeek,
+                  sessionType: s.sessionType,
+                  duration: s.duration,
+                  title: s.title,
+                  description: s.description,
+                  purpose: s.purpose,
+                  intervals: s.intervals.map((i: any) => ({
+                    name: i.name,
+                    durationSecs: i.durationSecs,
+                    powerLow: i.powerLow,
+                    powerHigh: i.powerHigh,
+                    zone: i.zone,
+                    rpe: i.rpe,
+                    purpose: i.purpose,
+                    coachNote: i.coachNote,
+                  })),
+                })),
+              })),
+            })),
+          };
+          setPlan(dbPlan);
+        } else {
+          // Fallback: generate plan if DB is empty
+          const generatedPlan = generatePlan(4, trainingDays, outdoorDay);
+          setPlan(generatedPlan);
+        }
+      } catch (error) {
+        console.error("Failed to load plan:", error);
+        // Fallback: generate plan on error
+        const generatedPlan = generatePlan(4, trainingDays, outdoorDay);
+        setPlan(generatedPlan);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPlan();
+  }, []); // Load once on mount (not on trainingDays/outdoorDay change)
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto">
+        <p className="text-[var(--muted)]">Loading workout...</p>
+      </div>
+    );
+  }
+
+  const block = plan?.blocks[blockIdx];
   const week = block?.weeks[weekIdx];
   const session = week?.sessions[sessionIdx];
 
@@ -129,7 +194,7 @@ export default function WorkoutPage() {
       {/* Interval Detail List */}
       <div className="space-y-3">
         <h2 className="text-lg font-semibold">Interval Breakdown</h2>
-        {session.intervals.map((interval, idx) => {
+        {session.intervals.map((interval: any, idx: number) => {
           const color = getZoneColor(interval.zone);
           const wattsLow = Math.round(ftp * interval.powerLow / 100);
           const wattsHigh = Math.round(ftp * interval.powerHigh / 100);
