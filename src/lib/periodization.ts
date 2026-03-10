@@ -2,7 +2,9 @@
 import { getCoachNote, resetCommentaryIndex } from "./coach";
 import { getRouteForWeek, type RouteData } from "./routes";
 import { getZoneForPower } from "./zones";
-import { MASTER_WORKOUTS, COMPLETE_DATABASE } from "./sessions-data-classified";
+import { MASTER_WORKOUTS } from "./sessions-data-all";
+// Legacy imports still available for reference
+import { MASTER_WORKOUTS as CLASSIFIED } from "./sessions-data-classified";
 
 export type BlockType = "BASE" | "THRESHOLD" | "VO2MAX" | "RACE_SIM";
 export type WeekType = "BUILD" | "BUILD_PLUS" | "OVERREACH" | "RECOVERY";
