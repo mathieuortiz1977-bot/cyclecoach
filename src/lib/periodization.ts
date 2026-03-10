@@ -2367,11 +2367,32 @@ function generateIndoorSession(
   // ─── CONVERT TO SESSIONDEF FORMAT ──────────────────────────────────
   
   // Convert training session intervals back to SessionDef interval format
-  const allBlocks = [
-    ...finalSession.warmup,
-    ...finalSession.mainSets.flatMap(s => s.blocks),
-    ...finalSession.cooldown,
-  ];
+  // CRITICAL: Expand repetitions! Tabata(8 reps × 2 blocks) = 16 intervals, not 2!
+  const expandedBlocks: IntervalBlock[] = [];
+  
+  expandedBlocks.push(...finalSession.warmup);
+  
+  // Expand each IntervalSet by its repetitions count
+  finalSession.mainSets.forEach((set, setIdx) => {
+    for (let rep = 0; rep < set.repetitions; rep++) {
+      expandedBlocks.push(...set.blocks);
+    }
+    // Add rest between sets (if defined and not last set)
+    if (set.restBetweenSets && setIdx < finalSession.mainSets.length - 1) {
+      expandedBlocks.push({
+        name: "Rest",
+        durationSeconds: set.restBetweenSets,
+        targetPowerMin: 30,
+        targetPowerMax: 45,
+        zone: "Z1",
+        coachNote: "Easy recovery between sets",
+      });
+    }
+  });
+  
+  expandedBlocks.push(...finalSession.cooldown);
+  
+  const allBlocks = expandedBlocks;
   
   const intervals: IntervalDef[] = allBlocks.map(block => ({
     name: block.name,
