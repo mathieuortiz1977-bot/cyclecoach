@@ -28,22 +28,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W002 – Long Endurance Ride
-  {
-    id: 'w002',
-    title: 'Long Endurance Ride',
-    category: 'BASE',
-    description: 'Extended aerobic development',
-    purpose: 'Extended aerobic development',
-    zone: 'Z1-Z2',
-    duration: 150,
-    difficultyScore: 9,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Extended aerobic development' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 900, coachNote: 'Easy recovery spinning', purpose: 'Extended aerobic development' }
-    ],
-  },
-
   // W003 – Tempo Sprinkle Endurance
   {
     id: 'w003',
@@ -64,22 +48,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: '82% effort', zone: 'Z3', powerLow: 77, powerHigh: 87, durationSecs: 300, coachNote: '82% FTP', purpose: 'Aerobic base with tempo touches' },
       { name: '68% effort', zone: 'Z2', powerLow: 63, powerHigh: 73, durationSecs: 600, coachNote: '68% FTP', purpose: 'Aerobic base with tempo touches' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Aerobic base with tempo touches' }
-    ],
-  },
-
-  // W004 – Cadence Pyramids
-  {
-    id: 'w004',
-    title: 'Cadence Pyramids',
-    category: 'BASE',
-    description: 'Neuromuscular efficiency and pedaling economy',
-    purpose: 'Neuromuscular efficiency and pedaling economy',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 3,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Neuromuscular efficiency and pedaling economy' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Neuromuscular efficiency and pedaling economy' }
     ],
   },
 
@@ -282,23 +250,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W016 – FTP Long Block
-  {
-    id: 'w016',
-    title: 'FTP Long Block',
-    category: 'THRESHOLD',
-    description: 'Sustained threshold ability',
-    purpose: 'Sustained threshold ability',
-    zone: 'Z1-Z2',
-    duration: 80,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Sustained threshold ability' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustained threshold ability' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sustained threshold ability' }
-    ],
-  },
-
   // W017 – Criss-Cross Intervals
   {
     id: 'w017',
@@ -333,40 +284,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W019 – Classic 5 × 5
-  {
-    id: 'w019',
-    title: 'Classic 5 × 5',
-    category: 'BASE',
-    description: 'VO2max development',
-    purpose: 'VO2max development',
-    zone: 'Z1-Z2',
-    duration: 70,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'VO2max development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max development' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max development' }
-    ],
-  },
-
-  // W020 – Billat 30/30s
-  {
-    id: 'w020',
-    title: 'Billat 30/30s',
-    category: 'BASE',
-    description: 'VO2max with short, repeatable efforts',
-    purpose: 'VO2max with short, repeatable efforts',
-    zone: 'Z1-Z2',
-    duration: 60,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max with short, repeatable efforts' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max with short, repeatable efforts' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max with short, repeatable efforts' }
-    ],
-  },
-
   // W021 – 4 × 8 VO2max
   {
     id: 'w021',
@@ -381,113 +298,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Extended VO2max accumulation' },
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extended VO2max accumulation' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Extended VO2max accumulation' }
-    ],
-  },
-
-  // W022 – VO2max Pyramids
-  {
-    id: 'w022',
-    title: 'VO2max Pyramids',
-    category: 'VO2MAX',
-    description: 'Varied VO2max stimulus',
-    purpose: 'Varied VO2max stimulus',
-    zone: 'Z1-Z2',
-    duration: 70,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Varied VO2max stimulus' },
-      { name: '115% effort', zone: 'Z5', powerLow: 110, powerHigh: 120, durationSecs: 120, coachNote: '115% FTP', purpose: 'Varied VO2max stimulus' },
-      { name: '112% effort', zone: 'Z5', powerLow: 107, powerHigh: 117, durationSecs: 180, coachNote: '112% FTP', purpose: 'Varied VO2max stimulus' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Varied VO2max stimulus' }
-    ],
-  },
-
-  // W023 – 40/20 Repeats
-  {
-    id: 'w023',
-    title: '40/20 Repeats',
-    category: 'BASE',
-    description: 'VO2max with high-intensity short bursts',
-    purpose: 'VO2max with high-intensity short bursts',
-    zone: 'Z1-Z2',
-    duration: 60,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max with high-intensity short bursts' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max with high-intensity short bursts' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max with high-intensity short bursts' }
-    ],
-  },
-
-  // W024 – VO2max Over-Unders
-  {
-    id: 'w024',
-    title: 'VO2max Over-Unders',
-    category: 'VO2MAX',
-    description: 'VO2max with threshold base',
-    purpose: 'VO2max with threshold base',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max with threshold base' },
-      { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 120, coachNote: '95% FTP', purpose: 'VO2max with threshold base' },
-      { name: '115% effort', zone: 'Z5', powerLow: 110, powerHigh: 120, durationSecs: 60, coachNote: '115% FTP', purpose: 'VO2max with threshold base' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max with threshold base' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max with threshold base' }
-    ],
-  },
-
-  // W025 – Norwegian 4 × 4
-  {
-    id: 'w025',
-    title: 'Norwegian 4 × 4',
-    category: 'BASE',
-    description: 'VO2max capacity (research-validated protocol)',
-    purpose: 'VO2max capacity (research-validated protocol)',
-    zone: 'Z1-Z2',
-    duration: 55,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max capacity (research-validated protocol)' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max capacity (research-validated protocol)' }
-    ],
-  },
-
-  // W026 – Descending VO2max
-  {
-    id: 'w026',
-    title: 'Descending VO2max',
-    category: 'VO2MAX',
-    description: 'Fatigue-resistant VO2max capacity',
-    purpose: 'Fatigue-resistant VO2max capacity',
-    zone: 'Z1-Z2',
-    duration: 65,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 360, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: '120% effort', zone: 'Z6', powerLow: 115, powerHigh: 125, durationSecs: 120, coachNote: '120% FTP', purpose: 'Fatigue-resistant VO2max capacity' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Fatigue-resistant VO2max capacity' }
-    ],
-  },
-
-  // W027 – Tabata Protocol
-  {
-    id: 'w027',
-    title: 'Tabata Protocol',
-    category: 'BASE',
-    description: 'Anaerobic capacity, VO2max ceiling',
-    purpose: 'Anaerobic capacity, VO2max ceiling',
-    zone: 'Z1-Z2',
-    duration: 50,
-    difficultyScore: 3,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 900, coachNote: 'Easy spin, build gradually', purpose: 'Anaerobic capacity, VO2max ceiling' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Anaerobic capacity, VO2max ceiling' }
     ],
   },
 
@@ -524,46 +334,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Anaerobic capacity, race breakaway power' },
       { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 900, coachNote: '65% FTP', purpose: 'Anaerobic capacity, race breakaway power' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Anaerobic capacity, race breakaway power' }
-    ],
-  },
-
-  // W030 – Microbursts
-  {
-    id: 'w030',
-    title: 'Microbursts',
-    category: 'BASE',
-    description: 'Anaerobic power with minimal rest, simulate racing',
-    purpose: 'Anaerobic power with minimal rest, simulate racing',
-    zone: 'Z1-Z2',
-    duration: 55,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Anaerobic power with minimal rest, simulate racing' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Anaerobic power with minimal rest, simulate racing' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Anaerobic power with minimal rest, simulate racing' }
-    ],
-  },
-
-  // W031 – Anaerobic Ladders
-  {
-    id: 'w031',
-    title: 'Anaerobic Ladders',
-    category: 'ANAEROBIC',
-    description: 'Wide-spectrum anaerobic development',
-    purpose: 'Wide-spectrum anaerobic development',
-    zone: 'Z1-Z2',
-    duration: 65,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 60, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 120, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 180, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 120, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Wide-spectrum anaerobic development' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Wide-spectrum anaerobic development' }
     ],
   },
 
@@ -652,23 +422,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W037 – Crit Simulation
-  {
-    id: 'w037',
-    title: 'Crit Simulation',
-    category: 'BASE',
-    description: 'Simulate criterium race demands',
-    purpose: 'Simulate criterium race demands',
-    zone: 'Z1-Z2',
-    duration: 60,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Simulate criterium race demands' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 600, coachNote: '65% FTP', purpose: 'Simulate criterium race demands' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Simulate criterium race demands' }
-    ],
-  },
-
   // W038 – Race Breakaway Simulation
   {
     id: 'w038',
@@ -686,40 +439,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: '95% effort', zone: 'Z4', powerLow: 90, powerHigh: 100, durationSecs: 900, coachNote: '95% FTP', purpose: 'Sustain above-threshold after a hard effort' },
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Sustain above-threshold after a hard effort' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Sustain above-threshold after a hard effort' }
-    ],
-  },
-
-  // W039 – Group Ride Simulation
-  {
-    id: 'w039',
-    title: 'Group Ride Simulation',
-    category: 'BASE',
-    description: 'Manage variable power surges',
-    purpose: 'Manage variable power surges',
-    zone: 'Z1-Z2',
-    duration: 80,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Manage variable power surges' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 600, coachNote: '65% FTP', purpose: 'Manage variable power surges' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Manage variable power surges' }
-    ],
-  },
-
-  // W040 – Climbing Repeats
-  {
-    id: 'w040',
-    title: 'Climbing Repeats',
-    category: 'BASE',
-    description: 'Climbing power and pacing',
-    purpose: 'Climbing power and pacing',
-    zone: 'Z1-Z2',
-    duration: 80,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Climbing power and pacing' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Climbing power and pacing' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Climbing power and pacing' }
     ],
   },
 
@@ -927,23 +646,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W052 – Torque Intervals
-  {
-    id: 'w052',
-    title: 'Torque Intervals',
-    category: 'BASE',
-    description: 'Max force per pedal stroke, climbing strength',
-    purpose: 'Max force per pedal stroke, climbing strength',
-    zone: 'Z1-Z2',
-    duration: 70,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Max force per pedal stroke, climbing strength' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Max force per pedal stroke, climbing strength' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Max force per pedal stroke, climbing strength' }
-    ],
-  },
-
   // W053 – Ronnestad Intervals
   {
     id: 'w053',
@@ -1045,23 +747,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W059 – Rønnestad 30/15s
-  {
-    id: 'w059',
-    title: 'Rønnestad 30/15s',
-    category: 'BASE',
-    description: 'Superior VO2max stimulus via short intervals',
-    purpose: 'Superior VO2max stimulus via short intervals',
-    zone: 'Z1-Z2',
-    duration: 65,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Superior VO2max stimulus via short intervals' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Superior VO2max stimulus via short intervals' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Superior VO2max stimulus via short intervals' }
-    ],
-  },
-
   // W060 – Rønnestad Fast-Start 5 × 5
   {
     id: 'w060',
@@ -1099,23 +784,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: 'Rep 6', zone: 'Z4', powerLow: 77, powerHigh: 95, durationSecs: 300, coachNote: '95% FTP effort', purpose: 'VO2max via variable-intensity within each interval' },
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max via variable-intensity within each interval' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max via variable-intensity within each interval' }
-    ],
-  },
-
-  // W062 – Billat 30/30s (Extended)
-  {
-    id: 'w062',
-    title: 'Billat 30/30s (Extended)',
-    category: 'BASE',
-    description: 'Maximal VO2max accumulation, research-optimized dose',
-    purpose: 'Maximal VO2max accumulation, research-optimized dose',
-    zone: 'Z1-Z2',
-    duration: 65,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximal VO2max accumulation, research-optimized dose' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximal VO2max accumulation, research-optimized dose' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximal VO2max accumulation, research-optimized dose' }
     ],
   },
 
@@ -1168,23 +836,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'VO2max + anaerobic power, MTB race simulation' },
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'VO2max + anaerobic power, MTB race simulation' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'VO2max + anaerobic power, MTB race simulation' }
-    ],
-  },
-
-  // W066 – Diabolical Criss-Cross
-  {
-    id: 'w066',
-    title: 'Diabolical Criss-Cross',
-    category: 'BASE',
-    description: 'Extreme lactate tolerance, criterium/gravel racing',
-    purpose: 'Extreme lactate tolerance, criterium/gravel racing',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Extreme lactate tolerance, criterium/gravel racing' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 480, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Extreme lactate tolerance, criterium/gravel racing' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Extreme lactate tolerance, criterium/gravel racing' }
     ],
   },
 
@@ -1579,41 +1230,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W087 – Spin-Ups
-  {
-    id: 'w087',
-    title: 'Spin-Ups',
-    category: 'BASE',
-    description: 'Maximum cadence development, neuromuscular speed',
-    purpose: 'Maximum cadence development, neuromuscular speed',
-    zone: 'Z1-Z2',
-    duration: 50,
-    difficultyScore: 1,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximum cadence development, neuromuscular speed' },
-      { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 600, coachNote: '65% FTP', purpose: 'Maximum cadence development, neuromuscular speed' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximum cadence development, neuromuscular speed' }
-    ],
-  },
-
-  // W088 – Cadence Contrast Intervals
-  {
-    id: 'w088',
-    title: 'Cadence Contrast Intervals',
-    category: 'BASE',
-    description: 'Muscle recruitment across cadence spectrum',
-    purpose: 'Muscle recruitment across cadence spectrum',
-    zone: 'Z1-Z2',
-    duration: 65,
-    difficultyScore: 3,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Muscle recruitment across cadence spectrum' },
-      { name: '85% effort', zone: 'Z3', powerLow: 80, powerHigh: 90, durationSecs: 480, coachNote: '85% FTP', purpose: 'Muscle recruitment across cadence spectrum' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 240, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Muscle recruitment across cadence spectrum' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Muscle recruitment across cadence spectrum' }
-    ],
-  },
-
   // W089 – Isolated Leg Training (ILT) + Sweet Spot
   {
     id: 'w089',
@@ -1630,23 +1246,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: '90% effort', zone: 'Z4', powerLow: 85, powerHigh: 95, durationSecs: 720, coachNote: '90% FTP', purpose: 'Pedaling efficiency before sweet spot work' },
       { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Pedaling efficiency before sweet spot work' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy recovery spinning', purpose: 'Pedaling efficiency before sweet spot work' }
-    ],
-  },
-
-  // W090 – Block Day 1: Threshold Focus
-  {
-    id: 'w090',
-    title: 'Block Day 1: Threshold Focus',
-    category: 'BASE',
-    description: 'First session of a 2–3 day training block',
-    purpose: 'First session of a 2–3 day training block',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'First session of a 2–3 day training block' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 360, coachNote: 'Easy spinning, prepare for next effort', purpose: 'First session of a 2–3 day training block' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'First session of a 2–3 day training block' }
     ],
   },
 
@@ -1812,57 +1411,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
     ],
   },
 
-  // W100 – Lindsay 80% MAP Protocol
-  {
-    id: 'w100',
-    title: 'Lindsay 80% MAP Protocol',
-    category: 'BASE',
-    description: 'Race-specific threshold improvement for trained cyclists',
-    purpose: 'Race-specific threshold improvement for trained cyclists',
-    zone: 'Z1-Z2',
-    duration: 80,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Race-specific threshold improvement for trained cyclists' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Race-specific threshold improvement for trained cyclists' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Race-specific threshold improvement for trained cyclists' }
-    ],
-  },
-
-  // W101 – Stepto Optimal Duration Protocol
-  {
-    id: 'w101',
-    title: 'Stepto Optimal Duration Protocol',
-    category: 'BASE',
-    description: 'Maximum TT performance improvement (research-optimized)',
-    purpose: 'Maximum TT performance improvement (research-optimized)',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximum TT performance improvement (research-optimized)' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 360, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximum TT performance improvement (research-optimized)' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximum TT performance improvement (research-optimized)' }
-    ],
-  },
-
-  // W102 – Rønnestad 30s MAP with 2:1 Ratio
-  {
-    id: 'w102',
-    title: 'Rønnestad 30s MAP with 2:1 Ratio',
-    category: 'BASE',
-    description: 'Maximize time ≥90% VO2max using fixed 30s intervals at MAP',
-    purpose: 'Maximize time ≥90% VO2max using fixed 30s intervals at MAP',
-    zone: 'Z1-Z2',
-    duration: 60,
-    difficultyScore: 5,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximize time ≥90% VO2max using fixed 30s intervals at MAP' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 300, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Maximize time ≥90% VO2max using fixed 30s intervals at MAP' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximize time ≥90% VO2max using fixed 30s intervals at MAP' }
-    ],
-  },
-
   // W103 – High Work:Rest Ratio (5:1)
   {
     id: 'w103',
@@ -1902,23 +1450,6 @@ export const RESEARCH_WORKOUTS: WorkoutTemplate[] = [
       { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Maximum power output with full recovery' },
       { name: '65% effort', zone: 'Z2', powerLow: 60, powerHigh: 70, durationSecs: 600, coachNote: '65% FTP', purpose: 'Maximum power output with full recovery' },
       { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Maximum power output with full recovery' }
-    ],
-  },
-
-  // W105 – Self-Paced 4 × 8 with 2:1 Ratio
-  {
-    id: 'w105',
-    title: 'Self-Paced 4 × 8 with 2:1 Ratio',
-    category: 'BASE',
-    description: 'Optimized self-paced VO2max accumulation',
-    purpose: 'Optimized self-paced VO2max accumulation',
-    zone: 'Z1-Z2',
-    duration: 75,
-    difficultyScore: 7,
-    intervals: () => [
-      { name: 'Warm-up', zone: 'Z1-Z2', powerLow: 40, powerHigh: 65, durationSecs: 600, coachNote: 'Easy spin, build gradually', purpose: 'Optimized self-paced VO2max accumulation' },
-      { name: 'Rest', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 480, coachNote: 'Easy spinning, prepare for next effort', purpose: 'Optimized self-paced VO2max accumulation' },
-      { name: 'Cool-down', zone: 'Z1', powerLow: 40, powerHigh: 55, durationSecs: 600, coachNote: 'Easy recovery spinning', purpose: 'Optimized self-paced VO2max accumulation' }
     ],
   },
 

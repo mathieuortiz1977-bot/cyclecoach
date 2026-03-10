@@ -1,0 +1,771 @@
+{
+  "total_workouts": 105,
+  "duplicates_found": 85,
+  "duplicates": [
+    {
+      "id1": "w001",
+      "id2": "w002",
+      "similarity": 1.0,
+      "title1": "Steady State Endurance",
+      "title2": "Long Endurance Ride",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w001",
+      "id2": "w004",
+      "similarity": 1.0,
+      "title1": "Steady State Endurance",
+      "title2": "Cadence Pyramids",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w001",
+      "id2": "w025",
+      "similarity": 1.0,
+      "title1": "Steady State Endurance",
+      "title2": "Norwegian 4 \u00d7 4",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w002",
+      "id2": "w004",
+      "similarity": 1.0,
+      "title1": "Long Endurance Ride",
+      "title2": "Cadence Pyramids",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w002",
+      "id2": "w025",
+      "similarity": 1.0,
+      "title1": "Long Endurance Ride",
+      "title2": "Norwegian 4 \u00d7 4",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w004",
+      "id2": "w025",
+      "similarity": 1.0,
+      "title1": "Cadence Pyramids",
+      "title2": "Norwegian 4 \u00d7 4",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w010",
+      "id2": "w016",
+      "similarity": 1.0,
+      "title1": "Extended Sweet Spot",
+      "title2": "FTP Long Block",
+      "category": "THRESHOLD",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w020",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Billat 30/30s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w023",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "40/20 Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w030",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Microbursts",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w040",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Climbing Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w052",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Torque Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w014",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Threshold Steps",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w017",
+      "id2": "w018",
+      "similarity": 1.0,
+      "title1": "Criss-Cross Intervals",
+      "title2": "Threshold Ramp",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w019",
+      "id2": "w036",
+      "similarity": 1.0,
+      "title1": "Classic 5 \u00d7 5",
+      "title2": "Explosive Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w019",
+      "id2": "w055",
+      "similarity": 1.0,
+      "title1": "Classic 5 \u00d7 5",
+      "title2": "Miracle Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w019",
+      "id2": "w060",
+      "similarity": 1.0,
+      "title1": "Classic 5 \u00d7 5",
+      "title2": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w019",
+      "id2": "w098",
+      "similarity": 1.0,
+      "title1": "Classic 5 \u00d7 5",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w023",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "40/20 Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w030",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "Microbursts",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w040",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "Climbing Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w052",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "Torque Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w020",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w030",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "Microbursts",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w040",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "Climbing Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w052",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "Torque Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w023",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "40/20 Repeats",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w040",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "Climbing Repeats",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w052",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "Torque Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w030",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Microbursts",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w034",
+      "id2": "w099",
+      "similarity": 1.0,
+      "title1": "Standing Start Sprints",
+      "title2": "Laursen Supramaximal Sprint Protocol",
+      "category": "SPRINT",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w036",
+      "id2": "w055",
+      "similarity": 1.0,
+      "title1": "Explosive Repeats",
+      "title2": "Miracle Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w036",
+      "id2": "w060",
+      "similarity": 1.0,
+      "title1": "Explosive Repeats",
+      "title2": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w036",
+      "id2": "w098",
+      "similarity": 1.0,
+      "title1": "Explosive Repeats",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w037",
+      "id2": "w039",
+      "similarity": 1.0,
+      "title1": "Crit Simulation",
+      "title2": "Group Ride Simulation",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w037",
+      "id2": "w087",
+      "similarity": 1.0,
+      "title1": "Crit Simulation",
+      "title2": "Spin-Ups",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w039",
+      "id2": "w087",
+      "similarity": 1.0,
+      "title1": "Group Ride Simulation",
+      "title2": "Spin-Ups",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w040",
+      "id2": "w052",
+      "similarity": 1.0,
+      "title1": "Climbing Repeats",
+      "title2": "Torque Intervals",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w040",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "Climbing Repeats",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w040",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "Climbing Repeats",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w040",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Climbing Repeats",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w040",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Climbing Repeats",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w052",
+      "id2": "w059",
+      "similarity": 1.0,
+      "title1": "Torque Intervals",
+      "title2": "R\u00f8nnestad 30/15s",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w052",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "Torque Intervals",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w052",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Torque Intervals",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w052",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Torque Intervals",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w055",
+      "id2": "w060",
+      "similarity": 1.0,
+      "title1": "Miracle Intervals",
+      "title2": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w055",
+      "id2": "w098",
+      "similarity": 1.0,
+      "title1": "Miracle Intervals",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w059",
+      "id2": "w062",
+      "similarity": 1.0,
+      "title1": "R\u00f8nnestad 30/15s",
+      "title2": "Billat 30/30s (Extended)",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w059",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "R\u00f8nnestad 30/15s",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w059",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "R\u00f8nnestad 30/15s",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w060",
+      "id2": "w098",
+      "similarity": 1.0,
+      "title1": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w062",
+      "id2": "w100",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s (Extended)",
+      "title2": "Lindsay 80% MAP Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w062",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Billat 30/30s (Extended)",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w066",
+      "id2": "w105",
+      "similarity": 1.0,
+      "title1": "Diabolical Criss-Cross",
+      "title2": "Self-Paced 4 \u00d7 8 with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w090",
+      "id2": "w101",
+      "similarity": 1.0,
+      "title1": "Block Day 1: Threshold Focus",
+      "title2": "Stepto Optimal Duration Protocol",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w100",
+      "id2": "w102",
+      "similarity": 1.0,
+      "title1": "Lindsay 80% MAP Protocol",
+      "title2": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
+      "category": "BASE",
+      "recommendation": "REMOVE"
+    },
+    {
+      "id1": "w013",
+      "id2": "w037",
+      "similarity": 0.86,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Crit Simulation",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w039",
+      "similarity": 0.86,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Group Ride Simulation",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w087",
+      "similarity": 0.86,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Spin-Ups",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w088",
+      "id2": "w097",
+      "similarity": 0.86,
+      "title1": "Cadence Contrast Intervals",
+      "title2": "Zwift Race Finish Kicker",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w019",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Classic 5 \u00d7 5",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w036",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Explosive Repeats",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w055",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Miracle Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w060",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w073",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w013",
+      "id2": "w098",
+      "similarity": 0.83,
+      "title1": "Classic 2 \u00d7 20",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w019",
+      "id2": "w073",
+      "similarity": 0.83,
+      "title1": "Classic 5 \u00d7 5",
+      "title2": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w021",
+      "id2": "w064",
+      "similarity": 0.83,
+      "title1": "4 \u00d7 8 VO2max",
+      "title2": "Hard-Start Decreasing VO2max",
+      "category": "VO2MAX",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w036",
+      "id2": "w073",
+      "similarity": 0.83,
+      "title1": "Explosive Repeats",
+      "title2": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w055",
+      "id2": "w073",
+      "similarity": 0.83,
+      "title1": "Miracle Intervals",
+      "title2": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w060",
+      "id2": "w073",
+      "similarity": 0.83,
+      "title1": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "title2": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    },
+    {
+      "id1": "w073",
+      "id2": "w098",
+      "similarity": 0.83,
+      "title1": "30-Minute Speed Intervals",
+      "title2": "Laursen Pmax/Tmax Protocol",
+      "category": "BASE",
+      "recommendation": "REVIEW"
+    }
+  ]
+}
