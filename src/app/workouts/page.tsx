@@ -24,7 +24,8 @@ export default function WorkoutsPage() {
   const zones = useMemo(() => {
     const z = new Set<string>();
     MASTER_WORKOUTS.forEach(w => {
-      const intervals = w.intervals();
+      // Handle both array and function intervals
+      const intervals = typeof w.intervals === 'function' ? w.intervals() : w.intervals;
       intervals.forEach(i => z.add(i.zone));
     });
     return Array.from(z).sort();
@@ -45,7 +46,8 @@ export default function WorkoutsPage() {
 
       // Zone filter
       if (selectedZone) {
-        const intervals = w.intervals();
+        // Handle both array and function intervals
+        const intervals = typeof w.intervals === 'function' ? w.intervals() : w.intervals;
         if (!intervals.some(i => i.zone === selectedZone)) {
           return false;
         }
