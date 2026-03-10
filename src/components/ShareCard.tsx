@@ -22,19 +22,21 @@ export function ShareCard({ session, ftp, rpe = 7, compliance = 88, onClose }: P
   const totalSecs = intervalsArray.reduce((s, i) => s + i.durationSecs, 0);
   const date = new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
 
+  const actualDuration = Math.round((session.intervals || []).reduce((sum: number, i: any) => sum + i.durationSecs, 0) / 60);
+
   const handleShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
           title: `CycleCoach — ${session.title}`,
-          text: `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`,
+          text: `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${actualDuration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`,
         });
       } catch {
         // User cancelled
       }
     } else {
       // Fallback: copy text
-      const text = `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`;
+      const text = `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${actualDuration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`;
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -105,7 +107,7 @@ export function ShareCard({ session, ftp, rpe = 7, compliance = 88, onClose }: P
             {/* Stats */}
             <div className="grid grid-cols-4 gap-2 p-5">
               <div className="text-center">
-                <p className="text-xl font-bold text-white">{session.duration}</p>
+                <p className="text-xl font-bold text-white">{actualDuration}</p>
                 <p className="text-[10px] text-[#6b7280]">minutes</p>
               </div>
               <div className="text-center">

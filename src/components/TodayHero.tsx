@@ -323,7 +323,7 @@ export function TodayHero({
             {/* Stats row */}
             <div className="flex flex-wrap gap-4 mb-5">
               <div>
-                <p className="text-2xl font-bold text-[var(--foreground)]">{session.duration}<span className="text-sm font-normal text-[var(--muted)]"> min</span></p>
+                <p className="text-2xl font-bold text-[var(--foreground)]">{Math.round((session.intervals || []).reduce((sum: number, i: any) => sum + i.durationSecs, 0) / 60)}<span className="text-sm font-normal text-[var(--muted)]"> min</span></p>
               </div>
               <div>
                 <p className="text-2xl font-bold" style={{ color: getZoneColor(peakZone) }}>{peakZone}</p>

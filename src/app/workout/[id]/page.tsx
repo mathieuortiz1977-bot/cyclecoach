@@ -144,7 +144,7 @@ export default function WorkoutPage() {
         </div>
         <p className="text-[var(--muted)]">{session.description}</p>
         <div className="flex gap-4 mt-2 text-sm text-[var(--muted)]">
-          <span>⏱ {session.duration} min</span>
+          <span>⏱ {Math.round((session.intervals || []).reduce((sum: number, i: any) => sum + i.durationSecs, 0) / 60)} min</span>
           <span>{session.intervals.length} intervals</span>
           {session.route && (
             <>

@@ -180,7 +180,7 @@ export function SessionCard({
             </div>
 
             <div className="flex justify-between text-xs text-[var(--muted)]">
-              <span>{session.duration} min</span>
+              <span>{Math.round((session.intervals || []).reduce((sum: number, i: any) => sum + i.durationSecs, 0) / 60)} min</span>
               {session.route && <span>{session.route.distance}km / {session.route.elevation}m ↑</span>}
             </div>
 
