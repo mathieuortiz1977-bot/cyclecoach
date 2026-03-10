@@ -351,31 +351,7 @@ export const RESEARCH_WORKOUTS_V2: WorkoutTemplate[] = [
   },
 
   // W119 – Spencer (TrainerRoad Style)
-  {
-    id: 'w119',
-    title: 'Spencer (TrainerRoad Style)',
-    description: 'Sustained 3-minute VO2max intervals',
-    category: 'VO2MAX',
-    duration: 60,
-    zone: 'Z5',
-    purpose: 'Sustained 3-minute VO2max intervals',
-    intervals: () => [
-      { name: 'Warm-up', durationSecs: 600, powerLow: 50, powerHigh: 70, zone: 'Z2', rpe: 3, purpose: 'Build', coachNote: '10 min easy' },
-      { name: 'VO2 Rep 1', durationSecs: 180, powerLow: 120, powerHigh: 120, zone: 'Z5', rpe: 9, purpose: '120%', coachNote: '3 min hard' },
-      { name: 'Rest', durationSecs: 180, powerLow: 40, powerHigh: 40, zone: 'Z1', rpe: 1, purpose: 'Recovery', coachNote: '3 min rest' },
-      { name: 'VO2 Rep 2', durationSecs: 180, powerLow: 120, powerHigh: 120, zone: 'Z5', rpe: 9, purpose: '120%', coachNote: '3 min hard' },
-      { name: 'Rest', durationSecs: 180, powerLow: 40, powerHigh: 40, zone: 'Z1', rpe: 1, purpose: 'Recovery', coachNote: '3 min rest' },
-      { name: 'VO2 Rep 3', durationSecs: 180, powerLow: 120, powerHigh: 120, zone: 'Z5', rpe: 9, purpose: '120%', coachNote: '3 min hard' },
-      // ... 5 total
-      { name: 'Cool-down', durationSecs: 600, powerLow: 50, powerHigh: 50, zone: 'Z1', rpe: 2, purpose: 'Easy recovery', coachNote: '10 min cool' },
-    ],
-    protocol: 'TrainerRoad',
-    researcher: 'TrainerRoad',
-    structure: 'repeats',
-    difficultyScore: 8,
-  },
-
-  // W120 – Kaiser (TrainerRoad Style)
+    // W120 – Kaiser (TrainerRoad Style)
   {
     id: 'w120',
     title: 'Kaiser (TrainerRoad Style)',
@@ -558,28 +534,7 @@ export const RESEARCH_WORKOUTS_V2: WorkoutTemplate[] = [
     difficultyScore: 9,
   },
 
-  {
-    id: 'w124b',
-    title: 'VO2 Progression Week 2',
-    description: '5x4 min at 110% FTP',
-    category: 'VO2MAX',
-    duration: 70,
-    zone: 'Z5',
-    purpose: 'Week 2: increased duration',
-    intervals: () => [
-      { name: 'Warm-up', durationSecs: 600, powerLow: 50, powerHigh: 70, zone: 'Z2', rpe: 3, purpose: 'Build', coachNote: '10 min' },
-      { name: 'VO2 1', durationSecs: 240, powerLow: 110, powerHigh: 110, zone: 'Z5', rpe: 9, purpose: 'VO2 effort', coachNote: '4 min' },
-      { name: 'Rest', durationSecs: 240, powerLow: 55, powerHigh: 55, zone: 'Z1', rpe: 1, purpose: 'Recovery', coachNote: '4 min' },
-      // ... 5 total
-      { name: 'Cool-down', durationSecs: 600, powerLow: 50, powerHigh: 50, zone: 'Z1', rpe: 2, purpose: 'Easy recovery', coachNote: '10 min' },
-    ],
-    protocol: '4-Week Ramp',
-    researcher: 'Carlos',
-    structure: 'repeats',
-    difficultyScore: 9,
-  },
-
-  {
+    {
     id: 'w124c',
     title: 'VO2 Progression Week 3',
     description: '4x5 min at 112% FTP',
