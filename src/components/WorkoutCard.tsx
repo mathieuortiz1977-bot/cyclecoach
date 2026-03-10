@@ -10,9 +10,20 @@ interface WorkoutCardProps {
 
 export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
   const intervals = workout.intervals();
-  const totalDurationMins = Math.round(
-    intervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
-  );
+  const DISPLAY_DURATION_MINS = 60; // Standard 60-minute display duration
+  
+  // Calculate total duration: handle both durationSecs and durationPercent
+  const totalDurationSecs = intervals.reduce((sum, i: any) => {
+    if (i.durationSecs) {
+      return sum + i.durationSecs; // Direct seconds value
+    } else if (i.durationPercent) {
+      // Convert percentage to seconds (based on 60-min display duration)
+      return sum + (i.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
+    }
+    return sum;
+  }, 0);
+  
+  const totalDurationMins = Math.round(totalDurationSecs / 60);
 
   // Calculate max power for chart scaling
   const maxPower = Math.max(...intervals.map(i => i.powerHigh)) || 100;
@@ -52,10 +63,18 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
       <div className="space-y-2">
         <p className="text-xs font-semibold text-[var(--muted)]">Interval Breakdown</p>
         <div className="flex gap-1 h-16 bg-[var(--surface)] rounded p-2">
-          {intervals.map((interval, idx) => {
+          {intervals.map((interval: any, idx) => {
             const color = getZoneColor(interval.zone);
             const heightPercent = (interval.powerHigh / maxPower) * 100;
-            const widthPercent = (interval.durationSecs / (totalDurationMins * 60)) * 100;
+            
+            // Calculate width: handle both durationSecs and durationPercent
+            let durationSecs = 0;
+            if (interval.durationSecs) {
+              durationSecs = interval.durationSecs;
+            } else if (interval.durationPercent) {
+              durationSecs = (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
+            }
+            const widthPercent = (durationSecs / (totalDurationMins * 60)) * 100;
 
             return (
               <div
@@ -68,7 +87,7 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
                   minWidth: '4px',
                   alignSelf: 'flex-end',
                 }}
-                title={`${interval.name}: ${Math.round(interval.durationSecs / 60)}m @ ${interval.powerLow}-${interval.powerHigh}% FTP`}
+                title={`${interval.name}: ${Math.round(durationSecs / 60)}m @ ${interval.powerLow}-${interval.powerHigh}% FTP`}
               />
             );
           })}
