@@ -1162,6 +1162,7 @@ function generateWeekSessions(
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   const sessions: SessionDef[] = [];
+  const usedThisWeekIds: string[] = []; // Track workouts used THIS WEEK for variety
 
   for (const day of allDays) {
     let session: SessionDef;
@@ -1186,8 +1187,14 @@ function generateWeekSessions(
         weekInBlock,
         previousTemplates,
         userSeed,
-        durationForDay // RESPECT USER'S REQUESTED DURATION (or Sunday's separate duration)
+        durationForDay, // RESPECT USER'S REQUESTED DURATION (or Sunday's separate duration)
+        usedThisWeekIds // Pass already-used workouts to avoid repeats THIS WEEK
       );
+      
+      // Track this workout's template ID for variety
+      if (session.templateId) {
+        usedThisWeekIds.push(session.templateId);
+      }
     }
     
     sessions.push(session);
@@ -1235,7 +1242,8 @@ function selectWorkoutTemplate(
   category: string,               // "BASE", "THRESHOLD", "VO2MAX", etc.
   weekType?: WeekType,            // BUILD, BUILD_PLUS, OVERREACH, RECOVERY
   previousTemplateId?: string,    // Avoid using this again
-  specialization?: string         // "Road", "MTB", "Gravel", "Track"
+  specialization?: string,        // "Road", "MTB", "Gravel", "Track"
+  usedThisWeekIds: string[] = [] // Exclude workouts already used THIS WEEK
 ): WorkoutTemplate {
   
   let candidates = MASTER_WORKOUTS;
@@ -1290,7 +1298,15 @@ function selectWorkoutTemplate(
     }
   }
   
-  // STEP 4: Exclude previous workout to avoid repetition
+  // STEP 4: Exclude workouts already used THIS WEEK (variety within week!)
+  if (usedThisWeekIds.length > 0) {
+    const weeklyUniqueOnly = candidates.filter(w => !usedThisWeekIds.includes(w.id));
+    if (weeklyUniqueOnly.length > 0) {
+      candidates = weeklyUniqueOnly;
+    }
+  }
+  
+  // STEP 5: Exclude previous workout from LAST WEEK to avoid repetition across weeks
   if (previousTemplateId) {
     const nonRepeatCandidates = candidates.filter(w => w.id !== previousTemplateId);
     if (nonRepeatCandidates.length > 0) {
@@ -1303,7 +1319,7 @@ function selectWorkoutTemplate(
     candidates = MASTER_WORKOUTS;
   }
   
-  // STEP 5: Random selection from filtered candidates
+  // STEP 6: Random selection from filtered candidates
   const randomIndex = Math.floor(Math.random() * candidates.length);
   return candidates[randomIndex] || MASTER_WORKOUTS[0];
 }
@@ -1365,7 +1381,8 @@ function generateIndoorSession(
   weekNum?: number,
   previousTemplates?: Partial<Record<DayOfWeek, WorkoutTemplate>>,
   userSeed?: string, // For per-user variation
-  targetDurationMinutes?: number // USER'S REQUESTED DURATION
+  targetDurationMinutes?: number, // USER'S REQUESTED DURATION
+  usedThisWeekIds: string[] = [] // Workouts already selected THIS WEEK
 ): SessionDef {
   const dayIndex = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].indexOf(day);
   
@@ -1412,9 +1429,9 @@ function generateIndoorSession(
     }
   }
   
-  // Select a template for this category/day, avoiding previous week's template
+  // Select a template for this category/day, avoiding previous week's template and THIS WEEK's already-used workouts
   const previousTemplate = previousTemplates?.[day];
-  const template = selectWorkoutTemplate(selectedZone, weekType, previousTemplate?.id);
+  const template = selectWorkoutTemplate(selectedZone, weekType, previousTemplate?.id, undefined, usedThisWeekIds);
   
   // Build intervals from template
   const intervals = template.intervals();
