@@ -56,7 +56,8 @@ export async function POST(request: NextRequest) {
     const numBlocks = body.blocks || 4;
     const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
     const targetDurationMinutes = body.targetDurationMinutes || undefined; // User's requested session duration
-    const targetSundayDurationMinutes = body.targetSundayDurationMinutes || undefined; // Sunday's separate duration
+    // CRITICAL FIX: Map both request body AND rider profile's sundayDuration
+    const targetSundayDurationMinutes = body.targetSundayDurationMinutes || (rider.sundayDuration as any) || undefined;
 
     // Get rider's training schedule  
     const trainingDays: DayOfWeek[] = rider.trainingDays ? 

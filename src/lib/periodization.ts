@@ -1624,6 +1624,20 @@ function fixSessionDuration(
     return session;
   }
   
+  // CRITICAL FIX: If target was already applied (user selection), DON'T apply scaling
+  if (targetDurationWasApplied && userTargetDuration) {
+    // User explicitly selected a duration - respect it exactly
+    // Only apply intensity factor, not duration scaling
+    const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
+    return {
+      ...session,
+      duration: userTargetDuration,            // Use user's target EXACTLY
+      intensityFactor,
+      userTargetDuration,
+      periodizationWeekType: weekType,
+    };
+  }
+  
   // Calculate base duration from intervals
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   const baseTemplateDuration = Math.round(totalSecs / 60);
@@ -1631,7 +1645,7 @@ function fixSessionDuration(
   // Use user's target as anchor if provided, otherwise use template duration
   const anchor = userTargetDuration || baseTemplateDuration || 60;
   
-  // Calculate smart duration (Part 1)
+  // Calculate smart duration (Part 1) - only if NOT explicitly applied
   const smartDuration = calculateSmartDuration(
     anchor,
     weekType,
