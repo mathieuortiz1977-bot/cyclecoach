@@ -110,12 +110,19 @@ export const api = {
     /**
      * Generate/regenerate training plan
      */
-    regenerate: (options?: { blocks?: number; confirmUpdate?: boolean }) =>
+    regenerate: (options?: { 
+      blocks?: number; 
+      confirmUpdate?: boolean;
+      targetDurationMinutes?: number;     // User's selected indoor duration
+      targetSundayDurationMinutes?: number; // User's selected Sunday duration
+    }) =>
       fetchApi("/api/plan", {
         method: "POST",
         body: JSON.stringify({ 
           blocks: options?.blocks || 4,
-          confirmUpdate: options?.confirmUpdate || false
+          confirmUpdate: options?.confirmUpdate || false,
+          targetDurationMinutes: options?.targetDurationMinutes,        // PASS TO API
+          targetSundayDurationMinutes: options?.targetSundayDurationMinutes, // PASS TO API
         }),
       }),
   },

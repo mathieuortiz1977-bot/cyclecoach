@@ -245,7 +245,11 @@ function SettingsPage() {
       }
 
       // Regenerate the training plan based on new schedule
-      let planResponse = await api.plan.regenerate();
+      // CRITICAL: Pass duration parameters so backend uses them (not undefined)
+      let planResponse = await api.plan.regenerate({
+        targetDurationMinutes: duration,
+        targetSundayDurationMinutes: sundayDuration,
+      });
       
       // HANDLE CONFIRMATION: If there are pending sessions, ask user to confirm
       if (planResponse.status === 409 && planResponse.error === "Pending sessions exist") {
