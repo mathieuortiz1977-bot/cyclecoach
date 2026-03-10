@@ -253,6 +253,7 @@ export async function POST(request: NextRequest) {
     console.log(`  - Action: Plan fully regenerated with new parameters`);
 
     return NextResponse.json({
+      success: true,
       plan,
       source: "generated",
       updateSummary: {
@@ -266,6 +267,7 @@ export async function POST(request: NextRequest) {
     console.error("Plan generation error:", errorMsg);
     console.error("Full error:", err);
     return NextResponse.json({ 
+      success: false,
       error: "Failed to generate plan",
       details: errorMsg 
     }, { status: 500 });
