@@ -40,7 +40,7 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
       <div className="flex gap-6 text-sm">
         <div>
           <p className="text-[var(--muted)]">Duration</p>
-          <p className="font-semibold text-[var(--accent)]">{totalDurationMins} min</p>
+          <p className="font-semibold text-[var(--accent)]">{DISPLAY_DURATION_MINS} min</p>
         </div>
         <div>
           <p className="text-[var(--muted)]">Intervals</p>
@@ -98,7 +98,7 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
         </div>
         <div className="flex justify-between text-xs text-[var(--muted)]">
           <span>0:00</span>
-          <span>{totalDurationMins} min</span>
+          <span>{DISPLAY_DURATION_MINS} min</span>
         </div>
       </div>
 
