@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
 
     // Replicate the exact logic from /api/plan
     const trainingDays = rider.trainingDays 
-      ? rider.trainingDays.split(',').filter(day => 
+      ? rider.trainingDays.split(',').map(day => day.trim()).filter(day => 
           ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
         )
       : ["MON", "TUE", "THU", "FRI", "SAT"];

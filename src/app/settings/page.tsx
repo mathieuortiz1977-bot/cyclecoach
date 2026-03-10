@@ -68,7 +68,7 @@ function SettingsPage() {
       
       // Load training schedule
       if (rider.trainingDays) {
-        setTrainingDays(rider.trainingDays.split(','));
+        setTrainingDays(rider.trainingDays.split(',').map(day => day.trim()));
       }
       if (rider.outdoorDay) {
         setOutdoorDay(rider.outdoorDay);

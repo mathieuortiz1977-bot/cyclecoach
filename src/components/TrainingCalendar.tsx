@@ -270,7 +270,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       let actualPlan = planData.plan;
       if (planData.plan && startDate) {
         const trainingDays = riderData.rider?.trainingDays ? 
-          riderData.rider.trainingDays.split(',') : 
+          riderData.rider.trainingDays.split(',').map((day: string) => day.trim()) : 
           ["MON", "TUE", "THU", "FRI", "SAT"];
         
         const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, trainingDays);
@@ -280,7 +280,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       } else if (!planData.plan && startDate) {
         // No plan exists yet - generate one client-side temporarily for display
         const trainingDays = riderData.rider?.trainingDays ? 
-          riderData.rider.trainingDays.split(',') : 
+          riderData.rider.trainingDays.split(',').map((day: string) => day.trim()) : 
           ["MON", "TUE", "THU", "FRI", "SAT"];
         const generatedPlan = generatePlan(4, trainingDays as any, riderData.rider?.outdoorDay || "SAT");
         const plannedWorkouts = generatePlannedSessions(generatedPlan, startDate, trainingDays);

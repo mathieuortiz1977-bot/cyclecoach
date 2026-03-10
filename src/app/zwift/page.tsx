@@ -12,7 +12,7 @@ export default function ZwiftSync() {
   // Extract training days and outdoor day from rider profile
   const trainingDays = useMemo(() => {
     if (rider?.trainingDays) {
-      return rider.trainingDays.split(',').filter((day: string) =>
+      return rider.trainingDays.split(',').map((day: string) => day.trim()).filter((day: string) =>
         ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
       ) as DayOfWeek[];
     }

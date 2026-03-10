@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     // Get rider's training schedule
     const rider = await getCurrentRider();
     const trainingDays: DayOfWeek[] = rider?.trainingDays 
-      ? rider.trainingDays.split(',').filter(day => 
+      ? rider.trainingDays.split(',').map(day => day.trim()).filter(day => 
           ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
         ) as DayOfWeek[]
       : ["MON", "TUE", "THU", "FRI", "SAT"];
