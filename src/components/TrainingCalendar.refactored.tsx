@@ -19,7 +19,7 @@ import { useRiderContext } from '@/contexts';
 import { useTrainingDataContext } from '@/contexts';
 import { useNotification } from '@/hooks/useApi';
 import * as tz from '@/lib/timezone';
-import { generatePlan } from '@/lib/periodization';
+import { generatePlan, type DayOfWeek } from '@/lib/periodization';
 import { DAY_FROM_INDEX } from '@/lib/constants';
 import type { WorkoutData, RaceEvent, Vacation } from '@/types';
 
@@ -170,8 +170,20 @@ export function useTrainingCalendarData(trainingDays: string[]) {
     [rider?.programStartDate]
   );
 
-  // Memoize generated plan
-  const plan = useMemo(() => generatePlan(rider?.ftp || 250), [rider?.ftp]);
+  // Convert trainingDays string array to typed array
+  const trainingDaysTyped = useMemo(() => {
+    return trainingDays.filter((day: string) =>
+      ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
+    ) as DayOfWeek[];
+  }, [trainingDays]);
+  
+  const outdoorDay = useMemo(() => {
+    return (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
+      ? (rider.outdoorDay as DayOfWeek)
+      : ("SAT" as DayOfWeek);
+  }, [rider?.outdoorDay]);
+
+  const plan = useMemo(() => generatePlan(4, trainingDaysTyped, outdoorDay), [trainingDaysTyped, outdoorDay]);
 
   // Process workouts whenever data changes
   useEffect(() => {

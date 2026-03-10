@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { matchActivitiesToSessions, type ExternalActivity } from "@/lib/autocomplete";
-import { generatePlan } from "@/lib/periodization";
+import { generatePlan, type DayOfWeek } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import { requireAuth } from "@/lib/api-auth";
+import { getCurrentRider } from "@/lib/get-rider";
 
 export async function POST(req: Request) {
   const { error } = await requireAuth();
@@ -37,8 +38,19 @@ export async function POST(req: Request) {
       dayOfWeek: a.dayOfWeek || DAY_FROM_INDEX[new Date(a.date).getDay()],
     }));
 
+    // Get rider's training schedule
+    const rider = await getCurrentRider();
+    const trainingDays: DayOfWeek[] = rider?.trainingDays 
+      ? rider.trainingDays.split(',').filter(day => 
+          ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
+        ) as DayOfWeek[]
+      : ["MON", "TUE", "THU", "FRI", "SAT"];
+    const outdoorDay: DayOfWeek = (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
+      ? rider.outdoorDay as DayOfWeek
+      : "SAT";
+
     // Get planned sessions for the week
-    const plan = generatePlan(4);
+    const plan = generatePlan(4, trainingDays, outdoorDay);
     const block = plan.blocks[blockIdx];
     const week = block?.weeks[weekIdx];
 

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
-import { generatePlan } from "@/lib/periodization";
+import { generatePlan, type DayOfWeek } from "@/lib/periodization";
 import { exportToZWO, downloadFile } from "@/lib/export";
 import { BLOCK_META, WEEK_LABELS } from "@/lib/constants";
 import { useRider } from "@/hooks/useRider";
@@ -8,7 +8,24 @@ import { useRider } from "@/hooks/useRider";
 export default function ZwiftSync() {
   const { rider } = useRider();
   const ftp = rider?.ftp || 190;
-  const plan = useMemo(() => generatePlan(4), []);
+  
+  // Extract training days and outdoor day from rider profile
+  const trainingDays = useMemo(() => {
+    if (rider?.trainingDays) {
+      return rider.trainingDays.split(',').filter((day: string) =>
+        ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
+      ) as DayOfWeek[];
+    }
+    return ["MON", "TUE", "THU", "FRI", "SAT"] as DayOfWeek[];
+  }, [rider?.trainingDays]);
+  
+  const outdoorDay = useMemo(() => {
+    return (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
+      ? (rider.outdoorDay as DayOfWeek)
+      : ("SAT" as DayOfWeek);
+  }, [rider?.outdoorDay]);
+  
+  const plan = useMemo(() => generatePlan(4, trainingDays, outdoorDay), [trainingDays, outdoorDay]);
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
   const [downloaded, setDownloaded] = useState<Set<string>>(new Set());

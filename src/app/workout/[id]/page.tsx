@@ -1,7 +1,8 @@
 "use client";
 import { useParams } from "next/navigation";
 import { useMemo, useState, useEffect } from "react";
-import { generatePlan } from "@/lib/periodization";
+import { generatePlan, type DayOfWeek } from "@/lib/periodization";
+import { useRider } from "@/hooks/useRider";
 import { IntervalChart } from "@/components/IntervalChart";
 import { getZoneColor } from "@/lib/zones";
 import Link from "next/link";
@@ -20,15 +21,30 @@ export default function WorkoutPage() {
   const [ftp, setFtp] = useState(190);
   const [showCompletion, setShowCompletion] = useState(false);
   const [showShare, setShowShare] = useState(false);
+  const { rider } = useRider();
 
-  // Load FTP from DB
+  // Extract training days and outdoor day from rider profile
+  const trainingDays = useMemo(() => {
+    if (rider?.trainingDays) {
+      return rider.trainingDays.split(',').filter((day: string) =>
+        ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
+      ) as DayOfWeek[];
+    }
+    return ["MON", "TUE", "THU", "FRI", "SAT"] as DayOfWeek[];
+  }, [rider?.trainingDays]);
+  
+  const outdoorDay = useMemo(() => {
+    return (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
+      ? (rider.outdoorDay as DayOfWeek)
+      : ("SAT" as DayOfWeek);
+  }, [rider?.outdoorDay]);
+
+  // Load FTP from DB (useRider already provides this)
   useEffect(() => {
-    fetch("/api/rider").then(r => r.json()).then(data => {
-      if (data.rider?.ftp) setFtp(data.rider.ftp);
-    }).catch(() => {});
-  }, []);
+    if (rider?.ftp) setFtp(rider.ftp);
+  }, [rider?.ftp]);
 
-  const plan = useMemo(() => generatePlan(4), []);
+  const plan = useMemo(() => generatePlan(4, trainingDays, outdoorDay), [trainingDays, outdoorDay]);
   const block = plan.blocks[blockIdx];
   const week = block?.weeks[weekIdx];
   const session = week?.sessions[sessionIdx];

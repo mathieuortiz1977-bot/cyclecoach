@@ -56,6 +56,7 @@ export async function POST(request: NextRequest) {
     const numBlocks = body.blocks || 4;
     const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
     const targetDurationMinutes = body.targetDurationMinutes || undefined; // User's requested session duration
+    const targetSundayDurationMinutes = body.targetSundayDurationMinutes || undefined; // Sunday's separate duration
 
     // Get rider's training schedule  
     const trainingDays: DayOfWeek[] = rider.trainingDays ? 
@@ -149,7 +150,8 @@ export async function POST(request: NextRequest) {
       undefined, // useAINames
       rider.id,  // riderId for per-user variation
       true,      // includeInitialFTPTest
-      targetDurationMinutes // USER'S REQUESTED DURATION (NEW)
+      targetDurationMinutes, // USER'S REQUESTED DURATION
+      targetSundayDurationMinutes // SUNDAY'S SEPARATE DURATION
     );
 
     // Persist to DB
