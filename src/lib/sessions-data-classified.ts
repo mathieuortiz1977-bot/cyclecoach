@@ -18,20 +18,25 @@ import { RESEARCH_WORKOUTS } from './research-workouts';
 import { RESEARCH_WORKOUTS_V2 } from './research-workouts-v2';
 
 // ─── HELPER FACTORIES ──────────────────────────────────────────────────────
+// Convert seconds to reasonable percentages (based on 75-min avg workout)
+const secToPercent = (secs: number): number => {
+  const avgWorkoutSecs = 75 * 60;  // 75 min average
+  return Math.round((secs / avgWorkoutSecs) * 100);
+};
 
-const warmup = (endPower = 70): IntervalDef[] => [
-  { name: "Warmup", durationSecs: 600, powerLow: 45, powerHigh: endPower, zone: "Z1", rpe: 2, purpose: "Prepare body", coachNote: "Spin easy. Enjoy it. After this, suffering is mandatory." }
+const warmup = (endPower = 70): any[] => [
+  { name: "Warmup", durationPercent: 13, powerLow: 45, powerHigh: endPower, zone: "Z1", rpe: 2, purpose: "Prepare body", coachNote: "Spin easy. Enjoy it. After this, suffering is mandatory." }
 ];
 
-const cooldown = (): IntervalDef[] => [
-  { name: "Cooldown", durationSecs: 300, powerLow: 30, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Recovery", coachNote: "You survived. Barely. Let your legs know they're done." }
+const cooldown = (): any[] => [
+  { name: "Cooldown", durationPercent: 7, powerLow: 30, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Recovery", coachNote: "You survived. Barely. Let your legs know they're done." }
 ];
 
-const rest = (secs = 300): IntervalDef => ({
-  name: "Rest", durationSecs: secs, powerLow: 40, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Active recovery", coachNote: "Breathe. Your legs are filing a complaint. Noted and ignored."
+const rest = (secs = 300): any => ({
+  name: "Rest", durationPercent: secToPercent(secs), powerLow: 40, powerHigh: 50, zone: "Z1", rpe: 1, purpose: "Active recovery", coachNote: "Breathe. Your legs are filing a complaint. Noted and ignored."
 });
 
-const work = (name: string, secs: number, low: number, high: number, purpose: string, zone: string, cadenceLow?: number, cadenceHigh?: number): IntervalDef => {
+const work = (name: string, secs: number, low: number, high: number, purpose: string, zone: string, cadenceLow?: number, cadenceHigh?: number): any => {
   const avgPower = Math.round((low + high) / 2);
   let coachNote = `${avgPower}% FTP`;
   
@@ -43,7 +48,7 @@ const work = (name: string, secs: number, low: number, high: number, purpose: st
   else if (avgPower >= 70) coachNote = `${avgPower}% - Steady. Don't overthink it.`;
   else coachNote = `${avgPower}% - Easy. Your legs shouldn't complain.`;
   
-  return { name, durationSecs: secs, powerLow: low, powerHigh: high, zone, rpe: 5, purpose, coachNote, cadenceLow, cadenceHigh };
+  return { name, durationPercent: secToPercent(secs), powerLow: low, powerHigh: high, zone, rpe: 5, purpose, coachNote, cadenceLow, cadenceHigh };
 };
 
 // ─── 162 MASTER WORKOUTS WITH CLASSIFICATION ─────────────────────────────
