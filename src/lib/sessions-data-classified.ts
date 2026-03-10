@@ -15,6 +15,7 @@
 
 import type { WorkoutTemplate, IntervalDef } from './periodization';
 import { RESEARCH_WORKOUTS } from './research-workouts';
+import { RESEARCH_WORKOUTS_V2 } from './research-workouts-v2';
 
 // ─── HELPER FACTORIES ──────────────────────────────────────────────────────
 
@@ -136,6 +137,7 @@ export const MASTER_WORKOUTS: WorkoutTemplate[] = [
   // Carlos's research-backed cycling workouts database
   // Extracted from email (March 9, 2026)
   ...RESEARCH_WORKOUTS,
+  ...RESEARCH_WORKOUTS_V2,
 ];
 
 export const COMPLETE_DATABASE = {
