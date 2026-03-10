@@ -1,0 +1,233 @@
+{
+  "total_duplicates": 65,
+  "workouts_to_remove": [
+    "w014",
+    "w017",
+    "w018",
+    "w036",
+    "w055",
+    "w060",
+    "w073",
+    "w081",
+    "w098",
+    "w069",
+    "w083",
+    "w051",
+    "w053",
+    "w075",
+    "w048",
+    "w099",
+    "w006",
+    "w010",
+    "w057",
+    "w058",
+    "w064",
+    "w065",
+    "w091",
+    "w119",
+    "w124b"
+  ],
+  "workouts_to_refactor": [
+    {
+      "id": "w013",
+      "title": "Classic 2 \u00d7 20",
+      "category": "BASE",
+      "default_duration": 75,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w014",
+      "title": "Threshold Steps",
+      "category": "BASE",
+      "default_duration": 70,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w015",
+      "title": "Over-Under Intervals",
+      "category": "BASE",
+      "default_duration": 75,
+      "interval_structure": "5 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w017",
+      "title": "Criss-Cross Intervals",
+      "category": "BASE",
+      "default_duration": 70,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w018",
+      "title": "Threshold Ramp",
+      "category": "BASE",
+      "default_duration": 65,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w036",
+      "title": "Explosive Repeats",
+      "category": "BASE",
+      "default_duration": 50,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w049",
+      "title": "Seiler 4 \u00d7 8",
+      "category": "BASE",
+      "default_duration": 85,
+      "interval_structure": "4 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w051",
+      "title": "Single-Leg Drills",
+      "category": "BASE",
+      "default_duration": 55,
+      "interval_structure": "4 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w055",
+      "title": "Miracle Intervals",
+      "category": "BASE",
+      "default_duration": 55,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w060",
+      "title": "R\u00f8nnestad Fast-Start 5 \u00d7 5",
+      "category": "BASE",
+      "default_duration": 70,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w069",
+      "title": "Ritter-Style Mixed Over-Unders",
+      "category": "BASE",
+      "default_duration": 70,
+      "interval_structure": "5 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w072",
+      "title": "30-Minute Over-Under Express",
+      "category": "BASE",
+      "default_duration": 30,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w073",
+      "title": "30-Minute Speed Intervals",
+      "category": "BASE",
+      "default_duration": 30,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w081",
+      "title": "Track Pursuit Preparation",
+      "category": "BASE",
+      "default_duration": 55,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w033",
+      "title": "Sprint Repeats",
+      "category": "SPRINT",
+      "default_duration": 55,
+      "interval_structure": "2 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w034",
+      "title": "Standing Start Sprints",
+      "category": "SPRINT",
+      "default_duration": 55,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w005",
+      "title": "Classic Tempo Blocks",
+      "category": "TEMPO",
+      "default_duration": 75,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w009",
+      "title": "Sweet Spot Intervals",
+      "category": "THRESHOLD",
+      "default_duration": 75,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w056",
+      "title": "Ramp Test (FTP Assessment)",
+      "category": "THRESHOLD",
+      "default_duration": 35,
+      "interval_structure": "2 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w057",
+      "title": "20-Minute FTP Test",
+      "category": "THRESHOLD",
+      "default_duration": 55,
+      "interval_structure": "2 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w021",
+      "title": "4 \u00d7 8 VO2max",
+      "category": "VO2MAX",
+      "default_duration": 80,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w064",
+      "title": "Hard-Start Decreasing VO2max",
+      "category": "VO2MAX",
+      "default_duration": 65,
+      "interval_structure": "3 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w071",
+      "title": "The 30-Minute VO2max Blitz",
+      "category": "VO2MAX",
+      "default_duration": 30,
+      "interval_structure": "4 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w118",
+      "title": "Baird (TrainerRoad Style)",
+      "category": "VO2MAX",
+      "default_duration": 60,
+      "interval_structure": "7 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    },
+    {
+      "id": "w124a",
+      "title": "VO2 Progression Week 1",
+      "category": "VO2MAX",
+      "default_duration": 60,
+      "interval_structure": "4 intervals",
+      "reason": "Convert to percentage-based system for automatic scaling"
+    }
+  ],
+  "result_total": 172
+}
