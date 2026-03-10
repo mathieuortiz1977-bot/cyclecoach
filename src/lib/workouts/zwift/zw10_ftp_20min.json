@@ -1,0 +1,90 @@
+{
+  "id": "zw10_ftp_20min",
+  "title": "FTP Test 20-Minute",
+  "source": "zwift",
+  "category": "FTP_TEST",
+  "primaryZone": "Z4-Z6",
+  "structure": "steady",
+  "difficulty": 10,
+  "duration": 55,
+  "scalable": true,
+  "tss": 11,
+  "description": "20-minute all-out FTP test",
+  "purpose": "FTP determination",
+  "protocol": "Zwift - FTP 20min",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13,
+        "absoluteSecs": 429
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "FTP Test",
+      "purpose": "FTP",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2640
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 10
+      },
+      "instruction": "FTP Test at 92-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 231
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

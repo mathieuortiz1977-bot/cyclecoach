@@ -1,0 +1,114 @@
+{
+  "id": "zw65_split_session",
+  "title": "Split Session",
+  "source": "zwift",
+  "category": "MIXED",
+  "primaryZone": "Z2-Z5",
+  "structure": "mixed",
+  "difficulty": 6,
+  "duration": 60,
+  "scalable": true,
+  "tss": 7,
+  "description": "Two-part workout session",
+  "purpose": "Mixed efforts",
+  "protocol": "Zwift - Split Session",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Part 1",
+      "purpose": "Build",
+      "phase": "work",
+      "duration": {
+        "percent": 40,
+        "absoluteSecs": 1440
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 70,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 5
+      },
+      "instruction": "Part 1 at 70-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 10,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Part 2",
+      "purpose": "Hard",
+      "phase": "work",
+      "duration": {
+        "percent": 40,
+        "absoluteSecs": 1440
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 130,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Part 2 at 110-130% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 10,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

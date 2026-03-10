@@ -1,0 +1,162 @@
+{
+  "id": "w136",
+  "title": "Force-Velocity Contrast",
+  "source": "research-v2",
+  "category": "SWEET_SPOT",
+  "primaryZone": "Z3",
+  "structure": "mixed",
+  "difficulty": 7,
+  "duration": 70,
+  "scalable": true,
+  "tss": 10,
+  "description": "Alternate high-torque and high-spin at same power",
+  "purpose": "Force across full RPM spectrum",
+  "protocol": "Force-Velocity",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Low Cadence (80%)",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 85,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "Low Cadence (80%) at 85-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "High Cadence (85%)",
+      "purpose": "Speed",
+      "phase": "work",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "High Cadence (85%) at 80-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Low Cadence 2",
+      "purpose": "Force",
+      "phase": "work",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 85,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "Low Cadence 2 at 85-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "High Cadence 2",
+      "purpose": "Speed",
+      "phase": "work",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "High Cadence 2 at 80-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 17,
+        "absoluteSecs": 714
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

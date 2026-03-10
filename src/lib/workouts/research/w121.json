@@ -1,0 +1,114 @@
+{
+  "id": "w121",
+  "title": "Carson (TrainerRoad Style Sweet Spot)",
+  "source": "research-v2",
+  "category": "SWEET_SPOT",
+  "primaryZone": "Z3",
+  "structure": "mixed",
+  "difficulty": 7,
+  "duration": 75,
+  "scalable": true,
+  "tss": 11,
+  "description": "Sweet spot with short threshold kicks",
+  "purpose": "Sweet spot with periodic threshold kicks",
+  "protocol": "TrainerRoad",
+  "researcher": "TrainerRoad",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 28,
+        "absoluteSecs": 1260
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "SS Block 1",
+      "purpose": "Sweet spot",
+      "phase": "work",
+      "duration": {
+        "percent": 43,
+        "absoluteSecs": 1935
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 7
+      },
+      "instruction": "SS Block 1 at 88-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "SS Block 1 Kick",
+      "purpose": "Quick kick",
+      "phase": "work",
+      "duration": {
+        "percent": 1,
+        "absoluteSecs": 45
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 105,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "SS Block 1 Kick at 100-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 28,
+        "absoluteSecs": 1260
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

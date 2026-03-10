@@ -1,0 +1,162 @@
+{
+  "id": "w108",
+  "title": "Endurance with Neuromuscular Bursts",
+  "source": "research-v2",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "mixed",
+  "difficulty": 5,
+  "duration": 90,
+  "scalable": true,
+  "tss": 9,
+  "description": "Aerobic base with fast-twitch activation",
+  "purpose": "Aerobic base with neuromuscular fiber recruitment",
+  "protocol": "Endurance + Activators",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build gradually",
+      "phase": "warmup",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 648
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Easy Block",
+      "purpose": "Aerobic base",
+      "phase": "work",
+      "duration": {
+        "percent": 75,
+        "absoluteSecs": 4050
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 68,
+        "powerHigh": 68,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Easy Block at 68-68% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Sprint 1",
+      "purpose": "Max effort",
+      "phase": "work",
+      "duration": {
+        "percent": 1,
+        "absoluteSecs": 54
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 150,
+        "powerHigh": 150,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Sprint 1 at 150-150% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Sprint 2",
+      "purpose": "Max effort",
+      "phase": "work",
+      "duration": {
+        "percent": 1,
+        "absoluteSecs": 54
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 150,
+        "powerHigh": 150,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Sprint 2 at 150-150% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Sprint 3",
+      "purpose": "Max effort",
+      "phase": "work",
+      "duration": {
+        "percent": 1,
+        "absoluteSecs": 54
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 150,
+        "powerHigh": 150,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Sprint 3 at 150-150% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 648
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

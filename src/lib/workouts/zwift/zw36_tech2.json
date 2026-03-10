@@ -1,0 +1,90 @@
+{
+  "id": "zw36_tech2",
+  "title": "Tech Work 2",
+  "source": "zwift",
+  "category": "TECHNIQUE",
+  "primaryZone": "Z2-Z3",
+  "structure": "mixed",
+  "difficulty": 5,
+  "duration": 50,
+  "scalable": true,
+  "tss": 5,
+  "description": "Skills development work",
+  "purpose": "Pedal versatility",
+  "protocol": "Zwift - Tech Work 2",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 360
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Skills Work",
+      "purpose": "Technique",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2400
+      },
+      "intensity": {
+        "zone": "Z2-Z3",
+        "powerLow": 65,
+        "powerHigh": 85,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Skills Work at 65-85% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 8,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

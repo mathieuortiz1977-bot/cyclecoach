@@ -1,0 +1,90 @@
+{
+  "id": "w130",
+  "title": "3-Hour Endurance Foundation",
+  "source": "research-v2",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "steady",
+  "difficulty": 3,
+  "duration": 180,
+  "scalable": true,
+  "tss": 11,
+  "description": "Pure aerobic base for event prep",
+  "purpose": "Long aerobic capacity building",
+  "protocol": "Long Steady",
+  "researcher": "Seiler",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 648
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Steady Endurance",
+      "purpose": "Aerobic base",
+      "phase": "work",
+      "duration": {
+        "percent": 89,
+        "absoluteSecs": 9612
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Steady Endurance at 65-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 648
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

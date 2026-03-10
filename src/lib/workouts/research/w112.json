@@ -1,0 +1,234 @@
+{
+  "id": "w112",
+  "title": "Inverted VO2max Ladder",
+  "source": "research-v2",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "ladder",
+  "difficulty": 9,
+  "duration": 65,
+  "scalable": true,
+  "tss": 12,
+  "description": "Hardest effort first, then sustain quality as intensity drops",
+  "purpose": "Hardest first, sustain quality on fatigue",
+  "protocol": "Inverted Ladder",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up Extended",
+      "purpose": "Prime system",
+      "phase": "warmup",
+      "duration": {
+        "percent": 33,
+        "absoluteSecs": 1287
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Warm-up Extended at 50-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Hard Step 1",
+      "purpose": "Max power",
+      "phase": "work",
+      "duration": {
+        "percent": 4,
+        "absoluteSecs": 156
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 120,
+        "powerHigh": 120,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 10
+      },
+      "instruction": "Hard Step 1 at 120-120% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 4,
+        "absoluteSecs": 156
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Step 2",
+      "purpose": "VO2",
+      "phase": "work",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 273
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Step 2 at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 4,
+        "absoluteSecs": 156
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Step 3",
+      "purpose": "VO2",
+      "phase": "work",
+      "duration": {
+        "percent": 9,
+        "absoluteSecs": 351
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Step 3 at 110-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 4,
+        "absoluteSecs": 156
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Step 4",
+      "purpose": "Sustained",
+      "phase": "work",
+      "duration": {
+        "percent": 11,
+        "absoluteSecs": 429
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 105,
+        "powerHigh": 105,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Step 4 at 105-105% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 22,
+        "absoluteSecs": 858
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

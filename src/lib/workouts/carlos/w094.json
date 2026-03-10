@@ -1,0 +1,40 @@
+{
+  "id": "w094",
+  "title": "Race Day Warm-Up (Time Trial)",
+  "source": "carlos",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "steady",
+  "difficulty": 3,
+  "duration": 30,
+  "scalable": true,
+  "tss": 20,
+  "description": "Peak activation for maximal sustained effort",
+  "purpose": "Peak activation for maximal sustained effort",
+  "intervals": [
+    {
+      "name": "Peak activation for maximal sustained effort",
+      "purpose": "Peak activation for maximal sustained effort",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 1440
+      },
+      "intensity": {
+        "zone": "Z2-Z3",
+        "powerLow": 60,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 4
+      },
+      "instruction": "Steady effort, consistent power",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "w053",
+  "title": "Ronnestad Intervals",
+  "source": "carlos",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 55,
+  "scalable": true,
+  "tss": 62,
+  "description": "VO2max with declining rest (research protocol)",
+  "purpose": "VO2max with declining rest (research protocol)",
+  "intervals": [
+    {
+      "name": "Warmup",
+      "purpose": "Prepare system and elevate heart rate",
+      "phase": "warmup",
+      "duration": {
+        "percent": 18.181818181818183,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Progressive warm-up, easy spin",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
+        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
+        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
+        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Gradually lower heart rate and begin recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 18.181818181818183,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Easy spinning to facilitate recovery",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
+        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
+        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
+        "MIXED": "Bring it down smoothly. You earned this recovery."
+      }
+    }
+  ]
+}

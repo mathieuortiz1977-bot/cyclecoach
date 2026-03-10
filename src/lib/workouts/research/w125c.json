@@ -1,0 +1,138 @@
+{
+  "id": "w125c",
+  "title": "TH Progression Week 3",
+  "source": "research-v2",
+  "category": "THRESHOLD",
+  "primaryZone": "Z4",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 72,
+  "scalable": true,
+  "tss": 12,
+  "description": "2x18 min at 98% FTP",
+  "purpose": "Week 3: extended single blocks",
+  "protocol": "4-Week Ramp",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 16,
+        "absoluteSecs": 691
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "TH 1",
+      "purpose": "Threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 28,
+        "absoluteSecs": 1210
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 98,
+        "powerHigh": 98,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "TH 1 at 98-98% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 518
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "TH 2",
+      "purpose": "Threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 28,
+        "absoluteSecs": 1210
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 98,
+        "powerHigh": 98,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "TH 2 at 98-98% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 16,
+        "absoluteSecs": 691
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

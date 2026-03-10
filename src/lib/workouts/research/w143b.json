@@ -1,0 +1,162 @@
+{
+  "id": "w143b",
+  "title": "3-Day Taper Sequence Day 2",
+  "source": "research-v2",
+  "category": "THRESHOLD",
+  "primaryZone": "Z4",
+  "structure": "mixed",
+  "difficulty": 3,
+  "duration": 45,
+  "scalable": true,
+  "tss": 3,
+  "description": "45 min: 10 easy + 15 at 70% + 3x1 at 100% + 10 CD",
+  "purpose": "3-day pre-race sequence, day 2",
+  "protocol": "Taper",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Easy Start",
+      "purpose": "Warmup",
+      "phase": "work",
+      "duration": {
+        "percent": 26,
+        "absoluteSecs": 702
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Easy Start at 60-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Base",
+      "purpose": "Steady",
+      "phase": "work",
+      "duration": {
+        "percent": 39,
+        "absoluteSecs": 1053
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Base at 65-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Sprint 1",
+      "purpose": "Activation",
+      "phase": "work",
+      "duration": {
+        "percent": 3,
+        "absoluteSecs": 81
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Sprint 1 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Sprint 2",
+      "purpose": "Activation",
+      "phase": "work",
+      "duration": {
+        "percent": 3,
+        "absoluteSecs": 81
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Sprint 2 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Sprint 3",
+      "purpose": "Activation",
+      "phase": "work",
+      "duration": {
+        "percent": 3,
+        "absoluteSecs": 81
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Sprint 3 at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 26,
+        "absoluteSecs": 702
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 50-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

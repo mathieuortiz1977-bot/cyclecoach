@@ -1,0 +1,90 @@
+{
+  "id": "w129",
+  "title": "Café Ride with Purpose",
+  "source": "research-v2",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "mixed",
+  "difficulty": 4,
+  "duration": 120,
+  "scalable": true,
+  "tss": 10,
+  "description": "Social endurance ride with structured blocks",
+  "purpose": "Group dynamics with training value",
+  "protocol": "Social Endurance",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Easy Start",
+      "purpose": "Group warmup",
+      "phase": "work",
+      "duration": {
+        "percent": 36,
+        "absoluteSecs": 2592
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Easy Start at 60-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Tempo Block",
+      "purpose": "Mixed pace",
+      "phase": "work",
+      "duration": {
+        "percent": 27,
+        "absoluteSecs": 1944
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 85,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "Tempo Block at 80-85% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Final Easy",
+      "purpose": "Social finish",
+      "phase": "work",
+      "duration": {
+        "percent": 36,
+        "absoluteSecs": 2592
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 60,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 4
+      },
+      "instruction": "Final Easy at 60-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    }
+  ]
+}

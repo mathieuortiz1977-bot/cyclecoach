@@ -1,0 +1,40 @@
+{
+  "id": "w046",
+  "title": "Pre-Race Activation",
+  "source": "carlos",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "steady",
+  "difficulty": 3,
+  "duration": 35,
+  "scalable": true,
+  "tss": 22,
+  "description": "Prime legs and nervous system before competition",
+  "purpose": "Prime legs and nervous system before competition",
+  "intervals": [
+    {
+      "name": "Cool-down",
+      "purpose": "Gradually lower heart rate and begin recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 14.285714285714285,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Easy spinning to facilitate recovery",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
+        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
+        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
+        "MIXED": "Bring it down smoothly. You earned this recovery."
+      }
+    }
+  ]
+}

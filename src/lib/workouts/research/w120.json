@@ -1,0 +1,114 @@
+{
+  "id": "w120",
+  "title": "Kaiser (TrainerRoad Style)",
+  "source": "research-v2",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 65,
+  "scalable": true,
+  "tss": 10,
+  "description": "Extended Spencer – more VO2max volume",
+  "purpose": "Extended Spencer for max VO2 volume",
+  "protocol": "TrainerRoad",
+  "researcher": "TrainerRoad",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 38,
+        "absoluteSecs": 1482
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "VO2 Rep 1",
+      "purpose": "120%",
+      "phase": "work",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 468
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 120,
+        "powerHigh": 120,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "VO2 Rep 1 at 120-120% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 468
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 40,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 40-40% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 38,
+        "absoluteSecs": 1482
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

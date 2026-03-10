@@ -1,0 +1,119 @@
+{
+  "id": "w091",
+  "title": "Block Day 2: VO2max Focus",
+  "source": "carlos",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "repeats",
+  "difficulty": 7,
+  "duration": 70,
+  "scalable": true,
+  "tss": 75,
+  "description": "Second session, build on Day 1 fatigue",
+  "purpose": "Second session, build on Day 1 fatigue",
+  "intervals": [
+    {
+      "name": "Warmup",
+      "purpose": "Prepare system and elevate heart rate",
+      "phase": "warmup",
+      "duration": {
+        "percent": 14.285714285714285,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Progressive warm-up, easy spin",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
+        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
+        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
+        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+      }
+    },
+    {
+      "name": "Second session, build on Day 1 fatigue",
+      "purpose": "Second session, build on Day 1 fatigue",
+      "phase": "work",
+      "duration": {
+        "percent": 85.71428571428571,
+        "absoluteSecs": 3600
+      },
+      "intensity": {
+        "zone": "Z3-Z5",
+        "powerLow": 110,
+        "powerHigh": 115,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 9
+      },
+      "reps": {
+        "count": 5,
+        "work": {
+          "duration": {
+            "secs": 240,
+            "label": "4 minutes"
+          },
+          "intensity": {
+            "zone": "Z3-Z5",
+            "powerLow": 110,
+            "powerHigh": 115,
+            "cadenceLow": 85,
+            "cadenceHigh": 95,
+            "rpe": 9
+          }
+        },
+        "rest": {
+          "duration": {
+            "secs": 600,
+            "label": "10 minutes"
+          },
+          "intensity": {
+            "zone": "Z1",
+            "powerLow": 40,
+            "powerHigh": 60,
+            "cadenceLow": 85,
+            "cadenceHigh": 100,
+            "rpe": 2
+          }
+        }
+      },
+      "instruction": "Hold 110-115% FTP for full duration. Steady power.",
+      "coachingNotes": {
+        "DARK_HUMOR": "5 minutes at 110%+ FTP. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Gradually lower heart rate and begin recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 14.285714285714285,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Easy spinning to facilitate recovery",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
+        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
+        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
+        "MIXED": "Bring it down smoothly. You earned this recovery."
+      }
+    }
+  ]
+}

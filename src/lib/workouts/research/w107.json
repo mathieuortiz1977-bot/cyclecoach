@@ -1,0 +1,186 @@
+{
+  "id": "w107",
+  "title": "Tempo into Threshold Ramp",
+  "source": "research-v2",
+  "category": "TEMPO",
+  "primaryZone": "Z3",
+  "structure": "ladder",
+  "difficulty": 7,
+  "duration": 70,
+  "scalable": true,
+  "tss": 10,
+  "description": "Build from comfortable to painful progressively",
+  "purpose": "Progressive intensity escalation: pacing progression",
+  "protocol": "Continuous Build",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build gradually",
+      "phase": "warmup",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 504
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Tempo",
+      "purpose": "Tempo effort",
+      "phase": "work",
+      "duration": {
+        "percent": 25,
+        "absoluteSecs": 1050
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 80,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "Tempo at 80-80% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Sweet Spot",
+      "purpose": "Escalate intensity",
+      "phase": "work",
+      "duration": {
+        "percent": 19,
+        "absoluteSecs": 798
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 90,
+        "powerHigh": 90,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 7
+      },
+      "instruction": "Sweet Spot at 90-90% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "Threshold Low",
+      "purpose": "Approach FTP",
+      "phase": "work",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 504
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 98,
+        "powerHigh": 98,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Threshold Low at 98-98% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Threshold High",
+      "purpose": "Sustain FTP",
+      "phase": "work",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 504
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 100,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Threshold High at 100-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
+        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
+        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
+        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 252
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 12,
+        "absoluteSecs": 504
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

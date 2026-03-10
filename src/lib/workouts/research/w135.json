@@ -1,0 +1,186 @@
+{
+  "id": "w135",
+  "title": "Standing Power Intervals",
+  "source": "research-v2",
+  "category": "ANAEROBIC",
+  "primaryZone": "Z6",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 60,
+  "scalable": true,
+  "tss": 10,
+  "description": "Out-of-saddle power and recruitment",
+  "purpose": "Climbing and attack power",
+  "protocol": "Standing Power",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 31,
+        "absoluteSecs": 1116
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Standing 1",
+      "purpose": "Out of saddle",
+      "phase": "work",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 216
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 130,
+        "powerHigh": 140,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Standing 1 at 130-140% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 9,
+        "absoluteSecs": 324
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Standing 2",
+      "purpose": "Out of saddle",
+      "phase": "work",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 216
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 130,
+        "powerHigh": 140,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Standing 2 at 130-140% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 9,
+        "absoluteSecs": 324
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Standing 3",
+      "purpose": "Out of saddle",
+      "phase": "work",
+      "duration": {
+        "percent": 6,
+        "absoluteSecs": 216
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 130,
+        "powerHigh": 140,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Standing 3 at 130-140% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 31,
+        "absoluteSecs": 1116
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

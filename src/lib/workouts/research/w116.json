@@ -1,0 +1,138 @@
+{
+  "id": "w116",
+  "title": "The Gorby (Zwift)",
+  "source": "research-v2",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "mixed",
+  "difficulty": 9,
+  "duration": 60,
+  "scalable": true,
+  "tss": 11,
+  "description": "Sustained VO2max endurance",
+  "purpose": "Sustained VO2max endurance",
+  "protocol": "Zwift Famous",
+  "researcher": "Zwift",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 21,
+        "absoluteSecs": 756
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Block 1",
+      "purpose": "115%",
+      "phase": "work",
+      "duration": {
+        "percent": 19,
+        "absoluteSecs": 684
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Block 1 at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Block 1 Mid",
+      "purpose": "88%",
+      "phase": "work",
+      "duration": {
+        "percent": 19,
+        "absoluteSecs": 684
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 88,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 5
+      },
+      "instruction": "Block 1 Mid at 88-88% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "Block 1 High",
+      "purpose": "115%",
+      "phase": "work",
+      "duration": {
+        "percent": 19,
+        "absoluteSecs": 684
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 115,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "Block 1 High at 115-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 21,
+        "absoluteSecs": 756
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

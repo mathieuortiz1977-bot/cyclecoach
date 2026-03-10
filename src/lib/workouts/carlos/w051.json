@@ -1,0 +1,64 @@
+{
+  "id": "w051",
+  "title": "Single-Leg Drills",
+  "source": "carlos",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "steady",
+  "difficulty": 3,
+  "duration": 55,
+  "scalable": true,
+  "tss": 35,
+  "description": "Pedaling efficiency, eliminate dead spots",
+  "purpose": "Pedaling efficiency, eliminate dead spots",
+  "intervals": [
+    {
+      "name": "Warmup",
+      "purpose": "Prepare system and elevate heart rate",
+      "phase": "warmup",
+      "duration": {
+        "percent": 18.181818181818183,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Progressive warm-up, easy spin",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
+        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
+        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
+        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Gradually lower heart rate and begin recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 9.090909090909092,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Easy spinning to facilitate recovery",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
+        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
+        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
+        "MIXED": "Bring it down smoothly. You earned this recovery."
+      }
+    }
+  ]
+}

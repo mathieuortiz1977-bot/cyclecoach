@@ -1,0 +1,90 @@
+{
+  "id": "zw01_gorby",
+  "title": "The Gorby",
+  "source": "zwift",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 60,
+  "scalable": true,
+  "tss": 10,
+  "description": "10m warm + 5×5m @110% / 5m @55% + cool",
+  "purpose": "VO2max intervals",
+  "protocol": "Zwift - The Gorby",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13,
+        "absoluteSecs": 468
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 45-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "VO2 Work",
+      "purpose": "VO2max",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2880
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 120,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "VO2 Work at 110-120% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 252
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 30,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 30-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

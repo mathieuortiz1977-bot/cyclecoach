@@ -1,0 +1,138 @@
+{
+  "id": "w123d",
+  "title": "SS Progression Week 4 – TEST",
+  "source": "research-v2",
+  "category": "SWEET_SPOT",
+  "primaryZone": "Z3",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 80,
+  "scalable": true,
+  "tss": 13,
+  "description": "2x20 min at 92% FTP",
+  "purpose": "Week 4: extended work at higher intensity (test)",
+  "protocol": "4-Week Ramp",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 14,
+        "absoluteSecs": 672
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 65,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-65% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "SS Test 1",
+      "purpose": "Extended work",
+      "phase": "work",
+      "duration": {
+        "percent": 29,
+        "absoluteSecs": 1392
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "SS Test 1 at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 14,
+        "absoluteSecs": 672
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 55,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest at 55-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "SS Test 2",
+      "purpose": "Extended work",
+      "phase": "work",
+      "duration": {
+        "percent": 29,
+        "absoluteSecs": 1392
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 92,
+        "powerHigh": 92,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "SS Test 2 at 92-92% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Easy recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 14,
+        "absoluteSecs": 672
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Cool-down at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "zw19_mixed_intervals",
+  "title": "Mixed Intervals",
+  "source": "zwift",
+  "category": "MIXED",
+  "primaryZone": "Z2-Z5",
+  "structure": "mixed",
+  "difficulty": 6,
+  "duration": 60,
+  "scalable": true,
+  "tss": 7,
+  "description": "Multi-zone mixed efforts",
+  "purpose": "Mixed intensity",
+  "protocol": "Zwift - Mixed",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13,
+        "absoluteSecs": 468
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Mixed",
+      "purpose": "Mixed",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2880
+      },
+      "intensity": {
+        "zone": "Z2-Z5",
+        "powerLow": 60,
+        "powerHigh": 120,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 6
+      },
+      "instruction": "Mixed at 60-120% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
+        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
+        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
+        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 252
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "zw68_30_30_anaerobic",
+  "title": "30/30 Anaerobic",
+  "source": "zwift",
+  "category": "ANAEROBIC",
+  "primaryZone": "Z6",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 45,
+  "scalable": true,
+  "tss": 7,
+  "description": "Anaerobic 30/30 repeats",
+  "purpose": "Anaerobic power",
+  "protocol": "Zwift - 30/30 Anaerobic",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13,
+        "absoluteSecs": 351
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "30/30",
+      "purpose": "Anaerobic",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2160
+      },
+      "intensity": {
+        "zone": "Z5-Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 9
+      },
+      "instruction": "30/30 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 189
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

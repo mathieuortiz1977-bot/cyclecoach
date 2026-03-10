@@ -1,0 +1,90 @@
+{
+  "id": "zw61_threshold_f",
+  "title": "Threshold F",
+  "source": "zwift",
+  "category": "THRESHOLD",
+  "primaryZone": "Z4",
+  "structure": "repeats",
+  "difficulty": 9,
+  "duration": 70,
+  "scalable": true,
+  "tss": 13,
+  "description": "Threshold progression step F",
+  "purpose": "Threshold building",
+  "protocol": "Zwift - Threshold F",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 11,
+        "absoluteSecs": 462
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Threshold F",
+      "purpose": "Threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 81,
+        "absoluteSecs": 3402
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 102,
+        "powerHigh": 110,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Threshold F at 102-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 8,
+        "absoluteSecs": 336
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

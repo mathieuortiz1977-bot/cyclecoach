@@ -1,0 +1,186 @@
+{
+  "id": "w132",
+  "title": "The Wringer Light",
+  "source": "research-v2",
+  "category": "ANAEROBIC",
+  "primaryZone": "Z6",
+  "structure": "repeats",
+  "difficulty": 8,
+  "duration": 50,
+  "scalable": true,
+  "tss": 8,
+  "description": "Anaerobic repeats with decreasing rest (accessible)",
+  "purpose": "Anaerobic training with lower volume",
+  "protocol": "Anaerobic",
+  "researcher": "Carlos",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Build",
+      "phase": "warmup",
+      "duration": {
+        "percent": 38,
+        "absoluteSecs": 1140
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Anaerobic 1",
+      "purpose": "Max power",
+      "phase": "work",
+      "duration": {
+        "percent": 2,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 180,
+        "powerHigh": 190,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Anaerobic 1 at 180-190% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Rest 1",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 11,
+        "absoluteSecs": 330
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest 1 at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Anaerobic 2",
+      "purpose": "Max power",
+      "phase": "work",
+      "duration": {
+        "percent": 2,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 180,
+        "powerHigh": 190,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Anaerobic 2 at 180-190% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Rest 2",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 8,
+        "absoluteSecs": 240
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Rest 2 at 50-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    },
+    {
+      "name": "Anaerobic 3",
+      "purpose": "Max power",
+      "phase": "work",
+      "duration": {
+        "percent": 2,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 180,
+        "powerHigh": 190,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
+        "rpe": 10
+      },
+      "instruction": "Anaerobic 3 at 180-190% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
+        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
+        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
+        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 38,
+        "absoluteSecs": 1140
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 50,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 50-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

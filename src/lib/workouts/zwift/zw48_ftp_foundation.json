@@ -1,0 +1,42 @@
+{
+  "id": "zw48_ftp_foundation",
+  "title": "FTP Foundation",
+  "source": "zwift",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "steady",
+  "difficulty": 2,
+  "duration": 45,
+  "scalable": true,
+  "tss": 2,
+  "description": "Easy base work",
+  "purpose": "Aerobic base",
+  "protocol": "Zwift - FTP Foundation",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Base Spin",
+      "purpose": "Base",
+      "phase": "work",
+      "duration": {
+        "percent": 100,
+        "absoluteSecs": 2700
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 2
+      },
+      "instruction": "Base Spin at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    }
+  ]
+}

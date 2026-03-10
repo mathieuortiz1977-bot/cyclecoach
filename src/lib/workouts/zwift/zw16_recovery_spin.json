@@ -1,0 +1,42 @@
+{
+  "id": "zw16_recovery_spin",
+  "title": "Recovery Spin",
+  "source": "zwift",
+  "category": "RECOVERY",
+  "primaryZone": "Z1",
+  "structure": "steady",
+  "difficulty": 1,
+  "duration": 45,
+  "scalable": true,
+  "tss": 1,
+  "description": "Easy Z1 recovery spinning",
+  "purpose": "Active recovery",
+  "protocol": "Zwift - Recovery",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Easy Spin",
+      "purpose": "Recovery",
+      "phase": "work",
+      "duration": {
+        "percent": 100,
+        "absoluteSecs": 2700
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 30,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Easy Spin at 30-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "w095",
+  "title": "Interval Day Warm-Up (Detailed)",
+  "source": "carlos",
+  "category": "BASE",
+  "primaryZone": "Z2",
+  "structure": "repeats",
+  "difficulty": 3,
+  "duration": 20,
+  "scalable": true,
+  "tss": 10,
+  "description": "Thorough preparation for hard interval session",
+  "purpose": "Thorough preparation for hard interval session",
+  "intervals": [
+    {
+      "name": "Thorough preparation for hard interval session",
+      "purpose": "Thorough preparation for hard interval session",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 960
+      },
+      "intensity": {
+        "zone": "Z2-Z3",
+        "powerLow": 60,
+        "powerHigh": 80,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 4
+      },
+      "instruction": "Steady effort, consistent power",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    }
+  ]
+}

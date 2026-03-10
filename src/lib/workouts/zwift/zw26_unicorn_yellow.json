@@ -1,0 +1,90 @@
+{
+  "id": "zw26_unicorn_yellow",
+  "title": "Unicorn Yellow",
+  "source": "zwift",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "repeats",
+  "difficulty": 7,
+  "duration": 60,
+  "scalable": true,
+  "tss": 8,
+  "description": "Unicorn progression - Level 3 (Yellow)",
+  "purpose": "Build VO2max",
+  "protocol": "Zwift - Unicorn Yellow",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Warm up",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13,
+        "absoluteSecs": 468
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Warm-up at 50-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
+        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
+        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
+        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+      }
+    },
+    {
+      "name": "Yellow Unicorn",
+      "purpose": "VO2max",
+      "phase": "work",
+      "duration": {
+        "percent": 80,
+        "absoluteSecs": 2880
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 115,
+        "powerHigh": 125,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Yellow Unicorn at 115-125% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
+        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
+        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
+        "MIXED": "Explosive effort. Go hard and trust your training."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Cool down",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 7,
+        "absoluteSecs": 252
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-60% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
+        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
+        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
+        "MIXED": "Keep it easy and enjoy the ride."
+      }
+    }
+  ]
+}

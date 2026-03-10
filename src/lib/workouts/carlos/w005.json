@@ -1,0 +1,119 @@
+{
+  "id": "w005",
+  "title": "Classic Tempo Blocks",
+  "source": "carlos",
+  "category": "TEMPO",
+  "primaryZone": "Z3",
+  "structure": "repeats",
+  "difficulty": 7,
+  "duration": 75,
+  "scalable": true,
+  "tss": 70,
+  "description": "Muscular endurance, sustained power",
+  "purpose": "Muscular endurance, sustained power",
+  "intervals": [
+    {
+      "name": "Warmup",
+      "purpose": "Prepare system and elevate heart rate",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13.333333333333334,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Progressive warm-up, easy spin",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
+        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
+        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
+        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+      }
+    },
+    {
+      "name": "Muscular endurance, sustained power",
+      "purpose": "Muscular endurance, sustained power",
+      "phase": "work",
+      "duration": {
+        "percent": 100,
+        "absoluteSecs": 4500
+      },
+      "intensity": {
+        "zone": "Z3-Z5",
+        "powerLow": 83,
+        "powerHigh": 88,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 9
+      },
+      "reps": {
+        "count": 3,
+        "work": {
+          "duration": {
+            "secs": 900,
+            "label": "15 minutes"
+          },
+          "intensity": {
+            "zone": "Z3-Z5",
+            "powerLow": 83,
+            "powerHigh": 88,
+            "cadenceLow": 85,
+            "cadenceHigh": 95,
+            "rpe": 9
+          }
+        },
+        "rest": {
+          "duration": {
+            "secs": 900,
+            "label": "15 minutes"
+          },
+          "intensity": {
+            "zone": "Z1",
+            "powerLow": 40,
+            "powerHigh": 60,
+            "cadenceLow": 85,
+            "cadenceHigh": 100,
+            "rpe": 2
+          }
+        }
+      },
+      "instruction": "Hold 83-88% FTP for full duration. Steady power.",
+      "coachingNotes": {
+        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
+        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
+        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
+        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Gradually lower heart rate and begin recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 13.333333333333334,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 60,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Easy spinning to facilitate recovery",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
+        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
+        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
+        "MIXED": "Bring it down smoothly. You earned this recovery."
+      }
+    }
+  ]
+}

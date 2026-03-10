@@ -1,0 +1,42 @@
+{
+  "id": "zw62_free_ride",
+  "title": "Free Ride",
+  "source": "zwift",
+  "category": "MIXED",
+  "primaryZone": "Z2-Z5",
+  "structure": "mixed",
+  "difficulty": 1,
+  "duration": 60,
+  "scalable": true,
+  "tss": 1,
+  "description": "Unstructured free ride",
+  "purpose": "Flexible training",
+  "protocol": "Zwift - Free Ride",
+  "researcher": "Zwift Labs",
+  "intervals": [
+    {
+      "name": "Free Ride",
+      "purpose": "Free",
+      "phase": "work",
+      "duration": {
+        "percent": 100,
+        "absoluteSecs": 3600
+      },
+      "intensity": {
+        "zone": "Z1-Z6",
+        "powerLow": 30,
+        "powerHigh": 200,
+        "cadenceLow": 85,
+        "cadenceHigh": 100,
+        "rpe": 3
+      },
+      "instruction": "Free Ride at 30-200% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
+        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
+        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
+        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+      }
+    }
+  ]
+}
