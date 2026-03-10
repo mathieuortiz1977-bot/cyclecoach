@@ -1751,15 +1751,20 @@ function fixSessionDuration(
   }
   
   // CRITICAL FIX: If target was already applied (user selection), DON'T apply scaling
-  if (targetDurationWasApplied && userTargetDuration) {
+  // Special case: If Sunday and user selected Sunday duration, use it exactly
+  const useExactDuration = targetDurationWasApplied && userTargetDuration;
+  const useSundayExact = session.dayOfWeek === "SUN" && userSundayDuration !== undefined && userSundayDuration > 0;
+  
+  if (useExactDuration || useSundayExact) {
     // User explicitly selected a duration - respect it exactly
     // Only apply intensity factor, not duration scaling
     const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
+    const exactDuration = useSundayExact ? (userSundayDuration as number) : (userTargetDuration as number);
     return {
       ...session,
-      duration: userTargetDuration,            // Use user's target EXACTLY
+      duration: exactDuration,                 // Use user's exact selection
       intensityFactor,
-      userTargetDuration,
+      userTargetDuration: exactDuration,
       periodizationWeekType: weekType,
     };
   }
