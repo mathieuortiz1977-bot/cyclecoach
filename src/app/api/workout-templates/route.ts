@@ -86,6 +86,21 @@ export async function GET(request: NextRequest) {
     // Filter from metadata
     let results = metadata.all || [];
 
+    if (!Array.isArray(results) || results.length === 0) {
+      console.warn('[API] No workouts found in metadata.all, trying byCategory');
+      // Fallback: build from byCategory
+      results = [];
+      for (const [category, workouts] of Object.entries(metadata.byCategory || {})) {
+        if (Array.isArray(workouts)) {
+          results.push(...workouts.map((w: any) => ({
+            ...w,
+            category,
+            file: `${w.source}/${w.id}.json`
+          })));
+        }
+      }
+    }
+
     // Apply filters
     if (category) {
       results = results.filter((w: any) => w.category === category.toUpperCase());
@@ -108,7 +123,10 @@ export async function GET(request: NextRequest) {
 
     // Load full workout details for results
     const fullWorkouts = paginated
-      .map((w: any) => loadWorkout(w.file))
+      .map((w: any) => {
+        const filePath = w.file || `${w.source}/${w.id}.json`;
+        return loadWorkout(filePath);
+      })
       .filter((w: any) => w !== null);
 
     return NextResponse.json({

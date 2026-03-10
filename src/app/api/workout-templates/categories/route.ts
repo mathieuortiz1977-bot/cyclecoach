@@ -16,10 +16,11 @@ export async function GET() {
     const raw = fs.readFileSync(metadataPath, 'utf8');
     const metadata = JSON.parse(raw);
 
-    const categories = Object.entries(metadata.byCategory || {}).map(
+    const byCategory = metadata.byCategory || {};
+    const categories = Object.entries(byCategory).map(
       ([name, workouts]: [string, any]) => ({
         name,
-        count: (workouts as any[]).length,
+        count: Array.isArray(workouts) ? workouts.length : 0,
       })
     );
 

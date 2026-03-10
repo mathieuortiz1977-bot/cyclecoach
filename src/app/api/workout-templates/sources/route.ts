@@ -16,10 +16,11 @@ export async function GET() {
     const raw = fs.readFileSync(metadataPath, 'utf8');
     const metadata = JSON.parse(raw);
 
-    const sources = Object.entries(metadata.bySource || {}).map(
+    const bySource = metadata.bySource || {};
+    const sources = Object.entries(bySource).map(
       ([name, data]: [string, any]) => ({
         name,
-        count: data.count || 0,
+        count: typeof data === 'object' && data.count ? data.count : 0,
       })
     );
 

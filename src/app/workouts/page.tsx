@@ -26,12 +26,21 @@ export default function WorkoutsPage() {
       try {
         setLoading(true);
         const response = await fetch('/api/workout-templates?limit=500');
-        if (!response.ok) throw new Error('Failed to load workouts');
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status} ${response.statusText}`);
+        }
         const data = await response.json();
-        setWorkouts(data.workouts || []);
+        
+        if (!data.workouts || data.workouts.length === 0) {
+          throw new Error('No workouts received from API');
+        }
+        
+        setWorkouts(data.workouts);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load workouts');
+        const errorMsg = err instanceof Error ? err.message : 'Failed to load workouts';
+        console.error('Workouts load error:', errorMsg);
+        setError(errorMsg);
         setWorkouts([]);
       } finally {
         setLoading(false);
@@ -110,8 +119,15 @@ export default function WorkoutsPage() {
 
       {/* Error State */}
       {error && (
-        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400">
-          {error}
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+          <p className="text-red-400 font-semibold">❌ Error Loading Workouts</p>
+          <p className="text-red-400 text-sm mt-1">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-2 text-sm text-red-400 hover:text-red-300 underline"
+          >
+            Try reloading the page
+          </button>
         </div>
       )}
 
