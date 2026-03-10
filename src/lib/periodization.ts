@@ -1348,6 +1348,16 @@ function selectWorkoutTemplate(
   
   let candidates = MASTER_WORKOUTS;
   
+  // Debug logging
+  if (candidates.length === 0) {
+    console.error('[selectWorkoutTemplate] ERROR: MASTER_WORKOUTS is empty!', {
+      category,
+      weekType,
+      specialization,
+      masterWorkoutsLength: MASTER_WORKOUTS.length,
+    });
+  }
+  
   // STEP 1: Filter by CATEGORY (most important)
   candidates = candidates.filter(w => w.category === category);
   if (candidates.length === 0) {

@@ -147,18 +147,34 @@ export async function POST(request: NextRequest) {
     console.log(`[Plan Update] CONFIRMED - Deleted old plan, regenerating with new parameters`);
 
     // Generate plan with custom training schedule and target duration
-    const planData = generatePlan(
+    console.log('[Plan Generation] Starting with params:', {
       numBlocks,
       trainingDays,
       outdoorDay,
-      undefined, // season
-      undefined, // raceType
-      undefined, // useAINames
-      rider.id,  // riderId for per-user variation
-      true,      // includeInitialFTPTest
-      targetDurationMinutes, // User's requested duration (default for all days)
-      targetSundayDurationMinutes // OPTIONAL: Different duration for Sunday
-    );
+      targetDurationMinutes,
+      targetSundayDurationMinutes,
+    });
+
+    let planData;
+    try {
+      planData = generatePlan(
+        numBlocks,
+        trainingDays,
+        outdoorDay,
+        undefined, // season
+        undefined, // raceType
+        undefined, // useAINames
+        rider.id,  // riderId for per-user variation
+        true,      // includeInitialFTPTest
+        targetDurationMinutes, // User's requested duration (default for all days)
+        targetSundayDurationMinutes, // OPTIONAL: Different duration for Sunday
+        50 // targetFridayDurationMinutes
+      );
+      console.log('[Plan Generation] Success - generated', planData.blocks.length, 'blocks');
+    } catch (generateErr) {
+      console.error('[Plan Generation] FAILED:', generateErr);
+      throw new Error(`Plan generation failed: ${generateErr instanceof Error ? generateErr.message : String(generateErr)}`);
+    }
 
     // Persist to DB
     const plan = await prisma.plan.create({
@@ -232,7 +248,12 @@ export async function POST(request: NextRequest) {
       }
     });
   } catch (err) {
-    console.error("Plan generation error:", err);
-    return NextResponse.json({ error: "Failed to generate plan" }, { status: 500 });
+    const errorMsg = err instanceof Error ? err.message : String(err);
+    console.error("Plan generation error:", errorMsg);
+    console.error("Full error:", err);
+    return NextResponse.json({ 
+      error: "Failed to generate plan",
+      details: errorMsg 
+    }, { status: 500 });
   }
 }
