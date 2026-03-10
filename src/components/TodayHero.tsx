@@ -103,6 +103,11 @@ export function TodayHero({
     const firstWorkoutIdx = week.sessions.findIndex((s) => s.dayOfWeek === programStartDay);
     const firstWorkout = firstWorkoutIdx >= 0 ? week.sessions[firstWorkoutIdx] : null;
     
+    // Ensure intervals is an array (handle edge case where it might be a function)
+    const firstWorkoutIntervalsArray = firstWorkout && Array.isArray(firstWorkout.intervals) 
+      ? firstWorkout.intervals 
+      : [];
+    
     if (firstWorkout) {
       return (
         <motion.div
@@ -145,20 +150,20 @@ export function TodayHero({
                   <span>💪</span>
                   <span>{firstWorkout.sessionType}</span>
                 </div>
-                {firstWorkout.intervals.length > 0 && (
+                {firstWorkoutIntervalsArray.length > 0 && (
                   <div className="flex items-center gap-1">
                     <span>⚡</span>
-                    <span>{Math.round((firstWorkout.intervals[0].powerLow + firstWorkout.intervals[0].powerHigh) / 2)}% FTP</span>
+                    <span>{Math.round((firstWorkoutIntervalsArray[0].powerLow + firstWorkoutIntervalsArray[0].powerHigh) / 2)}% FTP</span>
                   </div>
                 )}
               </div>
 
               {/* Interval preview */}
-              {firstWorkout.intervals && firstWorkout.intervals.length > 0 && (
+              {firstWorkoutIntervalsArray && firstWorkoutIntervalsArray.length > 0 && (
                 <div className="mt-3 pt-3 border-t border-[var(--card-border)]">
                   <p className="text-xs text-[var(--muted)] mb-2">Key intervals:</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                    {firstWorkout.intervals.slice(0, 4).map((interval, idx) => (
+                    {firstWorkoutIntervalsArray.slice(0, 4).map((interval, idx) => (
                       <div key={idx} className="bg-[var(--background)]/50 rounded p-2 text-center">
                         <div className="text-xs text-[var(--muted)]">{Math.round(interval.durationSecs / 60)}'</div>
                         <div className="text-sm font-medium">{interval.powerLow}-{interval.powerHigh}%</div>
@@ -263,8 +268,11 @@ export function TodayHero({
     );
   }
 
-  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
-  const mainSetIntervals = session.intervals.filter((i) => i.zone !== "Z1" && i.zone !== "Z2" && i.name !== "Warmup" && i.name !== "Cooldown");
+  // Ensure intervals is an array (handle edge case where it might be a function)
+  const intervalsArray = Array.isArray(session.intervals) ? session.intervals : [];
+
+  const totalSecs = intervalsArray.reduce((s, i) => s + i.durationSecs, 0);
+  const mainSetIntervals = intervalsArray.filter((i) => i.zone !== "Z1" && i.zone !== "Z2" && i.name !== "Warmup" && i.name !== "Cooldown");
   const peakZone = mainSetIntervals.length > 0
     ? mainSetIntervals.reduce((a, b) => (a.powerHigh > b.powerHigh ? a : b)).zone
     : "Z2";
@@ -322,7 +330,7 @@ export function TodayHero({
                 <p className="text-[10px] text-[var(--muted)]">Peak Zone</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-[var(--foreground)]">{session.intervals.length}</p>
+                <p className="text-2xl font-bold text-[var(--foreground)]">{intervalsArray.length}</p>
                 <p className="text-[10px] text-[var(--muted)]">Intervals</p>
               </div>
               {session.route && (
@@ -347,7 +355,7 @@ export function TodayHero({
           <div className="w-full md:w-64 shrink-0">
             <p className="text-xs text-[var(--muted)] mb-2">Workout Profile</p>
             <div className="flex items-end gap-[2px] h-20 bg-[var(--background)] rounded-lg p-2 relative group">
-              {session.intervals.map((interval, idx) => {
+              {intervalsArray.map((interval, idx) => {
                 const widthPct = (interval.durationSecs / totalSecs) * 100;
                 const avgPower = (interval.powerLow + interval.powerHigh) / 2;
                 const heightPct = avgPower > 0 ? Math.min((avgPower / 130) * 100, 100) : 10;

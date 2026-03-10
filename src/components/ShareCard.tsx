@@ -16,7 +16,10 @@ export function ShareCard({ session, ftp, rpe = 7, compliance = 88, onClose }: P
   const cardRef = useRef<HTMLDivElement>(null);
   const [copied, setCopied] = useState(false);
 
-  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
+  // Ensure intervals is an array (handle edge case where it might be a function)
+  const intervalsArray = Array.isArray(session.intervals) ? session.intervals : [];
+
+  const totalSecs = intervalsArray.reduce((s, i) => s + i.durationSecs, 0);
   const date = new Date().toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
 
   const handleShare = async () => {
@@ -24,14 +27,14 @@ export function ShareCard({ session, ftp, rpe = 7, compliance = 88, onClose }: P
       try {
         await navigator.share({
           title: `CycleCoach — ${session.title}`,
-          text: `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${session.intervals.length} intervals\n\n#CycleCoach #cycling`,
+          text: `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`,
         });
       } catch {
         // User cancelled
       }
     } else {
       // Fallback: copy text
-      const text = `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${session.intervals.length} intervals\n\n#CycleCoach #cycling`;
+      const text = `Just completed: ${session.title}\n⚡ FTP: ${ftp}W | RPE: ${rpe}/10 | Compliance: ${compliance}%\n🕐 ${session.duration} min | ${intervalsArray.length} intervals\n\n#CycleCoach #cycling`;
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -79,7 +82,7 @@ export function ShareCard({ session, ftp, rpe = 7, compliance = 88, onClose }: P
             {/* Interval visualization */}
             <div className="px-5">
               <div className="flex items-end gap-[2px] h-16 bg-[#111] rounded-lg p-2">
-                {session.intervals.map((interval, idx) => {
+                {intervalsArray.map((interval, idx) => {
                   const widthPct = (interval.durationSecs / totalSecs) * 100;
                   const avgPower = (interval.powerLow + interval.powerHigh) / 2;
                   const heightPct = avgPower > 0 ? Math.min((avgPower / 130) * 100, 100) : 10;

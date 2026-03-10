@@ -73,7 +73,11 @@ export function SessionCard({
   stravaActivities?: any[];
 }) {
   const [selectedInterval, setSelectedInterval] = useState<IntervalDetailModal | null>(null);
-  const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
+  
+  // Ensure intervals is an array (handle edge case where it might be a function)
+  const intervalsArray = Array.isArray(session.intervals) ? session.intervals : [];
+  
+  const totalSecs = intervalsArray.reduce((s, i) => s + i.durationSecs, 0);
   const href = `/workout/${blockIdx}-${weekIdx}-${sessionIdx}`;
   
   // Calculate session date for this day
@@ -145,7 +149,7 @@ export function SessionCard({
 
             {/* Mini interval bars — animated & interactive */}
             <div className="flex items-end gap-[1px] h-10 mb-2 bg-[var(--background)] rounded-lg p-1.5 relative group">
-              {session.intervals.map((interval, idx) => {
+              {intervalsArray.map((interval, idx) => {
                 const widthPct = (interval.durationSecs / totalSecs) * 100;
                 const avgPower = (interval.powerLow + interval.powerHigh) / 2;
                 const heightPct = avgPower > 0 ? Math.min((avgPower / 130) * 100, 100) : 10;
