@@ -2461,6 +2461,51 @@ export function generatePlan(
   let blockStartNum = 0;
   
   if (includeInitialFTPTest) {
+    // FTP Test is just Week 1 Monday of Block 1 - not a special recovery week
+    // Rest of the week continues normal BASE training
+    const ftpTestSession: SessionDef = {
+      dayOfWeek: "MON",
+      sessionType: "INDOOR",
+      title: "FTP Test",
+      description: "Establish baseline functional threshold power for zone calibration",
+      purpose: "Determine FTP for all power zones - Coggan 20-minute protocol",
+      duration: 35,
+      intervals: [
+        interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
+        interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
+        interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
+        interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
+        restInterval(300),
+        interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
+        restInterval(600),
+        // Main 20-minute FTP test
+        interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
+        restInterval(600),
+        // Cool down with efforts to test leg freshness
+        interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
+        restInterval(300),
+        interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
+        interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
+      ],
+    };
+    
+    // Generate full Week 1, then replace Monday with FTP test
+    const week1Sessions = generateWeekSessions(
+      "BASE",
+      "BUILD",
+      0,
+      trainingDays,
+      outdoorDay,
+      "Foundation Building",
+      1,
+      previousWeekStructures,
+      previousWeekTemplates,
+      riderId,
+      targetDurationMinutes
+    )
+    .map(s => fixSessionDuration(s, "BUILD"))
+    .map(s => s.dayOfWeek === "MON" ? ftpTestSession : s); // Replace Monday with FTP test
+    
     const firstBlock: BlockDef = {
       blockNumber: 1,
       type: "BASE",
@@ -2468,59 +2513,7 @@ export function generatePlan(
         {
           weekNumber: 1,
           weekType: "BUILD",
-          sessions: [
-            // MONDAY: FTP Test (20-minute Coggan protocol)
-            {
-              dayOfWeek: "MON",
-              sessionType: "INDOOR",
-              title: "FTP Test",
-              description: "Establish baseline functional threshold power for zone calibration",
-              purpose: "Determine FTP for all power zones - Coggan 20-minute protocol",
-              duration: 35,
-              intervals: [
-                interval("Easy Warmup 1", 300, 50, 60, "Gentle start", "recovery"),
-                interval("Build 1", 300, 60, 70, "Build gradually", "endurance"),
-                interval("Build 2", 300, 70, 80, "Continue building", "endurance"),
-                interval("Surge 1", 120, 85, 95, "First surge", "tempo"),
-                restInterval(300),
-                interval("Surge 2", 120, 85, 95, "Second surge", "tempo"),
-                restInterval(600),
-                // Main 20-minute FTP test
-                interval("FTP Test Effort", 1200, 95, 105, "20-minute steady max effort at threshold", "threshold"),
-                restInterval(600),
-                // Cool down with efforts to test leg freshness
-                interval("Sprint 1", 120, 100, 150, "2-min post-test effort", "anaerobic"),
-                restInterval(300),
-                interval("Sprint 2", 120, 100, 150, "2-min final effort", "anaerobic"),
-                interval("Easy Cooldown", 300, 40, 50, "Easy spin recovery", "recovery"),
-              ],
-            },
-            // REST OF WEEK: Recovery days only
-            generateRestDay("TUE"),
-            generateRestDay("WED"),
-            {
-              dayOfWeek: "THU",
-              sessionType: "INDOOR",
-              title: "Easy Recovery Spin",
-              description: "Light spinning recovery after FTP test",
-              purpose: "Active recovery - flush metabolic waste",
-              duration: 45,
-              intervals: [
-                interval("Recovery Spin", 2700, 45, 60, "Easy aerobic spinning", "recovery"),
-              ],
-            },
-            generateRestDay("FRI"),
-            {
-              dayOfWeek: "SAT",
-              sessionType: "OUTDOOR",
-              title: "Easy Outdoor Recovery",
-              description: "Light outdoor ride to recover from testing day",
-              purpose: "Easy active recovery",
-              duration: 90,
-              intervals: [],
-            },
-            generateRestDay("SUN"),
-          ],
+          sessions: week1Sessions,
         },
         // WEEKS 2-4: Regular BASE block progression
         ...Array(3).fill(0).map((_, weekIdx) => {
