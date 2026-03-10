@@ -1156,7 +1156,8 @@ function generateWeekSessions(
   previousStructures: Partial<Record<DayOfWeek, WorkoutStructure>> = {},
   previousTemplates: Partial<Record<DayOfWeek, WorkoutTemplate>> = {},
   userSeed?: string, // For per-user variation (Monday stays locked, other days can vary)
-  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION
+  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION
+  targetSundayDurationMinutes?: number // SUNDAY'S SEPARATE DURATION PARAMETER
 ): SessionDef[] {
   // Generate full week sessions (7 days)
   const allDays: DayOfWeek[] = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -1173,7 +1174,11 @@ function generateWeekSessions(
       session = generateOutdoorSession(weekType, blockNum, day);
     } else {
       // Indoor training day - use generation engine for duration-aware sessions
-      // Monday is sacred (stick to plan), other days use userSeed for variation
+      // Sunday uses separate duration if provided, otherwise use regular targetDurationMinutes
+      const durationForDay = (day === "SUN" && targetSundayDurationMinutes) 
+        ? targetSundayDurationMinutes 
+        : targetDurationMinutes;
+      
       session = generateIndoorSession(
         blockType, 
         weekType, 
@@ -1181,7 +1186,7 @@ function generateWeekSessions(
         weekInBlock,
         previousTemplates,
         userSeed,
-        targetDurationMinutes // RESPECT USER'S REQUESTED DURATION
+        durationForDay // RESPECT USER'S REQUESTED DURATION (or Sunday's separate duration)
       );
     }
     
@@ -1645,7 +1650,8 @@ export function generatePlan(
   useAINames?: boolean,
   riderId?: string, // For per-user variation (Monday locked, other days vary by user)
   includeInitialFTPTest: boolean = true, // Always start with FTP test to establish baselines
-  targetDurationMinutes?: number // USER'S REQUESTED SESSION DURATION - NEW PARAM
+  targetDurationMinutes?: number, // USER'S REQUESTED SESSION DURATION - NEW PARAM
+  targetSundayDurationMinutes?: number // SUNDAY'S SEPARATE DURATION PARAMETER - NEW PARAM
 ): PlanDef {
   resetCommentaryIndex();
   const blocks: BlockDef[] = [];
@@ -1676,9 +1682,16 @@ export function generatePlan(
       previousWeekStructures,
       previousWeekTemplates,
       riderId,
-      targetDurationMinutes
+      targetDurationMinutes,
+      targetSundayDurationMinutes
     )
-    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes, targetDurationMinutes)); // Apply smart scaling with user target
+    .map(s => {
+      // Apply smart scaling: use Sunday's separate duration if applicable
+      const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
+        ? targetSundayDurationMinutes 
+        : targetDurationMinutes;
+      return fixSessionDuration(s, "BUILD", !!durationToUse, durationToUse);
+    });
     
     const firstBlock: BlockDef = {
       blockNumber: 1,
@@ -1705,8 +1718,15 @@ export function generatePlan(
             previousWeekStructures,
             previousWeekTemplates,
             riderId,
-            targetDurationMinutes // PASS USER'S REQUESTED DURATION
-          ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes)); // Apply Option B scaling
+            targetDurationMinutes,
+            targetSundayDurationMinutes // PASS USER'S REQUESTED DURATION
+          ).map(s => {
+            // Apply smart scaling: use Sunday's separate duration if applicable
+            const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
+              ? targetSundayDurationMinutes 
+              : targetDurationMinutes;
+            return fixSessionDuration(s, weekType, !!durationToUse, durationToUse);
+          });
           
           return {
             weekNumber: weekNum,
@@ -1754,8 +1774,15 @@ export function generatePlan(
         previousWeekStructures,
         previousWeekTemplates,  // Pass template tracking
         riderId,  // Pass rider ID for per-user variation
-        targetDurationMinutes // PASS USER'S REQUESTED DURATION
-      ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes, targetDurationMinutes)); // Apply Option B scaling
+        targetDurationMinutes,
+        targetSundayDurationMinutes // PASS USER'S REQUESTED DURATION
+      ).map(s => {
+        // Apply smart scaling: use Sunday's separate duration if applicable
+        const durationToUse = (s.dayOfWeek === "SUN" && targetSundayDurationMinutes) 
+          ? targetSundayDurationMinutes 
+          : targetDurationMinutes;
+        return fixSessionDuration(s, weekType, !!durationToUse, durationToUse);
+      });
       
       // Track templates for next week's variety (avoid same template week-to-week)
       sessions.forEach(s => {
