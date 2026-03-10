@@ -235,19 +235,33 @@ export async function POST(request: NextRequest) {
                     title: session.title,
                     description: session.description,
                     intervals: {
-                      create: session.intervals.map((interval, idx) => ({
-                        orderNum: idx,
-                        name: interval.name,
-                        durationSecs: interval.durationSecs,
-                        powerLow: interval.powerLow,
-                        powerHigh: interval.powerHigh,
-                        cadenceLow: interval.cadenceLow || null,
-                        cadenceHigh: interval.cadenceHigh || null,
-                        rpe: interval.rpe || null,
-                        zone: interval.zone,
-                        purpose: interval.purpose,
-                        coachNote: interval.coachNote,
-                      })),
+                      create: session.intervals.map((interval, idx) => {
+                        // Provide defaults for missing power values
+                        const powerLow = interval.powerLow ?? 50;
+                        const powerHigh = interval.powerHigh ?? 75;
+                        const zone = interval.zone ?? 'Z2';
+                        
+                        console.log(`    📍 Interval ${idx}: ${interval.name}`, {
+                          powerLow,
+                          powerHigh,
+                          zone,
+                          durationSecs: interval.durationSecs,
+                        });
+                        
+                        return {
+                          orderNum: idx,
+                          name: interval.name || `Interval ${idx}`,
+                          durationSecs: interval.durationSecs || 60,
+                          powerLow,
+                          powerHigh,
+                          cadenceLow: interval.cadenceLow ?? undefined,
+                          cadenceHigh: interval.cadenceHigh ?? undefined,
+                          rpe: interval.rpe ?? undefined,
+                          zone,
+                          purpose: interval.purpose || '',
+                          coachNote: interval.coachNote || '',
+                        };
+                      }),
                     },
                   })),
                 },
