@@ -2399,13 +2399,22 @@ function generateIndoorSession(
 
 // ─── Duration Fix ────────────────────────────────────────────────────
 
-function fixSessionDuration(session: SessionDef, weekType?: WeekType): SessionDef {
+/**
+ * Fix session duration by recalculating from intervals
+ * If targetDurationWasApplied=true, skip week-type adjustments (target already respected)
+ */
+function fixSessionDuration(session: SessionDef, weekType?: WeekType, targetDurationWasApplied: boolean = false): SessionDef {
   if (session.sessionType === "OUTDOOR") return session; // Outdoor durations are set by route
   
   const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
   let durationMins = Math.round(totalSecs / 60);
   
-  // Adjust duration based on periodization phase
+  // If target duration was already applied, don't adjust further
+  if (targetDurationWasApplied) {
+    return { ...session, duration: durationMins };
+  }
+  
+  // Adjust duration based on periodization phase (only if no target was applied)
   if (weekType) {
     switch (weekType) {
       case "RECOVERY":
@@ -2510,7 +2519,7 @@ export function generatePlan(
       riderId,
       targetDurationMinutes
     )
-    .map(s => fixSessionDuration(s, "BUILD"))
+    .map(s => fixSessionDuration(s, "BUILD", !!targetDurationMinutes)) // Don't adjust if target applied
     .map(s => s.dayOfWeek === "MON" ? ftpTestSession : s); // Replace Monday with FTP test
     
     const firstBlock: BlockDef = {
@@ -2539,7 +2548,7 @@ export function generatePlan(
             previousWeekTemplates,
             riderId,
             targetDurationMinutes // PASS USER'S REQUESTED DURATION
-          ).map(s => fixSessionDuration(s, weekType));
+          ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes));
           
           return {
             weekNumber: weekNum,
@@ -2588,7 +2597,7 @@ export function generatePlan(
         previousWeekTemplates,  // Pass template tracking
         riderId,  // Pass rider ID for per-user variation
         targetDurationMinutes // PASS USER'S REQUESTED DURATION
-      ).map(s => fixSessionDuration(s, weekType)); // Apply duration scaling based on week type
+      ).map(s => fixSessionDuration(s, weekType, !!targetDurationMinutes)); // Skip adjustments if target applied
       
       // Track templates for next week's variety (avoid same template week-to-week)
       sessions.forEach(s => {

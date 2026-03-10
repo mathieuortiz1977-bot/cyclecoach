@@ -55,6 +55,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json().catch(() => ({}));
     const numBlocks = body.blocks || 4;
     const confirmUpdate = body.confirmUpdate || false; // User must explicitly confirm to update pending sessions
+    const targetDurationMinutes = body.targetDurationMinutes || undefined; // User's requested session duration
 
     // Get rider's training schedule  
     const trainingDays: DayOfWeek[] = rider.trainingDays ? 
@@ -138,8 +139,18 @@ export async function POST(request: NextRequest) {
     
     console.log(`[Plan Update] CONFIRMED - Deleted old plan, regenerating with new parameters`);
 
-    // Generate plan with custom training schedule
-    const planData = generatePlan(numBlocks, trainingDays, outdoorDay);
+    // Generate plan with custom training schedule and target duration
+    const planData = generatePlan(
+      numBlocks,
+      trainingDays,
+      outdoorDay,
+      undefined, // season
+      undefined, // raceType
+      undefined, // useAINames
+      rider.id,  // riderId for per-user variation
+      true,      // includeInitialFTPTest
+      targetDurationMinutes // USER'S REQUESTED DURATION (NEW)
+    );
 
     // Persist to DB
     const plan = await prisma.plan.create({
