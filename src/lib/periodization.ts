@@ -1259,6 +1259,7 @@ export interface WorkoutTemplate {
   
   // NEW: Classification fields for smart selection
   category: string;              // "BASE", "THRESHOLD", "VO2MAX", "ANAEROBIC", "SPRINT", "RECOVERY", etc.
+  source?: string;               // "carlos", "zwift", "research-v1", "research-v2"
   protocol?: string;             // "Seiler 4x8", "Billat 30/30", "Coggan 2x20", etc.
   researcher?: string;           // "Seiler", "Billat", "Rønnestad", "Coggan", "Laursen"
   structure?: string;            // "repeats", "pyramid", "ladder", "steady", "mixed", "alternating"

@@ -1,58 +1,57 @@
 /**
  * MASTER WORKOUTS DATABASE - ALL SOURCES
- * - 63 Classified (helperfunction-based)
- * - 55 Research V1
- * - 47 Research V2
- * - 77 Zwift (NEW)
- * TOTAL: 242 workouts (pre-deduplication)
  * 
- * All converted to percentage-based durations
+ * FLEXIBLE FILE-BASED LOADING
+ * Loads workouts from /workouts/{carlos,zwift,research}/*.json
+ * Can be updated anytime without code changes
  * 
- * BUG #6 FIX: Error handling for database imports
+ * Sources:
+ * - Carlos: 105 workouts
+ * - Zwift: 68 workouts  
+ * - Research: 47 workouts
+ * TOTAL: 220 workouts
+ * 
+ * All converted to normalized percentage-based duration structure
+ * 
+ * DESIGN: File-based loading for easy corrections
+ * When corrections are sent, just drop updated JSON files in place
  */
 
 import type { WorkoutTemplate } from './periodization';
+import { loadAllNormalizedWorkoutsSync } from './workouts-loader';
 
-// Import with error handling (BUG #6 fix)
+// ─── LOAD NORMALIZED WORKOUTS FROM JSON FILES ──────────────────────
+
+let NORMALIZED_WORKOUTS: WorkoutTemplate[] = [];
+
+try {
+  console.log('[Database] Loading normalized workouts from JSON files...');
+  NORMALIZED_WORKOUTS = loadAllNormalizedWorkoutsSync();
+  console.log(`[Database] Successfully loaded ${NORMALIZED_WORKOUTS.length} normalized workouts`);
+} catch (error) {
+  console.error('[Database] CRITICAL: Failed to load normalized workouts:', error);
+  NORMALIZED_WORKOUTS = [];
+}
+
+// ─── KEEP LEGACY CLASSIFIED WORKOUTS (FOR NOW) ──────────────────────
+// These will be deprecated once corrections are finalized
 let CLASSIFIED: WorkoutTemplate[] = [];
-let RESEARCH_WORKOUTS: WorkoutTemplate[] = [];
-let RESEARCH_WORKOUTS_V2: WorkoutTemplate[] = [];
-let ZWIFT_WORKOUTS: WorkoutTemplate[] = [];
 
 try {
   const classified = require('./sessions-data-classified');
   CLASSIFIED = classified.MASTER_WORKOUTS || [];
+  console.log(`[Database] Loaded ${CLASSIFIED.length} legacy classified workouts (fallback)`);
 } catch (e) {
-  console.error('[Database] Failed to load CLASSIFIED workouts:', e);
+  console.warn('[Database] Could not load classified workouts (expected, will use normalized):', e);
 }
 
-try {
-  const research = require('./research-workouts');
-  RESEARCH_WORKOUTS = research.RESEARCH_WORKOUTS || [];
-} catch (e) {
-  console.error('[Database] Failed to load RESEARCH_WORKOUTS:', e);
-}
+// ─── COMBINE SOURCES ────────────────────────────────────────────────
+// Priority: Normalized JSON > Legacy Classified
+// This gives us a graceful migration path
 
-try {
-  const researchV2 = require('./research-workouts-v2');
-  RESEARCH_WORKOUTS_V2 = researchV2.RESEARCH_WORKOUTS_V2 || [];
-} catch (e) {
-  console.error('[Database] Failed to load RESEARCH_WORKOUTS_V2:', e);
-}
-
-try {
-  const zwift = require('./zwift-workouts');
-  ZWIFT_WORKOUTS = zwift.ZWIFT_WORKOUTS || [];
-} catch (e) {
-  console.error('[Database] Failed to load ZWIFT_WORKOUTS:', e);
-}
-
-// Combine all sources with fallback
 const ALL_WORKOUTS: WorkoutTemplate[] = [
-  ...CLASSIFIED,
-  ...RESEARCH_WORKOUTS,
-  ...RESEARCH_WORKOUTS_V2,
-  ...ZWIFT_WORKOUTS,
+  ...NORMALIZED_WORKOUTS,  // Load normalized first (takes priority)
+  ...CLASSIFIED,           // Fallback to classified if normalized fails
 ];
 
 // Deduplication: remove exact ID duplicates (keep first occurrence)
@@ -66,7 +65,9 @@ for (const workout of ALL_WORKOUTS) {
   }
 }
 
-console.log(`[Sessions Database] Loaded 242 workouts → ${MASTER_WORKOUTS_DEDUPED.length} unique after ID deduplication`);
+console.log(`[Sessions Database] Final database: ${MASTER_WORKOUTS_DEDUPED.length} unique workouts`);
+console.log(`[Sessions Database]   - From normalized JSON: ${NORMALIZED_WORKOUTS.length}`);
+console.log(`[Sessions Database]   - From legacy fallback: ${CLASSIFIED.length}`);
 
 export const MASTER_WORKOUTS = MASTER_WORKOUTS_DEDUPED;
 export const TOTAL_WORKOUTS = MASTER_WORKOUTS.length;
