@@ -1503,25 +1503,16 @@ function selectWorkoutTemplate(
     candidates = MASTER_WORKOUTS;
   }
   
-  // STEP 6: Seeded random selection from filtered candidates
-  // Use metadata (category + weekType + specialization) to create consistent but varied selection
-  // This ensures: Same context = Same workout, Different context = Different workout
+  // STEP 6: Random selection from filtered candidates with ENTROPY
+  // Use true randomness (Math.random()) to ensure variety between generation attempts
+  // The filtering logic (category, difficulty, week type) ensures periodization is respected
+  // But the selection within candidates should be RANDOM, not seeded deterministically
   
-  // Create a seed from the selection criteria
-  const seedString = `${category}-${weekType || 'none'}-${specialization || 'none'}-${candidates.length}`;
-  const seed = seedString.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  // CRITICAL FIX: Use Math.random() instead of seeded random
+  // This ensures each generation attempt picks a DIFFERENT workout from the pool
+  // The filtering (difficulty, category, week type) ensures picks are still appropriate
   
-  // Seeded pseudo-random (Simple LCG algorithm for deterministic randomness)
-  const seededRandom = function(seed: number): number {
-    const a = 1103515245;
-    const c = 12345;
-    const m = 2147483648;
-    const newSeed = (a * seed + c) % m;
-    return newSeed / m;
-  };
-  
-  const randomValue = seededRandom(seed);
-  const randomIndex = Math.floor(randomValue * candidates.length);
+  const randomIndex = Math.floor(Math.random() * candidates.length);
   const selected = candidates[randomIndex];
   
   if (!selected) {
@@ -1531,7 +1522,6 @@ function selectWorkoutTemplate(
       specialization,
       candidatesLength: candidates.length,
       randomIndex,
-      seed,
     });
     throw new Error('Workout selection returned undefined');
   }
