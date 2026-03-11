@@ -3,11 +3,12 @@ import type { SessionDef, IntervalDef } from "./periodization";
 
 // ─── Zwift .zwo Format ───────────────────────────────────────────────
 
-export function exportToZWO(session: SessionDef, ftp: number): string {
+export function exportToZWO(session: SessionDef, ftp: number, coachNotesStyle?: string): string {
   const intervals = session.intervals.map((i, idx) => 
     intervalToZwoXml(i, ftp, {
       isFirst: idx === 0,
       sessionPurpose: session.purpose,
+      coachNotesStyle,
     })
   ).join("\n        ");
   
@@ -141,6 +142,7 @@ const GREETINGS = [
 interface IntervalXmlOptions {
   isFirst?: boolean;
   sessionPurpose?: string;
+  coachNotesStyle?: string;
 }
 
 function generateSessionGreeting(sessionPurpose?: string): string {

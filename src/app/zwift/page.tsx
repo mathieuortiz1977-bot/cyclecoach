@@ -30,6 +30,7 @@ export default function ZwiftSync() {
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
   const [downloaded, setDownloaded] = useState<Set<string>>(new Set());
+  const [coachNotesStyle, setCoachNotesStyle] = useState<"MOTIVATIONAL" | "TOUGH_LOVE" | "DARK_HUMOR" | "MIXED" | "TECHNICAL">("MOTIVATIONAL");
 
   if (loading) {
     return <DashboardSkeleton />;
@@ -53,18 +54,33 @@ export default function ZwiftSync() {
   );
 
   const handleDownload = (session: typeof zwiftSessions[0], idx: number) => {
-    const zwo = exportToZWO(session, ftp);
+    const zwo = exportToZWO(session, ftp, coachNotesStyle);
     const filename = `CycleCoach_B${activeBlock + 1}W${activeWeek + 1}_${session.dayOfWeek}_${session.title.replace(/[^a-zA-Z0-9]/g, "_")}.zwo`;
     downloadFile(zwo, filename, "application/xml");
     setDownloaded((prev) => new Set([...prev, `${activeBlock}-${activeWeek}-${idx}`]));
   };
 
   const handleDownloadAll = () => {
-    zwiftSessions.forEach((session, idx) => {
-      setTimeout(() => {
-        handleDownload(session, idx);
-      }, idx * 300); // stagger downloads
-    });
+    // Show confirmation of selected coaching notes style
+    const styleNames: Record<string, string> = {
+      MOTIVATIONAL: "🔥 Motivational",
+      TOUGH_LOVE: "💪 Tough Love",
+      DARK_HUMOR: "💀 Dark Humor",
+      TECHNICAL: "🔬 Technical",
+      MIXED: "🎲 Mixed"
+    };
+    
+    const confirmed = window.confirm(
+      `Download ${zwiftSessions.length} workouts with ${styleNames[coachNotesStyle]} coaching notes?\n\nWorkouts will be saved to your Downloads folder.`
+    );
+    
+    if (confirmed) {
+      zwiftSessions.forEach((session, idx) => {
+        setTimeout(() => {
+          handleDownload(session, idx);
+        }, idx * 300); // stagger downloads
+      });
+    }
   };
 
   const handleDownloadWeekZip = async () => {
@@ -150,6 +166,34 @@ export default function ZwiftSync() {
               }`}
             >
               {WEEK_LABELS[w.weekType] || w.weekType}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Coaching Notes Style Selection */}
+      <div className="glass p-5 space-y-4">
+        <h2 className="font-semibold text-sm">🎯 Coaching Notes Style</h2>
+        <p className="text-xs text-[var(--muted)]">Choose the tone of coaching messages in your Zwift workouts:</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[
+            { value: "MOTIVATIONAL", emoji: "🔥", label: "Motivational" },
+            { value: "TOUGH_LOVE", emoji: "💪", label: "Tough Love" },
+            { value: "DARK_HUMOR", emoji: "💀", label: "Dark Humor" },
+            { value: "TECHNICAL", emoji: "🔬", label: "Technical" },
+            { value: "MIXED", emoji: "🎲", label: "Mixed" },
+          ].map((style) => (
+            <button
+              key={style.value}
+              onClick={() => setCoachNotesStyle(style.value as any)}
+              className={`p-2 rounded-lg text-xs font-medium transition-colors border ${
+                coachNotesStyle === style.value
+                  ? "border-[var(--accent)] bg-[var(--accent)]/20 text-[var(--accent)]"
+                  : "border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--foreground)]"
+              }`}
+            >
+              <span className="block text-lg mb-1">{style.emoji}</span>
+              {style.label}
             </button>
           ))}
         </div>
