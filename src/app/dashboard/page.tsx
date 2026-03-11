@@ -68,13 +68,9 @@ export default function Dashboard() {
             weeks: b.weeks.map((w: TrainingWeek) => ({
               weekNumber: w.weekNumber,
               weekType: w.weekType,
-              sessions: w.sessions.map((s: TrainingSession) => ({
-                dayOfWeek: s.dayOfWeek,
-                sessionType: s.sessionType,
-                duration: s.duration,
-                title: s.title,
-                description: s.description,
-                intervals: s.intervals.map((i: TrainingInterval) => ({
+              sessions: w.sessions.map((s: TrainingSession) => {
+                // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
+                const normalizedIntervals = s.intervals.map((i: TrainingInterval) => ({
                   name: i.name,
                   // Handle both nested and flat duration structures
                   durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
@@ -87,9 +83,23 @@ export default function Dashboard() {
                   zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
                   purpose: i.purpose,
                   coachNote: i.coachNote,
-                })),
-                route: s.route || undefined,
-              })),
+                }));
+                
+                // Calculate actual duration from interval sum
+                const actualDurationMinutes = Math.round(
+                  normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
+                ) || s.duration || 60;
+                
+                return {
+                  dayOfWeek: s.dayOfWeek,
+                  sessionType: s.sessionType,
+                  duration: actualDurationMinutes, // Use calculated duration, not database value
+                  title: s.title,
+                  description: s.description,
+                  intervals: normalizedIntervals,
+                  route: s.route || undefined,
+                };
+              }),
             })),
           })),
         };
@@ -127,13 +137,9 @@ export default function Dashboard() {
                 weeks: b.weeks.map((w: TrainingWeek) => ({
                   weekNumber: w.weekNumber,
                   weekType: w.weekType,
-                  sessions: w.sessions.map((s: TrainingSession) => ({
-                    dayOfWeek: s.dayOfWeek,
-                    sessionType: s.sessionType,
-                    duration: s.duration,
-                    title: s.title,
-                    description: s.description,
-                    intervals: s.intervals.map((i: TrainingInterval) => ({
+                  sessions: w.sessions.map((s: TrainingSession) => {
+                    // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
+                    const normalizedIntervals = s.intervals.map((i: TrainingInterval) => ({
                       name: i.name,
                       // Handle both nested and flat duration structures
                       durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
@@ -146,9 +152,23 @@ export default function Dashboard() {
                       zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
                       purpose: i.purpose,
                       coachNote: i.coachNote,
-                    })),
-                    route: s.route || undefined,
-                  })),
+                    }));
+                    
+                    // Calculate actual duration from interval sum
+                    const actualDurationMinutes = Math.round(
+                      normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
+                    ) || s.duration || 60;
+                    
+                    return {
+                      dayOfWeek: s.dayOfWeek,
+                      sessionType: s.sessionType,
+                      duration: actualDurationMinutes, // Use calculated duration, not database value
+                      title: s.title,
+                      description: s.description,
+                      intervals: normalizedIntervals,
+                      route: s.route || undefined,
+                    };
+                  }),
                 })),
               })),
               totalWeeks: planData.plan.blocks.reduce((sum: number, b: any) => sum + b.weeks.length, 0),
