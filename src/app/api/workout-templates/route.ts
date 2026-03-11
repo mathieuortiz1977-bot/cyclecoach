@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
     const search = request.nextUrl.searchParams.get('search')?.toLowerCase();
     const limit = Math.min(
       parseInt(request.nextUrl.searchParams.get('limit') || '20'),
-      100
+      500  // Increased from 100 to 500 to support full 260-workout database
     );
     const offset = parseInt(request.nextUrl.searchParams.get('offset') || '0');
 
