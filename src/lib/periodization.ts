@@ -1977,9 +1977,17 @@ function fixSessionDuration(
     // User explicitly selected a duration - RESPECT IT EXACTLY (no day multipliers)
     const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
     
-    // ISSUE #10 FIX: Rescale intervals if user duration differs from current duration
-    const currentDurationMinutes = session.duration;
-    const rescaledIntervals = rescaleIntervals(session.intervals, currentDurationMinutes, userProvidedDuration);
+    // CRITICAL FIX: Calculate ACTUAL current duration from intervals sum
+    // Don't use session.duration (might not match interval sum due to nested structure issues)
+    // The intervals have already been normalized, so sum them to get true duration
+    const actualCurrentDurationMinutes = Math.round(
+      (session.intervals || []).reduce((s, i) => s + i.durationSecs, 0) / 60
+    ) || 1; // Fallback to 1 min to avoid division by zero
+    
+    // Only rescale if durations differ
+    const rescaledIntervals = actualCurrentDurationMinutes !== userProvidedDuration
+      ? rescaleIntervals(session.intervals, actualCurrentDurationMinutes, userProvidedDuration)
+      : session.intervals;
     
     return {
       ...session,
@@ -1992,27 +2000,28 @@ function fixSessionDuration(
   }
   
   // No user duration provided - fall back to template duration
-  // Calculate base duration from intervals
-  // BUG #9 FIX: Handle null/undefined intervals (e.g., rest days)
+  // CRITICAL FIX: Calculate ACTUAL base duration from intervals (not session.duration)
   const totalSecs = (session.intervals || []).reduce((s, i) => s + i.durationSecs, 0);
-  const baseTemplateDuration = Math.round(totalSecs / 60) || 0;
+  const actualDurationMinutes = Math.round(totalSecs / 60) || 1;
   
-  // Use template duration as anchor (no user selection provided)
-  const anchor = baseTemplateDuration || 60;
+  // Use actual interval duration as anchor (no user selection provided)
+  const anchor = actualDurationMinutes;
   
   // For template-based sessions (user didn't select duration), apply smart scaling
   const smartDuration = calculateSmartDuration(
     anchor,
     weekType,
     session.dayOfWeek,
-    baseTemplateDuration
+    actualDurationMinutes
   );
   
   // Calculate intensity factor (Part 2)
   const intensityFactor = calculateIntensityFactor(weekType, session.purpose);
   
-  // ISSUE #10 FIX: Rescale intervals if smart duration differs from current duration
-  const rescaledIntervals = rescaleIntervals(session.intervals, anchor, smartDuration);
+  // CRITICAL FIX: Only rescale if durations differ significantly
+  const rescaledIntervals = Math.abs(anchor - smartDuration) > 1
+    ? rescaleIntervals(session.intervals, anchor, smartDuration)
+    : session.intervals;
   
   // Return session with both duration AND intensity applied
   return {
