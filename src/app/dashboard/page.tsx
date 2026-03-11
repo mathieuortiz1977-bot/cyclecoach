@@ -2,7 +2,8 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
 import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval, CompletedWorkout, StravaActivity } from "@/types";
 import { motion } from "framer-motion";
-import { generatePlan, planStats } from "@/lib/periodization";
+import Link from "next/link";
+import { planStats } from "@/lib/periodization";
 import { SessionCard } from "@/components/SessionCard";
 import { ZoneTable } from "@/components/ZoneTable";
 import { TodayHero } from "@/components/TodayHero";
@@ -25,10 +26,13 @@ const stagger = {
   item: { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } },
 };
 
+// Default empty plan structure
+const emptyPlan = { blocks: [] as TrainingBlock[] };
+
 export default function Dashboard() {
   const [ftp, setFtp] = useState(190);
   const [loading, setLoading] = useState(true);
-  const [plan, setPlan] = useState(() => generatePlan(4));
+  const [plan, setPlan] = useState<{ blocks: TrainingBlock[] }>(emptyPlan);
   const [programStartDate, setProgramStartDate] = useState<string | undefined>();
   const [workoutData, setWorkoutData] = useState<any[]>([]);
   const [stravaData, setStravaData] = useState<any[]>([]);
@@ -167,9 +171,27 @@ export default function Dashboard() {
   const [showCompletion, setShowCompletion] = useState(false);
   const [selectedSessionIdx, setSelectedSessionIdx] = useState(0);
 
+  // Guard against empty plan
   const block = plan.blocks[activeBlock];
-  const week = block.weeks[activeWeek];
-  const bt = BLOCK_META[block.type];
+  const week = block?.weeks[activeWeek];
+  const bt = block ? BLOCK_META[block.type] : undefined;
+  
+  // If no plan loaded yet, show loading
+  if (plan.blocks.length === 0 && loading === false) {
+    return (
+      <div className="max-w-6xl mx-auto py-12 text-center">
+        <div className="glass p-8 space-y-4">
+          <p className="text-[var(--muted)]">No training plan found.</p>
+          <p className="text-sm text-[var(--muted)]">Go to <Link href="/settings" className="text-[var(--accent)] hover:underline">Settings</Link> to create a training plan.</p>
+        </div>
+      </div>
+    );
+  }
+  
+  // If blocks exist but block/week are undefined, show loading
+  if (!block || !week || !bt) {
+    return <DashboardSkeleton />;
+  }
 
   // Calculate real completion percentage
   const [weeklyProgress, setWeeklyProgress] = useState<{ completed: number; total: number }>({ completed: 0, total: 0 });

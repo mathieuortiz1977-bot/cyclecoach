@@ -1,7 +1,6 @@
 "use client";
 import { useMemo, useState, useEffect, useCallback } from "react";
 import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval } from "@/types";
-import { generatePlan } from "@/lib/periodization";
 import Link from "next/link";
 import * as tz from "@/lib/timezone";
 import { getZoneColor } from "@/lib/zones";
@@ -14,8 +13,13 @@ const weekTypeLabels: Record<string, { label: string; color: string }> = {
   RECOVERY: { label: "Recovery", color: "#3b82f6" },
 };
 
+// Default empty plan structure
+const emptyPlan: { blocks: TrainingBlock[] } = {
+  blocks: [],
+};
+
 export default function PlanPage() {
-  const [plan, setPlan] = useState(() => generatePlan(4));
+  const [plan, setPlan] = useState<{ blocks: TrainingBlock[] }>(emptyPlan);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
   const [loading, setLoading] = useState(true);
 
