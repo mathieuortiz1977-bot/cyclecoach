@@ -3,12 +3,12 @@ import type { SessionDef, IntervalDef } from "./periodization";
 
 // ─── Zwift .zwo Format ───────────────────────────────────────────────
 
-export function exportToZWO(session: SessionDef, ftp: number, coachNotesStyle?: string): string {
+export function exportToZWO(session: SessionDef, ftp: number, coachNotesStyle: string = "MIXED"): string {
   const intervals = session.intervals.map((i, idx) => 
     intervalToZwoXml(i, ftp, {
       isFirst: idx === 0,
       sessionPurpose: session.purpose,
-      coachNotesStyle,
+      coachNotesStyle, // CRITICAL: Pass the rider's selected tone to filter coaching notes
     })
   ).join("\n        ");
   

@@ -50,12 +50,14 @@ export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
       const rpe = intensity.rpe ?? interval.rpe;
 
       // Extract coaching notes: NEW format uses coachingNotes object with styles
+      // NOTE: The actual tone selection is done at display time (dashboard, export) 
+      // using rider.coachTone. Here we just extract the flat coachNote or return raw object for later filtering.
       let coachNote = interval.coachNote || '';
       if (!coachNote && interval.coachingNotes && typeof interval.coachingNotes === 'object') {
-        // Pick one of the coaching note styles (priority: MOTIVATIONAL → TOUGH_LOVE → MIXED → TECHNICAL → DARK_HUMOR)
-        coachNote = interval.coachingNotes.MOTIVATIONAL 
+        // Pick one of the coaching note styles (fallback priority if no tone selected)
+        coachNote = interval.coachingNotes.MIXED 
+          || interval.coachingNotes.MOTIVATIONAL 
           || interval.coachingNotes.TOUGH_LOVE
-          || interval.coachingNotes.MIXED 
           || interval.coachingNotes.TECHNICAL 
           || interval.coachingNotes.DARK_HUMOR 
           || '';

@@ -71,9 +71,12 @@ export default function Dashboard() {
                 const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => {
                   let coachNote = i.coachNote || '';
                   if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
-                    coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                    // CRITICAL FIX: Use rider's selected coachTone instead of hardcoded priority!
+                    const selectedTone = riderData?.rider?.coachTone || 'MIXED';
+                    coachNote = (i as any).coachingNotes[selectedTone] 
+                      || (i as any).coachingNotes.MIXED // Fallback to MIXED if selected tone not available
+                      || (i as any).coachingNotes.MOTIVATIONAL 
                       || (i as any).coachingNotes.TOUGH_LOVE
-                      || (i as any).coachingNotes.MIXED
                       || (i as any).coachingNotes.TECHNICAL
                       || (i as any).coachingNotes.DARK_HUMOR
                       || '';
@@ -147,9 +150,12 @@ export default function Dashboard() {
                     const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => {
                       let coachNote = i.coachNote || '';
                       if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
-                        coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                        // CRITICAL FIX: Use rider's selected coachTone instead of hardcoded priority!
+                        const selectedTone = riderData?.rider?.coachTone || 'MIXED';
+                        coachNote = (i as any).coachingNotes[selectedTone] 
+                          || (i as any).coachingNotes.MIXED // Fallback to MIXED if selected tone not available
+                          || (i as any).coachingNotes.MOTIVATIONAL 
                           || (i as any).coachingNotes.TOUGH_LOVE
-                          || (i as any).coachingNotes.MIXED
                           || (i as any).coachingNotes.TECHNICAL
                           || (i as any).coachingNotes.DARK_HUMOR
                           || '';
