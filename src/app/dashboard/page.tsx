@@ -133,20 +133,44 @@ export default function Dashboard() {
                       try {
                         // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
                         // Safety check: ensure intervals exist (rest days might have empty array)
-                        const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
-                          name: i.name,
-                          // Handle both nested and flat duration structures
-                          durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
-                          // Handle both nested and flat structures for power
-                          powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
-                          powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
-                          cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
-                          cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
-                          rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
-                          zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
-                          purpose: i.purpose,
-                          coachNote: i.coachNote,
-                        }));
+                        console.log(`[Dashboard] Transforming session: ${s.title}, intervals: ${(s.intervals || []).length}`);
+                        const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval, iIdx: number) => {
+                          // Extract coaching note from v3.3 format (object with styles) or v3.0 format (flat string)
+                          let coachNote = i.coachNote || '';
+                          const isNewFormat = !!(i as any).coachingNotes && typeof (i as any).coachingNotes === 'object';
+                          
+                          if (!coachNote && isNewFormat) {
+                            // NEW format v3.3: pick one of the coaching note styles
+                            coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                              || (i as any).coachingNotes.MIXED
+                              || (i as any).coachingNotes.TECHNICAL
+                              || (i as any).coachingNotes.DARK_HUMOR
+                              || '';
+                          }
+                          
+                          if (iIdx === 0) {
+                            console.log(`[Dashboard] Interval format: ${isNewFormat ? 'v3.3 (nested)' : 'v3.0 (flat)'}`, {
+                              hasCoachingNotes: !!(i as any).coachingNotes,
+                              hasDurationObject: !!(i as any).duration?.absoluteSecs,
+                              hasIntensityObject: !!(i as any).intensity,
+                            });
+                          }
+                          
+                          return {
+                            name: i.name,
+                            // Handle both nested and flat duration structures
+                            durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
+                            // Handle both nested and flat structures for power
+                            powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
+                            powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
+                            cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
+                            cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
+                            rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
+                            zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
+                            purpose: i.purpose || (i as any).instruction || '',
+                            coachNote,
+                          };
+                        });
                         
                         // Calculate actual duration from interval sum
                         const actualDurationMinutes = Math.round(
@@ -220,20 +244,33 @@ export default function Dashboard() {
                   sessions: (w.sessions || []).map((s: TrainingSession) => {
                     // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
                     // Safety check: ensure intervals exist (rest days might have empty array)
-                    const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
-                      name: i.name,
-                      // Handle both nested and flat duration structures
-                      durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
-                      // Handle both nested and flat structures for power
-                      powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
-                      powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
-                      cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
-                      cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
-                      rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
-                      zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
-                      purpose: i.purpose,
-                      coachNote: i.coachNote,
-                    }));
+                    const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => {
+                      // Extract coaching note from v3.3 format (object with styles) or v3.0 format (flat string)
+                      let coachNote = i.coachNote || '';
+                      if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
+                        // NEW format: pick one of the coaching note styles
+                        coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                          || (i as any).coachingNotes.MIXED
+                          || (i as any).coachingNotes.TECHNICAL
+                          || (i as any).coachingNotes.DARK_HUMOR
+                          || '';
+                      }
+                      
+                      return {
+                        name: i.name,
+                        // Handle both nested and flat duration structures
+                        durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
+                        // Handle both nested and flat structures for power
+                        powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
+                        powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
+                        cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
+                        cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
+                        rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
+                        zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
+                        purpose: i.purpose || (i as any).instruction || '',
+                        coachNote,
+                      };
+                    });
                     
                     // Calculate actual duration from interval sum
                     const actualDurationMinutes = Math.round(
