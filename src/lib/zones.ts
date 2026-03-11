@@ -27,6 +27,31 @@ export function getZoneColor(zone: string): string {
   return colors[zone] || "#6b7280";
 }
 
+/**
+ * Get color based on power percentage (handles super-high power like 200%+)
+ * @param powerLowPct - Low end of power range (% of FTP)
+ * @param powerHighPct - High end of power range (% of FTP)
+ * @returns Color hex code
+ */
+export function getColorForPowerRange(powerLowPct: number, powerHighPct: number): string {
+  // Use average power percentage
+  const avgPowerPct = (powerLowPct + powerHighPct) / 2;
+  
+  // For 200%+ FTP (supra-anaerobic), use purple
+  if (avgPowerPct >= 200) {
+    return "#a855f7"; // Purple for extreme efforts
+  }
+  
+  // For 150-200% FTP, use red
+  if (avgPowerPct >= 150) {
+    return "#ef4444"; // Red (Anaerobic+)
+  }
+  
+  // Otherwise use standard zone color
+  const zone = getZoneForPower(avgPowerPct);
+  return getZoneColor(zone);
+}
+
 export function getZoneForPower(powerPct: number): string {
   if (powerPct <= 55) return "Z1";
   if (powerPct <= 75) return "Z2";

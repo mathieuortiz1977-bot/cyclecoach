@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import type { SessionDef, IntervalDef } from "@/lib/periodization";
-import { getZoneColor } from "@/lib/zones";
+import { getZoneColor, getColorForPowerRange } from "@/lib/zones";
 import { DAY_LABELS, DAY_ORDER, getTodayKey } from "@/lib/constants";
 
 type SessionStatus = "completed" | "today" | "upcoming";
@@ -165,7 +165,7 @@ export function SessionCard({
                     className="cursor-pointer hover:opacity-80 active:scale-95 transition-all"
                     style={{
                       width: `${widthPct}%`,
-                      backgroundColor: getZoneColor((interval as any).intensity?.zone ?? interval.zone ?? 'Z2'),
+                      backgroundColor: getColorForPowerRange(powerLow, powerHigh),
                       borderRadius: "2px 2px 0 0",
                       minWidth: "2px",
                     }}
