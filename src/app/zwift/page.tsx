@@ -1,34 +1,47 @@
 "use client";
-import { useState, useMemo } from "react";
-import { generatePlan, type DayOfWeek } from "@/lib/periodization";
+import { useState, useMemo, useEffect } from "react";
 import { exportToZWO, downloadFile } from "@/lib/export";
 import { BLOCK_META, WEEK_LABELS } from "@/lib/constants";
 import { useRider } from "@/hooks/useRider";
+import type { PlanDef } from "@/lib/periodization";
+import { DashboardSkeleton } from "@/components/Skeleton";
+
+const emptyPlan = { blocks: [] as any[] };
 
 export default function ZwiftSync() {
   const { rider } = useRider();
   const ftp = rider?.ftp || 190;
   
-  // Extract training days and outdoor day from rider profile
-  const trainingDays = useMemo(() => {
-    if (rider?.trainingDays) {
-      return rider.trainingDays.split(',').map((day: string) => day.trim()).filter((day: string) =>
-        ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
-      ) as DayOfWeek[];
-    }
-    return ["MON", "TUE", "THU", "FRI", "SAT"] as DayOfWeek[];
-  }, [rider?.trainingDays]);
-  
-  const outdoorDay = useMemo(() => {
-    return (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
-      ? (rider.outdoorDay as DayOfWeek)
-      : ("SAT" as DayOfWeek);
-  }, [rider?.outdoorDay]);
-  
-  const plan = useMemo(() => generatePlan(4, trainingDays, outdoorDay), [trainingDays, outdoorDay]);
+  const [plan, setPlan] = useState<PlanDef>(emptyPlan);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch plan from API instead of generating client-side
+  useEffect(() => {
+    fetch("/api/plan?t=" + Date.now(), { cache: "no-store" })
+      .then(r => r.json())
+      .then(data => {
+        if (data?.plan) {
+          setPlan(data.plan);
+        }
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
+  }, []);
   const [activeBlock, setActiveBlock] = useState(0);
   const [activeWeek, setActiveWeek] = useState(0);
   const [downloaded, setDownloaded] = useState<Set<string>>(new Set());
+
+  if (loading) {
+    return <DashboardSkeleton />;
+  }
+
+  if (plan.blocks.length === 0) {
+    return (
+      <div className="max-w-3xl mx-auto p-4 sm:p-6 text-center">
+        <p className="text-[var(--muted)]">No training plan found. Go to Settings to create one.</p>
+      </div>
+    );
+  }
 
   const block = plan.blocks[activeBlock];
   const week = block.weeks[activeWeek];

@@ -1,7 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useMemo, useState, useEffect } from "react";
-import { generatePlan, type DayOfWeek } from "@/lib/periodization";
+import { useState, useEffect } from "react";
 import { useRider } from "@/hooks/useRider";
 import { IntervalChart } from "@/components/IntervalChart";
 import { getZoneColor } from "@/lib/zones";
@@ -24,22 +23,6 @@ export default function WorkoutPage() {
   const { rider } = useRider();
   const [plan, setPlan] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-
-  // Extract training days and outdoor day from rider profile
-  const trainingDays = useMemo(() => {
-    if (rider?.trainingDays) {
-      return rider.trainingDays.split(',').map((day: string) => day.trim()).filter((day: string) =>
-        ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day)
-      ) as DayOfWeek[];
-    }
-    return ["MON", "TUE", "THU", "FRI", "SAT"] as DayOfWeek[];
-  }, [rider?.trainingDays]);
-  
-  const outdoorDay = useMemo(() => {
-    return (rider?.outdoorDay && ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(rider.outdoorDay))
-      ? (rider.outdoorDay as DayOfWeek)
-      : ("SAT" as DayOfWeek);
-  }, [rider?.outdoorDay]);
 
   // Load FTP from DB (useRider already provides this)
   useEffect(() => {
@@ -84,16 +67,9 @@ export default function WorkoutPage() {
             })),
           };
           setPlan(dbPlan);
-        } else {
-          // Fallback: generate plan if DB is empty
-          const generatedPlan = generatePlan(4, trainingDays, outdoorDay);
-          setPlan(generatedPlan);
         }
       } catch (error) {
         console.error("Failed to load plan:", error);
-        // Fallback: generate plan on error
-        const generatedPlan = generatePlan(4, trainingDays, outdoorDay);
-        setPlan(generatedPlan);
       } finally {
         setLoading(false);
       }
