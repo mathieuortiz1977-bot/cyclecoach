@@ -55,8 +55,9 @@ export default function PlanPage() {
                   description: s.description,
                   intervals: s.intervals.map((i: TrainingInterval) => ({
                     name: i.name,
-                    durationSecs: i.durationSecs,
-                    // Handle both nested and flat structures
+                    // Handle both nested and flat duration structures
+                    durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
+                    // Handle both nested and flat structures for power
                     powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
                     powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
                     zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
