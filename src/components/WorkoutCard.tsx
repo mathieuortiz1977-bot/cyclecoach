@@ -12,21 +12,46 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
   const intervals = typeof workout.intervals === 'function' ? workout.intervals() : workout.intervals;
   const DISPLAY_DURATION_MINS = 60; // Standard 60-minute display duration
   
-  // Calculate total duration: handle both durationSecs and durationPercent
-  const totalDurationSecs = intervals.reduce((sum, i: any) => {
-    if (i.durationSecs) {
-      return sum + i.durationSecs; // Direct seconds value
-    } else if (i.durationPercent) {
-      // Convert percentage to seconds (based on 60-min display duration)
-      return sum + (i.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
+  // Helper: Extract power from nested or flat structure
+  const getPower = (interval: any, field: 'powerLow' | 'powerHigh') => {
+    // Try nested structure first (from JSON files)
+    if (interval.intensity && typeof interval.intensity === 'object') {
+      return interval.intensity[field];
     }
-    return sum;
-  }, 0);
+    // Try flat structure (from generated code)
+    return interval[field];
+  };
+
+  // Helper: Extract zone from nested or flat structure
+  const getZone = (interval: any) => {
+    if (interval.intensity && typeof interval.intensity === 'object') {
+      return interval.intensity.zone;
+    }
+    return interval.zone;
+  };
+
+  // Helper: Extract duration in seconds
+  const getDurationSecs = (interval: any) => {
+    // Try nested structure first (from JSON files)
+    if (interval.duration && typeof interval.duration === 'object') {
+      return interval.duration.absoluteSecs || ((interval.duration.percent / 100) * (DISPLAY_DURATION_MINS * 60));
+    }
+    // Try flat structure
+    if (interval.durationSecs) {
+      return interval.durationSecs;
+    }
+    if (interval.durationPercent) {
+      return (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
+    }
+    return 0;
+  };
   
-  const totalDurationMins = Math.round(totalDurationSecs / 60);
+  // Calculate total duration: handle both structures
+  const totalDurationSecs = intervals.reduce((sum, i: any) => sum + getDurationSecs(i), 0);
+  const totalDurationMins = Math.round(totalDurationSecs / 60) || DISPLAY_DURATION_MINS;
 
   // Calculate max power for chart scaling
-  const maxPower = Math.max(...intervals.map(i => i.powerHigh)) || 100;
+  const maxPower = Math.max(...intervals.map((i: any) => getPower(i, 'powerHigh') || 0)) || 100;
 
   return (
     <div className="glass rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow">
@@ -50,7 +75,11 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
           <p className="text-[var(--muted)]">Avg FTP</p>
           <p className="font-semibold text-[var(--accent)]">
             {intervals.length > 0 
-              ? Math.round(intervals.reduce((sum, i) => sum + ((i.powerLow || 0) + (i.powerHigh || 0)) / 2, 0) / intervals.length)
+              ? Math.round(intervals.reduce((sum, i) => {
+                  const low = getPower(i, 'powerLow') || 0;
+                  const high = getPower(i, 'powerHigh') || 0;
+                  return sum + (low + high) / 2;
+                }, 0) / intervals.length)
               : 0}%
           </p>
         </div>
@@ -67,24 +96,19 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
         <div className="flex gap-1 h-16 bg-[var(--surface)] rounded p-2">
           {intervals && intervals.length > 0 ? (
             intervals.map((interval: any, idx) => {
-              const color = getZoneColor(interval.zone);
-              const powerHigh = interval.powerHigh || 50; // Default to 50% if missing
+              const zone = getZone(interval);
+              const color = getZoneColor(zone);
+              const powerHigh = getPower(interval, 'powerHigh') || 50;
+              const powerLow = getPower(interval, 'powerLow') || 0;
               const heightPercent = Math.min((powerHigh / maxPower) * 100, 100);
               
-              // Calculate width: handle both durationSecs and durationPercent
-              let durationSecs = interval.durationSecs || 0;
-              if (!durationSecs && interval.durationPercent) {
-                durationSecs = (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
-              }
-              // Fallback: if no duration, estimate evenly
-              if (!durationSecs) {
-                durationSecs = (DISPLAY_DURATION_MINS * 60) / intervals.length;
-              }
+              // Calculate width: use helper function to get duration
+              const durationSecs = getDurationSecs(interval) || ((DISPLAY_DURATION_MINS * 60) / intervals.length);
               
-              // BUG #1 FIX: Guard against division by zero
-              const totalDurationSecs = totalDurationMins * 60 || (DISPLAY_DURATION_MINS * 60);
-              const widthPercent = totalDurationSecs > 0 
-                ? (durationSecs / totalDurationSecs) * 100 
+              // Guard against division by zero
+              const totalSecs = totalDurationSecs || (DISPLAY_DURATION_MINS * 60);
+              const widthPercent = totalSecs > 0 
+                ? (durationSecs / totalSecs) * 100 
                 : (100 / intervals.length);
 
               return (
@@ -98,7 +122,7 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
                     minWidth: '4px',
                     alignSelf: 'flex-end',
                   }}
-                  title={`${interval.name}: ${Math.round(durationSecs / 60)}m @ ${interval.powerLow || 0}-${powerHigh}% FTP`}
+                  title={`${interval.name}: ${Math.round(durationSecs / 60)}m @ ${powerLow}-${powerHigh}% FTP`}
                 />
               );
             })
@@ -134,12 +158,22 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
       </div>
 
       {/* Coach Note */}
-      {intervals.length > 0 && intervals[0].coachNote && (
-        <div className="pt-4 border-t border-[var(--border)]">
-          <p className="text-xs italic text-[var(--muted)]">
-            💭 "{intervals[0].coachNote}"
-          </p>
-        </div>
+      {intervals.length > 0 && (
+        (() => {
+          const firstInterval = intervals[0];
+          const coachNote = firstInterval.coachNote || 
+            (firstInterval.coachingNotes?.MIXED) ||
+            (firstInterval.coachingNotes?.MOTIVATIONAL) ||
+            null;
+          
+          return coachNote ? (
+            <div className="pt-4 border-t border-[var(--border)]">
+              <p className="text-xs italic text-[var(--muted)]">
+                💭 "{coachNote}"
+              </p>
+            </div>
+          ) : null;
+        })()
       )}
     </div>
   );
