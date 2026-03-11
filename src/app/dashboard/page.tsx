@@ -42,180 +42,80 @@ export default function Dashboard() {
 
   // Load rider profile + plan + workout data from DB
   const loadDashboardData = useCallback(async () => {
-    // Force fresh fetches by disabling cache (for plan regeneration scenarios)
     const cacheKey = `?t=${Date.now()}`;
-    console.log('[Dashboard] Starting data fetch...');
+    const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
+      fetch("/api/rider" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/plan" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/workouts" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+      fetch("/api/strava/activities" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
+    ]);
     
-    try {
-      const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
-        fetch("/api/rider" + cacheKey, { cache: "no-store" })
-          .then((r) => {
-            console.log('[Dashboard] /api/rider response:', r.status);
-            return r.json();
-          })
-          .catch((e) => {
-            console.error('[Dashboard] /api/rider error:', e);
-            return null;
-          }),
-        fetch("/api/plan" + cacheKey, { cache: "no-store" })
-          .then((r) => {
-            console.log('[Dashboard] /api/plan response:', r.status);
-            return r.json();
-          })
-          .catch((e) => {
-            console.error('[Dashboard] /api/plan error:', e);
-            return null;
-          }),
-        fetch("/api/workouts" + cacheKey, { cache: "no-store" })
-          .then((r) => {
-            console.log('[Dashboard] /api/workouts response:', r.status);
-            return r.json();
-          })
-          .catch((e) => {
-            console.error('[Dashboard] /api/workouts error:', e);
-            return null;
-          }),
-        fetch("/api/strava/activities" + cacheKey, { cache: "no-store" })
-          .then((r) => {
-            console.log('[Dashboard] /api/strava response:', r.status);
-            return r.json();
-          })
-          .catch((e) => {
-            console.error('[Dashboard] /api/strava error:', e);
-            return null;
-          }),
-      ]);
-      
-      console.log('[Dashboard] All data fetched successfully');
-      return { riderData, planData, workoutResponse, stravaResponse };
-    } catch (err) {
-      console.error('[Dashboard] CRITICAL ERROR in loadDashboardData:', err);
-      throw err;
-    }
+    return { riderData, planData, workoutResponse, stravaResponse };
   }, []);
 
   useEffect(() => {
     loadDashboardData().then(({ riderData, planData, workoutResponse, stravaResponse }) => {
-      console.log('[Dashboard] useEffect - Data loaded:', {
-        hasRiderData: !!riderData,
-        hasPlanData: !!planData,
-        planSource: planData?.source,
-        hasBlocks: !!planData?.plan?.blocks,
-        blocksLength: planData?.plan?.blocks?.length,
-      });
-
-      if (riderData?.rider?.ftp) {
-        console.log('[Dashboard] Setting FTP:', riderData.rider.ftp);
-        setFtp(riderData.rider.ftp);
-      }
-      if (riderData?.rider?.programStartDate) {
-        console.log('[Dashboard] Setting start date:', riderData.rider.programStartDate);
-        setProgramStartDate(riderData.rider.programStartDate);
-      }
+      if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
+      if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
       if (planData?.plan && planData.source === "database" && planData.plan.blocks) {
-        console.log('[Dashboard] Starting plan transformation...');
-        try {
-          // Transform DB plan to match PlanDef shape
-          // Extra safety: ensure blocks exist and is array
-          const dbPlan = {
-            blocks: (planData.plan.blocks || []).map((b: TrainingBlock, bIdx: number) => {
-              console.log(`[Dashboard] Transforming block ${bIdx}...`);
-              return {
-                blockNumber: b.blockNumber,
-                type: b.type,
-                weeks: (b.weeks || []).map((w: TrainingWeek, wIdx: number) => {
-                  console.log(`[Dashboard] Transforming week ${bIdx}-${wIdx}...`);
+        // Transform DB plan to match PlanDef shape
+        const dbPlan = {
+          blocks: (planData.plan.blocks || []).map((b: TrainingBlock) => ({
+            blockNumber: b.blockNumber,
+            type: b.type,
+            weeks: (b.weeks || []).map((w: TrainingWeek) => ({
+              weekNumber: w.weekNumber,
+              weekType: w.weekType,
+              sessions: (w.sessions || []).map((s: TrainingSession) => {
+                const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => {
+                  let coachNote = i.coachNote || '';
+                  if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
+                    coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                      || (i as any).coachingNotes.MIXED
+                      || (i as any).coachingNotes.TECHNICAL
+                      || (i as any).coachingNotes.DARK_HUMOR
+                      || '';
+                  }
+                  
                   return {
-                    weekNumber: w.weekNumber,
-                    weekType: w.weekType,
-                    sessions: (w.sessions || []).map((s: TrainingSession, sIdx: number) => {
-                      try {
-                        // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
-                        // Safety check: ensure intervals exist (rest days might have empty array)
-                        console.log(`[Dashboard] Transforming session: ${s.title}, intervals: ${(s.intervals || []).length}`);
-                        const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval, iIdx: number) => {
-                          // Extract coaching note from v3.3 format (object with styles) or v3.0 format (flat string)
-                          let coachNote = i.coachNote || '';
-                          const isNewFormat = !!(i as any).coachingNotes && typeof (i as any).coachingNotes === 'object';
-                          
-                          if (!coachNote && isNewFormat) {
-                            // NEW format v3.3: pick one of the coaching note styles
-                            coachNote = (i as any).coachingNotes.MOTIVATIONAL 
-                              || (i as any).coachingNotes.MIXED
-                              || (i as any).coachingNotes.TECHNICAL
-                              || (i as any).coachingNotes.DARK_HUMOR
-                              || '';
-                          }
-                          
-                          if (iIdx === 0) {
-                            console.log(`[Dashboard] Interval format: ${isNewFormat ? 'v3.3 (nested)' : 'v3.0 (flat)'}`, {
-                              hasCoachingNotes: !!(i as any).coachingNotes,
-                              hasDurationObject: !!(i as any).duration?.absoluteSecs,
-                              hasIntensityObject: !!(i as any).intensity,
-                            });
-                          }
-                          
-                          return {
-                            name: i.name,
-                            // Handle both nested and flat duration structures
-                            durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
-                            // Handle both nested and flat structures for power
-                            powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
-                            powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
-                            cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
-                            cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
-                            rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
-                            zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
-                            purpose: i.purpose || (i as any).instruction || '',
-                            coachNote,
-                          };
-                        });
-                        
-                        // Calculate actual duration from interval sum
-                        const actualDurationMinutes = Math.round(
-                          normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
-                        ) || s.duration || 60;
-                        
-                        return {
-                          dayOfWeek: s.dayOfWeek,
-                          sessionType: s.sessionType,
-                          duration: actualDurationMinutes, // Use calculated duration, not database value
-                          title: s.title,
-                          description: s.description,
-                          intervals: normalizedIntervals,
-                          route: s.route || undefined,
-                        };
-                      } catch (sessionErr) {
-                        console.error(`[Dashboard] ERROR transforming session ${bIdx}-${wIdx}-${sIdx}:`, sessionErr, s);
-                        throw sessionErr;
-                      }
-                    }),
+                    name: i.name,
+                    durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
+                    powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
+                    powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
+                    cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
+                    cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
+                    rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
+                    zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
+                    purpose: i.purpose || (i as any).instruction || '',
+                    coachNote,
                   };
-                }),
-              };
-            }),
-          };
-          console.log('[Dashboard] Plan transformation complete, setting state...');
-          setPlan(dbPlan);
-          console.log('[Dashboard] Plan state set successfully');
-        } catch (planErr) {
-          console.error('[Dashboard] CRITICAL ERROR transforming plan:', planErr);
-        }
-      } else {
-        console.log('[Dashboard] Skipping plan transformation - missing or invalid plan data', {
-          hasPlan: !!planData?.plan,
-          isDatabase: planData?.source === 'database',
-          hasBlocks: !!planData?.plan?.blocks,
-        });
+                });
+                
+                const actualDurationMinutes = Math.round(
+                  normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
+                ) || s.duration || 60;
+                
+                return {
+                  dayOfWeek: s.dayOfWeek,
+                  sessionType: s.sessionType,
+                  duration: actualDurationMinutes,
+                  title: s.title,
+                  description: s.description,
+                  intervals: normalizedIntervals,
+                  route: s.route || undefined,
+                };
+              }),
+            })),
+          })),
+        };
+        setPlan(dbPlan);
       }
 
-      // Load workout data for WeeklyDigest
       if (workoutResponse?.workouts) {
         setWorkoutData(workoutResponse.workouts);
       }
 
-      // Load Strava data for WeeklyDigest
       if (stravaResponse?.activities) {
         setStravaData(stravaResponse.activities);
       }
