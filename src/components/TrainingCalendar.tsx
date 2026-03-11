@@ -126,26 +126,36 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   // History state
   const [weeksLoaded, setWeeksLoaded] = useState(20); // Default: 20 weeks
 
-  // TODO: Wrap loadWorkoutData in useCallback and move before these useEffects
-  // For now, using currentMonth as primary dependency trigger
-  // loadWorkoutData is recreated on each render, so it gets called when currentMonth changes
+  // Refetch when month changes
   useEffect(() => {
     loadWorkoutData();
   }, [currentMonth]);
 
-  // Refetch plan when component mounts or becomes visible
-  // TODO: Add loadWorkoutData to dependencies after moving to useCallback
+  // Auto-refetch when tab becomes visible OR periodically (catches plan updates from Settings page)
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden) {
-        // Page became visible - refetch to catch any updates
-        loadWorkoutData();
+        // Page became visible - refetch to catch any plan updates from Settings
+        console.log('[TrainingCalendar] Page became visible, refetching plan...');
+        loadWorkoutData(weeksLoaded);
       }
     };
     
     document.addEventListener('visibilitychange', handleVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
-  }, []);
+    
+    // Also refetch periodically every 60 seconds in case plan was updated elsewhere
+    const refreshInterval = setInterval(() => {
+      if (!document.hidden) {
+        console.log('[TrainingCalendar] Periodic refresh of plan data (60s)');
+        loadWorkoutData(weeksLoaded);
+      }
+    }, 60000); // Refresh every 60 seconds if tab is visible
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      clearInterval(refreshInterval);
+    };
+  }, [weeksLoaded]);
 
   const loadWorkoutData = async (weeks: number = weeksLoaded) => {
     try {
@@ -815,8 +825,19 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
             <button
               onClick={previousMonth}
               className="p-2 rounded-lg hover:bg-[var(--card-border)] transition-colors"
+              title="Previous month"
             >
               ←
+            </button>
+            <button
+              onClick={() => {
+                setLoading(true);
+                loadWorkoutData();
+              }}
+              className="px-2 py-1.5 text-xs bg-[var(--accent)]/20 hover:bg-[var(--accent)]/30 text-[var(--accent)] rounded-lg border border-[var(--accent)]/20 hover:border-[var(--accent)]/30 transition-colors"
+              title="Refresh calendar (for latest plan)"
+            >
+              🔄 Refresh
             </button>
             <div className="hidden gap-2 sm:flex">
               <button
@@ -839,6 +860,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
           <button
             onClick={nextMonth}
             className="p-2 rounded-lg hover:bg-[var(--card-border)] transition-colors"
+            title="Next month"
           >
             →
           </button>
