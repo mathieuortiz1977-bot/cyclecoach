@@ -54,7 +54,7 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
   const maxPower = Math.max(...intervals.map((i: any) => getPower(i, 'powerHigh') || 0)) || 100;
 
   return (
-    <div className="glass rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow">
+    <div className="glass rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow overflow-hidden">
       {/* Header */}
       <div className="space-y-2">
         <h3 className="text-lg font-bold text-white">{workout.title}</h3>
@@ -91,9 +91,9 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
       )}
 
       {/* Interval Chart */}
-      <div className="space-y-2">
+      <div className="space-y-2 w-full overflow-hidden">
         <p className="text-xs font-semibold text-[var(--muted)]">Interval Breakdown</p>
-        <div className="flex gap-1 h-16 bg-[var(--surface)] rounded p-2">
+        <div className="flex gap-1 h-16 bg-[var(--surface)] rounded p-2 overflow-x-auto">
           {intervals && intervals.length > 0 ? (
             intervals.map((interval: any, idx) => {
               const zone = getZone(interval);
