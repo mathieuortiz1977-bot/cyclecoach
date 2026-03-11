@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This is easy because it's supposed to be. Don't make it harder than it needs to be.",
+        "TECHNICAL": "Zone 2 work: conversational pace. You should be able to talk in full sentences.",
+        "MOTIVATIONAL": "Relax and enjoy the ride. You're building massive aerobic capacity.",
+        "DARK_HUMOR": "Your Garmin thinks you fell asleep. You're actually training.",
+        "MIXED": "Relax your grip. Drop your shoulders. Smooth pedaling."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 4
+        "rpe": 4,
+        "position": "seated"
       },
       "instruction": "Steady Endurance at 65-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Easy miles make fast racing. Stop thinking and start pedaling.",
+        "TECHNICAL": "Endurance pace: majority of work should be nose breathing. Stay easy.",
+        "MOTIVATIONAL": "Your future self will thank you for these base miles.",
+        "DARK_HUMOR": "Endurance pace: where you question if you're working hard enough. (You are.)",
+        "MIXED": "Endurance pace. Let your mind wander. Stay in zone."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 1: 60% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 60%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     }
   ],

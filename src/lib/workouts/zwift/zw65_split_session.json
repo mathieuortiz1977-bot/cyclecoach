@@ -28,14 +28,16 @@
         "powerHigh": 90,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 5
+        "rpe": 5,
+        "position": "seated"
       },
       "instruction": "Part 1 at 70-90% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
-        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
-        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
-        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+        "TOUGH_LOVE": "Interval 1/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 3. Target: 90% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/3. Focus and finish strong."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Rest at 40-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Interval 2/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 2 of 3. Target: 60% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
+        "MIXED": "Interval 2/3. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 130,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 8
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Part 2 at 110-130% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
-        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
-        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
-        "MIXED": "Explosive effort. Go hard and trust your training."
+        "TOUGH_LOVE": "Last set. Empty the tank. You can rest when you're dead. Or in 5 minutes.",
+        "TECHNICAL": "Final rep of this set. Empty the tank \u2014 you have 0s recovery coming.",
+        "MOTIVATIONAL": "Final rep. Leave nothing in reserve. You can rest when you're done.",
+        "DARK_HUMOR": "Rep 3. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Rep 3/3. Power: 130%, Cadence: 85-100 rpm. Execute."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-100 rpm, 60% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

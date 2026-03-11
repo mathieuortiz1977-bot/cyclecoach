@@ -26,14 +26,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
-        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
-        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
-        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 0: 75% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -48,16 +50,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 1 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Interval 1/12. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 12. Target: 200% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/12. Focus and finish strong."
       }
     },
     {
@@ -74,14 +78,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 45% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -96,16 +102,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 2 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 2: 200% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 200%, Cadence: 110-130 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -122,14 +130,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 45% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -144,16 +154,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 3 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Standing at 60-75 rpm, 200% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -170,14 +182,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 3: 45% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 45%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -192,16 +206,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 4 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 4 of 12. Target: 200% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 4/12. Focus and finish strong."
       }
     },
     {
@@ -218,14 +234,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 1. Target: 45% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 45%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -240,16 +258,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 5 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 5: 200% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 200%, Cadence: 60-75 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -266,14 +286,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 5: 45% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -288,16 +310,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 1 Rep 6 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Standing at 110-130 rpm, 200% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 6. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -314,14 +338,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 45% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -338,14 +364,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Set Rest 1 at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -360,16 +388,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 1 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Standing at 60-75 rpm, 200% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 200%, Cadence: 60-75 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -386,14 +416,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 1. Target: 45% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -408,16 +440,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 2 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Interval 8/12. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 8 of 12. Target: 200% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 8. Your legs have opinions. Noted.",
+        "MIXED": "Interval 8/12. Focus and finish strong."
       }
     },
     {
@@ -434,14 +468,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 45% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -456,16 +492,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 3 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Interval 9/12. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 9 of 12. Target: 200% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 9. Your legs have opinions. Noted.",
+        "MIXED": "Interval 9/12. Focus and finish strong."
       }
     },
     {
@@ -482,14 +520,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 9: 45% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -504,16 +544,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 4 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Interval 10/12. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 10 of 12. Target: 200% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 10. Your legs have opinions. Noted.",
+        "MIXED": "Interval 10/12. Focus and finish strong."
       }
     },
     {
@@ -530,14 +572,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 10: 45% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -552,16 +596,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 5 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Interval 11/12. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 11 of 12. Target: 200% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 11. Your legs have opinions. Noted.",
+        "MIXED": "Interval 11/12. Focus and finish strong."
       }
     },
     {
@@ -578,14 +624,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 45% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 45%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -600,16 +648,18 @@
         "zone": "Z7",
         "powerLow": 170,
         "powerHigh": 200,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 10
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 10,
+        "position": "standing"
       },
       "instruction": "Set 2 Rep 6 at 170-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
-        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
-        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
-        "MIXED": "Explode! Every watt counts."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 12 of 12. Target: 200% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 12. Your legs have opinions. Noted.",
+        "MIXED": "Interval 12/12. Focus and finish strong."
       }
     },
     {
@@ -626,14 +676,16 @@
         "powerHigh": 45,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Recovery at 35-45% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 45% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -650,14 +702,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
-        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
-        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
-        "MIXED": "Bring it down smoothly. You earned this recovery."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 12: 60% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

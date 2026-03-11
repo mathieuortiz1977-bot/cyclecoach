@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This is easy because it's supposed to be. Don't make it harder than it needs to be.",
+        "TECHNICAL": "Endurance zone: 70% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
+        "DARK_HUMOR": "Zone 2: the pace where you can contemplate life's mysteries. Like why you're on a bike.",
+        "MIXED": "Relax your grip. Drop your shoulders. Smooth pedaling."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 92,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 6
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "SS Block 1 at 88-92% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "TOUGH_LOVE": "Interval 1/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 3. Target: 92% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/3. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Rest at 55-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Interval 2/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 2 of 3. Target: 55% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
+        "MIXED": "Interval 2/3. Focus and finish strong."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 92,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 6
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "SS Block 2 at 88-92% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 3 of 3. Target: 92% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 3. Your legs have opinions. Noted.",
+        "MIXED": "Interval 3/3. Focus and finish strong."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-100 rpm, 55% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

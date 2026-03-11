@@ -28,14 +28,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 4
+        "rpe": 4,
+        "position": "seated"
       },
       "instruction": "Easy Start at 60-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This feels like nothing. That's the point. Patience builds power, not suffering.",
+        "TECHNICAL": "Sub-threshold aerobic work. Training your body to burn fat efficiently.",
+        "MOTIVATIONAL": "Consistency over intensity. Show up, do the work, repeat.",
+        "DARK_HUMOR": "Zone 2: also known as 'why am I even here' pace.",
+        "MIXED": "Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 85,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 6
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Tempo Block at 80-85% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
-        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
-        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
-        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+        "TOUGH_LOVE": "Interval 2/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 2 of 3. Target: 85% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
+        "MIXED": "Interval 2/3. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 4
+        "rpe": 4,
+        "position": "seated"
       },
       "instruction": "Final Easy at 60-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Zone 2. Boring? Maybe. Effective? Absolutely. This is where champions are made.",
+        "TECHNICAL": "Zone 2: where mitochondria multiply and aerobic capacity expands.",
+        "MOTIVATIONAL": "Endurance work is never wasted. Every minute builds your foundation.",
+        "DARK_HUMOR": "Endurance pace: where you question if you're working hard enough. (You are.)",
+        "MIXED": "Stay patient. Stay easy. Trust the process."
       }
     }
   ],

@@ -28,14 +28,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Too easy? Good. Your ego wants intensity. Your body needs this. Trust the process.",
+        "TECHNICAL": "Steady state endurance. 75% FTP. Sustainable for hours.",
+        "MOTIVATIONAL": "Not every workout needs to hurt. This is smart training.",
+        "DARK_HUMOR": "Fun fact: most people go too hard on easy days. Don't be most people.",
+        "MIXED": "Stay patient. Stay easy. Trust the process."
       }
     },
     {
@@ -50,16 +52,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 88,
-        "cadenceLow": 85,
+        "cadenceLow": 90,
         "cadenceHigh": 95,
-        "rpe": 5
+        "rpe": 5,
+        "position": "seated"
       },
       "instruction": "Tempo 1 at 85-88% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
-        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
-        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
-        "MIXED": "Steady effort. You should be breathing harder but in control."
+        "TOUGH_LOVE": "Interval 1/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 3. Target: 88% FTP, 90-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/3. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -99,15 +105,17 @@
         "powerLow": 85,
         "powerHigh": 88,
         "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 5
+        "cadenceHigh": 90,
+        "rpe": 5,
+        "position": "seated"
       },
       "instruction": "Tempo 2 at 85-88% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
-        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
-        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
-        "MIXED": "Steady effort. You should be breathing harder but in control."
+        "TOUGH_LOVE": "Interval 2/3. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 2 of 3. Target: 88% FTP, 85-90 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
+        "MIXED": "Interval 2/3. Focus and finish strong."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -147,15 +157,17 @@
         "powerLow": 85,
         "powerHigh": 88,
         "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 5
+        "cadenceHigh": 90,
+        "rpe": 5,
+        "position": "seated"
       },
       "instruction": "Tempo 3 at 85-88% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
-        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
-        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
-        "MIXED": "Steady effort. You should be breathing harder but in control."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 3 of 3. Target: 88% FTP, 85-90 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 3. Your legs have opinions. Noted.",
+        "MIXED": "Interval 3/3. Focus and finish strong."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-100 rpm, 60% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 60%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     }
   ],

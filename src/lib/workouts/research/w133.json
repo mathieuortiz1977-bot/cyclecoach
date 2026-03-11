@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. You're building an engine here.",
+        "TECHNICAL": "Aerobic base building. This is the foundation of all cycling fitness.",
+        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
+        "DARK_HUMOR": "This is so easy it's almost boring. Almost.",
+        "MIXED": "Easy spin. 85-100 rpm, Seated. Relax and breathe."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 220,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 10
+        "rpe": 10,
+        "position": "alternating"
       },
       "instruction": "Sprint 10s at 200-220% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "TOUGH_LOVE": "Interval 1/5. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 5. Target: 220% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/5. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Rest at 50-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-100 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 200,
         "cadenceLow": 95,
         "cadenceHigh": 110,
-        "rpe": 10
+        "rpe": 10,
+        "position": "seated"
       },
       "instruction": "Sprint 20s at 180-200% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 1: 200% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 200%, Cadence: 95-110 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Rest at 50-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Interval 4/5. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 4 of 5. Target: 50% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 4. Your legs have opinions. Noted.",
+        "MIXED": "Interval 4/5. Focus and finish strong."
       }
     },
     {
@@ -148,14 +158,16 @@
         "powerHigh": 180,
         "cadenceLow": 95,
         "cadenceHigh": 110,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Sprint 30s at 160-180% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "TOUGH_LOVE": "Interval 5/5. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 5 of 5. Target: 180% FTP, 95-110 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 5. Your legs have opinions. Noted.",
+        "MIXED": "Interval 5/5. Focus and finish strong."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 55%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     }
   ],

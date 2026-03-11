@@ -29,14 +29,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
-        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
-        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
-        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 70% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 70%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -51,16 +53,18 @@
         "zone": "Z4",
         "powerLow": 95,
         "powerHigh": 100,
-        "cadenceLow": 85,
+        "cadenceLow": 95,
         "cadenceHigh": 95,
-        "rpe": 7
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Dark Block 1 at 95-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "Your legs are burning. Perfect. That's lactate threshold doing its job.",
+        "TECHNICAL": "Sub-threshold work builds endurance at race pace. Stay controlled.",
+        "MOTIVATIONAL": "Block 1 of 4. You're building the engine that wins races.",
+        "DARK_HUMOR": "Only 3 more minutes of this special kind of suffering.",
+        "MIXED": "First block: find your rhythm. Don't go too hard too early."
       }
     },
     {
@@ -77,14 +81,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -99,16 +105,18 @@
         "zone": "Z4",
         "powerLow": 97,
         "powerHigh": 102,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 7
+        "cadenceLow": 90,
+        "cadenceHigh": 90,
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Dark Block 2 at 97-102% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "This is race pace. If you can't hold this, you can't race. Simple as that.",
+        "TECHNICAL": "This is your aerobic threshold. Challenging but repeatable.",
+        "MOTIVATIONAL": "This discomfort is temporary. The fitness is permanent.",
+        "DARK_HUMOR": "Threshold work: where you live in the space between 'fine' and 'please make it stop.'",
+        "MIXED": "Block 2: 102% FTP. This should feel challenging but sustainable."
       }
     },
     {
@@ -125,14 +133,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 2: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -148,15 +158,17 @@
         "powerLow": 100,
         "powerHigh": 105,
         "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 7
+        "cadenceHigh": 85,
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Dark Block 3 at 100-105% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "Threshold hurts. Get comfortable being uncomfortable. Block 3 of 4.",
+        "TECHNICAL": "Seated climbing position. 85-85 rpm simulates real-world grade.",
+        "MOTIVATIONAL": "You can hold this. Your body knows what to do. Trust your training.",
+        "DARK_HUMOR": "Set 3. Your legs are politely requesting a break. Request denied.",
+        "MIXED": "Almost done. Stay strong. Finish what you started."
       }
     },
     {
@@ -173,14 +185,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -195,16 +209,18 @@
         "zone": "Z4",
         "powerLow": 102,
         "powerHigh": 108,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 7
+        "cadenceLow": 80,
+        "cadenceHigh": 80,
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Dark Block 4 - Darkest at 102-108% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "Final block. This is where you prove you're serious. Don't fade now.",
+        "TECHNICAL": "Final threshold block. Hold power steady. 0s rest coming.",
+        "MOTIVATIONAL": "Final block! Everything you've built leads to this. Finish strong.",
+        "DARK_HUMOR": "Fun fact: FTP stands for 'Finally This Pain' (it doesn't, but it should).",
+        "MIXED": "Final block. Give it everything. Cooldown is coming."
       }
     },
     {
@@ -221,14 +237,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
-        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
-        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
-        "MIXED": "Bring it down smoothly. You earned this."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     }
   ]

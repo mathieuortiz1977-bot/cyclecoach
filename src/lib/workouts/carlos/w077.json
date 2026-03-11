@@ -26,14 +26,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
-        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
-        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
-        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 0: 75% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -50,14 +52,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Pack at 70-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
-        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
-        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MIXED": "Keep it easy. Conversational pace. Build your base."
+        "TOUGH_LOVE": "Zone 2. Boring? Maybe. Effective? Absolutely. This is where champions are made.",
+        "TECHNICAL": "Zone 2: where mitochondria multiply and aerobic capacity expands.",
+        "MOTIVATIONAL": "Base training: the secret weapon of every great cyclist.",
+        "DARK_HUMOR": "Zone 2: also known as 'why am I even here' pace.",
+        "MIXED": "Conversational pace. Save your matches for the hard days."
       }
     },
     {
@@ -74,14 +78,16 @@
         "powerHigh": 88,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 5
+        "rpe": 5,
+        "position": "seated"
       },
       "instruction": "Climb 1 at 88-88% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
-        "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
-        "TECHNICAL": "Zone 3: glycogen storage optimization, improved fat/sugar fuel crossover.",
-        "MIXED": "Steady effort. You should be breathing harder but in control."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 1: 88% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -98,14 +104,16 @@
         "powerHigh": 72,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Valley at 72-72% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
-        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
-        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MIXED": "Keep it easy. Conversational pace. Build your base."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. You're building an engine here.",
+        "TECHNICAL": "Steady state endurance. 72% FTP. Sustainable for hours.",
+        "MOTIVATIONAL": "Not every workout needs to hurt. This is smart training.",
+        "DARK_HUMOR": "Fun fact: most people go too hard on easy days. Don't be most people.",
+        "MIXED": "Keep it comfortable. Nose breathing. Enjoy the ride."
       }
     },
     {
@@ -122,14 +130,16 @@
         "powerHigh": 92,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 7
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Main Climb at 92-92% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "This is race pace. If you can't hold this, you can't race. Simple as that.",
+        "TECHNICAL": "Target 92% FTP. This should feel 'comfortably hard.'",
+        "MOTIVATIONAL": "Threshold work is the bread and butter of cycling fitness. Embrace the grind.",
+        "DARK_HUMOR": "Threshold work: where you live in the space between 'fine' and 'please make it stop.'",
+        "MIXED": "Almost done. Stay strong. Finish what you started."
       }
     },
     {
@@ -146,14 +156,16 @@
         "powerHigh": 65,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Descent at 65-65% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
-        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
-        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MIXED": "Keep it easy. Conversational pace. Build your base."
+        "TOUGH_LOVE": "This is easy because it's supposed to be. Don't make it harder than it needs to be.",
+        "TECHNICAL": "85-95 rpm, Seated. Smooth, relaxed pedaling.",
+        "MOTIVATIONAL": "Relax and enjoy the ride. You're building massive aerobic capacity.",
+        "DARK_HUMOR": "This is so easy it's almost boring. Almost.",
+        "MIXED": "Relax your grip. Drop your shoulders. Smooth pedaling."
       }
     },
     {
@@ -170,14 +182,16 @@
         "powerHigh": 95,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 7
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Finish Push at 95-95% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TOUGH_LOVE": "Final block. This is where you prove you're serious. Don't fade now.",
+        "TECHNICAL": "Final threshold block. Hold power steady. 0s rest coming.",
+        "MOTIVATIONAL": "Final block! Everything you've built leads to this. Finish strong.",
+        "DARK_HUMOR": "Fun fact: FTP stands for 'Finally This Pain' (it doesn't, but it should).",
+        "MIXED": "Final block. Give it everything. Cooldown is coming."
       }
     },
     {
@@ -194,14 +208,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
-        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
-        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
-        "MIXED": "Bring it down smoothly. You earned this recovery."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 60% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
-        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
-        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
-        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 70% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -50,16 +52,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 1.1 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 1/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/36. Focus and finish strong."
       }
     },
     {
@@ -74,16 +78,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 1.1 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "This is brutal. You chose brutal. Now finish what you started.",
+        "TECHNICAL": "Target: 103% FTP, 100-120 rpm, Seated. Lock in and execute.",
+        "MOTIVATIONAL": "Your competition is resting. You're getting faster. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: this is the exact wattage where people start questioning their life choices.",
+        "MIXED": "Deep into the workout now. Stay present. One interval at a time."
       }
     },
     {
@@ -98,16 +104,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 1.2 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 1: 85% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 85%, Cadence: 65-65 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -122,16 +130,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 1.2 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "This is where average athletes quit. You're not average. Keep going.",
+        "TECHNICAL": "Supra-threshold effort. This is the rep that builds your aerobic ceiling.",
+        "MOTIVATIONAL": "This hurts, but you're choosing to be here. That's what separates you.",
+        "DARK_HUMOR": "Your FTP called. It wants to know why you're trying to destroy it.",
+        "MIXED": "First rep of the set. Be patient. Find the groove."
       }
     },
     {
@@ -146,16 +156,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 1.3 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 65-65 rpm, 85% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -170,16 +182,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 1.3 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Halfway done. The first half got you here. The second half makes you a champion.",
+        "TECHNICAL": "VO2max interval: maximize time at >90% VO2max. Breathing should be gasping.",
+        "MOTIVATIONAL": "First rep is always the hardest mentally. Once you're in it, commit.",
+        "DARK_HUMOR": "Interval 6: where dreams go to die, and watts go to live.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -194,16 +208,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 1.4 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 1: 85% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 7/36. Focus and finish strong."
       }
     },
     {
@@ -218,16 +234,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 1.4 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "The pain is temporary. The fitness is permanent. Don't you dare back off now.",
+        "TECHNICAL": "Set 1: target 103%. Breathing should be very labored. If you can talk, go harder.",
+        "MOTIVATIONAL": "One more. Then one more. That's how champions are made.",
+        "DARK_HUMOR": "This interval is dedicated to whoever said 'it doesn't get easier, you just go faster.'",
+        "MIXED": "High cadence, deep breathing, Seated. This is supposed to hurt."
       }
     },
     {
@@ -242,16 +260,18 @@
         "zone": "Z6",
         "powerLow": 114,
         "powerHigh": 114,
-        "cadenceLow": 95,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Peak 1 at 114-114% FTP",
       "coachingNotes": {
-        "TECHNICAL": "All out at 114%!",
-        "MOTIVATIONAL": "Empty the tank!",
-        "DARK_HUMOR": "This is the part where you question your life choices.",
-        "MIXED": "Sprint! 114% \u2014 everything you've got!"
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 1: 114% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -268,14 +288,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -290,16 +312,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 2.1 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 65-65 rpm, 85% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 85%, Cadence: 65-65 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -314,16 +338,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 2.1 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Your competition quit 2 reps ago. You're still here. That's the difference.",
+        "TECHNICAL": "First rep \u2014 settle into 103% quickly. Don't overshoot the first 30 seconds.",
+        "MOTIVATIONAL": "You're not breaking. You're building. Every second counts.",
+        "DARK_HUMOR": "Set 2 of 4. The suffering is progressive, like the tax system.",
+        "MIXED": "This is hard. That's the point. Keep your rhythm."
       }
     },
     {
@@ -338,16 +364,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 2.2 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 12/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 12 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 12. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -362,16 +390,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 2.2 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Last set. Empty the tank. You can rest when you're dead. Or in 5 minutes.",
+        "TECHNICAL": "Midway through set 2. Power should feel hard but repeatable. Adjust if fading.",
+        "MOTIVATIONAL": "This is THE rep that makes you faster. The one where most people quit.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 23 reps left.",
+        "MIXED": "Focus on form. Seated at 100-120 rpm. Power will follow."
       }
     },
     {
@@ -386,16 +416,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 2.3 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 65-65 rpm, 85% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 14/36. Focus and finish strong."
       }
     },
     {
@@ -410,16 +442,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 2.3 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Your competition quit 2 reps ago. You're still here. That's the difference.",
+        "TECHNICAL": "Seated at 100-120 rpm. Focus on smooth circles, not stomping.",
+        "MOTIVATIONAL": "Halfway there. The fitness is being built right now, in this discomfort.",
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MIXED": "Settle in. Find your breathing. Trust your fitness."
       }
     },
     {
@@ -434,16 +468,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 2.4 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 16 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 16. Your legs have opinions. Noted.",
+        "MIXED": "Power: 85%, Cadence: 65-65 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -458,16 +494,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 2.4 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Final rep. Your body is lying to you \u2014 you have more. Prove it.",
+        "TECHNICAL": "You've accumulated 31min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Final rep. Leave nothing in reserve. You can rest when you're done.",
+        "DARK_HUMOR": "If you can read this, you're not going hard enough. Just kidding. Maybe.",
+        "MIXED": "Almost there. Keep the power smooth and steady."
       }
     },
     {
@@ -482,16 +520,18 @@
         "zone": "Z6",
         "powerLow": 114,
         "powerHigh": 114,
-        "cadenceLow": 95,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Peak 2 at 114-114% FTP",
       "coachingNotes": {
-        "TECHNICAL": "All out at 114%!",
-        "MOTIVATIONAL": "Empty the tank!",
-        "DARK_HUMOR": "This is the part where you question your life choices.",
-        "MIXED": "Sprint! 114% \u2014 everything you've got!"
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Standing at 100-120 rpm, 114% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 114%, Cadence: 100-120 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -508,14 +548,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -530,16 +572,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 3.1 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 19/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 3: 85% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -554,16 +598,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 3.1 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 20. Yes, it hurts. That's the price of being faster than yesterday.",
+        "TECHNICAL": "Final rep of this set. Empty the tank \u2014 you have 300s recovery coming.",
+        "MOTIVATIONAL": "Your competition is resting. You're getting faster. Keep pushing.",
+        "DARK_HUMOR": "Only 16 more of these. 'Only.'",
+        "MIXED": "High cadence, deep breathing, Seated. This is supposed to hurt."
       }
     },
     {
@@ -578,16 +624,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 3.2 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 21 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 85%, Cadence: 65-65 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -602,16 +650,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 3.2 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 22/36. Your legs are screaming. Good. That means it's working.",
+        "TECHNICAL": "Rep 22/36 \u2014 hold 103% FTP at 100-120 rpm. Seated. 840s of work left in this set.",
+        "MOTIVATIONAL": "Rep 22 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 14 reps left.",
+        "MIXED": "Rep 22/36. Power: 103%, Cadence: 100-120 rpm. Execute."
       }
     },
     {
@@ -626,16 +676,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 3.3 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 23/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 23 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 23. Your legs have opinions. Noted.",
+        "MIXED": "Interval 23/36. Focus and finish strong."
       }
     },
     {
@@ -650,16 +702,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 3.3 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 24 of 36.",
+        "TECHNICAL": "Rep 24/36 \u2014 hold 103% FTP at 100-120 rpm. Seated. 720s of work left in this set.",
+        "MOTIVATIONAL": "Rep 24 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Rep 24. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Almost there. Keep the power smooth and steady."
       }
     },
     {
@@ -674,16 +728,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 3.4 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 25/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 25 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 25. Your legs have opinions. Noted.",
+        "MIXED": "Interval 25/36. Focus and finish strong."
       }
     },
     {
@@ -698,16 +754,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 3.4 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 26/36. Your legs are screaming. Good. That means it's working.",
+        "TECHNICAL": "You've accumulated 48min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Rep 26 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Interval 26: where dreams go to die, and watts go to live.",
+        "MIXED": "Rep 26/36. Power: 103%, Cadence: 100-120 rpm. Execute."
       }
     },
     {
@@ -722,16 +780,18 @@
         "zone": "Z6",
         "powerLow": 114,
         "powerHigh": 114,
-        "cadenceLow": 95,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Peak 3 at 114-114% FTP",
       "coachingNotes": {
-        "TECHNICAL": "All out at 114%!",
-        "MOTIVATIONAL": "Empty the tank!",
-        "DARK_HUMOR": "This is the part where you question your life choices.",
-        "MIXED": "Sprint! 114% \u2014 everything you've got!"
+        "TOUGH_LOVE": "Interval 27/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 27 of 36. Target: 114% FTP, 100-120 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 27. Your legs have opinions. Noted.",
+        "MIXED": "Interval 27/36. Focus and finish strong."
       }
     },
     {
@@ -748,14 +808,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 3: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -770,16 +832,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 4.1 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 28/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 28 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 28. Your legs have opinions. Noted.",
+        "MIXED": "Interval 28/36. Focus and finish strong."
       }
     },
     {
@@ -794,16 +858,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 4.1 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 29 of 36.",
+        "TECHNICAL": "You've accumulated 52min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Rep 29 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Interval 29: where dreams go to die, and watts go to live.",
+        "MIXED": "Rep 29/36. Power: 103%, Cadence: 100-120 rpm. Execute."
       }
     },
     {
@@ -818,16 +884,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 4.2 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 30/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 30 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 30. Your legs have opinions. Noted.",
+        "MIXED": "Interval 30/36. Focus and finish strong."
       }
     },
     {
@@ -842,16 +910,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 4.2 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 31. Yes, it hurts. That's the price of being faster than yesterday.",
+        "TECHNICAL": "Rep 31/36 \u2014 hold 103% FTP at 100-120 rpm. Seated. 300s of work left in this set.",
+        "MOTIVATIONAL": "Rep 31 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Rep 31. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Almost there. Keep the power smooth and steady."
       }
     },
     {
@@ -866,16 +936,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 4.3 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 32/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 32 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 32. Your legs have opinions. Noted.",
+        "MIXED": "Interval 32/36. Focus and finish strong."
       }
     },
     {
@@ -890,16 +962,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 4.3 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 33/36. Your legs are screaming. Good. That means it's working.",
+        "TECHNICAL": "Rep 33/36 \u2014 hold 103% FTP at 100-120 rpm. Seated. 180s of work left in this set.",
+        "MOTIVATIONAL": "Rep 33 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 3 reps left.",
+        "MIXED": "Rep 33/36. Power: 103%, Cadence: 100-120 rpm. Execute."
       }
     },
     {
@@ -914,16 +988,18 @@
         "zone": "Z3",
         "powerLow": 85,
         "powerHigh": 85,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 6
+        "cadenceLow": 65,
+        "cadenceHigh": 65,
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Under 4.4 at 85-85% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Hold 85% FTP. Low cadence unders (65 rpm), high cadence peaks (100+ rpm)",
-        "MOTIVATIONAL": "Stay smooth, absorb the effort",
-        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
-        "MIXED": "Settle in at 85%. Recovery is relative."
+        "TOUGH_LOVE": "Interval 34/36. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 34 of 36. Target: 85% FTP, 65-65 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 34. Your legs have opinions. Noted.",
+        "MIXED": "Interval 34/36. Focus and finish strong."
       }
     },
     {
@@ -938,16 +1014,18 @@
         "zone": "Z5",
         "powerLow": 103,
         "powerHigh": 103,
-        "cadenceLow": 90,
-        "cadenceHigh": 100,
-        "rpe": 8
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Over 4.4 at 103-103% FTP",
       "coachingNotes": {
-        "TECHNICAL": "Push to 103% FTP!",
-        "MOTIVATIONAL": "This is where you get faster",
-        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
-        "MIXED": "Surge to 103%! Hold it!"
+        "TOUGH_LOVE": "Rep 35. Yes, it hurts. That's the price of being faster than yesterday.",
+        "TECHNICAL": "You've accumulated 64min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Rep 35 of 36 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Rep 35. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Almost there. Keep the power smooth and steady."
       }
     },
     {
@@ -962,16 +1040,18 @@
         "zone": "Z6",
         "powerLow": 114,
         "powerHigh": 114,
-        "cadenceLow": 95,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 100,
+        "cadenceHigh": 120,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Peak 4 at 114-114% FTP",
       "coachingNotes": {
-        "TECHNICAL": "All out at 114%!",
-        "MOTIVATIONAL": "Empty the tank!",
-        "DARK_HUMOR": "This is the part where you question your life choices.",
-        "MIXED": "Sprint! 114% \u2014 everything you've got!"
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 36 of 36. Target: 114% FTP, 100-120 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 36. Your legs have opinions. Noted.",
+        "MIXED": "Interval 36/36. Focus and finish strong."
       }
     },
     {
@@ -988,14 +1068,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
-        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
-        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
-        "MIXED": "Bring it down smoothly. You earned this."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     }
   ],

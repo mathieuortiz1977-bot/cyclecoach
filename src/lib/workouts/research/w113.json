@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This is easy because it's supposed to be. Don't make it harder than it needs to be.",
+        "TECHNICAL": "Endurance zone: 70% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MOTIVATIONAL": "Easy miles = fast racing. Trust the process.",
+        "DARK_HUMOR": "Endurance pace: where you question if you're working hard enough. (You are.)",
+        "MIXED": "Conversational pace. Save your matches for the hard days."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 120,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 10
+        "rpe": 10,
+        "position": "seated"
       },
       "instruction": "Pyramid 1min at 120-120% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
-        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
-        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
-        "MIXED": "Explosive effort. Go hard and trust your training."
+        "TOUGH_LOVE": "Halfway done. The first half got you here. The second half makes you a champion.",
+        "TECHNICAL": "First rep \u2014 settle into 120% quickly. Don't overshoot the first 30 seconds.",
+        "MOTIVATIONAL": "First rep is always the hardest mentally. Once you're in it, commit.",
+        "DARK_HUMOR": "Interval 1: where dreams go to die, and watts go to live.",
+        "MIXED": "Rep 1/7. Power: 120%, Cadence: 85-100 rpm. Execute."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 115,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Pyramid 2min at 115-115% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "Your competition quit 2 reps ago. You're still here. That's the difference.",
+        "TECHNICAL": "VO2max interval: maximize time at >90% VO2max. Breathing should be gasping.",
+        "MOTIVATIONAL": "One more. Then one more. That's how champions are made.",
+        "DARK_HUMOR": "If you can read this, you're not going hard enough. Just kidding. Maybe.",
+        "MIXED": "Last one! Finish strong. You've earned the cooldown."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 112,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Pyramid 3min at 112-112% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "This is where average athletes quit. You're not average. Keep going.",
+        "TECHNICAL": "Midway through set 1. Power should feel hard but repeatable. Adjust if fading.",
+        "MOTIVATIONAL": "This hurts, but you're choosing to be here. That's what separates you.",
+        "DARK_HUMOR": "Set 1 of 1. The suffering is progressive, like the tax system.",
+        "MIXED": "This is hard. That's the point. Keep your rhythm."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 110,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Pyramid 4min at 110-110% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "This is brutal. You chose brutal. Now finish what you started.",
+        "TECHNICAL": "You've accumulated 10min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Halfway there. The fitness is being built right now, in this discomfort.",
+        "DARK_HUMOR": "Fun fact: this is the exact wattage where people start questioning their life choices.",
+        "MIXED": "Deep into the workout now. Stay present. One interval at a time."
       }
     },
     {
@@ -148,14 +158,16 @@
         "powerHigh": 112,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Pyramid 3min Down at 112-112% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 5 of 7.",
+        "TECHNICAL": "Rep 5/7 \u2014 hold 112% FTP at 85-100 rpm. Seated. 576s of work left in this set.",
+        "MOTIVATIONAL": "Rep 5 of 7 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 2 reps left.",
+        "MIXED": "Almost there. Keep the power smooth and steady."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 115,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Pyramid 2min Down at 115-115% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "Rep 6/7. Your legs are screaming. Good. That means it's working.",
+        "TECHNICAL": "You've accumulated 21min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Rep 6 of 7 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "Rep 6. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Rep 6/7. Power: 115%, Cadence: 85-100 rpm. Execute."
       }
     },
     {
@@ -196,14 +210,16 @@
         "powerHigh": 120,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 10
+        "rpe": 10,
+        "position": "seated"
       },
       "instruction": "Pyramid 1min Down at 120-120% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lactate system is about to get a serious wake-up call.",
-        "MOTIVATIONAL": "This is anaerobic power. You're training your body to sustain intensity.",
-        "TECHNICAL": "High-intensity anaerobic stimulus drives glycolytic power and lactate tolerance.",
-        "MIXED": "Explosive effort. Go hard and trust your training."
+        "TOUGH_LOVE": "Final rep. Your body is lying to you \u2014 you have more. Prove it.",
+        "TECHNICAL": "Final rep of this set. Empty the tank \u2014 you have 0s recovery coming.",
+        "MOTIVATIONAL": "Final rep. Leave nothing in reserve. You can rest when you're done.",
+        "DARK_HUMOR": "Interval 7: where dreams go to die, and watts go to live.",
+        "MIXED": "Last one! Finish strong. You've earned the cooldown."
       }
     },
     {
@@ -220,14 +236,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-100 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

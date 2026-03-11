@@ -28,14 +28,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This feels like nothing. That's the point. Patience builds power, not suffering.",
+        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
+        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
+        "DARK_HUMOR": "So easy you could do this all day. (Please don't.)",
+        "MIXED": "Endurance pace. Let your mind wander. Stay in zone."
       }
     },
     {
@@ -51,15 +53,17 @@
         "powerLow": 108,
         "powerHigh": 108,
         "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 9
+        "cadenceHigh": 95,
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Intro VO2 1 at 108-108% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 1 of 4.",
+        "TECHNICAL": "First rep \u2014 settle into 108% quickly. Don't overshoot the first 30 seconds.",
+        "MOTIVATIONAL": "First rep is always the hardest mentally. Once you're in it, commit.",
+        "DARK_HUMOR": "Interval 1: where dreams go to die, and watts go to live.",
+        "MIXED": "First rep of the set. Be patient. Find the groove."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -98,16 +104,18 @@
         "zone": "Z5",
         "powerLow": 110,
         "powerHigh": 110,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 9
+        "cadenceLow": 95,
+        "cadenceHigh": 100,
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Intro VO2 2 at 110-110% FTP",
       "coachingNotes": {
+        "TOUGH_LOVE": "This is brutal. You chose brutal. Now finish what you started.",
+        "TECHNICAL": "Set 2: target 110%. Breathing should be very labored. If you can talk, go harder.",
+        "MOTIVATIONAL": "You're not breaking. You're building. Every second counts.",
         "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "MIXED": "High cadence, deep breathing, Seated. This is supposed to hurt."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -146,16 +156,18 @@
         "zone": "Z5",
         "powerLow": 112,
         "powerHigh": 112,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 9
+        "cadenceLow": 85,
+        "cadenceHigh": 90,
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Intro VO2 3 at 112-112% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "TOUGH_LOVE": "Rep 3/4. Your legs are screaming. Good. That means it's working.",
+        "TECHNICAL": "Rep 3/4 \u2014 hold 112% FTP at 85-90 rpm. Seated. 180s of work left in this set.",
+        "MOTIVATIONAL": "Rep 3 of 4 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 1 reps left.",
+        "MIXED": "Rep 3/4. Power: 112%, Cadence: 85-90 rpm. Execute."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -195,15 +209,17 @@
         "powerLow": 108,
         "powerHigh": 108,
         "cadenceLow": 90,
-        "cadenceHigh": 105,
-        "rpe": 9
+        "cadenceHigh": 100,
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "Intro VO2 4 at 108-108% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "TOUGH_LOVE": "Rep 4. Yes, it hurts. That's the price of being faster than yesterday.",
+        "TECHNICAL": "Final rep of this set. Empty the tank \u2014 you have 0s recovery coming.",
+        "MOTIVATIONAL": "Final rep. Leave nothing in reserve. You can rest when you're done.",
+        "DARK_HUMOR": "Rep 4. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "Last one! Finish strong. You've earned the cooldown."
       }
     },
     {
@@ -220,14 +236,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-100 rpm, 60% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     }
   ],

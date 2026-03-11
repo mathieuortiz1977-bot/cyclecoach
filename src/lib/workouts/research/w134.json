@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
-        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
-        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
-        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 70% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 70%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -50,16 +52,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.1 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 1/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/24. Focus and finish strong."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -98,16 +104,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.2 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Standing at 110-130 rpm, 160% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 160%, Cadence: 110-130 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -146,16 +156,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.3 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 3: 160% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 3: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -194,16 +208,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.4 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Standing at 110-130 rpm, 160% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 4. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -220,14 +236,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -242,16 +260,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.5 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 5 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 5/24. Focus and finish strong."
       }
     },
     {
@@ -268,14 +288,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -290,16 +312,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.6 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 6: 160% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 160%, Cadence: 110-130 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -316,14 +340,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Set 6: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -338,16 +364,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.7 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Standing at 60-75 rpm, 160% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 7. Your legs have opinions. Noted.",
+        "MIXED": "Power: 160%, Cadence: 60-75 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -364,14 +392,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -386,16 +416,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 1.8 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 8/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 8: 160% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 8/24. Focus and finish strong."
       }
     },
     {
@@ -412,14 +444,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -436,14 +470,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 8: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -458,16 +494,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.1 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 9/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 9 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -484,14 +522,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 9: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -506,16 +546,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.2 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 10: 160% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 160%, Cadence: 110-130 rpm, Position: Standing. Execute."
       }
     },
     {
@@ -532,14 +574,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -554,16 +598,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.3 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 11 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -580,14 +626,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -602,16 +650,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.4 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Standing at 110-130 rpm, 160% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 12. Your legs have opinions. Noted.",
+        "MIXED": "Interval 12/24. Focus and finish strong."
       }
     },
     {
@@ -628,14 +678,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 12: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -650,16 +702,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.5 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Standing at 60-75 rpm, 160% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 13. Your legs have opinions. Noted.",
+        "MIXED": "Interval 13/24. Focus and finish strong."
       }
     },
     {
@@ -676,14 +730,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -698,16 +754,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.6 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 14: 160% FTP. Standing. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -724,14 +782,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -746,16 +806,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.7 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 15/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 15 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 15. Your legs have opinions. Noted.",
+        "MIXED": "Interval 15/24. Focus and finish strong."
       }
     },
     {
@@ -772,14 +834,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -794,16 +858,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 2.8 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 16/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 16 of 24. Target: 160% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 16. Your legs have opinions. Noted.",
+        "MIXED": "Interval 16/24. Focus and finish strong."
       }
     },
     {
@@ -820,14 +886,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 16: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -844,14 +912,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -866,16 +936,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.1 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 17/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 17 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 17. Your legs have opinions. Noted.",
+        "MIXED": "Interval 17/24. Focus and finish strong."
       }
     },
     {
@@ -892,14 +964,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -914,16 +988,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.2 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 18/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 18 of 24. Target: 160% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 18. Your legs have opinions. Noted.",
+        "MIXED": "Interval 18/24. Focus and finish strong."
       }
     },
     {
@@ -940,14 +1016,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 18: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -962,16 +1040,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.3 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 19/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 19 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 19. Your legs have opinions. Noted.",
+        "MIXED": "Interval 19/24. Focus and finish strong."
       }
     },
     {
@@ -988,14 +1068,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -1010,16 +1092,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.4 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 20/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 20 of 24. Target: 160% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 20. Your legs have opinions. Noted.",
+        "MIXED": "Interval 20/24. Focus and finish strong."
       }
     },
     {
@@ -1036,14 +1120,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 20: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 50%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -1058,16 +1144,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.5 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 21/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 21 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 21. Your legs have opinions. Noted.",
+        "MIXED": "Interval 21/24. Focus and finish strong."
       }
     },
     {
@@ -1084,14 +1172,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -1106,16 +1196,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.6 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 22/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 22 of 24. Target: 160% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 22. Your legs have opinions. Noted.",
+        "MIXED": "Interval 22/24. Focus and finish strong."
       }
     },
     {
@@ -1132,14 +1224,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -1154,16 +1248,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 60,
+        "cadenceHigh": 75,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.7 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Interval 23/24. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 23 of 24. Target: 160% FTP, 60-75 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 23. Your legs have opinions. Noted.",
+        "MIXED": "Interval 23/24. Focus and finish strong."
       }
     },
     {
@@ -1180,14 +1276,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 50% FTP, 85-95 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -1202,16 +1300,18 @@
         "zone": "Z6",
         "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 90,
-        "cadenceHigh": 110,
-        "rpe": 9
+        "cadenceLow": 110,
+        "cadenceHigh": 130,
+        "rpe": 9,
+        "position": "standing"
       },
       "instruction": "Burst 3.8 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
-        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
-        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
-        "MIXED": "All out. No holding back. Recovery is coming."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 24 of 24. Target: 160% FTP, 110-130 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 24. Your legs have opinions. Noted.",
+        "MIXED": "Interval 24/24. Focus and finish strong."
       }
     },
     {
@@ -1228,14 +1328,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-95 rpm, 50% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Interval 1/1. Focus and finish strong."
       }
     },
     {
@@ -1252,14 +1354,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
-        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
-        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
-        "MIXED": "Bring it down smoothly. You earned this."
+        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Set 24: 55% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     }
   ],

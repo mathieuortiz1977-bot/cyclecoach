@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "This feels like nothing. That's the point. Patience builds power, not suffering.",
+        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
+        "MOTIVATIONAL": "Building the base. This is where champions are made in the off-season.",
+        "DARK_HUMOR": "So easy you could do this all day. (Please don't.)",
+        "MIXED": "Conversational pace. Save your matches for the hard days."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 110,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "VO2 1 at 110-110% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "Halfway done. The first half got you here. The second half makes you a champion.",
+        "TECHNICAL": "First rep \u2014 settle into 110% quickly. Don't overshoot the first 30 seconds.",
+        "MOTIVATIONAL": "First rep is always the hardest mentally. Once you're in it, commit.",
+        "DARK_HUMOR": "Rep 1. Your legs are filing a formal complaint. Denied.",
+        "MIXED": "First rep of the set. Be patient. Find the groove."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Rest at 55-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Interval 2/2. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 2 of 2. Target: 55% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
+        "MIXED": "Interval 2/2. Focus and finish strong."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Set 1: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     }
   ],

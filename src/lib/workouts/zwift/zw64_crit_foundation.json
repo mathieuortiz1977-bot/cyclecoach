@@ -28,14 +28,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-75% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Base training: the secret no one wants to do. That's why it works.",
+        "TECHNICAL": "Zone 2: where mitochondria multiply and aerobic capacity expands.",
+        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
+        "DARK_HUMOR": "The hardest part of easy rides is keeping them easy. Stay disciplined.",
+        "MIXED": "Endurance pace. Let your mind wander. Stay in zone."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 6
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Sprint Base at 80-110% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "TOUGH_LOVE": "Easy miles make fast racing. Stop thinking and start pedaling.",
+        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
+        "MOTIVATIONAL": "Endurance work is never wasted. Every minute builds your foundation.",
+        "DARK_HUMOR": "Zone 2: also known as 'why am I even here' pace.",
+        "MIXED": "Easy does it. 75% FTP. Build your engine."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 60,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 1
+        "rpe": 1,
+        "position": "seated"
       },
       "instruction": "Cool-down at 40-60% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
+        "MIXED": "Power: 60%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     }
   ],

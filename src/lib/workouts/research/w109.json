@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 3,
+        "position": "seated"
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Zone 2 is like compound interest. Boring, but it builds wealth over time.",
+        "TECHNICAL": "Endurance zone: 70% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
+        "DARK_HUMOR": "This is so easy it's almost boring. Almost.",
+        "MIXED": "Endurance pace. Let your mind wander. Stay in zone."
       }
     },
     {
@@ -52,14 +54,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 4
+        "rpe": 4,
+        "position": "seated"
       },
       "instruction": "Base Block at 70-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. You're building an engine here.",
+        "TECHNICAL": "This should feel easy. If you're breathing hard, you're going too hard.",
+        "MOTIVATIONAL": "Your future self will thank you for these base miles.",
+        "DARK_HUMOR": "Fun fact: most people go too hard on easy days. Don't be most people.",
+        "MIXED": "Zone 2. Easy effort. This is recovery in disguise."
       }
     },
     {
@@ -76,14 +80,16 @@
         "powerHigh": 85,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 6
+        "rpe": 6,
+        "position": "seated"
       },
       "instruction": "Tempo at 85-85% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "This is the sweet spot where discomfort meets sustainability. You can do this.",
-        "MOTIVATIONAL": "This is muscular endurance work. You're getting stronger with every interval.",
-        "TECHNICAL": "Sustained tempo develops lactate threshold buffering capacity.",
-        "MIXED": "Steady, controlled effort. Feel the burn but maintain power."
+        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
+        "TECHNICAL": "Seated at 85-100 rpm, 85% FTP. Focus on form and execution.",
+        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Power: 85%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -100,14 +106,16 @@
         "powerHigh": 92,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 7
+        "rpe": 7,
+        "position": "seated"
       },
       "instruction": "Sweet Spot at 92-92% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 3 of 6. Target: 92% FTP, 85-100 rpm.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
+        "MIXED": "Stay smooth. Breathe deep. You've got this."
       }
     },
     {
@@ -124,14 +132,16 @@
         "powerHigh": 100,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 8
+        "rpe": 8,
+        "position": "seated"
       },
       "instruction": "Threshold at 100-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Welcome to FTP. Where your legs wonder why you hate them so much.",
-        "MOTIVATIONAL": "This is FTP work - the gold standard for raising your ceiling. Stay strong!",
-        "TECHNICAL": "Sustained FTP stimulus drives maximal lactate steady-state adaptation.",
-        "MIXED": "Hold steady power. Even pacing throughout. You've trained for this."
+        "TOUGH_LOVE": "Threshold hurts. Get comfortable being uncomfortable. Block 1 of 1.",
+        "TECHNICAL": "This is your aerobic threshold. Challenging but repeatable.",
+        "MOTIVATIONAL": "You can hold this. Your body knows what to do. Trust your training.",
+        "DARK_HUMOR": "Set 1. Your legs are politely requesting a break. Request denied.",
+        "MIXED": "Almost done. Stay strong. Finish what you started."
       }
     },
     {
@@ -148,14 +158,16 @@
         "powerHigh": 115,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 9
+        "rpe": 9,
+        "position": "seated"
       },
       "instruction": "VO2max at 115-115% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 5 of 6.",
+        "TECHNICAL": "You've accumulated 47min of VO2 work. Quality over quantity from here.",
+        "MOTIVATIONAL": "Rep 5 of 6 \u2014 you've done this before and you can do it again.",
+        "DARK_HUMOR": "The good news: you're almost done. The bad news: you still have 1 reps left.",
+        "MIXED": "Rep 5/6. Power: 115%, Cadence: 85-100 rpm. Execute."
       }
     },
     {
@@ -172,14 +184,16 @@
         "powerHigh": 150,
         "cadenceLow": 95,
         "cadenceHigh": 110,
-        "rpe": 10
+        "rpe": 10,
+        "position": "seated"
       },
       "instruction": "Sprint at 150-150% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "TOUGH_LOVE": "Interval 6/6. This hurts because it's supposed to. Keep going.",
+        "TECHNICAL": "Interval 6 of 6. Target: 150% FTP, 95-110 rpm.",
+        "MOTIVATIONAL": "This is your workout. Own it.",
+        "DARK_HUMOR": "Interval 6. Your legs have opinions. Noted.",
+        "MIXED": "Interval 6/6. Focus and finish strong."
       }
     },
     {
@@ -196,14 +210,16 @@
         "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Cool-down at 50-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Set 1: 50% FTP. Seated. Maintain smooth power output.",
+        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
+        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
+        "MIXED": "Power: 50%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     }
   ],

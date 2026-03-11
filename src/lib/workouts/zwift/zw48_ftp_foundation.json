@@ -28,14 +28,16 @@
         "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 2
+        "rpe": 2,
+        "position": "seated"
       },
       "instruction": "Base Spin at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "TOUGH_LOVE": "Base training: the secret no one wants to do. That's why it works.",
+        "TECHNICAL": "85-100 rpm, Seated. Smooth, relaxed pedaling.",
+        "MOTIVATIONAL": "Relax and enjoy the ride. You're building massive aerobic capacity.",
+        "DARK_HUMOR": "Your Garmin thinks you fell asleep. You're actually training.",
+        "MIXED": "Easy spin. 85-100 rpm, Seated. Relax and breathe."
       }
     }
   ],
