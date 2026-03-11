@@ -2,7 +2,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import type { TrainingBlock, TrainingWeek, TrainingSession, TrainingInterval, CompletedWorkout, StravaActivity, CalendarDay } from "@/types";
-import { generatePlan } from "@/lib/periodization";
 import { DAY_FROM_INDEX } from "@/lib/constants";
 import * as tz from "@/lib/timezone";
 import { api } from "@/lib/api";
@@ -109,7 +108,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [selectedDate, setSelectedDate] = useState<(WorkoutData & { isAutoCompleted?: boolean; plannedSession?: any }) | null>(null);
   const [loading, setLoading] = useState(true);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
-  const [plan, setPlan] = useState(() => generatePlan(4));
+  const [plan, setPlan] = useState<any>(null);
   
   // Cancellation state
   const [showCancellation, setShowCancellation] = useState(false);
@@ -266,7 +265,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         console.log("[TrainingCalendar] No Strava activities in response");
       }
 
-      // Generate planned sessions from training plan
+      // Generate planned sessions from training plan (API-only)
       let actualPlan = planData.plan;
       if (planData.plan && startDate) {
         const trainingDays = riderData.rider?.trainingDays ? 
@@ -277,17 +276,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
         setPlannedSessions(plannedWorkouts);
         setPlan(planData.plan);
         actualPlan = planData.plan;
-      } else if (!planData.plan && startDate) {
-        // No plan exists yet - generate one client-side temporarily for display
-        const trainingDays = riderData.rider?.trainingDays ? 
-          riderData.rider.trainingDays.split(',').map((day: string) => day.trim()) : 
-          ["MON", "TUE", "THU", "FRI", "SAT"];
-        const generatedPlan = generatePlan(4, trainingDays as any, riderData.rider?.outdoorDay || "SAT");
-        const plannedWorkouts = generatePlannedSessions(generatedPlan, startDate, trainingDays);
-        setPlannedSessions(plannedWorkouts);
-        setPlan(generatedPlan);
-        actualPlan = generatedPlan;
       }
+      // If no plan exists, don't generate one client-side - wait for user to create via /api/plan
 
       // Load vacation data
       if (vacationData.success) {
