@@ -59,16 +59,17 @@ export default function Dashboard() {
       if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
       if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
-      if (planData?.plan && planData.source === "database") {
+      if (planData?.plan && planData.source === "database" && planData.plan.blocks) {
         // Transform DB plan to match PlanDef shape
+        // Extra safety: ensure blocks exist and is array
         const dbPlan = {
-          blocks: planData.plan.blocks.map((b: TrainingBlock) => ({
+          blocks: (planData.plan.blocks || []).map((b: TrainingBlock) => ({
             blockNumber: b.blockNumber,
             type: b.type,
-            weeks: b.weeks.map((w: TrainingWeek) => ({
+            weeks: (b.weeks || []).map((w: TrainingWeek) => ({
               weekNumber: w.weekNumber,
               weekType: w.weekType,
-              sessions: w.sessions.map((s: TrainingSession) => {
+              sessions: (w.sessions || []).map((s: TrainingSession) => {
                 // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
                 // Safety check: ensure intervals exist (rest days might have empty array)
                 const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
@@ -132,13 +133,13 @@ export default function Dashboard() {
 
           if (planData?.plan) {
             const dbPlan = {
-              blocks: planData.plan.blocks.map((b: TrainingBlock) => ({
+              blocks: (planData.plan.blocks || []).map((b: TrainingBlock) => ({
                 blockNumber: b.blockNumber,
                 type: b.type,
-                weeks: b.weeks.map((w: TrainingWeek) => ({
+                weeks: (b.weeks || []).map((w: TrainingWeek) => ({
                   weekNumber: w.weekNumber,
                   weekType: w.weekType,
-                  sessions: w.sessions.map((s: TrainingSession) => {
+                  sessions: (w.sessions || []).map((s: TrainingSession) => {
                     // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
                     // Safety check: ensure intervals exist (rest days might have empty array)
                     const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
