@@ -18,6 +18,8 @@ import type { WorkoutTemplate } from './periodization';
 /**
  * Convert raw JSON workout → WorkoutTemplate interface
  * Validates required fields, provides defaults for optional fields
+ * 
+ * Handles both OLD (flat) and NEW (nested intensity/duration) formats
  */
 export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
   try {
@@ -27,10 +29,62 @@ export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
       return null;
     }
 
-    // Create intervals function from static array
+    // CRITICAL FIX: Normalize intervals to handle both OLD and NEW formats
+    // NEW format: nested intensity { zone, powerLow, powerHigh } and duration { absoluteSecs, percent }
+    // OLD format: flat durationSecs, zone, powerLow, powerHigh
+    const normalizedIntervals = (jsonData.intervals || []).map((interval: any) => {
+      // Extract duration: try new format first, then old format
+      let durationSecs = interval.durationSecs;
+      if (!durationSecs && interval.duration && typeof interval.duration === 'object') {
+        durationSecs = interval.duration.absoluteSecs; // NEW format
+      }
+      durationSecs = durationSecs || 600; // Fallback to 10 minutes
+
+      // Extract intensity values: handle nested (NEW) or flat (OLD) format
+      const intensity = interval.intensity || {}; // NEW format uses nested object
+      const powerLow = intensity.powerLow ?? interval.powerLow ?? 0;
+      const powerHigh = intensity.powerHigh ?? interval.powerHigh ?? 0;
+      const zone = intensity.zone ?? interval.zone ?? 'Z2';
+      const cadenceLow = intensity.cadenceLow ?? interval.cadenceLow;
+      const cadenceHigh = intensity.cadenceHigh ?? interval.cadenceHigh;
+      const rpe = intensity.rpe ?? interval.rpe;
+
+      // Extract coaching notes: NEW format uses coachingNotes object with styles
+      let coachNote = interval.coachNote || '';
+      if (!coachNote && interval.coachingNotes && typeof interval.coachingNotes === 'object') {
+        // Pick one of the coaching note styles
+        coachNote = interval.coachingNotes.MIXED 
+          || interval.coachingNotes.MOTIVATIONAL 
+          || interval.coachingNotes.TECHNICAL 
+          || interval.coachingNotes.DARK_HUMOR 
+          || '';
+      }
+
+      // Return normalized interval
+      return {
+        name: interval.name || '',
+        durationSecs,
+        powerLow,
+        powerHigh,
+        cadenceLow,
+        cadenceHigh,
+        rpe,
+        zone,
+        purpose: interval.purpose || '',
+        coachNote,
+      };
+    });
+
+    // Create intervals function from normalized array
     // This allows normalizeIntervals() to work as expected
-    const staticIntervals = jsonData.intervals || [];
-    const intervalsFunction = () => staticIntervals;
+    const intervalsFunction = () => normalizedIntervals;
+
+    // Extract session duration: handle nested or flat format
+    let duration = jsonData.duration;
+    if (typeof duration === 'object' && duration.absoluteSecs) {
+      duration = duration.absoluteSecs; // NEW format
+    }
+    duration = duration || 60; // Fallback to 60 minutes
 
     const converted: WorkoutTemplate = {
       id: jsonData.id,
@@ -38,7 +92,7 @@ export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
       description: jsonData.description || '',
       purpose: jsonData.purpose || '',
       zone: jsonData.primaryZone || 'Z2',
-      duration: jsonData.duration || 60,
+      duration,
       category: jsonData.category || 'MIXED',
       
       // New fields from normalized structure (optional)
@@ -49,7 +103,7 @@ export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
       difficultyScore: jsonData.difficulty || jsonData.difficultyScore || 5,
       sportVariant: jsonData.sportVariant,
       
-      // CRITICAL: Convert intervals array → function
+      // CRITICAL: Use normalized intervals
       intervals: intervalsFunction,
     };
 
