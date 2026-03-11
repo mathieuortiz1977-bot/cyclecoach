@@ -150,8 +150,11 @@ export function SessionCard({
             {/* Mini interval bars — animated & interactive */}
             <div className="flex items-end gap-[1px] h-10 mb-2 bg-[var(--background)] rounded-lg p-1.5 relative group">
               {intervalsArray.map((interval, idx) => {
-                const widthPct = (interval.durationSecs / totalSecs) * 100;
-                const avgPower = (interval.powerLow + interval.powerHigh) / 2;
+                const widthPct = (interval.durationSecs / (totalSecs || 1)) * 100;
+                // Handle both nested and flat structures for power values
+                const powerLow = (interval as any).intensity?.powerLow ?? interval.powerLow ?? 0;
+                const powerHigh = (interval as any).intensity?.powerHigh ?? interval.powerHigh ?? 0;
+                const avgPower = (powerLow + powerHigh) / 2;
                 const heightPct = avgPower > 0 ? Math.min((avgPower / 130) * 100, 100) : 10;
                 return (
                   <motion.div
@@ -162,7 +165,7 @@ export function SessionCard({
                     className="cursor-pointer hover:opacity-80 active:scale-95 transition-all"
                     style={{
                       width: `${widthPct}%`,
-                      backgroundColor: getZoneColor(interval.zone),
+                      backgroundColor: getZoneColor((interval as any).intensity?.zone ?? interval.zone ?? 'Z2'),
                       borderRadius: "2px 2px 0 0",
                       minWidth: "2px",
                     }}
@@ -268,31 +271,41 @@ export function SessionCard({
                   <div className="font-semibold">{formatTime(selectedInterval.interval.durationSecs)}</div>
                 </div>
 
-                {selectedInterval.interval.powerHigh > 0 && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
-                    <div className="text-[var(--accent)] mb-1">⚡</div>
-                    <div className="font-semibold text-xs">
-                      {Math.round(selectedInterval.ftp * selectedInterval.interval.powerLow / 100)}–{Math.round(selectedInterval.ftp * selectedInterval.interval.powerHigh / 100)}W
+                {(() => {
+                  const powerLow = (selectedInterval.interval as any).intensity?.powerLow ?? selectedInterval.interval.powerLow ?? 0;
+                  const powerHigh = (selectedInterval.interval as any).intensity?.powerHigh ?? selectedInterval.interval.powerHigh ?? 0;
+                  return powerHigh > 0 ? (
+                    <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                      <div className="text-[var(--accent)] mb-1">⚡</div>
+                      <div className="font-semibold text-xs">
+                        {Math.round(selectedInterval.ftp * powerLow / 100)}–{Math.round(selectedInterval.ftp * powerHigh / 100)}W
+                      </div>
+                      <div className="text-[10px] text-[var(--muted)]">
+                        Zone {(selectedInterval.interval as any).intensity?.zone ?? selectedInterval.interval.zone ?? 'Z2'}
+                      </div>
                     </div>
-                    <div className="text-[10px] text-[var(--muted)]">
-                      Zone {selectedInterval.interval.zone}
+                  ) : null;
+                })()}
+
+                {(() => {
+                  const cadenceLow = (selectedInterval.interval as any).intensity?.cadenceLow ?? selectedInterval.interval.cadenceLow;
+                  return cadenceLow ? (
+                    <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                      <div className="text-purple-400 mb-1">🔄</div>
+                      <div className="font-semibold">{cadenceLow} rpm</div>
                     </div>
-                  </div>
-                )}
+                  ) : null;
+                })()}
 
-                {selectedInterval.interval.cadenceLow && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
-                    <div className="text-purple-400 mb-1">🔄</div>
-                    <div className="font-semibold">{selectedInterval.interval.cadenceLow} rpm</div>
-                  </div>
-                )}
-
-                {selectedInterval.interval.rpe && (
-                  <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
-                    <div className="text-yellow-400 mb-1">💪</div>
-                    <div className="font-semibold">RPE {selectedInterval.interval.rpe}</div>
-                  </div>
-                )}
+                {(() => {
+                  const rpe = (selectedInterval.interval as any).intensity?.rpe ?? selectedInterval.interval.rpe;
+                  return rpe ? (
+                    <div className="bg-[var(--background)]/50 rounded-lg p-2 text-center">
+                      <div className="text-yellow-400 mb-1">💪</div>
+                      <div className="font-semibold">RPE {rpe}</div>
+                    </div>
+                  ) : null;
+                })()}
               </div>
 
               {selectedInterval.interval.purpose && (
