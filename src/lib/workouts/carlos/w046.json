@@ -2,13 +2,13 @@
   "id": "w046",
   "title": "Pre-Race Activation",
   "source": "carlos",
-  "category": "BASE",
+  "category": "WARMUP",
   "primaryZone": "Z2",
   "structure": "steady",
   "difficulty": 3,
   "duration": 39,
   "scalable": true,
-  "tss": 25,
+  "tss": 24,
   "description": "Prime legs and nervous system before competition",
   "purpose": "Prime legs and nervous system before competition",
   "intervals": [
@@ -237,9 +237,9 @@
         "absoluteSecs": 10
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 150,
-        "powerHigh": 200,
+        "zone": "Z6-Z7",
+        "powerLow": 130,
+        "powerHigh": 150,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10

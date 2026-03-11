@@ -2,88 +2,328 @@
   "id": "zw24_unicorn_red",
   "title": "Unicorn Red",
   "source": "zwift",
-  "category": "VO2MAX",
-  "primaryZone": "Z4",
+  "category": "SWEET_SPOT",
+  "primaryZone": "Z3",
   "structure": "repeats",
   "difficulty": 6,
-  "duration": 40,
+  "duration": 65,
   "scalable": true,
-  "tss": 34,
-  "description": "Unicorn progression - Level 1 (Red)",
+  "tss": 59,
+  "description": "4 sets \u00d7 6 over-unders [1min @78%, 30s @103%] \u2014 the easiest Unicorn",
   "purpose": "Build VO2max",
   "protocol": "Zwift - Unicorn Red",
   "researcher": "Zwift Labs",
   "intervals": [
     {
       "name": "Warm-up",
-      "purpose": "Warm up",
+      "purpose": "Prepare body for work",
       "phase": "warmup",
       "duration": {
-        "percent": 19.5,
-        "absoluteSecs": 468
+        "percent": 15.4,
+        "absoluteSecs": 600
       },
       "intensity": {
-        "zone": "Z2",
+        "zone": "Z1-Z2",
         "powerLow": 50,
-        "powerHigh": 75,
+        "powerHigh": 70,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 3
+        "cadenceHigh": 95,
+        "rpe": 2
       },
-      "instruction": "Warm-up at 50-75% FTP",
+      "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
       }
     },
     {
-      "name": "Under 1",
-      "purpose": "Sweet spot development",
+      "name": "Under 1.1",
+      "purpose": "Sustained sub-threshold",
       "phase": "work",
       "duration": {
-        "percent": 7.5,
-        "absoluteSecs": 180
+        "percent": 1.5,
+        "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z3-Z4",
-        "powerLow": 88,
-        "powerHigh": 88,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 6
       },
-      "instruction": "Under 1 at 88-88% FTP",
+      "instruction": "Under 1.1 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
-        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
-        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
-        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
       }
     },
     {
-      "name": "Over 1",
-      "purpose": "Over-under",
+      "name": "Over 1.1",
+      "purpose": "Supra-threshold surge",
       "phase": "work",
       "duration": {
-        "percent": 2.5,
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.1 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 1.2",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
         "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z4-Z5",
-        "powerLow": 100,
-        "powerHigh": 100,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 7
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "Over 1 at 100-100% FTP",
+      "instruction": "Under 1.2 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 1.2",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.2 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 1.3",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 1.3 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 1.3",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.3 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 1.4",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 1.4 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 1.4",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.4 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 1.5",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 1.5 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 1.5",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.5 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 1.6",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 1.6 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 1.6",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 1.6 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
       }
     },
     {
@@ -91,7 +331,7 @@
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
-        "percent": 7.5,
+        "percent": 4.6,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -111,51 +351,291 @@
       }
     },
     {
-      "name": "Under 2",
-      "purpose": "Sweet spot development",
+      "name": "Under 2.1",
+      "purpose": "Sustained sub-threshold",
       "phase": "work",
       "duration": {
-        "percent": 7.5,
-        "absoluteSecs": 180
+        "percent": 1.5,
+        "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z3-Z4",
-        "powerLow": 88,
-        "powerHigh": 88,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 6
       },
-      "instruction": "Under 2 at 88-88% FTP",
+      "instruction": "Under 2.1 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
-        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
-        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
-        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
       }
     },
     {
-      "name": "Over 2",
-      "purpose": "Over-under",
+      "name": "Over 2.1",
+      "purpose": "Supra-threshold surge",
       "phase": "work",
       "duration": {
-        "percent": 2.5,
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.1 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 2.2",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
         "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z4-Z5",
-        "powerLow": 100,
-        "powerHigh": 100,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 7
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "Over 2 at 100-100% FTP",
+      "instruction": "Under 2.2 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 2.2",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.2 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 2.3",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 2.3 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 2.3",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.3 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 2.4",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 2.4 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 2.4",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.4 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 2.5",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 2.5 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 2.5",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.5 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 2.6",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 2.6 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 2.6",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 2.6 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
       }
     },
     {
@@ -163,7 +643,7 @@
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
-        "percent": 7.5,
+        "percent": 4.6,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -183,51 +663,291 @@
       }
     },
     {
-      "name": "Under 3",
-      "purpose": "Sweet spot development",
+      "name": "Under 3.1",
+      "purpose": "Sustained sub-threshold",
       "phase": "work",
       "duration": {
-        "percent": 7.5,
-        "absoluteSecs": 180
+        "percent": 1.5,
+        "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z3-Z4",
-        "powerLow": 88,
-        "powerHigh": 88,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 6
       },
-      "instruction": "Under 3 at 88-88% FTP",
+      "instruction": "Under 3.1 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
-        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
-        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
-        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
       }
     },
     {
-      "name": "Over 3",
-      "purpose": "Over-under",
+      "name": "Over 3.1",
+      "purpose": "Supra-threshold surge",
       "phase": "work",
       "duration": {
-        "percent": 2.5,
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.1 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 3.2",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
         "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z4-Z5",
-        "powerLow": 100,
-        "powerHigh": 100,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 7
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "Over 3 at 100-100% FTP",
+      "instruction": "Under 3.2 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 3.2",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.2 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 3.3",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 3.3 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 3.3",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.3 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 3.4",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 3.4 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 3.4",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.4 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 3.5",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 3.5 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 3.5",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.5 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 3.6",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 3.6 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 3.6",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 3.6 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
       }
     },
     {
@@ -235,7 +955,7 @@
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
-        "percent": 7.5,
+        "percent": 4.6,
         "absoluteSecs": 180
       },
       "intensity": {
@@ -255,101 +975,317 @@
       }
     },
     {
-      "name": "Under 4",
-      "purpose": "Sweet spot development",
+      "name": "Under 4.1",
+      "purpose": "Sustained sub-threshold",
       "phase": "work",
       "duration": {
-        "percent": 7.5,
-        "absoluteSecs": 180
+        "percent": 1.5,
+        "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z3-Z4",
-        "powerLow": 88,
-        "powerHigh": 88,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 6
       },
-      "instruction": "Under 4 at 88-88% FTP",
+      "instruction": "Under 4.1 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Sweet spot: sweet enough to hurt, but not enough to quit. Probably.",
-        "MOTIVATIONAL": "This is the most efficient zone. Maximum adaptation, manageable fatigue.",
-        "TECHNICAL": "88-94% FTP optimizes aerobic adaptation while managing glycolytic stress.",
-        "MIXED": "Hold steady. Not easy, not killing you. That's the sweet spot."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
       }
     },
     {
-      "name": "Over 4",
-      "purpose": "Over-under",
+      "name": "Over 4.1",
+      "purpose": "Supra-threshold surge",
       "phase": "work",
       "duration": {
-        "percent": 2.5,
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.1 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 4.2",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
         "absoluteSecs": 60
       },
       "intensity": {
-        "zone": "Z4-Z5",
-        "powerLow": 100,
-        "powerHigh": 100,
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 7
+        "cadenceHigh": 95,
+        "rpe": 6
       },
-      "instruction": "Over 4 at 100-100% FTP",
+      "instruction": "Under 4.2 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
-        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
-        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
-        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
       }
     },
     {
-      "name": "Rest",
-      "purpose": "Recovery between intervals",
-      "phase": "rest",
+      "name": "Over 4.2",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
       "duration": {
-        "percent": 7.5,
-        "absoluteSecs": 180
+        "percent": 0.8,
+        "absoluteSecs": 30
       },
       "intensity": {
-        "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.2 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 4.3",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 2
+        "rpe": 6
       },
-      "instruction": "Rest at 45-55% FTP",
+      "instruction": "Under 4.3 at 78-78% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
-        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
-        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
-        "MIXED": "Easy spin. Recover. Get ready."
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 4.3",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.3 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 4.4",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 4.4 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 4.4",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.4 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 4.5",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 4.5 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 4.5",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.5 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
+      }
+    },
+    {
+      "name": "Under 4.6",
+      "purpose": "Sustained sub-threshold",
+      "phase": "work",
+      "duration": {
+        "percent": 1.5,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z3",
+        "powerLow": 78,
+        "powerHigh": 78,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 6
+      },
+      "instruction": "Under 4.6 at 78-78% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Hold 78% FTP. 85-95 rpm throughout",
+        "MOTIVATIONAL": "Stay smooth, absorb the effort",
+        "DARK_HUMOR": "The under is supposed to feel easy. Supposed to.",
+        "MIXED": "Settle in at 78%. Recovery is relative."
+      }
+    },
+    {
+      "name": "Over 4.6",
+      "purpose": "Supra-threshold surge",
+      "phase": "work",
+      "duration": {
+        "percent": 0.8,
+        "absoluteSecs": 30
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 103,
+        "powerHigh": 103,
+        "cadenceLow": 90,
+        "cadenceHigh": 100,
+        "rpe": 8
+      },
+      "instruction": "Over 4.6 at 103-103% FTP",
+      "coachingNotes": {
+        "TECHNICAL": "Push to 103% FTP!",
+        "MOTIVATIONAL": "This is where you get faster",
+        "DARK_HUMOR": "Welcome to the over. Population: suffering.",
+        "MIXED": "Surge to 103%! Hold it!"
       }
     },
     {
       "name": "Cool-down",
-      "purpose": "Cool down",
+      "purpose": "Facilitate recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 10.5,
-        "absoluteSecs": 252
+        "percent": 15.4,
+        "absoluteSecs": 600
       },
       "intensity": {
         "zone": "Z1",
         "powerLow": 40,
-        "powerHigh": 60,
+        "powerHigh": 55,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "cadenceHigh": 95,
         "rpe": 1
       },
-      "instruction": "Cool-down at 40-60% FTP",
+      "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
       }
     }
   ],
-  "if": 0.71
+  "if": 0.74
 }

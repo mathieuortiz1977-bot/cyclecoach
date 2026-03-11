@@ -2,13 +2,13 @@
   "id": "zw64_crit_foundation",
   "title": "Crit Foundation",
   "source": "zwift",
-  "category": "SPRINT",
+  "category": "BASE",
   "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 5,
   "duration": 45,
   "scalable": true,
-  "tss": 59,
+  "tss": 35,
   "description": "Sprint foundation work",
   "purpose": "Sprint base",
   "protocol": "Zwift - Crit Foundation",
@@ -47,9 +47,9 @@
         "absoluteSecs": 2160
       },
       "intensity": {
-        "zone": "Z2-Z4",
-        "powerLow": 80,
-        "powerHigh": 110,
+        "zone": "Z2",
+        "powerLow": 65,
+        "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
         "rpe": 6
@@ -87,5 +87,5 @@
       }
     }
   ],
-  "if": 0.89
+  "if": 0.68
 }

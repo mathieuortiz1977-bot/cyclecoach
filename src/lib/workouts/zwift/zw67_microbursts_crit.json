@@ -8,7 +8,7 @@
   "difficulty": 8,
   "duration": 65,
   "scalable": true,
-  "tss": 116,
+  "tss": 92,
   "description": "Race-like attack bursts",
   "purpose": "Race attacks",
   "protocol": "Zwift - Crit Microbursts",
@@ -48,8 +48,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -96,8 +96,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -144,8 +144,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -192,8 +192,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -240,8 +240,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -288,8 +288,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -336,8 +336,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -384,8 +384,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -432,8 +432,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -480,8 +480,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -528,8 +528,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -576,8 +576,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -624,8 +624,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -672,8 +672,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -720,8 +720,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -768,8 +768,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -816,8 +816,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -864,8 +864,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -912,8 +912,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -960,8 +960,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1008,8 +1008,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1056,8 +1056,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1104,8 +1104,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1152,8 +1152,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1200,8 +1200,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1248,8 +1248,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1296,8 +1296,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1344,8 +1344,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1392,8 +1392,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1440,8 +1440,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2256,8 +2256,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2304,8 +2304,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2352,8 +2352,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2400,8 +2400,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2448,8 +2448,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2496,8 +2496,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2544,8 +2544,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2592,8 +2592,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2640,8 +2640,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2688,8 +2688,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2736,8 +2736,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2784,8 +2784,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2832,8 +2832,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2880,8 +2880,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2928,8 +2928,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -2976,8 +2976,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3024,8 +3024,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3072,8 +3072,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3120,8 +3120,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3168,8 +3168,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3216,8 +3216,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3264,8 +3264,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3312,8 +3312,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3360,8 +3360,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3408,8 +3408,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3456,8 +3456,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3504,8 +3504,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3552,8 +3552,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3600,8 +3600,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3648,8 +3648,8 @@
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 200,
-        "powerHigh": 200,
+        "powerLow": 150,
+        "powerHigh": 170,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -3711,5 +3711,5 @@
       }
     }
   ],
-  "if": 1.03
+  "if": 0.92
 }

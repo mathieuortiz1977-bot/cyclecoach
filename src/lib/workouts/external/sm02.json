@@ -1,0 +1,163 @@
+{
+  "id": "sm02",
+  "title": "San Mill\u00e1n 80/20 Session",
+  "source": "san-millan",
+  "category": "MIXED",
+  "primaryZone": "Z3",
+  "structure": "mixed",
+  "difficulty": 5,
+  "duration": 95,
+  "scalable": true,
+  "tss": 86,
+  "if": 0.74,
+  "description": "80% Z2 + 20% hard finish \u2014 San Mill\u00e1n's personal protocol",
+  "purpose": "Aerobic base with high-intensity finish for time-efficient fitness",
+  "protocol": "80/20 Session",
+  "researcher": "I\u00f1igo San Mill\u00e1n",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
+      "phase": "warmup",
+      "duration": {
+        "percent": 10.5,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+      }
+    },
+    {
+      "name": "80% Zone 2",
+      "purpose": "Aerobic endurance",
+      "phase": "work",
+      "duration": {
+        "percent": 63.2,
+        "absoluteSecs": 3600
+      },
+      "intensity": {
+        "zone": "Z2",
+        "powerLow": 68,
+        "powerHigh": 75,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 3
+      },
+      "instruction": "80% Zone 2 at 68-75% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
+        "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
+        "TECHNICAL": "Endurance zone: fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MIXED": "Keep it easy. Conversational pace. Build your base."
+      }
+    },
+    {
+      "name": "Tempo Push",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 5.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Tempo Push at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Hard Finish",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 3.2,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 115,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Hard Finish at 108-115% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Sustained Push",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 7.4,
+        "absoluteSecs": 420
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 92,
+        "powerHigh": 98,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Sustained Push at 92-98% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Facilitate recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 10.5,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
+      }
+    }
+  ]
+}

@@ -2,174 +2,256 @@
   "id": "w103",
   "title": "High Work:Rest Ratio (5:1)",
   "source": "carlos",
-  "category": "BASE",
-  "primaryZone": "Z5",
+  "category": "THRESHOLD",
+  "primaryZone": "Z4",
   "structure": "repeats",
   "difficulty": 8,
-  "duration": 90,
+  "duration": 68,
   "scalable": true,
-  "tss": 146,
+  "tss": 76,
   "description": "Maximum time-at-intensity with minimal recovery",
   "purpose": "Maximum time-at-intensity with minimal recovery",
   "intervals": [
     {
-      "name": "Warmup",
-      "purpose": "Prepare system and elevate heart rate",
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
       "phase": "warmup",
       "duration": {
-        "percent": 11.1,
+        "percent": 14.7,
         "absoluteSecs": 600
       },
       "intensity": {
         "zone": "Z1-Z2",
         "powerLow": 50,
-        "powerHigh": 75,
+        "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Progressive warm-up, easy spin",
+      "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
-        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
-        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
-        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
       }
     },
     {
-      "name": "Maximum time-at-intensity with minimal recovery",
-      "purpose": "Maximum time-at-intensity with minimal recovery",
+      "name": "Threshold Block 1",
+      "purpose": "FTP development",
       "phase": "work",
       "duration": {
-        "percent": 38.9,
-        "absoluteSecs": 2100
+        "percent": 14.7,
+        "absoluteSecs": 600
       },
       "intensity": {
-        "zone": "Z3-Z5",
-        "powerLow": 105,
-        "powerHigh": 110,
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 7
       },
-      "reps": {
-        "count": 4,
-        "work": {
-          "duration": {
-            "secs": 300,
-            "label": "5 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 105,
-            "powerHigh": 110,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 300,
-            "label": "5 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 105-110% FTP for full duration. Steady power.",
+      "instruction": "Threshold Block 1 at 95-100% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "5 minutes at 110%+ FTP. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
       }
     },
     {
-      "name": "Maximum time-at-intensity with minimal recovery",
-      "purpose": "Maximum time-at-intensity with minimal recovery",
-      "phase": "work",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
       "duration": {
-        "percent": 38.9,
-        "absoluteSecs": 2100
+        "percent": 2.9,
+        "absoluteSecs": 120
       },
       "intensity": {
-        "zone": "Z3-Z5",
-        "powerLow": 105,
-        "powerHigh": 110,
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 9
+        "rpe": 2
       },
-      "reps": {
-        "count": 4,
-        "work": {
-          "duration": {
-            "secs": 300,
-            "label": "5 minutes"
-          },
-          "intensity": {
-            "zone": "Z3-Z5",
-            "powerLow": 105,
-            "powerHigh": 110,
-            "cadenceLow": 85,
-            "cadenceHigh": 95,
-            "rpe": 9
-          }
-        },
-        "rest": {
-          "duration": {
-            "secs": 300,
-            "label": "5 minutes"
-          },
-          "intensity": {
-            "zone": "Z1",
-            "powerLow": 40,
-            "powerHigh": 60,
-            "cadenceLow": 85,
-            "cadenceHigh": 100,
-            "rpe": 2
-          }
-        }
-      },
-      "instruction": "Hold 105-110% FTP for full duration. Steady power.",
+      "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "5 minutes at 110%+ FTP. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Threshold Block 2",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 14.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold Block 2 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.9,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Threshold Block 3",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 14.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold Block 3 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.9,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Threshold Block 4",
+      "purpose": "FTP development",
+      "phase": "work",
+      "duration": {
+        "percent": 14.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z4",
+        "powerLow": 95,
+        "powerHigh": 100,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 7
+      },
+      "instruction": "Threshold Block 4 at 95-100% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
+        "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
+        "TECHNICAL": "Threshold intervals maximize lactate steady-state power development.",
+        "MIXED": "Hold your power. Breathe. Focus on smooth pedaling."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.9,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
       "name": "Cool-down",
-      "purpose": "Gradually lower heart rate and begin recovery",
+      "purpose": "Facilitate recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 11.1,
+        "percent": 14.7,
         "absoluteSecs": 600
       },
       "intensity": {
         "zone": "Z1",
         "powerLow": 40,
-        "powerHigh": 60,
+        "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 1
       },
-      "instruction": "Easy spinning to facilitate recovery",
+      "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
-        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
-        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
-        "MIXED": "Bring it down smoothly. You earned this recovery."
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
       }
     }
   ],
-  "if": 0.98
+  "if": 0.82
 }

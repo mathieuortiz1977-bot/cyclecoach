@@ -8,7 +8,7 @@
   "difficulty": 1,
   "duration": 60,
   "scalable": true,
-  "tss": 132,
+  "tss": 42,
   "description": "Unstructured free ride",
   "purpose": "Flexible training",
   "protocol": "Zwift - Free Ride",
@@ -23,12 +23,12 @@
         "absoluteSecs": 3600
       },
       "intensity": {
-        "zone": "Z1-Z6",
-        "powerLow": 30,
-        "powerHigh": 200,
+        "zone": "Z2",
+        "powerLow": 55,
+        "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 100,
-        "rpe": 3
+        "rpe": 4
       },
       "instruction": "Free Ride at 30-200% FTP",
       "coachingNotes": {
@@ -39,5 +39,5 @@
       }
     }
   ],
-  "if": 1.15
+  "if": 0.65
 }

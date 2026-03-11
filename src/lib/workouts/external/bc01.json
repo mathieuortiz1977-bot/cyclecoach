@@ -1,0 +1,523 @@
+{
+  "id": "bc01",
+  "title": "BC Track Pursuit Intervals",
+  "source": "british-cycling",
+  "category": "VO2MAX",
+  "primaryZone": "Z5",
+  "structure": "mixed",
+  "difficulty": 9,
+  "duration": 73,
+  "scalable": true,
+  "tss": 92,
+  "if": 0.87,
+  "description": "10x 4km pursuit efforts (3-4 min each) with minimal rest",
+  "purpose": "Track pursuit race preparation \u2014 sustained VO2max",
+  "protocol": "Track Pursuit Protocol",
+  "researcher": "British Cycling / UCI",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
+      "phase": "warmup",
+      "duration": {
+        "percent": 13.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+      }
+    },
+    {
+      "name": "Pursuit Rep 1/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 1/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 1",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 1 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 2/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 2/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 2",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 2 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 3/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 3/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 3",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 3 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 4/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 4/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 4",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 4 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 5/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 5/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 5",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 5 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 6/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 6/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 6",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 6 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 7/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 7/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 7",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 7 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 8/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 8/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 8",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 8 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 9/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 9/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Recovery 9",
+      "purpose": "Recovery",
+      "phase": "rest",
+      "duration": {
+        "percent": 2.7,
+        "absoluteSecs": 120
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Recovery 9 at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Pursuit Rep 10/10",
+      "purpose": "Pursuit Rep interval",
+      "phase": "work",
+      "duration": {
+        "percent": 4.8,
+        "absoluteSecs": 210
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 108,
+        "powerHigh": 118,
+        "cadenceLow": 100,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Pursuit Rep 10/10 at 108-118% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Facilitate recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 13.7,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
+      }
+    }
+  ]
+}

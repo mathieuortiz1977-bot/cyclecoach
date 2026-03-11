@@ -8,7 +8,7 @@
   "difficulty": 1,
   "duration": 36,
   "scalable": true,
-  "tss": 29,
+  "tss": 14,
   "description": "Blood flow, recovery, loosen legs",
   "purpose": "Blood flow, recovery, loosen legs",
   "intervals": [
@@ -21,12 +21,12 @@
         "absoluteSecs": 2160
       },
       "intensity": {
-        "zone": "Z2-Z3",
-        "powerLow": 60,
-        "powerHigh": 80,
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
-        "rpe": 4
+        "rpe": 1
       },
       "instruction": "Steady effort, consistent power",
       "coachingNotes": {
@@ -37,5 +37,5 @@
       }
     }
   ],
-  "if": 0.7
+  "if": 0.47
 }

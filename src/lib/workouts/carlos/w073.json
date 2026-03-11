@@ -2,13 +2,13 @@
   "id": "w073",
   "title": "30-Minute Speed Intervals",
   "source": "carlos",
-  "category": "BASE",
+  "category": "VO2MAX",
   "primaryZone": "Z6",
   "structure": "repeats",
   "difficulty": 7,
   "duration": 28,
   "scalable": true,
-  "tss": 37,
+  "tss": 36,
   "description": "Neuromuscular and anaerobic in 30 minutes",
   "purpose": "Neuromuscular and anaerobic in 30 minutes",
   "intervals": [
@@ -47,7 +47,7 @@
       "intensity": {
         "zone": "Z7",
         "powerLow": 150,
-        "powerHigh": 200,
+        "powerHigh": 170,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10
@@ -71,7 +71,7 @@
       "intensity": {
         "zone": "Z7",
         "powerLow": 150,
-        "powerHigh": 200,
+        "powerHigh": 170,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10
@@ -95,7 +95,7 @@
       "intensity": {
         "zone": "Z7",
         "powerLow": 150,
-        "powerHigh": 200,
+        "powerHigh": 170,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10
@@ -119,7 +119,7 @@
       "intensity": {
         "zone": "Z7",
         "powerLow": 150,
-        "powerHigh": 200,
+        "powerHigh": 170,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10
@@ -565,5 +565,5 @@
       }
     }
   ],
-  "if": 0.89
+  "if": 0.87
 }

@@ -2,13 +2,13 @@
   "id": "w055",
   "title": "Miracle Intervals",
   "source": "carlos",
-  "category": "BASE",
+  "category": "VO2MAX",
   "primaryZone": "Z7",
   "structure": "repeats",
   "difficulty": 7,
   "duration": 50,
   "scalable": true,
-  "tss": 77,
+  "tss": 46,
   "description": "Motor unit activation, anaerobic/sprint power",
   "purpose": "Motor unit activation, anaerobic/sprint power",
   "intervals": [
@@ -45,9 +45,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -93,9 +93,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -141,9 +141,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -189,9 +189,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -237,9 +237,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -285,9 +285,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -333,9 +333,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -381,9 +381,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -429,9 +429,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -477,9 +477,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -549,9 +549,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -597,9 +597,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -645,9 +645,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -693,9 +693,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -741,9 +741,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -789,9 +789,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -837,9 +837,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -885,9 +885,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -933,9 +933,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -981,9 +981,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1053,9 +1053,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1101,9 +1101,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1149,9 +1149,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1197,9 +1197,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1245,9 +1245,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1293,9 +1293,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1341,9 +1341,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1389,9 +1389,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1437,9 +1437,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1485,9 +1485,9 @@
         "absoluteSecs": 20
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z5-Z6",
+        "powerLow": 120,
+        "powerHigh": 130,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 10
@@ -1549,5 +1549,5 @@
       }
     }
   ],
-  "if": 0.96
+  "if": 0.74
 }

@@ -2,19 +2,19 @@
   "id": "w102",
   "title": "R\u00f8nnestad 30s MAP with 2:1 Ratio",
   "source": "carlos",
-  "category": "BASE",
+  "category": "VO2MAX",
   "primaryZone": "Z6",
   "structure": "steady",
   "difficulty": 8,
   "duration": 59,
   "scalable": true,
-  "tss": 78,
-  "description": "Maximize time \u226590% VO2max using fixed 30s intervals at MAP",
+  "tss": 76,
+  "description": "3\u00d713\u00d730s at MAP power (130-140%) / 15s rest \u2014 higher intensity than standard 30/15",
   "purpose": "Maximize time \u226590% VO2max using fixed 30s intervals at MAP",
   "intervals": [
     {
-      "name": "Warmup",
-      "purpose": "Prepare system and elevate heart rate",
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
       "phase": "warmup",
       "duration": {
         "percent": 16.9,
@@ -23,22 +23,22 @@
       "intensity": {
         "zone": "Z1-Z2",
         "powerLow": 50,
-        "powerHigh": 75,
+        "powerHigh": 70,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Progressive warm-up, easy spin",
+      "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs have no idea what's coming. Enjoy these easy minutes while they last.",
-        "MOTIVATIONAL": "Start easy and build gradually. You're preparing your body for something special.",
-        "TECHNICAL": "Progressive warm-up elevating core temperature and activating neuromuscular systems.",
-        "MIXED": "Take your time here. Smooth breathing, easy cadence. Get ready."
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
       }
     },
     {
-      "name": "Set 1 Rep 1",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.1",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -48,21 +48,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 1 at 130-140% FTP",
+      "instruction": "MAP Burst 1.1 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -70,13 +70,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -85,8 +85,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 2",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.2",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -96,21 +96,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 2 at 130-140% FTP",
+      "instruction": "MAP Burst 1.2 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -118,13 +118,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -133,8 +133,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 3",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.3",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -144,21 +144,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 3 at 130-140% FTP",
+      "instruction": "MAP Burst 1.3 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -166,13 +166,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -181,8 +181,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 4",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.4",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -192,21 +192,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 4 at 130-140% FTP",
+      "instruction": "MAP Burst 1.4 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -214,13 +214,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -229,8 +229,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 5",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.5",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -240,21 +240,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 5 at 130-140% FTP",
+      "instruction": "MAP Burst 1.5 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -262,13 +262,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -277,8 +277,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 6",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.6",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -288,21 +288,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 6 at 130-140% FTP",
+      "instruction": "MAP Burst 1.6 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -310,13 +310,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -325,8 +325,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 7",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.7",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -336,21 +336,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 7 at 130-140% FTP",
+      "instruction": "MAP Burst 1.7 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -358,13 +358,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -373,8 +373,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 8",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.8",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -384,21 +384,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 8 at 130-140% FTP",
+      "instruction": "MAP Burst 1.8 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -406,13 +406,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -421,8 +421,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 9",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.9",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -432,21 +432,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 9 at 130-140% FTP",
+      "instruction": "MAP Burst 1.9 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -454,13 +454,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -469,8 +469,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 10",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.10",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -480,21 +480,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 10 at 130-140% FTP",
+      "instruction": "MAP Burst 1.10 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -502,13 +502,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -517,8 +517,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 11",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.11",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -528,21 +528,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 11 at 130-140% FTP",
+      "instruction": "MAP Burst 1.11 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -550,13 +550,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -565,8 +565,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 12",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.12",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -576,21 +576,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 12 at 130-140% FTP",
+      "instruction": "MAP Burst 1.12 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -598,13 +598,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -613,8 +613,8 @@
       }
     },
     {
-      "name": "Set 1 Rep 13",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 1.13",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -624,21 +624,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 1 Rep 13 at 130-140% FTP",
+      "instruction": "MAP Burst 1.13 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -646,13 +646,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -661,7 +661,7 @@
       }
     },
     {
-      "name": "Set Rest 1",
+      "name": "Rest",
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
@@ -676,7 +676,7 @@
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Set Rest 1 at 45-55% FTP",
+      "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -685,8 +685,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 1",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.1",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -696,21 +696,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 1 at 130-140% FTP",
+      "instruction": "MAP Burst 2.1 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -718,13 +718,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -733,8 +733,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 2",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.2",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -744,21 +744,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 2 at 130-140% FTP",
+      "instruction": "MAP Burst 2.2 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -766,13 +766,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -781,8 +781,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 3",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.3",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -792,21 +792,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 3 at 130-140% FTP",
+      "instruction": "MAP Burst 2.3 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -814,13 +814,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -829,8 +829,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 4",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.4",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -840,21 +840,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 4 at 130-140% FTP",
+      "instruction": "MAP Burst 2.4 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -862,13 +862,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -877,8 +877,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 5",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.5",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -888,21 +888,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 5 at 130-140% FTP",
+      "instruction": "MAP Burst 2.5 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -910,13 +910,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -925,8 +925,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 6",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.6",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -936,21 +936,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 6 at 130-140% FTP",
+      "instruction": "MAP Burst 2.6 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -958,13 +958,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -973,8 +973,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 7",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.7",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -984,21 +984,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 7 at 130-140% FTP",
+      "instruction": "MAP Burst 2.7 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1006,13 +1006,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1021,8 +1021,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 8",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.8",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1032,21 +1032,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 8 at 130-140% FTP",
+      "instruction": "MAP Burst 2.8 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1054,13 +1054,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1069,8 +1069,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 9",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.9",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1080,21 +1080,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 9 at 130-140% FTP",
+      "instruction": "MAP Burst 2.9 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1102,13 +1102,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1117,8 +1117,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 10",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.10",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1128,21 +1128,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 10 at 130-140% FTP",
+      "instruction": "MAP Burst 2.10 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1150,13 +1150,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1165,8 +1165,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 11",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.11",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1176,21 +1176,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 11 at 130-140% FTP",
+      "instruction": "MAP Burst 2.11 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1198,13 +1198,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1213,8 +1213,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 12",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.12",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1224,21 +1224,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 12 at 130-140% FTP",
+      "instruction": "MAP Burst 2.12 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1246,13 +1246,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1261,8 +1261,8 @@
       }
     },
     {
-      "name": "Set 2 Rep 13",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 2.13",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1272,21 +1272,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 2 Rep 13 at 130-140% FTP",
+      "instruction": "MAP Burst 2.13 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1294,13 +1294,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1309,7 +1309,7 @@
       }
     },
     {
-      "name": "Set Rest 2",
+      "name": "Rest",
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
@@ -1324,7 +1324,7 @@
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Set Rest 2 at 45-55% FTP",
+      "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1333,8 +1333,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 1",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.1",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1344,21 +1344,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 1 at 130-140% FTP",
+      "instruction": "MAP Burst 3.1 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1366,13 +1366,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1381,8 +1381,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 2",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.2",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1392,21 +1392,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 2 at 130-140% FTP",
+      "instruction": "MAP Burst 3.2 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1414,13 +1414,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1429,8 +1429,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 3",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.3",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1440,21 +1440,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 3 at 130-140% FTP",
+      "instruction": "MAP Burst 3.3 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1462,13 +1462,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1477,8 +1477,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 4",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.4",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1488,21 +1488,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 4 at 130-140% FTP",
+      "instruction": "MAP Burst 3.4 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1510,13 +1510,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1525,8 +1525,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 5",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.5",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1536,21 +1536,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 5 at 130-140% FTP",
+      "instruction": "MAP Burst 3.5 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1558,13 +1558,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1573,8 +1573,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 6",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.6",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1584,21 +1584,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 6 at 130-140% FTP",
+      "instruction": "MAP Burst 3.6 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1606,13 +1606,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1621,8 +1621,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 7",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.7",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1632,21 +1632,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 7 at 130-140% FTP",
+      "instruction": "MAP Burst 3.7 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1654,13 +1654,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1669,8 +1669,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 8",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.8",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1680,21 +1680,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 8 at 130-140% FTP",
+      "instruction": "MAP Burst 3.8 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1702,13 +1702,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1717,8 +1717,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 9",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.9",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1728,21 +1728,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 9 at 130-140% FTP",
+      "instruction": "MAP Burst 3.9 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1750,13 +1750,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1765,8 +1765,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 10",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.10",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1776,21 +1776,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 10 at 130-140% FTP",
+      "instruction": "MAP Burst 3.10 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1798,13 +1798,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1813,8 +1813,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 11",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.11",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1824,21 +1824,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 11 at 130-140% FTP",
+      "instruction": "MAP Burst 3.11 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1846,13 +1846,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1861,8 +1861,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 12",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.12",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1872,21 +1872,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 12 at 130-140% FTP",
+      "instruction": "MAP Burst 3.12 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1894,13 +1894,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1909,8 +1909,8 @@
       }
     },
     {
-      "name": "Set 3 Rep 13",
-      "purpose": "30s MAP 2:1",
+      "name": "MAP Burst 3.13",
+      "purpose": "MAP power burst",
       "phase": "work",
       "duration": {
         "percent": 0.8,
@@ -1920,21 +1920,21 @@
         "zone": "Z6",
         "powerLow": 130,
         "powerHigh": 140,
-        "cadenceLow": 90,
-        "cadenceHigh": 105,
+        "cadenceLow": 95,
+        "cadenceHigh": 110,
         "rpe": 9
       },
-      "instruction": "Set 3 Rep 13 at 130-140% FTP",
+      "instruction": "MAP Burst 3.13 at 130-140% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
-        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
-        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "Recovery",
-      "purpose": "Recovery",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
         "percent": 0.4,
@@ -1942,13 +1942,13 @@
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 45,
-        "powerHigh": 55,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Recovery at 45-55% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
         "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
@@ -1958,7 +1958,7 @@
     },
     {
       "name": "Cool-down",
-      "purpose": "Gradually lower heart rate and begin recovery",
+      "purpose": "Facilitate recovery",
       "phase": "cooldown",
       "duration": {
         "percent": 16.9,
@@ -1967,19 +1967,19 @@
       "intensity": {
         "zone": "Z1",
         "powerLow": 40,
-        "powerHigh": 60,
+        "powerHigh": 55,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 1
       },
-      "instruction": "Easy spinning to facilitate recovery",
+      "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Your muscles are screaming, but you did it.",
-        "MOTIVATIONAL": "Nice work! Spin easy and let your body recover.",
-        "TECHNICAL": "Easy aerobic recovery spin to facilitate lactate clearance.",
-        "MIXED": "Bring it down smoothly. You earned this recovery."
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
       }
     }
   ],
-  "if": 0.89
+  "if": 0.88
 }

@@ -2,57 +2,33 @@
   "id": "w094",
   "title": "Race Day Warm-Up (Time Trial)",
   "source": "carlos",
-  "category": "BASE",
-  "primaryZone": "Z2",
+  "category": "WARMUP",
+  "primaryZone": "Z3",
   "structure": "steady",
   "difficulty": 3,
-  "duration": 45,
+  "duration": 26,
   "scalable": true,
-  "tss": 29,
+  "tss": 18,
   "description": "Peak activation for maximal sustained effort",
   "purpose": "Peak activation for maximal sustained effort",
   "intervals": [
     {
-      "name": "Warm-up",
-      "purpose": "Prepare body for work",
+      "name": "Easy spin",
+      "purpose": "Warm up",
       "phase": "warmup",
       "duration": {
-        "percent": 22.3,
-        "absoluteSecs": 600
+        "percent": 26.8,
+        "absoluteSecs": 420
       },
       "intensity": {
         "zone": "Z1-Z2",
         "powerLow": 50,
-        "powerHigh": 70,
+        "powerHigh": 65,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 2
       },
-      "instruction": "Warm-up at 50-70% FTP",
-      "coachingNotes": {
-        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
-        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
-        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
-        "MIXED": "Smooth breathing, easy cadence. Build gradually."
-      }
-    },
-    {
-      "name": "Endurance",
-      "purpose": "Aerobic endurance",
-      "phase": "work",
-      "duration": {
-        "percent": 17.9,
-        "absoluteSecs": 480
-      },
-      "intensity": {
-        "zone": "Z2",
-        "powerLow": 55,
-        "powerHigh": 55,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
-        "rpe": 3
-      },
-      "instruction": "Endurance at 55-55% FTP",
+      "instruction": "Easy spin at 50-65% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
         "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
@@ -61,22 +37,22 @@
       }
     },
     {
-      "name": "Endurance",
+      "name": "Progressive",
       "purpose": "Aerobic endurance",
       "phase": "work",
       "duration": {
-        "percent": 11.2,
-        "absoluteSecs": 300
+        "percent": 11.5,
+        "absoluteSecs": 180
       },
       "intensity": {
         "zone": "Z2",
         "powerLow": 70,
-        "powerHigh": 70,
+        "powerHigh": 75,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 3
       },
-      "instruction": "Endurance at 70-70% FTP",
+      "instruction": "Progressive at 70-75% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
         "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
@@ -89,18 +65,18 @@
       "purpose": "Muscular endurance",
       "phase": "work",
       "duration": {
-        "percent": 6.7,
-        "absoluteSecs": 180
+        "percent": 7.6,
+        "absoluteSecs": 120
       },
       "intensity": {
         "zone": "Z3",
-        "powerLow": 85,
-        "powerHigh": 85,
+        "powerLow": 82,
+        "powerHigh": 88,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 5
       },
-      "instruction": "Tempo at 85-85% FTP",
+      "instruction": "Tempo at 82-88% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Comfortably hard. Emphasis on 'hard' as the minutes tick by.",
         "MOTIVATIONAL": "Tempo builds the bridge between endurance and threshold.",
@@ -109,22 +85,46 @@
       }
     },
     {
-      "name": "Threshold",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 3.8,
+        "absoluteSecs": 60
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "FTP touch",
       "purpose": "FTP development",
       "phase": "work",
       "duration": {
-        "percent": 2.2,
+        "percent": 3.8,
         "absoluteSecs": 60
       },
       "intensity": {
         "zone": "Z4",
-        "powerLow": 100,
+        "powerLow": 95,
         "powerHigh": 100,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 7
       },
-      "instruction": "Threshold at 100-100% FTP",
+      "instruction": "FTP touch at 95-100% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "FTP work. Where dreams of easy rides go to die.",
         "MOTIVATIONAL": "This is where you raise the ceiling. Every second counts.",
@@ -137,8 +137,8 @@
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
-        "percent": 4.5,
-        "absoluteSecs": 120
+        "percent": 5.7,
+        "absoluteSecs": 90
       },
       "intensity": {
         "zone": "Z1",
@@ -157,22 +157,22 @@
       }
     },
     {
-      "name": "VO2max",
+      "name": "Opener",
       "purpose": "VO2max development",
       "phase": "work",
       "duration": {
-        "percent": 1.1,
+        "percent": 1.9,
         "absoluteSecs": 30
       },
       "intensity": {
         "zone": "Z5",
-        "powerLow": 115,
+        "powerLow": 110,
         "powerHigh": 115,
         "cadenceLow": 90,
         "cadenceHigh": 105,
         "rpe": 9
       },
-      "instruction": "VO2max at 115-115% FTP",
+      "instruction": "Opener at 110-115% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
         "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
@@ -185,7 +185,7 @@
       "purpose": "Recovery between intervals",
       "phase": "rest",
       "duration": {
-        "percent": 4.5,
+        "percent": 7.6,
         "absoluteSecs": 120
       },
       "intensity": {
@@ -205,22 +205,22 @@
       }
     },
     {
-      "name": "Sprint",
+      "name": "Sprint opener",
       "purpose": "Neuromuscular power",
       "phase": "work",
       "duration": {
         "percent": 0.6,
-        "absoluteSecs": 15
+        "absoluteSecs": 10
       },
       "intensity": {
         "zone": "Z7",
-        "powerLow": 150,
-        "powerHigh": 200,
+        "powerLow": 130,
+        "powerHigh": 150,
         "cadenceLow": 95,
         "cadenceHigh": 120,
         "rpe": 10
       },
-      "instruction": "Sprint at 150-200% FTP",
+      "instruction": "Sprint opener at 130-150% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
         "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
@@ -229,22 +229,46 @@
       }
     },
     {
-      "name": "Endurance",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 11.5,
+        "absoluteSecs": 180
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Settle",
       "purpose": "Aerobic endurance",
       "phase": "work",
       "duration": {
-        "percent": 6.7,
+        "percent": 11.5,
         "absoluteSecs": 180
       },
       "intensity": {
         "zone": "Z2",
-        "powerLow": 60,
-        "powerHigh": 60,
+        "powerLow": 55,
+        "powerHigh": 65,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 3
       },
-      "instruction": "Endurance at 60-60% FTP",
+      "instruction": "Settle at 55-65% FTP",
       "coachingNotes": {
         "DARK_HUMOR": "Zone 2. Also known as 'why am I even here' pace.",
         "MOTIVATIONAL": "Building the aerobic engine. This is the foundation of everything.",
@@ -253,29 +277,29 @@
       }
     },
     {
-      "name": "Cool-down",
-      "purpose": "Facilitate recovery",
+      "name": "Easy spin",
+      "purpose": "Cool down",
       "phase": "cooldown",
       "duration": {
-        "percent": 22.3,
-        "absoluteSecs": 600
+        "percent": 7.6,
+        "absoluteSecs": 120
       },
       "intensity": {
         "zone": "Z1",
         "powerLow": 40,
         "powerHigh": 55,
-        "cadenceLow": 85,
-        "cadenceHigh": 95,
+        "cadenceLow": 80,
+        "cadenceHigh": 90,
         "rpe": 1
       },
-      "instruction": "Cool-down at 40-55% FTP",
+      "instruction": "Easy spin at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
-        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
-        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
-        "MIXED": "Bring it down smoothly. You earned this."
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     }
   ],
-  "if": 0.62
+  "if": 0.64
 }

@@ -8,7 +8,7 @@
   "difficulty": 6,
   "duration": 26,
   "scalable": true,
-  "tss": 23,
+  "tss": 14,
   "description": "Strength focus for FTP builder",
   "purpose": "Build strength",
   "protocol": "Zwift - FTP Strength",
@@ -47,9 +47,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -95,9 +95,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -143,9 +143,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -191,9 +191,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -239,9 +239,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -287,9 +287,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -335,9 +335,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -383,9 +383,9 @@
         "absoluteSecs": 15
       },
       "intensity": {
-        "zone": "Z7",
-        "powerLow": 170,
-        "powerHigh": 200,
+        "zone": "Z3-Z4",
+        "powerLow": 88,
+        "powerHigh": 95,
         "cadenceLow": 90,
         "cadenceHigh": 120,
         "rpe": 10
@@ -423,5 +423,5 @@
       }
     }
   ],
-  "if": 0.72
+  "if": 0.57
 }

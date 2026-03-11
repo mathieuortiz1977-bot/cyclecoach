@@ -3,12 +3,12 @@
   "title": "20/40 Anaerobic Repeats",
   "source": "research-v2",
   "category": "ANAEROBIC",
-  "primaryZone": "Z3",
+  "primaryZone": "Z6",
   "structure": "repeats",
   "difficulty": 8,
   "duration": 54,
   "scalable": true,
-  "tss": 34,
+  "tss": 49,
   "description": "High power density with moderate recovery",
   "purpose": "Peak power repeatability",
   "protocol": "Anaerobic",
@@ -16,172 +16,1252 @@
   "intervals": [
     {
       "name": "Warm-up",
-      "purpose": "Build",
+      "purpose": "Prepare body for work",
       "phase": "warmup",
       "duration": {
-        "percent": 45.5,
-        "absoluteSecs": 1485
+        "percent": 18.5,
+        "absoluteSecs": 600
       },
       "intensity": {
-        "zone": "Z2",
+        "zone": "Z1-Z2",
         "powerLow": 50,
         "powerHigh": 70,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 3
+        "cadenceHigh": 95,
+        "rpe": 2
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
       }
     },
     {
-      "name": "20s Hard",
-      "purpose": "Hard effort",
+      "name": "Burst 1.1",
+      "purpose": "Anaerobic capacity",
       "phase": "work",
       "duration": {
-        "percent": 1.0,
-        "absoluteSecs": 33
+        "percent": 0.6,
+        "absoluteSecs": 20
       },
       "intensity": {
         "zone": "Z6",
-        "powerLow": 150,
+        "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 95,
+        "cadenceLow": 90,
         "cadenceHigh": 110,
-        "rpe": 10
+        "rpe": 9
       },
-      "instruction": "20s Hard at 150-160% FTP",
+      "instruction": "Burst 1.1 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "40s Easy",
-      "purpose": "Recovery",
-      "phase": "work",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
       "duration": {
-        "percent": 3.0,
-        "absoluteSecs": 99
+        "percent": 1.2,
+        "absoluteSecs": 40
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 50,
-        "powerHigh": 60,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 1
+        "cadenceHigh": 95,
+        "rpe": 2
       },
-      "instruction": "40s Easy at 50-60% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
-      "name": "20s Hard 2",
-      "purpose": "Hard effort",
+      "name": "Burst 1.2",
+      "purpose": "Anaerobic capacity",
       "phase": "work",
       "duration": {
-        "percent": 1.0,
-        "absoluteSecs": 33
+        "percent": 0.6,
+        "absoluteSecs": 20
       },
       "intensity": {
         "zone": "Z6",
-        "powerLow": 150,
+        "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 95,
+        "cadenceLow": 90,
         "cadenceHigh": 110,
-        "rpe": 10
+        "rpe": 9
       },
-      "instruction": "20s Hard 2 at 150-160% FTP",
+      "instruction": "Burst 1.2 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
       }
     },
     {
-      "name": "40s Easy 2",
-      "purpose": "Recovery",
-      "phase": "work",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
       "duration": {
-        "percent": 3.0,
-        "absoluteSecs": 99
+        "percent": 1.2,
+        "absoluteSecs": 40
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 50,
-        "powerHigh": 60,
+        "powerLow": 40,
+        "powerHigh": 50,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 1
+        "cadenceHigh": 95,
+        "rpe": 2
       },
-      "instruction": "40s Easy 2 at 50-60% FTP",
+      "instruction": "Rest at 40-50% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
-      "name": "20s Hard 3",
-      "purpose": "Hard effort",
+      "name": "Burst 1.3",
+      "purpose": "Anaerobic capacity",
       "phase": "work",
       "duration": {
-        "percent": 1.0,
-        "absoluteSecs": 33
+        "percent": 0.6,
+        "absoluteSecs": 20
       },
       "intensity": {
         "zone": "Z6",
-        "powerLow": 150,
+        "powerLow": 140,
         "powerHigh": 160,
-        "cadenceLow": 95,
+        "cadenceLow": 90,
         "cadenceHigh": 110,
-        "rpe": 10
+        "rpe": 9
       },
-      "instruction": "20s Hard 3 at 150-160% FTP",
+      "instruction": "Burst 1.3 at 140-160% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Max power. All-out. Your pain receptors are about to get very busy.",
-        "MOTIVATIONAL": "Peak neuromuscular power. This is where champions are made.",
-        "TECHNICAL": "Maximal neuromuscular recruitment develops fast-twitch fiber recruitment.",
-        "MIXED": "Accelerate hard. Max cadence, max power. No holding back."
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 1.4",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 1.4 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 1.5",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 1.5 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 1.6",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 1.6 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 1.7",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 1.7 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 1.8",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 1.8 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 9.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.1",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.1 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.2",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.2 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.3",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.3 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.4",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.4 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.5",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.5 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.6",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.6 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.7",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.7 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 2.8",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 2.8 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 9.3,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.1",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.1 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.2",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.2 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.3",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.3 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.4",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.4 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.5",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.5 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.6",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.6 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.7",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.7 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Burst 3.8",
+      "purpose": "Anaerobic capacity",
+      "phase": "work",
+      "duration": {
+        "percent": 0.6,
+        "absoluteSecs": 20
+      },
+      "intensity": {
+        "zone": "Z6",
+        "powerLow": 140,
+        "powerHigh": 160,
+        "cadenceLow": 90,
+        "cadenceHigh": 110,
+        "rpe": 9
+      },
+      "instruction": "Burst 3.8 at 140-160% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Sprint like your FTP test results are chasing you.",
+        "MOTIVATIONAL": "Explosive power! Give everything for these short bursts.",
+        "TECHNICAL": "Anaerobic glycolytic system engagement. Maximum motor unit recruitment.",
+        "MIXED": "All out. No holding back. Recovery is coming."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 1.2,
+        "absoluteSecs": 40
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
       "name": "Cool-down",
-      "purpose": "Recovery",
+      "purpose": "Facilitate recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 45.5,
-        "absoluteSecs": 1485
+        "percent": 18.5,
+        "absoluteSecs": 600
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 50,
+        "powerLow": 40,
         "powerHigh": 55,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "cadenceHigh": 95,
         "rpe": 1
       },
-      "instruction": "Cool-down at 50-55% FTP",
+      "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
       }
     }
   ],
-  "if": 0.62
+  "if": 0.74
 }

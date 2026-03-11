@@ -2,13 +2,13 @@
   "id": "w056",
   "title": "Ramp Test (FTP Assessment)",
   "source": "carlos",
-  "category": "THRESHOLD",
+  "category": "FTP_TEST",
   "primaryZone": "Z5",
   "structure": "repeats",
   "difficulty": 7,
   "duration": 35,
   "scalable": true,
-  "tss": 52,
+  "tss": 32,
   "description": "FTP estimation",
   "purpose": "FTP estimation",
   "intervals": [
@@ -45,9 +45,9 @@
         "absoluteSecs": 1200
       },
       "intensity": {
-        "zone": "Z1-Z7",
-        "powerLow": 30,
-        "powerHigh": 200,
+        "zone": "Z1-Z5",
+        "powerLow": 50,
+        "powerHigh": 120,
         "cadenceLow": 85,
         "cadenceHigh": 95,
         "rpe": 10
@@ -85,5 +85,5 @@
       }
     }
   ],
-  "if": 0.94
+  "if": 0.73
 }

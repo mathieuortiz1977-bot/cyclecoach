@@ -1,139 +1,283 @@
 {
   "id": "w116",
-  "title": "The Gorby (Zwift)",
+  "title": "The Gorby (Research Version)",
   "source": "research-v2",
   "category": "VO2MAX",
   "primaryZone": "Z5",
   "structure": "mixed",
-  "difficulty": 9,
-  "duration": 59,
+  "difficulty": 8,
+  "duration": 65,
   "scalable": true,
-  "tss": 78,
-  "description": "Sustained VO2max endurance",
+  "tss": 69,
+  "description": "5\u00d75min @110% FTP / 5min rest \u2014 Zwift's iconic VO2max workout. Named for the struggle.",
   "purpose": "Sustained VO2max endurance",
   "protocol": "Zwift Famous",
   "researcher": "Zwift",
   "intervals": [
     {
       "name": "Warm-up",
-      "purpose": "Build",
+      "purpose": "Prepare body for work",
       "phase": "warmup",
       "duration": {
-        "percent": 21.2,
-        "absoluteSecs": 756
+        "percent": 15.4,
+        "absoluteSecs": 600
       },
       "intensity": {
-        "zone": "Z2",
+        "zone": "Z1-Z2",
         "powerLow": 50,
-        "powerHigh": 75,
+        "powerHigh": 70,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 3
+        "cadenceHigh": 95,
+        "rpe": 2
       },
-      "instruction": "Warm-up at 50-75% FTP",
+      "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Just go easy and stay comfortable. Your aerobic system will thank you later.",
-        "MOTIVATIONAL": "Building your aerobic foundation. Consistency is key.",
-        "TECHNICAL": "Fat oxidation zone - maximize mitochondrial efficiency at low intensity.",
-        "MIXED": "Keep it easy, maintain steady pace, build aerobic base."
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
       }
     },
     {
-      "name": "Block 1",
-      "purpose": "115%",
+      "name": "Gorby 1",
+      "purpose": "VO2max development",
       "phase": "work",
       "duration": {
-        "percent": 19.2,
-        "absoluteSecs": 684
+        "percent": 7.7,
+        "absoluteSecs": 300
       },
       "intensity": {
         "zone": "Z5",
-        "powerLow": 115,
-        "powerHigh": 115,
-        "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
         "rpe": 9
       },
-      "instruction": "Block 1 at 115-115% FTP",
+      "instruction": "Gorby 1 at 110-110% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
       }
     },
     {
-      "name": "Block 1 Mid",
-      "purpose": "88%",
-      "phase": "work",
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
       "duration": {
-        "percent": 19.2,
-        "absoluteSecs": 684
+        "percent": 7.7,
+        "absoluteSecs": 300
       },
       "intensity": {
-        "zone": "Z3",
-        "powerLow": 88,
-        "powerHigh": 88,
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 5
+        "cadenceHigh": 95,
+        "rpe": 2
       },
-      "instruction": "Block 1 Mid at 88-88% FTP",
+      "instruction": "Rest at 45-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "It's called sweet spot because you're sweet enough to suffer through it.",
-        "MOTIVATIONAL": "Sweet spot is peak efficiency. Maximum adaptations, manageable fatigue.",
-        "TECHNICAL": "90-93% FTP optimizes threshold adaptation with lower fatigue accumulation.",
-        "MIXED": "Maintain rhythm. Not easy, but sustainable. You're in control."
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
       }
     },
     {
-      "name": "Block 1 High",
-      "purpose": "115%",
+      "name": "Gorby 2",
+      "purpose": "VO2max development",
       "phase": "work",
       "duration": {
-        "percent": 19.2,
-        "absoluteSecs": 684
+        "percent": 7.7,
+        "absoluteSecs": 300
       },
       "intensity": {
         "zone": "Z5",
-        "powerLow": 115,
-        "powerHigh": 115,
-        "cadenceLow": 85,
-        "cadenceHigh": 100,
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
         "rpe": 9
       },
-      "instruction": "Block 1 High at 115-115% FTP",
+      "instruction": "Gorby 2 at 110-110% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Supra-maximal efforts. Your lungs will remember every second of this.",
-        "MOTIVATIONAL": "This is VO2max work. You're pushing your aerobic ceiling higher.",
-        "TECHNICAL": "Supra-maximal efforts drive maximal oxygen uptake and aerobic capacity.",
-        "MIXED": "Go hard but controlled. Breathe through the discomfort."
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Gorby 3",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Gorby 3 at 110-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Gorby 4",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Gorby 4 at 110-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
+      }
+    },
+    {
+      "name": "Rest",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 45,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Rest at 45-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Gorby 5",
+      "purpose": "VO2max development",
+      "phase": "work",
+      "duration": {
+        "percent": 7.7,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z5",
+        "powerLow": 110,
+        "powerHigh": 110,
+        "cadenceLow": 90,
+        "cadenceHigh": 105,
+        "rpe": 9
+      },
+      "instruction": "Gorby 5 at 110-110% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
+        "MOTIVATIONAL": "VO2max work raises your aerobic ceiling. Embrace the discomfort!",
+        "TECHNICAL": "Supra-threshold efforts maximize time at >90% VO2max for aerobic adaptation.",
+        "MIXED": "High cadence, deep breathing. This is supposed to hurt."
       }
     },
     {
       "name": "Cool-down",
-      "purpose": "Easy recovery",
+      "purpose": "Facilitate recovery",
       "phase": "cooldown",
       "duration": {
-        "percent": 21.2,
-        "absoluteSecs": 756
+        "percent": 15.4,
+        "absoluteSecs": 600
       },
       "intensity": {
         "zone": "Z1",
-        "powerLow": 50,
-        "powerHigh": 50,
+        "powerLow": 40,
+        "powerHigh": 55,
         "cadenceLow": 85,
-        "cadenceHigh": 100,
-        "rpe": 2
+        "cadenceHigh": 95,
+        "rpe": 1
       },
-      "instruction": "Cool-down at 50-50% FTP",
+      "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "DARK_HUMOR": "Easy spinning. Just don't fall asleep.",
-        "MOTIVATIONAL": "Active recovery enhances blood flow and promotes adaptation.",
-        "TECHNICAL": "Low-intensity active recovery facilitates lactate clearance.",
-        "MIXED": "Keep it easy and enjoy the ride."
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
       }
     }
   ],
-  "if": 0.89
+  "if": 0.8
 }

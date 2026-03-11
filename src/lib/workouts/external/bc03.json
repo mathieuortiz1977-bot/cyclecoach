@@ -1,0 +1,427 @@
+{
+  "id": "bc03",
+  "title": "BC Standing Start Sprints",
+  "source": "british-cycling",
+  "category": "SPRINT",
+  "primaryZone": "Z7",
+  "structure": "mixed",
+  "difficulty": 8,
+  "duration": 57,
+  "scalable": true,
+  "tss": 37,
+  "if": 0.62,
+  "description": "8x standing starts from near-stop \u2014 track sprint development",
+  "purpose": "Generate maximum torque from standing start",
+  "protocol": "Standing Start Sprint Protocol",
+  "researcher": "British Cycling",
+  "intervals": [
+    {
+      "name": "Warm-up",
+      "purpose": "Prepare body for work",
+      "phase": "warmup",
+      "duration": {
+        "percent": 17.5,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1-Z2",
+        "powerLow": 50,
+        "powerHigh": 70,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Warm-up at 50-70% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Enjoy the easy minutes. Your legs have no idea what's coming.",
+        "MOTIVATIONAL": "Prepare your body for quality work. Every great session starts here.",
+        "TECHNICAL": "Progressive warm-up: elevate core temperature, activate neuromuscular pathways.",
+        "MIXED": "Smooth breathing, easy cadence. Build gradually."
+      }
+    },
+    {
+      "name": "Standing Start 1",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 1 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 1",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 1 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 2",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 2 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 2",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 2 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 3",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 3 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 3",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 3 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 4",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 4 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 4",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 4 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 5",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 5 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 5",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 5 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 6",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 6 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 6",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 6 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 7",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 7 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Full Recovery 7",
+      "purpose": "Recovery between intervals",
+      "phase": "rest",
+      "duration": {
+        "percent": 8.8,
+        "absoluteSecs": 300
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 50,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 2
+      },
+      "instruction": "Full Recovery 7 at 40-50% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "Breathe. You'll need it for what comes next.",
+        "MOTIVATIONAL": "Active recovery. Let your body prepare for the next effort.",
+        "TECHNICAL": "Recovery spin: partial PCr resynthesis and lactate clearance.",
+        "MIXED": "Easy spin. Recover. Get ready."
+      }
+    },
+    {
+      "name": "Standing Start 8",
+      "purpose": "Neuromuscular power",
+      "phase": "work",
+      "duration": {
+        "percent": 0.4,
+        "absoluteSecs": 15
+      },
+      "intensity": {
+        "zone": "Z7",
+        "powerLow": 180,
+        "powerHigh": 250,
+        "cadenceLow": 95,
+        "cadenceHigh": 120,
+        "rpe": 10
+      },
+      "instruction": "Standing Start 8 at 180-250% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "MAX EFFORT. Pretend the caf\u00e9 is closing in 10 seconds.",
+        "MOTIVATIONAL": "Pure power! Recruit every muscle fiber you've got!",
+        "TECHNICAL": "Neuromuscular peak power. Phosphocreatine system at maximum.",
+        "MIXED": "Explode! Every watt counts."
+      }
+    },
+    {
+      "name": "Cool-down",
+      "purpose": "Facilitate recovery",
+      "phase": "cooldown",
+      "duration": {
+        "percent": 17.5,
+        "absoluteSecs": 600
+      },
+      "intensity": {
+        "zone": "Z1",
+        "powerLow": 40,
+        "powerHigh": 55,
+        "cadenceLow": 85,
+        "cadenceHigh": 95,
+        "rpe": 1
+      },
+      "instruction": "Cool-down at 40-55% FTP",
+      "coachingNotes": {
+        "DARK_HUMOR": "You survived. Congratulations. Now spin the suffering out of your legs.",
+        "MOTIVATIONAL": "Great work! Spin easy and let adaptation begin.",
+        "TECHNICAL": "Active recovery facilitates lactate clearance and parasympathetic activation.",
+        "MIXED": "Bring it down smoothly. You earned this."
+      }
+    }
+  ]
+}
