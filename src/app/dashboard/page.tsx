@@ -44,68 +44,146 @@ export default function Dashboard() {
   const loadDashboardData = useCallback(async () => {
     // Force fresh fetches by disabling cache (for plan regeneration scenarios)
     const cacheKey = `?t=${Date.now()}`;
-    const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
-      fetch("/api/rider" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
-      fetch("/api/plan" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
-      fetch("/api/workouts" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
-      fetch("/api/strava/activities" + cacheKey, { cache: "no-store" }).then((r) => r.json()).catch(() => null),
-    ]);
+    console.log('[Dashboard] Starting data fetch...');
     
-    return { riderData, planData, workoutResponse, stravaResponse };
+    try {
+      const [riderData, planData, workoutResponse, stravaResponse] = await Promise.all([
+        fetch("/api/rider" + cacheKey, { cache: "no-store" })
+          .then((r) => {
+            console.log('[Dashboard] /api/rider response:', r.status);
+            return r.json();
+          })
+          .catch((e) => {
+            console.error('[Dashboard] /api/rider error:', e);
+            return null;
+          }),
+        fetch("/api/plan" + cacheKey, { cache: "no-store" })
+          .then((r) => {
+            console.log('[Dashboard] /api/plan response:', r.status);
+            return r.json();
+          })
+          .catch((e) => {
+            console.error('[Dashboard] /api/plan error:', e);
+            return null;
+          }),
+        fetch("/api/workouts" + cacheKey, { cache: "no-store" })
+          .then((r) => {
+            console.log('[Dashboard] /api/workouts response:', r.status);
+            return r.json();
+          })
+          .catch((e) => {
+            console.error('[Dashboard] /api/workouts error:', e);
+            return null;
+          }),
+        fetch("/api/strava/activities" + cacheKey, { cache: "no-store" })
+          .then((r) => {
+            console.log('[Dashboard] /api/strava response:', r.status);
+            return r.json();
+          })
+          .catch((e) => {
+            console.error('[Dashboard] /api/strava error:', e);
+            return null;
+          }),
+      ]);
+      
+      console.log('[Dashboard] All data fetched successfully');
+      return { riderData, planData, workoutResponse, stravaResponse };
+    } catch (err) {
+      console.error('[Dashboard] CRITICAL ERROR in loadDashboardData:', err);
+      throw err;
+    }
   }, []);
 
   useEffect(() => {
     loadDashboardData().then(({ riderData, planData, workoutResponse, stravaResponse }) => {
-      if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
-      if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
+      console.log('[Dashboard] useEffect - Data loaded:', {
+        hasRiderData: !!riderData,
+        hasPlanData: !!planData,
+        planSource: planData?.source,
+        hasBlocks: !!planData?.plan?.blocks,
+        blocksLength: planData?.plan?.blocks?.length,
+      });
+
+      if (riderData?.rider?.ftp) {
+        console.log('[Dashboard] Setting FTP:', riderData.rider.ftp);
+        setFtp(riderData.rider.ftp);
+      }
+      if (riderData?.rider?.programStartDate) {
+        console.log('[Dashboard] Setting start date:', riderData.rider.programStartDate);
+        setProgramStartDate(riderData.rider.programStartDate);
+      }
 
       if (planData?.plan && planData.source === "database" && planData.plan.blocks) {
-        // Transform DB plan to match PlanDef shape
-        // Extra safety: ensure blocks exist and is array
-        const dbPlan = {
-          blocks: (planData.plan.blocks || []).map((b: TrainingBlock) => ({
-            blockNumber: b.blockNumber,
-            type: b.type,
-            weeks: (b.weeks || []).map((w: TrainingWeek) => ({
-              weekNumber: w.weekNumber,
-              weekType: w.weekType,
-              sessions: (w.sessions || []).map((s: TrainingSession) => {
-                // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
-                // Safety check: ensure intervals exist (rest days might have empty array)
-                const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
-                  name: i.name,
-                  // Handle both nested and flat duration structures
-                  durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
-                  // Handle both nested and flat structures for power
-                  powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
-                  powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
-                  cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
-                  cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
-                  rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
-                  zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
-                  purpose: i.purpose,
-                  coachNote: i.coachNote,
-                }));
-                
-                // Calculate actual duration from interval sum
-                const actualDurationMinutes = Math.round(
-                  normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
-                ) || s.duration || 60;
-                
-                return {
-                  dayOfWeek: s.dayOfWeek,
-                  sessionType: s.sessionType,
-                  duration: actualDurationMinutes, // Use calculated duration, not database value
-                  title: s.title,
-                  description: s.description,
-                  intervals: normalizedIntervals,
-                  route: s.route || undefined,
-                };
-              }),
-            })),
-          })),
-        };
-        setPlan(dbPlan);
+        console.log('[Dashboard] Starting plan transformation...');
+        try {
+          // Transform DB plan to match PlanDef shape
+          // Extra safety: ensure blocks exist and is array
+          const dbPlan = {
+            blocks: (planData.plan.blocks || []).map((b: TrainingBlock, bIdx: number) => {
+              console.log(`[Dashboard] Transforming block ${bIdx}...`);
+              return {
+                blockNumber: b.blockNumber,
+                type: b.type,
+                weeks: (b.weeks || []).map((w: TrainingWeek, wIdx: number) => {
+                  console.log(`[Dashboard] Transforming week ${bIdx}-${wIdx}...`);
+                  return {
+                    weekNumber: w.weekNumber,
+                    weekType: w.weekType,
+                    sessions: (w.sessions || []).map((s: TrainingSession, sIdx: number) => {
+                      try {
+                        // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
+                        // Safety check: ensure intervals exist (rest days might have empty array)
+                        const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
+                          name: i.name,
+                          // Handle both nested and flat duration structures
+                          durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
+                          // Handle both nested and flat structures for power
+                          powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
+                          powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
+                          cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
+                          cadenceHigh: (i as any).intensity?.cadenceHigh ?? i.cadenceHigh ?? undefined,
+                          rpe: (i as any).intensity?.rpe ?? i.rpe ?? undefined,
+                          zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
+                          purpose: i.purpose,
+                          coachNote: i.coachNote,
+                        }));
+                        
+                        // Calculate actual duration from interval sum
+                        const actualDurationMinutes = Math.round(
+                          normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
+                        ) || s.duration || 60;
+                        
+                        return {
+                          dayOfWeek: s.dayOfWeek,
+                          sessionType: s.sessionType,
+                          duration: actualDurationMinutes, // Use calculated duration, not database value
+                          title: s.title,
+                          description: s.description,
+                          intervals: normalizedIntervals,
+                          route: s.route || undefined,
+                        };
+                      } catch (sessionErr) {
+                        console.error(`[Dashboard] ERROR transforming session ${bIdx}-${wIdx}-${sIdx}:`, sessionErr, s);
+                        throw sessionErr;
+                      }
+                    }),
+                  };
+                }),
+              };
+            }),
+          };
+          console.log('[Dashboard] Plan transformation complete, setting state...');
+          setPlan(dbPlan);
+          console.log('[Dashboard] Plan state set successfully');
+        } catch (planErr) {
+          console.error('[Dashboard] CRITICAL ERROR transforming plan:', planErr);
+        }
+      } else {
+        console.log('[Dashboard] Skipping plan transformation - missing or invalid plan data', {
+          hasPlan: !!planData?.plan,
+          isDatabase: planData?.source === 'database',
+          hasBlocks: !!planData?.plan?.blocks,
+        });
       }
 
       // Load workout data for WeeklyDigest
