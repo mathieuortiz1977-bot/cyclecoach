@@ -1503,14 +1503,45 @@ function selectWorkoutTemplate(
     candidates = MASTER_WORKOUTS;
   }
   
-  // STEP 6: Random selection from filtered candidates
-  const randomIndex = Math.floor(Math.random() * candidates.length);
+  // STEP 6: Seeded random selection from filtered candidates
+  // Use metadata (category + weekType + specialization) to create consistent but varied selection
+  // This ensures: Same context = Same workout, Different context = Different workout
+  
+  // Create a seed from the selection criteria
+  const seedString = `${category}-${weekType || 'none'}-${specialization || 'none'}-${candidates.length}`;
+  const seed = seedString.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  
+  // Seeded pseudo-random (Simple LCG algorithm for deterministic randomness)
+  const seededRandom = function(seed: number): number {
+    const a = 1103515245;
+    const c = 12345;
+    const m = 2147483648;
+    const newSeed = (a * seed + c) % m;
+    return newSeed / m;
+  };
+  
+  const randomValue = seededRandom(seed);
+  const randomIndex = Math.floor(randomValue * candidates.length);
   const selected = candidates[randomIndex];
   
   if (!selected) {
-    console.error('[selectWorkoutTemplate] ERROR: Selected undefined workout');
+    console.error('[selectWorkoutTemplate] ERROR: Selected undefined workout', {
+      category,
+      weekType,
+      specialization,
+      candidatesLength: candidates.length,
+      randomIndex,
+      seed,
+    });
     throw new Error('Workout selection returned undefined');
   }
+  
+  console.log('[selectWorkoutTemplate] Selected:', {
+    id: selected.id,
+    title: selected.title,
+    category: selected.category,
+    fromCandidates: candidates.length,
+  });
   
   return selected;
 }
