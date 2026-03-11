@@ -108,6 +108,7 @@ export default function Dashboard() {
               }),
             })),
           })),
+          totalWeeks: planData.plan.blocks.reduce((sum: number, b: any) => sum + b.weeks.length, 0),
         };
         setPlan(dbPlan);
       }
@@ -133,7 +134,7 @@ export default function Dashboard() {
           if (riderData?.rider?.ftp) setFtp(riderData.rider.ftp);
           if (riderData?.rider?.programStartDate) setProgramStartDate(riderData.rider.programStartDate);
 
-          if (planData?.plan) {
+          if (planData?.plan && planData.source === "database" && planData.plan.blocks) {
             const dbPlan = {
               blocks: (planData.plan.blocks || []).map((b: TrainingBlock) => ({
                 blockNumber: b.blockNumber,
@@ -142,13 +143,9 @@ export default function Dashboard() {
                   weekNumber: w.weekNumber,
                   weekType: w.weekType,
                   sessions: (w.sessions || []).map((s: TrainingSession) => {
-                    // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
-                    // Safety check: ensure intervals exist (rest days might have empty array)
                     const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => {
-                      // Extract coaching note from v3.3 format (object with styles) or v3.0 format (flat string)
                       let coachNote = i.coachNote || '';
                       if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
-                        // NEW format: pick one of the coaching note styles
                         coachNote = (i as any).coachingNotes.MOTIVATIONAL 
                           || (i as any).coachingNotes.MIXED
                           || (i as any).coachingNotes.TECHNICAL
@@ -158,9 +155,7 @@ export default function Dashboard() {
                       
                       return {
                         name: i.name,
-                        // Handle both nested and flat duration structures
                         durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
-                        // Handle both nested and flat structures for power
                         powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
                         powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
                         cadenceLow: (i as any).intensity?.cadenceLow ?? i.cadenceLow ?? undefined,
@@ -172,7 +167,6 @@ export default function Dashboard() {
                       };
                     });
                     
-                    // Calculate actual duration from interval sum
                     const actualDurationMinutes = Math.round(
                       normalizedIntervals.reduce((sum, i) => sum + i.durationSecs, 0) / 60
                     ) || s.duration || 60;
@@ -180,7 +174,7 @@ export default function Dashboard() {
                     return {
                       dayOfWeek: s.dayOfWeek,
                       sessionType: s.sessionType,
-                      duration: actualDurationMinutes, // Use calculated duration, not database value
+                      duration: actualDurationMinutes,
                       title: s.title,
                       description: s.description,
                       intervals: normalizedIntervals,
@@ -240,7 +234,8 @@ export default function Dashboard() {
   
   useEffect(() => {
     // Only run this if week is properly loaded
-    if (!week || !week.sessions || week.sessions.length === 0) {
+    if (!week?.sessions || week.sessions.length === 0) {
+      setWeeklyProgress({ completed: 0, total: 0 });
       return;
     }
     
@@ -248,7 +243,7 @@ export default function Dashboard() {
     fetch("/api/workouts")
       .then((res) => res.json())
       .then((data) => {
-        if (data.workouts && week.sessions) {
+        if (data.workouts && week?.sessions) {
           const thisWeek = data.workouts.filter((w: CompletedWorkout) => {
             // Only count program sessions for completion tracking
             if (!w.isProgramSession) return false;
@@ -267,7 +262,7 @@ export default function Dashboard() {
         }
       })
       .catch(() => {});
-  }, [activeBlock, activeWeek, week]);
+  }, [activeBlock, activeWeek, week?.sessions?.length]);
 
   const weekCompletionPct = weeklyProgress.total > 0 
     ? Math.round((weeklyProgress.completed / weeklyProgress.total) * 100) 
