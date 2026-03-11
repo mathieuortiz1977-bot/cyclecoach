@@ -203,37 +203,19 @@ export default function Dashboard() {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, [loadDashboardData]);
 
-  const stats = useMemo(() => planStats(plan), [plan]);
+  // CRITICAL: All hooks must be at the top, before any conditional returns
   const [showCompletion, setShowCompletion] = useState(false);
   const [selectedSessionIdx, setSelectedSessionIdx] = useState(0);
-
-  // Guard against empty plan
-  const block = plan.blocks[activeBlock];
-  const week = block?.weeks[activeWeek];
-  const bt = block ? BLOCK_META[block.type] : undefined;
-  
-  // If no plan loaded yet, show loading
-  if (plan.blocks.length === 0 && loading === false) {
-    return (
-      <div className="max-w-6xl mx-auto py-12 text-center">
-        <div className="glass p-8 space-y-4">
-          <p className="text-[var(--muted)]">No training plan found.</p>
-          <p className="text-sm text-[var(--muted)]">Go to <Link href="/settings" className="text-[var(--accent)] hover:underline">Settings</Link> to create a training plan.</p>
-        </div>
-      </div>
-    );
-  }
-  
-  // If blocks exist but block/week are undefined, show loading
-  if (!block || !week || !bt) {
-    return <DashboardSkeleton />;
-  }
-
-  // Calculate real completion percentage
   const [weeklyProgress, setWeeklyProgress] = useState<{ completed: number; total: number }>({ completed: 0, total: 0 });
-  
+
+  const stats = useMemo(() => planStats(plan), [plan]);
+
+  // Setup completion tracking effect
   useEffect(() => {
-    // Only run this if week is properly loaded
+    const block = plan.blocks[activeBlock];
+    const week = block?.weeks[activeWeek];
+    
+    // Only run if week is properly loaded
     if (!week?.sessions || week.sessions.length === 0) {
       setWeeklyProgress({ completed: 0, total: 0 });
       return;
@@ -245,14 +227,12 @@ export default function Dashboard() {
       .then((data) => {
         if (data.workouts && week?.sessions) {
           const thisWeek = data.workouts.filter((w: CompletedWorkout) => {
-            // Only count program sessions for completion tracking
             if (!w.isProgramSession) return false;
-            
             const workoutDate = new Date(w.createdAt);
             const weekStart = new Date();
-            weekStart.setDate(weekStart.getDate() - weekStart.getDay()); // Start of this week
+            weekStart.setDate(weekStart.getDate() - weekStart.getDay());
             const weekEnd = new Date(weekStart);
-            weekEnd.setDate(weekEnd.getDate() + 6); // End of this week
+            weekEnd.setDate(weekEnd.getDate() + 6);
             return workoutDate >= weekStart && workoutDate <= weekEnd;
           });
           
@@ -262,15 +242,19 @@ export default function Dashboard() {
         }
       })
       .catch(() => {});
-  }, [activeBlock, activeWeek, week?.sessions?.length]);
+  }, [activeBlock, activeWeek, plan]);
 
+  // NOW we can safely compute derived values and do early returns
+  const block = plan.blocks[activeBlock];
+  const week = block?.weeks[activeWeek];
+  const bt = block ? BLOCK_META[block.type] : undefined;
+  
   const weekCompletionPct = weeklyProgress.total > 0 
     ? Math.round((weeklyProgress.completed / weeklyProgress.total) * 100) 
     : 0;
 
-  if (loading) return <DashboardSkeleton />;
-
   const handleCompleteWorkout = async (data: CompletionData) => {
+    if (!week?.sessions) return;
     const session = week.sessions[selectedSessionIdx];
     try {
       await fetch("/api/workouts", {
@@ -297,6 +281,27 @@ export default function Dashboard() {
     }
     setShowCompletion(false);
   };
+
+  // NOW the early returns (after all hooks are called)
+  // If no plan loaded yet, show loading
+  if (plan.blocks.length === 0 && loading === false) {
+    return (
+      <div className="max-w-6xl mx-auto py-12 text-center">
+        <div className="glass p-8 space-y-4">
+          <p className="text-[var(--muted)]">No training plan found.</p>
+          <p className="text-sm text-[var(--muted)]">Go to <Link href="/settings" className="text-[var(--accent)] hover:underline">Settings</Link> to create a training plan.</p>
+        </div>
+      </div>
+    );
+  }
+  
+  // If still loading, show skeleton
+  if (loading) return <DashboardSkeleton />;
+  
+  // If blocks exist but block/week are undefined, show loading
+  if (!block || !week || !bt) {
+    return <DashboardSkeleton />;
+  }
 
   return (
     <motion.div
