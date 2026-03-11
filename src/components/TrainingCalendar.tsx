@@ -100,7 +100,7 @@ const monthNames = [
 // Week starts Monday (ISO 8601 standard)
 const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "SAT"] }: Props) {
+export function TrainingCalendar({ trainingDays: propTrainingDays = ["MON", "TUE", "THU", "FRI", "SAT"] }: Props) {
   const [currentMonth, setCurrentMonth] = useState(tz.today());
   const [workouts, setWorkouts] = useState<WorkoutData[]>([]);
   const [stravaActivities, setStravaActivities] = useState<WorkoutData[]>([]);
@@ -109,6 +109,7 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
   const [loading, setLoading] = useState(true);
   const [programStartDate, setProgramStartDate] = useState<Date | null>(null);
   const [plan, setPlan] = useState<any>(null);
+  const [trainingDays, setTrainingDays] = useState<string[]>(propTrainingDays);
   
   // Cancellation state
   const [showCancellation, setShowCancellation] = useState(false);
@@ -185,6 +186,17 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       const planData = planResponse.data || {};
       const vacationData = vacationResponse.data || {};
       const eventsData = eventsResponse.data || {};
+
+      // CRITICAL: Extract and update trainingDays from rider data (not hardcoded defaults!)
+      const updatedTrainingDays = riderData.rider?.trainingDays
+        ? riderData.rider.trainingDays
+            .split(',')
+            .map((day: string) => day.trim().toUpperCase())
+            .filter((day: string) => ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"].includes(day))
+        : propTrainingDays;
+      
+      setTrainingDays(updatedTrainingDays);
+      console.log('[TrainingCalendar] Training days from rider data:', updatedTrainingDays);
 
       // Set program start date
       const startDate = riderData.rider?.programStartDate ? new Date(riderData.rider.programStartDate) : null;
@@ -278,11 +290,8 @@ export function TrainingCalendar({ trainingDays = ["MON", "TUE", "THU", "FRI", "
       // Generate planned sessions from training plan (API-only)
       let actualPlan = planData.plan;
       if (planData.plan && startDate) {
-        const trainingDays = riderData.rider?.trainingDays ? 
-          riderData.rider.trainingDays.split(',').map((day: string) => day.trim()) : 
-          ["MON", "TUE", "THU", "FRI", "SAT"];
-        
-        const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, trainingDays);
+        // Use the trainingDays from rider data (already extracted above as updatedTrainingDays)
+        const plannedWorkouts = generatePlannedSessions(planData.plan, startDate, updatedTrainingDays);
         setPlannedSessions(plannedWorkouts);
         setPlan(planData.plan);
         actualPlan = planData.plan;
