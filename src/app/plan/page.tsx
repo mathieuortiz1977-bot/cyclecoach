@@ -56,9 +56,10 @@ export default function PlanPage() {
                   intervals: s.intervals.map((i: TrainingInterval) => ({
                     name: i.name,
                     durationSecs: i.durationSecs,
-                    powerLow: i.powerLow,
-                    powerHigh: i.powerHigh,
-                    zone: i.zone,
+                    // Handle both nested and flat structures
+                    powerLow: (i as any).intensity?.powerLow ?? i.powerLow ?? 0,
+                    powerHigh: (i as any).intensity?.powerHigh ?? i.powerHigh ?? 0,
+                    zone: (i as any).intensity?.zone ?? i.zone ?? 'Z2',
                   })),
                 })),
               })),
@@ -173,7 +174,8 @@ export default function PlanPage() {
 
                   <div className="grid grid-cols-5 gap-2">
                     {week.sessions.map((session, si) => {
-                      const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0);
+                      const totalSecs = session.intervals.reduce((s, i) => s + i.durationSecs, 0) || 1; // Avoid division by zero
+                      const maxPower = Math.max(...session.intervals.map(i => i.powerHigh || 0), 100); // Default to 100 if empty
                       return (
                         <Link
                           key={si}
@@ -188,23 +190,27 @@ export default function PlanPage() {
 
                           {/* Mini bars */}
                           <div className="flex items-end gap-[1px] h-6">
-                            {session.intervals.map((interval, idx) => {
-                              const widthPct = (interval.durationSecs / totalSecs) * 100;
-                              const avgPower = (interval.powerLow + interval.powerHigh) / 2;
-                              const heightPct = avgPower > 0 ? Math.min((avgPower / 130) * 100, 100) : 10;
-                              return (
-                                <div
-                                  key={idx}
-                                  style={{
-                                    width: `${widthPct}%`,
-                                    height: `${Math.max(heightPct, 8)}%`,
-                                    backgroundColor: getZoneColor(interval.zone),
-                                    borderRadius: "1px 1px 0 0",
-                                    minWidth: "1px",
-                                  }}
-                                />
-                              );
-                            })}
+                            {session.intervals && session.intervals.length > 0 ? (
+                              session.intervals.map((interval, idx) => {
+                                const widthPct = (interval.durationSecs / totalSecs) * 100;
+                                const avgPower = ((interval.powerLow ?? 0) + (interval.powerHigh ?? 0)) / 2;
+                                const heightPct = avgPower > 0 ? Math.min((avgPower / maxPower) * 100, 100) : 10;
+                                return (
+                                  <div
+                                    key={idx}
+                                    style={{
+                                      width: `${Math.max(widthPct, 2)}%`,
+                                      height: `${Math.max(heightPct, 8)}%`,
+                                      backgroundColor: getZoneColor(interval.zone),
+                                      borderRadius: "1px 1px 0 0",
+                                      minWidth: "1px",
+                                    }}
+                                  />
+                                );
+                              })
+                            ) : (
+                              <div className="w-full h-2 bg-[var(--muted)] rounded opacity-30" />
+                            )}
                           </div>
 
                           <p className="text-[10px] text-[var(--muted)] mt-1">{session.duration}min</p>

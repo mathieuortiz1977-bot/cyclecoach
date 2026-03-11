@@ -197,11 +197,16 @@ export default function Dashboard() {
   const [weeklyProgress, setWeeklyProgress] = useState<{ completed: number; total: number }>({ completed: 0, total: 0 });
   
   useEffect(() => {
+    // Only run this if week is properly loaded
+    if (!week || !week.sessions || week.sessions.length === 0) {
+      return;
+    }
+    
     // Load this week's completion data
     fetch("/api/workouts")
       .then((res) => res.json())
       .then((data) => {
-        if (data.workouts) {
+        if (data.workouts && week.sessions) {
           const thisWeek = data.workouts.filter((w: CompletedWorkout) => {
             // Only count program sessions for completion tracking
             if (!w.isProgramSession) return false;
@@ -220,7 +225,7 @@ export default function Dashboard() {
         }
       })
       .catch(() => {});
-  }, [activeBlock, activeWeek, plan]);
+  }, [activeBlock, activeWeek, week]);
 
   const weekCompletionPct = weeklyProgress.total > 0 
     ? Math.round((weeklyProgress.completed / weeklyProgress.total) * 100) 
