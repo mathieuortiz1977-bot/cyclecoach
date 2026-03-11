@@ -72,6 +72,7 @@ export default function Dashboard() {
                   let coachNote = i.coachNote || '';
                   if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
                     coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                      || (i as any).coachingNotes.TOUGH_LOVE
                       || (i as any).coachingNotes.MIXED
                       || (i as any).coachingNotes.TECHNICAL
                       || (i as any).coachingNotes.DARK_HUMOR
@@ -147,6 +148,7 @@ export default function Dashboard() {
                       let coachNote = i.coachNote || '';
                       if (!coachNote && (i as any).coachingNotes && typeof (i as any).coachingNotes === 'object') {
                         coachNote = (i as any).coachingNotes.MOTIVATIONAL 
+                          || (i as any).coachingNotes.TOUGH_LOVE
                           || (i as any).coachingNotes.MIXED
                           || (i as any).coachingNotes.TECHNICAL
                           || (i as any).coachingNotes.DARK_HUMOR

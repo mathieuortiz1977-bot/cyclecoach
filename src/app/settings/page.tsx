@@ -580,8 +580,9 @@ function SettingsPage() {
         <p className="text-sm text-[var(--muted)]">Choose the tone of your workout commentary.</p>
         <div className="grid grid-cols-2 gap-2">
           {[
-            { value: "DARK_HUMOR", label: "💀 Dark Humor", desc: "Suffering with a smile" },
             { value: "MOTIVATIONAL", label: "🔥 Motivational", desc: "You've got this, champion" },
+            { value: "TOUGH_LOVE", label: "💪 Tough Love", desc: "Real talk, no sugar coating" },
+            { value: "DARK_HUMOR", label: "💀 Dark Humor", desc: "Suffering with a smile" },
             { value: "TECHNICAL", label: "🔬 Technical", desc: "Just the science" },
             { value: "MIXED", label: "🎲 Mixed", desc: "A bit of everything" },
           ].map((t) => (

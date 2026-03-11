@@ -215,8 +215,9 @@ export default function SetupPage() {
 
             <div className="grid grid-cols-2 gap-3">
               {[
-                { value: "DARK_HUMOR", emoji: "💀", title: "Dark Humor", desc: "Suffering with a smile", sample: "\"If your legs don't hurt, you're doing it wrong.\"" },
                 { value: "MOTIVATIONAL", emoji: "🔥", title: "Motivational", desc: "Believe in yourself", sample: "\"This is where champions are made.\"" },
+                { value: "TOUGH_LOVE", emoji: "💪", title: "Tough Love", desc: "Real talk, no sugar coating", sample: "\"You're tougher than you think.\"" },
+                { value: "DARK_HUMOR", emoji: "💀", title: "Dark Humor", desc: "Suffering with a smile", sample: "\"If your legs don't hurt, you're doing it wrong.\"" },
                 { value: "TECHNICAL", emoji: "🔬", title: "Technical", desc: "Just the science", sample: "\"Aerobic decoupling at 3.2% — good efficiency.\"" },
                 { value: "MIXED", emoji: "🎲", title: "Mixed", desc: "A bit of everything", sample: "\"Push hard. Recover harder. Eat cake.\"" },
               ].map((t) => (

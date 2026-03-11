@@ -190,7 +190,7 @@ export interface RiderProfile {
   ftp: number;
   weight: number;
   experience: "BEGINNER" | "INTERMEDIATE" | "ADVANCED" | "ELITE";
-  coachTone: "MIXED" | "MOTIVATIONAL" | "DATA_DRIVEN";
+  coachTone: "MIXED" | "MOTIVATIONAL" | "TOUGH_LOVE" | "DATA_DRIVEN";
   maxHr?: number;
   restingHr?: number;
   lthr?: number;

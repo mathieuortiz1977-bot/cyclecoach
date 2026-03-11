@@ -52,9 +52,10 @@ export function convertWorkoutJSON(jsonData: any): WorkoutTemplate | null {
       // Extract coaching notes: NEW format uses coachingNotes object with styles
       let coachNote = interval.coachNote || '';
       if (!coachNote && interval.coachingNotes && typeof interval.coachingNotes === 'object') {
-        // Pick one of the coaching note styles
-        coachNote = interval.coachingNotes.MIXED 
-          || interval.coachingNotes.MOTIVATIONAL 
+        // Pick one of the coaching note styles (priority: MOTIVATIONAL → TOUGH_LOVE → MIXED → TECHNICAL → DARK_HUMOR)
+        coachNote = interval.coachingNotes.MOTIVATIONAL 
+          || interval.coachingNotes.TOUGH_LOVE
+          || interval.coachingNotes.MIXED 
           || interval.coachingNotes.TECHNICAL 
           || interval.coachingNotes.DARK_HUMOR 
           || '';
