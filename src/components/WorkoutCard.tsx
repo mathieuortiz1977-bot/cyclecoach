@@ -49,7 +49,9 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
         <div>
           <p className="text-[var(--muted)]">Avg FTP</p>
           <p className="font-semibold text-[var(--accent)]">
-            {Math.round(intervals.reduce((sum, i) => sum + (i.powerLow + i.powerHigh) / 2, 0) / intervals.length)}%
+            {intervals.length > 0 
+              ? Math.round(intervals.reduce((sum, i) => sum + ((i.powerLow || 0) + (i.powerHigh || 0)) / 2, 0) / intervals.length)
+              : 0}%
           </p>
         </div>
       </div>
@@ -63,38 +65,48 @@ export function WorkoutCard({ workout, ftp = 200 }: WorkoutCardProps) {
       <div className="space-y-2">
         <p className="text-xs font-semibold text-[var(--muted)]">Interval Breakdown</p>
         <div className="flex gap-1 h-16 bg-[var(--surface)] rounded p-2">
-          {intervals.map((interval: any, idx) => {
-            const color = getZoneColor(interval.zone);
-            const heightPercent = (interval.powerHigh / maxPower) * 100;
-            
-            // Calculate width: handle both durationSecs and durationPercent
-            let durationSecs = 0;
-            if (interval.durationSecs) {
-              durationSecs = interval.durationSecs;
-            } else if (interval.durationPercent) {
-              durationSecs = (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
-            }
-            // BUG #1 FIX: Guard against division by zero
-            const totalDurationSecs = totalDurationMins * 60;
-            const widthPercent = totalDurationSecs > 0 
-              ? (durationSecs / totalDurationSecs) * 100 
-              : 0;
+          {intervals && intervals.length > 0 ? (
+            intervals.map((interval: any, idx) => {
+              const color = getZoneColor(interval.zone);
+              const powerHigh = interval.powerHigh || 50; // Default to 50% if missing
+              const heightPercent = Math.min((powerHigh / maxPower) * 100, 100);
+              
+              // Calculate width: handle both durationSecs and durationPercent
+              let durationSecs = interval.durationSecs || 0;
+              if (!durationSecs && interval.durationPercent) {
+                durationSecs = (interval.durationPercent / 100) * (DISPLAY_DURATION_MINS * 60);
+              }
+              // Fallback: if no duration, estimate evenly
+              if (!durationSecs) {
+                durationSecs = (DISPLAY_DURATION_MINS * 60) / intervals.length;
+              }
+              
+              // BUG #1 FIX: Guard against division by zero
+              const totalDurationSecs = totalDurationMins * 60 || (DISPLAY_DURATION_MINS * 60);
+              const widthPercent = totalDurationSecs > 0 
+                ? (durationSecs / totalDurationSecs) * 100 
+                : (100 / intervals.length);
 
-            return (
-              <div
-                key={idx}
-                className="flex-shrink-0 rounded transition-all hover:opacity-80"
-                style={{
-                  width: `${widthPercent}%`,
-                  height: `${heightPercent}%`,
-                  backgroundColor: color,
-                  minWidth: '4px',
-                  alignSelf: 'flex-end',
-                }}
-                title={`${interval.name}: ${Math.round(durationSecs / 60)}m @ ${interval.powerLow}-${interval.powerHigh}% FTP`}
-              />
-            );
-          })}
+              return (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 rounded transition-all hover:opacity-80"
+                  style={{
+                    width: `${Math.max(widthPercent, 2)}%`,
+                    height: `${Math.max(heightPercent, 10)}%`,
+                    backgroundColor: color,
+                    minWidth: '4px',
+                    alignSelf: 'flex-end',
+                  }}
+                  title={`${interval.name}: ${Math.round(durationSecs / 60)}m @ ${interval.powerLow || 0}-${powerHigh}% FTP`}
+                />
+              );
+            })
+          ) : (
+            <div className="w-full flex items-center justify-center text-[var(--muted)] text-xs">
+              No interval data
+            </div>
+          )}
         </div>
         <div className="flex justify-between text-xs text-[var(--muted)]">
           <span>0:00</span>
