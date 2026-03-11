@@ -70,7 +70,8 @@ export default function Dashboard() {
               weekType: w.weekType,
               sessions: w.sessions.map((s: TrainingSession) => {
                 // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
-                const normalizedIntervals = s.intervals.map((i: TrainingInterval) => ({
+                // Safety check: ensure intervals exist (rest days might have empty array)
+                const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
                   name: i.name,
                   // Handle both nested and flat duration structures
                   durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
@@ -139,7 +140,8 @@ export default function Dashboard() {
                   weekType: w.weekType,
                   sessions: w.sessions.map((s: TrainingSession) => {
                     // CRITICAL FIX: Calculate actual duration from intervals, not from session.duration field
-                    const normalizedIntervals = s.intervals.map((i: TrainingInterval) => ({
+                    // Safety check: ensure intervals exist (rest days might have empty array)
+                    const normalizedIntervals = (s.intervals || []).map((i: TrainingInterval) => ({
                       name: i.name,
                       // Handle both nested and flat duration structures
                       durationSecs: (i as any).duration?.absoluteSecs ?? i.durationSecs ?? 600,
