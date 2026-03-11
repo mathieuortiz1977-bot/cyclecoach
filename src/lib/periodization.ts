@@ -1656,26 +1656,86 @@ function generateIndoorSession(
     ) : 0;
     const seed = (dayOffset + weekOffset + userHash) % 1000;
     
-    // Map days to category rotations (ensures all 10+ categories distributed throughout week)
-    // Each day gets diverse category options to guarantee variety
-    // TECHNIQUE: pedal economy, skill work (good for any day)
-    // STRENGTH: force development, power (good for harder or recovery days with activation)
-    const categoryRotations: Record<number, string[]> = {
-      1: ["SWEET_SPOT", "TEMPO", "TECHNIQUE", "SPRINT", "RECOVERY"],  // TUE: Sweet spot + skill + options
-      2: ["RECOVERY", "BASE", "TECHNIQUE", "SWEET_SPOT", "STRENGTH"],    // WED: Recovery-focused, skill work, or light strength
-      3: ["THRESHOLD", "STRENGTH", "VO2MAX", "SPRINT", "TEMPO"],     // THU: Hard effort + strength
-      4: ["SPRINT", "ANAEROBIC", "STRENGTH", "FTP_TEST", "RECOVERY"],// FRI: Specialty/testing + neuromuscular strength
-    };
+    // Map all 14+ categories across the week with periodization-aware distribution
+    // Each week type gets appropriate difficulty ranges, but all categories available
+    // This ensures full workout variety while respecting training phase
     
-    const dayRotation = categoryRotations[dayIndex];
-    if (dayRotation && dayRotation.length > 0) {
-      // Rotate based on seeded randomness
-      const categoryIndex = seed % dayRotation.length;
-      const rotatedZone = dayRotation[categoryIndex];
-      
-      // Prefer the rotated category, but fall back to primary if needed
-      selectedZone = rotatedZone;
+    const allCategories = [
+      "BASE",           // Aerobic foundation (all weeks)
+      "TECHNIQUE",      // Skill work (all weeks)
+      "SWEET_SPOT",     // Sweet spot (BUILD+)
+      "TEMPO",          // Tempo efforts (BUILD+)
+      "THRESHOLD",      // FTP work (BUILD_PLUS+)
+      "VO2MAX",         // VO2max work (OVERREACH)
+      "ANAEROBIC",      // Anaerobic efforts (OVERREACH)
+      "SPRINT",         // Sprint power (all weeks)
+      "STRENGTH",       // Force development (all weeks)
+      "RECOVERY",       // Easy recovery (RECOVERY weeks)
+      "MIXED",          // Mixed intensity (all weeks)
+      "FTP_TEST",       // Testing (BUILD weeks)
+      "RACE_SIM",       // Race-specific (OVERREACH)
+    ];
+    
+    // Filter categories by periodization week type
+    let availableCategories = allCategories;
+    
+    if (weekType === "RECOVERY") {
+      // Recovery week: Focus on easy, technique, strength activation
+      availableCategories = [
+        "BASE",           // Easy endurance
+        "TECHNIQUE",      // Skill drills
+        "RECOVERY",       // Very easy
+        "STRENGTH",       // Light strength
+        "MIXED",          // Easy mixed efforts
+      ];
+    } else if (weekType === "BUILD") {
+      // Build week: All categories except peak
+      availableCategories = [
+        "BASE",
+        "TECHNIQUE",
+        "SWEET_SPOT",
+        "TEMPO",
+        "THRESHOLD",
+        "SPRINT",
+        "STRENGTH",
+        "FTP_TEST",
+        "MIXED",
+      ];
+    } else if (weekType === "BUILD_PLUS") {
+      // Build+ week: Add higher intensity options
+      availableCategories = [
+        "BASE",
+        "TECHNIQUE",
+        "SWEET_SPOT",
+        "TEMPO",
+        "THRESHOLD",
+        "VO2MAX",
+        "SPRINT",
+        "STRENGTH",
+        "ANAEROBIC",
+        "MIXED",
+      ];
+    } else if (weekType === "OVERREACH") {
+      // Peak/Overreach week: High intensity focus
+      availableCategories = [
+        "THRESHOLD",
+        "VO2MAX",
+        "ANAEROBIC",
+        "SPRINT",
+        "RACE_SIM",
+        "STRENGTH",
+        "TECHNIQUE",  // Still include technique for balance
+        "BASE",       // Base for recovery sessions
+      ];
     }
+    
+    // Select based on day of week for distribution
+    // Different days get different portions of available categories for variety
+    const dayBasedIndex = (seed + dayIndex) % availableCategories.length;
+    const rotatedZone = availableCategories[dayBasedIndex];
+    
+    // Prefer the rotated category, but fall back to primary if needed
+    selectedZone = rotatedZone;
   }
   
   // Select a template for this category/day, avoiding previous week's template and THIS WEEK's already-used workouts
