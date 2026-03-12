@@ -34,11 +34,11 @@
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 70% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Power: 70%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 10:00 at 70%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 0/1. 70% FTP, Seated. 10:00. Maintain smooth power output.",
+        "MOTIVATIONAL": "First interval. 70% for 10:00. Set the standard. You've got this.",
+        "DARK_HUMOR": "Rep 1/1. 70% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 70% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -60,11 +60,11 @@
       },
       "instruction": "Upper Zone 2 at 68-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your friends are posting their VO2max workouts on Strava. You're being smart.",
-        "TECHNICAL": "Sub-threshold aerobic work. Training your body to burn fat efficiently.",
-        "MOTIVATIONAL": "Base training: the secret weapon of every great cyclist.",
-        "DARK_HUMOR": "Zone 2: the pace where you can contemplate life's mysteries. Like why you're on a bike.",
-        "MIXED": "Stay patient. Stay easy. Trust the process."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. 75:00 of engine-building.",
+        "TECHNICAL": "75% for 75:00. Where mitochondria multiply and aerobic capacity expands.",
+        "MOTIVATIONAL": "Easy miles = fast racing. 75% for 75:00. Trust the process.",
+        "DARK_HUMOR": "10 minutes of endurance. The pace where you question if you're working hard enough. (You are.)",
+        "MIXED": "Zone 2 endurance. 75% FTP, 85-95 rpm. Sustainable all day."
       }
     },
     {
@@ -86,11 +86,11 @@
       },
       "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "89% done. 0 intervals left. 0 minutes total. Don't quit now.",
+        "TECHNICAL": "89% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "89% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "89% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "89% into session. 55%, 85-95 rpm. Focus and execute."
       }
     }
   ]

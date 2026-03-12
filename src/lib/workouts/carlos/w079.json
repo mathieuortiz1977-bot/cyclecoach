@@ -31,11 +31,11 @@
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 75% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 10:00 at 75%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 0/1. 75% FTP, Seated. 10:00. Maintain smooth power output.",
+        "MOTIVATIONAL": "0 minutes of work done. 68 minutes to go. You can do this.",
+        "DARK_HUMOR": "Rep 1/1. 75% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 75% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -57,11 +57,11 @@
       },
       "instruction": "Pack Riding at 72-72% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your friends are posting their VO2max workouts on Strava. You're being smart.",
-        "TECHNICAL": "Sub-threshold aerobic work. Training your body to burn fat efficiently.",
-        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
-        "DARK_HUMOR": "Your Garmin thinks you fell asleep. You're actually training.",
-        "MIXED": "Smooth and steady. Build your aerobic base."
+        "TOUGH_LOVE": "Zone 2. 40:00 at 72%. Boring? Maybe. Effective? Absolutely.",
+        "TECHNICAL": "10 minutes of Z2 work. 85-95 rpm, Seated. Smooth, relaxed pedaling.",
+        "MOTIVATIONAL": "12% into session. Endurance work is never wasted. Every minute builds your foundation.",
+        "DARK_HUMOR": "28 minutes to go. Your friends are posting threshold intervals. You're being smart. Or lazy. Both?",
+        "MIXED": "40:00 at 72-72%. Relax your grip. Drop your shoulders. Smooth pedaling."
       }
     },
     {
@@ -83,11 +83,11 @@
       },
       "instruction": "Tempo Up at 95-95% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "One more block. One more step toward crushing your old FTP. Worth it.",
-        "TECHNICAL": "Sub-threshold work builds endurance at race pace. Stay controlled.",
-        "MOTIVATIONAL": "Stay strong. This effort builds mental toughness as much as physical fitness.",
-        "DARK_HUMOR": "This is sustainable. Technically. If you redefine 'sustainable.'",
-        "MIXED": "Seated at 85-95 rpm. Focus on efficient pedal stroke."
+        "TOUGH_LOVE": "Block 1/1. The discomfort is the adaptation. Embrace it. 6 more blocks to build FTP.",
+        "TECHNICAL": "Block 1/1. 63% complete. Hold 95% steady. 23 minutes remain.",
+        "MOTIVATIONAL": "63% complete. Block 1/1. This is where mediocre riders crack. You're pushing through.",
+        "DARK_HUMOR": "63% done. This is sustainable. Technically. If you redefine 'sustainable.'",
+        "MIXED": "Set 1: 5:00 at 95%. Focus on efficient pedal stroke. 6 blocks remaining."
       }
     },
     {
@@ -109,11 +109,11 @@
       },
       "instruction": "Breakaway at 110-110% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "The pain is temporary. The fitness is permanent. Don't you dare back off now.",
-        "TECHNICAL": "First rep \u2014 settle into 110% quickly. Don't overshoot the first 30 seconds.",
-        "MOTIVATIONAL": "This is THE rep that makes you faster. The one where most people quit.",
-        "DARK_HUMOR": "Your lungs will remember this. So will your neighbors from the screaming.",
-        "MIXED": "Focus on form. Seated at 90-105 rpm. Power will follow."
+        "TOUGH_LOVE": "You're 70% through this session. The deep work happens now, when you're tired.",
+        "TECHNICAL": "Interval 3: 110% FTP. You're 55 minutes in. Power should feel hard but repeatable. Adjust if fading.",
+        "MOTIVATIONAL": "5 reps left. 20 minutes total. Your competition quit 20 minutes ago. You're still here.",
+        "DARK_HUMOR": "70% done. The good news: almost finished. The bad news: 5 intervals left.",
+        "MIXED": "5 intervals left. 20 total minutes. Your lungs are burning. That's adaptation."
       }
     },
     {
@@ -135,11 +135,11 @@
       },
       "instruction": "Brief Rest at 75-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Slow down. Yes, slower. Your aerobic system is thanking you right now.",
-        "TECHNICAL": "Endurance zone: 75% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
-        "DARK_HUMOR": "This feels like cheating. It's not. It's science.",
-        "MIXED": "Endurance pace. Let your mind wander. Stay in zone."
+        "TOUGH_LOVE": "58 minutes in. Your friends are posting VO2max intervals. You're being smart.",
+        "TECHNICAL": "73% through. Low intensity, high volume. Building the engine from ground up.",
+        "MOTIVATIONAL": "73% done. 18 minutes left. Not every workout needs to hurt. This is smart training.",
+        "DARK_HUMOR": "73% done. 18 minutes left. This feels like cheating. It's not. It's science. Probably.",
+        "MIXED": "58 minutes of Z2. Easy effort. This is recovery in disguise."
       }
     },
     {
@@ -161,11 +161,11 @@
       },
       "instruction": "Counter at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 5/8. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 5 of 8. Target: 130% FTP, 90-110 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 5. Your legs have opinions. Noted.",
-        "MIXED": "Interval 5/8. Focus and finish strong."
+        "TOUGH_LOVE": "76% done. 3 intervals left. 17 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 5. 50min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "Interval 5/8. Every rep makes you stronger. Keep pushing. 3 more to go.",
+        "DARK_HUMOR": "76% done. 3 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 5/8. 130% FTP \u00d7 1:00. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -187,11 +187,11 @@
       },
       "instruction": "Endurance at 75-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Zone 2 is like compound interest. Boring, but it builds wealth over time.",
-        "TECHNICAL": "85-95 rpm, Seated. Smooth, relaxed pedaling.",
-        "MOTIVATIONAL": "Endurance work is never wasted. Every minute builds your foundation.",
-        "DARK_HUMOR": "This is so easy it's almost boring. Almost.",
-        "MIXED": "Relax your grip. Drop your shoulders. Smooth pedaling."
+        "TOUGH_LOVE": "61 minutes of base work. This feels like nothing. That's exactly the point.",
+        "TECHNICAL": "15 minutes remaining. Sub-threshold aerobic work. Training fat oxidation.",
+        "MOTIVATIONAL": "15 minutes to go. Consistency over intensity. You're doing the work that matters.",
+        "DARK_HUMOR": "75% FTP. This is so easy it's almost boring. Almost.",
+        "MIXED": "15 minutes to go. Easy does it. 75% FTP. Build your engine."
       }
     },
     {
@@ -213,11 +213,11 @@
       },
       "instruction": "Chase at 100-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Threshold hurts. Get comfortable being uncomfortable. Block 1 of 1.",
-        "TECHNICAL": "This is your aerobic threshold. Challenging but repeatable.",
-        "MOTIVATIONAL": "This is race pace. This is where you spend most of a 40k TT. Own it.",
-        "DARK_HUMOR": "Your lactate threshold called. It's not happy about what you're doing to it.",
-        "MIXED": "Almost done. Stay strong. Finish what you started."
+        "TOUGH_LOVE": "1 blocks left. 10 minutes total. You wanted faster. This is how. Stop thinking, pedal.",
+        "TECHNICAL": "80% through session. Block 1/1. You've done 53min of threshold work.",
+        "MOTIVATIONAL": "1 blocks to go. 10 minutes. This discomfort is temporary. The fitness is permanent.",
+        "DARK_HUMOR": "Only 10 more minutes of this very special kind of suffering. Define 'only.'",
+        "MIXED": "80% into session. Seated at 85-95 rpm. Stay controlled \u2014 smooth is fast."
       }
     },
     {
@@ -239,11 +239,11 @@
       },
       "instruction": "Sprint Finish at 170-200% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 8 of 8. Target: 200% FTP, 95-120 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 8. Your legs have opinions. Noted.",
-        "MIXED": "Interval 8/8. Focus and finish strong."
+        "TOUGH_LOVE": "Final interval. 200% for 30s. Then 10min cooldown. Leave nothing.",
+        "TECHNICAL": "Final interval: 200% \u00d7 30s. Then 10min easy. Finish strong.",
+        "MOTIVATIONAL": "Final interval! 30s at 200%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Final interval. 200% for 30s. Then 10min to question life choices.",
+        "MIXED": "Final interval. 200% \u00d7 30s. Alternating, 95-120 rpm. Finish what you started."
       }
     },
     {
@@ -265,11 +265,11 @@
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 60% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 87% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "87% complete. Rep 1/1. 60% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "87% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 1/1. 60% FTP \u00d7 10:00. Seated. Stay smooth. Breathe deep."
       }
     }
   ],

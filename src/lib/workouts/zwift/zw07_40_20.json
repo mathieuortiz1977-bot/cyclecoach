@@ -33,11 +33,11 @@
       },
       "instruction": "Warm-up at 50-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Too easy? Good. Your ego wants intensity. Your body needs this. Trust the process.",
-        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
-        "MOTIVATIONAL": "Base training: the secret weapon of every great cyclist.",
-        "DARK_HUMOR": "Zone 2: the pace where you can contemplate life's mysteries. Like why you're on a bike.",
-        "MIXED": "Conversational pace. Save your matches for the hard days."
+        "TOUGH_LOVE": "Too easy? Good. 0% into ride. Your ego wants intensity. Your body needs this.",
+        "TECHNICAL": "0% through. Low intensity, high volume. Building the engine from ground up.",
+        "MOTIVATIONAL": "75% FTP, 85-100 rpm. Relax and enjoy this. You're building massive aerobic capacity.",
+        "DARK_HUMOR": "Zone 2: where excitement goes to retire. 5:51 of controlled boredom.",
+        "MIXED": "0% into ride. Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -59,11 +59,11 @@
       },
       "instruction": "Set 1 Rep 1 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 32. Target: 130% FTP, 90-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/32. Focus and finish strong."
+        "TOUGH_LOVE": "First rep. 130% FTP. Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "First rep: 0:40 at 130%. Focus on form and controlled execution.",
+        "MOTIVATIONAL": "Interval 1/32. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "First rep. Your legs feel fresh. Check back in 40s.",
+        "MIXED": "Interval 1/32. Power: 130-130%, Cadence: 90-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -85,11 +85,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 1/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "11% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -111,11 +111,11 @@
       },
       "instruction": "Set 1 Rep 2 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 2: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 130%, Cadence: 95-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 2/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "12% complete. Rep 2/32. 130% at 95-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "First interval. 130% for 40s. Set the standard. You've got this.",
+        "DARK_HUMOR": "Rep 2/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 2/32. 130% FTP, 95-100 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -137,11 +137,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Set 2: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 2/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Final interval! 20s at 55%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "13% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -163,11 +163,11 @@
       },
       "instruction": "Set 1 Rep 3 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 85-90 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 3/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 3/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 130%, 85-90 rpm. You've trained for this.",
+        "DARK_HUMOR": "Rep 3/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 3/32. 130% FTP, 85-90 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -189,11 +189,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "15% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 55%, 85-95 rpm. You've trained for this.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -215,11 +215,11 @@
       },
       "instruction": "Set 1 Rep 4 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 4. Your legs have opinions. Noted.",
-        "MIXED": "Power: 130%, Cadence: 90-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 4/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "15% complete. Rep 4/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "First interval. 130% for 40s. Set the standard. You've got this.",
+        "DARK_HUMOR": "Rep 4/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "15% complete. Rep 4/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -241,11 +241,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 4/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "16% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "16% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -267,11 +267,11 @@
       },
       "instruction": "Set 1 Rep 5 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 5 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 5/32. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 5/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 5/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 130%, 90-100 rpm. You've trained for this.",
+        "DARK_HUMOR": "Rep 5/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "17% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -293,11 +293,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "18% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "First interval. 55% for 20s. Set the standard. You've got this.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "18% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -319,11 +319,11 @@
       },
       "instruction": "Set 1 Rep 6 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Set 6: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 6/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 6/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Interval 1/32. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "Rep 6/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "19% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -345,11 +345,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 6: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 6/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Interval 1/1. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -371,11 +371,11 @@
       },
       "instruction": "Set 1 Rep 7 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 7 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 130%, Cadence: 90-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 7/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "21% complete. Rep 7/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 7/32. Every rep makes you stronger. Keep pushing. 25 more to go.",
+        "DARK_HUMOR": "Rep 7/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 7/32. 130% FTP, 90-100 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -397,11 +397,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 7: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "22% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "22% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -423,11 +423,11 @@
       },
       "instruction": "Set 1 Rep 8 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 8/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 8/32. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 8/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "22% complete. Rep 8/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "22% done. 24 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Rep 8/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "22% complete. Rep 8/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -449,11 +449,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "24% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 55%, 85-95 rpm. You've trained for this.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "24% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -475,11 +475,11 @@
       },
       "instruction": "Set Rest 1 at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 5:00 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 8/32. 55% FTP, Seated. 5:00. Maintain smooth power output.",
+        "MOTIVATIONAL": "24% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "24% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -501,11 +501,11 @@
       },
       "instruction": "Set 2 Rep 1 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 9: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 9. Your legs have opinions. Noted.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 9/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 9/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "33% through. This is your workout. Own it. 130% FTP.",
+        "DARK_HUMOR": "Rep 9/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "33% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -527,11 +527,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 9: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "34% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "19 minutes of work done. 36 minutes to go. You can do this.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -553,11 +553,11 @@
       },
       "instruction": "Set 2 Rep 2 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Set 10: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 130%, Cadence: 90-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 10/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 10/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Final interval! 40s at 130%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Rep 10/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 10/32. 130% FTP, 90-100 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -579,11 +579,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 10/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "36% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "36% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -605,11 +605,11 @@
       },
       "instruction": "Set 2 Rep 3 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 11/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Rep 11/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "37% complete. Rep 11/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "20 minutes of work done. 34 minutes to go. You can do this.",
+        "DARK_HUMOR": "Rep 11/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "37% complete. Rep 11/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -631,11 +631,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 0:20 at 55%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 11/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "First interval. 55% for 20s. Set the standard. You've got this.",
+        "DARK_HUMOR": "Rep 1/1. 55% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "38% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -657,11 +657,11 @@
       },
       "instruction": "Set 2 Rep 4 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 12 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 12. Your legs have opinions. Noted.",
-        "MIXED": "Interval 12/32. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 12/32. 0:40 at 130%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 12/32. 130% FTP, Seated. 40s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Interval 1/32. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "Rep 12/32. 130% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "39% complete. Rep 12/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -683,11 +683,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "First rep. 55% FTP. Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "Final interval! 20s at 55%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Interval 1/1. 0:20 at 55%. This seemed like a good idea. We'll see.",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -709,11 +709,11 @@
       },
       "instruction": "Set 2 Rep 5 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 13/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 130%, Cadence: 90-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/32. 40s at 130%. This hurts because it's supposed to. Set the tone.",
+        "TECHNICAL": "Seated at 90-100 rpm, 130-130% FTP. Lock in.",
+        "MOTIVATIONAL": "Final interval! 40s at 130%. Then you're done. Make it count.",
+        "DARK_HUMOR": "First rep. Your legs feel fresh. Check back in 40s.",
+        "MIXED": "First rep: 0:40 at 130%. Smooth and controlled. Lock in form."
       }
     },
     {
@@ -735,11 +735,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Set 13: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 20s at 55%. This hurts because it's supposed to. Set the tone.",
+        "TECHNICAL": "41% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 1/1. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "First rep. Your legs feel fresh. Check back in 20s.",
+        "MIXED": "Interval 1. 0 to go. 32 minutes total. You've got this."
       }
     },
     {
@@ -761,11 +761,11 @@
       },
       "instruction": "Set 2 Rep 6 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 14 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 14/32. Focus and finish strong."
+        "TOUGH_LOVE": "First rep. 130% FTP. Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Final interval: 130% \u00d7 40s. Then 31min easy. Finish strong.",
+        "MOTIVATIONAL": "23 minutes of work done. 31 minutes to go. You can do this.",
+        "DARK_HUMOR": "42% done. 18 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 14. 18 to go. 31 minutes total. You've got this."
       }
     },
     {
@@ -787,11 +787,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Final interval. 55% for 20s. Then 31min cooldown. Leave nothing.",
+        "TECHNICAL": "55% for 0:20. Then 0:00 recovery. Execute now.",
+        "MOTIVATIONAL": "24 minutes of work done. 31 minutes to go. You can do this.",
+        "DARK_HUMOR": "43% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 1/1. Power: 45-55%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -813,11 +813,11 @@
       },
       "instruction": "Set 2 Rep 7 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Set 15: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 15. Your legs have opinions. Noted.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Interval 15/32. 44% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 15 of 32. Target: 130% FTP, 90-100 rpm. 17 intervals remaining.",
+        "MOTIVATIONAL": "44% through. This is your workout. Own it. 130% FTP.",
+        "DARK_HUMOR": "Interval 15/32. Your legs have opinions. Management has reviewed them. Denied.",
+        "MIXED": "Interval 15/32. 130% FTP \u00d7 40s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -839,11 +839,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 15: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 25 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 10min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "First interval. 55% for 20s. Set the standard. You've got this.",
+        "DARK_HUMOR": "Final interval. 55% for 20s. Then 30min to question life choices.",
+        "MIXED": "Final interval. 55% \u00d7 20s. Seated, 85-95 rpm. Finish what you started."
       }
     },
     {
@@ -865,11 +865,11 @@
       },
       "instruction": "Set 2 Rep 8 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 16 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Final interval. 130% for 40s. Then 29min cooldown. Leave nothing.",
+        "TECHNICAL": "Interval 1/32. 130-130% FTP, 90-100 rpm, Seated. Execute with precision.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 130%, 90-100 rpm. You've trained for this.",
+        "DARK_HUMOR": "Final interval. 130% for 40s. Then 29min to question life choices.",
+        "MIXED": "46% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -891,11 +891,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "You're here because you want to be better. 55%, 85-95 rpm. This is how.",
+        "TECHNICAL": "55% for 0:20. Then 5:00 recovery. Execute now.",
+        "MOTIVATIONAL": "47% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Interval 1/1. 26 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1/1. 55% FTP \u00d7 20s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -917,11 +917,11 @@
       },
       "instruction": "Set Rest 2 at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Interval 1/1. 47% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "47% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "47% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "Interval 1/1. Your legs have opinions. Management has reviewed them. Denied.",
+        "MIXED": "First rep: 5:00 at 55%. Smooth and controlled. Lock in form."
       }
     },
     {
@@ -943,11 +943,11 @@
       },
       "instruction": "Set 3 Rep 1 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 17: 130% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 17/32. Focus and finish strong."
+        "TOUGH_LOVE": "56% done. 15 intervals left. 23 minutes total. Don't quit now.",
+        "TECHNICAL": "56% complete. Rep 17/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "56% done. 15 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Interval 1/32. 0:40 at 130%. This seemed like a good idea. We'll see.",
+        "MIXED": "Interval 1/32. Power: 130-130%, Cadence: 90-100 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -969,11 +969,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "58% done. 0 intervals left. 23 minutes total. Don't quit now.",
+        "TECHNICAL": "Set 17/32. 55% FTP, Seated. 20s. Maintain smooth power output.",
+        "MOTIVATIONAL": "Interval 1/1. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "58% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Rep 1/1. 55% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -995,11 +995,11 @@
       },
       "instruction": "Set 3 Rep 2 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 18. Your legs have opinions. Noted.",
-        "MIXED": "Power: 130%, Cadence: 90-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 18/32. 32 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "First rep: 0:40 at 130%. Focus on form and controlled execution.",
+        "MOTIVATIONAL": "Interval 18/32. Every rep makes you stronger. Keep pushing. 14 more to go.",
+        "DARK_HUMOR": "Interval 18/32. 32 minutes in. The good news: almost done. The bad news: 14 reps left.",
+        "MIXED": "Final interval. 130% \u00d7 40s. Seated, 90-100 rpm. Finish what you started."
       }
     },
     {
@@ -1021,11 +1021,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 20s at 55%. This hurts because it's supposed to. Set the tone.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 55%, 85-95 rpm. You've trained for this.",
+        "DARK_HUMOR": "Interval 1/1. Your legs have opinions. Management has reviewed them. Denied.",
+        "MIXED": "59% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -1047,11 +1047,11 @@
       },
       "instruction": "Set 3 Rep 3 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 90-100 rpm, 130% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "60% done. 13 intervals left. 21 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 19. 12min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "60% done. 13 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "60% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 19/32. 130% FTP \u00d7 40s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1073,11 +1073,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Set 19: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 34 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 12min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "Interval 1/1. 34 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1. 0 to go. 21 minutes total. You've got this."
       }
     },
     {
@@ -1099,11 +1099,11 @@
       },
       "instruction": "Set 3 Rep 4 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 20/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 20 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 20. Your legs have opinions. Noted.",
-        "MIXED": "Interval 20/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 20/32. 62% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 20. 12min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "Interval 20/32. Every rep makes you stronger. Keep pushing. 12 more to go.",
+        "DARK_HUMOR": "Interval 20/32. 34 minutes in. The good news: almost done. The bad news: 12 reps left.",
+        "MIXED": "62% complete. Rep 20/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -1125,11 +1125,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "63% done. 0 intervals left. 20 minutes total. Don't quit now.",
+        "TECHNICAL": "63% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "63% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "63% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -1151,11 +1151,11 @@
       },
       "instruction": "Set 3 Rep 5 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 21/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 21 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 21. Your legs have opinions. Noted.",
-        "MIXED": "Interval 21/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 21/32. 35 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 21 of 32. Target: 130% FTP, 90-100 rpm. 11 intervals remaining.",
+        "MOTIVATIONAL": "64% through. This is your workout. Own it. 130% FTP.",
+        "DARK_HUMOR": "64% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 21. 11 to go. 19 minutes total. You've got this."
       }
     },
     {
@@ -1177,11 +1177,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Interval 1/1. 65% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "36 minutes of work done. 19 minutes to go. You can do this.",
+        "DARK_HUMOR": "65% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 1/1. 55% FTP \u00d7 20s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1203,11 +1203,11 @@
       },
       "instruction": "Set 3 Rep 6 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 22/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 22 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 22. Your legs have opinions. Noted.",
-        "MIXED": "Interval 22/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 22/32. 65% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "65% complete. Rep 22/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "36 minutes of work done. 18 minutes to go. You can do this.",
+        "DARK_HUMOR": "65% done. 10 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "65% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -1229,11 +1229,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 22: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Interval 1/1. 66% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1. 14min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "66% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "66% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "66% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -1255,11 +1255,11 @@
       },
       "instruction": "Set 3 Rep 7 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 23/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 23 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 23. Your legs have opinions. Noted.",
-        "MIXED": "Interval 23/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 23/32. 37 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 23 of 32. Target: 130% FTP, 90-100 rpm. 9 intervals remaining.",
+        "MOTIVATIONAL": "Interval 23/32. Every rep makes you stronger. Keep pushing. 9 more to go.",
+        "DARK_HUMOR": "Interval 23/32. 37 minutes in. The good news: almost done. The bad news: 9 reps left.",
+        "MIXED": "67% complete. Rep 23/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -1281,11 +1281,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 38 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "68% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "68% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "68% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 1. 0 to go. 17 minutes total. You've got this."
       }
     },
     {
@@ -1307,11 +1307,11 @@
       },
       "instruction": "Set 3 Rep 8 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 24/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 24 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 24. Your legs have opinions. Noted.",
-        "MIXED": "Interval 24/32. Focus and finish strong."
+        "TOUGH_LOVE": "69% done. 8 intervals left. 16 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 24. 15min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "69% through. This is your workout. Own it. 130% FTP.",
+        "DARK_HUMOR": "69% done. 8 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "69% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -1333,11 +1333,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "70% done. 0 intervals left. 16 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 1. 16min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "70% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Interval 1/1. 39 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1/1. 55% FTP \u00d7 20s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1359,11 +1359,11 @@
       },
       "instruction": "Set Rest 3 at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 24: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 39 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "71% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "71% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -1385,11 +1385,11 @@
       },
       "instruction": "Set 4 Rep 1 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 25/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 25 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 25. Your legs have opinions. Noted.",
-        "MIXED": "Interval 25/32. Focus and finish strong."
+        "TOUGH_LOVE": "80% done. 7 intervals left. 10 minutes total. Don't quit now.",
+        "TECHNICAL": "80% complete. Rep 25/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "44 minutes of work done. 10 minutes to go. You can do this.",
+        "DARK_HUMOR": "80% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 25/32. 130% FTP \u00d7 40s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1411,11 +1411,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "81% done. 0 intervals left. 10 minutes total. Don't quit now.",
+        "TECHNICAL": "81% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "45 minutes of work done. 10 minutes to go. You can do this.",
+        "DARK_HUMOR": "Interval 1/1. 45 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1. 0 to go. 10 minutes total. You've got this."
       }
     },
     {
@@ -1437,11 +1437,11 @@
       },
       "instruction": "Set 4 Rep 2 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 26/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 26 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 26. Your legs have opinions. Noted.",
-        "MIXED": "Interval 26/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 26/32. 81% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 26. 16min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "81% done. 6 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Interval 26/32. 45 minutes in. The good news: almost done. The bad news: 6 reps left.",
+        "MIXED": "Interval 26. 6 to go. 9 minutes total. You've got this."
       }
     },
     {
@@ -1463,11 +1463,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 26: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 83% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "83% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "83% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "83% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -1489,11 +1489,11 @@
       },
       "instruction": "Set 4 Rep 3 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 27/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 27 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 27. Your legs have opinions. Noted.",
-        "MIXED": "Interval 27/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 27/32. 46 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 27 of 32. Target: 130% FTP, 90-100 rpm. 5 intervals remaining.",
+        "MOTIVATIONAL": "46 minutes of work done. 8 minutes to go. You can do this.",
+        "DARK_HUMOR": "83% done. 5 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "83% complete. Rep 27/32. 130% for 40s. Finish strong."
       }
     },
     {
@@ -1515,11 +1515,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 47 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 18min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "47 minutes of work done. 8 minutes to go. You can do this.",
+        "DARK_HUMOR": "Interval 1/1. 47 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "84% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -1541,11 +1541,11 @@
       },
       "instruction": "Set 4 Rep 4 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 28/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 28 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 28. Your legs have opinions. Noted.",
-        "MIXED": "Interval 28/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 28/32. 85% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "85% complete. Rep 28/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 28/32. Every rep makes you stronger. Keep pushing. 4 more to go.",
+        "DARK_HUMOR": "85% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 28/32. 130% FTP \u00d7 40s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1567,11 +1567,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 55% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "86% done. 0 intervals left. 7 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "86% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "86% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 1/1. 55% FTP \u00d7 20s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1593,11 +1593,11 @@
       },
       "instruction": "Set 4 Rep 5 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 29/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 29 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 29. Your legs have opinions. Noted.",
-        "MIXED": "Interval 29/32. Focus and finish strong."
+        "TOUGH_LOVE": "87% done. 3 intervals left. 6 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 29 of 32. Target: 130% FTP, 90-100 rpm. 3 intervals remaining.",
+        "MOTIVATIONAL": "87% done. 3 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "Interval 29/32. 48 minutes in. The good news: almost done. The bad news: 3 reps left.",
+        "MIXED": "87% into session. 130%, 90-100 rpm. Focus and execute."
       }
     },
     {
@@ -1619,11 +1619,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "Interval 1/1. 88% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1. 19min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "88% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "88% complete. Rep 1/1. 55% for 20s. Finish strong."
       }
     },
     {
@@ -1645,11 +1645,11 @@
       },
       "instruction": "Set 4 Rep 6 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 30/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 30 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 30. Your legs have opinions. Noted.",
-        "MIXED": "Interval 30/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 30/32. 49 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "89% complete. Rep 30/32. 130% at 90-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "89% through. This is your workout. Own it. 130% FTP.",
+        "DARK_HUMOR": "89% done. 2 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 30. 2 to go. 5 minutes total. You've got this."
       }
     },
     {
@@ -1671,11 +1671,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Set 30: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 55%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 50 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "90% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "90% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "90% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 1. 0 to go. 5 minutes total. You've got this."
       }
     },
     {
@@ -1697,11 +1697,11 @@
       },
       "instruction": "Set 4 Rep 7 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 31/32. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 31 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 31. Your legs have opinions. Noted.",
-        "MIXED": "Interval 31/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 31/32. 50 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 31. 20min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "90% done. 1 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "90% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 31. 1 to go. 4 minutes total. You've got this."
       }
     },
     {
@@ -1723,11 +1723,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Set 31: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "91% done. 0 intervals left. 4 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 1. 20min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "51 minutes of work done. 4 minutes to go. You can do this.",
+        "DARK_HUMOR": "Interval 1/1. 51 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "91% into session. 55%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -1749,11 +1749,11 @@
       },
       "instruction": "Set 4 Rep 8 at 130-130% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 32 of 32. Target: 130% FTP, 90-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 32. Your legs have opinions. Noted.",
-        "MIXED": "Interval 32/32. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 32/32. 92% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Final interval: 130% \u00d7 40s. Then 3min easy. Finish strong.",
+        "MOTIVATIONAL": "Final interval! 40s at 130%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Final interval. 130% for 40s. Then 3min to question life choices.",
+        "MIXED": "Final interval. 130% \u00d7 40s. Seated, 90-100 rpm. Finish what you started."
       }
     },
     {
@@ -1775,11 +1775,11 @@
       },
       "instruction": "Recovery at 45-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 93% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "93% complete. Rep 1/1. 55% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "93% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "93% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 1/1. 55% FTP \u00d7 20s. Seated. Stay smooth. Breathe deep."
       }
     },
     {
@@ -1801,11 +1801,11 @@
       },
       "instruction": "Cool-down at 40-60% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 85-100 rpm, 60% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 94% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-100 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "94% through. This is your workout. Own it. 60% FTP.",
+        "DARK_HUMOR": "94% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 1. 0 to go. 0 minutes total. You've got this."
       }
     }
   ],

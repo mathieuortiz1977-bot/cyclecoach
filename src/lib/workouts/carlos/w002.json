@@ -31,11 +31,11 @@
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 1. Target: 68% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 15:00 at 68%. This is the price of being better. Pay it.",
+        "TECHNICAL": "0% complete. Rep 1/1. 68% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Final interval! 15:00 at 68%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Rep 1/1. 68% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "0% into session. 68%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -57,11 +57,11 @@
       },
       "instruction": "Long Endurance at 65-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Slow down. Yes, slower. Your aerobic system is thanking you right now.",
-        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
-        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
-        "DARK_HUMOR": "Your Garmin thinks you fell asleep. You're actually training.",
-        "MIXED": "Easy spin. 85-95 rpm, Seated. Relax and breathe."
+        "TOUGH_LOVE": "15 minutes of base work. This feels like nothing. That's exactly the point.",
+        "TECHNICAL": "10% complete. 75% FTP. Endurance pace: majority nose breathing. Stay easy.",
+        "MOTIVATIONAL": "Easy miles = fast racing. 75% for 120:00. Trust the process.",
+        "DARK_HUMOR": "15 minutes of endurance. The pace where you question if you're working hard enough. (You are.)",
+        "MIXED": "Zone 2 endurance. 75% FTP, 85-95 rpm. Sustainable all day."
       }
     },
     {
@@ -83,11 +83,11 @@
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 135 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "90% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "90% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "Interval 1. 0 to go. 0 minutes total. You've got this."
       }
     }
   ],

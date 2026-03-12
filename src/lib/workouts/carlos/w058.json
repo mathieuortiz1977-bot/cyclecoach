@@ -31,11 +31,11 @@
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 75% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 15:00 at 75%. This is the price of being better. Pay it.",
+        "TECHNICAL": "0% complete. Rep 1/1. 75% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "0 minutes of work done. 45 minutes to go. You can do this.",
+        "DARK_HUMOR": "Rep 1/1. 75% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "Rep 1/1. 75% FTP, 85-95 rpm. Controlled effort. Execute the plan."
       }
     },
     {
@@ -57,11 +57,11 @@
       },
       "instruction": "Long Test at 93-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 1. Target: 100% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "First rep. 100% FTP. Your body is uncomfortable. Your mind is stronger. Prove it.",
+        "TECHNICAL": "Interval 1/1. 93-100% FTP, 85-95 rpm, Seated. Execute with precision.",
+        "MOTIVATIONAL": "Interval 1/1. You're starting fresh. Show yourself what you're capable of.",
+        "DARK_HUMOR": "First rep. Your legs feel fresh. Check back in 35:00.",
+        "MIXED": "Interval 1/1. Power: 93-100%, Cadence: 85-95 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -83,11 +83,11 @@
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 60%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 50 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1 of 1. Target: 60% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "Interval 1/1. 50 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1. 0 to go. 0 minutes total. You've got this."
       }
     }
   ],

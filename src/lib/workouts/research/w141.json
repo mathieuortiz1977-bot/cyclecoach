@@ -33,11 +33,11 @@
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Zone 2. Boring? Maybe. Effective? Absolutely. This is where champions are made.",
-        "TECHNICAL": "Sub-threshold aerobic work. Training your body to burn fat efficiently.",
-        "MOTIVATIONAL": "Building the base. This is where champions are made in the off-season.",
-        "DARK_HUMOR": "Your Garmin thinks you fell asleep. You're actually training.",
-        "MIXED": "Conversational pace. Save your matches for the hard days."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. 10:48 of engine-building.",
+        "TECHNICAL": "0% through. Low intensity, high volume. Building the engine from ground up.",
+        "MOTIVATIONAL": "0% into session. Endurance work is never wasted. Every minute builds your foundation.",
+        "DARK_HUMOR": "0 minutes of endurance. The pace where you question if you're working hard enough. (You are.)",
+        "MIXED": "0% into ride. Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -59,11 +59,11 @@
       },
       "instruction": "Tempo at 78-88% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/1. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 1. Target: 88% FTP, 85-100 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 67:30 at 88%. This hurts because it's supposed to. Set the tone.",
+        "TECHNICAL": "Interval 1/1. 78-88% FTP, 85-100 rpm, Seated. Execute with precision.",
+        "MOTIVATIONAL": "First interval. 88% for 67:30. Set the standard. You've got this.",
+        "DARK_HUMOR": "Interval 1/1. 67:30 at 88%. This seemed like a good idea. We'll see.",
+        "MIXED": "Interval 1/1. Power: 78-88%, Cadence: 85-100 rpm, Position: Seated. Execute."
       }
     },
     {
@@ -85,11 +85,11 @@
       },
       "instruction": "Cool-down at 50-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Set 1: 55% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Power: 55%, Cadence: 85-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 78 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 67min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "Interval 1/1. 78 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1. 0 to go. 0 minutes total. You've got this."
       }
     }
   ],

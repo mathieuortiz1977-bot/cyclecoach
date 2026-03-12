@@ -33,11 +33,11 @@
       },
       "instruction": "Easy Start at 60-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. You're building an engine here.",
-        "TECHNICAL": "Zone 2: where mitochondria multiply and aerobic capacity expands.",
-        "MOTIVATIONAL": "Not every workout needs to hurt. This is smart training.",
-        "DARK_HUMOR": "So easy you could do this all day. (Please don't.)",
-        "MIXED": "Stay patient. Stay easy. Trust the process."
+        "TOUGH_LOVE": "70% for 11:42. Easy miles make fast racing. Stop overthinking.",
+        "TECHNICAL": "Endurance zone: 60-70% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
+        "MOTIVATIONAL": "Easy miles = fast racing. 70% for 11:42. Trust the process.",
+        "DARK_HUMOR": "33 minutes to go. Your friends are posting threshold intervals. You're being smart. Or lazy. Both?",
+        "MIXED": "33 minutes to go. Easy does it. 70% FTP. Build your engine."
       }
     },
     {
@@ -59,11 +59,11 @@
       },
       "instruction": "Base at 65-75% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Too easy? Good. Your ego wants intensity. Your body needs this. Trust the process.",
-        "TECHNICAL": "Aerobic base building. This is the foundation of all cycling fitness.",
-        "MOTIVATIONAL": "Relax and enjoy the ride. You're building massive aerobic capacity.",
-        "DARK_HUMOR": "Your friends are doing threshold intervals. You're being smart.",
-        "MIXED": "Base miles. The work no one sees but everyone needs."
+        "TOUGH_LOVE": "Too easy? Good. 26% into ride. Your ego wants intensity. Your body needs this.",
+        "TECHNICAL": "Seated position, 85-100 rpm. Zone 2: building aerobic base correctly.",
+        "MOTIVATIONAL": "Building the base. 17:33 at 75%. This is where champions are made.",
+        "DARK_HUMOR": "17:33 at 75%. The pace where you can contemplate life's mysteries. Like why you own a bike.",
+        "MIXED": "26% into ride. Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -85,11 +85,11 @@
       },
       "instruction": "Sprint 1 at 100-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Halfway through. Your mind is weak. Your body is strong. Listen to your body.",
-        "TECHNICAL": "Threshold block: maximize time at lactate threshold without crossing into VO2 territory.",
-        "MOTIVATIONAL": "This is where mediocre riders crack and champions push through.",
-        "DARK_HUMOR": "Threshold work: where you live in the space between 'fine' and 'please make it stop.'",
-        "MIXED": "First block: find your rhythm. Don't go too hard too early."
+        "TOUGH_LOVE": "65% complete. Block 1/1. This is where you prove you're serious.",
+        "TECHNICAL": "Progressive fatigue building. 29min threshold work accumulated. Maintain 85-100 rpm \u2014 don't let it drift.",
+        "MOTIVATIONAL": "65% complete. Block 1/1. This is where mediocre riders crack. You're pushing through.",
+        "DARK_HUMOR": "65% done. This is sustainable. Technically. If you redefine 'sustainable.'",
+        "MIXED": "65% complete. 100% for 1:21. Don't let power spike. Stay smooth."
       }
     },
     {
@@ -111,11 +111,11 @@
       },
       "instruction": "Sprint 2 at 100-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "One more block. One more step toward crushing your old FTP. Worth it.",
-        "TECHNICAL": "Set 1: 85-100 rpm, Seated. Focus on smooth, sustainable power.",
-        "MOTIVATIONAL": "One more block. Then you're done. Make it count.",
-        "DARK_HUMOR": "Block 1 of 1. Like Groundhog Day, but with more lactic acid.",
-        "MIXED": "Almost done. Stay strong. Finish what you started."
+        "TOUGH_LOVE": "Block 1/1. The discomfort is the adaptation. Embrace it. 1 more blocks to build FTP.",
+        "TECHNICAL": "Block 1/1. 68% complete. Hold 100% steady. 13 minutes remain.",
+        "MOTIVATIONAL": "68% through. This effort builds mental toughness as much as physical fitness. Stay strong.",
+        "DARK_HUMOR": "30 minutes in. Your lactate threshold called. It's filing a complaint.",
+        "MIXED": "Set 1: 1:21 at 100%. Focus on efficient pedal stroke. 1 blocks remaining."
       }
     },
     {
@@ -137,11 +137,11 @@
       },
       "instruction": "Sprint 3 at 100-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Final block. This is where you prove you're serious. Don't fade now.",
-        "TECHNICAL": "Final threshold block. Hold power steady. 0s rest coming.",
-        "MOTIVATIONAL": "Final block! Everything you've built leads to this. Finish strong.",
-        "DARK_HUMOR": "Fun fact: FTP stands for 'Finally This Pain' (it doesn't, but it should).",
-        "MIXED": "Final block. Give it everything. Cooldown is coming."
+        "TOUGH_LOVE": "Final block. 1:21 at 100%. Then 11min cooldown. Don't you dare fade.",
+        "TECHNICAL": "Last block. 100-100% FTP, 85-100 rpm. After this: 11min cooldown.",
+        "MOTIVATIONAL": "Last threshold block. Then 11min easy. Make this one count.",
+        "DARK_HUMOR": "Final block! 1:21 at 100%. The light at the end of the tunnel. It's probably more threshold work.",
+        "MIXED": "Last threshold interval. 100% FTP, 85-100 rpm. Finish what you started."
       }
     },
     {
@@ -163,11 +163,11 @@
       },
       "instruction": "Cool-down at 50-60% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Set 1: 60% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 60%, Cadence: 85-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "74% done. 0 intervals left. 0 minutes total. Don't quit now.",
+        "TECHNICAL": "Interval 1. 33min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "74% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "74% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "74% into session. 60%, 85-100 rpm. Focus and execute."
       }
     }
   ],

@@ -31,11 +31,11 @@
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 75% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Power: 75%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Rep 1/1. 10:00 at 75%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 0/1. 75% FTP, Seated. 10:00. Maintain smooth power output.",
+        "MOTIVATIONAL": "Interval 1/1. Every rep makes you stronger. Keep pushing. 0 more to go.",
+        "DARK_HUMOR": "Rep 1/1. 75% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "0% complete. Rep 1/1. 75% for 10:00. Finish strong."
       }
     },
     {
@@ -88,11 +88,11 @@
       },
       "instruction": "Hold 95-100% FTP for full duration. Steady power.",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 1/2. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 1 of 2. Target: 100% FTP, 70-80 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/2. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/2. 30:00 at 100%. This hurts because it's supposed to. Set the tone.",
+        "TECHNICAL": "Interval 1/2. 95-100% FTP, 70-80 rpm, Aero. Execute with precision.",
+        "MOTIVATIONAL": "First interval. 100% for 30:00. Set the standard. You've got this.",
+        "DARK_HUMOR": "Interval 1/2. 30:00 at 100%. This seemed like a good idea. We'll see.",
+        "MIXED": "Interval 1/2. Power: 95-100%, Cadence: 70-80 rpm, Position: Aero. Execute."
       }
     },
     {
@@ -145,11 +145,11 @@
       },
       "instruction": "Hold 98-103% FTP for full duration. Steady power.",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 2 of 2. Target: 103% FTP, 70-80 rpm.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
-        "MIXED": "Interval 2/2. Focus and finish strong."
+        "TOUGH_LOVE": "Final interval. 103% for 10:00. Then 10min cooldown. Leave nothing.",
+        "TECHNICAL": "Final interval: 103% \u00d7 10:00. Then 10min easy. Finish strong.",
+        "MOTIVATIONAL": "Final interval! 10:00 at 103%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Final interval. 103% for 10:00. Then 10min to question life choices.",
+        "MIXED": "Final interval. 103% \u00d7 10:00. Aero, 70-80 rpm. Finish what you started."
       }
     },
     {
@@ -171,11 +171,11 @@
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 60% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 50 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 40min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "83% through. This is your workout. Own it. 60% FTP.",
+        "DARK_HUMOR": "83% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "83% complete. Rep 1/1. 60% for 10:00. Finish strong."
       }
     }
   ],

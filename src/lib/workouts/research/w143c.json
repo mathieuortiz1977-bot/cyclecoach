@@ -33,11 +33,11 @@
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your friends are posting their VO2max workouts on Strava. You're being smart.",
-        "TECHNICAL": "Low intensity, high volume. Building your engine from the ground up.",
-        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
-        "DARK_HUMOR": "Endurance pace: where you question if you're working hard enough. (You are.)",
-        "MIXED": "Conversational pace. Save your matches for the hard days."
+        "TOUGH_LOVE": "Relax. Breathe. Enjoy the ride. 16:12 of engine-building.",
+        "TECHNICAL": "Aerobic base building. 70% for 16:12. This is the foundation of all fitness.",
+        "MOTIVATIONAL": "Building the base. 16:12 at 70%. This is where champions are made.",
+        "DARK_HUMOR": "70% for 16:12. So easy you could do this all day. (Please don't.)",
+        "MIXED": "0% into ride. Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -59,11 +59,11 @@
       },
       "instruction": "Surge 1 at 120-120% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Halfway done. The first half got you here. The second half makes you a champion.",
-        "TECHNICAL": "Rep 1/3 \u2014 hold 120% FTP at 85-100 rpm. Seated. 72s of work left in this set.",
-        "MOTIVATIONAL": "First rep is always the hardest mentally. Once you're in it, commit.",
-        "DARK_HUMOR": "Interval 1: where dreams go to die, and watts go to live.",
-        "MIXED": "First rep of the set. Be patient. Find the groove."
+        "TOUGH_LOVE": "Rep 1/3. Fresh legs lie to you \u2014 they say this is easy. By rep 3 you'll know the truth.",
+        "TECHNICAL": "Interval 1: 120% for 0:36. Breathing will be labored by minute 2. That's normal.",
+        "MOTIVATIONAL": "Beginning strong. 36s at 120%. Show yourself what you're capable of.",
+        "DARK_HUMOR": "Starting fresh. Your body thinks this is fun. We'll check back in 36s.",
+        "MIXED": "Rep 1/3. 120% FTP, 85-100 rpm, Seated. Set the tone. Execute with precision."
       }
     },
     {
@@ -85,11 +85,11 @@
       },
       "instruction": "Easy 1 at 60-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Slow down. Yes, slower. Your aerobic system is thanking you right now.",
-        "TECHNICAL": "Endurance zone: 70% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
-        "DARK_HUMOR": "This is so easy it's almost boring. Almost.",
-        "MIXED": "Relax your grip. Drop your shoulders. Smooth pedaling."
+        "TOUGH_LOVE": "Halfway: 55% done. Patience builds power, not suffering. Stay easy.",
+        "TECHNICAL": "Seated position, 85-100 rpm. Zone 2: building aerobic base correctly.",
+        "MOTIVATIONAL": "Halfway: 55% complete. Your future self will thank you for these miles.",
+        "DARK_HUMOR": "Halfway: 55% complete. Fun fact: most people go too hard on easy days. Don't be most people.",
+        "MIXED": "Halfway: 55% done. Keep it comfortable. Nose breathing. Enjoy the ride."
       }
     },
     {
@@ -111,11 +111,11 @@
       },
       "instruction": "Surge 2 at 120-120% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Final rep. Your body is lying to you \u2014 you have more. Prove it.",
-        "TECHNICAL": "Rep 3/3 \u2014 hold 120% FTP at 85-100 rpm. Seated. 0s of work left in this set.",
-        "MOTIVATIONAL": "Last set! Everything you have. You'll be cooling down in 25 minutes.",
-        "DARK_HUMOR": "Rep 3. Your legs are filing a formal complaint. Denied.",
-        "MIXED": "Last one! Finish strong. You've earned the cooldown."
+        "TOUGH_LOVE": "Final rep. 36s at 120%. Empty the tank. You've got 8 minutes of cooldown coming.",
+        "TECHNICAL": "Final interval: 36s at 120%. Then 8min cooldown. Empty the tank correctly.",
+        "MOTIVATIONAL": "Final rep! 36s at 120%. Leave nothing in reserve. You'll be cooling down in 8 minutes.",
+        "DARK_HUMOR": "Last one. 0:36 at 120%. Then 8 minutes to contemplate your life choices.",
+        "MIXED": "Final interval. 120% \u00d7 36s. Then 8min cooldown. Leave nothing."
       }
     },
     {
@@ -137,11 +137,11 @@
       },
       "instruction": "Cool-down at 50-60% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Seated at 85-100 rpm, 60% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "You've got this. Stay focused and execute the plan.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 73% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "73% complete. Rep 1/1. 60% at 85-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "73% done. 0 intervals left. You've come this far. Finish strong.",
+        "DARK_HUMOR": "73% complete. Fun fact: suffering builds character. You're very character-rich right now.",
+        "MIXED": "73% complete. Rep 1/1. 60% for 8:06. Finish strong."
       }
     }
   ],

@@ -34,11 +34,11 @@
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 70% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "This seemed like a good idea at the time. Still is. Maybe.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 10:00 at 70%. This is the price of being better. Pay it.",
+        "TECHNICAL": "0% complete. Rep 1/1. 70% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "0% through. This is your workout. Own it. 70% FTP.",
+        "DARK_HUMOR": "Rep 1/1. 70% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "0% into session. 70%, 85-95 rpm. Focus and execute."
       }
     },
     {
@@ -60,11 +60,11 @@
       },
       "instruction": "Strict Z2 at 62-72% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Base training: the secret no one wants to do. That's why it works.",
-        "TECHNICAL": "Steady state endurance. 72% FTP. Sustainable for hours.",
-        "MOTIVATIONAL": "Zone 2 is where fitness quietly accumulates. Trust it.",
-        "DARK_HUMOR": "This feels like cheating. It's not. It's science.",
-        "MIXED": "Smooth and steady. Build your aerobic base."
+        "TOUGH_LOVE": "9% complete. 10 minutes left. Zone 2 is like compound interest \u2014 boring but effective.",
+        "TECHNICAL": "10 minutes remaining. Sub-threshold aerobic work. Training fat oxidation.",
+        "MOTIVATIONAL": "10 minutes to go. Consistency over intensity. You're doing the work that matters.",
+        "DARK_HUMOR": "90:00 at 72%. The pace where you can contemplate life's mysteries. Like why you own a bike.",
+        "MIXED": "9% complete. 10 minutes left. Let your mind wander. Stay in zone."
       }
     },
     {
@@ -86,11 +86,11 @@
       },
       "instruction": "Cool-down at 40-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 1/1. 100 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1 of 1. Target: 55% FTP, 85-95 rpm. 0 intervals remaining.",
+        "MOTIVATIONAL": "90% through. This is your workout. Own it. 55% FTP.",
+        "DARK_HUMOR": "90% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 1. 0 to go. 0 minutes total. You've got this."
       }
     }
   ]

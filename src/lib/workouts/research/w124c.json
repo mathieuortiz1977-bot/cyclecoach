@@ -33,11 +33,11 @@
       },
       "instruction": "Warm-up at 50-70% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Zone 2. Boring? Maybe. Effective? Absolutely. This is where champions are made.",
-        "TECHNICAL": "Endurance pace: majority of work should be nose breathing. Stay easy.",
-        "MOTIVATIONAL": "This might feel too easy. That's the point. Patience builds power.",
-        "DARK_HUMOR": "Your friends are doing threshold intervals. You're being smart.",
-        "MIXED": "Zone 2. Easy effort. This is recovery in disguise."
+        "TOUGH_LOVE": "Too easy? Good. 0% into ride. Your ego wants intensity. Your body needs this.",
+        "TECHNICAL": "Aerobic base building. 70% for 23:06. This is the foundation of all fitness.",
+        "MOTIVATIONAL": "0% into session. Endurance work is never wasted. Every minute builds your foundation.",
+        "DARK_HUMOR": "70% for 23:06. So easy you could do this all day. (Please don't.)",
+        "MIXED": "0% into ride. Smooth and steady. Build your aerobic base."
       }
     },
     {
@@ -59,11 +59,11 @@
       },
       "instruction": "VO2 1 at 112-112% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your lungs want to quit. Your mind wants to quit. But you won't. Rep 1 of 2.",
-        "TECHNICAL": "First rep \u2014 settle into 112% quickly. Don't overshoot the first 30 seconds.",
-        "MOTIVATIONAL": "Rep 1 of 2 \u2014 you've done this before and you can do it again.",
-        "DARK_HUMOR": "Rep 1. Your legs are filing a formal complaint. Denied.",
-        "MIXED": "First rep of the set. Be patient. Find the groove."
+        "TOUGH_LOVE": "First interval at 112%. Set the tone. Your body remembers the last time you quit early.",
+        "TECHNICAL": "First interval: 11:54 at 112-112% FTP. Seated. Focus on pacing, not heroics.",
+        "MOTIVATIONAL": "After this recovery, you have 11min at 55%. One interval at a time. Focus here first.",
+        "DARK_HUMOR": "Rep 1/2. Your legs feel good. Enjoy it. By rep 3 they'll be filing a formal complaint.",
+        "MIXED": "First interval: 11:54 at 112-112%. Settle in, don't overcook it."
       }
     },
     {
@@ -85,11 +85,11 @@
       },
       "instruction": "Rest at 55-55% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Pain is temporary. Regret lasts forever. Finish this.",
-        "TECHNICAL": "Interval 2 of 2. Target: 55% FTP, 85-100 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 2. Your legs have opinions. Noted.",
-        "MIXED": "Interval 2/2. Focus and finish strong."
+        "TOUGH_LOVE": "Final interval. 55% for 11:54. Then 23min cooldown. Leave nothing.",
+        "TECHNICAL": "Final interval: 55% \u00d7 11:54. Then 23min easy. Finish strong.",
+        "MOTIVATIONAL": "Final interval! 11:54 at 55%. Then you're done. Make it count.",
+        "DARK_HUMOR": "Final interval. 55% for 11:54. Then 23min to question life choices.",
+        "MIXED": "Final interval. 55% \u00d7 11:54. Seated, 85-100 rpm. Finish what you started."
       }
     },
     {
@@ -111,11 +111,11 @@
       },
       "instruction": "Cool-down at 50-50% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Set 1: 50% FTP. Seated. Maintain smooth power output.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Power: 50%, Cadence: 85-100 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "67% done. 0 intervals left. 0 minutes total. Don't quit now.",
+        "TECHNICAL": "67% complete. Rep 1/1. 50% at 85-100 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "46 minutes of work done. 0 minutes to go. You can do this.",
+        "DARK_HUMOR": "Interval 1/1. 46 minutes in. The good news: almost done. The bad news: 0 reps left.",
+        "MIXED": "Interval 1/1. 50% FTP \u00d7 23:06. Seated. Stay smooth. Breathe deep."
       }
     }
   ],

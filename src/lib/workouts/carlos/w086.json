@@ -31,11 +31,11 @@
       },
       "instruction": "Progressive warm-up, easy spin",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 75% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Interval 1/1. Focus and finish strong."
+        "TOUGH_LOVE": "Rep 1/1. 10:00 at 75%. This is the price of being better. Pay it.",
+        "TECHNICAL": "Set 0/1. 75% FTP, Seated. 10:00. Maintain smooth power output.",
+        "MOTIVATIONAL": "Stay focused and execute the plan. 75%, 85-95 rpm. You've trained for this.",
+        "DARK_HUMOR": "Rep 1/1. 75% FTP. Your legs filed a complaint. It's under review. (It's not.)",
+        "MIXED": "0% complete. Rep 1/1. 75% for 10:00. Finish strong."
       }
     },
     {
@@ -57,11 +57,11 @@
       },
       "instruction": "Endurance at 65-65% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your friends are posting their VO2max workouts on Strava. You're being smart.",
-        "TECHNICAL": "Endurance pace: majority of work should be nose breathing. Stay easy.",
-        "MOTIVATIONAL": "Relax and enjoy the ride. You're building massive aerobic capacity.",
-        "DARK_HUMOR": "The hardest part of easy rides is keeping them easy. Stay disciplined.",
-        "MIXED": "Smooth and steady. Build your aerobic base."
+        "TOUGH_LOVE": "6% complete. 80 minutes left. Zone 2 is like compound interest \u2014 boring but effective.",
+        "TECHNICAL": "Steady state endurance. 65% FTP, 85-95 rpm. Sustainable for hours.",
+        "MOTIVATIONAL": "60:00 at 65%. Base training: the secret weapon of every great cyclist.",
+        "DARK_HUMOR": "Zone 2: where excitement goes to retire. 60:00 of controlled boredom.",
+        "MIXED": "60:00 at 65-65%. Relax your grip. Drop your shoulders. Smooth pedaling."
       }
     },
     {
@@ -83,11 +83,11 @@
       },
       "instruction": "Endurance at 72-72% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Easy miles make fast racing. Stop thinking and start pedaling.",
-        "TECHNICAL": "Endurance zone: 72% FTP. Fat oxidation, mitochondrial biogenesis, capillary density.",
-        "MOTIVATIONAL": "Easy miles = fast racing. Trust the process.",
-        "DARK_HUMOR": "Fun fact: most people go too hard on easy days. Don't be most people.",
-        "MIXED": "Base miles. The work no one sees but everyone needs."
+        "TOUGH_LOVE": "Halfway: 46% done. Patience builds power, not suffering. Stay easy.",
+        "TECHNICAL": "50 minutes remaining. Sub-threshold aerobic work. Training fat oxidation.",
+        "MOTIVATIONAL": "Halfway: 46% complete. Your future self will thank you for these miles.",
+        "DARK_HUMOR": "Halfway: 46% complete. Fun fact: most people go too hard on easy days. Don't be most people.",
+        "MIXED": "Halfway: 46% done. Keep it comfortable. Nose breathing. Enjoy the ride."
       }
     },
     {
@@ -109,11 +109,11 @@
       },
       "instruction": "Tempo at 82-82% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "You're here because you want to be better. This is the price. Pay it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 82% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Fun fact: suffering builds character. You're very  character-rich right now.",
-        "MIXED": "Stay smooth. Breathe deep. You've got this."
+        "TOUGH_LOVE": "66% done. 2 intervals left. 30 minutes total. Don't quit now.",
+        "TECHNICAL": "66% complete. Rep 3/5. 82% at 85-95 rpm. Hold form \u2014 don't let it drift.",
+        "MOTIVATIONAL": "Interval 3/5. Every rep makes you stronger. Keep pushing. 2 more to go.",
+        "DARK_HUMOR": "66% done. 2 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "Interval 3. 2 to go. 30 minutes total. You've got this."
       }
     },
     {
@@ -135,11 +135,11 @@
       },
       "instruction": "Sweet Spot at 92-92% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Interval 4/5. This hurts because it's supposed to. Keep going.",
-        "TECHNICAL": "Interval 4 of 5. Target: 92% FTP, 85-95 rpm.",
-        "MOTIVATIONAL": "This is your workout. Own it.",
-        "DARK_HUMOR": "Interval 4. Your legs have opinions. Noted.",
-        "MIXED": "Interval 4/5. Focus and finish strong."
+        "TOUGH_LOVE": "Interval 4/5. 80% through. Pain is temporary. Regret lasts forever. Finish this.",
+        "TECHNICAL": "Interval 4. 110min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "120 minutes of work done. 20 minutes to go. You can do this.",
+        "DARK_HUMOR": "80% done. 1 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "80% complete. Rep 4/5. 92% for 10:00. Finish strong."
       }
     },
     {
@@ -161,11 +161,11 @@
       },
       "instruction": "Threshold at 100-100% FTP",
       "coachingNotes": {
-        "TOUGH_LOVE": "Final block. This is where you prove you're serious. Don't fade now.",
-        "TECHNICAL": "Final threshold block. Hold power steady. 0s rest coming.",
-        "MOTIVATIONAL": "Final block! Everything you've built leads to this. Finish strong.",
-        "DARK_HUMOR": "Fun fact: FTP stands for 'Finally This Pain' (it doesn't, but it should).",
-        "MIXED": "Final block. Give it everything. Cooldown is coming."
+        "TOUGH_LOVE": "Last threshold block. 100% FTP. One more step toward crushing your old FTP. Worth it.",
+        "TECHNICAL": "Final threshold block: 10:00 at 100%. Then 10min easy. Hold power steady.",
+        "MOTIVATIONAL": "Last threshold block. Then 10min easy. Make this one count.",
+        "DARK_HUMOR": "Starting threshold work. Fun fact: FTP stands for 'Finally This Pain.' (It doesn't, but it should.)",
+        "MIXED": "Final block. 100% \u00d7 10:00. Give it everything. 10min cooldown coming."
       }
     },
     {
@@ -187,11 +187,11 @@
       },
       "instruction": "Easy spinning to facilitate recovery",
       "coachingNotes": {
-        "TOUGH_LOVE": "Your body is uncomfortable. Your mind is stronger. Prove it.",
-        "TECHNICAL": "Seated at 85-95 rpm, 60% FTP. Focus on form and execution.",
-        "MOTIVATIONAL": "Every interval makes you stronger. Keep pushing.",
-        "DARK_HUMOR": "Interval 1. Your legs have opinions. Noted.",
-        "MIXED": "Power: 60%, Cadence: 85-95 rpm, Position: Seated. Execute."
+        "TOUGH_LOVE": "Interval 1/1. 140 minutes in. Your legs are lying. You have more.",
+        "TECHNICAL": "Interval 1. 130min of work accumulated. Quality over quantity from here.",
+        "MOTIVATIONAL": "140 minutes of work done. 0 minutes to go. You can do this.",
+        "DARK_HUMOR": "93% done. 0 intervals left. Only. ONLY. *nervous laughter*",
+        "MIXED": "93% complete. Rep 1/1. 60% for 10:00. Finish strong."
       }
     }
   ],
